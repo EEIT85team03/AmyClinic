@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com</groupId>
+    <groupId>com.iii.team03</groupId>
     <artifactId>AmyClinic</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>Servlet 3 Web Application</name>
+    <name>AmyClinic</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java-version>1.6</java-version>
+        <java-version>1.8</java-version>
     </properties>
 
     <dependencies>
-        <!-- Servlet 3.0 API -->
+        <!-- Servlet 3.1 API -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.0.1</version>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
 
