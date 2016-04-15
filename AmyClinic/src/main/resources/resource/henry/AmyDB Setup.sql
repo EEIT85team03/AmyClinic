@@ -19,8 +19,7 @@ CREATE TABLE Catagory(
 
 CREATE TABLE Members(
   mid			DECIMAL(8)		IDENTITY(1000,1) PRIMARY KEY,
-  first_name	NVARCHAR(30)	DEFAULT 'Unknown',
-  last_name		NVARCHAR(30)	DEFAULT 'Unknown',
+  name			NVARCHAR(30)	DEFAULT 'Unknown',  
   pwd			VARCHAR(50)		NOT NULL,
   email			VARCHAR(50)		NOT NULL UNIQUE,
   birthday		DATE			,
@@ -37,15 +36,16 @@ CREATE TABLE Members(
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
   total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
   reward_pts	DECIMAL(4)		DEFAULT 0,
-  last_visit	DATE			,			-- last client transaction
+  last_visit	DATE			DEFAULT GETDATE(),			-- last client transaction
   memo			NVARCHAR(300)	DEFAULT ' ',  
   join_date		DATETIME		DEFAULT GETDATE(),  
 );
 
+
 CREATE TABLE Products
 ( 
   pid			DECIMAL(5)		IDENTITY PRIMARY KEY, 
-  name			VARCHAR(20)		DEFAULT 'Unknown' UNIQUE,  
+  name			VARCHAR(200)		DEFAULT 'Unknown' UNIQUE,  
   photo			VARBINARY(MAX)	,
   amount		DECIMAL(5)		DEFAULT 0,
   cid			DECIMAL(4)		FOREIGN KEY REFERENCES Catagory, 
@@ -55,6 +55,7 @@ CREATE TABLE Products
   ingredients	NVARCHAR(300)	DEFAULT 'Unspecified',
 --  date_entered	DATETIME		DEFAULT GETDATE(),  
 );
+
 
 CREATE TABLE Orders
 ( 
@@ -109,10 +110,10 @@ CREATE TABLE Employees
 (
   eid			DECIMAL(5)		IDENTITY PRIMARY KEY,
   name			NVARCHAR(30)	DEFAULT 'Unknown',
-  photo			VARBINARY(MAX)	NOT NULL,	
-  education		NVARCHAR(300)	NOT NULL,
-  experience	NVARCHAR(300)	NOT NULL,
-  specialty		NVARCHAR(300)	NOT NULL,
+  photo			VARBINARY(MAX)	,	
+  education		NVARCHAR(500)	NOT NULL,
+  experience	NVARCHAR(500)	NOT NULL,
+  specialty		NVARCHAR(500)	NOT NULL,
 );
 
 CREATE TABLE Appointments
@@ -128,6 +129,29 @@ CREATE TABLE Appointments
 );
 
 GO
+
+INSERT INTO Catagory VALUES ('Vitamins');
+INSERT INTO Catagory VALUES ('Skin Care');	
+INSERT INTO Catagory VALUES ('Health Food');	
+INSERT INTO Catagory VALUES ('Equipment');	
+INSERT INTO Catagory VALUES ('Medicine');		
+
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Henry','123','Henry@group3.com','1981-06-24','Taiwan','M','台北市大安區復興南路一段390號2樓','0925377000','178','80','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Carrie','123','Carrie@group3.com','1990-12-12','Taiwan','F','台北市大安區復興南路一段390號2樓','0925332156','160','42','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Beef','123','Beef@group3.com','1989-03-09','Taiwan','M','台北市大安區復興南路一段390號2樓','0959487612','170','65','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Nick','123','Nick@group3.com','1985-07-30','Taiwan','M','台北市大安區復興南路一段390號2樓','0936598102','169','70','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Tca','123','Tca@group3.com','2000-02-28','Taiwan','M','台北市大安區復興南路一段390號2樓','0945976183','185','63','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('K','123','k@group3.com','1970-01-01','Taiwan','M','台北市大安區復興南路一段390號2樓','0909865731','200','59','1');
+
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('MoMo Face Mask','500','20','100','0','Makes your face look younger!','Cloth, water, sugar');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('SuperHealth Vitamin B Suppliments','1000','10','750','10','little round pills of youth!','Sugar, flour, Vitamin B');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('WeiChuan Bottled RedBean Soup','300','30','50','25','Great for Women!','Red Bean, Water, Sugar, Agar');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Panasonic Hydration Mask','100','40','3000','5','Steam those wrinkles away!','Electronic Equipment');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('BigBrand Disinfectent','2000','50','100','0','Infection-be-gone!','Fungus Extract');
+
+INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Pocky','M.D. Brown University','10 years Cosmetic Surgeon at County USC Hospital','Facelift, Liposuction, Facial reconstruction');
+INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Kindle','M.D. Yale','5 years Cosmetic Surgeon at India National Health and Beauty Center','Laser hair removal, nose job, hair implants');
+INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Hershes','M.D. UCSB','20 years Cosmetic Surgeon at Saint Claire','Everything');
 
 select * from Members
 select * from Products
