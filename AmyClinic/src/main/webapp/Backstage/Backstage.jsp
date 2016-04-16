@@ -127,7 +127,10 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
 	line-height: 0px;
 }
 -->
-</style></head>
+</style>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+</head>
 
 <body>
 
@@ -150,20 +153,28 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
     
     <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1>說明</h1>
-    <p>請注意，這些版面的 CSS 都有詳細的註解。如果您是在「設計」檢視中進行大部分的作業，可以看一下程式碼來取得有關使用固定版面 CSS 的提示。您可以在啟動您的網站之前，將這些註解移除。有關這些 CSS 版面所使用的技巧之詳細資訊，請至 Adobe 開發人員中心閱讀本文 - <a href=http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>。您可以在啟動您的網站之前，將這些註解移除。有關這些 CSS 版面所使用的技巧之詳細資訊，請至 Adobe 開發人員中心閱讀本文 - <a href=http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a></p>
-    <h2>清除方法</h2>
-    <p>因為所有的欄都是浮動的，所以這個版面會在 .footer 規則中使用 clear:both 宣告。這項清除技巧可強制 .container 辨識欄結束的位置，以顯示放置在 .container 上的任何邊框或背景顏色。如果您的設計需要您從 .container 移除 .footer，就需要使用其他的清除方法。最可靠的方法是在最後的浮動欄之後 (但在 .container 結束之前) 加入 &lt;br class="clearfloat" /&gt; or &lt;div class="clearfloat"&gt;&lt;/div&gt;，這樣就會產生相同的清除效果。</p>
-    <h3>商標取代</h3>
-    <p>在此版面的 .header 中，會在您要放置商標的位置使用影像預留位置。建議您移除該預留位置，並使用自己的連結商標加以取代。 </p>
-    <p> 請注意，如果要使用「屬性」檢視窗使用 SRC 欄位導覽到商標影像 (而不是移除並取代預留位置)，則必須將行內背景和顯示屬性移除。這些行內樣式只會在瀏覽器中用來顯示商標預留位置，以便達到示範的目的。 </p>
-    <p>若要移除行內樣式，請確定「CSS 樣式」面板已設定為「目前」。選取該影像，然後在「CSS 樣式」面板的「屬性」窗格中，以滑鼠右鍵按一下顯示及背景屬性並加以刪除 (當然，您也可以直接到程式碼中刪除影像或預留位置的行內樣式)。</p>
-    <h4>背景</h4>
-    <p>就本質而言，任何 Div 上的背景顏色都只會顯示內容的長度。這代表如果您使用背景顏色或邊框來建立側欄，側欄將無法延伸整個頁尾的寬度，而會停止在內容結束處。如果 .content Div 總會包含較多的內容，您就可以在 .content Div 上放置邊框，將其與欄分隔。</p>
+    <h1 align="center">AMY</h1>
+    <div align="center">
+    <!-- #BeginDate format:fcCh2a -->2016年4月17日 星期日 0:03 AM<!-- #EndDate -->
+    <form align="center">
+      帳號<input type="text" name="" id="text1">
+      <br>
+      密碼<input type="text" name="t" id="text2">
+    <br>
+    <input type="submit" value="確定">
+    </form>
+    <a href="#">忘記密碼</a>
+    </div>
+    <div align="center">
+      
+    </div>
     <!-- end .content --></div>
   <div class="footer">
     <p>E-amil:xxx@gmail.com   Tel:0999-999-999   Hello-Word國際碼業集團   © 2016 EEIT85team03</p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
+<script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+</script>
 </body>
 </html>
