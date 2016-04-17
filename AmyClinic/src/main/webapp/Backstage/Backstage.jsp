@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>無標題文件</title>
+<title>AMY</title>
 <style type="text/css">
 <!--
 body {
@@ -135,7 +135,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
 <body>
 
 <div class="container">
-  <div class="header"><a href="#"><img src="http://zippy.gfycat.com/MedicalBrownFoxhound.gif" alt="在這裡插入商標" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background-color: #FFFFFF; display: block;" />
+  <div class="header"><img src="../images/title.jpg" alt="在這裡插入商標" name="Insert_logo"  id="Insert_logo" style="background-color: #FFFFFF;" />
     <!-- end .header --></div>
   <div class="sidebar1">
     <ul class="nav">
@@ -155,7 +155,14 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
   <div class="content">
     <h1 align="center">AMY</h1>
     <div align="center">
-    <!-- #BeginDate format:fcCh2a -->2016年4月17日 星期日 0:03 AM<!-- #EndDate -->
+<script type="text/javascript">
+    var d = new Date();
+    var theYear = d.getFullYear()-1911;
+    var theMonth = d.getMonth()+1;
+    var theDate = d.getDate();
+    
+    document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
+</script>
     <form align="center">
       帳號<input type="text" name="" id="text1">
       <br>
