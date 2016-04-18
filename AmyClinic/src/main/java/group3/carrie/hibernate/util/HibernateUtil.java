@@ -1,4 +1,3 @@
-
 package group3.carrie.hibernate.util;
 
 import org.hibernate.SessionFactory;
