@@ -1,4 +1,4 @@
-package group3.carrie.hibernate.util;
+package hibernate.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
