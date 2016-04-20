@@ -11,6 +11,7 @@
 		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/display.jsp</result>
 			<result name="input">/index.jsp</result>
+			<result name="login">/index.jsp</result>
 		</action>
 	</package>
 	

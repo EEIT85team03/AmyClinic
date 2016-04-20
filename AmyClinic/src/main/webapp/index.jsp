@@ -41,6 +41,7 @@
 							<s:textfield name="memberVO.name" label="User Name"  placeholder="User ID" />
 							<s:password name="memberVO.pwd" key="Password" />							
 							<s:submit value="Submit" method="login"/>
+							${message}
 						</s:form>
 					</li>		        
 				</ol>
