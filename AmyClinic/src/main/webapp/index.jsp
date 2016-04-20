@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -30,6 +31,20 @@
 					title="動子動" class="litimg" width="300px" /></a>
 
 			</section>
+<!-- 			Henry Struts2 testing -->
+			<section>
+			I am index.jsp
+
+				<ol>
+					<li><font color="blue"><b>Struts2 form test</b></font>
+						<s:form namespace="/login" action="login" >
+							<s:textfield name="name" label="Member Name"  value="Henry" />
+							<s:submit value="Submit" />
+						</s:form>
+					</li>		        
+				</ol>
+			</section>
+<!-- 			Henry Struts2 testing -->
 		</article>
 		<aside></aside>
 
