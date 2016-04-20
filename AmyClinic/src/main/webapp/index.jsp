@@ -31,22 +31,9 @@
 					title="動子動" class="litimg" width="300px" /></a>
 
 			</section>
-<!-- 			Henry Struts2 testing -->
-			<section>
-			I am index.jsp
-
-				<ol>
-					<li><font color="blue"><b>Struts2 login form test</b></font>
-						<s:form namespace="/login" action="login" >
-							<s:textfield name="memberVO.name" label="User Name"  placeholder="User ID" />
-							<s:password name="memberVO.pwd" key="Password" />							
-							<s:submit value="Submit" method="login"/>
-							${message}
-						</s:form>
-					</li>		        
-				</ol>
-			</section>
-<!-- 			Henry Struts2 testing -->
+<!-- Henry's test login -->
+		<a href="login/login.jsp">Login Test</a>
+<!-- Henry's test login -->
 		</article>
 		<aside></aside>
 
