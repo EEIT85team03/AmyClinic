@@ -6,8 +6,6 @@ import java.sql.*;
 import javax.persistence.*;
 
 
-
-
 // represents a single member
 @Entity 
 @Table(name = "Members")  
