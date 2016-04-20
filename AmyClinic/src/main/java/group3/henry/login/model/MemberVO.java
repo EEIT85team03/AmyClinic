@@ -3,8 +3,14 @@ package group3.henry.login.model;
 import java.io.Serializable;
 import java.sql.*;
 
-// represents a single member
+import javax.persistence.*;
 
+
+
+
+// represents a single member
+@Entity 
+@Table(name = "Members")  
 public class MemberVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -15,7 +21,7 @@ public class MemberVO implements Serializable {
 	private Date 	  birthday;
 	private String	  country;
 	private Character gender;
-	private String	  address;
+	private String	  addr;
 	private Integer   phone;
 	private Integer   height;
 	private Integer   mass;
@@ -35,7 +41,7 @@ public class MemberVO implements Serializable {
 	}	
 
 	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
-					Character gender, String address, Integer phone, Integer height, Integer mass,
+					Character gender, String addr, Integer phone, Integer height, Integer mass,
 					Blob photo, Boolean act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
 					String memo, Date join_date) { //all info
@@ -47,7 +53,7 @@ public class MemberVO implements Serializable {
 		this.birthday = birthday;
 		this.country = country;
 		this.gender = gender;
-		this.address = address;
+		this.addr = addr;
 		this.phone = phone;
 		this.height = height;
 		this.mass = mass;
@@ -70,6 +76,9 @@ public class MemberVO implements Serializable {
 		this.email = email;
 	}
 	
+	@Id  
+	@SequenceGenerator(name="midGen", allocationSize=1) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="midGen")       
 	public Integer getMid() {
 		return mid;
 	}
@@ -112,11 +121,11 @@ public class MemberVO implements Serializable {
 	public void setGender(Character gender) {
 		this.gender = gender;
 	}
-	public String getAddress() {
-		return address;
+	public String getAddr() {
+		return addr;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAddr(String addr) {
+		this.addr = addr;
 	}
 	public Integer getPhone() {
 		return phone;
