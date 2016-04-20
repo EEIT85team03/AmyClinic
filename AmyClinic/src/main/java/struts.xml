@@ -8,7 +8,7 @@
 	<constant name="struts.devMode" value="true" />
 	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
-		<action name="login" class="group3.henry.login.controller.practiceAction">
+		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/display.jsp</result>
 			<result name="input">/index.jsp</result>
 		</action>

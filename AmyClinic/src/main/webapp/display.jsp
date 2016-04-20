@@ -11,6 +11,8 @@
 <body>
 I am display.jsp
 
+You are logged in, ${requestScope.memberVO.name}! Your password is: ${requestScope.memberVO.pwd}
+
 <ul>
 	<li>Name = ${requestScope.name}  --Obtained via EL </li>
 	<li>Name = <s:property value="name"/>  --Obtained via OGNL </li>
