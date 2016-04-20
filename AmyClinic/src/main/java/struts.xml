@@ -5,15 +5,54 @@
 
 <struts>
 
+<!-- login package -->
 	<constant name="struts.devMode" value="true" />
 	
 	<package name="loginPackage" namespace="/login" extends="struts-default">
 		<action name="login" class="group3.henry.login.controller.LoginAction">
-			<result name="success">/display.jsp</result>
-			<result name="input">/index.jsp</result>
+			<result name="success">/login/success.jsp</result>
+<!-- 			<result name="input">/index.jsp</result> -->
 			<result name="login">/login/login.jsp</result>
 		</action>
 	</package>
 	
+
+<!-- Access controlled package --> 
+<!--     <package name="empPackage" namespace="/emp" extends="struts-default">	 -->
+<!-- 		<interceptors>		         -->
+<!-- 			   <interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />   -->
+<!-- 			   <interceptor-stack name="AuthenticationRequired">   -->
+<!-- 				     <interceptor-ref name="defaultStack" />       -->
+<!-- 				     <interceptor-ref name="authentication" />     -->
+<!-- 			   </interceptor-stack>		 -->
+<!-- 		</interceptors> -->
+				
+<!--         <default-interceptor-ref name="AuthenticationRequired" /> -->
+
+<!--         <global-results> -->
+<!-- 			<result name="login">/login/login.jsp</result> -->
+<!-- 		</global-results> -->
+		
+<!-- 	    <action name="myAction1" 	class="myAction1.MyAction1"> -->
+<!-- 			<result>/emp/select_page1.jsp</result> -->
+<!-- 		</action> -->
+        
+<!--         <action name="myAction2" 	class="myAction2.MyAction2"> -->
+<!-- 			<result>/emp/select_page2.jsp</result> -->
+<!-- 		</action> -->
+		
+<!-- 		<action name="*" > -->
+<!--               <result>/emp/{1}.jsp</result>                       -->
+<!--          </action> -->
+<!-- 	</package> -->
+	
+	
+<!-- Non-Access controlled package --> 
+<!-- 	<package name="NoLogin" namespace="/free" extends="struts-default"> -->
+<!--         <action name="HelloWorld" class="myFreeAction.HelloWorld"> -->
+<!--             <result>/free/HelloWorld.jsp</result> -->
+<!--         </action> -->
+<!--     </package> -->
+
 
 </struts>

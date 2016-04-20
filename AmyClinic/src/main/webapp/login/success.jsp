@@ -9,14 +9,15 @@
 <s:head theme="xhtml" />
 </head>
 <body>
-I am display.jsp
+<br>
+I am success.jsp <hr>
 
 You are logged in, ${requestScope.memberVO.name}! Your password is: ${requestScope.memberVO.pwd}
 
-<ul>
-	<li>Name = ${requestScope.name}  --Obtained via EL </li>
-	<li>Name = <s:property value="name"/>  --Obtained via OGNL </li>
-</ul>
+<!-- <ul> -->
+<%-- 	<li>Name = ${requestScope.name}  --Obtained via EL </li> --%>
+<%-- 	<li>Name = <s:property value="name"/>  --Obtained via OGNL </li> --%>
+<!-- </ul> -->
 
 </body>
 </html>
