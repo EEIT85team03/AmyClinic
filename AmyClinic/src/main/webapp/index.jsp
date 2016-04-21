@@ -33,10 +33,11 @@
 			</section>
 <!-- Henry's test login --><hr>
 		<a href="login/login.jsp">Login page</a><br>		
-		<a href="member/memberonly1.jsp">login required page 1</a><br>
-		<a href="member/memberonly2.jsp">login required page 2</a><br>
-		<a href="public/publicpage.jsp">login not required page</a><hr>
-<%-- 		<a href="<s:url action="free/HelloWorld"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a> --%>
+<!--                    	 namespace/action name                      target registered in struts.xml-->
+		<a href="<s:url action="member/member1"/>">login required page 1  -- member/memberonly1.jsp")</a><br>
+		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		
+<!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
+		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a>
 <!-- Henry's test login -->
 		</article>
 		<aside></aside>
