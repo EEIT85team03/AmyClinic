@@ -33,8 +33,8 @@
 			</section>
 <!-- Henry's test login --><hr>
 		<a href="login/login.jsp">Login page</a><br>		
-		<a href="login/login.jsp">login required page 1</a><br>
-		<a href="login/login.jsp">login required page 2</a><br>
+		<a href="member/memberonly1.jsp">login required page 1</a><br>
+		<a href="member/memberonly2.jsp">login required page 2</a><br>
 		<a href="public/publicpage.jsp">login not required page</a><hr>
 <%-- 		<a href="<s:url action="free/HelloWorld"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a> --%>
 <!-- Henry's test login -->
