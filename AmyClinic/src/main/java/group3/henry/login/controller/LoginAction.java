@@ -8,6 +8,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import group3.henry.login.model.Login_HB_DAO;
 import group3.henry.login.model.MemberVO;
 
 public class LoginAction extends ActionSupport{
@@ -28,7 +29,9 @@ public class LoginAction extends ActionSupport{
 		this.message = message;
 	}
 	private boolean allowUser(String id, String pw) {
-		if ("Henry".equals(id) && "123".equals(pw))
+		Login_HB_DAO login = new Login_HB_DAO();
+		memberVO = login.validate(id, pw);
+		if (memberVO!=null)
 			return true;
 		else
 			return false;
