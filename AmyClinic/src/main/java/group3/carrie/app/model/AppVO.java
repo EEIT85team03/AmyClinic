@@ -16,7 +16,7 @@ public class AppVO implements Serializable {
 	private MemberVO memberVO;
 	private Integer purpose;
 	private Timestamp apt_date;
-	private Integer procedureid;
+	private String procedureid;
 	private String descrip;
 	private Integer apt_status;
 	private Integer eid;
@@ -56,10 +56,10 @@ public class AppVO implements Serializable {
 	public void setApt_date(Timestamp apt_date) {
 		this.apt_date = apt_date;
 	}
-	public Integer getProcedureid() {
+	public String getProcedureid() {
 		return procedureid;
 	}
-	public void setProcedureid(Integer procedureid) {
+	public void setProcedureid(String procedureid) {
 		this.procedureid = procedureid;
 	}
 	public String getDescrip() {
