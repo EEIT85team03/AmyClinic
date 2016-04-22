@@ -8,7 +8,7 @@ import java.sql.*;
 import javax.persistence.*;
 
 
-@Entity  //要加上@Entity才能成為JPA的一個Entity類別
+@Entity
 @Table(name = "Appointments")
 public class AppVO implements Serializable {
 
