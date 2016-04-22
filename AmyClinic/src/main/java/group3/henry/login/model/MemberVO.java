@@ -1,16 +1,23 @@
 package group3.henry.login.model;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.sql.*;
+import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.persistence.*;
 
 
 // represents a single member
+@SuppressWarnings("serial")
 @Entity 
 @Table(name = "Members")  
 public class MemberVO implements Serializable {
-	private static final long serialVersionUID = 1L;
 	
 	private Integer   mid;
 	private String 	  name;
@@ -204,4 +211,41 @@ public class MemberVO implements Serializable {
 		this.join_date = join_date;
 	}
 	
+	public void getProperties() throws IllegalArgumentException, IllegalAccessException {
+		  Class<?> aClass = this.getClass();
+		  Field[] declaredFields = aClass.getDeclaredFields();
+		  Map<String, String> logEntries = new HashMap<>();
+
+		  for (Field field : declaredFields) {
+		    field.setAccessible(true);
+
+		    Object[] arguments = new Object[]{
+		      field.getName(),
+		      field.getType().getSimpleName(),
+		      String.valueOf(field.get(this))
+		    };
+
+		    String template = "- Property: {0} (Type: {1}, Value: {2})";
+		    String logMessage = System.getProperty("line.separator")
+		            + MessageFormat.format(template, arguments);
+
+		    logEntries.put(field.getName(), logMessage);
+		  }
+
+		  SortedSet<String> sortedLog = new TreeSet<>(logEntries.keySet());
+
+		  StringBuilder sb = new StringBuilder("Class properties:");
+
+		  Iterator<String> it = sortedLog.iterator();
+		  while (it.hasNext()) {
+		    String key = it.next();
+		    sb.append(logEntries.get(key));
+		  }
+
+		  System.out.println(sb.toString());
+		}
+	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException{
+		MemberVO vo = new MemberVO();
+		vo.getProperties();
+	}
 }

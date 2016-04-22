@@ -46,6 +46,7 @@ public class LoginAction extends ActionSupport{
 			HttpServletRequest request = ServletActionContext.getRequest(); // get HttpServletRequest
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
+			session.setAttribute("member", memberVO);
 			
 //			HttpServletResponse  response = ServletActionContext.getResponse(); 
 //			try {

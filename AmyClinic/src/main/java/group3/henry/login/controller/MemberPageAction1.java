@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class MemberPageAction1 extends ActionSupport {
 
+	private static final long serialVersionUID = 1L;
 	private String message;
 
 	public String execute() {
