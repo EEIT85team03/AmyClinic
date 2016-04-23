@@ -1,5 +1,7 @@
 package group3.carrie.orderItems.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,7 @@ import group3.carrie.product.model.ProductVO;
 
 @Entity
 @Table(name = "OrderItems")
-public class OrderItemsVO {
+public class OrderItemsVO implements Serializable {
 	private Integer id;
 	private Integer oid;
 	private Integer pid;

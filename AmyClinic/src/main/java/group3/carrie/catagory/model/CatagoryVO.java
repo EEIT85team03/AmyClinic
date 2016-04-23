@@ -2,6 +2,7 @@ package group3.carrie.catagory.model;
 
 import group3.carrie.product.model.ProductVO;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Catagory")
-public class CatagoryVO {
+public class CatagoryVO implements Serializable {
 	private Integer cid;
 	private String name;
 	private Set<ProductVO> pros = new HashSet<ProductVO>();

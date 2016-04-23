@@ -3,6 +3,7 @@ package group3.carrie.orders.model;
 import group3.carrie.orderItems.model.OrderItemsVO;
 import group3.henry.login.model.MemberVO;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +23,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Orders")
-public class OrdersVO {
+public class OrdersVO implements Serializable {
 	private Integer oid;
 //	private Integer mid;
 	private String recipient;

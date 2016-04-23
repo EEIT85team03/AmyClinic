@@ -3,6 +3,7 @@ package group3.carrie.product.model;
 import group3.carrie.catagory.model.CatagoryVO;
 import group3.carrie.orderItems.model.OrderItemsVO;
 
+import java.io.Serializable;
 import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +23,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Products")
-public class ProductVO {
+public class ProductVO implements Serializable {
 	
 	private Integer pid;
 	private String name;
