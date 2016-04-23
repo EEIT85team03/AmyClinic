@@ -18,12 +18,13 @@ public class AuthenticationInterceptor extends AbstractInterceptor {
 		ActionContext ctx = invocation.getInvocationContext();
 		Map<String, Object> session = ctx.getSession();
 		String account = (String) session.get("account"); 
-
+		
+		System.out.println("login interceptor!");
 		if (account == null) { 
 			HttpServletRequest request = ServletActionContext.getRequest();
 			String location = request.getRequestURI();
 			session.put("location", location);
-			ctx.put("prompt", "You are not logged in!"); 
+			ctx.put("message", "You are not logged in!"); 
 			return "login";
 		} else {
 			return invocation.invoke(); // passes control to the next intercepter

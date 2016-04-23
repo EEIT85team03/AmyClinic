@@ -8,6 +8,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import group3.henry.login.model.Login_HB_DAO;
 import group3.henry.login.model.MemberVO;
 
 public class LoginAction extends ActionSupport{
@@ -28,7 +29,9 @@ public class LoginAction extends ActionSupport{
 		this.message = message;
 	}
 	private boolean allowUser(String id, String pw) {
-		if ("Henry".equals(id) && "123".equals(pw))
+		Login_HB_DAO login = new Login_HB_DAO();
+		memberVO = login.validate(id, pw);
+		if (memberVO!=null)
 			return true;
 		else
 			return false;
@@ -43,6 +46,7 @@ public class LoginAction extends ActionSupport{
 			HttpServletRequest request = ServletActionContext.getRequest(); // get HttpServletRequest
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
+			session.setAttribute("member", memberVO);
 			
 //			HttpServletResponse  response = ServletActionContext.getResponse(); 
 //			try {
