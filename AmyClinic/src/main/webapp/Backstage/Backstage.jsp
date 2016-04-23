@@ -163,7 +163,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
     
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
-    <form align="center">
+    <form  method="post">
       帳號<input type="text" name="" id="text1">
       <br>
       密碼<input type="text" name="t" id="text2">
@@ -177,7 +177,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
     </div>
     <!-- end .content --></div>
   <div class="footer">
-    <p>E-amil:xxx@gmail.com   Tel:0999-999-999   Hello-Word國際碼業集團   © 2016 EEIT85team03</p>
+    <p>E-amil:xxx@gmail.com   Tel:0999-999-999   Hello-Word國際碼業集團   © 2016 EEIT85team03<a href="../index.jsp">index</a></p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 <script type="text/javascript">

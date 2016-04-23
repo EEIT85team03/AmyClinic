@@ -45,7 +45,7 @@
 
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03</p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/Backstage.jsp">Backstage</a><br></p>
 		</footer>
 	</div>
 	<!--end all-->
