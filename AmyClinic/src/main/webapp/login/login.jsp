@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- 			Henry Struts2 testing -->
-	I am login/login.jsp
+	I am login/login.jsp<hr>
 	
 	User: Henry Password: 123
 	<ul>
