@@ -32,7 +32,8 @@
 
 			</section>
 <!-- Henry's test login --><hr>
-		<a href="login/login.jsp">Login page</a><br>		
+		<a href="login/login.jsp">Login page</a><br>
+		<a href="register/register.jsp">Register a new account</a><br>		
 <!--                    	 namespace/action name                      target registered in struts.xml-->
 		<a href="<s:url action="member/member1"/>">login required page 1  -- member/memberonly1.jsp")</a><br>
 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		

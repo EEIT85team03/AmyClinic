@@ -1,6 +1,5 @@
 package group3.henry.login.model;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface LoginDAO_Interface {

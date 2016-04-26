@@ -4,16 +4,22 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<!-- ************* -->
-<!-- login package -->
-<!-- ************* -->
+<!-- ********************** -->
+<!-- login/Register package: -->
+<!-- Intercepts password and encrypts them -->
+<!-- ********************** -->
 	<constant name="struts.devMode" value="true" />
 	
-	<package name="loginPackage" namespace="/login" extends="struts-default">
+	<package name="logRegPackage" namespace="/logreg" extends="struts-default">
+		
 		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/login/success.jsp</result>
-<!-- 			<result name="input">/index.jsp</result> -->
 			<result name="login">/login/login.jsp</result>
+		</action>
+		
+		<action name="register" class="group3.henry.register.controller.RegisterAction">
+			<result name="success">/register/regsuccess.jsp</result>
+			<result name="input">/register/register.jsp</result>
 		</action>
 	</package>
 
