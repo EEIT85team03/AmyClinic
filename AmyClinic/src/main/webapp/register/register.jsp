@@ -27,17 +27,20 @@
 <body>
 	<ul>
 		<li><b><font color="blue">Struts2 Registration Form </font>-<font color="red"> *Required Information</font></b> 		
-			<s:form namespace="/logreg" action="register">
-				<s:textfield name="memberVO.name" label="User Name:" placeholder="User ID" required="true"/>
-				<s:password name="memberVO.pwd" label="Password:" placeholder="Password" required="true"/>
-				<s:textfield name="memberVO.email" label="Email:" placeholder="abc@xyz.com" required="true" />				
-				<sx:datetimepicker type="date"  name="memberVO.birthday" label="Birthday:" displayFormat="MM/dd/yyyy"   
+			<s:form namespace="/logreg" action="register" enctype="multipart/form-data">
+				<s:textfield name="memberVO.name" label="User Name" placeholder="User ID" required="true"/>
+				<s:password name="memberVO.pwd" label="Password" placeholder="Password" required="true"/>
+				<s:textfield name="memberVO.email" label="Email" placeholder="abc@xyz.com" required="true" />				
+				<sx:datetimepicker type="date"  name="memberVO.birthday" label="Birthday" displayFormat="MM/dd/yyyy"   
    								   id="birthdayfield" language="en-US" cssStyle="background:cyan; font-size:13.5px" 
    								   value="%{'today'}"/>											
-				<s:textfield name="memberVO.country" label="Country:" placeholder="Taiwan" />
-				<s:textfield name="memberVO.gender" label="Gender:" placeholder="Male, Female" required="true" />
-				<s:textfield name="memberVO.addr" label="Address:" placeholder="123 Somewhere!" required="true" />
-				<s:textfield name="memberVO.phone" label="Phone:" placeholder="0912345678" required="true" />
+				<s:textfield name="memberVO.country" label="Country" placeholder="Taiwan" />
+				<s:textfield name="memberVO.gender" label="Gender" placeholder="Male, Female" required="true" />
+				<s:textfield name="memberVO.addr" label="Address" placeholder="123 Somewhere!" required="true" />
+				<s:textfield name="memberVO.phone" label="Phone" placeholder="0912345678" required="true" />
+				<s:textfield name="memberVO.height" label="Height" placeholder="180cm" />
+				<s:textfield name="memberVO.mass" label="Weight" placeholder="60kg" />
+				<s:file name="memberVO.photo" label="Photo" size="40" />
 				
 				<s:submit value="Submit" method="input" />
 			</s:form>
