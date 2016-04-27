@@ -12,7 +12,9 @@ public class SqlDateConverter extends StrutsTypeConverter {
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		DateFormat[] SqlDateFormat = { 
 				new SimpleDateFormat("yy-MM-dd"),	new SimpleDateFormat("yyyy-MM-dd"),
-				new SimpleDateFormat("yy/MM/dd"),	new SimpleDateFormat("yyyy/MM/dd") 
+				new SimpleDateFormat("yy/MM/dd"),	new SimpleDateFormat("yyyy/MM/dd"),
+				new SimpleDateFormat("MM-dd-yy"),	new SimpleDateFormat("MM-dd-yyyy"),
+				new SimpleDateFormat("MM/dd/yy"),   new SimpleDateFormat("MM/dd/yyyy")
 		};
 		for (DateFormat df : SqlDateFormat)
 			try {

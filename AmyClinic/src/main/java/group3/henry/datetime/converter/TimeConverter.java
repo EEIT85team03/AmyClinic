@@ -12,7 +12,8 @@ public class TimeConverter extends StrutsTypeConverter {
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		DateFormat[] TimeFormat = { 
                 new SimpleDateFormat("HH:mm:ssss"),  new SimpleDateFormat("HH:mm"), 
-                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"),  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss") //rfc3399
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"),  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"), 
+                new SimpleDateFormat("MM/dd/yyyy HH:mm:ss"),  new SimpleDateFormat("MM-dd-yyyy'T'HH:mm:ss") 
         };
 		for (DateFormat df : TimeFormat)
 		    try {

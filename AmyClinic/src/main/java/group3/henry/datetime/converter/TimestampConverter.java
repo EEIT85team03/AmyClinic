@@ -12,7 +12,11 @@ public class TimestampConverter extends StrutsTypeConverter {
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		DateFormat[] TimestampFormat = {
 				new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"),
-				new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss") // rfc3399
+				new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"),
+				new SimpleDateFormat("MM-dd-yyyy HH:mm:ss"),
+				new SimpleDateFormat("MM-dd-yyyy'T'HH:mm:ss"),
+				new SimpleDateFormat("MM/dd/yyyy HH:mm:ss"),
+				new SimpleDateFormat("MM/dd/yyyy'T'HH:mm:ss")
 		};
 		for (DateFormat df : TimestampFormat)
 			try {
