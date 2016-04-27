@@ -11,7 +11,7 @@ public class HibernateUtil {
     private static final SessionFactory sessionFactory;
     static {
         try {
-        	//�ϥ�Annotation�ɡA��Ӫ�Configuration()���O�n�אּAnnotationConfiguration���O�A�ҥH�n��g HibernateUtil���O
+        	//使用Annotation時，原來的Configuration()類別要改為AnnotationConfiguration類別，所以要改寫 HibernateUtil類別
         	//sessionFactory = new Configuration().configure().buildSessionFactory();
             sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
         } catch (Throwable ex) {

@@ -126,6 +126,9 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
 	font-size: 1px;
 	line-height: 0px;
 }
+form {
+	 text-align:center;
+}
 -->
 </style>
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
@@ -163,7 +166,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* 這會同時變更滑鼠及
     
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
-    <form align="center">
+    <form>
       帳號<input type="text" name="" id="text1">
       <br>
       密碼<input type="text" name="t" id="text2">

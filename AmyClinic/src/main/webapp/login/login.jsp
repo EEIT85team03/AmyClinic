@@ -20,7 +20,7 @@
 				<s:submit value="Submit" method="login" />
 			</s:form>
 		</li>
-		<div style="color:red;">${message}</div>
+		<li><div style="color:red;">${message}</div></li>
 	</ul>
 	
 <!-- 			Henry Struts2 testing -->
