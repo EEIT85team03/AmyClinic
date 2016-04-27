@@ -4,8 +4,8 @@ GO
 DROP TABLE Score;
 DROP TABLE Chat;
 DROP TABLE Appointments;
-DROP TABLE Employees;
 DROP TABLE Schedule;
+DROP TABLE Employees;
 DROP TABLE OrderItems;
 DROP TABLE Orders;
 DROP TABLE Products;
@@ -96,17 +96,6 @@ CREATE TABLE OrderItems
 --  discount		DECIMAL(2)		DEFAULT 0,
 );
 
-CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
-( 
-  eid			DECIMAL(4)		IDENTITY(1000,1) PRIMARY KEY, 
-  -- daysofweek	??
-  c_date		DATE			NOT NULL,
-  c_hours		VARCHAR(13)		NOT NULL,
-  appt_num		DECIMAL(3)		NOT NULL,
-  appt_status	DECIMAL(1)		DEFAULT 1, -- 1 = Normal, 0 = Stopped
-  memo			NVARCHAR(300)	DEFAULT ' ',  
-);
-
 CREATE TABLE Employees
 (
   eid			DECIMAL(5)		IDENTITY PRIMARY KEY,
@@ -115,6 +104,16 @@ CREATE TABLE Employees
   education		NVARCHAR(500)	NOT NULL,
   experience	NVARCHAR(500)	NOT NULL,
   specialty		NVARCHAR(500)	NOT NULL,
+);
+
+CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
+( 
+  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees,   
+  c_date		DATE			NOT NULL,
+  c_hours		VARCHAR(13)		NOT NULL,
+  appt_num		DECIMAL(3)		NOT NULL,
+  appt_status	DECIMAL(1)		DEFAULT 1, -- 1 = Normal, 0 = Stopped
+  memo			NVARCHAR(300)	DEFAULT ' ',  
 );
 
 CREATE TABLE Appointments
