@@ -14,7 +14,9 @@ public class RegisterDAO implements RegisterDAO_Interface {
 	private MemberDAO dao = new MemberDAO();
 	
 	@Override
-	public void addMember(MemberVO memberVO) {		
+	public void addMember(MemberVO memberVO) {	
+		memberVO.setAct_status(1);
+		
 		dao.insert(memberVO);
 		return;
 	}
