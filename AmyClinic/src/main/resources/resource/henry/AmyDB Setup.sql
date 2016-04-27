@@ -1,6 +1,10 @@
 USE AmyDB
 GO
 
+
+DROP TABLE AppointmentDetail;
+DROP TABLE Procedures;
+DROP TABLE ProcedureType;
 DROP TABLE Score;
 DROP TABLE Chat;
 DROP TABLE Appointments;
@@ -31,9 +35,9 @@ CREATE TABLE Members(
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARBINARY(MAX)	,
-  act_status	DECIMAL(1)		NOT NULL,	-- 1 = active, 0 = inactive    
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
-  num_treatment	DECIMAL(4)		Default 0,  -- number of times client received treatments
+  num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
   total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
   reward_pts	DECIMAL(4)		DEFAULT 0,
@@ -128,6 +132,26 @@ CREATE TABLE Appointments
  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 
 );
 
+CREATE TABLE ProcedureType
+(
+  pType_id		DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL
+);
+
+CREATE TABLE Procedures
+(
+  procedure_id	DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL,
+  pType_id		DECIMAL(3)		FOREIGN KEY REFERENCES ProcedureType,
+);
+
+CREATE TABLE AppointmentDetail
+( 
+  ad_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
+  procedure_id	DECIMAL(3)		FOREIGN KEY REFERENCES Procedures,
+  aid			DECIMAL(6)		FOREIGN KEY REFERENCES Appointments,
+);
+
 CREATE TABLE Chat 
 ( 
   chat_id		DECIMAL(7)		IDENTITY(1,1) PRIMARY KEY,
@@ -138,7 +162,8 @@ CREATE TABLE Chat
 );
 
 CREATE TABLE Score
-(  
+(
+ score_id		DECIMAL(4)		IDENTITY PRIMARY KEY,  
  mid			DECIMAL(8),
  eid			DECIMAL(5),
  scores			DECIMAL(1)		NOT NULL,		
@@ -146,8 +171,7 @@ CREATE TABLE Score
  score_date		DATETIME		DEFAULT GETDATE(),
 
  FOREIGN KEY (mid) REFERENCES Members(mid),
- FOREIGN KEY (eid) REFERENCES Employees(eid),
- CONSTRAINT pk_Customer_Id PRIMARY KEY (mid , eid)
+ FOREIGN KEY (eid) REFERENCES Employees(eid), 
  
 );
 GO
@@ -185,3 +209,6 @@ select * from Employees
 select * from Catagory
 select * from Chat
 select * from Score
+select * from Procedures;
+select * from ProcedureType;
+select * from AppointmentDetail;
