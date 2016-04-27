@@ -21,6 +21,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//對應到Orders table
 @Entity
 @Table(name = "Orders")
 public class OrdersVO implements Serializable {
@@ -37,9 +38,17 @@ public class OrdersVO implements Serializable {
 	private Integer payment;
 	private Integer discount;
 	
+	//訂單與會員是多對一的關係
 	private MemberVO memberVO;
+	//訂單與訂單明細是一對多的關係
 	private Set<OrderItemsVO> orderItsVO = new HashSet<OrderItemsVO>();
 	
+	//沒傳參數的建構子
+	public OrdersVO() {
+
+	}
+	
+	//id產生
 	@Id  
 	@SequenceGenerator(name="oidGen", allocationSize=1) 
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="oidGen")
@@ -110,6 +119,7 @@ public class OrdersVO implements Serializable {
 		this.discount = discount;
 	}
 	
+	//多對一
 	@ManyToOne
 	@JoinColumn(name = "mid") 
 	public MemberVO getMemberVO() {
@@ -119,6 +129,7 @@ public class OrdersVO implements Serializable {
 		this.memberVO = memberVO;
 	}
 	
+	//一對多
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="ordersVO")
 	@OrderBy("id asc")
 	public Set<OrderItemsVO> getOrderItsVO() {

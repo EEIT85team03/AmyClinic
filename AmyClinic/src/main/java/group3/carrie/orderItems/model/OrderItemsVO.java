@@ -14,19 +14,28 @@ import javax.persistence.Table;
 import group3.carrie.orders.model.OrdersVO;
 import group3.carrie.product.model.ProductVO;
 
+//對應到OrderItems table
 @Entity
 @Table(name = "OrderItems")
 public class OrderItemsVO implements Serializable {
 	private Integer id;
-	private Integer oid;
-	private Integer pid;
+//	private Integer oid;
+//	private Integer pid;
 	private Integer quantity;
 	private Integer price_per;
 //	private Integer discount;
 	
+	//訂單明細與訂單是多對一的關係
 	private OrdersVO ordersVO;
+	//訂單明細與產品是多對一的關係
 	private ProductVO productVO;
+	
+	//沒傳參數的建構子
+	public OrderItemsVO() {
 
+	}
+
+	//id產生
 	@Id  
 	@SequenceGenerator(name="idGen", allocationSize=1) 
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="idGen")
@@ -35,18 +44,6 @@ public class OrderItemsVO implements Serializable {
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public Integer getOid() {
-		return oid;
-	}
-	public void setOid(Integer oid) {
-		this.oid = oid;
-	}
-	public Integer getPid() {
-		return pid;
-	}
-	public void setPid(Integer pid) {
-		this.pid = pid;
 	}
 	public Integer getQuantity() {
 		return quantity;
@@ -61,19 +58,21 @@ public class OrderItemsVO implements Serializable {
 		this.price_per = price_per;
 	}
 	
+	//多對一
 	@ManyToOne
 	@JoinColumn(name = "oid") 
 	public OrdersVO getOrdersVO() {
-		return ordersVO;
+		return this.ordersVO;
 	}
 	public void setOrdersVO(OrdersVO ordersVO) {
 		this.ordersVO = ordersVO;
 	}
 	
+	//多對一
 	@ManyToOne
 	@JoinColumn(name = "pid") 
 	public ProductVO getProductVO() {
-		return productVO;
+		return this.productVO;
 	}
 	public void setProductVO(ProductVO productVO) {
 		this.productVO = productVO;
