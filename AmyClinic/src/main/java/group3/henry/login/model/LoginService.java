@@ -1,24 +1,14 @@
 package group3.henry.login.model;
 
-import org.hibernate.*;
-
-import hibernate.util.HibernateUtil;
-
-import java.sql.SQLException;
 import java.util.*;
 
-import javax.naming.NamingException;
-
 public class LoginService implements LoginService_Interface {
-
-	private static final String GET_ALL_STMT = "from MemberVO order by mid";
-
+	static private MemberDAO dao = new MemberDAO();
 	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
 
 	public LoginService() {
-		if (memberList.isEmpty()) {
-			memberList = this.getAll(); 
-		}
+		if (memberList.isEmpty()) 
+			memberList = this.getAll(); 	
 	}
 	
 	public MemberVO validate(String id, String pw) {			
@@ -38,27 +28,23 @@ public class LoginService implements LoginService_Interface {
 	
 	
 	@Override
-	public List<MemberVO> getMemberList() { return memberList;};
+	public List<MemberVO> getMemberList() { 
+		return memberList;
+	}
 	
 	@Override
-	public void addNewMember(MemberVO memberVO){memberList.add(memberVO);};
+	public void addNewMember(MemberVO memberVO){
+		memberList.add(memberVO);
+	}
 	
 	public List<MemberVO> getAll() {
 		List<MemberVO> list = null;
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		try {
-			session.beginTransaction();
-			Query query = session.createQuery(GET_ALL_STMT);
-			list = query.list();
-			session.getTransaction().commit();
-		} catch (RuntimeException ex) {
-			session.getTransaction().rollback();
-			throw ex;
-		}
+		list = dao.getAll();
 		return list;
 	}
 	
-	public static void main(String[] args) throws NamingException, SQLException {
+	//testing
+	public static void main(String[] args){
 
 		LoginService dao = new LoginService();
 		
