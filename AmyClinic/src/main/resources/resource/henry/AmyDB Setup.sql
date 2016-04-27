@@ -1,6 +1,10 @@
 USE AmyDB
 GO
 
+
+DROP TABLE ProcedureItems;
+DROP TABLE Procedures;
+DROP TABLE ProcedureType;
 DROP TABLE Score;
 DROP TABLE Chat;
 DROP TABLE Appointments;
@@ -128,6 +132,26 @@ CREATE TABLE Appointments
  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 
 );
 
+CREATE TABLE ProcedureType
+(
+  pType_id		DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL
+);
+
+CREATE TABLE Procedures
+(
+  procedure_id	DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL,
+  pType_id		DECIMAL(3)		FOREIGN KEY REFERENCES ProcedureType,
+);
+
+CREATE TABLE ProcedureItems
+( 
+  pi_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
+  procedure_id	DECIMAL(3)		FOREIGN KEY REFERENCES Procedures,
+  aid			DECIMAL(6)		FOREIGN KEY REFERENCES Appointments,
+);
+
 CREATE TABLE Chat 
 ( 
   chat_id		DECIMAL(7)		IDENTITY(1,1) PRIMARY KEY,
@@ -185,3 +209,6 @@ select * from Employees
 select * from Catagory
 select * from Chat
 select * from Score
+select * from Procedures;
+select * from ProcedureType;
+select * from ProcedureItems;
