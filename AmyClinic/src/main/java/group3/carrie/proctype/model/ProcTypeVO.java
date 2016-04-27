@@ -1,6 +1,6 @@
-package group3.carrie.catagory.model;
+package group3.carrie.proctype.model;
 
-import group3.carrie.product.model.ProductVO;
+import group3.carrie.proc.model.ProcVO;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -17,29 +17,29 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-//對應到Catagory table
+//對應到ProcedureType table
 @Entity
-@Table(name = "Catagory")
-public class CatagoryVO implements Serializable {
-	private Integer cid;
+@Table(name = "ProcedureType")
+public class ProcTypeVO implements Serializable {
+	private Integer pType_id;
 	private String name;
-	//產品分類與產品是一對多的關係
-	private Set<ProductVO> pros = new HashSet<ProductVO>();
+	//療程分類與療程是一對多的關係
+	private Set<ProcVO> procVO=new HashSet<ProcVO>();
 	
 	//沒傳參數的建構子
-	public CatagoryVO(){
-		
+	public ProcTypeVO() {
+
 	}
 	
 	//id產生
 	@Id  
-	@SequenceGenerator(name="cidGen", allocationSize=1) 
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="cidGen") 
-	public Integer getCid() {
-		return cid;
+	@SequenceGenerator(name="pTypeidGen", allocationSize=1) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="pTypeidGen")
+	public Integer getpType_id() {
+		return pType_id;
 	}
-	public void setCid(Integer cid) {
-		this.cid = cid;
+	public void setpType_id(Integer pType_id) {
+		this.pType_id = pType_id;
 	}
 	public String getName() {
 		return name;
@@ -50,12 +50,12 @@ public class CatagoryVO implements Serializable {
 	
 	//一對多
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="cataVO")
-	@OrderBy("pid asc")
-	public Set<ProductVO> getPros() {
-		return this.pros;
+	@OrderBy("procedure_id asc")
+	public Set<ProcVO> getProcVO() {
+		return this.procVO;
 	}
-	public void setPros(Set<ProductVO> pros) {
-		this.pros = pros;
+	public void setProcVO(Set<ProcVO> procVO) {
+		this.procVO = procVO;
 	}
 	
 	

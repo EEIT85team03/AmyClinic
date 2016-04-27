@@ -21,6 +21,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//對應到Products table
 @Entity
 @Table(name = "Products")
 public class ProductVO implements Serializable {
@@ -36,9 +37,17 @@ public class ProductVO implements Serializable {
 	private String ingredients;
 	//private Date date_entered;
 	
+	//產品與產品分類是多對一的關係
 	private CatagoryVO cataVO;
+	//產品與產品明細是一對多的關係
 	private Set<OrderItemsVO> orderIts=new HashSet<OrderItemsVO>();
 	
+	//沒傳參數的建構子
+	public ProductVO() {
+
+	}
+	
+	//id產生
 	@Id  
 	@SequenceGenerator(name="pidGen", allocationSize=1) 
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="pidGen")
@@ -91,6 +100,7 @@ public class ProductVO implements Serializable {
 		this.ingredients = ingredients;
 	}
 	
+	//多對一
 	@ManyToOne
 	@JoinColumn(name = "cid") 
 	public CatagoryVO getCataVO() {
@@ -100,6 +110,7 @@ public class ProductVO implements Serializable {
 		this.cataVO = cataVO;
 	}
 	
+	//一對多
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="productVO")
 	@OrderBy("id asc")
 	public Set<OrderItemsVO> getOrderIts() {
