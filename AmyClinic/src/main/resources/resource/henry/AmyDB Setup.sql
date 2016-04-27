@@ -147,7 +147,7 @@ CREATE TABLE Procedures
 
 CREATE TABLE AppointmentDetail
 ( 
-  pi_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
+  ad_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
   procedure_id	DECIMAL(3)		FOREIGN KEY REFERENCES Procedures,
   aid			DECIMAL(6)		FOREIGN KEY REFERENCES Appointments,
 );
