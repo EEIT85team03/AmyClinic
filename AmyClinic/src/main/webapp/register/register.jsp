@@ -34,7 +34,9 @@
 				<sx:datetimepicker type="date"  name="memberVO.birthday" label="Birthday" displayFormat="MM/dd/yyyy"   
    								   id="birthdayfield" language="en-US" cssStyle="background:cyan; font-size:13.5px"    								   
    								   value="%{'2003-01-01'}"/>											
-				<s:textfield name="memberVO.country" label="Country" placeholder="Taiwan" />
+<%-- 				<s:textfield name="memberVO.country" label="Country" placeholder="Taiwan" /> --%>
+				<s:select name = "memberVO.country" headerKey="" headerValue="Select Country" label="Country" 
+    					  list="#{'Taiwan':'Taiwan','United States':'United States', 'Japan':'Japan','Korea':'Korea'}" />   			    
     			<s:select name = "memberVO.gender" headerKey="" headerValue="Select Gender" label="Gender" 
     					  list="#{'M':'Male','F':'Female'}" required="true" />   			    
 				<s:textfield name="memberVO.addr" label="Address" placeholder="123 Somewhere!" required="true" />
