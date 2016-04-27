@@ -162,7 +162,8 @@ CREATE TABLE Chat
 );
 
 CREATE TABLE Score
-(  
+(
+ score_id		DECIMAL(4)		IDENTITY PRIMARY KEY,  
  mid			DECIMAL(8),
  eid			DECIMAL(5),
  scores			DECIMAL(1)		NOT NULL,		
@@ -170,8 +171,7 @@ CREATE TABLE Score
  score_date		DATETIME		DEFAULT GETDATE(),
 
  FOREIGN KEY (mid) REFERENCES Members(mid),
- FOREIGN KEY (eid) REFERENCES Employees(eid),
- CONSTRAINT pk_Customer_Id PRIMARY KEY (mid , eid)
+ FOREIGN KEY (eid) REFERENCES Employees(eid), 
  
 );
 GO
