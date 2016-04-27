@@ -42,7 +42,7 @@
 				<s:textfield name="memberVO.mass" label="Weight" placeholder="60kg" />
 				<s:file name="memberVO.photo" label="Photo" size="40" />
 				
-				<s:submit value="Submit" method="execute" />
+				<s:submit value="Submit" method="register" />
 			</s:form>
 		</li>		
 	</ul>
