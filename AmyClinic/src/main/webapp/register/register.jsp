@@ -32,10 +32,11 @@
 				<s:password name="memberVO.pwd" label="Password" placeholder="Password" required="true"/>
 				<s:textfield name="memberVO.email" label="Email" placeholder="abc@xyz.com" required="true" />				
 				<sx:datetimepicker type="date"  name="memberVO.birthday" label="Birthday" displayFormat="MM/dd/yyyy"   
-   								   id="birthdayfield" language="en-US" cssStyle="background:cyan; font-size:13.5px" 
-   								   value="%{'today'}"/>											
+   								   id="birthdayfield" language="en-US" cssStyle="background:cyan; font-size:13.5px"    								   
+   								   value="%{'2003-01-01'}"/>											
 				<s:textfield name="memberVO.country" label="Country" placeholder="Taiwan" />
-				<s:textfield name="memberVO.gender" label="Gender" placeholder="Male, Female" required="true" />
+    			<s:select name = "memberVO.gender" headerKey="" headerValue="Select Gender" label="Gender" 
+    					  list="#{'M':'Male','F':'Female'}" required="true" />   			    
 				<s:textfield name="memberVO.addr" label="Address" placeholder="123 Somewhere!" required="true" />
 				<s:textfield name="memberVO.phone" label="Phone" placeholder="0912345678" required="true" />
 				<s:textfield name="memberVO.height" label="Height" placeholder="180cm" />
