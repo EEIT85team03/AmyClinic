@@ -2,7 +2,7 @@ USE AmyDB
 GO
 
 
-DROP TABLE ProcedureItems;
+DROP TABLE AppointmentDetail;
 DROP TABLE Procedures;
 DROP TABLE ProcedureType;
 DROP TABLE Score;
@@ -35,9 +35,9 @@ CREATE TABLE Members(
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARBINARY(MAX)	,
-  act_status	DECIMAL(1)		NOT NULL,	-- 1 = active, 0 = inactive    
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
-  num_treatment	DECIMAL(4)		Default 0,  -- number of times client received treatments
+  num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
   total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
   reward_pts	DECIMAL(4)		DEFAULT 0,
@@ -145,7 +145,7 @@ CREATE TABLE Procedures
   pType_id		DECIMAL(3)		FOREIGN KEY REFERENCES ProcedureType,
 );
 
-CREATE TABLE ProcedureItems
+CREATE TABLE AppointmentDetail
 ( 
   pi_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
   procedure_id	DECIMAL(3)		FOREIGN KEY REFERENCES Procedures,
@@ -211,4 +211,4 @@ select * from Chat
 select * from Score
 select * from Procedures;
 select * from ProcedureType;
-select * from ProcedureItems;
+select * from AppointmentDetail;
