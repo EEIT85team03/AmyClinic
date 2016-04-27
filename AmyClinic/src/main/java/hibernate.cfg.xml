@@ -36,7 +36,8 @@
 
 		<!-- 物件與資料庫表格映射文件，mapping屬性改class，值為類別全名 -->
 		<mapping class="group3.henry.login.model.MemberVO"/>
-	
+		<mapping class="group3.nick.score.model.ScoreVO"/>
+		
 <!-- 		<mapping class="com.dept.model.DeptVO" /> -->
 <!--         <mapping class="com.emp.model.EmpVO" /> -->
 
