@@ -4,6 +4,10 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+
+<!-- specifies the properties file to use for retrieving resources (I18N) -->
+<constant name="struts.custom.i18n.resources" value="global" />
+
 <!-- ********************** -->
 <!-- login/Register package: -->
 <!-- Intercepts password and encrypts them -->

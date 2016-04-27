@@ -9,6 +9,6 @@ import java.sql.SQLException;
 public interface RegisterDAO_Interface {
 	public int saveMember(MemberVO memberVO, InputStream is, long size, String filename)
 	    throws SQLException ;
-	public boolean idExists(String id) throws IOException;
+	public boolean emailExists(String id);
 
 }

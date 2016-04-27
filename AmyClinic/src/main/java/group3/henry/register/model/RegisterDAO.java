@@ -1,15 +1,28 @@
-//package group3.henry.register.model;
-//
-//import group3.henry.login.model.MemberVO;
-//
-//import java.io.*;
-//import java.sql.*;
-//import java.util.*;
-//
-//import javax.naming.*;
-//import javax.sql.*;
-//
-//public class RegisterDAO implements RegisterDAO_Interface {
+package group3.henry.register.model;
+
+import group3.henry.login.model.MemberVO;
+
+import java.io.*;
+import java.sql.*;
+import java.util.*;
+
+import javax.naming.*;
+import javax.sql.*;
+
+public class RegisterDAO implements RegisterDAO_Interface {
+
+	@Override
+	public int saveMember(MemberVO memberVO, InputStream is, long size,
+			String filename) throws SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean emailExists(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 //	private List<MemberVO> memberList;
 //	LoginServiceDB lsdb;
 //	private DataSource ds = null;
@@ -91,4 +104,4 @@
 //		}
 //		return r;
 //	}
-//}
+}

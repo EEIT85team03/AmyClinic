@@ -23,8 +23,7 @@ public class SqlDateConverter extends StrutsTypeConverter {
 				return new java.sql.Date(date.getTime());
 			} catch (ParseException e) {
 				//e.printStackTrace();
-				//System.out.println("Invalid format - ��ܤ����T");
-				//throw new TypeConversionException("Invalid format - ��ܤ����T");
+				System.out.println("Invalid Date Format !! --> SqlDateConverter.java");
 			}
 		return null;
 	}
@@ -36,12 +35,16 @@ public class SqlDateConverter extends StrutsTypeConverter {
 	}
 
 	public static void main(String args[]) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yy");
+//		new SimpleDateFormat("MM-dd-yyyy")
+//		new SimpleDateFormat("MM/dd/yy"),   new SimpleDateFormat("MM/dd/yyyy")
+		//SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
 		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		//SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd");
 		//SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		try {
-			java.util.Date date = (java.util.Date) sdf.parse("99-07-31");
+			java.util.Date date = (java.util.Date) sdf.parse("04-27-16");
+			//java.util.Date date = (java.util.Date) sdf.parse("99-07-31");
 			//java.util.Date date = (java.util.Date) sdf.parse("1999-07-31");
 			//java.util.Date date = (java.util.Date) sdf.parse("99/07/31");
 			//java.util.Date date = (java.util.Date) sdf.parse("1999/07/31");
