@@ -26,8 +26,8 @@
 </head>
 <body>
 	<ul>
-		<li><b><font color="blue">Struts2 Registration Form </font>-<font color="red"> *Required Information</font></b> 		
-			<s:form namespace="/logreg" action="register" enctype="multipart/form-data">
+		<li><b><font color="blue">Struts2 TEST Registration Form </font>-<font color="red"> *Required Information</font></b> 		
+			<s:form namespace="/logreg" action="register" enctype="multipart/form-data" method="post">
 				<s:textfield name="memberVO.name" label="User Name" placeholder="User ID" required="true"/>
 				<s:password name="memberVO.pwd" label="Password" placeholder="Password" required="true"/>
 				<s:textfield name="memberVO.email" label="Email" placeholder="abc@xyz.com" required="true" />				
@@ -42,7 +42,7 @@
 				<s:textfield name="memberVO.mass" label="Weight" placeholder="60kg" />
 				<s:file name="memberVO.photo" label="Photo" size="40" />
 				
-				<s:submit value="Submit" method="input" />
+				<s:submit value="Submit" method="execute" />
 			</s:form>
 		</li>		
 	</ul>
