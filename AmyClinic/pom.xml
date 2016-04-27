@@ -28,7 +28,9 @@
 			<artifactId>struts2-dojo-plugin</artifactId>
 			<version>2.3.4</version>
 		</dependency>
-<!-- 	Struts2    -->
+<!-- 	End Struts2    -->
+		
+<!-- 		Alternative JDBC drivers (because, sqljdbc4.jar sucks!) -->
 		<dependency>
 			<groupId>net.sourceforge.jtds</groupId>
 			<artifactId>jtds</artifactId>
@@ -132,4 +134,3 @@
 	</build>
 
 </project>
-

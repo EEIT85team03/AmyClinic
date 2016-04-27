@@ -7,8 +7,7 @@ import java.io.InputStream;
 import java.sql.SQLException;
 
 public interface RegisterDAO_Interface {
-	public int saveMember(MemberVO memberVO, InputStream is, long size, String filename)
-	    throws SQLException ;
-	public boolean idExists(String id) throws IOException;
+	public void addMember(MemberVO memberVO);	    
+	public boolean emailExists(String email);
 
 }

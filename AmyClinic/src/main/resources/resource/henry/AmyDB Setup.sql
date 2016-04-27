@@ -2,9 +2,14 @@ USE AmyDB
 GO
 
 
+DROP TABLE AppointmentDetail;
+DROP TABLE Procedures;
+DROP TABLE ProcedureType;
+DROP TABLE Score;
+DROP TABLE Chat;
 DROP TABLE Appointments;
-DROP TABLE Employees;
 DROP TABLE Schedule;
+DROP TABLE Employees;
 DROP TABLE OrderItems;
 DROP TABLE Orders;
 DROP TABLE Products;
@@ -30,9 +35,9 @@ CREATE TABLE Members(
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARBINARY(MAX)	,
-  act_status	DECIMAL(1)		NOT NULL,	-- 1 = active, 0 = inactive    
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
-  num_treatment	DECIMAL(4)		Default 0,  -- number of times client received treatments
+  num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
   total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
   reward_pts	DECIMAL(4)		DEFAULT 0,
@@ -95,17 +100,6 @@ CREATE TABLE OrderItems
 --  discount		DECIMAL(2)		DEFAULT 0,
 );
 
-CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
-( 
-  eid		DECIMAL(4)		IDENTITY(1000,1) PRIMARY KEY, 
-  -- daysofweek	??
-  c_date		DATE			NOT NULL,
-  c_hours		VARCHAR(13)		NOT NULL,
-  appt_num		DECIMAL(3)		NOT NULL,
-  appt_status	DECIMAL(1)		DEFAULT 1, -- 1 = Normal, 0 = Stopped
-  memo			NVARCHAR(300)	DEFAULT ' ',  
-);
-
 CREATE TABLE Employees
 (
   eid			DECIMAL(5)		IDENTITY PRIMARY KEY,
@@ -114,6 +108,16 @@ CREATE TABLE Employees
   education		NVARCHAR(500)	NOT NULL,
   experience	NVARCHAR(500)	NOT NULL,
   specialty		NVARCHAR(500)	NOT NULL,
+);
+
+CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
+( 
+  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees,   
+  c_date		DATE			NOT NULL,
+  c_hours		VARCHAR(13)		NOT NULL,
+  appt_num		DECIMAL(3)		NOT NULL,
+  appt_status	DECIMAL(1)		DEFAULT 1, -- 1 = Normal, 0 = Stopped
+  memo			NVARCHAR(300)	DEFAULT ' ',  
 );
 
 CREATE TABLE Appointments
@@ -128,6 +132,48 @@ CREATE TABLE Appointments
  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 
 );
 
+CREATE TABLE ProcedureType
+(
+  pType_id		DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL
+);
+
+CREATE TABLE Procedures
+(
+  procedure_id	DECIMAL(3)		IDENTITY PRIMARY KEY,
+  name			NVARCHAR(30)	NOT NULL,
+  pType_id		DECIMAL(3)		FOREIGN KEY REFERENCES ProcedureType,
+);
+
+CREATE TABLE AppointmentDetail
+( 
+  ad_id			DECIMAL(4)		IDENTITY PRIMARY KEY, 
+  procedure_id	DECIMAL(3)		FOREIGN KEY REFERENCES Procedures,
+  aid			DECIMAL(6)		FOREIGN KEY REFERENCES Appointments,
+);
+
+CREATE TABLE Chat 
+( 
+  chat_id		DECIMAL(7)		IDENTITY(1,1) PRIMARY KEY,
+  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees,
+  mid			DECIMAL(8)		FOREIGN KEY REFERENCES Members,
+  record		NVARCHAR(MAX)	NOT NULL,
+  chattime		DATETIME		DEFAULT GETDATE(),
+);
+
+CREATE TABLE Score
+(
+ score_id		DECIMAL(4)		IDENTITY PRIMARY KEY,  
+ mid			DECIMAL(8),
+ eid			DECIMAL(5),
+ scores			DECIMAL(1)		NOT NULL,		
+ comment		NVARCHAR(MAX)	NOT NULL,
+ score_date		DATETIME		DEFAULT GETDATE(),
+
+ FOREIGN KEY (mid) REFERENCES Members(mid),
+ FOREIGN KEY (eid) REFERENCES Employees(eid), 
+ 
+);
 GO
 
 INSERT INTO Catagory VALUES ('Vitamins');
@@ -136,12 +182,12 @@ INSERT INTO Catagory VALUES ('Health Food');
 INSERT INTO Catagory VALUES ('Equipment');	
 INSERT INTO Catagory VALUES ('Medicine');		
 
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Henry','123','Henry@group3.com','1981-06-24','Taiwan','M','�x�_���j�w�ϴ_���n���@�q390��2��','0925377000','178','80','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Carrie','123','Carrie@group3.com','1990-12-12','Taiwan','F','�x�_���j�w�ϴ_���n���@�q390��2��','0925332156','160','42','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Beef','123','Beef@group3.com','1989-03-09','Taiwan','M','�x�_���j�w�ϴ_���n���@�q390��2��','0959487612','170','65','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Nick','123','Nick@group3.com','1985-07-30','Taiwan','M','�x�_���j�w�ϴ_���n���@�q390��2��','0936598102','169','70','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Tca','123','Tca@group3.com','2000-02-28','Taiwan','M','�x�_���j�w�ϴ_���n���@�q390��2��','0945976183','185','63','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('K','123','k@group3.com','1970-01-01','Taiwan','M','�x�_���j�w�ϴ_���n���@�q390��2��','0909865731','200','59','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Henry','123','Henry@group3.com','1981-06-24','Taiwan','M','台北市大安區復興南路一段390號2樓','0925377000','178','80','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Carrie','123','Carrie@group3.com','1990-12-12','Taiwan','F','台北市大安區復興南路一段390號2樓','0925332156','160','42','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Beef','123','Beef@group3.com','1989-03-09','Taiwan','M','台北市大安區復興南路一段390號2樓','0959487612','170','65','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Nick','123','Nick@group3.com','1985-07-30','Taiwan','M','台北市大安區復興南路一段390號2樓','0936598102','169','70','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Tca','123','Tca@group3.com','2000-02-28','Taiwan','M','台北市大安區復興南路一段390號2樓','0945976183','185','63','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('K','123','k@group3.com','1970-01-01','Taiwan','M','台北市大安區復興南路一段390號2樓','0909865731','200','59','1');
 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('MoMo Face Mask','500','20','100','0','Makes your face look younger!','Cloth, water, sugar');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('SuperHealth Vitamin B Suppliments','1000','10','750','10','little round pills of youth!','Sugar, flour, Vitamin B');
@@ -161,3 +207,8 @@ select * from Schedule
 select * from Appointments
 select * from Employees
 select * from Catagory
+select * from Chat
+select * from Score
+select * from Procedures;
+select * from ProcedureType;
+select * from AppointmentDetail;
