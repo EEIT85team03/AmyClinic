@@ -25,13 +25,13 @@ import java.util.*;
 
 import javax.naming.NamingException;
 
-public class Login_HB_DAO implements LoginDAO_Interface {
+public class LoginService implements LoginService_Interface {
 
 	private static final String GET_ALL_STMT = "from MemberVO order by mid";
 
 	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
 
-	public Login_HB_DAO() {
+	public LoginService() {
 		if (memberList.isEmpty()) {
 			memberList = this.getAll(); 
 		}
@@ -76,7 +76,7 @@ public class Login_HB_DAO implements LoginDAO_Interface {
 	
 	public static void main(String[] args) throws NamingException, SQLException {
 
-		Login_HB_DAO dao = new Login_HB_DAO();
+		LoginService dao = new LoginService();
 		
 		List<MemberVO> list = dao.getAll();
 		for (MemberVO aMem : list) {
