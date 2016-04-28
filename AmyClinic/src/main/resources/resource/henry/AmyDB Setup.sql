@@ -35,6 +35,8 @@ CREATE TABLE Members(
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARBINARY(MAX)	,
+  photoFileName	NVARCHAR(50)	,
+  photoContentType VARCHAR(10)	,
   act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
   num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments

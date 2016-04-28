@@ -1,5 +1,6 @@
 package group3.henry.login.model;
 
+import java.io.File;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -30,7 +31,9 @@ public class MemberVO implements Serializable {
 	private Integer   phone;
 	private Integer   height;
 	private Integer   mass;
-	private Blob	  photo;
+	private File	  photo;
+	private String	  photoFileName;
+	private String 	  photoContentType;
 	private Integer	  act_status;
 	private Integer   num_trans;
 	private Integer   num_treatment;
@@ -47,7 +50,7 @@ public class MemberVO implements Serializable {
 
 	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
 					Character gender, String addr, Integer phone, Integer height, Integer mass,
-					Blob photo, Integer act_status, Integer num_trans, Integer num_treatment,
+					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
 					String memo, Date join_date) { //all info
 		super();
@@ -63,6 +66,8 @@ public class MemberVO implements Serializable {
 		this.height = height;
 		this.mass = mass;
 		this.photo = photo;
+		this.photoFileName = photoFileName;
+		this.photoContentType = photoContentType;
 		this.act_status = act_status;
 		this.num_trans = num_trans;
 		this.num_treatment = num_treatment;
@@ -150,13 +155,25 @@ public class MemberVO implements Serializable {
 	public void setMass(Integer mass) {
 		this.mass = mass;
 	}
-	public Blob getPhoto() {
+	public File getPhoto() {
 		return photo;
 	}
-	public void setPhoto(Blob photo) {
+	public void setPhoto(File photo) {
 		this.photo = photo;
 	}
-	
+	public String getPhotoFileName() {
+		return photoFileName;
+	}
+	public void setPhotoFileName(String photoFileName) {
+		this.photoFileName = photoFileName;
+	}
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
+	}
+
 	@Column(name = "act_status", insertable=false)
 	public Integer getAct_status() {
 		return act_status;
