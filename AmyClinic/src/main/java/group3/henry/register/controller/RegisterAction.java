@@ -34,4 +34,12 @@ public class RegisterAction extends ActionSupport{
 		}
 		
 	}
+	public void validate() {
+		String fileType = memberVO.getPhotoContentType();
+		fileType = fileType.substring(0,5);
+		System.out.println(fileType);
+	    if (!fileType.equals("image") ){
+	    	addFieldError("memberVO.photo","Invalid File Type; must upload an image!");
+	    }	     
+	}
 }
