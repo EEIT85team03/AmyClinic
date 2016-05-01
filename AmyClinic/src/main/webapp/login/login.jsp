@@ -9,18 +9,18 @@
 </head>
 <body>
 <!-- 			Henry Struts2 testing -->
-	I am login/login.jsp
+	I am login/login.jsp<hr>
 	
 	User: Henry Password: 123
 	<ul>
-		<li><font color="blue"><b>Struts2 login form test</b></font> 		
-			<s:form namespace="/login" action="login">
+		<li><font color="blue"><b>Struts2 Login Form</b></font> 		
+			<s:form namespace="/logreg" action="login">
 				<s:textfield name="memberVO.name" label="User Name" placeholder="User ID" />
 				<s:password name="memberVO.pwd" label="Password" />
 				<s:submit value="Submit" method="login" />
 			</s:form>
 		</li>
-		<div style="color:red;">${message}</div>
+		<li><div style="color:red;">${message}</div></li>
 	</ul>
 	
 <!-- 			Henry Struts2 testing -->

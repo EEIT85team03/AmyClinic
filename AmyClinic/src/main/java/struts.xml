@@ -4,16 +4,36 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<!-- ************* -->
-<!-- login package -->
-<!-- ************* -->
+
+<!-- specifies the properties file to use for retrieving resources (I18N) -->
+<constant name="struts.custom.i18n.resources" value="global" />
+
+<!-- ********************** -->
+<!-- login/Register package: -->
+<!-- Intercepts password and encrypts them -->
+<!-- ********************** -->
 	<constant name="struts.devMode" value="true" />
 	
-	<package name="loginPackage" namespace="/login" extends="struts-default">
+	<package name="logRegPackage" namespace="/logreg" extends="struts-default">
+		
+<!-- 		<interceptors>		         -->
+<!-- 			<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />   -->
+<!-- 			<interceptor-stack name="AuthenticationRequired">   -->
+<!-- 				<interceptor-ref name="defaultStack" />       -->
+<!-- 				<interceptor-ref name="authentication" />     -->
+<!-- 			</interceptor-stack>		 -->
+<!-- 		</interceptors> -->
+				
+<!--         <default-interceptor-ref name="AuthenticationRequired" /> -->
+		
 		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/login/success.jsp</result>
-<!-- 			<result name="input">/index.jsp</result> -->
 			<result name="login">/login/login.jsp</result>
+		</action>
+		
+		<action name="register" class="group3.henry.register.controller.RegisterAction">
+			<result name="success">/register/regsuccess.jsp</result>
+			<result name="input">/register/register.jsp</result>
 		</action>
 	</package>
 
@@ -22,11 +42,11 @@
 <!-- *************************	-->
     <package name="empPackage" namespace="/member" extends="struts-default">	
 		<interceptors>		        
-			   <interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
-			   <interceptor-stack name="AuthenticationRequired">  
-				     <interceptor-ref name="defaultStack" />      
-				     <interceptor-ref name="authentication" />    
-			   </interceptor-stack>		
+	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+		    <interceptor-stack name="AuthenticationRequired">  
+				<interceptor-ref name="defaultStack" />      
+				<interceptor-ref name="authentication" />    
+		    </interceptor-stack>		
 		</interceptors>
 				
         <default-interceptor-ref name="AuthenticationRequired" />

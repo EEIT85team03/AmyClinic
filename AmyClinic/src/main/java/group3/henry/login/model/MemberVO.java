@@ -1,5 +1,6 @@
 package group3.henry.login.model;
 
+import java.io.File;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.sql.*;
@@ -30,8 +31,10 @@ public class MemberVO implements Serializable {
 	private Integer   phone;
 	private Integer   height;
 	private Integer   mass;
-	private Blob	  photo;
-	private Boolean	  act_status;
+	private File	  photo;
+	private String	  photoFileName;
+	private String 	  photoContentType;
+	private Integer	  act_status;
 	private Integer   num_trans;
 	private Integer   num_treatment;
 	private Integer   num_visits;
@@ -47,7 +50,7 @@ public class MemberVO implements Serializable {
 
 	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
 					Character gender, String addr, Integer phone, Integer height, Integer mass,
-					Blob photo, Boolean act_status, Integer num_trans, Integer num_treatment,
+					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
 					String memo, Date join_date) { //all info
 		super();
@@ -63,6 +66,8 @@ public class MemberVO implements Serializable {
 		this.height = height;
 		this.mass = mass;
 		this.photo = photo;
+		this.photoFileName = photoFileName;
+		this.photoContentType = photoContentType;
 		this.act_status = act_status;
 		this.num_trans = num_trans;
 		this.num_treatment = num_treatment;
@@ -150,60 +155,90 @@ public class MemberVO implements Serializable {
 	public void setMass(Integer mass) {
 		this.mass = mass;
 	}
-	public Blob getPhoto() {
+	public File getPhoto() {
 		return photo;
 	}
-	public void setPhoto(Blob photo) {
+	public void setPhoto(File photo) {
 		this.photo = photo;
 	}
-	public Boolean getAct_status() {
+	public String getPhotoFileName() {
+		return photoFileName;
+	}
+	public void setPhotoFileName(String photoFileName) {
+		this.photoFileName = photoFileName;
+	}
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
+	}
+
+	@Column(name = "act_status", insertable=false)
+	public Integer getAct_status() {
 		return act_status;
 	}
-	public void setAct_status(Boolean act_status) {
+	public void setAct_status(Integer act_status) {
 		this.act_status = act_status;
 	}
+	
+	@Column(name = "num_trans", insertable=false)
 	public Integer getNum_trans() {
 		return num_trans;
 	}
 	public void setNum_trans(Integer num_trans) {
 		this.num_trans = num_trans;
 	}
+	
+	@Column(name = "num_treatment", insertable=false)
 	public Integer getNum_treatment() {
 		return num_treatment;
 	}
 	public void setNum_treatment(Integer num_treatment) {
 		this.num_treatment = num_treatment;
 	}
+	
+	@Column(name = "num_visits", insertable=false)
 	public Integer getNum_visits() {
 		return num_visits;
 	}
 	public void setNum_visits(Integer num_visits) {
 		this.num_visits = num_visits;
 	}
+	
+	@Column(name = "total_spent", insertable=false)
 	public Integer getTotal_spent() {
 		return total_spent;
 	}
 	public void setTotal_spent(Integer total_spent) {
 		this.total_spent = total_spent;
 	}
+	
+	@Column(name = "reward_pts", insertable=false)
 	public Integer getReward_pts() {
 		return reward_pts;
 	}
 	public void setReward_pts(Integer reward_pts) {
 		this.reward_pts = reward_pts;
 	}
+	
+	@Column(name = "last_visit", insertable=false)
 	public Date getLast_visit() {
 		return last_visit;
 	}
 	public void setLast_visit(Date last_visit) {
 		this.last_visit = last_visit;
 	}
+	
+	@Column(name = "memo", insertable=false)
 	public String getMemo() {
 		return memo;
 	}
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
+	
+	@Column(name = "join_date", insertable=false)
 	public Date getJoin_date() {
 		return join_date;
 	}
