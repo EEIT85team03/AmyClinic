@@ -1,5 +1,6 @@
 package group3.carrie.app.model;
 
+import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.appdetail.model.AppDetailVO;
 import group3.henry.login.model.MemberVO;
 
@@ -35,7 +36,9 @@ public class AppVO implements Serializable {
 	private String procedureid;
 	private String descrip;
 	private Integer apt_status;
-	private Integer eid;
+	//預約與員工編號是多對一的關係
+	//private Integer eid;
+	private EmployeeVO empVO;
 	//預約與預約明細是一對多的關係
 	private Set<AppDetailVO> appDetailVO = new HashSet<AppDetailVO>();
 
@@ -107,12 +110,16 @@ public class AppVO implements Serializable {
 		this.apt_status = apt_status;
 	}
 
-	public Integer getEid() {
-		return eid;
+	
+	//多對一
+	@ManyToOne
+	@JoinColumn(name = "eid")
+	public EmployeeVO getEmpVO() {
+		return empVO;
 	}
 
-	public void setEid(Integer eid) {
-		this.eid = eid;
+	public void setEmpVO(EmployeeVO empVO) {
+		this.empVO = empVO;
 	}
 
 	//一對多
