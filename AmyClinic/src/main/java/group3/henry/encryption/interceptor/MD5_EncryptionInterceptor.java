@@ -14,20 +14,12 @@ public class MD5_EncryptionInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 
 	public String intercept(ActionInvocation invocation) throws Exception {
-
-		ActionContext ctx = invocation.getInvocationContext();
-		Map<String, Object> session = ctx.getSession();
-		String account = (String) session.get("account"); 
 		
-		System.out.println("login interceptor!");
-		if (account == null) { 
-			HttpServletRequest request = ServletActionContext.getRequest();
-			String location = request.getRequestURI();
-			session.put("location", location);
-			ctx.put("message", "You are not logged in!"); 
-			return "login";
-		} else {
-			return invocation.invoke(); // passes control to the next intercepter
-		}
+		System.out.println("AES Encryption interceptor!");
+		
+		ActionContext ctx = invocation.getInvocationContext();
+		HttpServletRequest request = ServletActionContext.getRequest();
+				
+		return invocation.invoke(); // passes control to the next intercepter
 	}
 }

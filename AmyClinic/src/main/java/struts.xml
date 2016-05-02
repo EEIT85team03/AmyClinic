@@ -75,8 +75,10 @@
             <result>/public/publicpage.jsp</result>
         </action>
     </package>
- <!-- *****************************	-->		
-<!-- Non-Access controlled package  -->
+<!-- ******************************	-->		
+<!-- Employee(?) package  -->
+<!-- ******************************	-->		
+
 <!-- k	-->   
 <!--     <package name="HelloAction" namespace="/emplogpage" extends="struts-default"> -->
 <!--         <action name="HelloAction" class="group3.k.emp_login.controller.HelloAction"> -->
