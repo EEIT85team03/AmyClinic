@@ -78,11 +78,11 @@
  <!-- *****************************	-->		
 <!-- Non-Access controlled package  -->
 <!-- k	-->   
-    <package name="HelloAction" namespace="/emplogpage" extends="struts-default">
-        <action name="HelloAction" class="group3.k.emp_login.controller.HelloAction">
-            <result name="success">/Backstage/login.jsp</result>
-        </action>
-    </package>
+<!--     <package name="HelloAction" namespace="/emplogpage" extends="struts-default"> -->
+<!--         <action name="HelloAction" class="group3.k.emp_login.controller.HelloAction"> -->
+<!--             <result name="success">/Backstage/login.jsp</result> -->
+<!--         </action> -->
+<!--     </package> -->
 <!-- k	-->
 
 </struts>

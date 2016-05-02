@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ taglib prefix="s"  uri="/struts-tags"  %>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <!doctype html>
 <html>
 <head>
@@ -134,6 +135,8 @@ form {
 </style>
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<s:head theme="xhtml" /><!-- 預設 -->
+<sx:head debug="false" cache="false" parseContent="false"	compressed="false" extraLocales="zh-tw,en-us,ja,ko" />
 </head>
 
 <body>
@@ -173,7 +176,7 @@ form {
 <!--       編號<input type="text" name="eid" id="text1"> -->
       <s:textfield name="name" label="員工姓名" value="麥可喬丹" />
 <!--       姓名<input type="text" name="name" id="text2"> -->
-    <s:submit value="確定" />
+    <s:submit value="確定"  method="addBook"/>
     </s:form>
     <a href="#">忘記密碼</a>
     <br>

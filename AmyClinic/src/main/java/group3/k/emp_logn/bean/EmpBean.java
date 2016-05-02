@@ -1,6 +1,6 @@
-package group3.k.emp_login.controller;
+package group3.k.emp_logn.bean;
 
-public class HelloAction {
+public class EmpBean {
 	private String eid = "Test";
 	private String name = "Hello";
 	
