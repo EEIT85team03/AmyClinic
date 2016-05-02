@@ -124,7 +124,7 @@ public class AppVO implements Serializable {
 
 	//一對多
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "appVO")
-	@OrderBy("aid asc")
+	@OrderBy("ad_id asc")
 	public Set<AppDetailVO> getAppDetailVO() {
 		return this.appDetailVO;
 	}

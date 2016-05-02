@@ -1,17 +1,35 @@
 package group3.henry.login.model;
 
+import group3.carrie.app.model.AppVO;
+
 import java.io.File;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.text.MessageFormat;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+//import javax.persistence.*;
+//import org.hibernate.annotations.OrderBy;
 
 
 // represents a single member
@@ -43,6 +61,10 @@ public class MemberVO implements Serializable {
 	private Date      last_visit;
 	private String	  memo;
 	private Date	  join_date;
+	
+	//One member -> Many appointments
+	private Set<AppVO> appVO = new HashSet<AppVO>();
+
 	
 	public MemberVO() {
 		super();
@@ -246,6 +268,17 @@ public class MemberVO implements Serializable {
 		this.join_date = join_date;
 	}
 	
+	//one member, many appointments
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "memberVO")
+	@OrderBy("aid asc")
+	public Set<AppVO> getAppVO() {
+		return appVO;
+	}
+	public void setAppVO(Set<AppVO> appVO) {
+		this.appVO = appVO;
+	}
+
+	// Reflection, gets properties of a class object. Testing method
 	public void getProperties() throws IllegalArgumentException, IllegalAccessException {
 		  Class<?> aClass = this.getClass();
 		  Field[] declaredFields = aClass.getDeclaredFields();
