@@ -38,12 +38,15 @@ public class LoginAction extends ActionSupport{
 	}
 
 	public String login() {
+		HttpServletRequest request = ServletActionContext.getRequest();
 
-		if (!allowUser(memberVO.getName(), memberVO.getPwd())) { 
+//		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
+		System.out.println((String)request.getAttribute("encpw"));
+		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
+			
 			this.setMessage("Invalid ID or Password!");
 			return "login";
 		} else {
-			HttpServletRequest request = ServletActionContext.getRequest(); // get HttpServletRequest
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
 			session.setAttribute("member", memberVO);
