@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ taglib prefix="s"  uri="/struts-tags"  %>
 <!doctype html>
 <html>
 <head>
@@ -156,8 +157,8 @@ form {
     
     <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1 align="center">AMY</h1>
-    <div align="center">
+    <h1 align="center"  style="color: blue">AMY</h1>
+    
 <script type="text/javascript">
     var d = new Date();
     var theYear = d.getFullYear()-1911;
@@ -167,16 +168,17 @@ form {
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
 
-    <form  method="post">
-
-      帳號<input type="text" name="" id="text1">
-      <br>
-      密碼<input type="text" name="t" id="text2">
-    <br>
-    <input type="submit" value="確定">
-    </form>
+    <s:form  action="HelloAction"  namespace="/emplogpage">
+	  <s:textfield name="eid" label="員工編號" value="預設編號" />
+<!--       編號<input type="text" name="eid" id="text1"> -->
+      <s:textfield name="name" label="員工姓名" value="麥可喬丹" />
+<!--       姓名<input type="text" name="name" id="text2"> -->
+    <s:submit value="確定" />
+    </s:form>
     <a href="#">忘記密碼</a>
-    </div>
+    <br>
+    <a>EX==>id=1,name=Dr. Pocky</a>
+    
     <div align="center">
       
     </div>
