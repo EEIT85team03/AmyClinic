@@ -74,7 +74,14 @@
             <result>/public/publicpage.jsp</result>
         </action>
     </package>
+
  <!-- *****************************	-->		
+
+<!-- ******************************	-->		
+<!-- Employee(?) package  -->
+<!-- ******************************	-->		
+
+
 <!-- k	-->   
 <!--     <package name="loginpackage" namespace="/login" extends="struts-default"> -->
 <!--         <action name="b_login" class="group3.k.emp_login.controller.LoginAction"> -->

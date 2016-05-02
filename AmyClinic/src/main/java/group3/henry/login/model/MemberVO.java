@@ -269,7 +269,7 @@ public class MemberVO implements Serializable {
 	}
 	
 	//one member, many appointments
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "memberVO")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "memberVO")
 	@OrderBy("aid asc")
 	public Set<AppVO> getAppVO() {
 		return appVO;
