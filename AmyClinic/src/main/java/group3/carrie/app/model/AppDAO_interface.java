@@ -5,7 +5,7 @@ import java.util.Set;
 
 import group3.carrie.appdetail.model.AppDetailVO;
 
-public interface AppDAOInterface {
+public interface AppDAO_interface {
 	public void insert(AppVO appVO);
     public void update(AppVO appVO);
     public void delete(Integer aid);

@@ -5,7 +5,7 @@ import java.util.Set;
 
 import group3.carrie.proc.model.ProcVO;
 
-public interface ProcTypeDAOInterface {
+public interface ProcTypeDAO_interface {
 	    public void insert(ProcTypeVO procTypeVO);
 	    public void update(ProcTypeVO procTypeVO);
 	    public void delete(Integer pType_id);

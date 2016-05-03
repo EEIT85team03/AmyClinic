@@ -10,7 +10,7 @@ import java.util.Set;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-public class AppDAO implements AppDAOInterface {
+public class AppDAO implements AppDAO_interface {
 	
 	private static final String GET_ALL_STMT = "from AppVO order by aid";
 	

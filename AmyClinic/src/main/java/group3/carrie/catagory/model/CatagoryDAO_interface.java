@@ -6,7 +6,7 @@ import java.util.Set;
 import group3.carrie.product.model.ProductVO;
 
 
-public interface CatagoryDAOInterface {
+public interface CatagoryDAO_interface {
     public void insert(CatagoryVO catagoryVO);
     public void update(CatagoryVO catagoryVO);
     public void delete(Integer cid);

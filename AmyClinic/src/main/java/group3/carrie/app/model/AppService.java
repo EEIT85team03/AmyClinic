@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public class AppService {
-	private AppDAOInterface aDao;
+	private AppDAO_interface aDao;
 	
 	public AppService(){
 		aDao=new AppDAO();

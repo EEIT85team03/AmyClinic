@@ -5,7 +5,7 @@ import java.util.Set;
 
 import group3.carrie.orderItems.model.OrderItemsVO;
 
-public interface OrdersDAOInterface {
+public interface OrdersDAO_interface {
 	    public void insert(OrdersVO ordersVO);
 	    public void update(OrdersVO ordersVO);
 	    public void delete(Integer oid);
