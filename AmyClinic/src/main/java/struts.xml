@@ -16,15 +16,17 @@
 	
 	<package name="logRegPackage" namespace="/logreg" extends="struts-default">
 		
-<!-- 		<interceptors>		         -->
-<!-- 			<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />   -->
-<!-- 			<interceptor-stack name="AuthenticationRequired">   -->
-<!-- 				<interceptor-ref name="defaultStack" />       -->
-<!-- 				<interceptor-ref name="authentication" />     -->
-<!-- 			</interceptor-stack>		 -->
-<!-- 		</interceptors> -->
+		<interceptors>		        		
+			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+			<interceptor-stack name="EncPw">  
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="AESEncryption" />      
+				<interceptor-ref name="MD5Encryption" />    
+			</interceptor-stack>		
+		</interceptors>
 				
-<!--         <default-interceptor-ref name="AuthenticationRequired" /> -->
+        <default-interceptor-ref name="EncPw" />
 		
 		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/login/success.jsp</result>
@@ -36,7 +38,6 @@
 			<result name="input">/register/register.jsp</result>
 		</action>
 	</package>
-
 <!-- *************************	-->
 <!-- Access controlled package  -->
 <!-- *************************	-->
@@ -76,5 +77,20 @@
         </action>
     </package>
 
+ <!-- *****************************	-->		
+
+<!-- ******************************	-->		
+<!-- Employee(?) package  -->
+<!-- ******************************	-->		
+
+
+<!-- k	-->   
+<!--     <package name="loginpackage" namespace="/login" extends="struts-default"> -->
+<!--         <action name="b_login" class="group3.k.emp_login.controller.LoginAction"> -->
+<!--             <result name="b_login">/backstage/b_login.jsp</result> -->
+<!-- 			 <result name="success">/backstage/b_success.jsp</result> -->
+<!--         </action> -->
+<!--     </package> -->
+<!-- k	-->
 
 </struts>

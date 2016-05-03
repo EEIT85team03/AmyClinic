@@ -49,7 +49,7 @@ public class ProcTypeVO implements Serializable {
 	}
 	
 	//一對多
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="cataVO")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="procTypeVO")
 	@OrderBy("procedure_id asc")
 	public Set<ProcVO> getProcVO() {
 		return this.procVO;

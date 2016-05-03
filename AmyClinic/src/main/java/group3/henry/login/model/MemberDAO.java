@@ -18,6 +18,7 @@ package group3.henry.login.model;
 
 import org.hibernate.*;
 
+import group3.carrie.app.model.AppVO;
 import hibernate.util.HibernateUtil;
 
 import java.util.*;
@@ -28,15 +29,7 @@ public class MemberDAO implements MemberDAO_interface {
 
 	@Override
 	public void insert(MemberVO memberVO) {
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		try {
-			session.beginTransaction();
-			session.saveOrUpdate(memberVO);
-			session.getTransaction().commit();
-		} catch (RuntimeException ex) {
-			session.getTransaction().rollback();
-			throw ex;
-		}
+		update(memberVO);
 	}
 
 	@Override
@@ -237,8 +230,9 @@ public class MemberDAO implements MemberDAO_interface {
 
 			
 			System.out.println("\n-----------------");
-//			Set<MemberVO> set2 = aDept.getEmps();
-//			for (MemberVO aEmp : set2) {
+			Set<AppVO> set2 = aMember.getAppVO();
+			System.out.println(set2);
+//			for (AppVO anApp : set2) {
 //				System.out.print(aEmp.getEmpno() + ",");
 //				System.out.print(aEmp.getEname() + ",");
 //				System.out.print(aEmp.getJob() + ",");

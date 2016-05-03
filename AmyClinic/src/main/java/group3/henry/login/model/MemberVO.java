@@ -1,16 +1,35 @@
 package group3.henry.login.model;
 
+import group3.carrie.app.model.AppVO;
+
+import java.io.File;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.text.MessageFormat;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+//import javax.persistence.*;
+//import org.hibernate.annotations.OrderBy;
 
 
 // represents a single member
@@ -30,7 +49,9 @@ public class MemberVO implements Serializable {
 	private Integer   phone;
 	private Integer   height;
 	private Integer   mass;
-	private Blob	  photo;
+	private File	  photo;
+	private String	  photoFileName;
+	private String 	  photoContentType;
 	private Integer	  act_status;
 	private Integer   num_trans;
 	private Integer   num_treatment;
@@ -41,13 +62,17 @@ public class MemberVO implements Serializable {
 	private String	  memo;
 	private Date	  join_date;
 	
+	//One member -> Many appointments
+	private Set<AppVO> appVO = new HashSet<AppVO>();
+
+	
 	public MemberVO() {
 		super();
 	}	
 
 	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
 					Character gender, String addr, Integer phone, Integer height, Integer mass,
-					Blob photo, Integer act_status, Integer num_trans, Integer num_treatment,
+					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
 					String memo, Date join_date) { //all info
 		super();
@@ -63,6 +88,8 @@ public class MemberVO implements Serializable {
 		this.height = height;
 		this.mass = mass;
 		this.photo = photo;
+		this.photoFileName = photoFileName;
+		this.photoContentType = photoContentType;
 		this.act_status = act_status;
 		this.num_trans = num_trans;
 		this.num_treatment = num_treatment;
@@ -150,13 +177,25 @@ public class MemberVO implements Serializable {
 	public void setMass(Integer mass) {
 		this.mass = mass;
 	}
-	public Blob getPhoto() {
+	public File getPhoto() {
 		return photo;
 	}
-	public void setPhoto(Blob photo) {
+	public void setPhoto(File photo) {
 		this.photo = photo;
 	}
-	
+	public String getPhotoFileName() {
+		return photoFileName;
+	}
+	public void setPhotoFileName(String photoFileName) {
+		this.photoFileName = photoFileName;
+	}
+	public String getPhotoContentType() {
+		return photoContentType;
+	}
+	public void setPhotoContentType(String photoContentType) {
+		this.photoContentType = photoContentType;
+	}
+
 	@Column(name = "act_status", insertable=false)
 	public Integer getAct_status() {
 		return act_status;
@@ -229,6 +268,17 @@ public class MemberVO implements Serializable {
 		this.join_date = join_date;
 	}
 	
+	//one member, many appointments
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "memberVO")
+	@OrderBy("aid asc")
+	public Set<AppVO> getAppVO() {
+		return appVO;
+	}
+	public void setAppVO(Set<AppVO> appVO) {
+		this.appVO = appVO;
+	}
+
+	// Reflection, gets properties of a class object. Testing method
 	public void getProperties() throws IllegalArgumentException, IllegalAccessException {
 		  Class<?> aClass = this.getClass();
 		  Field[] declaredFields = aClass.getDeclaredFields();

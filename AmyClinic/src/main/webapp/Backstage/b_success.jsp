@@ -1,9 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ taglib prefix="s"  uri="/struts-tags"  %>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>AMY</title>
+
+<title>-AMY-${requestScope.empVO.name}您好</title>
 <style type="text/css">
 <!--
 body {
@@ -133,6 +136,8 @@ form {
 </style>
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<s:head theme="xhtml" /><!-- 預設 -->
+<sx:head debug="false" cache="false" parseContent="false"	compressed="false" extraLocales="zh-tw,en-us,ja,ko" />
 </head>
 
 <body>
@@ -156,8 +161,8 @@ form {
     
     <!-- end .sidebar1 --></div>
   <div class="content">
-    <h1 align="center">AMY</h1>
-    <div align="center">
+    <h1 align="center"  style="color: blue">AMY</h1>
+    
 <script type="text/javascript">
     var d = new Date();
     var theYear = d.getFullYear()-1911;
@@ -166,21 +171,19 @@ form {
     
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
-    <form>
-      帳號<input type="text" name="" id="text1">
-      <br>
-      密碼<input type="text" name="t" id="text2">
-    <br>
-    <input type="submit" value="確定">
-    </form>
-    <a href="#">忘記密碼</a>
-    </div>
+
+    <hr>
+員工編號=${requestScope.empVO.eid}
+<br>
+員工姓名=${requestScope.empVO.name}
+<hr>
+    
     <div align="center">
       
     </div>
     <!-- end .content --></div>
   <div class="footer">
-    <p>E-amil:xxx@gmail.com   Tel:0999-999-999   Hello-Word國際碼業集團   © 2016 EEIT85team03</p>
+    <p>E-amil:xxx@gmail.com   Tel:0999-999-999   Hello-Word國際碼業集團   © 2016 EEIT85team03<a href="../index.jsp">index</a></p>
     <!-- end .footer --></div>
   <!-- end .container --></div>
 <script type="text/javascript">
