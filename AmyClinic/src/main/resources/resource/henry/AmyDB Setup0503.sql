@@ -274,12 +274,12 @@ INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,ei
 INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','微整形','下午','1','1');
 INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','整形手術','早上','1','2');
    -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1000','4');
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1001','7');
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1002','14');
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1003','22');
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1004','19');
---INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1005','5');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('14','1002');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1003');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('19','1004');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('5','1005');
       -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 select * from Members
 select * from Products
