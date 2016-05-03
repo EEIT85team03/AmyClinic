@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>AMY</title>
+
+<title>-AMY-${requestScope.empVO.name}您好</title>
 <style type="text/css">
 <!--
 body {
@@ -171,16 +172,11 @@ form {
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
 
-    <s:form  action="HelloAction"  namespace="/emplogpage">
-	  <s:textfield name="eid" label="員工編號" value="預設編號" />
-<!--       編號<input type="text" name="eid" id="text1"> -->
-      <s:textfield name="name" label="員工姓名" value="麥可喬丹" />
-<!--       姓名<input type="text" name="name" id="text2"> -->
-    <s:submit value="確定"  method="addBook"/>
-    </s:form>
-    <a href="#">忘記密碼</a>
-    <br>
-    <a>EX==>id=1,name=Dr. Pocky</a>
+    <hr>
+員工編號=${requestScope.empVO.eid}
+<br>
+員工姓名=${requestScope.empVO.name}
+<hr>
     
     <div align="center">
       

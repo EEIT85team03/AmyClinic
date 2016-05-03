@@ -48,6 +48,7 @@
 		<mapping class="group3.carrie.proctype.model.ProcTypeVO"/>
 		<mapping class="group3.carrie.proc.model.ProcVO"/>
 		<mapping resource="group3/beef/employee/model/emp2.hbm.xml"/>
+		<mapping class="group3.k.emp_logn.model.EmployeesVO"/>
 
 <!-- 		<mapping class="com.dept.model.DeptVO" /> -->
 <!--         <mapping class="com.emp.model.EmpVO" /> -->

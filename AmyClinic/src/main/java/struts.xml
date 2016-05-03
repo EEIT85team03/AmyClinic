@@ -38,7 +38,6 @@
 			<result name="input">/register/register.jsp</result>
 		</action>
 	</package>
-
 <!-- *************************	-->
 <!-- Access controlled package  -->
 <!-- *************************	-->
@@ -77,14 +76,19 @@
             <result>/public/publicpage.jsp</result>
         </action>
     </package>
+
+ <!-- *****************************	-->		
+
 <!-- ******************************	-->		
 <!-- Employee(?) package  -->
 <!-- ******************************	-->		
 
+
 <!-- k	-->   
-<!--     <package name="HelloAction" namespace="/emplogpage" extends="struts-default"> -->
-<!--         <action name="HelloAction" class="group3.k.emp_login.controller.HelloAction"> -->
-<!--             <result name="success">/Backstage/login.jsp</result> -->
+<!--     <package name="loginpackage" namespace="/login" extends="struts-default"> -->
+<!--         <action name="b_login" class="group3.k.emp_login.controller.LoginAction"> -->
+<!--             <result name="b_login">/backstage/b_login.jsp</result> -->
+<!-- 			 <result name="success">/backstage/b_success.jsp</result> -->
 <!--         </action> -->
 <!--     </package> -->
 <!-- k	-->
