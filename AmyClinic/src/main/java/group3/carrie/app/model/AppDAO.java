@@ -1,14 +1,16 @@
 package group3.carrie.app.model;
 
+import group3.carrie.appdetail.model.AppDetailVO;
 import group3.henry.login.model.MemberVO;
 import hibernate.util.HibernateUtil;
 
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-public class AppDAO implements AppDAO_interface {
+public class AppDAO implements AppDAOInterface {
 	
 	private static final String GET_ALL_STMT = "from AppVO order by aid";
 	
@@ -89,5 +91,13 @@ public class AppDAO implements AppDAO_interface {
 		}
 		return list;
 	}
+
+	@Override
+	public Set<AppDetailVO> getAppDetailByAid(Integer aid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 }
