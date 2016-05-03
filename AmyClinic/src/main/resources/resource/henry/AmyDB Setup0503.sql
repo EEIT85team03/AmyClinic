@@ -28,7 +28,7 @@ CREATE TABLE Members(
   pwd			VARCHAR(50)		NOT NULL,
   email			VARCHAR(50)		NOT NULL UNIQUE,
   birthday		DATE			,
-  country		VARCHAR(20)		,
+  country		NVARCHAR(20)		,
   gender		CHAR(1)			NOT NULL,
   addr			NVARCHAR(50)	NOT NULL,
   phone			DECIMAL(10)		NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE Members(
 CREATE TABLE Products
 ( 
   pid			DECIMAL(5)		IDENTITY PRIMARY KEY, 
-  name			VARCHAR(200)		DEFAULT 'Unknown' UNIQUE,  
+  name			NVARCHAR(200)	NOT NULL UNIQUE,  
   photo			VARBINARY(MAX)	,
   amount		DECIMAL(5)		DEFAULT 0,
   cid			DECIMAL(4)		FOREIGN KEY REFERENCES Catagory, 
@@ -106,6 +106,8 @@ CREATE TABLE Employees
 (
   eid			DECIMAL(5)		IDENTITY PRIMARY KEY,
   name			NVARCHAR(30)	DEFAULT 'Unknown',
+  pwd			VARCHAR(40)		NOT NULL,
+  email			VARCHAR(50)		NOT NULL UNIQUE,
   photo			VARBINARY(MAX)	,	
   education		NVARCHAR(500)	NOT NULL,
   experience	NVARCHAR(500)	NOT NULL,
@@ -197,9 +199,9 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Panasonic Hydration Mask','100','40','3000','5','Steam those wrinkles away!','Electronic Equipment');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('BigBrand Disinfectent','2000','50','100','0','Infection-be-gone!','Fungus Extract');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Pocky','M.D. Brown University','10 years Cosmetic Surgeon at County USC Hospital','Facelift, Liposuction, Facial reconstruction');
-INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Kindle','M.D. Yale','5 years Cosmetic Surgeon at India National Health and Beauty Center','Laser hair removal, nose job, hair implants');
-INSERT INTO Employees (name, education, experience, specialty) VALUES ('Dr. Hershes','M.D. UCSB','20 years Cosmetic Surgeon at Saint Claire','Everything');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('Dr. Pocky','M.D. Brown University','123','Pocky@Amy.com','10 years Cosmetic Surgeon at County USC Hospital','Facelift, Liposuction, Facial reconstruction');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('Dr. Kindle','M.D. Yale','123','Kindle@Amy.com','5 years Cosmetic Surgeon at India National Health and Beauty Center','Laser hair removal, nose job, hair implants');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('Dr. Hershes','M.D. UCSB','123','Hershes@Amy.com','20 years Cosmetic Surgeon at Saint Claire','Everything');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ProcedureType (name) VALUES ('整形手術');
 INSERT INTO ProcedureType (name) VALUES ('雷射光療');
