@@ -1,17 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/style.css" rel="stylesheet" type="text/css"
-	media="screen" />
+<link href="${pageContext.request.contextPath}/register/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
 <title>register.jsp</title>
 <s:head theme="xhtml" />
-<sx:head debug="false" cache="false" parseContent="false"
-	compressed="false" extraLocales="zh-tw,en-us,ja,ko" />
+<sx:head debug="false" cache="false" parseContent="false" compressed="false" extraLocales="zh-tw,en-us,ja,ko" />
 
 <script type="text/javascript">
 	window.onload = function() {
@@ -111,7 +109,7 @@
 													</span>
 												</div>
 												<div class="box-right">
-													<img id="img-uploaded" src="img/text.png" alt="你的照片" />
+													<img id="img-uploaded" src="${pageContext.request.contextPath}/register/img/text.png" alt="你的照片" />
 												</div>
 											</div>
 										</div>
@@ -168,7 +166,7 @@
 			$(":text").attr("autocomplete", "off");
 		});
 	</script>
-	<script src="js/src.js"></script>
+	<script src="${pageContext.request.contextPath}/register/js/src.js"></script>
 	<script type="text/javascript">
 		/*----------------------------------------
 		 Upload btn
