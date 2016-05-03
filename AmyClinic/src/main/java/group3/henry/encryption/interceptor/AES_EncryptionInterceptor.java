@@ -20,9 +20,10 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 public class AES_EncryptionInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
-	private static final String KEY = "thisismygroupthreefinalprojectke";
+	private static final String KEY = "thisismygroupthr";
+								      
 
-	private String encryptString(String message) {
+	private String encrypt(String message) {
 		String encryptedString = "";
 		
 		try {
@@ -48,10 +49,22 @@ public class AES_EncryptionInterceptor extends AbstractInterceptor {
 		
 		System.out.println("AES Encryption interceptor!");
 		
-		ActionContext ctx = invocation.getInvocationContext();
 		HttpServletRequest request = ServletActionContext.getRequest();
-				
+		String pw = null;
+		
+		if (request.getAttribute("encpw")!=null)
+			pw = (String)request.getAttribute("encpw");
+		else 
+			pw = request.getParameter("memberVO.pwd");			
+		request.setAttribute("encpw", encrypt(pw));
+					
 		return invocation.invoke(); // passes control to the next intercepter
+	}
+//	test method
+	public static void main(String[] args){
+		AES_EncryptionInterceptor x = new AES_EncryptionInterceptor();
+		String testmsg = "Hello World";
+		System.out.println(x.encrypt(testmsg)); //MS1O+SSkUT7apEu6Mik/yA==
 	}
 }
 
