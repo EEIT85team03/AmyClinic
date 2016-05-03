@@ -31,7 +31,7 @@ CREATE TABLE Members(
   country		NVARCHAR(20)		,
   gender		CHAR(1)			NOT NULL,
   addr			NVARCHAR(50)	NOT NULL,
-  phone			DECIMAL(10)		NOT NULL,
+  phone			VARCHAR(10)		NOT NULL,
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARBINARY(MAX)	,

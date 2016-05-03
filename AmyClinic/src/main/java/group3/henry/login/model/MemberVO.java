@@ -46,7 +46,7 @@ public class MemberVO implements Serializable {
 	private String	  country;
 	private Character gender;
 	private String	  addr;
-	private Integer   phone;
+	private String    phone;
 	private Integer   height;
 	private Integer   mass;
 	private File	  photo;
@@ -71,7 +71,7 @@ public class MemberVO implements Serializable {
 	}	
 
 	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
-					Character gender, String addr, Integer phone, Integer height, Integer mass,
+					Character gender, String addr, String phone, Integer height, Integer mass,
 					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
 					String memo, Date join_date) { //all info
@@ -159,10 +159,10 @@ public class MemberVO implements Serializable {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public Integer getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(Integer phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public Integer getHeight() {
