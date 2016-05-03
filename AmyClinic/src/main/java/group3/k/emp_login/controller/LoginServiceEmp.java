@@ -5,11 +5,11 @@ import group3.k.emp_logn.model.EmployeesVO;
 
 import java.util.*;
 
-public class LoginService implements LoginService_Interface {
+public class LoginServiceEmp implements LoginServiceEmp_Interface {
 	static private EmployeesDAO dao = new EmployeesDAO();
 	static private List<EmployeesDAO> employeesList = new ArrayList<EmployeesDAO>();	
 
-	public LoginService() {
+	public LoginServiceEmp() {
 //		if (employeesList.isEmpty()) 
 //		employeesList = this.getAll(); 	
 	}
@@ -42,7 +42,7 @@ public class LoginService implements LoginService_Interface {
 	}
 	
 	public static void main(String[] args){
-		LoginService dao = new LoginService();
+		LoginServiceEmp dao = new LoginServiceEmp();
 		List<EmployeesVO> list = dao.getAll();
 		for (EmployeesVO aMem : list) {
 			System.out.print(aMem.getName() + ",");

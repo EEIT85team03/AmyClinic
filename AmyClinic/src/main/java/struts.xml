@@ -83,12 +83,12 @@
 
 
 <!-- k	-->   
-<!--     <package name="loginpackage" namespace="/login" extends="struts-default"> -->
-<!--         <action name="b_login" class="group3.k.emp_login.controller.LoginAction"> -->
-<!--             <result name="b_login">/backstage/b_login.jsp</result> -->
-<!-- 			 <result name="success">/backstage/b_success.jsp</result> -->
-<!--         </action> -->
-<!--     </package> -->
+    <package name="LoginActionEmp" namespace="LoginActionEmp" extends="struts-default">
+        <action name="LoginActionEmp" class="group3.k.emp_login.controller.LoginActionEmp">
+            <result name="b_login">/backstage/b_login.jsp</result>
+			 <result name="success">/backstage/b_success.jsp</result>
+        </action>
+    </package>
 <!-- k	-->
 
 </struts>

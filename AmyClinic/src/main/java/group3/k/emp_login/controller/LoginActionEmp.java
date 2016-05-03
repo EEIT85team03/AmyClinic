@@ -6,7 +6,7 @@ import javax.servlet.http.*;
 import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport{
+public class LoginActionEmp extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	private EmployeesDAO employeesDAO;
 	private String message;
@@ -24,7 +24,7 @@ public class LoginAction extends ActionSupport{
 		this.message = message;
 	}
 	private boolean allowUser(Integer eid, String name) {
-		LoginService login = new LoginService();
+		LoginServiceEmp login = new LoginServiceEmp();
 //		employeesDAO = login.validate(eid, name);
 //		if (employeesDAO!=null)
 			return true;
