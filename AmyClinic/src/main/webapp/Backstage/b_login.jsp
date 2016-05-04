@@ -172,12 +172,12 @@ form {
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
 
-    <s:form  action="HelloAction"  namespace="/emplogpage">
-	  <s:textfield name="eid" label="員工編號" value="1" />
+    <s:form  action="LoginActionEmp"  namespace="/emplogpage">
+	  <s:textfield name="Employees.eid" label="員工編號" value="1" />
 <!--       編號<input type="text" name="eid" id="text1"> -->
-      <s:textfield name="name" label="員工姓名" value="Dr. Pocky" />
+      <s:textfield name="Employees.name" label="員工姓名" value="Dr. Pocky" />
 <!--       姓名<input type="text" name="name" id="text2"> -->
-    <s:submit value="確定"  method="addBook"/>
+    <s:submit value="確定"  method="LoginServiceEmp"/>
     </s:form>
     <a href="#">忘記密碼</a>
     <br>
