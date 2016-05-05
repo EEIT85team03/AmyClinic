@@ -29,6 +29,7 @@ public class LoginAction extends ActionSupport{
 		this.message = message;
 	}
 	private boolean allowUser(String id, String pw) {
+		System.out.println("LoginAction AllowUser method");
 		LoginService login = new LoginService();
 		memberVO = login.validate(id, pw);
 		if (memberVO!=null)
@@ -39,7 +40,7 @@ public class LoginAction extends ActionSupport{
 
 	public String login() {
 		HttpServletRequest request = ServletActionContext.getRequest();
-
+		System.out.println("LoginAction login method");
 //		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
 		System.out.println((String)request.getAttribute("encpw"));
 		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 

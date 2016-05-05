@@ -11,7 +11,7 @@
 <!-- 			Henry Struts2 testing -->
 	I am login/login.jsp<hr>
 	
-	User: Henry Password: 123
+	User: * Password: 1234
 	<ul>
 		<li><font color="blue"><b>Struts2 Login Form</b></font> 		
 			<s:form namespace="/logreg" action="login">
