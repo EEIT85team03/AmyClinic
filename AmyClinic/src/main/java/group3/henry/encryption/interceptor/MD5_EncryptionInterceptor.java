@@ -2,14 +2,14 @@ package group3.henry.encryption.interceptor;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-//import java.util.HashMap;
-//import java.util.Map;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-//import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
@@ -39,21 +39,40 @@ public class MD5_EncryptionInterceptor extends AbstractInterceptor {
 	public String intercept(ActionInvocation invocation) throws Exception {
 		
 		System.out.println("MD5 Encryption interceptor!");
-		
-//		ActionContext ctx = invocation.getInvocationContext();
-//	    Map<String,Object> parameters = (Map<String,Object>)ctx.get(ActionContext.PARAMETERS);
+/*	Non-viable route; Result: ActionContext.PARAMETERS appears to be not changeable; reference data only(?)
+ * 		
+		ActionContext ctx = invocation.getInvocationContext();
+	    Map<String,Object> parameters = (Map<String,Object>)ctx.get(ActionContext.PARAMETERS);
 	    
+	    String paramPW = ((Object[])(parameters.get("memberVO.pwd")))[0].toString();
+	    System.out.println("paramPW: " + paramPW);
 //	    System.out.println("Map<str,obj> param pwd = " + (parameters.get("memberVO.pwd"))); 
+//	    System.out.println("Map<str,obj> param pwd = " + ((Object[])(parameters.get("memberVO.pwd")))[0]);
+	    
+	    Map<String, Object> paramCopy = new HashMap<String, Object>();
+	    paramCopy.putAll(parameters);
+	    
+	    String encoded = encode(paramPW);
+	    
+	    System.out.println("encoded: " + encoded);
+	    String[] insert = new String[1];
+	    insert[0] = encoded;
+	    System.out.println(insert);
+	    paramCopy.put("memberVO.pwd", insert);
+	    
+//	    Map<String,Object> thing = new HashMap<String,Object>();
+//	    thing.put("memberVO.pwd", new String[]{"xxxxyyyy"});
+//		ctx.put(ActionContext.PARAMETERS, thing);
 
-//	    Map<String, Object> paramCopy = new HashMap<String, Object>();
-//	    paramCopy.putAll(parameters);
-//	    paramCopy.put("memberVO.pwd", encoded);
-//
-//	    ctx.put(ActionContext.PARAMETERS, paramCopy);
-
+	    ctx.setParameters(paramCopy);
+	    
+	    parameters = (Map<String,Object>)ctx.get(ActionContext.PARAMETERS);
+	   // System.out.println("Reset ActionContext Parameter = " + ((Object[])(parameters.get("memberVO.pwd")))[0]);
+*/
+// ---------------------------------------------------------	    
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String pw = null;
-		
+//		System.out.println("replaced param: " + request.getParameter("memberVO.pwd"));
 		if (request.getAttribute("encpw")!=null)
 			pw = (String)request.getAttribute("encpw");
 		else 

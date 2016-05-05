@@ -1,20 +1,24 @@
 package group3.henry.login.controller;
 
 import java.io.IOException;
+//import java.util.Map;
 
 import javax.servlet.http.*;
 
 import org.apache.struts2.ServletActionContext;
+//import org.apache.struts2.interceptor.ParameterAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import group3.henry.login.model.LoginService;
 import group3.henry.login.model.MemberVO;
 
-public class LoginAction extends ActionSupport{
+//public class LoginAction extends ActionSupport implements ParameterAware{
+public class LoginAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private MemberVO memberVO;
 	private String message;
+//	private Map<String, String[]> parameters;
 		
 	public MemberVO getMemberVO() {
 		return memberVO;
@@ -28,6 +32,13 @@ public class LoginAction extends ActionSupport{
 	public void setMessage(String message) {
 		this.message = message;
 	}
+//	public Map<String, String[]> getParameters() {
+//		return parameters;
+//	}
+//	public void setParameters(Map<String, String[]> parameters) {
+//		this.parameters = parameters;
+//	}
+	
 	private boolean allowUser(String id, String pw) {
 		System.out.println("LoginAction AllowUser method");
 		LoginService login = new LoginService();
@@ -42,7 +53,11 @@ public class LoginAction extends ActionSupport{
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println("LoginAction login method");
 //		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
-		System.out.println((String)request.getAttribute("encpw"));
+//		System.out.println("---------");
+//		System.out.println("LoginAction request.getAttribute('encpw')" + ((Object[])(parameters.get("memberVO.pwd")))[0]);
+//		System.out.println("LoginAction memberVO.getPwd()" + memberVO.getPwd());
+//		System.out.println("---------");
+		
 		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
 			
 			this.setMessage("Invalid ID or Password!");
@@ -76,4 +91,7 @@ public class LoginAction extends ActionSupport{
 			return "success";
 		}
 	}
+
+	
+
 }
