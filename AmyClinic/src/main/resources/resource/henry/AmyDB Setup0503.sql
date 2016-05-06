@@ -71,7 +71,7 @@ CREATE TABLE Orders
   recipient		NVARCHAR(20)	NOT NULL,
   total			DECIMAL(10)		NOT NULL,
   addr			NVARCHAR(50)	NOT NULL,
-  phone			DECIMAL(10)		NOT NULL,
+  phone			VARCHAR(10)		NOT NULL,
   email			VARCHAR(50)		NOT NULL UNIQUE,
   odate			DATETIME		DEFAULT GETDATE(),
   ostatus		DECIMAL(1)		DEFAULT 1, /*	0 = Order Created / Cancellable
@@ -129,7 +129,8 @@ CREATE TABLE Appointments
  aid			DECIMAL(6)		IDENTITY(1000,1) PRIMARY KEY,
  mid			DECIMAL(8)		FOREIGN KEY REFERENCES Members,
  purpose		DECIMAL(1)		DEFAULT 0, -- 0 = new treatment, 1 = repeat visit
- apt_date		DATETIME		NOT NULL,
+ apt_date		DATE			NOT NULL,
+ apt_time		NVARCHAR(5)	NOT NULL,
  procedureid	VARCHAR(300)		, -- maybe foreign key? 
  descrip		NVARCHAR(300)	DEFAULT ' ',  
  apt_status		DECIMAL(1)		DEFAULT 1, -- 0 = cancelled 1 = normal
@@ -269,12 +270,12 @@ INSERT INTO Schedule (eid,c_date,c_hours,appt_num,memo) VALUES ('1','2016-6-24',
 INSERT INTO Schedule (eid,c_date,c_hours,appt_num,memo) VALUES ('2','2016-6-30','9','3','雷射光療');
 INSERT INTO Schedule (eid,c_date,c_hours,appt_num,appt_status,memo) VALUES ('1','2016-6-30','0','0','0','休假');
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','整形手術','早上','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','雷射光療','下午','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','瘦身雕塑','早上','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','微整形','早上','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','微整形','下午','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,procedureid,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','整形手術','早上','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','Description','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','Description','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','Description','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','Description','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','Description','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','Description','1','2');
    -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');
