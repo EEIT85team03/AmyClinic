@@ -14,7 +14,7 @@ public class AuthenticationInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 
 	public String intercept(ActionInvocation invocation) throws Exception {
-
+				
 		ActionContext ctx = invocation.getInvocationContext();
 		Map<String, Object> session = ctx.getSession();
 		String account = (String) session.get("account"); 
