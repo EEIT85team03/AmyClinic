@@ -148,6 +148,7 @@ CREATE TABLE Procedures
   procedure_id	DECIMAL(3)		IDENTITY PRIMARY KEY,
   name			NVARCHAR(30)	NOT NULL,
   pType_id		DECIMAL(3)		FOREIGN KEY REFERENCES ProcedureType,
+  fee			DECIMAL(9)		DEFAULT '0',
 );
 
 CREATE TABLE AppointmentDetail
