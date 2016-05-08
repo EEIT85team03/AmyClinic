@@ -1,9 +1,9 @@
 package group3.carrie.app.model;
 
+import group3.carrie.appdetail.model.AppDetailVO;
+
 import java.util.List;
 import java.util.Set;
-
-import group3.carrie.appdetail.model.AppDetailVO;
 
 public interface AppDAO_interface {
 	public void insert(AppVO appVO);

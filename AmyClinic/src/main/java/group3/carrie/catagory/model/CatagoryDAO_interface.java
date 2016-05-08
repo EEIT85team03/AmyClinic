@@ -1,9 +1,9 @@
 package group3.carrie.catagory.model;
 
+import group3.carrie.product.model.ProductVO;
+
 import java.util.List;
 import java.util.Set;
-
-import group3.carrie.product.model.ProductVO;
 
 
 public interface CatagoryDAO_interface {

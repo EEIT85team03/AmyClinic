@@ -12,8 +12,8 @@
 		<property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>		
 		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433;DatabaseName=AmyDB</property>
 		<property name="hibernate.connection.username">sa</property>
-		<property name="hibernate.connection.password">01292013@Taichung</property>        
-<!-- 		<property name="hibernate.connection.password">P@ssw0rd</property>        -->
+<!-- 		<property name="hibernate.connection.password">01292013@Taichung</property>         -->
+		<property name="hibernate.connection.password">P@ssw0rd</property>       
 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
 		<property name="hibernate.c3p0.min_size">5</property>
 		<property name="hibernate.c3p0.max_size">20</property>
@@ -44,10 +44,11 @@
 		<mapping class="group3.carrie.catagory.model.CatagoryVO"/>
 		<mapping class="group3.carrie.product.model.ProductVO"/>
 		<mapping class="group3.carrie.orders.model.OrdersVO"/>
-		<mapping class="group3.carrie.orderItems.model.OrderItemsVO"/>
+		<mapping class="group3.carrie.orderitems.model.OrderItemsVO"/>
 		<mapping class="group3.carrie.proctype.model.ProcTypeVO"/>
 		<mapping class="group3.carrie.proc.model.ProcVO"/>
-		<mapping resource="group3/beef/employee/model/emp2.hbm.xml"/>
+		<mapping class="group3.beef.employee.model.EmployeeVO"/>
+
 
 <!-- 		<mapping class="group3.k.emp_logn.model.EmployeesVO"/> -->
 <!-- 		<mapping resource="group3.k.emp_logn.model.emp.hbm.xml"/> -->
