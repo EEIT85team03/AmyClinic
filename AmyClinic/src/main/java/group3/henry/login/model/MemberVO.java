@@ -283,7 +283,7 @@ public class MemberVO implements Serializable {
 	}
 	
 
-	@OneToMany(fetch=FetchType.EAGER, mappedBy="memberVO")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="memberVO")
 	@OrderBy("oid asc")
 	public Set<OrdersVO> getOrders() {
 		return orders;

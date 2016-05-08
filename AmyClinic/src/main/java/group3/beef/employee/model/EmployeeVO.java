@@ -106,7 +106,7 @@ public class EmployeeVO implements Serializable {
 		this.email = email;
 	}
 
-	@OneToMany(fetch=FetchType.EAGER, mappedBy="employeeVO")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="employeeVO")
 	@OrderBy("aid asc")
 	public Set<AppVO> getApps() {
 		return apps;

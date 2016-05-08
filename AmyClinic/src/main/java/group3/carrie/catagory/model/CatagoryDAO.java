@@ -111,7 +111,7 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 //		dao.update(catagoryVO2);
 				
 		//刪除
-		dao.delete(10);
+//		dao.delete(10);
 				
 		//查單一
 //		CatagoryVO catagoryVO3 = dao.findByPrimaryKey(20);

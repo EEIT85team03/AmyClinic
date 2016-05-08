@@ -137,30 +137,30 @@ public class ProductDAO implements ProductDAO_interface {
 		ProductDAO dao = new ProductDAO();
 
 		// 新增
-		ProductVO productVO1 = new ProductVO();
-		CatagoryVO catagoryVO = new CatagoryVO();
-		productVO1.setName("測試用111");
-		File file = new File("d:/test1.jpg");
-		try {
-			if (file != null) {
-				InputStream fin = new FileInputStream(file);
-				if (fin != null) {
-					@SuppressWarnings("deprecation")
-					Blob photo = Hibernate.createBlob(fin);
-					productVO1.setPhoto(photo);
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		productVO1.setAmount(200);
-		catagoryVO.setCid(30);
-		productVO1.setPrice(1000);
-		productVO1.setDiscount(0);
-		productVO1.setDescrip("描述");
-		productVO1.setIngredients("成份");
-		productVO1.setCatagoryVO(catagoryVO);
-		dao.insert(productVO1);
+//		ProductVO productVO1 = new ProductVO();
+//		CatagoryVO catagoryVO = new CatagoryVO();
+//		productVO1.setName("測試用111");
+//		File file = new File("d:/test1.jpg");
+//		try {
+//			if (file != null) {
+//				InputStream fin = new FileInputStream(file);
+//				if (fin != null) {
+//					@SuppressWarnings("deprecation")
+//					Blob photo = Hibernate.createBlob(fin);
+//					productVO1.setPhoto(photo);
+//				}
+//			}
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		productVO1.setAmount(200);
+//		catagoryVO.setCid(30);
+//		productVO1.setPrice(1000);
+//		productVO1.setDiscount(0);
+//		productVO1.setDescrip("描述");
+//		productVO1.setIngredients("成份");
+//		productVO1.setCatagoryVO(catagoryVO);
+//		dao.insert(productVO1);
 
 		// 修改
 //		ProductVO productVO2 = new ProductVO();

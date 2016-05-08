@@ -74,7 +74,7 @@ public class ProcVO implements java.io.Serializable {
 		this.procTypeVO = procTypeVO;
 	}
 
-	@OneToMany(fetch=FetchType.EAGER, mappedBy="procVO")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="procVO")
 	@OrderBy("ad_id asc")
 	public Set<AppDetailVO> getAppDetails() {
 		return appDetails;

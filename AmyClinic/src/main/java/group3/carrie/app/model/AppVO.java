@@ -126,7 +126,7 @@ public class AppVO implements java.io.Serializable {
 		this.employeeVO = employeeVO;
 	}
 
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="appVO")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="appVO")
 	@OrderBy("ad_id asc")
 	public Set<AppDetailVO> getAppDetails() {
 		return appDetails;
