@@ -97,6 +97,7 @@ public class AppVO implements java.io.Serializable {
 		this.descrip = descrip;
 	}
 
+	@Column(insertable = false)
 	public Integer getApt_status() {
 		return apt_status;
 	}

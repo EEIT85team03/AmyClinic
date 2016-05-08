@@ -24,6 +24,7 @@ import javax.persistence.Table;
 public class ProcVO implements java.io.Serializable {
 	private Integer procedure_id;
 	private String name;
+	private Integer fee;
 //	private Integer pType_id;
 	//療程和療程種類是多對一
 	private ProcTypeVO procTypeVO;
@@ -54,6 +55,15 @@ public class ProcVO implements java.io.Serializable {
 		this.name = name;
 	}
 
+	@Column(insertable = false)
+	public Integer getFee() {
+		return fee;
+	}
+
+	public void setFee(Integer fee) {
+		this.fee = fee;
+	}
+	
 	@ManyToOne
 	@JoinColumn(name = "pType_id")
 	public ProcTypeVO getProcTypeVO() {
