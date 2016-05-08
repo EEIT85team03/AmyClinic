@@ -1,7 +1,9 @@
 package group3.carrie.appdetail.model;
 
-import java.io.Serializable;
+import group3.carrie.app.model.AppVO;
+import group3.carrie.proc.model.ProcVO;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,57 +13,54 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import group3.carrie.app.model.AppVO;
-import group3.carrie.proc.model.ProcVO;
 
-//對應到AppointmentDetail table
 @Entity
 @Table(name = "AppointmentDetail")
-public class AppDetailVO implements Serializable {
+public class AppDetailVO implements java.io.Serializable {
 	private Integer ad_id;
 //	private Integer procedure_id;
 //	private Integer aid;
-	//預約明細與預約是多對一的關係
+	//預約明細和預約是多對一
 	private AppVO appVO;
-	//預約明細與療程是多對一的關係
+	//預約明細和療程是多對一
 	private ProcVO procVO;
-	
-	//沒傳參數的建構子
-	public AppDetailVO(){
-		
+
+	public AppDetailVO() {
+
 	}
-	
-	//id產生
-	@Id  
-	@SequenceGenerator(name="adidGen", allocationSize=1) 
-	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="adidGen")
+
+	@Id
+	@Column(name = "ad_id")
+	@SequenceGenerator(name="ad_idgen", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="ad_idgen")  
 	public Integer getAd_id() {
 		return ad_id;
 	}
+
 	public void setAd_id(Integer ad_id) {
 		this.ad_id = ad_id;
 	}
-	
-	//多對一
-	@ManyToOne
-	@JoinColumn(name = "aid") 
+
+	@ManyToOne 
+	@JoinColumn(name = "aid")
 	public AppVO getAppVO() {
-		return this.appVO;
+		return appVO;
 	}
+
 	public void setAppVO(AppVO appVO) {
 		this.appVO = appVO;
 	}
-	
-	//多對一
-	@ManyToOne
-	@JoinColumn(name = "procedure_id") 
+
+	@ManyToOne 
+	@JoinColumn(name = "procedure_id")
 	public ProcVO getProcVO() {
-		return this.procVO;
+		return procVO;
 	}
+
 	public void setProcVO(ProcVO procVO) {
 		this.procVO = procVO;
 	}
-	
+
 	
 
 }

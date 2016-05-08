@@ -1,9 +1,9 @@
 package group3.carrie.proctype.model;
 
+import group3.carrie.proc.model.ProcVO;
+
 import java.util.List;
 import java.util.Set;
-
-import group3.carrie.proc.model.ProcVO;
 
 public interface ProcTypeDAO_interface {
 	    public void insert(ProcTypeVO procTypeVO);
