@@ -1,9 +1,12 @@
 package group3.carrie.product.model;
 
+import group3.carrie.catagory.model.CatagoryVO;
+import group3.carrie.orderitems.model.OrderItemsVO;
+
+import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,15 +20,12 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import group3.carrie.orderitems.model.OrderItemsVO;
-import group3.carrie.catagory.model.CatagoryVO;
-
 @Entity
 @Table(name = "Products")
 public class ProductVO implements java.io.Serializable {
 	private Integer pid;
 	private String name;
-	private byte[] photo;
+	private Blob photo;
 	private Integer amount;
 //	private Integer cid;
 	private Integer price;
@@ -61,11 +61,11 @@ public class ProductVO implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public byte[] getPhoto() {
+	public Blob getPhoto() {
 		return photo;
 	}
 
-	public void setPhoto(byte[] photo) {
+	public void setPhoto(Blob photo) {
 		this.photo = photo;
 	}
 

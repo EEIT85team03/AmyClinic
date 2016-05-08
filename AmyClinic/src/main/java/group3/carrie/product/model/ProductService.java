@@ -7,8 +7,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.util.List;
 import java.util.Set;
+
+import org.hibernate.Hibernate;
 
 public class ProductService {
 
@@ -19,7 +22,7 @@ public class ProductService {
 	}
 
 	// 新增
-	public ProductVO addProduct(String name, byte[] photo, Integer amount,
+	public ProductVO addProduct(String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {
 
@@ -27,13 +30,15 @@ public class ProductService {
 		CatagoryVO catagoryVO = new CatagoryVO();
 		
 		productVO.setName(name);
+		
 		try {
 			File file = new File("d:/test1.jpg");
 			if (file != null) {
 				InputStream fin = new FileInputStream(file);
 				if (fin != null) {
-					byte[] img = new byte[fin.available()];
-					productVO.setPhoto(img);
+					@SuppressWarnings("deprecation")
+					Blob photo1 = Hibernate.createBlob(fin);
+					productVO.setPhoto(photo1);
 				}
 			}
 		} catch (IOException e) {
@@ -52,7 +57,7 @@ public class ProductService {
 	}
 	
 	//修改
-	public ProductVO updateProduct(Integer pid,String name, byte[] photo, Integer amount,
+	public ProductVO updateProduct(Integer pid,String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {
 
@@ -68,8 +73,9 @@ public class ProductService {
 			if (file != null) {
 				InputStream fin = new FileInputStream(file);
 				if (fin != null) {
-					byte[] img = new byte[fin.available()];
-					productVO.setPhoto(img);
+					@SuppressWarnings("deprecation")
+					Blob photo1 = Hibernate.createBlob(fin);
+					productVO.setPhoto(photo1);
 				}
 			}
 		} catch (IOException e) {
@@ -95,6 +101,11 @@ public class ProductService {
 	//查單一
 	public ProductVO getOneProduct(Integer pid) {
 		return dao.findByPrimaryKey(pid);
+	}
+	
+	//查照片
+	public InputStream getPhotoByPrimaryKey(Integer pid) {
+		return dao.getPhotoByPrimaryKey(pid);
 	}
 	
 	//查全部

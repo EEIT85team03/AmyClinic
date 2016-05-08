@@ -8,9 +8,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -87,6 +90,26 @@ public class ProductDAO implements ProductDAO_interface {
 		}
 		return productVO;
 	}
+	
+	@Override
+	public InputStream getPhotoByPrimaryKey(Integer pid) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		InputStream in = null;
+		try {
+			session.beginTransaction();
+			try {
+			ProductVO productVO = (ProductVO) session.get(ProductVO.class, pid);
+			in = productVO.getPhoto().getBinaryStream();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return in;
+	}
 
 	@Override
 	public List<ProductVO> getAll() {
@@ -114,29 +137,30 @@ public class ProductDAO implements ProductDAO_interface {
 		ProductDAO dao = new ProductDAO();
 
 		// 新增
-//		ProductVO productVO1 = new ProductVO();
-//		CatagoryVO catagoryVO = new CatagoryVO();
-//		productVO1.setName("測試用111");
-//		File file = new File("d:/test1.jpg");
-//		try {
-//			if (file != null) {
-//				InputStream fin = new FileInputStream(file);
-//				if (fin != null) {
-//					byte[] img = new byte[fin.available()];
-//					productVO1.setPhoto(img);
-//				}
-//			}
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		productVO1.setAmount(200);
-//		catagoryVO.setCid(30);
-//		productVO1.setPrice(1000);
-//		productVO1.setDiscount(0);
-//		productVO1.setDescrip("描述");
-//		productVO1.setIngredients("成份");
-//		productVO1.setCatagoryVO(catagoryVO);
-//		dao.insert(productVO1);
+		ProductVO productVO1 = new ProductVO();
+		CatagoryVO catagoryVO = new CatagoryVO();
+		productVO1.setName("測試用111");
+		File file = new File("d:/test1.jpg");
+		try {
+			if (file != null) {
+				InputStream fin = new FileInputStream(file);
+				if (fin != null) {
+					@SuppressWarnings("deprecation")
+					Blob photo = Hibernate.createBlob(fin);
+					productVO1.setPhoto(photo);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		productVO1.setAmount(200);
+		catagoryVO.setCid(30);
+		productVO1.setPrice(1000);
+		productVO1.setDiscount(0);
+		productVO1.setDescrip("描述");
+		productVO1.setIngredients("成份");
+		productVO1.setCatagoryVO(catagoryVO);
+		dao.insert(productVO1);
 
 		// 修改
 //		ProductVO productVO2 = new ProductVO();
@@ -145,13 +169,14 @@ public class ProductDAO implements ProductDAO_interface {
 //		productVO2.setOrderItems(set1);
 //		productVO2.setPid(2);
 //		productVO2.setName("測試用01");
+//		File file = new File("d:/test1.jpg");
 //		try {
-//			File file = new File("d:/test1.jpg");
 //			if (file != null) {
 //				InputStream fin = new FileInputStream(file);
 //				if (fin != null) {
-//					byte[] img = new byte[fin.available()];
-//					productVO2.setPhoto(img);
+//					@SuppressWarnings("deprecation")
+//					Blob photo = Hibernate.createBlob(fin);
+//					productVO2.setPhoto(photo);
 //				}
 //			}
 //		} catch (IOException e) {
@@ -170,17 +195,17 @@ public class ProductDAO implements ProductDAO_interface {
 //		 dao.delete(2);
 
 		// 查單一
-//		 ProductVO productVO3 = dao.findByPrimaryKey(1);
-//		 System.out.print(productVO3.getPid() + ",");
-//		 System.out.print(productVO3.getName() + ",");
-//		 System.out.print(productVO3.getPhoto() + ",");
-//		 System.out.print(productVO3.getAmount() + ",");
-//		 System.out.print(productVO3.getCatagoryVO().getName() + ",");
-//		 System.out.print(productVO3.getPrice() + ",");
-//		 System.out.print(productVO3.getDiscount() + ",");
-//		 System.out.print(productVO3.getDescrip() + ",");
-//		 System.out.println(productVO3.getIngredients());
-//		 System.out.println("-----------------------------------------");
+		// ProductVO productVO3 = dao.findByPrimaryKey(1);
+		// System.out.print(productVO3.getPid() + ",");
+		// System.out.print(productVO3.getName() + ",");
+		// System.out.print(productVO3.getPhoto() + ",");
+		// System.out.print(productVO3.getAmount() + ",");
+		// System.out.print(productVO3.getCid() + ",");
+		// System.out.print(productVO3.getPrice() + ",");
+		// System.out.print(productVO3.getDiscount() + ",");
+		// System.out.print(productVO3.getDescrip() + ",");
+		// System.out.println(productVO3.getIngredients());
+		// System.out.println("-----------------------------------------");
 
 		// 查全部
 //		List<ProductVO> list = dao.getAll();
