@@ -82,6 +82,9 @@ public class Mailer {
 		String nl = System.getProperty("line.separator");
 		Mailer m = new Mailer();
 		String token = m.secureToken().toUpperCase();
-		m.send("Group3", "eeit85group3@gmail.com", "AmyClinic Registration Confirmation", "Thank you for registering on our site! Please click the link below to validate your email!" + nl + nl + "http://www.AmyClinic.com?RegistrationAuth="+token);
+		String to = "eeit85group3@gmail.com";
+		m.send("Group3", to, "AmyClinic Registration Confirmation", 
+				"Thank you for registering on our site! Please click the link below to validate your email!" 
+				+ nl + nl + "http://www.AmyClinic.com?RegistrationAuth=" + token+"&email=" + to);
 	}
 }

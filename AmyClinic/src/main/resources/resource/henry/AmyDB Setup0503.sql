@@ -26,6 +26,7 @@ CREATE TABLE Members(
   mid			DECIMAL(8)		IDENTITY(1000,1) PRIMARY KEY,
   name			NVARCHAR(30)	DEFAULT 'Unknown',  
   pwd			VARCHAR(50)		NOT NULL,
+  verify		VARCHAR(50)		DEFAULT '',
   email			VARCHAR(50)		NOT NULL UNIQUE,
   birthday		DATE			,
   country		NVARCHAR(20)		,

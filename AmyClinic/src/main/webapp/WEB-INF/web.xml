@@ -9,15 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>  
-       <servlet-name>TestServlet</servlet-name>  
-       <servlet-class>group3.carrie.product.controller.GetPic</servlet-class>  
-    </servlet>  
-
-    <servlet-mapping>  
-        <servlet-name>TestServlet</servlet-name>  
-        <url-pattern>/GetPic.servlet</url-pattern>  
-    </servlet-mapping>
+  <servlet>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>group3.carrie.product.controller.GetPic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/GetPic.servlet</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>

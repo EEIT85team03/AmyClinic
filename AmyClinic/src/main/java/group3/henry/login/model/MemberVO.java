@@ -42,6 +42,7 @@ public class MemberVO implements Serializable {
 	private Integer   mid;
 	private String 	  name;
 	private String 	  pwd;
+	private String    verify;
 	private String 	  email;
 	private Date 	  birthday;
 	private String	  country;
@@ -132,7 +133,14 @@ public class MemberVO implements Serializable {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
+	}	
+	public String getVerify() {
+		return verify;
 	}
+	public void setVerify(String verify) {
+		this.verify = verify;
+	}
+
 	public String getEmail() {
 		return email;
 	}
