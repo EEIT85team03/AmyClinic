@@ -1,9 +1,9 @@
 package group3.carrie.orders.model;
 
+import group3.carrie.orderitems.model.OrderItemsVO;
+
 import java.util.List;
 import java.util.Set;
-
-import group3.carrie.orderItems.model.OrderItemsVO;
 
 public interface OrdersDAO_interface {
 	    public void insert(OrdersVO ordersVO);

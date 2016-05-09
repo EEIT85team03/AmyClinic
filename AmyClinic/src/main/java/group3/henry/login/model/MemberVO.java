@@ -1,6 +1,7 @@
 package group3.henry.login.model;
 
 import group3.carrie.app.model.AppVO;
+import group3.carrie.orders.model.OrdersVO;
 
 import java.io.File;
 import java.io.Serializable;
@@ -64,6 +65,9 @@ public class MemberVO implements Serializable {
 	
 	//One member -> Many appointments
 	private Set<AppVO> appVO = new HashSet<AppVO>();
+	
+	//會員和訂單是一對多
+	private Set<OrdersVO> orders = new HashSet<OrdersVO>();
 
 	
 	public MemberVO() {
@@ -276,6 +280,17 @@ public class MemberVO implements Serializable {
 	}
 	public void setAppVO(Set<AppVO> appVO) {
 		this.appVO = appVO;
+	}
+	
+
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="memberVO")
+	@OrderBy("oid asc")
+	public Set<OrdersVO> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<OrdersVO> orders) {
+		this.orders = orders;
 	}
 
 	// Reflection, gets properties of a class object. Testing method

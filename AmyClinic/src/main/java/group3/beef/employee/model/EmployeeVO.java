@@ -1,16 +1,45 @@
 package group3.beef.employee.model;
 
-import java.sql.Blob;
+import group3.carrie.app.model.AppVO;
 
-public class EmployeeVO {
+import java.io.Serializable;
+import java.sql.Blob;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Employees")
+public class EmployeeVO implements Serializable {
 	private Integer eid;
 	private String name;
+	private String pwd;
+	private String email;
 	private Blob photo;
 	private String education;
 	private String experience;
 	private String specialty;
+	//員工和預約是一對多
+	private Set<AppVO> apps = new HashSet<AppVO>();
 	
+	public EmployeeVO(){
 		
+	}
+
+	@Id
+	@Column(name = "eid")
+	@SequenceGenerator(name="eidgen", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="eidgen")  
 	public Integer getEid() {
 		return eid;
 	}
@@ -61,4 +90,31 @@ public class EmployeeVO {
 		this.specialty = specialty;
 	}
 
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="employeeVO")
+	@OrderBy("aid asc")
+	public Set<AppVO> getApps() {
+		return apps;
+	}
+
+	public void setApps(Set<AppVO> apps) {
+		this.apps = apps;
+	}
+
+	
 }

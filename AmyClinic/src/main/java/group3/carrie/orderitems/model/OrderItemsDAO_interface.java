@@ -1,4 +1,4 @@
-package group3.carrie.orderItems.model;
+package group3.carrie.orderitems.model;
 
 import java.util.List;
 
