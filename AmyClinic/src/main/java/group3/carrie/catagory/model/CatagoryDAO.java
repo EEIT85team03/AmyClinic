@@ -12,6 +12,12 @@ import org.hibernate.Session;
 public class CatagoryDAO implements CatagoryDAO_interface {
 	private static final String GET_ALL_STMT =
 		      "FROM CatagoryVO order by cid";
+	private static final String DELETE_OdIt_STMT =
+			"DELETE FROM OrderItemsVO where pid = (SELECT pid FROM ProductVO where cid = ?)";
+	private static final String DELETE_Prod_STMT =
+			"DELETE FROM ProductVO where cid = ?";
+	private static final String DELETE_Cata_STMT =
+			"DELETE FROM CatagoryVO where cid = ?";
 	
 	@Override
 	public void insert(CatagoryVO catagoryVO) {
@@ -44,13 +50,28 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 	@Override
 	public void delete(Integer cid) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		int update_count1 = 0;
+		int update_count2 = 0;
 		
 		try {
 			session.beginTransaction();
-//CASCADE(已設定為不會把其他表格的資料列也砍掉)
-			CatagoryVO catagoryVO = (CatagoryVO) session.get(CatagoryVO.class, cid);
-			session.delete(catagoryVO);
+			//先刪訂單明細
+			Query query1 = session.createQuery(DELETE_OdIt_STMT);
+			query1.setParameter(0, cid);
+			update_count1 = query1.executeUpdate();
+			
+			//再刪產品
+			Query query2 = session.createQuery(DELETE_Prod_STMT);
+			query2.setParameter(0, cid);
+			update_count2 = query2.executeUpdate();
+			
+			//再刪分類
+			Query query3 = session.createQuery(DELETE_Cata_STMT);
+			query3.setParameter(0, cid);
+			query3.executeUpdate();
+			
 			session.getTransaction().commit();
+			System.out.println("刪除產品分類編號" + cid +"時，共有" + update_count2 + "種產品被刪除，" + update_count1 + "筆訂單明細被刪除");
 			
 		} catch(RuntimeException ex) {
 			session.getTransaction().rollback();
@@ -111,7 +132,7 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 //		dao.update(catagoryVO2);
 				
 		//刪除
-//		dao.delete(10);
+		dao.delete(20);
 				
 		//查單一
 //		CatagoryVO catagoryVO3 = dao.findByPrimaryKey(20);
