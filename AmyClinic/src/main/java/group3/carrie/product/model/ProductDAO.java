@@ -19,7 +19,7 @@ import org.hibernate.Session;
 
 public class ProductDAO implements ProductDAO_interface {
 	private static final String GET_ALL_STMT = "FROM ProductVO order by pid";
-	private static final String GET_ODItems_BYPid_STMT = "FROM OrderItemsVO where pid = ?";
+//	private static final String GET_ODItems_BYPid_STMT = "FROM OrderItemsVO where pid = ?";
 	private static final String DELETE_ITEM = "DELETE FROM OrderItemsVO where pid = ?";
 	private static final String DELETE_PROD = "DELETE FROM ProductVO where pid = ?";
 
