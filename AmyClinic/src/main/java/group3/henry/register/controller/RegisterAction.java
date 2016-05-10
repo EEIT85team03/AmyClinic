@@ -1,9 +1,13 @@
 package group3.henry.register.controller;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import group3.henry.email.Mailer;
 import group3.henry.login.model.MemberVO;
 import group3.henry.register.model.RegisterDAO;
 
@@ -13,6 +17,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class RegisterAction extends ActionSupport{
 	private MemberVO memberVO;	
 	private String message;
+	private final String HEADER = "AmyClinic Registration Confirmation";
 	
 	public MemberVO getMemberVO() {
 		return memberVO;
@@ -27,8 +32,20 @@ public class RegisterAction extends ActionSupport{
 		this.message = message;
 	}
 
+	private String secureToken(){
+		SecureRandom random = new SecureRandom();
+		 return new BigInteger(250, random).toString(32);
+	}
+	
+	private String compose(String token, String email){
+		String nl = System.getProperty("line.separator");
+		return "Thank you for registering on our site! Please click the link below to validate your email!" 
+				+ nl + nl + "http://www.AmyClinic.com?RegistrationAuth=" + token + "&email=" + email;		
+	}
+	
 	public String register(){
 		RegisterDAO register = new RegisterDAO();
+		Mailer m = new Mailer();
 		HttpServletRequest request = ServletActionContext.getRequest();
 		
 		if (register.emailExists(memberVO.getEmail())){
@@ -37,7 +54,15 @@ public class RegisterAction extends ActionSupport{
 		} else {
 			if (request.getAttribute("encpw")!=null)
 				memberVO.setPwd((String)request.getAttribute("encpw"));
+
+			memberVO.setAct_status(2); // status of 2 = awaiting email verification
+			
+			String token = secureToken().toUpperCase();
+			memberVO.setVerify(token);		
+			
 			register.addMember(memberVO);
+			
+			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()));
 			return SUCCESS;	
 		}
 		

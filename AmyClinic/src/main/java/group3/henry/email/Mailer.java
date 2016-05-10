@@ -22,6 +22,8 @@ public class Mailer {
  Generate message + token
  store token in memberVO.verify 
  Send to Email addy, with verification link
+
+ Create email verification reminder page
  user clicks on link
  servlet receives token
  compare token to DB token
@@ -47,11 +49,6 @@ public class Mailer {
 //			return null;
 //		}		
 //	}
-	
-	private String secureToken(){
-		SecureRandom random = new SecureRandom();
-		 return new BigInteger(250, random).toString(32);
-	}
 	
 	public void send(String name, String destination, String subject, String text) {
 		String signature = "Sent by AmyClinic." + nl + "Visit us on our website!";		  
@@ -79,7 +76,7 @@ public class Mailer {
 			        }
 	      		});
 	    try {         
-	    	Message message = new MimeMessage(session); // Create a default MimeMessage object.
+	    	Message message = new  MimeMessage(session); // Create a default MimeMessage object.
 	        message.setFrom(new InternetAddress(from)); // Set From: header field of the header.         
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
 	        message.setSubject(subject); // Set Subject: header field
@@ -93,13 +90,13 @@ public class Mailer {
 	    }
 	}
 	
-	public static void main(String[] args){
-		String nl = System.getProperty("line.separator");
-		Mailer m = new Mailer();
-		String token = m.secureToken().toUpperCase();
-		String to = "eeit85group3@gmail.com";
-		m.send("Group3", to, "AmyClinic Registration Confirmation", 
-				"Thank you for registering on our site! Please click the link below to validate your email!" 
-				+ nl + nl + "http://www.AmyClinic.com?RegistrationAuth=" + token+"&email=" + to);
-	}
+//	public static void main(String[] args){
+//		String nl = System.getProperty("line.separator");
+//		Mailer m = new Mailer();
+//		String token = m.secureToken().toUpperCase();
+//		String to = "eeit85group3@gmail.com";
+//		m.send("Group3", to, "AmyClinic Registration Confirmation", 
+//				"Thank you for registering on our site! Please click the link below to validate your email!" 
+//				+ nl + nl + "http://www.AmyClinic.com?RegistrationAuth=" + token+"&email=" + to);
+//	}
 }
