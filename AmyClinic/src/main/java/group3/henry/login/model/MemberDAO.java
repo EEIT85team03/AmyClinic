@@ -231,7 +231,7 @@ public class MemberDAO implements MemberDAO_interface {
 			
 			System.out.println("\n-----------------");
 			Set<AppVO> set2 = aMember.getAppVO();
-			System.out.println(set2);
+//			System.out.println(set2);
 //			for (AppVO anApp : set2) {
 //				System.out.print(aEmp.getEmpno() + ",");
 //				System.out.print(aEmp.getEname() + ",");
