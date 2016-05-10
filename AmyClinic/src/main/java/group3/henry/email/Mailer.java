@@ -15,6 +15,21 @@ import javax.mail.internet.MimeMessage;
 
 public class Mailer {
 	private String nl = System.getProperty("line.separator");
+	
+/*
+ create account
+ set status to 2 (awaiting verification)
+ Generate message + token
+ store token in memberVO.verify 
+ Send to Email addy, with verification link
+ user clicks on link
+ servlet receives token
+ compare token to DB token
+ if accurate, set account status to 1 (active)
+ set memberVO.verify to null
+ 
+ 
+ */	
 //	private String secureToken(){		
 //		SecureRandom random = new SecureRandom();
 //		byte bytes[] = new byte[60];		

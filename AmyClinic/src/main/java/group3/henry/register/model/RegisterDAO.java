@@ -15,9 +15,11 @@ public class RegisterDAO implements RegisterDAO_Interface {
 	
 	@Override
 	public void addMember(MemberVO memberVO) {	
-		memberVO.setAct_status(1);
-		
+		memberVO.setAct_status(2); // status of 2 = awaiting email verification
+// generate token here
+// set memberVO.verify=token		
 		dao.insert(memberVO);
+// send email verification form		
 		return;
 	}
 
