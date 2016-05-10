@@ -97,6 +97,7 @@ public class OrdersVO implements java.io.Serializable {
 		this.email = email;
 	}
 
+	@Column(insertable = false)
 	public Timestamp getOdate() {
 		return odate;
 	}
@@ -105,6 +106,7 @@ public class OrdersVO implements java.io.Serializable {
 		this.odate = odate;
 	}
 
+	@Column(insertable = false)
 	public Integer getOstatus() {
 		return ostatus;
 	}
@@ -113,6 +115,7 @@ public class OrdersVO implements java.io.Serializable {
 		this.ostatus = ostatus;
 	}
 
+	@Column(insertable = false)
 	public Integer getDel_status() {
 		return del_status;
 	}

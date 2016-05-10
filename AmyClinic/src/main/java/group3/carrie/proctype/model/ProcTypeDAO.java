@@ -137,7 +137,7 @@ public class ProcTypeDAO implements ProcTypeDAO_interface {
 //		dao.update(procTypeVO2);
 				
 		//刪除
-		dao.delete(2);
+//		dao.delete(2);
 				
 		//查單一
 //		ProcTypeVO procTypeVO3 = dao.findByPrimaryKey(1);

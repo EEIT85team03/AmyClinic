@@ -4,7 +4,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import hibernate.util.HibernateUtil;
 
-public class EmployeeDAO {
+public class EmployeeDAO implements EmployeeDAO_interface {
 	private static final String GET_ALL_STMT = "from EmployeeVO order by eid";
 	
  

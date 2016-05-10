@@ -54,9 +54,6 @@
 <!-- 		<mapping resource="group3.k.emp_logn.model.emp.hbm.xml"/> -->
 <!-- 		<mapping class="group3.k.emp_login.controller.LoginActionEmp"/> -->
 
-<!-- 		<mapping class="com.dept.model.DeptVO" /> -->
-<!--         <mapping class="com.emp.model.EmpVO" /> -->
-
 	</session-factory>
 	
 </hibernate-configuration>
