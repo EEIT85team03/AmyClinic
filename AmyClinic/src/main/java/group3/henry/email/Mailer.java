@@ -22,9 +22,9 @@ public class Mailer {
  Generate message + token
  store token in memberVO.verify 
  Send to Email addy, with verification link
-
  Create email verification reminder page
  user clicks on link
+ 
  servlet receives token
  compare token to DB token
  if accurate, set account status to 1 (active)
@@ -50,6 +50,7 @@ public class Mailer {
 //		}		
 //	}
 	
+	//					Person			Email		  Email Subject   Email Text
 	public void send(String name, String destination, String subject, String text) {
 		String signature = "Sent by AmyClinic." + nl + "Visit us on our website!";		  
 

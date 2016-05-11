@@ -76,6 +76,9 @@
         <action name="public" class="group3.henry.login.controller.PublicPageAction">
             <result>/public/publicpage.jsp</result>
         </action>
+        <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
+			<result>/login/verify.jsp</result>
+		</action>
     </package>
 
 <!-- ******************************	-->		

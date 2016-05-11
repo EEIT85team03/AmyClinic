@@ -40,7 +40,7 @@ public class RegisterAction extends ActionSupport{
 	private String compose(String token, String email){
 		String nl = System.getProperty("line.separator");
 		return "Thank you for registering on our site! Please click the link below to validate your email!" 
-				+ nl + nl + "http://www.AmyClinic.com?RegistrationAuth=" + token + "&email=" + email;		
+				+ nl + nl + "http://localhost:8080/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
 	}
 	
 	public String register(){
