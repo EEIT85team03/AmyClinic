@@ -45,6 +45,10 @@ public class EmployeeService {
 		return employeeVO;
 
 	}
+	
+	public void addEmp(EmployeeVO employeeVO){
+		dao.insert(employeeVO);
+	}
 
 	// 更新員工
 	public EmployeeVO updateEmp(String name, String pwd, String email,

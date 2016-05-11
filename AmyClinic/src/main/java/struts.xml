@@ -101,12 +101,11 @@
 <!-- k	-->
 
 <!-- beef -->
-	<!-- <package name="AddActionEmp" namespace="AddActionEmp" extends="struts-default">
+	<package name="AddEmp" namespace="/emp" extends="struts-default">
         <action name="AddActionEmp" class="group3.beef.employee.controller.AddEmpAction">
             <result name="input">/BeefTest/AddEMP.jsp</result>
-			 <result name="success">/backstage/b_success.jsp</result>
-        </action>
-    </package> -->
+			     </action>
+    </package>
 <!-- beef -->
 
 
