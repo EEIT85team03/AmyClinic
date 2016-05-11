@@ -80,6 +80,10 @@
 			<result>/login/verify.jsp</result>
 			<result name="failure">/login/verify.jsp</result>
 		</action>
+		<action name="recoverPW" class="group3.henry.login.controller.RecoverAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="input">/login/recover.jsp</result>
+		</action>
     </package>
 
 <!-- ******************************	-->		
