@@ -30,6 +30,7 @@
 		
 		<action name="login" class="group3.henry.login.controller.LoginAction">
 			<result name="success">/login/success.jsp</result>
+			<result name="verifyEmail">/login/verify.jsp</result>			
 			<result name="login">/login/login.jsp</result>
 		</action>
 		

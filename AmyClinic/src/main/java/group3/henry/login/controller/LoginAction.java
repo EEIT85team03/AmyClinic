@@ -62,6 +62,9 @@ public class LoginAction extends ActionSupport {
 			
 			this.setMessage("Invalid ID or Password!");
 			return "login";
+		} else if (memberVO.getAct_status() == 2) {
+			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
+			return "verifyEmail";
 		} else {
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識

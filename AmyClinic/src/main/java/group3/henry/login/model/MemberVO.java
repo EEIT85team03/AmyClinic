@@ -208,7 +208,7 @@ public class MemberVO implements Serializable {
 		this.photoContentType = photoContentType;
 	}
 
-	@Column(name = "act_status", insertable=false)
+//	@Column(name = "act_status", insertable=false)
 	public Integer getAct_status() {
 		return act_status;
 	}
