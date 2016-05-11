@@ -78,6 +78,7 @@
         </action>
         <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
 			<result>/login/verify.jsp</result>
+			<result name="failure">/login/verify.jsp</result>
 		</action>
     </package>
 

@@ -14,10 +14,16 @@ I am success.jsp <hr>
 
 You are logged in, ${requestScope.memberVO.name}! Your password is: ${requestScope.memberVO.pwd}
 
+Redirecting in 3 seconds...
+
 <!-- <ul> -->
 <%-- 	<li>Name = ${requestScope.name}  --Obtained via EL </li> --%>
 <%-- 	<li>Name = <s:property value="name"/>  --Obtained via OGNL </li> --%>
 <!-- </ul> -->
-
+<script>
+  setTimeout(function() {
+      document.location = "${pageContext.request.contextPath}/index.jsp";
+  }, 3000); // delay in milliseconds
+</script>
 </body>
 </html>

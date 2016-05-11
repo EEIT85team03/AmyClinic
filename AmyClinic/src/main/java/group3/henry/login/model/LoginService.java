@@ -2,7 +2,7 @@ package group3.henry.login.model;
 
 import java.util.*;
 
-public class LoginService implements LoginService_Interface {
+public class LoginService {
 	static private MemberDAO dao = new MemberDAO();
 	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
 
@@ -27,12 +27,10 @@ public class LoginService implements LoginService_Interface {
 	}
 	
 	
-	@Override
 	public List<MemberVO> getMemberList() { 
 		return memberList;
 	}
 	
-	@Override
 	public void addNewMember(MemberVO memberVO){
 		memberList.add(memberVO);
 	}

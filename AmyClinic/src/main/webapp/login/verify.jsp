@@ -9,8 +9,13 @@
 <body>
 I am verify.jsp <hr>
 
-Hello ${requestScope.memberVO.name}!
+Hello ${memberVO.name}!
 <div style="color:red;">${message}</div>
 
+<script>
+  setTimeout(function() {
+      document.location = "${pageContext.request.contextPath}/index.jsp";
+  }, 3000); // delay in milliseconds
+</script>
 </body>
 </html>
