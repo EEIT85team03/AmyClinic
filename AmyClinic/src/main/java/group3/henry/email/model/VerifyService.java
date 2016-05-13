@@ -22,7 +22,7 @@ public class VerifyService {
 	public Boolean verify(String email, String token) {
 		System.out.println("VerifyService");
 		for (MemberVO mb : memberList) {
-			if (mb.getVerify()!=null || !mb.getVerify().isEmpty()){
+			if (mb.getVerify()!=null && !mb.getVerify().isEmpty()){
 				if (mb.getEmail().trim().equals(email.trim()) && mb.getVerify().trim().equals(token.trim()) ) {
 					HttpServletRequest request = ServletActionContext.getRequest();
 					HttpSession session = request.getSession();
