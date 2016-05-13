@@ -1,24 +1,41 @@
 package group3.henry.login.controller;
 
 import java.io.IOException;
-//import java.util.Map;
 
 import javax.servlet.http.*;
 
 import org.apache.struts2.ServletActionContext;
-//import org.apache.struts2.interceptor.ParameterAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import group3.henry.login.model.LoginService;
 import group3.henry.login.model.MemberVO;
 
-//public class LoginAction extends ActionSupport implements ParameterAware{
+/*
+tries to log in
+forgot password
+clicks recover button
+redirects to recover.jsp
+enters email, sends to recoverAction, recover()
+
+Action takes email, finds it in DB
+
+If exists, sets token
+sends token to email
+user clicks link w/ token
+Action receives token, triggers validateToken()
+Action checks token against DB
+If match, redirects to new password .jsp
+user enters new password, sends to Action
+encryption happens, interceptor
+Action sets new pw in DB
+redirect user to Index.jsp
+
+*/
 public class RecoverAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private MemberVO memberVO;
 	private String message;
-//	private Map<String, String[]> parameters;
 		
 	public MemberVO getMemberVO() {
 		return memberVO;
@@ -32,32 +49,18 @@ public class RecoverAction extends ActionSupport {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-//	public Map<String, String[]> getParameters() {
-//		return parameters;
-//	}
-//	public void setParameters(Map<String, String[]> parameters) {
-//		this.parameters = parameters;
-//	}
 	
-	private boolean allowUser(String id, String pw) {
-		System.out.println("LoginAction AllowUser method");
-		LoginService login = new LoginService();
-		memberVO = login.validate(id, pw);
-		if (memberVO!=null)
-			return true;
-		else
-			return false;
+	private String compose(String token, String email){
+		String nl = System.getProperty("line.separator");
+		System.out.println("RecoverAction compose()");
+		return "Someone requested a password reset at AmyClinic with your Email address!" + nl + 
+				"If this wasn't you, please ignore this email!" + nl + nl + 
+				"http://localhost:8080/AmyClinic/free/recover.action?auth=" + token + "&email=" + email;			
 	}
 
-	public String login() {
+	public String recover() {
 		HttpServletRequest request = ServletActionContext.getRequest();
-		System.out.println("LoginAction login method");
-//		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
-//		System.out.println("---------");
-//		System.out.println("LoginAction request.getAttribute('encpw')" + ((Object[])(parameters.get("memberVO.pwd")))[0]);
-//		System.out.println("LoginAction memberVO.getPwd()" + memberVO.getPwd());
-//		System.out.println("---------");
-		
+		System.out.println("RecoverAction recover()");
 		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
 			
 			this.setMessage("Invalid ID or Password!");
@@ -69,16 +72,6 @@ public class RecoverAction extends ActionSupport {
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
 			session.setAttribute("member", memberVO);
-			
-//			HttpServletResponse  response = ServletActionContext.getResponse(); 
-//			try {
-//				String location = (String) session.getAttribute("location");
-//				System.out.println("location(LoginHandler)="+location);
-//				response.sendRedirect(location);
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 			
 			try {                                      //*工作2: 看看有無來源網頁 (-如有:則重導之)                  
 		         String location = (String) session.getAttribute("location");

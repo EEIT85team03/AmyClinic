@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import group3.henry.email.Mailer;
+import group3.henry.email.utility.Mailer;
 import group3.henry.login.model.MemberVO;
 import group3.henry.register.model.RegisterDAO;
 
@@ -47,14 +47,15 @@ public class RegisterAction extends ActionSupport{
 		RegisterDAO register = new RegisterDAO();
 		Mailer m = new Mailer();
 		HttpServletRequest request = ServletActionContext.getRequest();
-		
-		if (register.emailExists(memberVO.getEmail())){
+		System.out.println(register.emailExists(memberVO.getEmail()));
+		if (register.emailExists(memberVO.getEmail())!=null){
 			this.setMessage("This Email has already been registered!");
+			System.out.println("Email in use");
 			return INPUT;
 		} else {
 			if (request.getAttribute("encpw")!=null)
 				memberVO.setPwd((String)request.getAttribute("encpw"));
-
+			System.out.println("Why is the check not working?");
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification
 			
 			String token = secureToken().toUpperCase();

@@ -22,13 +22,14 @@ public class VerifyService {
 	public Boolean verify(String email, String token) {
 		System.out.println("VerifyService");
 		for (MemberVO mb : memberList) {
-			if (mb.getVerify()!=null && !mb.getVerify().isEmpty()){
-				if (mb.getEmail().trim().equals(email.trim()) && mb.getVerify().trim().equals(token.trim()) ) {
+			if (mb.getVerify()!=null && !mb.getVerify().isEmpty()){ //checks if token exists
+				if (mb.getEmail().trim().equals(email.trim()) && mb.getVerify().trim().equals(token.trim()) ) { //verify email&token
 					HttpServletRequest request = ServletActionContext.getRequest();
 					HttpSession session = request.getSession();
 					session.setAttribute("memberVO", mb);
-					mb.setAct_status(1);
-					mb.setVerify("");
+					if (mb.getAct_status()==2) //if the account status = waiting for verification (aka not banned)
+						mb.setAct_status(1); //sets account to active
+					mb.setVerify(""); // removes token
 					dao.update(mb);
 					return true;
 				}

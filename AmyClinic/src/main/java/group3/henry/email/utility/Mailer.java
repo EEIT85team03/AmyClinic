@@ -1,8 +1,5 @@
-package group3.henry.email;
+package group3.henry.email.utility;
 
-
-import java.math.BigInteger;
-import java.security.SecureRandom;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -15,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class Mailer {
 	private String nl = System.getProperty("line.separator");
-	
+	private final String SIGNATURE = "Sent by AmyClinic." + nl + "Visit us on our website!";
 /*
  create account
  set status to 2 (awaiting verification)
@@ -51,8 +48,7 @@ public class Mailer {
 //	}
 	
 	//					Person			Email		  Email Subject   Email Text
-	public void send(String name, String destination, String subject, String text) {
-		String signature = "Sent by AmyClinic." + nl + "Visit us on our website!";		  
+	public void send(String name, String destination, String subject, String text) {		  
 
 		//sender
 	    String from = "eeit85group3@gmail.com";
@@ -81,7 +77,7 @@ public class Mailer {
 	        message.setFrom(new InternetAddress(from)); // Set From: header field of the header.         
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
 	        message.setSubject(subject); // Set Subject: header field
-	        message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + signature); // Set the actual message         
+	        message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE); // Set the actual message         
 	        Transport.send(message); // Send message
 	        
 	        System.out.println("Sent message successfully....");
