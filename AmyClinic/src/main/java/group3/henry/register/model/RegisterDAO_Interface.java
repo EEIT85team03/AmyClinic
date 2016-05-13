@@ -8,6 +8,6 @@ import java.sql.SQLException;
 
 public interface RegisterDAO_Interface {
 	public void addMember(MemberVO memberVO);	    
-	public boolean emailExists(String email);
+	public MemberVO emailExists(String email);
 
 }

@@ -21,7 +21,7 @@ public class ProductService {
 		dao = new ProductDAO();
 	}
 
-	// 新增
+	// 新增(目前照片路徑還是寫死，未來有表單功能後會做調整)
 	public ProductVO addProduct(String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {
@@ -56,7 +56,7 @@ public class ProductService {
 		return productVO;
 	}
 	
-	//修改
+	//修改(目前照片路徑還是寫死，未來有表單功能後會做調整)
 	public ProductVO updateProduct(Integer pid,String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {

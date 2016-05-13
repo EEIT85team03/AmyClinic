@@ -8,7 +8,6 @@
 <title>login.jsp</title>
 </head>
 <body>
-<!-- 			Henry Struts2 testing -->
 	I am login/login.jsp<hr>
 	
 	User: * Password: 1234
@@ -20,9 +19,8 @@
 				<s:submit value="Submit" method="login" />
 			</s:form>
 		</li>
+		<li><input type="button" value="Forgot Password?" onclick="location.href='${pageContext.request.contextPath}/login/recover.jsp'"></li>
 		<li><div style="color:red;">${message}</div></li>
-	</ul>
-	
-<!-- 			Henry Struts2 testing -->
+	</ul>	
 </body>
 </html>

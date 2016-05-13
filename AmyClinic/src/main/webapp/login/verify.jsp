@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Verify Email</title>
 </head>
 <body>
-Congratulations, ${requestScope.memberVO.name}! You have successfully registered! Please check your email and verify your account!
+I am verify.jsp <hr>
+
+Hello ${memberVO.name}!
+<div style="color:red;">${message}</div>
+
+<script>
+  setTimeout(function() {
+      document.location = "${pageContext.request.contextPath}/index.jsp";
+  }, 3000); // delay in milliseconds
+</script>
 </body>
 </html>

@@ -26,6 +26,7 @@ CREATE TABLE Members(
   mid			DECIMAL(8)		IDENTITY(1000,1) PRIMARY KEY,
   name			NVARCHAR(30)	DEFAULT 'Unknown',  
   pwd			VARCHAR(50)		NOT NULL,
+  verify		VARCHAR(50)		DEFAULT '',
   email			VARCHAR(50)		NOT NULL UNIQUE,
   birthday		DATE			,
   country		NVARCHAR(20)		,
@@ -72,7 +73,7 @@ CREATE TABLE Orders
   total			DECIMAL(10)		NOT NULL,
   addr			NVARCHAR(50)	NOT NULL,
   phone			VARCHAR(10)		NOT NULL,
-  email			VARCHAR(50)		NOT NULL UNIQUE,
+  email			VARCHAR(50)		NOT NULL,
   odate			DATETIME		DEFAULT GETDATE(),
   ostatus		DECIMAL(1)		DEFAULT 1, /*	0 = Order Created / Cancellable
 												1 = Processing
@@ -118,7 +119,7 @@ CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
 ( 
   eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees,   
   c_date		DATE			NOT NULL,
-  c_hours		VARCHAR(13)		NOT NULL,
+  c_hours		NVARCHAR(13)	NOT NULL,
   appt_num		DECIMAL(3)		NOT NULL,
   appt_status	DECIMAL(1)		DEFAULT 1, -- 1 = Normal, 0 = Stopped
   memo			NVARCHAR(300)	DEFAULT ' ',  

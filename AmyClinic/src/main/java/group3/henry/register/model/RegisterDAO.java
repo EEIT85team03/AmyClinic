@@ -15,14 +15,12 @@ public class RegisterDAO implements RegisterDAO_Interface {
 	
 	@Override
 	public void addMember(MemberVO memberVO) {	
-		memberVO.setAct_status(1);
-		
 		dao.insert(memberVO);
 		return;
 	}
 
 	@Override
-	public boolean emailExists(String email) {		
+	public MemberVO emailExists(String email) {		
 		List results = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
@@ -38,9 +36,10 @@ public class RegisterDAO implements RegisterDAO_Interface {
 		System.out.println(results);
 					
 		if (results.isEmpty())
-			return false;		
+			return null;		
 		else
-			return true;
+			return (MemberVO)results.get(0);
+			
 				
 	}
 	
