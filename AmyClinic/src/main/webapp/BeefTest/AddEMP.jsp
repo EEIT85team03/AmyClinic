@@ -23,6 +23,7 @@
 			<s:textfield name="employeeVO.education" label="教育程度" />
 			<s:textfield name="employeeVO.experience" label="經歷" />
 			<s:textfield name="employeeVO.specialty" label="專長" />
+			<s:file      name="photo.photo" label="照片" /> 
 						<s:submit value="送出" method="add" />
 		</s:form>
 		</LI>
