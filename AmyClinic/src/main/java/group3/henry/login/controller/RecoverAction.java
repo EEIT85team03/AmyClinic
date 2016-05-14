@@ -1,5 +1,10 @@
 package group3.henry.login.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import group3.henry.email.model.VerifyService;
@@ -18,11 +23,10 @@ Action takes email, finds it in DB
 If exists, sets token
 sends token to email
 user clicks link w/ token
-
 Action receives token, triggers validateToken()
-
 Action checks token against DB
 If match, redirects to new password .jsp
+
 user enters new password, sends to Action
 encryption happens, interceptor
 Action sets new pw in DB
@@ -32,6 +36,8 @@ redirect user to Index.jsp
 public class RecoverAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private static final String HEADER = "AmyClinic Password Recovery";
+	private HttpServletRequest request = ServletActionContext.getRequest();
+	private HttpSession session = request.getSession();
 
 	private MemberVO memberVO;
 	private String message;
@@ -39,8 +45,7 @@ public class RecoverAction extends ActionSupport {
 	private String email;
 	private String token;
 	
-	private String tempPW1;
-	private String tempPW2;
+	private String tempPW;
 		
 	public MemberVO getMemberVO() {
 		return memberVO;
@@ -66,17 +71,11 @@ public class RecoverAction extends ActionSupport {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	public String getTempPW1() {
-		return tempPW1;
+	public String getTempPW() {
+		return tempPW;
 	}
-	public void setTempPW1(String tempPW1) {
-		this.tempPW1 = tempPW1;
-	}
-	public String getTempPW2() {
-		return tempPW2;
-	}
-	public void setTempPW2(String tempPW2) {
-		this.tempPW2 = tempPW2;
+	public void setTempPW(String tempPW) {
+		this.tempPW = tempPW;
 	}
 	
 	private String compose(String token, String email){
@@ -86,7 +85,18 @@ public class RecoverAction extends ActionSupport {
 				"If this wasn't you, please ignore this email!" + nl + nl + "Please click the following link to reset your password!" +nl+nl+
 				"http://localhost:8080/AmyClinic/free/recover.action?token=" + token + "&email=" + email;			
 	}
-
+	
+	public String resetPW(){
+		System.out.println("RecoverAction resetPW()");
+		System.out.println(memberVO.getPwd());
+		System.out.println(tempPW);
+		this.setMemberVO((MemberVO)session.getAttribute("memberVO"));
+		System.out.println(memberVO.getName());
+		System.out.println(memberVO.getPwd());
+		
+		return SUCCESS;
+	}
+	
 	public String recover() { // activates when a user requests a password reset (from recover.jsp)
 		//HttpServletRequest request = ServletActionContext.getRequest();
 		MemberServices service = new MemberServices();
@@ -101,7 +111,8 @@ public class RecoverAction extends ActionSupport {
 			String token = gen.secureToken().toUpperCase(); //generates 250bit secure token
 			user.setVerify(token);	// sets the recovery token in the designated user	
 			m.send(user.getName(), user.getEmail(), HEADER, compose(token, user.getEmail())); // sends recovery mail to the user
-			service.update(user);
+			service.update(user); //sets token for the user with the reset request
+			session.setAttribute("memberVO", user); // sets the user as the current active session user
 		}
 		// Universal result message. Prevents fishing for valid email addresses
 		this.setMessage("Thank you for using our password recovery service. If the email you entered was registered on our site, you will receive an email with further instructions shortly!");		
@@ -114,6 +125,8 @@ public class RecoverAction extends ActionSupport {
 		
 		if (vs.verify(email, token)){
 			this.message = "Verification success! Please enter your new password!";
+//			session.setAttribute("account", memberVO.getName());     // logs user in for password reset
+//			session.setAttribute("member", memberVO);
 			return "resetform"; 
 		} else {
 			this.message = "Unfortunately, verfication failed. Please check your email and try again!";
