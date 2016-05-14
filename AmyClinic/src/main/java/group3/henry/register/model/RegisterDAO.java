@@ -1,4 +1,8 @@
 package group3.henry.register.model;
+
+//DEPRECIATED - NO LONGER USED IN PROJECT
+//KEPT FOR REFERENCE ONLY
+
 //
 //import group3.henry.login.model.MemberDAO;
 //import group3.henry.login.model.MemberVO;

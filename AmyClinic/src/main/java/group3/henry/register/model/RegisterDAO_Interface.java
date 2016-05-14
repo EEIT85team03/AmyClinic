@@ -1,5 +1,8 @@
 package group3.henry.register.model;
 
+// DEPRECIATED - NO LONGER USED IN PROJECT
+// KEPT FOR REFERENCE ONLY
+
 import group3.henry.login.model.MemberVO;
 
 import java.io.IOException;

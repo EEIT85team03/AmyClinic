@@ -48,8 +48,9 @@ public class RegisterAction extends ActionSupport{
 		Mailer m = new Mailer();
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println(register.emailExists(memberVO.getEmail()));
+		
 		if (register.emailExists(memberVO.getEmail())!=null){
-			this.setMessage("This Email has already been registered!");
+			this.setMessage("This Email " +memberVO.getEmail() + " has already been registered!");
 			System.out.println("Email in use");
 			return INPUT;
 		} else {
@@ -60,10 +61,11 @@ public class RegisterAction extends ActionSupport{
 			
 			String token = secureToken().toUpperCase();
 			memberVO.setVerify(token);		
+
+			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()));
 			
 			register.addMember(memberVO);
 			
-			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()));
 			return SUCCESS;	
 		}
 		

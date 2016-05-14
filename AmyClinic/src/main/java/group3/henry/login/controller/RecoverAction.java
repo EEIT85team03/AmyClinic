@@ -60,6 +60,7 @@ public class RecoverAction extends ActionSupport {
 
 	public String recover() {
 		HttpServletRequest request = ServletActionContext.getRequest();
+		MemberServices service = new MemberServices();
 		System.out.println("RecoverAction recover()");
 
 		return "success";

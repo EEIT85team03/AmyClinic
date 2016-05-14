@@ -64,6 +64,7 @@ public class Mailer {
 	    props.put("mail.smtp.starttls.enable", "true");
 	    props.put("mail.smtp.host", host);
 	    props.put("mail.smtp.port", port);
+	    props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
 	    // Get the Session 
 	    Session session = Session.getInstance(props, 

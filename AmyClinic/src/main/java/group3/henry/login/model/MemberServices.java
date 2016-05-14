@@ -21,7 +21,6 @@ public class MemberServices {
 		dao.insert(memberVO);
 		return;
 	}
-
 	
 	public MemberVO validate(String id, String pw) {			
 		for (MemberVO mb : memberList) {
@@ -56,16 +55,17 @@ public class MemberServices {
 	public List<MemberVO> getMemberList() { 
 		return memberList;
 	}
-	
-	public void addNewMember(MemberVO memberVO){
-		memberList.add(memberVO);
-	}
-	
+		
 	public List<MemberVO> getAll() {
 		List<MemberVO> list = null;
 		list = dao.getAll();
 		return list;
 	}
+
+//	public void addNewMember(MemberVO memberVO){
+//		memberList.add(memberVO);
+//	}
+	
 	
 	//testing
 	public static void main(String[] args){
