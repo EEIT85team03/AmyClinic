@@ -51,13 +51,24 @@ public class AES_EncryptionInterceptor extends AbstractInterceptor {
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String pw = null;
+		String pw2 = null;
 		
 		if (request.getAttribute("encpw")!=null)
 			pw = (String)request.getAttribute("encpw");
 		else 
 			pw = request.getParameter("memberVO.pwd");			
+		if (request.getAttribute("encpw2")!=null)
+			pw2 = (String)request.getAttribute("encpw2");
+		else
+			pw2 = request.getParameter("tempPW");	
+		
 		request.setAttribute("encpw", encrypt(pw));
-					
+		System.out.println(encrypt(pw));
+		if (null!=pw2){
+			request.setAttribute("encpw2", encrypt(pw2));
+			System.out.println(encrypt(pw2));
+		}
+		
 		return invocation.invoke(); // passes control to the next intercepter
 	}
 //	test method

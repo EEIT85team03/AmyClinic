@@ -5,9 +5,17 @@ import java.security.NoSuchAlgorithmException;
 //import java.util.HashMap;
 //import java.util.Map;
 
+
+
+
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
+
+
+
+
 
 //import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
@@ -72,12 +80,23 @@ public class MD5_EncryptionInterceptor extends AbstractInterceptor {
 // ---------------------------------------------------------	    
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String pw = null;
-//		System.out.println("replaced param: " + request.getParameter("memberVO.pwd"));
+		String pw2 = null;
+
 		if (request.getAttribute("encpw")!=null)
 			pw = (String)request.getAttribute("encpw");
 		else 
-			pw = request.getParameter("memberVO.pwd");			
+			pw = request.getParameter("memberVO.pwd");
+		if (request.getAttribute("encpw2")!=null)
+			pw2 = (String)request.getAttribute("encpw2");
+		else
+			pw2 = request.getParameter("tempPW");	
+		
 		request.setAttribute("encpw", encode(pw));
+		System.out.println(encode(pw));
+		if (null!=pw2){
+			request.setAttribute("encpw2", encode(pw2));
+			System.out.println(encode(pw2));
+		}
 				
 		return invocation.invoke(); // passes control to the next intercepter
 	}

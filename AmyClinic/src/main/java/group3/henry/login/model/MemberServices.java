@@ -26,7 +26,9 @@ public class MemberServices {
 		return;
 	}
 	
-	public MemberVO validate(String id, String pw) {			
+	public MemberVO validate(String id, String pw) {
+		System.out.println("MemberServices validate(id, pw)");
+		memberList = this.getAll();
 		for (MemberVO mb : memberList) {
 			if (mb.getName().trim().equals(id.trim()) && mb.getPwd().trim().equals(pw.trim()) ) {
 				System.out.println(mb.getPwd().trim() + " " + pw.trim());

@@ -38,6 +38,10 @@
 			<result name="success">/register/regsuccess.jsp</result>
 			<result name="input">/register/register.jsp</result>
 		</action>
+		<action name="reset" class="group3.henry.login.controller.ResetPassAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="input">/login/resetpw.jsp</result>
+		</action>
 	</package>
 <!-- *************************	-->
 <!-- Access controlled package  -->
@@ -82,7 +86,6 @@
 		</action>
 		<action name="recover" class="group3.henry.login.controller.RecoverAction">
 			<result name="success">/login/verify.jsp</result>
-			<result name="input">/login/recover.jsp</result>
 			<result name="resetform">/login/resetpw.jsp</result>
 			<result name="failure">/login/verify.jsp</result>
 		</action>

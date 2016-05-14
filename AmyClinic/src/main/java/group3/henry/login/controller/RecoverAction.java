@@ -36,47 +36,24 @@ redirect user to Index.jsp
 public class RecoverAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	private static final String HEADER = "AmyClinic Password Recovery";
-	private HttpServletRequest request = ServletActionContext.getRequest();
-	private HttpSession session = request.getSession();
+
 
 	private MemberVO memberVO;
-	private String message;
-	
+	private String message;	
 	private String email;
-	private String token;
-	
+	private String token;	
 	private String tempPW;
 		
-	public MemberVO getMemberVO() {
-		return memberVO;
-	}
-	public void setMemberVO(MemberVO memberVO) {
-		this.memberVO = memberVO;
-	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getToken() {
-		return token;
-	}
-	public void setToken(String token) {
-		this.token = token;
-	}
-	public String getTempPW() {
-		return tempPW;
-	}
-	public void setTempPW(String tempPW) {
-		this.tempPW = tempPW;
-	}
+	public MemberVO getMemberVO() {return memberVO;}
+	public void setMemberVO(MemberVO memberVO) {this.memberVO = memberVO;}
+	public String getMessage() {return message;}
+	public void setMessage(String message) {this.message = message;}
+	public String getEmail() {return email;}
+	public void setEmail(String email) {this.email = email;}
+	public String getToken() {return token;}
+	public void setToken(String token) {this.token = token;}
+	public String getTempPW() {return tempPW;}
+	public void setTempPW(String tempPW) {this.tempPW = tempPW;}
 	
 	private String compose(String token, String email){
 		String nl = System.getProperty("line.separator");
@@ -86,17 +63,6 @@ public class RecoverAction extends ActionSupport {
 				"http://localhost:8080/AmyClinic/free/recover.action?token=" + token + "&email=" + email;			
 	}
 	
-	public String resetPW(){
-		System.out.println("RecoverAction resetPW()");
-		System.out.println(memberVO.getPwd());
-		System.out.println(tempPW);
-		this.setMemberVO((MemberVO)session.getAttribute("memberVO"));
-		System.out.println(memberVO.getName());
-		System.out.println(memberVO.getPwd());
-		
-		return SUCCESS;
-	}
-	
 	public String recover() { // activates when a user requests a password reset (from recover.jsp)
 		//HttpServletRequest request = ServletActionContext.getRequest();
 		MemberServices service = new MemberServices();
@@ -104,6 +70,8 @@ public class RecoverAction extends ActionSupport {
 		
 		MemberVO user = service.emailExists(memberVO.getEmail()); // searches DB for a user with the entered email
 		if (null != user){
+			HttpServletRequest request = ServletActionContext.getRequest();
+			HttpSession session = request.getSession();
 			TokenGenerator gen = new TokenGenerator(); 
 			Mailer m = new Mailer();
 			System.out.println("vaild email, sending recovery Email");
