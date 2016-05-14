@@ -8,7 +8,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import group3.henry.login.model.LoginService;
+import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
 /*
@@ -61,33 +61,33 @@ public class RecoverAction extends ActionSupport {
 	public String recover() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println("RecoverAction recover()");
-		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
-			
-			this.setMessage("Invalid ID or Password!");
-			return "login";
-		} else if (memberVO.getAct_status() == 2) {
-			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
-			return "verifyEmail";
-		} else {
-			HttpSession session = request.getSession(); // get HttpSession
-			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
-			session.setAttribute("member", memberVO);
-			
-			try {                                      //*工作2: 看看有無來源網頁 (-如有:則重導之)                  
-		         String location = (String) session.getAttribute("location");
-		         System.out.println("location(LoginHandler)="+location);
-		         if (location != null) {
-		           session.removeAttribute("location");
-		           HttpServletResponse  response = ServletActionContext.getResponse(); 
-		           response.sendRedirect(location);
-		           return null;
-		         }
-		       }catch (IOException e) { e.printStackTrace();}
-			
-			return "success";
-		}
+
+		return "success";
+		
+		//		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
+//			
+//			this.setMessage("Invalid ID or Password!");
+//			return "login";
+//		} else if (memberVO.getAct_status() == 2) {
+//			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
+//			return "verifyEmail";
+//		} else {
+//			HttpSession session = request.getSession(); // get HttpSession
+//			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
+//			session.setAttribute("member", memberVO);
+//			
+//			try {                                      //*工作2: 看看有無來源網頁 (-如有:則重導之)                  
+//		         String location = (String) session.getAttribute("location");
+//		         System.out.println("location(LoginHandler)="+location);
+//		         if (location != null) {
+//		           session.removeAttribute("location");
+//		           HttpServletResponse  response = ServletActionContext.getResponse(); 
+//		           response.sendRedirect(location);
+//		           return null;
+//		         }
+//		       }catch (IOException e) { e.printStackTrace();}
+//			
+//			return "success";
+//		}
 	}
-
-	
-
 }

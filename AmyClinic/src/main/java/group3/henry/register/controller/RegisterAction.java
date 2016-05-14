@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
 
 import group3.henry.email.utility.Mailer;
+import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
-import group3.henry.register.model.RegisterDAO;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -44,7 +44,7 @@ public class RegisterAction extends ActionSupport{
 	}
 	
 	public String register(){
-		RegisterDAO register = new RegisterDAO();
+		MemberServices register = new MemberServices();
 		Mailer m = new Mailer();
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println(register.emailExists(memberVO.getEmail()));

@@ -10,7 +10,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import group3.henry.login.model.LoginService;
+import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
 //public class LoginAction extends ActionSupport implements ParameterAware{
@@ -41,7 +41,7 @@ public class LoginAction extends ActionSupport {
 	
 	private boolean allowUser(String id, String pw) {
 		System.out.println("LoginAction AllowUser method");
-		LoginService login = new LoginService();
+		MemberServices login = new MemberServices();
 		memberVO = login.validate(id, pw);
 		if (memberVO!=null)
 			return true;

@@ -105,7 +105,7 @@
         <action name="AddActionEmp" class="group3.beef.employee.controller.AddEmpAction">
             <result name="input">/BeefTest/AddEMP.jsp</result>
             <result name="success">/BeefTest/AddSucces.jsp</result>
-			     </action>
+		</action>
     </package>
 <!-- beef -->
 

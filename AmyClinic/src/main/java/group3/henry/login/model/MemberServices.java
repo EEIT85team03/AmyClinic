@@ -1,31 +1,57 @@
 package group3.henry.login.model;
 
+import hibernate.util.HibernateUtil;
+
 import java.util.*;
 
-public class LoginService {
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
+public class MemberServices {
 	static private MemberDAO dao = new MemberDAO();
 	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
 
-	public LoginService() {
+	public MemberServices() {
 		if (memberList.isEmpty()) 
 			memberList = this.getAll(); 	
 	}
+	
+	public void addMember(MemberVO memberVO) {	
+		dao.insert(memberVO);
+		return;
+	}
+
 	
 	public MemberVO validate(String id, String pw) {			
 		for (MemberVO mb : memberList) {
 			if (mb.getName().trim().equals(id.trim()) && mb.getPwd().trim().equals(pw.trim()) ) {
 				return mb;
-//				String encrypedString = GlobalService.encryptString(password.trim());
-//				String pswd = GlobalService.getMD5Endocing(encrypedString);
-//				String mbpswd = mb.getPassword().trim();
-//				if (mbpswd.equals(pswd)) {
-//					return mb;
-//				}
 			}
 		}
 		return null;
 	}
 	
+	public MemberVO emailExists(String email) {		
+		List results = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Criteria cr = session.createCriteria(MemberVO.class);
+			cr.add(Restrictions.eq("email", email));
+			results = cr.list(); 		
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		System.out.println(results);
+					
+		if (results.isEmpty())
+			return null;		
+		else
+			return (MemberVO)results.get(0);			
+	}
 	
 	public List<MemberVO> getMemberList() { 
 		return memberList;
@@ -44,7 +70,7 @@ public class LoginService {
 	//testing
 	public static void main(String[] args){
 
-		LoginService dao = new LoginService();
+		MemberServices dao = new MemberServices();
 		
 		List<MemberVO> list = dao.getAll();
 		for (MemberVO aMem : list) {
