@@ -82,7 +82,7 @@
 											label="出生日期" displayFormat="MM/dd/yyyy" id="birthdayfield"
 											language="en-US"
 											cssStyle="background:lightgray; font-size:13.5px"
-											value="%{'2016-01-01'}" />
+											value="%{'2000-01-01'}" />
 										<%-- 				<s:textfield name="memberVO.country" label="Country" placeholder="Taiwan" /> --%>
 										<s:select name="memberVO.country" headerKey=""
 											headerValue="選擇國籍" label="國籍"

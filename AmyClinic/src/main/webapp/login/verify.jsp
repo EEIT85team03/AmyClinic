@@ -7,6 +7,10 @@
 <title>Verify Email</title>
 </head>
 <body>
+
+<!-- General purpose message page. Displays a message (from many sources) 
+	 for 3 seconds before redirecting to index.jsp -->
+
 I am verify.jsp <hr>
 
 Hello ${memberVO.name}!

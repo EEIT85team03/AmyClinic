@@ -13,9 +13,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport{
+	private static final String HEADER = "AmyClinic Registration Confirmation";
 	private MemberVO memberVO;	
 	private String message;
-	private final String HEADER = "AmyClinic Registration Confirmation";
 	
 	public MemberVO getMemberVO() {
 		return memberVO;
@@ -50,7 +50,7 @@ public class RegisterAction extends ActionSupport{
 		} else {
 			if (request.getAttribute("encpw")!=null)
 				memberVO.setPwd((String)request.getAttribute("encpw"));
-			System.out.println("Why is the check not working?");
+			System.out.println(memberVO.getEmail() + " has not been registered.");
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification
 			
 			String token = gen.secureToken().toUpperCase();

@@ -21,10 +21,15 @@ public class MemberServices {
 		dao.insert(memberVO);
 		return;
 	}
+	public void update(MemberVO memberVO) {	
+		dao.update(memberVO);
+		return;
+	}
 	
 	public MemberVO validate(String id, String pw) {			
 		for (MemberVO mb : memberList) {
 			if (mb.getName().trim().equals(id.trim()) && mb.getPwd().trim().equals(pw.trim()) ) {
+				System.out.println(mb.getPwd().trim() + " " + pw.trim());
 				return mb;
 			}
 		}
