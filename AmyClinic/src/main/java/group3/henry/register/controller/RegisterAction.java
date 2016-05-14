@@ -1,13 +1,11 @@
 package group3.henry.register.controller;
 
-import java.math.BigInteger;
-import java.security.SecureRandom;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import group3.henry.email.utility.Mailer;
+import group3.henry.global.utility.Mailer;
+import group3.henry.global.utility.TokenGenerator;
 import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
@@ -31,11 +29,6 @@ public class RegisterAction extends ActionSupport{
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-	private String secureToken(){
-		SecureRandom random = new SecureRandom();
-		 return new BigInteger(250, random).toString(32);
-	}
 	
 	private String compose(String token, String email){
 		String nl = System.getProperty("line.separator");
@@ -48,6 +41,7 @@ public class RegisterAction extends ActionSupport{
 		Mailer m = new Mailer();
 		HttpServletRequest request = ServletActionContext.getRequest();
 		System.out.println(register.emailExists(memberVO.getEmail()));
+		TokenGenerator gen = new TokenGenerator();
 		
 		if (register.emailExists(memberVO.getEmail())!=null){
 			this.setMessage("This Email " +memberVO.getEmail() + " has already been registered!");
@@ -59,7 +53,7 @@ public class RegisterAction extends ActionSupport{
 			System.out.println("Why is the check not working?");
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification
 			
-			String token = secureToken().toUpperCase();
+			String token = gen.secureToken().toUpperCase();
 			memberVO.setVerify(token);		
 
 			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()));

@@ -62,8 +62,18 @@ public class RecoverAction extends ActionSupport {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		MemberServices service = new MemberServices();
 		System.out.println("RecoverAction recover()");
+		
+		System.out.println(memberVO.getEmail());
+		MemberVO user = service.emailExists(memberVO.getEmail());
+		if (null != user){}
+		
+		return "success";		
+		
+//		Action takes email, finds it in DB
+//
+//		If exists, sets token
+//		sends token to email
 
-		return "success";
 		
 		//		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
 //			

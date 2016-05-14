@@ -13,7 +13,7 @@ I'm recover.jsp!<hr>
 	<ul>
 		<li><font color="blue"><b>Please enter your Email to recover your password:</b></font> 		
 			<s:form namespace="/free" action="recoverPW">
-				<s:textfield name="memberVO.name" label="Email" placeholder="abc@xyz.com" />				
+				<s:textfield name="memberVO.email" label="Email" placeholder="abc@xyz.com" />				
 				<s:submit value="Submit" method="recover" />
 			</s:form>
 		</li>

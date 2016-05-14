@@ -1,4 +1,4 @@
-package group3.henry.email.utility;
+package group3.henry.global.utility;
 
 import java.util.Properties;
 
