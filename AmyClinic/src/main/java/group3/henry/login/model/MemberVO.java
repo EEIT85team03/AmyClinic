@@ -256,7 +256,7 @@ public class MemberVO implements Serializable {
 		this.reward_pts = reward_pts;
 	}
 	
-	@Column(name = "last_visit", insertable=false)
+//	@Column(name = "last_visit", insertable=false)
 	public Date getLast_visit() {
 		return last_visit;
 	}

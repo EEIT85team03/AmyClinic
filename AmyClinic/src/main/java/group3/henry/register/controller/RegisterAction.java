@@ -1,5 +1,7 @@
 package group3.henry.register.controller;
 
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -53,6 +55,8 @@ public class RegisterAction extends ActionSupport{
 			System.out.println(memberVO.getEmail() + " has not been registered.");
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification
 			
+			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
+			memberVO.setLast_visit(today);
 			String token = gen.secureToken().toUpperCase(); // generates verification token
 			memberVO.setVerify(token);		// stores token in current memberVO
 

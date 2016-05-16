@@ -13,14 +13,15 @@
 I am memberonly1.jsp<hr>
 <h1>I require a login to be viewed!</h1>
 
+${account} <br>
 Your private, personal account information is as follows:<hr>
-ID: ${member.mid}<br>
-Name: ${member.name}<br>
-pwd: ${member.pwd}<br>
-email: ${member.email}<br>
-birthday: ${member.birthday}<br>
-country: ${member.country} <br>
-gender: ${member.gender} <br>
+ID: ${memberVO.mid}<br>
+Name: ${memberVO.name}<br>
+pwd: ${memberVO.pwd}<br>
+email: ${memberVO.email}<br>
+birthday: ${memberVO.birthday}<br>
+country: ${memberVO.country} <br>
+gender: ${memberVO.gender} <br>
 
 <s:property value="name"/>
 </body>

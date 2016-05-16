@@ -3,10 +3,13 @@ package group3.henry.login.controller;
 import java.io.IOException;
 //import java.util.Map;
 
+import java.util.Calendar;
+
 import javax.servlet.http.*;
 
 import org.apache.struts2.ServletActionContext;
 //import org.apache.struts2.interceptor.ParameterAware;
+
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -51,6 +54,7 @@ public class LoginAction extends ActionSupport {
 
 	public String login() {
 		HttpServletRequest request = ServletActionContext.getRequest();
+		MemberServices service = new MemberServices();
 		System.out.println("LoginAction login method");
 //		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
 //		System.out.println("---------");
@@ -67,8 +71,11 @@ public class LoginAction extends ActionSupport {
 		} else {
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName()); // tag login in session
-			session.setAttribute("member", memberVO); // stores current memberVO in session
+			session.setAttribute("memberVO", memberVO); // stores current memberVO in session
 			
+			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
+			memberVO.setLast_visit(today); 
+			service.update(memberVO); //updates last visited time
 //			HttpServletResponse  response = ServletActionContext.getResponse(); 
 //			try {
 //				String location = (String) session.getAttribute("location");
