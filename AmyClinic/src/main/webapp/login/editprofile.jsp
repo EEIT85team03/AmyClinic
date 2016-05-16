@@ -6,11 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Account Details</title>
 </head>
+
+I am editprofile.jsp! <hr>
+
 <body>
 <br>mid 	= ${memberVO.mid} 
 <br>name 	= ${memberVO.name}
 <br>pwd 	= ${memberVO.pwd}
-<br>verify	= ${memberVO.verify}
 <br>Email 	= ${memberVO.email}
 <br>Birthday = ${memberVO.birthday}
 <br>Country = ${memberVO.country}
@@ -20,15 +22,17 @@
 <br>Height	= ${memberVO.height}
 <br>Weight 	= ${memberVO.mass}
 <br>Photo 	= ${memberVO.photo}
-<br>FileName = ${memberVO.photoFileName}
-<br>FileType = ${memberVO.photoContentType}
 <br>Status = ${memberVO.act_status}
 <br>Transactions = ${memberVO.num_trans}
 <br>Treatments = ${memberVO.num_treatment}
 <br>Visits	= ${memberVO.num_visits}
 <br>Reward Points = ${memberVO.reward_pts}
 <br>Last Visit = ${memberVO.last_visit}
-<br>Memo	= ${memberVO.memo}
 <br>Date Joined = ${memberVO.join_date}
+<hr>
+<br>verify	= ${memberVO.verify}
+<br>FileName = ${memberVO.photoFileName}
+<br>FileType = ${memberVO.photoContentType}
+<br>Memo	= ${memberVO.memo}
 </body>
 </html>

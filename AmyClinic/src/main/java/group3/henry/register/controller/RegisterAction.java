@@ -56,7 +56,7 @@ public class RegisterAction extends ActionSupport{
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification
 			
 			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
-			memberVO.setLast_visit(today);
+			memberVO.setLast_visit(today); // initial values
 			memberVO.setNum_trans(0);
 			memberVO.setNum_treatment(0);
 			memberVO.setNum_visits(0);
