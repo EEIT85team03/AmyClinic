@@ -57,6 +57,12 @@ public class RegisterAction extends ActionSupport{
 			
 			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
 			memberVO.setLast_visit(today);
+			memberVO.setNum_trans(0);
+			memberVO.setNum_treatment(0);
+			memberVO.setNum_visits(0);
+			memberVO.setTotal_spent(0);
+			memberVO.setReward_pts(0);
+			memberVO.setMemo("");
 			String token = gen.secureToken().toUpperCase(); // generates verification token
 			memberVO.setVerify(token);		// stores token in current memberVO
 
