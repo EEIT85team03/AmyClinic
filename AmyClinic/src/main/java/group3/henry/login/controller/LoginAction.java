@@ -68,6 +68,9 @@ public class LoginAction extends ActionSupport {
 		} else if (memberVO.getAct_status() == 2) { // if the account still needs to verify email
 			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
 			return "verifyEmail";
+		} else if (memberVO.getAct_status() == 0) { // if the account has been banned
+			this.setMessage("Your account has been banned. Please contact Customer Service!");
+			return "login";
 		} else {
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName()); // tag login in session
