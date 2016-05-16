@@ -55,7 +55,7 @@ public class RecoverAction extends ActionSupport {
 	public String getTempPW() {return tempPW;}
 	public void setTempPW(String tempPW) {this.tempPW = tempPW;}
 	
-	private String compose(String token, String email){
+	private String compose(String token, String email){ // composes a message specific for recovering password
 		String nl = System.getProperty("line.separator");
 		System.out.println("RecoverAction compose()");
 		return "Someone requested a password reset at AmyClinic with your Email address!" + nl + 

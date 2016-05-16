@@ -39,7 +39,7 @@ public class LoginAction extends ActionSupport {
 //		this.parameters = parameters;
 //	}
 	
-	private boolean allowUser(String id, String pw) {
+	private boolean allowUser(String id, String pw) { // ID/PW verification method
 		System.out.println("LoginAction AllowUser method");
 		MemberServices login = new MemberServices();
 		memberVO = login.validate(id, pw);
@@ -58,17 +58,16 @@ public class LoginAction extends ActionSupport {
 //		System.out.println("LoginAction memberVO.getPwd()" + memberVO.getPwd());
 //		System.out.println("---------");
 		
-		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { 
-			
+		if (!allowUser(memberVO.getName(), (String)request.getAttribute("encpw"))) { // verifies ID & PW			
 			this.setMessage("Invalid ID or Password!");
 			return "login";
-		} else if (memberVO.getAct_status() == 2) {
+		} else if (memberVO.getAct_status() == 2) { // if the account still needs to verify email
 			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
 			return "verifyEmail";
 		} else {
 			HttpSession session = request.getSession(); // get HttpSession
-			session.setAttribute("account", memberVO.getName());     // *工作1: 在session內做已經登入過的標識
-			session.setAttribute("member", memberVO);
+			session.setAttribute("account", memberVO.getName()); // tag login in session
+			session.setAttribute("member", memberVO); // stores current memberVO in session
 			
 //			HttpServletResponse  response = ServletActionContext.getResponse(); 
 //			try {
@@ -80,7 +79,7 @@ public class LoginAction extends ActionSupport {
 //				e.printStackTrace();
 //			}
 			
-			try {                                      //*工作2: 看看有無來源網頁 (-如有:則重導之)                  
+			try { // determines if there's a source page, sends user back after login if there is                  
 		         String location = (String) session.getAttribute("location");
 		         System.out.println("location(LoginHandler)="+location);
 		         if (location != null) {

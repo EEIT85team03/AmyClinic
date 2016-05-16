@@ -13,7 +13,7 @@ public class MemberServices {
 	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
 
 	public MemberServices() {
-		if (memberList.isEmpty()) 
+		if (memberList.isEmpty()) //populates memberlist on init
 			memberList = this.getAll(); 	
 	}
 	
@@ -26,7 +26,7 @@ public class MemberServices {
 		return;
 	}
 	
-	public MemberVO validate(String id, String pw) {
+	public MemberVO validate(String id, String pw) { // validates user name / password against current memberlist
 		System.out.println("MemberServices validate(id, pw)");
 		memberList = this.getAll();
 		for (MemberVO mb : memberList) {
@@ -38,7 +38,7 @@ public class MemberServices {
 		return null;
 	}
 	
-	public MemberVO emailExists(String email) {		
+	public MemberVO emailExists(String email) { //determines if entered email exists in memberlist		
 		List results = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
