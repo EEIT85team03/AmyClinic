@@ -1,13 +1,12 @@
 package group3.henry.register.model;
 
-import group3.henry.login.model.MemberVO;
+// DEPRECIATED - NO LONGER USED IN PROJECT
+// KEPT FOR REFERENCE ONLY
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.SQLException;
+import group3.henry.login.model.MemberVO;
 
 public interface RegisterDAO_Interface {
 	public void addMember(MemberVO memberVO);	    
-	public MemberVO emailExists(String email);
+//	public MemberVO emailExists(String email);
 
 }

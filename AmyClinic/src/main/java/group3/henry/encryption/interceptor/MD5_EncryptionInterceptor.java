@@ -5,9 +5,17 @@ import java.security.NoSuchAlgorithmException;
 //import java.util.HashMap;
 //import java.util.Map;
 
+
+
+
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
+
+
+
+
 
 //import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
@@ -16,6 +24,7 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 public class MD5_EncryptionInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 	
+	//one-way-hash method
 	private String encode(String message) {
 		final StringBuffer buffer = new StringBuffer();
 		try {
@@ -71,13 +80,25 @@ public class MD5_EncryptionInterceptor extends AbstractInterceptor {
 */
 // ---------------------------------------------------------	    
 		HttpServletRequest request = ServletActionContext.getRequest();
-		String pw = null;
-//		System.out.println("replaced param: " + request.getParameter("memberVO.pwd"));
-		if (request.getAttribute("encpw")!=null)
+		String pw = null; // container for password
+		String pw2 = null; // container for repeat password field, if one exists
+
+		if (request.getAttribute("encpw")!=null) // if a previous interceptor processed a pw, use encpw
 			pw = (String)request.getAttribute("encpw");
 		else 
-			pw = request.getParameter("memberVO.pwd");			
-		request.setAttribute("encpw", encode(pw));
+			pw = request.getParameter("memberVO.pwd"); // if not, use pw from request
+		
+		if (request.getAttribute("encpw2")!=null) // if a prev interceptor processed the alt pw, use encpw2
+			pw2 = (String)request.getAttribute("encpw2");
+		else
+			pw2 = request.getParameter("tempPW");	// if not, use tempPW from request
+		
+		request.setAttribute("encpw", encode(pw)); //stores encoded password in request attribute "encpw"
+		System.out.println(encode(pw));
+		if (null!=pw2){ //if alt pw exists, stores encoded alt password in request attribute "encpw2"
+			request.setAttribute("encpw2", encode(pw2));
+			System.out.println(encode(pw2));
+		}
 				
 		return invocation.invoke(); // passes control to the next intercepter
 	}

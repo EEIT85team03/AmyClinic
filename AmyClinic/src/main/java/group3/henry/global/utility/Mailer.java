@@ -1,4 +1,4 @@
-package group3.henry.email.utility;
+package group3.henry.global.utility;
 
 import java.util.Properties;
 
@@ -29,24 +29,7 @@ public class Mailer {
  
  
  */	
-//	private String secureToken(){		
-//		SecureRandom random = new SecureRandom();
-//		byte bytes[] = new byte[60];		
-//		random.nextBytes(bytes);
-//		for (int i = 0, max = bytes.length; i < max; i++){
-//			while (bytes[i] < 48 || bytes[i] > 122 ){				
-//				byte[] temp = new byte[1];
-//				random.nextBytes(temp);
-//				bytes[i] = temp[0];
-//			}
-//		}
-//		try {
-//			return new String(bytes, "UTF8");
-//		} catch (UnsupportedEncodingException e) {
-//			return null;
-//		}		
-//	}
-	
+
 	//					Person			Email		  Email Subject   Email Text
 	public void send(String name, String destination, String subject, String text) {		  
 
@@ -64,6 +47,7 @@ public class Mailer {
 	    props.put("mail.smtp.starttls.enable", "true");
 	    props.put("mail.smtp.host", host);
 	    props.put("mail.smtp.port", port);
+	    props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
 	    // Get the Session 
 	    Session session = Session.getInstance(props, 

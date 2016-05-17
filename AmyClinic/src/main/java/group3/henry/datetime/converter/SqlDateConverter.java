@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import org.apache.struts2.util.StrutsTypeConverter;
-import com.opensymphony.xwork2.conversion.TypeConversionException;
 
 public class SqlDateConverter extends StrutsTypeConverter {
 

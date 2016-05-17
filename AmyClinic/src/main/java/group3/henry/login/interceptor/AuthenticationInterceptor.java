@@ -14,13 +14,13 @@ public class AuthenticationInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 
 	public String intercept(ActionInvocation invocation) throws Exception {
-				
+		System.out.println("login interceptor!");
+		
 		ActionContext ctx = invocation.getInvocationContext();
 		Map<String, Object> session = ctx.getSession();
-		String account = (String) session.get("account"); 
-		
-		System.out.println("login interceptor!");
-		if (account == null) { 
+		String account = (String) session.get("account"); //obtains login flag
+				
+		if (account == null) { //if not logged in, send to login page 
 			HttpServletRequest request = ServletActionContext.getRequest();
 			String location = request.getRequestURI();
 			session.put("location", location);
