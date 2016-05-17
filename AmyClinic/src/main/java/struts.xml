@@ -38,6 +38,7 @@
 			<result name="success">/register/regsuccess.jsp</result>
 			<result name="input">/register/register.jsp</result>
 		</action>
+		
 		<action name="reset" class="group3.henry.login.controller.ResetPassAction">
 			<result name="success">/login/verify.jsp</result>
 			<result name="input">/login/resetpw.jsp</result>

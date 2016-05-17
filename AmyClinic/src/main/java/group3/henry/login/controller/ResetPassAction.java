@@ -28,11 +28,11 @@ public class ResetPassAction extends ActionSupport{
 		HttpSession session = request.getSession();
 		System.out.println("RecoverAction resetPW()");
 		
-		String pw1 = (String)request.getAttribute("encpw"),
-			   pw2 = (String)request.getAttribute("encpw2");
+		String pw1 = (String)request.getAttribute("encpw"), //obtains the entered password
+			   pw2 = (String)request.getAttribute("encpw2");//obtains the re-entered password
 		
-		System.out.println("pw1 = " + pw1);
-		System.out.println("pw2 = " + pw2);
+//		System.out.println("pw1 = " + pw1);
+//		System.out.println("pw2 = " + pw2);
 
 		if (pw1.equals(pw2)){ // if both encoded pw are equal
 			MemberServices service = new MemberServices();

@@ -2,7 +2,6 @@ package group3.henry.encryption.interceptor;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Map;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -14,7 +13,6 @@ import javax.xml.bind.DatatypeConverter;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
@@ -22,15 +20,15 @@ public class AES_EncryptionInterceptor extends AbstractInterceptor {
 	private static final long serialVersionUID = 1L;
 	private static final String KEY = "thisismygroupthr";
 								      
-
+	// Encryption Method
 	private String encrypt(String message) {
 		String encryptedString = "";
 		
 		try {
 			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding"); 
-			SecretKeySpec secretKey = new SecretKeySpec(KEY.getBytes(), "AES");
-			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-			encryptedString = DatatypeConverter.printBase64Binary(cipher.doFinal(message.getBytes()));
+			SecretKeySpec secretKey = new SecretKeySpec(KEY.getBytes(), "AES"); //specify Encryption type
+			cipher.init(Cipher.ENCRYPT_MODE, secretKey); //init cipher
+			encryptedString = DatatypeConverter.printBase64Binary(cipher.doFinal(message.getBytes())); //encrypt message
 		} catch (InvalidKeyException e) {
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
@@ -45,26 +43,26 @@ public class AES_EncryptionInterceptor extends AbstractInterceptor {
 		return encryptedString;
 	}
 	
-	public String intercept(ActionInvocation invocation) throws Exception {
-		
+	public String intercept(ActionInvocation invocation) throws Exception {	
 		System.out.println("AES Encryption interceptor!");
 		
 		HttpServletRequest request = ServletActionContext.getRequest();
-		String pw = null;
-		String pw2 = null;
+		String pw = null; // container for password
+		String pw2 = null; // container for repeat password field, if one exists
 		
-		if (request.getAttribute("encpw")!=null)
+		if (request.getAttribute("encpw")!=null) // if a previous interceptor processed a pw, use encpw
 			pw = (String)request.getAttribute("encpw");
 		else 
-			pw = request.getParameter("memberVO.pwd");			
-		if (request.getAttribute("encpw2")!=null)
+			pw = request.getParameter("memberVO.pwd"); // if not, use pw from request
+		
+		if (request.getAttribute("encpw2")!=null) // if a prev interceptor processed the alt pw, use encpw2
 			pw2 = (String)request.getAttribute("encpw2");
 		else
-			pw2 = request.getParameter("tempPW");	
+			pw2 = request.getParameter("tempPW");	// if not, use tempPW from request
 		
-		request.setAttribute("encpw", encrypt(pw));
+		request.setAttribute("encpw", encrypt(pw)); //stores encrypted password in request attribute "encpw"
 		System.out.println(encrypt(pw));
-		if (null!=pw2){
+		if (null!=pw2){ //if alt pw exists, stores encrypted alt password in request attribute "encpw2"
 			request.setAttribute("encpw2", encrypt(pw2));
 			System.out.println(encrypt(pw2));
 		}

@@ -2,6 +2,7 @@ package group3.henry.login.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+@SuppressWarnings("serial")
 public class MemberPageAction2 extends ActionSupport {
 
 	private String message;

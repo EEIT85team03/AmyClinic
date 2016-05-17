@@ -2,6 +2,7 @@ package group3.henry.login.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+@SuppressWarnings("serial")
 public class PublicPageAction extends ActionSupport {
 
 	public static final String MESSAGE = "HelloWorld.message.key";
