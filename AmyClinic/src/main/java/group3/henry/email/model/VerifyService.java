@@ -21,6 +21,7 @@ public class VerifyService {
 	
 	public Boolean verify(String email, String token) {
 		System.out.println("VerifyService");
+		memberList = this.getAll();
 		for (MemberVO mb : memberList) {
 			if (mb.getVerify()!=null && !mb.getVerify().isEmpty()){ //checks if token exists
 				if (mb.getEmail().trim().equals(email.trim()) && mb.getVerify().trim().equals(token.trim()) ) { //verify email&token

@@ -62,7 +62,7 @@ public class MemberVO implements Serializable {
 	private Integer   reward_pts;
 	private Date      last_visit;
 	private String	  memo;
-	private Date	  join_date;
+	private Timestamp join_date;
 	
 	//One member -> Many appointments
 	private Set<AppVO> appVO = new HashSet<AppVO>();
@@ -79,7 +79,7 @@ public class MemberVO implements Serializable {
 					Character gender, String addr, String phone, Integer height, Integer mass,
 					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
-					String memo, Date join_date) { //all info
+					String memo, Timestamp join_date) { //all info
 		super();
 		this.mid = mid;
 		this.name = name;
@@ -273,10 +273,10 @@ public class MemberVO implements Serializable {
 	}
 	
 	@Column(name = "join_date", insertable=false)
-	public Date getJoin_date() {
+	public Timestamp getJoin_date() {
 		return join_date;
 	}
-	public void setJoin_date(Date join_date) {
+	public void setJoin_date(Timestamp join_date) {
 		this.join_date = join_date;
 	}
 	
