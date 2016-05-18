@@ -18,6 +18,7 @@ public class DBExporter {
 	    String tableName = "";
         String nl = System.getProperty("line.separator");
         format = format.toUpperCase();
+        target = target.replaceAll("[^a-zA-Z0-9_]",""); // table name input filter
         boolean json = format.equals("JSON");
 
         if (!format.equals("JSON") && !format.equals("XML")){
