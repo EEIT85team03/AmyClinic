@@ -27,7 +27,7 @@ public class ProductVO implements java.io.Serializable {
 	private String name;
 	private Blob photo;
 	private Integer amount;
-//	private Integer cid;
+	private Integer cid;
 	private Integer price;
 	private Integer discount;
 	private String descrip;

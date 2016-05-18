@@ -19,7 +19,7 @@ import org.hibernate.Session;
 
 public class ProductDAO implements ProductDAO_interface {
 	private static final String GET_ALL_STMT = "FROM ProductVO order by pid";
-//	private static final String GET_ODItems_BYPid_STMT = "FROM OrderItemsVO where pid = ?";
+	private static final String GET_ODItems_BYPid_STMT = "FROM OrderItemsVO where pid = ?";
 	private static final String DELETE_ITEM = "DELETE FROM OrderItemsVO where pid = ?";
 	private static final String DELETE_PROD = "DELETE FROM ProductVO where pid = ?";
 
@@ -133,10 +133,10 @@ public class ProductDAO implements ProductDAO_interface {
 		return set;
 	}
 
-	public static void main(String[] args) {
-		ProductDAO dao = new ProductDAO();
-
-		// 新增
+//	public static void main(String[] args) {
+//		ProductDAO dao = new ProductDAO();
+//
+//		// 新增
 //		ProductVO productVO1 = new ProductVO();
 //		CatagoryVO catagoryVO = new CatagoryVO();
 //		productVO1.setName("測試用111");
@@ -208,20 +208,20 @@ public class ProductDAO implements ProductDAO_interface {
 		// System.out.println("-----------------------------------------");
 
 		// 查全部
-		List<ProductVO> list = dao.getAll();
-		for (ProductVO product : list) {
-			System.out.print(product.getPid() + ",");
-			System.out.print(product.getName() + ",");
-			System.out.print(product.getPhoto() + ",");
-			System.out.print(product.getAmount() + ",");
-			System.out.print(product.getCatagoryVO().getCid() + ",");
-			System.out.print(product.getCatagoryVO().getName() + ",");
-			System.out.print(product.getPrice() + ",");
-			System.out.print(product.getDiscount() + ",");
-			System.out.print(product.getDescrip() + ",");
-			System.out.print(product.getIngredients());
-			System.out.println();
-		}
+//		List<ProductVO> list = dao.getAll();
+//		for (ProductVO product : list) {
+//			System.out.print(product.getPid() + ",");
+//			System.out.print(product.getName() + ",");
+//			System.out.print(product.getPhoto() + ",");
+//			System.out.print(product.getAmount() + ",");
+//			System.out.print(product.getCatagoryVO().getCid() + ",");
+//			System.out.print(product.getCatagoryVO().getName() + ",");
+//			System.out.print(product.getPrice() + ",");
+//			System.out.print(product.getDiscount() + ",");
+//			System.out.print(product.getDescrip() + ",");
+//			System.out.print(product.getIngredients());
+//			System.out.println();
+//		}
 
 		// 查訂單明細
 //		List<ProductVO> list = dao.getAll();
@@ -247,6 +247,6 @@ public class ProductDAO implements ProductDAO_interface {
 //		 	}
 //		 	System.out.println();
 //		}
-	}
+//	}
 
 }
