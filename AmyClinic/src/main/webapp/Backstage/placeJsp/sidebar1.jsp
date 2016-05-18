@@ -9,16 +9,16 @@
 <body>
 <div class="sidebar1">
     <ul class="nav">
-      <li><a href="#">前台管理</a></li>
+      <li><a href="b_login.jsp">前台管理</a></li>
       <li><a href="#">療程管理</a></li>
       <li><a href="#">預約系統</a></li>
       <li><a href="#">醫師排班</a></li>
       <li><a href="#">會員管理</a></li>
-      <li><a href="#">商品管理</a></li>
+      <li><a href="product.jsp">商品管理</a></li>
       <li><a href="#">客服系統</a></li>
       <li><a href="#">員工管理</a></li>
       <li><a href="#">熱門療程</a></li>
-      <li><a href="#">熱門產品</a></li>
+      <li><a href="hotp.jsp">熱門產品</a></li>
     </ul>
     
     <!-- end .sidebar1 --></div>

@@ -39,20 +39,21 @@
     document.write("民國"+theYear+"年"+theMonth+"月"+theDate+"日");
 </script>
 
-    <s:form action="LoginActionEmp"  namespace="/emplogpage">
-	  <s:textfield name="Employees.eid" label="員工編號" value="1" />
-<!--       編號<input type="text" name="eid" id="text1"> -->
-      <s:textfield name="Employees.name" label="員工姓名" value="Dr. Pocky" />
-<!--       姓名<input type="text" name="name" id="text2"> -->
+    <s:form action="LoginActionEmp"  namespace="/emplogpage" theme="simple">
+	  編號<s:textfield name="Employees.eid" label="員工編號" value="1" />
+<!--       編號<input type="text" name="eid" id="text1"> --><br><br>
+      密碼<s:textfield name="Employees.name" label="員工密碼" value="Dr. Pocky" />
+<!--       姓名<input type="text" name="name" id="text2"> --><br><br>
     <s:submit value="確定"  method="LoginServiceEmp"/>
     </s:form>
+
     <a href="#">忘記密碼</a>
     <br>
     <a>EX==>id=1,name=Dr. Pocky</a>
     
-    <div align="center">
+<!--     <div align="center"> -->
       
-    </div>
+<!--     </div> -->
     <!-- end .content --></div>
 <jsp:include page="placeJsp/footer.jsp" />
   <!-- end .container --></div>
