@@ -25,15 +25,32 @@
 		<th>教育程度</th>
 		<th>經歷</th>
 		<th>專長</th>
+		<th>修改</th>
+		<th>刪除</th>
 	</tr>
-	<c:forEach var="EmpVO" items="${list}">
+	<c:forEach var="employeeVO" items="${list}">
 		<tr>
-			<td>${EmpVO.eid}</td>
-			<td>${EmpVO.name}</td>
-			<td>${EmpVO.email}</td>
-			<td>${EmpVO.education}</td>
-			<td>${EmpVO.experience}</td>
-			<td>${EmpVO.specialty}</td>
+			<td>${employeeVO.eid}</td>
+			<td>${employeeVO.name}</td>
+			<td>${employeeVO.email}</td>
+			<td>${employeeVO.education}</td>
+			<td>${employeeVO.experience}</td>
+			<td>${employeeVO.specialty}</td>
+			<td>
+			<form action="emp.do" method="get">
+			<input type="submit" value="修改" />
+			<input type="hidden" name="eid" value="${employeeVO.eid}">
+			<input type="hidden" name="action" value="getOne_For_Display">
+			 </form>
+			</td>
+			
+			<td>
+			<form action="emp.do" method="get">
+			<input type="submit" value="刪除" />
+			<input type="hidden" name="eid" value="${employeeVO.eid}">
+			<input type="hidden" name="action" value="delete">
+			 </form>
+			</td>
 		</tr>
 	</c:forEach>
 	</table>
