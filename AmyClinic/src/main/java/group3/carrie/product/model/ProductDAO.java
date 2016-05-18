@@ -208,22 +208,6 @@ public class ProductDAO implements ProductDAO_interface {
 		// System.out.println("-----------------------------------------");
 
 		// 查全部
-//		List<ProductVO> list = dao.getAll();
-//		for (ProductVO product : list) {
-//			System.out.print(product.getPid() + ",");
-//			System.out.print(product.getName() + ",");
-//			System.out.print(product.getPhoto() + ",");
-//			System.out.print(product.getAmount() + ",");
-//			System.out.print(product.getCatagoryVO().getCid() + ",");
-//			System.out.print(product.getCatagoryVO().getName() + ",");
-//			System.out.print(product.getPrice() + ",");
-//			System.out.print(product.getDiscount() + ",");
-//			System.out.print(product.getDescrip() + ",");
-//			System.out.print(product.getIngredients());
-//			System.out.println();
-//		}
-
-		// 查訂單明細
 		List<ProductVO> list = dao.getAll();
 		for (ProductVO product : list) {
 			System.out.print(product.getPid() + ",");
@@ -236,17 +220,33 @@ public class ProductDAO implements ProductDAO_interface {
 			System.out.print(product.getDiscount() + ",");
 			System.out.print(product.getDescrip() + ",");
 			System.out.print(product.getIngredients());
-			System.out.println("\n---------------------------------");
-		 Set<OrderItemsVO> set = product.getOrderItems();
-		 	for (OrderItemsVO orderItems : set) {
-		 		System.out.print(orderItems.getId() + ",");
-		 		System.out.print(orderItems.getProductVO().getName() + ",");
-		 		System.out.print(orderItems.getQuantity() + ",");
-		 		System.out.print(orderItems.getPrice_per());
-		 		System.out.println();
-		 	}
-		 	System.out.println();
+			System.out.println();
 		}
+
+		// 查訂單明細
+//		List<ProductVO> list = dao.getAll();
+//		for (ProductVO product : list) {
+//			System.out.print(product.getPid() + ",");
+//			System.out.print(product.getName() + ",");
+//			System.out.print(product.getPhoto() + ",");
+//			System.out.print(product.getAmount() + ",");
+//			System.out.print(product.getCatagoryVO().getCid() + ",");
+//			System.out.print(product.getCatagoryVO().getName() + ",");
+//			System.out.print(product.getPrice() + ",");
+//			System.out.print(product.getDiscount() + ",");
+//			System.out.print(product.getDescrip() + ",");
+//			System.out.print(product.getIngredients());
+//			System.out.println("\n---------------------------------");
+//		 Set<OrderItemsVO> set = product.getOrderItems();
+//		 	for (OrderItemsVO orderItems : set) {
+//		 		System.out.print(orderItems.getId() + ",");
+//		 		System.out.print(orderItems.getProductVO().getName() + ",");
+//		 		System.out.print(orderItems.getQuantity() + ",");
+//		 		System.out.print(orderItems.getPrice_per());
+//		 		System.out.println();
+//		 	}
+//		 	System.out.println();
+//		}
 	}
 
 }
