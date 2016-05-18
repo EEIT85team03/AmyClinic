@@ -92,7 +92,7 @@ public class DBExporter {
 
 	public static void main(String[] args) {
 		DBExporter connServer = new DBExporter();
-		String results = connServer.dbConnect("Members", "json");
+		String results = connServer.dbConnect("Employees", "json");
         System.out.println(results);
 	}
 }
