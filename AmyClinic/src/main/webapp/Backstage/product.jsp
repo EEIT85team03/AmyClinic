@@ -56,13 +56,13 @@
 			<td>${ProductVO.descrip}</td>
 			<td>${ProductVO.ingredients}</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet.servlet">
 			     <input type="submit" value="修改">
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet.servlet">
 			    <input type="submit" value="刪除">
 			    <input type="hidden" name="pid" value="${ProductVO.pid}">
 			    <input type="hidden" name="action"value="delete"></FORM>
