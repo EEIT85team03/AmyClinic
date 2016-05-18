@@ -5,6 +5,10 @@
 
 <struts>
 
+<!-- Specifies url patterns / servlets to exclude from struts2 -->
+<!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
+<constant name="struts.action.excludePattern" value="/ProductServlet"/>
+
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
 
