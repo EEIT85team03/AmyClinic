@@ -62,7 +62,7 @@ public class MemberVO implements Serializable {
 	private Integer   reward_pts;
 	private Date      last_visit;
 	private String	  memo;
-	private Date	  join_date;
+	private Timestamp join_date;
 	
 	//One member -> Many appointments
 	private Set<AppVO> appVO = new HashSet<AppVO>();
@@ -79,7 +79,7 @@ public class MemberVO implements Serializable {
 					Character gender, String addr, String phone, Integer height, Integer mass,
 					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
 					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
-					String memo, Date join_date) { //all info
+					String memo, Timestamp join_date) { //all info
 		super();
 		this.mid = mid;
 		this.name = name;
@@ -208,7 +208,6 @@ public class MemberVO implements Serializable {
 		this.photoContentType = photoContentType;
 	}
 
-//	@Column(name = "act_status", insertable=false)
 	public Integer getAct_status() {
 		return act_status;
 	}
@@ -216,7 +215,6 @@ public class MemberVO implements Serializable {
 		this.act_status = act_status;
 	}
 	
-	@Column(name = "num_trans", insertable=false)
 	public Integer getNum_trans() {
 		return num_trans;
 	}
@@ -224,7 +222,6 @@ public class MemberVO implements Serializable {
 		this.num_trans = num_trans;
 	}
 	
-	@Column(name = "num_treatment", insertable=false)
 	public Integer getNum_treatment() {
 		return num_treatment;
 	}
@@ -232,7 +229,6 @@ public class MemberVO implements Serializable {
 		this.num_treatment = num_treatment;
 	}
 	
-	@Column(name = "num_visits", insertable=false)
 	public Integer getNum_visits() {
 		return num_visits;
 	}
@@ -240,7 +236,6 @@ public class MemberVO implements Serializable {
 		this.num_visits = num_visits;
 	}
 	
-	@Column(name = "total_spent", insertable=false)
 	public Integer getTotal_spent() {
 		return total_spent;
 	}
@@ -248,7 +243,6 @@ public class MemberVO implements Serializable {
 		this.total_spent = total_spent;
 	}
 	
-	@Column(name = "reward_pts", insertable=false)
 	public Integer getReward_pts() {
 		return reward_pts;
 	}
@@ -256,7 +250,6 @@ public class MemberVO implements Serializable {
 		this.reward_pts = reward_pts;
 	}
 	
-	@Column(name = "last_visit", insertable=false)
 	public Date getLast_visit() {
 		return last_visit;
 	}
@@ -264,7 +257,6 @@ public class MemberVO implements Serializable {
 		this.last_visit = last_visit;
 	}
 	
-	@Column(name = "memo", insertable=false)
 	public String getMemo() {
 		return memo;
 	}
@@ -273,10 +265,10 @@ public class MemberVO implements Serializable {
 	}
 	
 	@Column(name = "join_date", insertable=false)
-	public Date getJoin_date() {
+	public Timestamp getJoin_date() {
 		return join_date;
 	}
-	public void setJoin_date(Date join_date) {
+	public void setJoin_date(Timestamp join_date) {
 		this.join_date = join_date;
 	}
 	
@@ -290,7 +282,6 @@ public class MemberVO implements Serializable {
 		this.appVO = appVO;
 	}
 	
-
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="memberVO")
 	@OrderBy("oid asc")
 	public Set<OrdersVO> getOrders() {

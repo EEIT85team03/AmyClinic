@@ -3,10 +3,13 @@ package group3.henry.login.controller;
 import java.io.IOException;
 //import java.util.Map;
 
+import java.util.Calendar;
+
 import javax.servlet.http.*;
 
 import org.apache.struts2.ServletActionContext;
 //import org.apache.struts2.interceptor.ParameterAware;
+
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -51,6 +54,7 @@ public class LoginAction extends ActionSupport {
 
 	public String login() {
 		HttpServletRequest request = ServletActionContext.getRequest();
+		MemberServices service = new MemberServices();
 		System.out.println("LoginAction login method");
 //		if (!allowUser(memberVO.getName(), memberVO.getPwd())) {
 //		System.out.println("---------");
@@ -64,11 +68,17 @@ public class LoginAction extends ActionSupport {
 		} else if (memberVO.getAct_status() == 2) { // if the account still needs to verify email
 			this.setMessage("Please Verify your Email by clicking the link in the message sent to the email address you registered!");
 			return "verifyEmail";
+		} else if (memberVO.getAct_status() == 0) { // if the account has been banned
+			this.setMessage("Your account has been banned. Please contact Customer Service!");
+			return "login";
 		} else {
 			HttpSession session = request.getSession(); // get HttpSession
 			session.setAttribute("account", memberVO.getName()); // tag login in session
-			session.setAttribute("member", memberVO); // stores current memberVO in session
+			session.setAttribute("memberVO", memberVO); // stores current memberVO in session
 			
+			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
+			memberVO.setLast_visit(today); 
+			service.update(memberVO); //updates last visited time
 //			HttpServletResponse  response = ServletActionContext.getResponse(); 
 //			try {
 //				String location = (String) session.getAttribute("location");

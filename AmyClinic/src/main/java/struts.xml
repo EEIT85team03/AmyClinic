@@ -5,6 +5,10 @@
 
 <struts>
 
+<!-- Specifies url patterns / servlets to exclude from struts2 -->
+<!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
+<constant name="struts.action.excludePattern" value="/ProductServlet"/>
+
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
 
@@ -38,6 +42,7 @@
 			<result name="success">/register/regsuccess.jsp</result>
 			<result name="input">/register/register.jsp</result>
 		</action>
+		
 		<action name="reset" class="group3.henry.login.controller.ResetPassAction">
 			<result name="success">/login/verify.jsp</result>
 			<result name="input">/login/resetpw.jsp</result>

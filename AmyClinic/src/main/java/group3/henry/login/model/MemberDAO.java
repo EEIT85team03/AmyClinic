@@ -227,6 +227,7 @@ public class MemberDAO implements MemberDAO_interface {
 			System.out.print(aMember.getPwd() + ",");
 			System.out.print(aMember.getPhone() + ",");
 			System.out.print(aMember.getAddr() + ",");
+			System.out.print(aMember.getJoin_date() + ",");
 
 			
 			System.out.println("\n-----------------");

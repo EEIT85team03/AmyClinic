@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -34,8 +34,9 @@
 <!-- Henry's test login --><hr>
 		<a href="login/login.jsp">Login page</a><br>
 		<a href="register/register.jsp">Register a new account</a><br>		
+		<a href="login/editprofile.jsp">Edit Account Information</a><br>
 <!--                    	 namespace/action name                      target registered in struts.xml-->
-		<a href="<s:url action="member/member1"/>">login required page 1  -- member/memberonly1.jsp")</a><br>
+		<a href="<s:url action="member/member1"/>">login required page 1  -- member/memberonly1.jsp")</a><br>		
 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		
 <!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
 		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a>
@@ -47,7 +48,7 @@
 
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="backstage/b_login.jsp">員工專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/b_login.jsp">員工專區</a><br></p>
 		</footer>
 	</div>
 	<!--end all-->

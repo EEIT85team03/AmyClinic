@@ -17,7 +17,7 @@
 		list = eSvc.getAll();
 		pageContext.setAttribute("list", list);
 	%>
-	<table border='1'>
+	<table border='1'  >
 	<tr>
 		<th>員工編號</th>
 		<th>員工姓名</th>
