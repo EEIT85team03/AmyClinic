@@ -8,7 +8,7 @@ import java.io.IOException;
  
 import org.apache.commons.codec.binary.Base64;
  
-public class ImageManipulation {
+public class Base64Converter {
  
     public static void main(String[] args) {
  
