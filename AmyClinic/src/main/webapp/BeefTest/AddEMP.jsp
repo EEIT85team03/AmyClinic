@@ -46,7 +46,7 @@
 		<table border="0">
 			<tr>
 				<td>員工姓名:</td>
-				<td><input type="text" name="ename" size="20"></td>
+				<td><input type="text" name="name" size="20"></td>
 			</tr>
 			<tr>
 				<td>密碼</td>

@@ -2,6 +2,7 @@ package group3.beef.employee.controller;
 
 import group3.beef.employee.model.EmployeeService;
 import group3.beef.employee.model.EmployeeVO;
+import group3.beef.encryption.AES_Encryption;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -34,6 +35,7 @@ public class EmpServlet extends HttpServlet {
  
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
+		
 		// ===================查詢一位員工=========================
 
 		if ("getOne_For_Display".equals(action)) {
@@ -99,12 +101,12 @@ public class EmpServlet extends HttpServlet {
 				if (ename == null || ename.trim().length() == 0) {
 					errorMsg.add("醫師姓名: 請勿空白");
 				}
-				String pwd = req.getParameter("pwd");
-				if (pwd == null || pwd.trim().length() == 0) {
+				String npwd = req.getParameter("pwd");
+				if (npwd == null || npwd.trim().length() == 0) {
 					errorMsg.add("密碼: 請勿空白");
 				}
 				String pwdReg = "^[(\u4e00-\u9fa5)(a-zA-Z0-9_)]{2,10}$";
-				if (!pwd.trim().matches(pwdReg)) {
+				if (!npwd.trim().matches(pwdReg)) {
 					errorMsg.add("密碼:只能是中、英文字母、數字和_ , 且長度必需在2到10之間");
 				}
 
@@ -128,11 +130,10 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("專長: 請勿空白");
 				}
 				 
-				
-				
-			
-				
-
+				/*************************** 1.5員工密碼AES加密 ***************************************/
+				AES_Encryption AES = new AES_Encryption();
+				String pwd = AES.getencrypt(npwd);
+				System.out.println(pwd+"密碼加密");
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
 				empVO.setPwd(pwd);
