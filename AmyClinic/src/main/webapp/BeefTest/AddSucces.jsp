@@ -14,7 +14,7 @@
  		<UL>
  			<li>員工姓名：${request.EmployeeVO.name}</li>
  			<li>e-mail：${request.EmployeeVO.email}</li>
- 			<li>教育程度：${requeste.EmployeeVO.education}</li>
+ 			<li>教育程度：${request.EmployeeVO.education}</li>
  			<li>經歷：${request.EmployeeVO.experience}</li>
  			<li>專長：${request.EmployeeVO.specialty}</li>
  		

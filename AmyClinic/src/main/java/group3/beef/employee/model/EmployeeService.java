@@ -21,65 +21,96 @@ public class EmployeeService {
 	}
 
 	// 新增員工
-	public EmployeeVO addEmp(Integer eid, String name, String pwd,
-			String email, Blob photo, String education, String experience,
-			String specialty) {
+	public EmployeeVO addEmp(String name, String pwd, String email, Blob photo,
+			String education, String experience, String specialty) {
+		EmployeeVO employeeVO = new EmployeeVO();
+		employeeVO.setName(name);
+		employeeVO.setPwd(pwd);
+		employeeVO.setEmail(email);
+
+		try {
+			FileInputStream fileInputStream = new FileInputStream("c:\test.jpg");
+			@SuppressWarnings("deprecation")
+			Blob photo1 = Hibernate.createBlob(fileInputStream);
+			employeeVO.setPhoto(photo1);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		employeeVO.setEducation(education);
+		employeeVO.setExperience(experience);
+		employeeVO.setSpecialty(specialty);
+		return employeeVO;
+
+	}
+
+	public EmployeeVO addEmp(String name, String pwd, String email,
+			String education, String experience, String specialty) {
+		EmployeeVO employeeVO = new EmployeeVO();
+		employeeVO.setName(name);
+		employeeVO.setPwd(pwd);
+		employeeVO.setEmail(email);
+		employeeVO.setEducation(education);
+		employeeVO.setExperience(experience);
+		employeeVO.setSpecialty(specialty);
+		dao.insert(employeeVO);
+		return employeeVO;
+
+	}
+	
+	//更新員工
+	public EmployeeVO updateEmp(Integer eid, String name, String pwd, String email,
+			String education, String experience, String specialty) {
 		EmployeeVO employeeVO = new EmployeeVO();
 		employeeVO.setEid(eid);
 		employeeVO.setName(name);
 		employeeVO.setPwd(pwd);
 		employeeVO.setEmail(email);
-
-		try {
-			FileInputStream fileInputStream = new FileInputStream("c:\test.jpg");
-			@SuppressWarnings("deprecation")
-			Blob photo1 = Hibernate.createBlob(fileInputStream);
-			employeeVO.setPhoto(photo1);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		employeeVO.setEducation(education);
 		employeeVO.setExperience(experience);
 		employeeVO.setSpecialty(specialty);
+		dao.update(employeeVO);
 		return employeeVO;
 
 	}
-	
-	public void addEmp(EmployeeVO employeeVO){
+
+	public void addEmp(EmployeeVO employeeVO) {
 		dao.insert(employeeVO);
 	}
 
-	// 更新員工
-	public EmployeeVO updateEmp(String name, String pwd, String email,
-			Blob photo, String education, String experience, String specialty) {
-		EmployeeVO employeeVO = new EmployeeVO();
-		employeeVO.setName(name);
-		employeeVO.setPwd(pwd);
-		employeeVO.setEmail(email);
-
-		try {
-			FileInputStream fileInputStream = new FileInputStream("c:\test.jpg");
-			@SuppressWarnings("deprecation")
-			Blob photo1 = Hibernate.createBlob(fileInputStream);
-			employeeVO.setPhoto(photo1);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		employeeVO.setEducation(education);
-		employeeVO.setExperience(experience);
-		employeeVO.setSpecialty(specialty);
-		return employeeVO;
-
+	public EmployeeVO updateEmp(EmployeeVO employeeVO) {
+		dao.update(employeeVO);
+		return dao.findByPrimaryKey(employeeVO.getEid());
 	}
+
+	// 更新員工
+	/*
+	 * public EmployeeVO updateEmp(String name, String pwd, String email, Blob
+	 * photo, String education, String experience, String specialty) {
+	 * EmployeeVO employeeVO = new EmployeeVO(); employeeVO.setName(name);
+	 * employeeVO.setPwd(pwd); employeeVO.setEmail(email);
+	 * 
+	 * try { FileInputStream fileInputStream = new
+	 * FileInputStream("c:\test.jpg");
+	 * 
+	 * @SuppressWarnings("deprecation") Blob photo1 =
+	 * Hibernate.createBlob(fileInputStream); employeeVO.setPhoto(photo1); }
+	 * catch (IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } employeeVO.setEducation(education);
+	 * employeeVO.setExperience(experience); employeeVO.setSpecialty(specialty);
+	 * return employeeVO;
+	 * 
+	 * }
+	 */
+
+	// 更新一位員工
 
 	// 刪除員工
 	public void deleteEmployee(Integer eid) {
 		dao.delete(eid);
 	}
 
-	//查一位
+	// 查一位
 	public EmployeeVO getOneEmployee(Integer eid) {
 		return dao.findByPrimaryKey(eid);
 	}
