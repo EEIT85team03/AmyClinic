@@ -11,44 +11,134 @@
 <title>Account Details</title>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 <style>
-	label {
-		border:1px solid grey;
+	label {		
 		position: relative;
 		text-align: center;
 		height:26px;
      	top: 50%; 
-/*      	transform: translateY(-50%);  */
 	}
 </style>
 </head>
 <body>
 I am editprofile.jsp! <hr>
 
-<form>
-	<div class="col-md-2"></div><label class="col-md-2">Member ID: </label><input class="col-md-4" type="text" value="${memberVO.mid}" /><div class="col-md-4"></div><br>
-	<label>Name: </label><input type="text" value="${memberVO.name}" /> <br/>
-	<label>Password: </label><input type="password" value="${memberVO.pwd}" /> <br/>
-	<label>Email: </label><input type="text" value="${memberVO.email}" /> <br/>
-	<label>Birthday: </label><input type="text" value="${memberVO.birthday}" /> <br/>
-	<label>Country: </label><input type="text" value="${memberVO.country}" /> <br/>
-	<label>Gender: </label><input type="text" value="${memberVO.gender}" /> <br/>
-	<label>Address: </label><input type="text" value="${memberVO.Address}" /> <br/>
-	<label>Phone: </label><input type="text" value="${memberVO.phone}" /> <br/>
-	<label>Height: </label><input type="text" value="${memberVO.height}" /> <br/>
-	<label>Weight: </label><input type="text" value="${memberVO.mass}" /> <br/>
-	<label>Photo: </label><input type="text" value="${memberVO.photo}" /> <br/>
-	<label>Status: </label><input type="text" value="${memberVO.act_status}" /> <br/>
-	<label>Transactions: </label><input type="text" value="${memberVO.num_trans}" /> <br/>
-	<label>Treatments: </label><input type="text" value="${memberVO.num_treatment}" /> <br/>
-	<label>Visits: </label><input type="text" value="${memberVO.num_visits}" /> <br/>
-	<label>Reward Points: </label><input type="text" value="${memberVO.reward_pts}" /> <br/>
-	<label>Last Visit: </label><input type="text" value="${memberVO.last_visit}" /> <br/>
-	<label>Date Joined: </label><input type="text" value="${memberVO.join_date}" /> <br/>
+<form role="form" class="form-horizontal">
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberid">Member ID: </label>
+		<div class="col-sm-5">
+			<input id="memberid" class="form-control" type="text" value="${memberVO.mid}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membername">Name: </label>
+		<div class="col-sm-5">
+			<input id="membername" class="form-control" type="text" value="${memberVO.name}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberpwd">Password: </label>
+		<div class="col-sm-5">
+			<input id="memberpwd" class="form-control" type="password" value="${memberVO.pwd}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberemail">Email: </label>
+		<div class="col-sm-5">
+			<input id="memberemail" class="form-control" type="text" value="${memberVO.email}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberbirthday">Birthday: </label>
+		<div class="col-sm-5">
+			<input id="memberbirthday" class="form-control" type="text" value="${memberVO.birthday}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membercountry">Country: </label>
+		<div class="col-sm-5">
+			<input id="membercountry" class="form-control" type="text" value="${memberVO.country}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membergender">Gender: </label>
+		<div class="col-sm-5">
+			<input id="membergender" class="form-control" type="text" value="${memberVO.gender}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberaddr">Address: </label>
+		<div class="col-sm-5">
+			<input id="memberaddr" class="form-control" type="text" value="${memberVO.addr}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberphone">Phone: </label>
+		<div class="col-sm-5">
+			<input id="memberphone" class="form-control" type="text" value="${memberVO.phone}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberheight">Height: </label>
+		<div class="col-sm-5">
+			<input id="memberheight" class="form-control" type="text" value="${memberVO.height}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membermass">Weight: </label>
+		<div class="col-sm-5">
+			<input id="membermass" class="form-control" type="text" value="${memberVO.mass}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberphoto">Photo: </label>
+		<div class="col-sm-5">
+			<input id="memberphoto" class="form-control" type="text" value="${memberVO.photo}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberact_status">Status: </label>
+		<div class="col-sm-5">
+			<input id="memberact_status" class="form-control" type="text" value="${memberVO.act_status}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_trans">Transactions: </label>
+		<div class="col-sm-5">
+			<input id="membernum_trans" class="form-control" type="text" value="${memberVO.num_trans}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_treatment">Treatments: </label>
+		<div class="col-sm-5">
+			<input id="membernum_treatment" class="form-control" type="text" value="${memberVO.num_treatment}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_visits">Visits: </label>
+		<div class="col-sm-5">
+			<input id="membernum_visits" class="form-control" type="text" value="${memberVO.num_visits}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberreward_pts">Reward Points: </label>
+		<div class="col-sm-5">
+			<input id="memberreward_pts" class="form-control" type="text" value="${memberVO.reward_pts}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberlast_visit">Last Visit: </label>
+		<div class="col-sm-5">
+			<input id="memberlast_visit" class="form-control" type="text" value="${memberVO.last_visit}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberjoin_date">Date Joined: </label>
+		<div class="col-sm-5">
+			<input id="memberjoin_date" class="form-control" type="text" value="${memberVO.join_date}"/>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-default">Submit</button>							
 	<hr>
-	<br>verify	= ${memberVO.verify}
-	<br>FileName = ${memberVO.photoFileName}
-	<br>FileType = ${memberVO.photoContentType}
-	<br>Memo	= ${memberVO.memo}
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
