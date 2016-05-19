@@ -75,7 +75,7 @@ CREATE TABLE Orders
   phone			VARCHAR(10)		NOT NULL,
   email			VARCHAR(50)		NOT NULL,
   odate			DATETIME		DEFAULT GETDATE(),
-  ostatus		DECIMAL(1)		DEFAULT 1, /*	0 = Order Created / Cancellable
+  ostatus		DECIMAL(1)		DEFAULT 0, /*	0 = Order Created / Cancellable
 												1 = Processing
 												2 = Order Complete
 												3 = Order Cancelled
