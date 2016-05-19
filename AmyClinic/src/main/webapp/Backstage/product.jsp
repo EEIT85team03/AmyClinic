@@ -33,6 +33,7 @@
  pageContext.setAttribute("list",list);
 %>
 <%-- <%@ include file="placeJsp/page1.file" %>  --%>
+<!-- <div class="form-group"> -->
  <table border="1"  bordercolor='#CCCCFF'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>商品編號</th>
@@ -42,8 +43,18 @@
 		<th>折扣</th>
 		<th>商品描述</th>
 		<th>成分</th>
-		<th>修改</th>
-		<th>刪除</th>
+		<th>
+					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			     <input type="submit" value="全部" class="btn btn-info">
+<%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
+			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+		</th>
+		<th>
+					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			     <input type="submit" value="新增" class="btn btn-primary">
+<%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
+			     <input type="hidden" name="action"	value="add"></FORM>
+		</th>
 	</tr>
 <%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
 	<c:forEach var="ProductVO"  items="${list}"  >
@@ -56,26 +67,22 @@
 			<td>${ProductVO.descrip}</td>
 			<td>${ProductVO.ingredients}</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet.servlet">
-			     <input type="submit" value="修改">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			     <input type="submit" value="修改" class="btn btn-success">
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet.servlet">
-			    <input type="submit" value="刪除">
+			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			    <input type="submit" value="刪除" class="btn btn-danger">
 			    <input type="hidden" name="pid" value="${ProductVO.pid}">
 			    <input type="hidden" name="action"value="delete"></FORM>
 			</td>
 		</tr>
 	</c:forEach>
 	</table>
+<!-- 	</div> -->
 <%-- <%@ include file="placeJsp/page2.file" %>  --%>
- 
- 
- 
- 
- 
     <!-- end .content --></div>
 <jsp:include page="placeJsp/footer.jsp" />
   <!-- end .container --></div>
