@@ -55,19 +55,20 @@ public class AES_Encryption {
 	  }
 	
 
-	 /*public static void main(String[] args) throws Exception { 
+	 public static void main(String[] args) throws Exception { 
+		 	AES_Encryption cipher = new AES_Encryption();
 		    String plain="Aaaa";
 		    //加密
-		    String en=AES_Encryption.getencrypt(plain);
+		    String en=cipher.getencrypt(plain);
 		    String encryptd=new String (en);
 		 
 		    System.out.println("\nget密文:"+encryptd);
 		 
 		    //解密
-		    String de=AES_Encryption.getdecrypt(encryptd);
+		    String de=cipher.getdecrypt(encryptd);
 		    String decryptd=new String (de);
 		    System.out.println("\nget明文:"+decryptd);
 }
-*/
+
 }
 

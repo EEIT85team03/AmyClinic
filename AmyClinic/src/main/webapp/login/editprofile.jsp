@@ -143,6 +143,7 @@ I am editprofile.jsp! <hr>
 			<input id="memberjoin_date" class="form-control" type="text" value="${memberVO.join_date}"/>
 		</div>
 	</div>
+	<label class="control-label col-sm-2"></label>
 	<button type="submit" class="btn btn-default">Submit</button>							
 	<hr>
 </form>
