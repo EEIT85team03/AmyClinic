@@ -28,6 +28,7 @@ public class OrdersVO implements java.io.Serializable {
 //	private Integer mid;
 	private String recipient;
 	private Integer total;
+	private Integer points_spent;
 	private String addr;
 	private String phone;
 	private String email;
@@ -71,6 +72,15 @@ public class OrdersVO implements java.io.Serializable {
 
 	public void setTotal(Integer total) {
 		this.total = total;
+	}
+	
+	@Column(insertable = false)
+	public Integer getPoints_spent() {
+		return points_spent;
+	}
+	
+	public void setPoints_spent(Integer points_spent) {
+		this.points_spent = points_spent;
 	}
 
 	public String getAddr() {

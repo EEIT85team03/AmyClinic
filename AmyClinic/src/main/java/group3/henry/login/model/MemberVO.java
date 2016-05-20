@@ -60,6 +60,7 @@ public class MemberVO implements Serializable {
 	private Integer   num_visits;
 	private Integer   total_spent;
 	private Integer   reward_pts;
+	private Integer   spent_pts;
 	private Date      last_visit;
 	private String	  memo;
 	private Timestamp join_date;
@@ -75,44 +76,44 @@ public class MemberVO implements Serializable {
 		super();
 	}	
 
-	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
-					Character gender, String addr, String phone, Integer height, Integer mass,
-					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
-					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
-					String memo, Timestamp join_date) { //all info
-		super();
-		this.mid = mid;
-		this.name = name;
-		this.pwd = pwd;
-		this.email = email;
-		this.birthday = birthday;
-		this.country = country;
-		this.gender = gender;
-		this.addr = addr;
-		this.phone = phone;
-		this.height = height;
-		this.mass = mass;
-		this.photo = photo;
-		this.photoFileName = photoFileName;
-		this.photoContentType = photoContentType;
-		this.act_status = act_status;
-		this.num_trans = num_trans;
-		this.num_treatment = num_treatment;
-		this.num_visits = num_visits;
-		this.total_spent = total_spent;
-		this.reward_pts = reward_pts;
-		this.last_visit = last_visit;
-		this.memo = memo;
-		this.join_date = join_date;
-	}
-	
-	public MemberVO(int mid, String name, String email, String pw) { // minimum required info
-		super();
-		this.mid = mid;
-		this.name = name;
-		this.email = email;
-	}
-	
+//	public MemberVO(Integer mid, String name, String pwd, String email, Date birthday, String country,
+//					Character gender, String addr, String phone, Integer height, Integer mass,
+//					File photo, String photoFileName, String photoContentType, Integer act_status, Integer num_trans, Integer num_treatment,
+//					Integer num_visits, Integer total_spent, Integer reward_pts, Date last_visit,
+//					String memo, Timestamp join_date) { //all info
+//		super();
+//		this.mid = mid;
+//		this.name = name;
+//		this.pwd = pwd;
+//		this.email = email;
+//		this.birthday = birthday;
+//		this.country = country;
+//		this.gender = gender;
+//		this.addr = addr;
+//		this.phone = phone;
+//		this.height = height;
+//		this.mass = mass;
+//		this.photo = photo;
+//		this.photoFileName = photoFileName;
+//		this.photoContentType = photoContentType;
+//		this.act_status = act_status;
+//		this.num_trans = num_trans;
+//		this.num_treatment = num_treatment;
+//		this.num_visits = num_visits;
+//		this.total_spent = total_spent;
+//		this.reward_pts = reward_pts;
+//		this.last_visit = last_visit;
+//		this.memo = memo;
+//		this.join_date = join_date;
+//	}
+//	
+//	public MemberVO(int mid, String name, String email, String pw) { // minimum required info
+//		super();
+//		this.mid = mid;
+//		this.name = name;
+//		this.email = email;
+//	}
+//	
 	@Id  
 	@SequenceGenerator(name="midGen", allocationSize=1) 
 	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="midGen")       
@@ -250,6 +251,14 @@ public class MemberVO implements Serializable {
 		this.reward_pts = reward_pts;
 	}
 	
+	public Integer getSpent_pts() {
+		return spent_pts;
+	}
+
+	public void setSpent_pts(Integer spent_pts) {
+		this.spent_pts = spent_pts;
+	}
+
 	public Date getLast_visit() {
 		return last_visit;
 	}

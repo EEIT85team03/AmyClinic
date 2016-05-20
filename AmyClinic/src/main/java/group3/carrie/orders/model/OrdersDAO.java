@@ -201,6 +201,7 @@ public class OrdersDAO implements OrdersDAO_interface {
 		System.out.print(ordersVO3.getMemberVO().getName() + ",");
 		System.out.print(ordersVO3.getRecipient() + ",");
 		System.out.print(ordersVO3.getTotal() + ",");
+		System.out.print(ordersVO3.getPoints_spent() + ",");
 		System.out.print(ordersVO3.getAddr() + ",");
 		System.out.print(ordersVO3.getPhone() + ",");
 		System.out.print(ordersVO3.getEmail() + ",");
