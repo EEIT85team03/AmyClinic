@@ -43,7 +43,8 @@ CREATE TABLE Members(
   num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
   total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
-  reward_pts	DECIMAL(4)		DEFAULT 0,
+  reward_pts	DECIMAL(7)		DEFAULT 0,
+  spent_pts 	DECIMAL(7)		DEFAULT 0,
   last_visit	DATE			DEFAULT GETDATE(),			-- last client transaction
   memo			NVARCHAR(300)	DEFAULT ' ',  
   join_date		DATETIME		DEFAULT GETDATE(),  
@@ -71,6 +72,7 @@ CREATE TABLE Orders
   mid			DECIMAL(8)		FOREIGN KEY REFERENCES Members,
   recipient		NVARCHAR(20)	NOT NULL,
   total			DECIMAL(10)		NOT NULL,
+  points_spent	DECIMAL(7)		DEFAULT 0,
   addr			NVARCHAR(50)	NOT NULL,
   phone			VARCHAR(10)		NOT NULL,
   email			VARCHAR(50)		NOT NULL,

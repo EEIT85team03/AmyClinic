@@ -62,6 +62,7 @@ public class RegisterAction extends ActionSupport{
 			memberVO.setNum_visits(0);
 			memberVO.setTotal_spent(0);
 			memberVO.setReward_pts(0);
+			memberVO.setSpent_pts(0);
 			memberVO.setMemo("");
 			String token = gen.secureToken().toUpperCase(); // generates verification token
 			memberVO.setVerify(token);		// stores token in current memberVO

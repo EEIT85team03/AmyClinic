@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Congratulations, ${requestScope.memberVO.name}! You have successfully registered! Please check your email and verify your account!
+Registeration Success!
 </body>
 </html>

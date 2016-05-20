@@ -125,6 +125,12 @@ I am editprofile.jsp! <hr>
 			<input id="memberreward_pts" class="form-control" type="text" value="${memberVO.reward_pts}"/>
 		</div>
 	</div>
+		<div class="form-group">
+		<label class="control-label col-sm-2" for="memberspent_pts">Reward Points Spent: </label>
+		<div class="col-sm-5">
+			<input id="memberspent_pts" class="form-control" type="text" value="${memberVO.spent_pts}"/>
+		</div>
+	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberlast_visit">Last Visit: </label>
 		<div class="col-sm-5">
