@@ -4,7 +4,7 @@ import group3.beef.employee.model.EmployeeVO;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AddEmpAction extends ActionSupport {
+public class EmpAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private EmployeeVO employeeVO;
@@ -24,6 +24,7 @@ public class AddEmpAction extends ActionSupport {
 		return"success";
 		
 	}
+	 
 	
 
 }
