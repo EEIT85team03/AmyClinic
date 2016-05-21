@@ -78,7 +78,7 @@ public class RecoverAction extends ActionSupport {
 			
 			String token = gen.secureToken().toUpperCase(); //generates 250bit secure token
 			user.setVerify(token);	// sets the recovery token in the designated user	
-			m.send(user.getName(), user.getEmail(), HEADER, compose(token, user.getEmail())); // sends recovery mail to the user
+			m.send(user.getName(), user.getEmail(), HEADER, compose(token, user.getEmail()), "text"); // sends recovery mail to the user
 			service.update(user); //sets token for the user with the reset request
 			session.setAttribute("memberVO", user); // sets the user as the current active session user
 		}
