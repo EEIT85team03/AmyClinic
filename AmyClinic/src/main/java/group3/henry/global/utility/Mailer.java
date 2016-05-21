@@ -30,6 +30,12 @@ public class Mailer {
  
  
  */	
+	
+	// 
+	public void send(String name, String destination, String subject, String text) {
+		this.send(name, destination, subject, text, "text");
+	}		  
+		
 
 	//					Person			Email		  Email Subject   Email Text   text or html
 	public void send(String name, String destination, String subject, String text, String format) {		  

@@ -68,7 +68,7 @@ public class RegisterAction extends ActionSupport{
 			memberVO.setVerify(token);		// stores token in current memberVO
 
 			//sends verification email
-			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()), "text");
+			m.send(memberVO.getName(), memberVO.getEmail(), HEADER, compose(token, memberVO.getEmail()));
 			
 			register.addMember(memberVO); // inserts newly registered member
 			
