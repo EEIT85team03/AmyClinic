@@ -1,11 +1,9 @@
 package group3.beef.employee.model;
-
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Blob;
 import java.util.List;
 
-import org.hibernate.Hibernate;
+ 
 
 public class EmployeeService {
 
@@ -27,29 +25,17 @@ public class EmployeeService {
 		employeeVO.setName(name);
 		employeeVO.setPwd(pwd);
 		employeeVO.setEmail(email);
+		employeeVO.setPhoto(photo);
 
-		try {
-			FileInputStream fileInputStream = new FileInputStream("c:\test.jpg");
-			@SuppressWarnings("deprecation")
-			Blob photo1 = Hibernate.createBlob(fileInputStream);
-			employeeVO.setPhoto(photo1);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		employeeVO.setEducation(education);
-		employeeVO.setExperience(experience);
-		employeeVO.setSpecialty(specialty);
-		return employeeVO;
-
-	}
-
-	public EmployeeVO addEmp(String name, String pwd, String email,
-			String education, String experience, String specialty) {
-		EmployeeVO employeeVO = new EmployeeVO();
-		employeeVO.setName(name);
-		employeeVO.setPwd(pwd);
-		employeeVO.setEmail(email);
+//		try {
+//			FileInputStream fileInputStream = new FileInputStream("c:\\dog.png");
+//			@SuppressWarnings("deprecation")
+//			Blob photo1 = Hibernate.createBlob(fileInputStream);
+//			employeeVO.setPhoto(photo1);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		employeeVO.setEducation(education);
 		employeeVO.setExperience(experience);
 		employeeVO.setSpecialty(specialty);
@@ -57,6 +43,8 @@ public class EmployeeService {
 		return employeeVO;
 
 	}
+
+	
 	
 	//更新員工
 	public EmployeeVO updateEmp(Integer eid, String name, String pwd, String email,
@@ -103,8 +91,12 @@ public class EmployeeService {
 	 * }
 	 */
 
-	// 更新一位員工
-
+	 //抓一位員工的圖片
+	public InputStream getOneEmployeePic(Integer eid){
+		return	dao.findEmpPicByPrimaryKey(eid);
+		
+	}
+	
 	// 刪除員工
 	public void deleteEmployee(Integer eid) {
 		dao.delete(eid);

@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-   <filter>
+  <filter>
     <filter-name>loginFilter</filter-name>
     <filter-class>group3.carrie.model.filter.LoginFilter</filter-class>
   </filter>
@@ -30,6 +30,17 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/GetPic.servlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ShowEmpPic</servlet-name>
+    <servlet-class>group3.beef.employee.controller.ShowPic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowEmpPic</servlet-name>
+    <url-pattern>/ShowEmpPic.servlet</url-pattern>
+  </servlet-mapping>
+  
+  
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
