@@ -150,12 +150,28 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 //		}
 		
 		//依產品分類查產品
-		List<CatagoryVO> list = dao.getAll();
-		for (CatagoryVO catagory : list) {
-			System.out.print(catagory.getCid() + ",");
-			System.out.print(catagory.getName());
-			System.out.println("\n------------------------");
-		Set<ProductVO> set = catagory.getProducts();
+//		List<CatagoryVO> list = dao.getAll();
+//		for (CatagoryVO catagory : list) {
+//			System.out.print(catagory.getCid() + ",");
+//			System.out.print(catagory.getName());
+//			System.out.println("\n------------------------");
+//		Set<ProductVO> set = catagory.getProducts();
+//		for (ProductVO product : set) {
+//			System.out.print(product.getPid() + ",");
+//			System.out.print(product.getName() + ",");
+//			System.out.print(product.getPhoto() + ",");
+//			System.out.print(product.getAmount() + ",");
+//			System.out.print(product.getCatagoryVO().getName() + ",");
+//			System.out.print(product.getPrice() + ",");
+//			System.out.print(product.getDiscount() + ",");
+//			System.out.print(product.getDescrip() + ",");
+//			System.out.print(product.getIngredients());
+//			System.out.println();
+//		}
+//		System.out.println();
+//		}
+		
+		Set<ProductVO> set = dao.getProductByCid(10);
 		for (ProductVO product : set) {
 			System.out.print(product.getPid() + ",");
 			System.out.print(product.getName() + ",");
@@ -168,8 +184,8 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 			System.out.print(product.getIngredients());
 			System.out.println();
 		}
-		System.out.println();
-		}
+		
+	
 	}
 
 }
