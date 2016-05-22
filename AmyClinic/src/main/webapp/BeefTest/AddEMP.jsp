@@ -42,7 +42,7 @@
 </c:if>
 	
 
-	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="mulitpart/form-data">
+	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data"">
 		<table border="0">
 			<tr>
 				<td>員工姓名:</td>
