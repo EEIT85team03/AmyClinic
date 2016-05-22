@@ -21,7 +21,7 @@ public class ProductService {
 		dao = new ProductDAO();
 	}
 
-	// 新增(目前照片路徑還是寫死，未來有表單功能後會做調整)
+	// 新增
 	public ProductVO addProduct(String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {
@@ -56,7 +56,7 @@ public class ProductService {
 		return productVO;
 	}
 	
-	//修改(目前照片路徑還是寫死，未來有表單功能後會做調整)
+	//修改
 	public ProductVO updateProduct(Integer pid,String name, Blob photo, Integer amount,
 			Integer cid, Integer price, Integer discount, String descrip,
 			String ingredients) {
@@ -93,9 +93,19 @@ public class ProductService {
 		return dao.findByPrimaryKey(pid);
 	}
 	
+	//整個物件丟進去修改
+	public void updateProduct(ProductVO productVO) {
+		dao.update(productVO);
+	}
+	
 	//刪除
 	public void deleteProduct(Integer pid) {
 		dao.delete(pid);
+	}
+	
+	//依名字查
+	public List<ProductVO> findByName(String name){
+		return dao.findByName(name);
 	}
 	
 	//查單一
