@@ -91,9 +91,9 @@
 	<script src="${pageContext.request.contextPath}/js/jquery.card.js"></script>
 		
 <script>
-var card = new Card({ 
-	form: '.active form', 
+$('form').card({
 	container: '.card-wrapper',
+	formatting: true,
 	messages: {
 	        validDate: '有效\n期限'
 	},
