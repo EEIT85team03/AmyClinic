@@ -107,7 +107,7 @@ a {
 						<tr>
 					</c:if>
 					<td>
-						<%-- 					<img src="GetPic?num=${prodVO.pid}"/> --%> 
+						<img src="GetPic?num=${prodVO.pid}"/><br>
 						<a href='ShowProductServlet?pid=${prodVO.pid}'>${prodVO.name}</a><br>
 						${prodVO.price}元<br>
 						<c:if test="${prodVO.discount != 0}">	
@@ -157,8 +157,8 @@ a {
 						$('#prod > tbody').append(r);
 					}
 					
-// 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
-					td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+					td.append('<img src="GetPic?num='+id+'"/><br>')
+					  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
 					  .append(price + '元<br>');
 					if (discount != 0) {
 						td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
@@ -233,8 +233,8 @@ a {
 						}	
 						
 						
-//	 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
-						td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+	 					td.append('<img src="GetPic?num='+id+'"/><br>')
+						  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
 						  .append(price + '元<br>');
 						if (discount != 0) {
 							td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
