@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
-<script src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
 <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>
 <link href="${pageContext.request.contextPath}/register/css/register.css" 	rel="stylesheet" type="text/css" media="screen" />
@@ -17,6 +17,7 @@
 </head>
 <body>
 	
+	<s:include value="/General/mySpace.jsp"></s:include>
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
@@ -123,33 +124,6 @@
 		$("#uploader").change(function() {
 			readURL(this);
 		});
-	</script>
-	<script>
-		$float_speed = 750;
-		$my_Space = $("#mySpace");
-
-		$(window).load(function() {
-			thePosition = $('#mySpace').position().top;
-			floats();
-		});
-
-		$(window).scroll(function() {
-			floats();
-		});
-
-		function floats() {
-			var scrollAmount = $(document).scrollTop();
-			var newPosition = thePosition + scrollAmount;
-			if ($(window).height() < $my_Space.height()) {
-				$my_Space.css("top", thePosition);
-			} else {
-				$my_Space.stop().animate({
-					top : newPosition
-				}, $float_speed, function(x, t, b, c, d) {
-					return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
-				});
-			}
-		}
 	</script>
 	<script>
 $(document).ready(function() {

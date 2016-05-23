@@ -11,12 +11,12 @@
 <title>Account Details</title>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 <style>
-	label {		
-		position: relative;
-		text-align: center;
-		height:26px;
-     	top: 50%; 
-	}
+/* 	label {		 */
+/* 		position: relative; */
+/* 		text-align: center; */
+/* 		height:26px; */
+/*      	top: 50%;  */
+/* 	} */
 </style>
 </head>
 <body>
@@ -26,7 +26,7 @@ I am editprofile.jsp! <hr>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberid">Member ID: </label>
 		<div class="col-sm-5">
-			<input id="memberid" class="form-control" type="text" value="${memberVO.mid}"/>
+			<div id="memberid" class="form-control" style="border:none;">${memberVO.mid}</div>
 		</div>
 	</div>
 	<div class="form-group">
@@ -98,49 +98,49 @@ I am editprofile.jsp! <hr>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberact_status">Status: </label>
 		<div class="col-sm-5">
-			<input id="memberact_status" class="form-control" type="text" value="${memberVO.act_status}"/>
+			<div id="memberact_status" class="form-control" style="border:none;">${memberVO.act_status}</div>				
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_trans">Transactions: </label>
 		<div class="col-sm-5">
-			<input id="membernum_trans" class="form-control" type="text" value="${memberVO.num_trans}"/>
+			<div id="membernum_trans" class="form-control" style="border:none;">${memberVO.num_trans}</div>				
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_treatment">Treatments: </label>
 		<div class="col-sm-5">
-			<input id="membernum_treatment" class="form-control" type="text" value="${memberVO.num_treatment}"/>
+			<div id="membernum_treatment" class="form-control" style="border:none;">${memberVO.num_treatment}</div>				
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_visits">Visits: </label>
 		<div class="col-sm-5">
-			<input id="membernum_visits" class="form-control" type="text" value="${memberVO.num_visits}"/>
+			<div id="membernum_visits" class="form-control" style="border:none;">${memberVO.num_visits}</div>						
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberreward_pts">Reward Points: </label>
 		<div class="col-sm-5">
-			<input id="memberreward_pts" class="form-control" type="text" value="${memberVO.reward_pts}"/>
+			<div id="memberreward_pts" class="form-control" style="border:none;">${memberVO.reward_pts}</div>			
 		</div>
 	</div>
 		<div class="form-group">
 		<label class="control-label col-sm-2" for="memberspent_pts">Reward Points Spent: </label>
 		<div class="col-sm-5">
-			<input id="memberspent_pts" class="form-control" type="text" value="${memberVO.spent_pts}"/>
+			<div id="memberspent_pts" class="form-control" style="border:none;">${memberVO.spent_pts}</div>			
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberlast_visit">Last Visit: </label>
 		<div class="col-sm-5">
-			<input id="memberlast_visit" class="form-control" type="text" value="${memberVO.last_visit}"/>
+			<div id="memberlast_visit" class="form-control" style="border:none;">${memberVO.last_visit}</div>			
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberjoin_date">Date Joined: </label>
 		<div class="col-sm-5">
-			<input id="memberjoin_date" class="form-control" type="text" value="${memberVO.join_date}"/>
+			<div id="memberjoin_date" class="form-control" style="border:none;">${memberVO.join_date}</div>			
 		</div>
 	</div>
 	<label class="control-label col-sm-2"></label>

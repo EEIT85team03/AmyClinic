@@ -1,5 +1,6 @@
 package group3.henry.global.utility;
 
+import java.util.IllegalFormatException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -29,15 +30,27 @@ public class Mailer {
  
  
  */	
+	
+	// 
+	public void send(String name, String destination, String subject, String text) {
+		this.send(name, destination, subject, text, "text");
+	}		  
+		
 
-	//					Person			Email		  Email Subject   Email Text
-	public void send(String name, String destination, String subject, String text) {		  
-
+	//					Person			Email		  Email Subject   Email Text   text or html
+	public void send(String name, String destination, String subject, String text, String format) {		  
+		format = format.toUpperCase();
+		System.out.println(format);
+		if (!format.equals("TEXT") || !format.equals("HTML")){
+			System.out.println("Mailer.java - Invalid email format specified");
+			return;
+		}
+		
 		//sender
 	    String from = "eeit85group3@gmail.com";
 	    final String username = "eeit85group3@gmail.com";
 	    final String password = "thisismygroupthreepassword";
-
+	    
 	    //email host routing
 	    String host = "smtp.gmail.com";
 	    String port = "587";
@@ -61,7 +74,15 @@ public class Mailer {
 	        message.setFrom(new InternetAddress(from)); // Set From: header field of the header.         
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
 	        message.setSubject(subject); // Set Subject: header field
-	        message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE); // Set the actual message         
+	        if (format.equals("TEXT"))
+	        	message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE); // Set the actual message
+	        else if (format.equals("HTML"))
+	        	//為了測試用先把編碼寫死成utf-8
+	        	message.setContent("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE, "text/html;charset=UTF-8");
+	        else{
+	        	System.out.println("Invalid format");
+	        	return;
+	        	}	        
 	        Transport.send(message); // Send message
 	        
 	        System.out.println("Sent message successfully....");

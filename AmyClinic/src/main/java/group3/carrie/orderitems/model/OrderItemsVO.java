@@ -29,6 +29,15 @@ public class OrderItemsVO implements java.io.Serializable {
 	public OrderItemsVO() {
 
 	}
+	
+	public OrderItemsVO(Integer quantity,Integer price_per,Integer pid,String name) {
+		this.quantity = quantity;
+		this.price_per = price_per;
+		ProductVO productVO = new ProductVO();
+		productVO.setPid(pid);
+		productVO.setName(name);
+		this.productVO = productVO;
+	}
 
 	@Id
 	@Column(name = "id")

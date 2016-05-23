@@ -1,13 +1,17 @@
 package group3.beef.employee.model;
+
+import hibernate.util.HibernateUtil;
+
+import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
-import hibernate.util.HibernateUtil;
 
 public class EmployeeDAO implements EmployeeDAO_interface {
 	private static final String GET_ALL_STMT = "from EmployeeVO order by eid";
-	
- 
+
 	public void insert(EmployeeVO employeeVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
@@ -20,7 +24,6 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		}
 	}
 
- 
 	public void update(EmployeeVO employeeVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
@@ -33,12 +36,12 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		}
 	}
 
- 
 	public void delete(Integer eid) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			EmployeeVO employeeVO = (EmployeeVO) session.get(EmployeeVO.class, eid);
+			EmployeeVO employeeVO = (EmployeeVO) session.get(EmployeeVO.class,
+					eid);
 			session.delete(employeeVO);
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
@@ -47,7 +50,23 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		}
 	}
 
- 
+	public InputStream findEmpPicByPrimaryKey(Integer eid)  {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		InputStream is = null;
+		try {
+			session.beginTransaction();
+			EmployeeVO employeeVO = (EmployeeVO) session.get(EmployeeVO.class,eid);
+			 is = employeeVO.getPhoto().getBinaryStream();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return is;
+	}
+
 	public EmployeeVO findByPrimaryKey(Integer eid) {
 		EmployeeVO employeeVO = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -76,9 +95,9 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		}
 		return list;
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		EmployeeDAO dao = new EmployeeDAO();
 		List<EmployeeVO> list2 = dao.getAll();
 		for (EmployeeVO aEmp : list2) {
@@ -87,9 +106,9 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 			System.out.print(aEmp.getPhoto() + ",");
 			System.out.print(aEmp.getEducation() + ",");
 			System.out.print(aEmp.getExperience() + ",");
-			System.out.print(aEmp.getSpecialty()+ ",");
+			System.out.print(aEmp.getSpecialty() + ",");
 			System.out.println("\n");
 		}
-		
+
 	}
 }

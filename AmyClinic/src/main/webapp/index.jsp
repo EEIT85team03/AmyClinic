@@ -39,8 +39,12 @@
 		<a href="<s:url action="member/member1"/>">login required page 1  -- member/memberonly1.jsp")</a><br>		
 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		
 <!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
-		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a>
+		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a><br>
 <!-- Henry's test login -->
+
+<!-- 購物系統測試 -->
+		<a href="shopping/prod_list.jsp">商品列表(不需登入)</a><br>
+		<a href="shopping/OrdersServlet">查詢訂單(需登入)</a><br>
 		</article>
 		<aside></aside>
 

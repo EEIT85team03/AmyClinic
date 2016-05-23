@@ -20,6 +20,7 @@
 	<table border='1'  >
 	<tr>
 		<th>員工編號</th>
+		<th>員工照片</th>
 		<th>員工姓名</th>
 		<th>email</th>
 		<th>教育程度</th>
@@ -31,6 +32,7 @@
 	<c:forEach var="employeeVO" items="${list}">
 		<tr>
 			<td>${employeeVO.eid}</td>
+			<td><img width='180' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
 			<td>${employeeVO.name}</td>
 			<td>${employeeVO.email}</td>
 			<td>${employeeVO.education}</td>
