@@ -42,7 +42,7 @@
 </c:if>
 	
 
-	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data"">
+	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data">
 		<table border="0">
 			<tr>
 				<td>員工姓名:</td>
@@ -50,7 +50,11 @@
 			</tr>
 			<tr>
 				<td>密碼</td>
-				<td><input type="password" name="pwd" size="20"></td>
+				<td><input type="password" name="pwd" size="20" ></td>
+			</tr>
+			<tr>
+				<td>重新輸入密碼</td>
+				<td><input type="password" name="pwd2" size="20" ></td>
 			</tr>
 			<tr>
 				<td>e-mail</td>

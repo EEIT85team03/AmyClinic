@@ -65,6 +65,7 @@
                 <form action="FinPayServlet" method="post">
                     <table style="padding-left: 600px;padding-top: 5px">
                     	<tr>
+                    	 <!-- 輸入時請保持在英文輸入法狀態，否則格式會出不來 -->
                     		<td>
                             	<input placeholder="信用卡卡號" type="text" name="number" autocomplete="off">
                             </td>
@@ -73,8 +74,9 @@
                             </td>	
                         </tr> 
                         <tr>
+                        <!-- 輸入時請保持在英文輸入法狀態，否則/號會跳不出來 -->
                         	<td>  
-                            	<input placeholder="MM/YY" type="text" name="expiry" autocomplete="off">
+                            	<input placeholder="MM/YY" type="text" name="expiry" autocomplete="off" maxlength="7">
                             </td>	
 							<td>
                             	<input placeholder="檢核碼" type="text" name="cvc" maxlength="3">

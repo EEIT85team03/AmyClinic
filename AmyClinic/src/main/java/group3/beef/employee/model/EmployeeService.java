@@ -47,13 +47,14 @@ public class EmployeeService {
 	
 	
 	//更新員工
-	public EmployeeVO updateEmp(Integer eid, String name, String pwd, String email,
+	public EmployeeVO updateEmp(Integer eid, String name, String pwd, String email, Blob photo,
 			String education, String experience, String specialty) {
 		EmployeeVO employeeVO = new EmployeeVO();
 		employeeVO.setEid(eid);
 		employeeVO.setName(name);
 		employeeVO.setPwd(pwd);
 		employeeVO.setEmail(email);
+		employeeVO.setPhoto(photo);
 		employeeVO.setEducation(education);
 		employeeVO.setExperience(experience);
 		employeeVO.setSpecialty(specialty);
@@ -70,27 +71,15 @@ public class EmployeeService {
 		dao.update(employeeVO);
 		return dao.findByPrimaryKey(employeeVO.getEid());
 	}
+	
+	//員工系統登入
+	public EmployeeVO EmpLogin(String mail ,String pwd){
+	List<EmployeeVO> list = dao.getAll();
+	return null;
+	
+	}
 
-	// 更新員工
-	/*
-	 * public EmployeeVO updateEmp(String name, String pwd, String email, Blob
-	 * photo, String education, String experience, String specialty) {
-	 * EmployeeVO employeeVO = new EmployeeVO(); employeeVO.setName(name);
-	 * employeeVO.setPwd(pwd); employeeVO.setEmail(email);
-	 * 
-	 * try { FileInputStream fileInputStream = new
-	 * FileInputStream("c:\test.jpg");
-	 * 
-	 * @SuppressWarnings("deprecation") Blob photo1 =
-	 * Hibernate.createBlob(fileInputStream); employeeVO.setPhoto(photo1); }
-	 * catch (IOException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } employeeVO.setEducation(education);
-	 * employeeVO.setExperience(experience); employeeVO.setSpecialty(specialty);
-	 * return employeeVO;
-	 * 
-	 * }
-	 */
-
+	 
 	 //抓一位員工的圖片
 	public InputStream getOneEmployeePic(Integer eid){
 		return	dao.findEmpPicByPrimaryKey(eid);
