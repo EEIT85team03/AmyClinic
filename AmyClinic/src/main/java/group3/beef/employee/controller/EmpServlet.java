@@ -73,6 +73,11 @@ public class EmpServlet extends HttpServlet {
 				/*************************** 2.開始查詢資料 *****************************************/
 				EmployeeService empSvc = new EmployeeService();
 				EmployeeVO empVO = empSvc.getOneEmployee(empno);
+				/*************************** 2.5員工密碼AES解密 ***************************************/
+				AES_Encryption AES = new AES_Encryption();
+				String pwd = AES.getdecrypt(empVO.getPwd());
+				empVO.setPwd(pwd);
+				
 				if (empno == null) {
 					errorMsg.add("查無資料");
 				}
@@ -107,12 +112,16 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("醫師姓名: 請勿空白");
 				}
 				String npwd = req.getParameter("pwd");
+				String npwd2 = req.getParameter("pwd2");
 				if (npwd == null || npwd.trim().length() == 0) {
 					errorMsg.add("密碼: 請勿空白");
 				}
-				String pwdReg = "^[(\u4e00-\u9fa5)(a-zA-Z0-9_)]{2,10}$";
+				if (!npwd.equals(npwd2)){
+					errorMsg.add("密碼: 密碼不一致");
+				}
+				String pwdReg = "^[(a-zA-Z0-9)]{4,10}$";
 				if (!npwd.trim().matches(pwdReg)) {
-					errorMsg.add("密碼:只能是中、英文字母、數字和_ , 且長度必需在2到10之間");
+					errorMsg.add("密碼:英文字母、數字 , 且長度必需在4到10之間");
 				}
 
 				String email = req.getParameter("email");
@@ -140,17 +149,17 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("照片: 請勿空白");
 				}
 				InputStream is = filePart.getInputStream();
+				int filesize = (int) filePart.getSize();
+				if(filesize > 307200){
+					errorMsg.add("照片: 大小請勿超過300KB");
+				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);
 				
 				
-				/*************************** 1.5員工密碼AES加密 ***************************************/
-				AES_Encryption AES = new AES_Encryption();
-				String pwd = AES.getencrypt(npwd);
-				System.out.println(pwd + "密碼加密");
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
-				empVO.setPwd(pwd);
+				empVO.setPwd(npwd);
 				empVO.setEmail(email);
 				empVO.setEducation(edu);
 				empVO.setExperience(exp);
@@ -164,7 +173,12 @@ public class EmpServlet extends HttpServlet {
 					failureView.forward(req, res);
 					return;
 				}
-				/*************************** 2.開始新增資料 ***************************************/
+				/*************************** 2員工密碼AES加密 ***************************************/
+				AES_Encryption AES = new AES_Encryption();
+				String pwd = AES.getencrypt(npwd);
+				empVO.setPwd(pwd);
+				
+				/*************************** 2.5開始新增資料 ***************************************/
 				EmployeeService empSvc = new EmployeeService();
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
@@ -189,13 +203,18 @@ public class EmpServlet extends HttpServlet {
 				if (ename == null || ename.trim().length() == 0) {
 					errorMsg.add("醫師姓名: 請勿空白");
 				}
-				String pwd = req.getParameter("pwd");
-				if (pwd == null || pwd.trim().length() == 0) {
+				String npwd = req.getParameter("pwd");
+				String npwd2 = req.getParameter("pwd2");
+				if (npwd == null || npwd.trim().length() == 0) {
 					errorMsg.add("密碼: 請勿空白");
-				}
-				String pwdReg = "^[(\u4e00-\u9fa5)(a-zA-Z0-9_)]{2,10}$";
-				if (!pwd.trim().matches(pwdReg)) {
-					errorMsg.add("密碼:只能是中、英文字母、數字和_ , 且長度必需在2到10之間");
+				}	
+				if (!npwd.equals(npwd2)){
+					errorMsg.add("密碼: 密碼不一致");
+					}
+				
+				String pwdReg = "^[(a-zA-Z0-9)]{4,10}$";
+				if (!npwd.trim().matches(pwdReg)) {
+					errorMsg.add("密碼:英文字母、數字 , 且長度必需在4到10之間");
 				}
 
 				String email = req.getParameter("email");
@@ -217,16 +236,30 @@ public class EmpServlet extends HttpServlet {
 				if (spec == null || spec.trim().length() == 0) {
 					errorMsg.add("專長: 請勿空白");
 				}
-
+				Part filePart = req.getPart("photo");
+				if (filePart.getSize() == 0){
+					errorMsg.add("照片: 請勿空白");
+				}
+				
+				InputStream is = filePart.getInputStream();
+				int filesize = (int) filePart.getSize();
+				if(filesize > 307200){
+					errorMsg.add("照片: 大小請勿超過300KB");
+				}
+				@SuppressWarnings("deprecation")
+				Blob photo = Hibernate.createBlob(is);
+				
+				
+				
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setEid(eid);
 				empVO.setName(ename);
-				empVO.setPwd(pwd);
+				empVO.setPwd(npwd);
 				empVO.setEmail(email);
 				empVO.setEducation(edu);
 				empVO.setExperience(exp);
 				empVO.setSpecialty(spec);
-
+				empVO.setPhoto(photo);
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
@@ -234,10 +267,15 @@ public class EmpServlet extends HttpServlet {
 					failureView.forward(req, res);
 					return;
 				}
-				/*************************** 2.開始新增資料 ***************************************/
+			
+				/*************************** 2.員工密碼AES加密 ***************************************/
+				AES_Encryption AES = new AES_Encryption();
+				String pwd = AES.getencrypt(npwd);
+				empVO.setPwd(pwd);
+				/*************************** 2.5開始新增資料 ***************************************/
 				EmployeeService empSvc = new EmployeeService();
 				empVO = empSvc
-						.updateEmp(eid, ename, pwd, email, edu, exp, spec);
+						.updateEmp(eid, ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/BeefTest/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
