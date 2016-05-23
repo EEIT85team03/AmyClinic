@@ -58,8 +58,8 @@ public class FinPayServlet extends HttpServlet {
 		OrdersService ordServ = new OrdersService();
 		OrdersVO ordersVO = ordServ.getOneOrders(oid);
 		
-		////如果該筆訂單的mid跟Session當中的mid不一樣，或是訂單狀態為已付款，就導向首頁
-		if ((!ordersVO.getMemberVO().getMid().equals(mb.getMid())) || ordersVO.getOstatus() != 0) {
+		//如果該筆訂單的mid跟Session當中的mid不一樣，或是訂單已付款，就導向首頁
+			if ((!ordersVO.getMemberVO().getMid().equals(mb.getMid())) || ordersVO.getOstatus() != 0 || ordersVO.getPayment() == 1) {
 			response.sendRedirect(request.getContextPath() + "/index.jsp");
 			return;
 		}

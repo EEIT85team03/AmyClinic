@@ -19,7 +19,10 @@
 	<b>訂單查詢：</b><br><br>
 	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30">
 	<input type="button" id="query" value="查詢">
-	<input type="button" id="query_all" value="查全部"><br><br>
+		<input type="button" id="query_all" value="查全部"><br><br>
+	<c:if test="${empty list}">
+		查無資料！
+	</c:if>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
 	<c:if test="${ordersVO.ostatus != 3}">	
 		<table width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
