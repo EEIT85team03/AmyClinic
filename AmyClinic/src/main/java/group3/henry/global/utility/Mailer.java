@@ -41,7 +41,8 @@ public class Mailer {
 	public void send(String name, String destination, String subject, String text, String format) {		  
 		format = format.toUpperCase();
 		System.out.println(format);
-		if (!format.equals("TEXT") || !format.equals("HTML")){
+		System.out.println(!format.equals("HTML"));
+		if (!format.equals("TEXT") && !format.equals("HTML")){
 			System.out.println("Mailer.java - Invalid email format specified");
 			return;
 		}
