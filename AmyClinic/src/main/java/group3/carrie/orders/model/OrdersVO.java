@@ -74,7 +74,6 @@ public class OrdersVO implements java.io.Serializable {
 		this.total = total;
 	}
 	
-	@Column(insertable = false)
 	public Integer getPoints_spent() {
 		return points_spent;
 	}

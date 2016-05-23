@@ -1,7 +1,6 @@
 package group3.carrie.orders.model;
 
 import group3.carrie.orderitems.model.OrderItemsVO;
-import group3.carrie.product.model.ProductVO;
 import group3.henry.login.model.MemberVO;
 
 import java.sql.Timestamp;
@@ -18,7 +17,7 @@ public class OrdersService {
 	}
 	
 	//普通新增
-//	public OrdersVO addOrders(Integer mid,String recipient,Integer total,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount) {
+//	public OrdersVO addOrders(Integer mid,String recipient,Integer total,Integer points_spent,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount) {
 //		
 //		OrdersVO ordersVO = new OrdersVO();
 //		MemberVO memberVO = new MemberVO();
@@ -26,6 +25,7 @@ public class OrdersService {
 //		memberVO.setMid(mid);
 //		ordersVO.setRecipient(recipient);
 //		ordersVO.setTotal(total);
+//		ordersVO.setPoints_spent(points_spent);
 //		ordersVO.setAddr(addr);
 //		ordersVO.setPhone(phone);
 //		ordersVO.setEmail(email);
@@ -40,34 +40,22 @@ public class OrdersService {
 //		return ordersVO;
 //	}
 	
-	//訂單主檔+訂單明細新增(需再研究)
-	public OrdersVO addOrders(Integer mid,String recipient,Integer total,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount) {
+	//訂單主檔+訂單明細新增
+	public OrdersVO addOrders(Integer mid,String recipient,Integer total,Integer points_spent,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount,Set<OrderItemsVO> set) {
 		OrdersVO ordersVO = new OrdersVO();
 		MemberVO memberVO = new MemberVO();
-		ProductVO productVO1 = new ProductVO();
-		ProductVO productVO2 = new ProductVO();
-		Set<OrderItemsVO> set1 = new HashSet<OrderItemsVO>();
+		Set<OrderItemsVO> orderItemsVOs = new HashSet<OrderItemsVO>();
 		
-		OrderItemsVO orderIT1 = new OrderItemsVO();
-		productVO1.setPid(5);
-		orderIT1.setPrice_per(600);
-		orderIT1.setQuantity(5);
-		orderIT1.setProductVO(productVO1);
-		orderIT1.setOrdersVO(ordersVO);
-		
-		OrderItemsVO orderIT2 = new OrderItemsVO();
-		productVO2.setPid(4);
-		orderIT2.setPrice_per(700);
-		orderIT2.setQuantity(6);
-		orderIT2.setProductVO(productVO2);
-		orderIT2.setOrdersVO(ordersVO);
-		
-		set1.add(orderIT1);
-		set1.add(orderIT2);
+		//把傳進來的Set抓出來塞OrdersVO進去，再塞到另一個Set內，這樣才會吃到oid
+		for(OrderItemsVO k : set) {
+			k.setOrdersVO(ordersVO);
+			orderItemsVOs.add(k);
+		}
 		
 		memberVO.setMid(mid);
 		ordersVO.setRecipient(recipient);
 		ordersVO.setTotal(total);
+		ordersVO.setPoints_spent(points_spent);
 		ordersVO.setAddr(addr);
 		ordersVO.setPhone(phone);
 		ordersVO.setEmail(email);
@@ -77,7 +65,7 @@ public class OrdersService {
 		ordersVO.setPayment(payment);
 		ordersVO.setDiscount(discount);
 		ordersVO.setMemberVO(memberVO);
-		ordersVO.setOrderItems(set1);
+		ordersVO.setOrderItems(orderItemsVOs);
 		dao.insert(ordersVO);
 		
 		return ordersVO;
@@ -85,7 +73,7 @@ public class OrdersService {
 	}
 	
 	//修改
-	public OrdersVO updateOrders(Integer oid,Integer mid,String recipient,Integer total,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount) {
+	public OrdersVO updateOrders(Integer oid,Integer mid,String recipient,Integer total,Integer points_spent,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount) {
 		
 		OrdersVO ordersVO = new OrdersVO();
 		MemberVO memberVO = new MemberVO();
@@ -94,6 +82,7 @@ public class OrdersService {
 		memberVO.setMid(mid);
 		ordersVO.setRecipient(recipient);
 		ordersVO.setTotal(total);
+		ordersVO.setPoints_spent(points_spent);
 		ordersVO.setAddr(addr);
 		ordersVO.setPhone(phone);
 		ordersVO.setEmail(email);
@@ -106,6 +95,12 @@ public class OrdersService {
 		dao.update(ordersVO);
 		
 		return dao.findByPrimaryKey(oid);
+	}
+	
+	//另一版的修改
+	public void updateOrders(OrdersVO ordersVO) {
+		dao.update(ordersVO);
+		
 	}
 	
 	//刪除
@@ -121,6 +116,20 @@ public class OrdersService {
 	//查全部
 	public List<OrdersVO> getAll() {
 		return dao.getAll();
+	}
+	
+	//依照mid查詢
+	public List<OrdersVO> findByMid(Integer mid) {
+		return dao.findByMid(mid);
+	}
+	
+	//依照商品名稱查詢
+//	 public List<Object[]> findByPname(String name,Integer mid) {
+//		return dao.findByPname(name,mid);
+//	}
+	
+	 public List<OrdersVO> findByPname(String name,Integer mid) {
+		return dao.findByPname(name,mid);
 	}
 	
 	//查訂單明細

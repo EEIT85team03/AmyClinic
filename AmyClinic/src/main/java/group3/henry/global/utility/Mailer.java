@@ -40,6 +40,11 @@ public class Mailer {
 	//					Person			Email		  Email Subject   Email Text   text or html
 	public void send(String name, String destination, String subject, String text, String format) {		  
 		format = format.toUpperCase();
+		System.out.println(!format.equals("HTML"));
+		if (!format.equals("TEXT") && !format.equals("HTML")){
+			System.out.println("Mailer.java - Invalid email format specified");
+			return;
+		}
 		
 		//sender
 	    String from = "eeit85group3@gmail.com";
@@ -72,12 +77,12 @@ public class Mailer {
 	        if (format.equals("TEXT"))
 	        	message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE); // Set the actual message
 	        else if (format.equals("HTML"))
-	        	message.setContent("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE, "text/html");
+	        	//為了測試用先把編碼寫死成utf-8
+	        	message.setContent("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE, "text/html;charset=UTF-8");
 	        else{
 	        	System.out.println("Invalid format");
 	        	return;
-	        	}
-	        
+	        	}	        
 	        Transport.send(message); // Send message
 	        
 	        System.out.println("Sent message successfully....");

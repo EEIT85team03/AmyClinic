@@ -5,6 +5,8 @@ import group3.beef.employee.model.EmployeeVO;
 import group3.beef.encryption.AES_Encryption;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,8 +16,11 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
- 
-@MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
+
+import org.hibernate.Hibernate;
+
+@MultipartConfig(maxFileSize = 16177215)
+//@MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
 @WebServlet("/BeefTest/emp.do")
 public class EmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -32,10 +37,10 @@ public class EmpServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
- 
+
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
-		
+
 		// ===================查詢一位員工=========================
 
 		if ("getOne_For_Display".equals(action)) {
@@ -129,11 +134,20 @@ public class EmpServlet extends HttpServlet {
 				if (spec == null || spec.trim().length() == 0) {
 					errorMsg.add("專長: 請勿空白");
 				}
-				 
+
+				Part filePart = req.getPart("photo");
+				if (filePart.getSize() == 0){
+					errorMsg.add("照片: 請勿空白");
+				}
+				InputStream is = filePart.getInputStream();
+				@SuppressWarnings("deprecation")
+				Blob photo = Hibernate.createBlob(is);
+				
+				
 				/*************************** 1.5員工密碼AES加密 ***************************************/
 				AES_Encryption AES = new AES_Encryption();
 				String pwd = AES.getencrypt(npwd);
-				System.out.println(pwd+"密碼加密");
+				System.out.println(pwd + "密碼加密");
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
 				empVO.setPwd(pwd);
@@ -141,6 +155,7 @@ public class EmpServlet extends HttpServlet {
 				empVO.setEducation(edu);
 				empVO.setExperience(exp);
 				empVO.setSpecialty(spec);
+				empVO.setPhoto(photo);
 
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
@@ -151,7 +166,7 @@ public class EmpServlet extends HttpServlet {
 				}
 				/*************************** 2.開始新增資料 ***************************************/
 				EmployeeService empSvc = new EmployeeService();
-				empVO = empSvc.addEmp(ename, pwd, email, edu, exp, spec);
+				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/BeefTest/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
@@ -221,7 +236,8 @@ public class EmpServlet extends HttpServlet {
 				}
 				/*************************** 2.開始新增資料 ***************************************/
 				EmployeeService empSvc = new EmployeeService();
-				empVO = empSvc.updateEmp(eid, ename, pwd, email, edu, exp, spec);
+				empVO = empSvc
+						.updateEmp(eid, ename, pwd, email, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/BeefTest/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
@@ -234,11 +250,11 @@ public class EmpServlet extends HttpServlet {
 				failureView.forward(req, res);
 			}
 		}
-			// ===================刪除一位員工=========================
-		
+		// ===================刪除一位員工=========================
+
 		if ("delete".equals(action)) {
 			List<String> errorMsg = new LinkedList<String>();
-			
+
 			try {
 				req.setAttribute("errorMsg", errorMsg);
 				Integer eid = new Integer(req.getParameter("eid").trim());
@@ -248,14 +264,12 @@ public class EmpServlet extends HttpServlet {
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 			} catch (Exception e) {
-				errorMsg.add("刪除資料失敗"+e.getMessage());
+				errorMsg.add("刪除資料失敗" + e.getMessage());
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/BeefTest/GetAllEMP.jsp");
 				failureView.forward(req, res);
 			}
-			
-			
-			
+
 		}
 	}
 }

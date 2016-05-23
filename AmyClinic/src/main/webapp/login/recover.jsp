@@ -5,19 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/login/css/recover.css"
+	rel="stylesheet">
 <title>Recover Password</title>
 </head>
 <body>
-I'm recover.jsp!<hr>
+或者使用電子郵件聯絡我們<hr>
 
 	<ul>
-		<li><font color="blue"><b>Please enter your Email to recover your password:</b></font> 		
+		<li><font color="blue"><b>請輸入您的電子郵件，我們會藉由該信箱幫助您取回密碼</b></font> 		
 			<s:form namespace="/free" action="recover">
-				<s:textfield name="memberVO.email" label="Email" placeholder="abc@xyz.com" />				
-				<s:submit value="Submit" method="recover" />
+				<s:textfield name="memberVO.email" label="E-mail" placeholder="abc@xyz.com" id="recover-email"/>				
+				<s:submit value="送出" method="recover" id="recover-btn"/>
 			</s:form>
 		</li>
 		<li><div style="color:red;">${message}</div></li>
 	</ul>	
+	 
 </body>
 </html>
