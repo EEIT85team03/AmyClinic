@@ -89,7 +89,7 @@ public class FinPayServlet extends HttpServlet {
 		//寄通知信給使用者
 		Mailer m = new Mailer();
 		String msg = msgForEmail(mb, ordersVO, date);
-		m.send(ordersVO.getRecipient(), ordersVO.getEmail(), HEADER, msg, "html");
+		m.send(ordersVO.getRecipient(), ordersVO.getEmail(), HEADER, msg, "HTML");
 		
 		
 		//將訂單放入request物件中，準備轉交

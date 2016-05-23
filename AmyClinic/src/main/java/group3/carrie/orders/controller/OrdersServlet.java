@@ -37,7 +37,7 @@ public class OrdersServlet extends HttpServlet {
 		//確認MemberVO物件在不在Session物件裡
 		MemberVO mb = (MemberVO) session.getAttribute("memberVO");
 		if (mb == null) {
-			response.sendRedirect(request.getContextPath() + "/index.jsp");
+			response.sendRedirect(request.getContextPath() + "/login/login.jsp");
 			return;
 		}
 		

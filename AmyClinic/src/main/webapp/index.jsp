@@ -44,9 +44,7 @@
 
 <!-- 購物系統測試 -->
 		<a href="shopping/prod_list.jsp">商品列表(不需登入)</a><br>
-		<a href="shopping/OrdersServlet">查詢訂單(需透過以下測試網頁登入)</a><br>
-		<a href="CarrieTest/login/login.jsp">登入網頁(for 購物系統)</a><br>
-		(測試用帳號：INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Test','1234','Test@group3.com','1990-12-12','Taiwan','F','台北市大安區復興南路一段390號2樓','0925332156','160','42','1');)
+		<a href="shopping/OrdersServlet">查詢訂單(需登入)</a><br>
 		</article>
 		<aside></aside>
 

@@ -2,11 +2,7 @@
 	pageEncoding="UTF-8"%>
 <link rel="shortcut icon" type="image/png"
 	href="${pageContext.request.contextPath}/General/img/logo.ico" />
-<div id="mySpace">
-		<a href="${pageContext.request.contextPath}/login/login.jsp"><img
-			src="${pageContext.request.contextPath}/General/img/logo.jpg" alt=""
-			id="logo"></a>
-	</div>
+
 <div id="banner">
 	<h1>
 		<a href="#"></a>

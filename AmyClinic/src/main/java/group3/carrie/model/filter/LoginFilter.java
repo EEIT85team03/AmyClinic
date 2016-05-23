@@ -25,10 +25,10 @@ public class LoginFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
-		Object email = session.getAttribute("email");
-		if (email == null) {
+		Object account = session.getAttribute("account");
+		if (account == null) {
 			session.setAttribute("location", req.getRequestURI());
-			res.sendRedirect(req.getContextPath() + "/CarrieTest/login/login.jsp");
+			res.sendRedirect(req.getContextPath() + "/login/login.jsp");
 			return;
 		} else {
 			chain.doFilter(req, res);
