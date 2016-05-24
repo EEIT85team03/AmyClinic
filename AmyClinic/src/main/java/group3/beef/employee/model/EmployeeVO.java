@@ -1,6 +1,7 @@
 package group3.beef.employee.model;
 
 import group3.carrie.app.model.AppVO;
+import group3.carrie.schedule.model.ScheduleVO;
 
 import java.io.Serializable;
 import java.sql.Blob;
@@ -31,6 +32,8 @@ public class EmployeeVO implements Serializable {
 	private String specialty;
 	//員工和預約是一對多
 	private Set<AppVO> apps = new HashSet<AppVO>();
+	//員工和排班是一對多
+	private Set<ScheduleVO> schedules = new HashSet<ScheduleVO>();
 	
 	public EmployeeVO(){
 		
@@ -114,6 +117,16 @@ public class EmployeeVO implements Serializable {
 
 	public void setApps(Set<AppVO> apps) {
 		this.apps = apps;
+	}
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="employeeVO")
+	@OrderBy("sch_id asc")
+	public Set<ScheduleVO> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(Set<ScheduleVO> schedules) {
+		this.schedules = schedules;
 	}
 
 	

@@ -12,6 +12,7 @@
 
 <!-- 
 1.信用卡付款(使用jQuery的plug-in)
+ps.輸入卡號及有效期限時請保持在英文輸入法狀態，否則plug-in的格式會出不來
 2.帶出應付金額
 3.確認送出後，更改Order的訂單狀態，並寄出email通知使用者
  -->
@@ -65,7 +66,6 @@
                 <form action="FinPayServlet" method="post">
                     <table style="padding-left: 600px;padding-top: 5px">
                     	<tr>
-                    	 <!-- 輸入時請保持在英文輸入法狀態，否則格式會出不來 -->
                     		<td>
                             	<input placeholder="信用卡卡號" type="text" name="number" autocomplete="off">
                             </td>
@@ -74,7 +74,6 @@
                             </td>	
                         </tr> 
                         <tr>
-                        <!-- 輸入時請保持在英文輸入法狀態，否則/號會跳不出來 -->
                         	<td>  
                             	<input placeholder="MM/YY" type="text" name="expiry" autocomplete="off" maxlength="7">
                             </td>	
