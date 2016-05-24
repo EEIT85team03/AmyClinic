@@ -41,14 +41,14 @@
     <url-pattern>/GetPic.servlet</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>ShowEmpPic</servlet-name>
-    <servlet-class>group3.beef.employee.controller.ShowPic</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ShowEmpPic</servlet-name>
-    <url-pattern>/ShowEmpPic.servlet</url-pattern>
-  </servlet-mapping>
+<!--   <servlet> -->
+<!--     <servlet-name>ShowEmpPic</servlet-name> -->
+<!--     <servlet-class>group3.beef.employee.controller.ShowPic</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>ShowEmpPic</servlet-name> -->
+<!--     <url-pattern>/ShowEmpPic.servlet</url-pattern> -->
+<!--   </servlet-mapping> -->
   
 
   

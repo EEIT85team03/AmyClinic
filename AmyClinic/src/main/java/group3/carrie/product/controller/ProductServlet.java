@@ -205,9 +205,10 @@ public class ProductServlet extends HttpServlet {
 		}
 		// ===================修改=========================
 		if ("update".equals(action)) {
-			List<String> errorMsg = new LinkedList<String>();
-			req.setAttribute("errorMsg", errorMsg);
-			Integer pid = new Integer(req.getParameter("pid").trim());
+			
+//			List<String> errorMsg = new LinkedList<String>();
+//			req.setAttribute("errorMsg", errorMsg);
+//			Integer pid = new Integer(req.getParameter("pid").trim());
 //			try {
 //				String ename = req.getParameter("name");
 //				if (ename == null || ename.trim().length() == 0) {

@@ -166,7 +166,16 @@ function format_float(num, pos)
 }
 </script>
 <!-- </form> -->
-   
+   <c:if test="${not empty errorMsg}">
+	<font color='red'>請修正以下錯誤:
+	<ul>
+		<c:forEach var="message" items="${errorMsg}">
+			<li>${message}</li>
+		</c:forEach>
+	</ul>
+	</font>
+</c:if>
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       						<input type="hidden" name="action" value="addProduct">
