@@ -51,9 +51,6 @@
 		<mapping class="group3.beef.employee.model.EmployeeVO"/>
 
 
-<!-- 		<mapping class="group3.k.emp_logn.model.EmployeesVO"/> -->
-<!-- 		<mapping resource="group3.k.emp_logn.model.emp.hbm.xml"/> -->
-<!-- 		<mapping class="group3.k.emp_login.controller.LoginActionEmp"/> -->
 
 	</session-factory>
 	
