@@ -25,7 +25,7 @@
 
 <body>
     <div id="wrapper"><!-- all -->
-<jsp:include page="b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
+<jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <div id="page-wrapper"><!-- Page Heading -->
             <div class="container-fluid">
                 <div class="row">

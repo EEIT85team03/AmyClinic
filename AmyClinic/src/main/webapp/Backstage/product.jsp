@@ -1,7 +1,7 @@
-<%@page import="org.apache.struts2.components.Include"%>
+<%-- <%@page import="org.apache.struts2.components.Include"%> --%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<%@ taglib prefix="s"  uri="/struts-tags"  %>
-<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%-- <%@ taglib prefix="s"  uri="/struts-tags"  %> --%>
+<%-- <%@ taglib prefix="sx" uri="/struts-dojo-tags"%> --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
 <%@page import="group3.carrie.product.model.*"%>
@@ -31,7 +31,7 @@
 
 <body>
     <div id="wrapper"><!-- all -->
-<jsp:include page="b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
+<jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <div id="page-wrapper"><!-- Page Heading -->
             <div class="container-fluid">
                 <div class="row">
@@ -66,7 +66,7 @@
 			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
 		</th>
 		<th>			  
-			     <a href="addproduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
+			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
 <%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
