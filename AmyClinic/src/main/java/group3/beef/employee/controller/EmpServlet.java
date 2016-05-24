@@ -150,8 +150,8 @@ public class EmpServlet extends HttpServlet {
 				}
 				InputStream is = filePart.getInputStream();
 				int filesize = (int) filePart.getSize();
-				if(filesize > 307200){
-					errorMsg.add("照片: 大小請勿超過300KB");
+				if(filesize > 30700200){
+					errorMsg.add("照片: 大小請勿超過30000KB");
 				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);

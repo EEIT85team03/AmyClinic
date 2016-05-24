@@ -7,7 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage_Old/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
 
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
@@ -54,13 +54,13 @@
     <package name="empPackage" namespace="/member" extends="struts-default">	
 		<interceptors>		        
 	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
-  			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
-			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+<!--   			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />   -->
+<!-- 			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" /> -->
 		    <interceptor-stack name="AuthenticationRequired">  
 				<interceptor-ref name="defaultStack" />      
 				<interceptor-ref name="authentication" />
-				<interceptor-ref name="AESEncryption" />      
-				<interceptor-ref name="MD5Encryption" />        
+<!-- 				<interceptor-ref name="AESEncryption" />       -->
+<!-- 				<interceptor-ref name="MD5Encryption" />         -->
 		    </interceptor-stack>		
 		</interceptors>
 				
@@ -79,8 +79,9 @@
 			<result name="input">/login/editprofile.jsp</result>
 		</action>
 		        
-        <action name="member2" 	class="group3.henry.login.controller.MemberPageAction2">
+        <action name="changepw" class="group3.henry.login.controller.MemberPageAction2">
 			<result>/member/memberonly2.jsp</result>
+			<result name="input">/member/memberonly2.jsp</result>
 		</action>
 		
 		<action name="*" >
@@ -112,12 +113,12 @@
 
 
 <!-- k	-->   
-    <package name="LoginActionEmp" namespace="LoginActionEmp" extends="struts-default">
-        <action name="LoginActionEmp" class="group3.k.emp_login.controller.LoginActionEmp">
-            <result name="b_login">/backstage/b_login.jsp</result>
-			 <result name="success">/backstage/b_success.jsp</result>
-        </action>
-    </package>
+<!--    <package name="product" namespace="/addproduct" extends="struts-default">	 -->
+<!-- 		<action name="addproduct" class="group3.carrie.product.controller.ProductServlet"> -->
+<!-- 			<result name="success">/Backstage_Old/success.jsp</result>	 -->
+<!-- 			<result name="add">/Backstage_Old/addproduct.jsp</result> -->
+<!-- 		</action> -->
+<!-- 	</package> -->
 <!-- k	-->
 
 <!-- beef -->
