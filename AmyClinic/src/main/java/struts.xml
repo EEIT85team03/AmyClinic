@@ -7,7 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage_Old/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
 
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
@@ -113,12 +113,12 @@
 
 
 <!-- k	-->   
-    <package name="LoginActionEmp" namespace="LoginActionEmp" extends="struts-default">
-        <action name="LoginActionEmp" class="group3.k.emp_login.controller.LoginActionEmp">
-            <result name="b_login">/backstage/b_login.jsp</result>
-			 <result name="success">/backstage/b_success.jsp</result>
-        </action>
-    </package>
+<!--    <package name="product" namespace="/addproduct" extends="struts-default">	 -->
+<!-- 		<action name="addproduct" class="group3.carrie.product.controller.ProductServlet"> -->
+<!-- 			<result name="success">/Backstage_Old/success.jsp</result>	 -->
+<!-- 			<result name="add">/Backstage_Old/addproduct.jsp</result> -->
+<!-- 		</action> -->
+<!-- 	</package> -->
 <!-- k	-->
 
 <!-- beef -->

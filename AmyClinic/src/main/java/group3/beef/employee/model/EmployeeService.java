@@ -1,9 +1,10 @@
 package group3.beef.employee.model;
+
+import group3.beef.encryption.AES_Encryption;
+
 import java.io.InputStream;
 import java.sql.Blob;
 import java.util.List;
-
- 
 
 public class EmployeeService {
 
@@ -27,15 +28,15 @@ public class EmployeeService {
 		employeeVO.setEmail(email);
 		employeeVO.setPhoto(photo);
 
-//		try {
-//			FileInputStream fileInputStream = new FileInputStream("c:\\dog.png");
-//			@SuppressWarnings("deprecation")
-//			Blob photo1 = Hibernate.createBlob(fileInputStream);
-//			employeeVO.setPhoto(photo1);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		// try {
+		// FileInputStream fileInputStream = new FileInputStream("c:\\dog.png");
+		// @SuppressWarnings("deprecation")
+		// Blob photo1 = Hibernate.createBlob(fileInputStream);
+		// employeeVO.setPhoto(photo1);
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 		employeeVO.setEducation(education);
 		employeeVO.setExperience(experience);
 		employeeVO.setSpecialty(specialty);
@@ -44,11 +45,10 @@ public class EmployeeService {
 
 	}
 
-	
-	
-	//更新員工
-	public EmployeeVO updateEmp(Integer eid, String name, String pwd, String email, Blob photo,
-			String education, String experience, String specialty) {
+	// 更新員工
+	public EmployeeVO updateEmp(Integer eid, String name, String pwd,
+			String email, Blob photo, String education, String experience,
+			String specialty) {
 		EmployeeVO employeeVO = new EmployeeVO();
 		employeeVO.setEid(eid);
 		employeeVO.setName(name);
@@ -71,21 +71,30 @@ public class EmployeeService {
 		dao.update(employeeVO);
 		return dao.findByPrimaryKey(employeeVO.getEid());
 	}
-	
-	//員工系統登入
-	public EmployeeVO EmpLogin(String mail ,String pwd){
-	List<EmployeeVO> list = dao.getAll();
-	return null;
-	
-	}
 
-	 
-	 //抓一位員工的圖片
-	public InputStream getOneEmployeePic(Integer eid){
-		return	dao.findEmpPicByPrimaryKey(eid);
+	// 員工系統登入
+	public EmployeeVO EmpLogin(String mail, String pwd) throws Exception {
+		// 檢查userId與password是否正確
+		AES_Encryption AES = new AES_Encryption();
+		List<EmployeeVO> EmpList = dao.getAll();
+		for (EmployeeVO empVO : EmpList) {
+			if ((empVO.getEmail().equals(mail.trim()))
+					&& (empVO.getPwd().equals(AES.getencrypt(pwd.trim())))) {
+//			 System.out.println(empVO.getEmail());
+//			 System.out.println(empVO.getPwd());
+			 return empVO;
+			}
+		}
+		return null;
 		
 	}
-	
+
+	// 抓一位員工的圖片
+	public InputStream getOneEmployeePic(Integer eid) {
+		return dao.findEmpPicByPrimaryKey(eid);
+
+	}
+
 	// 刪除員工
 	public void deleteEmployee(Integer eid) {
 		dao.delete(eid);

@@ -27,6 +27,7 @@
 <jsp:include page="placeJsp/top.jsp" /><jsp:include page="placeJsp/sidebar1.jsp" />
   <div class="content">
  <!-- 內文-->
+ <font style="text-align: center;">產品資料維護</font>
  <%
  ProductService product = new ProductService();
  List<ProductVO> list = product.getAll();
@@ -43,17 +44,12 @@
 		<th>折扣</th>
 		<th>商品描述</th>
 		<th>成分</th>
-		<th>
-					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
-			     <input type="submit" value="全部" class="btn btn-info">
-<%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
-			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+		<th>圖片</th>
+		<th>				  
+			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
 		</th>
-		<th>
-					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
-			     <input type="submit" value="新增" class="btn btn-primary">
-<%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
-			     <input type="hidden" name="action"	value="add"></FORM>
+		<th>			  
+			     <a href="addproduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
 <%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
@@ -66,14 +62,16 @@
 			<td>${ProductVO.discount}</td>
 			<td>${ProductVO.descrip}</td>
 			<td>${ProductVO.ingredients}</td>
+			<td>${ProductVO.photo}</td>
+			
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			  <FORM METHOD="post" ACTION="ProductServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
-			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+			     <input type="hidden" name="action"	value="update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
+			  <FORM METHOD="post" ACTION="ProductServlet">
 			    <input type="submit" value="刪除" class="btn btn-danger">
 			    <input type="hidden" name="pid" value="${ProductVO.pid}">
 			    <input type="hidden" name="action"value="delete"></FORM>
