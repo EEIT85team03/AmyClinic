@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Account Details</title>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <style>
 	.disable{
 		border:none;
@@ -22,17 +23,16 @@
 		position:relative;
 		top:4px;
 		height:18px;
+		cursor: pointer;
 	}
 
 </style>
-<link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 </head>
 <body>
 I am editprofile.jsp! <hr>
 
 <h3>${memberVO.name}</h3> 
 
-<%-- <form role="form" class="form-horizontal" method="post" action="<%=request.getContextPath()%>/member/editprofile.action"> --%>
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberid">Member ID: </label>
@@ -49,7 +49,10 @@ I am editprofile.jsp! <hr>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberpwd">Password: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.pwd" id="memberpwd" class="form-control" type="password" value="${memberVO.pwd}"/>
+			<input name="memberVO.pwd" id="memberpwd" class="form-control" type="password" value="${memberVO.pwd}" readonly/>
+		</div>
+		<div class="col-sm-1">
+			<a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		
 		</div>
 	</div>
 	<div class="form-group">
@@ -169,26 +172,15 @@ I am editprofile.jsp! <hr>
 
 <!-- required for .datepicker() -->
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>  
-<!-- <script>
- 	//Birthday Calendar
- 	$(document).ready(function() {
- 	   $('#memberbirthday').datepicker({
- 	   	 buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png", 
- 	   	});
- 	}); 
-</script> -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png" });
 	});
-    
-	$("#datepicker-end").datepicker({
-        showOn: "button",
-        buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
-        buttonImageOnly: true
+</script>
 
-    });
-	
+<script>
+	var gender = $(".membergender").val()=="M" ?"Male":"Female";
+	$(".membergender").text(gender);
 </script>
 
 </body>
