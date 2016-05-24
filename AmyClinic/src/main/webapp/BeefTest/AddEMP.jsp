@@ -46,31 +46,31 @@
 		<table border="0">
 			<tr>
 				<td>員工姓名:</td>
-				<td><input type="text" name="name" size="20"></td>
+				<td><input type="text" name="name" size="20" value="${request.empVO.name}"></td>
 			</tr>
 			<tr>
 				<td>密碼</td>
-				<td><input type="password" name="pwd" size="20" ></td>
+				<td><input type="password" name="pwd" size="20"  ></td>
 			</tr>
 			<tr>
 				<td>重新輸入密碼</td>
-				<td><input type="password" name="pwd2" size="20" ></td>
+				<td><input type="password" name="pwd2" size="20"  ></td>
 			</tr>
 			<tr>
 				<td>e-mail</td>
-				<td><input type="text" name="email" size="20"></td>
+				<td><input type="text" name="email" size="20" value="${request.empVO.email}"></td>
 			</tr>
 			<tr>
 				<td>教育程度</td>
-				<td><input type="text" name="edu" size="20"></td>
+				<td><input type="text" name="edu" size="20" value="${request.empVO.education}"></td>
 			</tr>
 			<tr>
 				<td>經歷</td>
-				<td><input type="text" name="exp" size="20"></td>
+				<td><input type="text" name="exp" size="20" value="${request.empVO.experience}" ></td>
 			</tr>
 			<tr>
 				<td>專長</td>
-				<td><input type="text" name="spec" size="20"></td>
+				<td><input type="text" name="spec" size="20" value="${request.empVO.specialty}"></td>
 			</tr>
 			<tr>
 				<td>照片</td>
