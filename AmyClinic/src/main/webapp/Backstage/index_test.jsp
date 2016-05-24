@@ -66,23 +66,23 @@ body {
 <body marginwidth="0" marginheight="0">
 	<div id="supersize" 	style="height: 856px; width: 1521.77777777778px; display: none;">
 		<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img src="images/home01.jpg" title="" ></a> 
+			<img src="../images/home01.jpg" title="" ></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home02.jpg" title=""></a> 
+			<img	src="../images/home02.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home03.jpg" title=""></a> 
+			<img	src="../images/home03.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home04.jpg" title=""></a> 
+			<img	src="../images/home04.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home05.jpg" title=""></a> 
+			<img	src="../images/home05.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home06.jpg" title=""></a>
+			<img	src="../images/home06.jpg" title=""></a>
 	</div>
 	<!-- 		test -->
 <div style="z-index:9999; position: relative;" align="center"  valign="center">
 <div id="allpage">
-		<header >
-			<marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#FF9D6F" direction="right" height="20" scrollamount="8" behavior="alternate">歡迎光臨-AMY-限時特價藥妝、醫美保養品,☆專業醫美品牌☆</marquee>
+		<header>
+			
 		</header>
 		<!--top image-->
 
@@ -97,7 +97,6 @@ body {
 
 			</section>
 <!-- Henry's test login --><hr>
-<div style="bgcolor='#FF9D6F'">
 		<a href="login/login.jsp">Login page</a><br>
 		<a href="register/register.jsp">Register a new account</a><br>		
 		<a href="login/editprofile.jsp">Edit Account Information</a><br>
@@ -109,21 +108,16 @@ body {
 <!-- Henry's test login -->
 
 <!-- 購物系統測試 -->
-
 		<a href="shopping/prod_list.jsp">商品列表(不需登入)</a><br>
-
-		<a href="shopping/OrdersServlet" >查詢訂單(需登入)</a><br>
-		
-		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
-</div>		
+		<a href="shopping/OrdersServlet">查詢訂單(需登入)</a><br>
 		</article>
 		<aside></aside>
 
 
-<hr>
+
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/b_login.jsp">後台專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/b_login.jsp">員工專區</a><br></p>
 		</footer>
 	</div>
 </div>

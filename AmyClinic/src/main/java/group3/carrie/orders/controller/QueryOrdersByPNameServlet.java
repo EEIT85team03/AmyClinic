@@ -44,6 +44,10 @@ public class QueryOrdersByPNameServlet extends HttpServlet {
 		 * 2.目前會員的mid
 		 */
 		String name = request.getParameter("name");
+		if (name.equals("")){
+			response.sendRedirect(request.getContextPath() + "/shopping/OrdersServlet");
+			return;
+		}
 		OrdersService ordServ = new OrdersService();
 //		List<Object[]> list = ordServ.findByPname(name, mb.getMid());
 //		List<OrdersVO> ordersVO = new ArrayList<OrdersVO>();

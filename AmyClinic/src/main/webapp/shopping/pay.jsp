@@ -65,22 +65,24 @@
                 <form action="FinPayServlet" method="post">
                     <table style="padding-left: 600px;padding-top: 5px">
                     	<tr>
+                    	 <!-- 輸入時請保持在英文輸入法狀態，否則格式會出不來 -->
                     		<td>
-                            	<input placeholder="信用卡卡號" type="text" name="number">
+                            	<input placeholder="信用卡卡號" type="text" name="number" autocomplete="off">
                             </td>
                             <td>	
-                            	<input placeholder="持卡人姓名" type="text" name="name">
+                            	<input placeholder="持卡人姓名" type="text" name="name" autocomplete="off">
                             </td>	
                         </tr> 
                         <tr>
+                        <!-- 輸入時請保持在英文輸入法狀態，否則/號會跳不出來 -->
                         	<td>  
-                            	<input placeholder="MM/YY" type="text" name="expiry">
+                            	<input placeholder="MM/YY" type="text" name="expiry" autocomplete="off" maxlength="7">
                             </td>	
 							<td>
                             	<input placeholder="檢核碼" type="text" name="cvc" maxlength="3">
 							</td>
 							<td>
-                            	<input type="submit" value="付款">
+                            	<input type="submit" id="pay" value="付款">
                             	<input type="hidden" name="oid" value="${ordersVO.oid}">
                             </td>	
                         </tr>    
@@ -101,6 +103,55 @@ $('form').card({
     name: '持卡人姓名',
 },
 	})
+$(function() {
+	var pay = $('#pay');
+	pay.prop("disabled",true);
+	var name = $('input[name="name"]');
+	var patt_name = /^[^\u0020\u3000][\u4e00-\u9fa5\u0020a-zA-Z]{1,20}$/
+	name.blur(function() {
+		if ($(this).val().length == 0 || !patt_name.test($(this).val())) {
+			pay.prop("disabled",true);
+		} else {
+			pay.removeAttr("disabled");
+		}
+	})
+	
+	var number = $('input[name="number"]');
+	number.blur(function() {
+		if ($(this).val().length == 0 ) {
+			pay.prop("disabled",true);
+		} else {
+			pay.removeAttr("disabled");
+		}
+	})
+	
+	var expiry = $('input[name="expiry"]');
+	expiry.blur(function() {
+		if ($(this).val().length == 0 ) {
+			pay.prop("disabled",true);
+		} else {
+			pay.removeAttr("disabled");
+		}
+	})
+	
+	var cvc = $('input[name="cvc"]');
+	cvc.blur(function() {
+		if ($(this).val().length == 0 ) {
+			pay.prop("disabled",true);
+		} else {
+			pay.removeAttr("disabled");
+		}
+	})
+	
+	pay.click(function() {
+		if(name.val().length==0 || number.val().length==0 || expiry.val().length==0 || cvc.val().length==0) {
+			$(this).prop("disabled",true);
+		} else {
+			pay.removeAttr("disabled");
+		}
+	})	
+	
+})		
 </script>
 </body>
 </html>
