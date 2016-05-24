@@ -8,5 +8,6 @@ public interface Score_interface {
 	public void delete(Integer score_id);
 	public ScoreVO findByPrimaryKey(Integer score_id);
 	public List<ScoreVO> getAll();
+	public List<ScoreVO> getEmpScore(Integer eid);
 
 }
