@@ -52,8 +52,10 @@ public class AES_EncryptionInterceptor extends AbstractInterceptor {
 		
 		if (request.getAttribute("encpw")!=null) // if a previous interceptor processed a pw, use encpw
 			pw = (String)request.getAttribute("encpw");
-		else 
+		else if (request.getParameter("memberVO.pwd")!=null)
 			pw = request.getParameter("memberVO.pwd"); // if not, use pw from request
+		else
+			return invocation.invoke(); // No raw or encrypted password(s) to process, moves to next interceptor
 		
 		if (request.getAttribute("encpw2")!=null) // if a prev interceptor processed the alt pw, use encpw2
 			pw2 = (String)request.getAttribute("encpw2");

@@ -119,6 +119,7 @@ CREATE TABLE Employees
 
 CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
 ( 
+  sch_id		DECIMAL(4)		IDENTITY(1000, 1) PRIMARY KEY,
   eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees,   
   c_date		DATE			NOT NULL,
   c_hours		NVARCHAR(13)	NOT NULL,

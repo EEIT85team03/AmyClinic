@@ -47,6 +47,7 @@
 		<mapping class="group3.carrie.orderitems.model.OrderItemsVO"/>
 		<mapping class="group3.carrie.proctype.model.ProcTypeVO"/>
 		<mapping class="group3.carrie.proc.model.ProcVO"/>
+		<mapping class="group3.carrie.schedule.model.ScheduleVO"/>
 		<mapping class="group3.beef.employee.model.EmployeeVO"/>
 
 
