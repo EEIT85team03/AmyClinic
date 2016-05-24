@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+<!-- Specifies url patterns / servlets to exclude from struts2 -->
+<!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+
+<!-- specifies the properties file to use for retrieving resources (I18N) -->
+<constant name="struts.custom.i18n.resources" value="global" />
+
+<!-- ********************** -->
+<!-- login/Register package: -->
+<!-- Intercepts password and encrypts them -->
+<!-- ********************** -->
+	<constant name="struts.devMode" value="true" />
+	
+	<package name="logRegPackage" namespace="/logreg" extends="struts-default">
+		
+		<interceptors>		        		
+			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+			<interceptor-stack name="EncPw">  
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="AESEncryption" />      
+				<interceptor-ref name="MD5Encryption" />    
+			</interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="EncPw" />
+		
+		<action name="login" class="group3.henry.login.controller.LoginAction">
+			<result name="success">/login/success.jsp</result>
+			<result name="verifyEmail">/login/verify.jsp</result>			
+			<result name="login">/login/login.jsp</result>
+		</action>
+		
+		<action name="register" class="group3.henry.register.controller.RegisterAction">
+			<result name="success">/register/regsuccess.jsp</result>
+			<result name="input">/register/register.jsp</result>
+		</action>
+		
+		<action name="reset" class="group3.henry.login.controller.ResetPassAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="input">/login/resetpw.jsp</result>
+		</action>
+	</package>
+<!-- *************************	-->
+<!-- Access controlled package  -->
+<!-- *************************	-->
+    <package name="empPackage" namespace="/member" extends="struts-default">	
+		<interceptors>		        
+	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+  			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+		    <interceptor-stack name="AuthenticationRequired">  
+				<interceptor-ref name="defaultStack" />      
+				<interceptor-ref name="authentication" />
+				<interceptor-ref name="AESEncryption" />      
+				<interceptor-ref name="MD5Encryption" />        
+		    </interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="AuthenticationRequired" />
+
+        <global-results>
+			<result name="login">/login/login.jsp</result>
+		</global-results>
+		
+	    <action name="editprofile" class="group3.henry.login.controller.EditProfileAction">
+			<result>/login/editprofile.jsp</result>
+		</action>
+
+	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
+			<result>/login/editprofile.jsp</result>
+			<result name="input">/login/editprofile.jsp</result>
+		</action>
+		        
+        <action name="member2" 	class="group3.henry.login.controller.MemberPageAction2">
+			<result>/member/memberonly2.jsp</result>
+		</action>
+		
+		<action name="*" >
+              <result>/member/{1}.jsp</result>                      
+         </action>
+	</package>
+	
+<!-- *****************************	-->		
+<!-- Non-Access controlled package  -->
+<!-- *****************************	-->
+	<package name="NoLogin" namespace="/free" extends="struts-default">
+        <action name="public" class="group3.henry.login.controller.PublicPageAction">
+            <result>/public/publicpage.jsp</result>
+        </action>
+        <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
+			<result>/login/verify.jsp</result>
+			<result name="failure">/login/verify.jsp</result>
+		</action>
+		<action name="recover" class="group3.henry.login.controller.RecoverAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="resetform">/login/resetpw.jsp</result>
+			<result name="failure">/login/verify.jsp</result>
+		</action>
+    </package>
+
+<!-- ******************************	-->		
+<!-- Employee(?) package  -->
+<!-- ******************************	-->		
+
+
+<!-- k	-->   
+    <package name="LoginActionEmp" namespace="LoginActionEmp" extends="struts-default">
+        <action name="LoginActionEmp" class="group3.k.emp_login.controller.LoginActionEmp">
+            <result name="b_login">/backstage/b_login.jsp</result>
+			 <result name="success">/backstage/b_success.jsp</result>
+        </action>
+    </package>
+<!-- k	-->
+
+<!-- beef -->
+	<package name="Emp" namespace="/emp" extends="struts-default">
+        <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction">
+            <result name="input">/BeefTest/AddEMP.jsp</result>
+            <result name="success">/BeefTest/AddSucces.jsp</result>
+		</action>
+    
+        <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction">
+            <result name="success">/BeefTest/update_emp_input.jsp</result>
+		</action>
+    </package>
+<!-- beef -->
+
+
+</struts>
