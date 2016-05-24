@@ -38,6 +38,9 @@
     <servlet-name>ShowEmpPic</servlet-name>
     <url-pattern>/ShowEmpPic.servlet</url-pattern>
   </servlet-mapping>
+  
+
+  
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>

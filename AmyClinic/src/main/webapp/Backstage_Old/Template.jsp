@@ -29,7 +29,7 @@
  
  
  
-    <!-- end .content --></div>
+    <!-- end . 內文 --></div>
 <jsp:include page="placeJsp/footer.jsp" />
   <!-- end .container --></div>
 <script type="text/javascript">

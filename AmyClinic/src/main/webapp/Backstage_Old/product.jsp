@@ -43,17 +43,16 @@
 		<th>折扣</th>
 		<th>商品描述</th>
 		<th>成分</th>
+		<th>圖片</th>
 		<th>
 					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
 			     <input type="submit" value="全部" class="btn btn-info">
 <%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
-			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+			     <input type="hidden" name="action"	value="all"></FORM>
 		</th>
-		<th>
-					  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
-			     <input type="submit" value="新增" class="btn btn-primary">
-<%-- 			     <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
-			     <input type="hidden" name="action"	value="add"></FORM>
+		<th>			  
+<!-- 			     <input type="submit" value="新增" class="btn btn-primary"> -->
+			     <a href="http://www.w3school.com.cn/"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
 <%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
@@ -66,11 +65,13 @@
 			<td>${ProductVO.discount}</td>
 			<td>${ProductVO.descrip}</td>
 			<td>${ProductVO.ingredients}</td>
+			<td>${ProductVO.photo}</td>
+			
 			<td>
 			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
-			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+			     <input type="hidden" name="action"	value="update"></FORM>
 			</td>
 			<td>
 			  <FORM METHOD="post" ACTION="<%=request.getContextPath()%>/ProductServlet">

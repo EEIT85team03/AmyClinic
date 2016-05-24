@@ -31,24 +31,25 @@ public class ProductService {
 		
 		productVO.setName(name);
 		
-		try {
-			File file = new File("d:/test1.jpg");
-			if (file != null) {
-				InputStream fin = new FileInputStream(file);
-				if (fin != null) {
-					@SuppressWarnings("deprecation")
-					Blob photo1 = Hibernate.createBlob(fin);
-					productVO.setPhoto(photo1);
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			File file = new File("d:/test1.jpg");
+//			if (file != null) {
+//				InputStream fin = new FileInputStream(file);
+//				if (fin != null) {
+//					@SuppressWarnings("deprecation")
+//					Blob photo1 = Hibernate.createBlob(fin);
+//					productVO.setPhoto(photo1);
+//				}
+//			}
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 		productVO.setAmount(amount);
 		catagoryVO.setCid(cid);
 		productVO.setPrice(price);
 		productVO.setDiscount(discount);
 		productVO.setDescrip(descrip);
+		productVO.setPhoto(photo);
 		productVO.setIngredients(ingredients);
 		productVO.setCatagoryVO(catagoryVO);
 		dao.insert(productVO);
