@@ -54,9 +54,13 @@
     <package name="empPackage" namespace="/member" extends="struts-default">	
 		<interceptors>		        
 	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+  			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
 		    <interceptor-stack name="AuthenticationRequired">  
 				<interceptor-ref name="defaultStack" />      
-				<interceptor-ref name="authentication" />    
+				<interceptor-ref name="authentication" />
+				<interceptor-ref name="AESEncryption" />      
+				<interceptor-ref name="MD5Encryption" />        
 		    </interceptor-stack>		
 		</interceptors>
 				
@@ -66,9 +70,15 @@
 			<result name="login">/login/login.jsp</result>
 		</global-results>
 		
-	    <action name="member1" 	class="group3.henry.login.controller.MemberPageAction1">
-			<result>/member/memberonly1.jsp</result>
-		</action>        
+	    <action name="editprofile" class="group3.henry.login.controller.EditProfileAction">
+			<result>/login/editprofile.jsp</result>
+		</action>
+
+	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
+			<result>/login/editprofile.jsp</result>
+			<result name="input">/login/editprofile.jsp</result>
+		</action>
+		        
         <action name="member2" 	class="group3.henry.login.controller.MemberPageAction2">
 			<result>/member/memberonly2.jsp</result>
 		</action>

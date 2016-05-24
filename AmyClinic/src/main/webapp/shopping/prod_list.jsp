@@ -14,12 +14,12 @@
 <html>
 <!-- 
 產品列表
-1.CatagoryServlet：列出商品名稱、價格、從GetPic取出照片 ok
-2.參考0203的範例做分頁+varStatus讓每三個商品排一排(九九乘法表範例)
-3.從CatagoryServlet取出商品分類，做成超連結，點入後可查該分類商品 ok
-4.ProductNameServlet：商品搜尋，like %?% 用Ajax做部分更新 ok
-5.加入購物車的按鈕，按下後把資料存到session(一個Set?)(ShoppingServlet)，如庫存量不足則顯示存貨不足
-ps.加入購物車的部分改成部分更新 OK
+1.CatagoryServlet：列出商品名稱、價格、從GetPic取出照片
+2.做分頁+讓每三個商品排一排
+3.從CatagoryServlet取出商品分類，做成超連結，點入後可查該分類商品
+4.ProductNameServlet：商品搜尋，like %?% 用Ajax做部分更新
+5.加入購物車的按鈕，按下後把資料存到session(ShoppingServlet)，如庫存量不足則顯示存貨不足
+ps.加入購物車的部分改成部分更新
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
