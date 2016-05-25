@@ -114,6 +114,6 @@
                 </ul>
             </div>         
         </nav><!-- /.navbar-collapse -->
- <div class="bg"><img src="http://s3-ap-northeast-1.amazonaws.com/everydayobject/wp-content/uploads/2016/04/20175751/17-iris-van-herpen_0.gif"></div>
+ <div class="bg"><img src="../images/b_01.jpg"></div>
 </body>
 </html>
