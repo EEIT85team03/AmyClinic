@@ -68,9 +68,13 @@ public class EmpLoginServlet extends HttpServlet {
 				session.setAttribute("empVO", empVO);
 				System.out.println("登入成功");
 				String location = (String) session.getAttribute("location");
+				System.out.println(location);
 				if(location != null){
 					session.removeAttribute("location");
 					res.sendRedirect(location);
+					return;
+				}else{
+					res.sendRedirect(req.getContextPath() + "/Backstage/login_success.jsp");
 					return;
 				}
 			} else{
@@ -78,17 +82,16 @@ public class EmpLoginServlet extends HttpServlet {
 			}
 			
 			if (!errorMsg.isEmpty()) {
-				req.setAttribute("mail", mail);
-				req.setAttribute("pwd", pwd);
+				req.setAttribute("empVO", empVO);
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/Backstage/login.jsp");
 				failureView.forward(req, res);
 				return;
 				}
 		} catch (Exception e)  {
-			RequestDispatcher rd = req
+			RequestDispatcher failureView = req
 					.getRequestDispatcher("/Backstage/login.jsp");
-			rd.forward(req, res);
+			failureView.forward(req, res);
 			 
 			
 		}
