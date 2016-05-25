@@ -49,7 +49,7 @@ I am editprofile.jsp! <hr>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberpwd">Password: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.pwd" id="memberpwd" class="form-control" type="password" value="${memberVO.pwd}" readonly/>
+			<input name="memberVO.pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly/>
 		</div>
 		<div class="col-sm-1">
 			<a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		
