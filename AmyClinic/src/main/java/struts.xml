@@ -76,6 +76,7 @@
 
 	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
 			<result>/login/editprofile.jsp</result>
+			<result name="updated">/login/verify.jsp</result>
 			<result name="input">/login/editprofile.jsp</result>
 		</action>
 		        

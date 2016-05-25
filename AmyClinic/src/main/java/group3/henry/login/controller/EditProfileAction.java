@@ -38,16 +38,17 @@ public class EditProfileAction extends ActionSupport {
 
 	public String update() {
 		System.out.println("EditProfileAction update()");
-		System.out.println(memberVO.getMid());
-		System.out.println(memberVO.getName());
-		System.out.println(memberVO.getPwd());
-		System.out.println(memberVO.getAddr());
+//		System.out.println(memberVO.getMid());
+//		System.out.println(memberVO.getName());
+//		System.out.println(memberVO.getPwd());
+//		System.out.println(memberVO.getAddr());
 
 		HttpServletRequest request = ServletActionContext.getRequest();
 		MemberServices service = new MemberServices();
-		memberVO.setPwd((String)request.getAttribute("encpw")); // sets the encrypted version of the updated password
+//		memberVO.setPwd((String)request.getAttribute("encpw")); // sets the encrypted version of the updated password
 		service.update(memberVO);
-		return SUCCESS;
+		this.setMessage("Thank you, " + memberVO.getName() + ", your profile has been updated!");
+		return "updated";
 	}
 
 }
