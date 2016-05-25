@@ -22,16 +22,14 @@
     <url-pattern>/shopping/fin_shopping.jsp</url-pattern>
     <url-pattern>/shopping/query_shopping.jsp</url-pattern>
   </filter-mapping>
-  
   <filter>
-   <filter-name>EmpLoginFilter</filter-name>
+    <filter-name>EmpLoginFilter</filter-name>
     <filter-class>group3.beef.employee.model.filter.EmpLoginFilter</filter-class>
   </filter>
-   <filter-mapping>
-   <filter-name>EmpLoginFilter</filter-name>
-   <url-pattern>/Backstage/login_success.jsp</url-pattern>
-   </filter-mapping>
-  
+  <filter-mapping>
+    <filter-name>EmpLoginFilter</filter-name>
+    <url-pattern>/Backstage/login_success.jsp</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>TestServlet</servlet-name>
     <servlet-class>group3.carrie.product.controller.GetPic</servlet-class>
@@ -40,18 +38,6 @@
     <servlet-name>TestServlet</servlet-name>
     <url-pattern>/GetPic.servlet</url-pattern>
   </servlet-mapping>
-
-<!--   <servlet> -->
-<!--     <servlet-name>ShowEmpPic</servlet-name> -->
-<!--     <servlet-class>group3.beef.employee.controller.ShowPic</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--     <servlet-name>ShowEmpPic</servlet-name> -->
-<!--     <url-pattern>/ShowEmpPic.servlet</url-pattern> -->
-<!--   </servlet-mapping> -->
-  
-
-  
 
   <filter>
     <filter-name>struts2</filter-name>
