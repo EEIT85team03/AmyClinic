@@ -87,13 +87,14 @@ public class RegisterAction extends ActionSupport{
 												
 			File fsaveDirectory = new File(request.getServletContext().getRealPath("/")+saveDirectory);
 			if (!fsaveDirectory.exists()) fsaveDirectory.mkdirs(); // Create save directory if it does not exist	
-			System.out.println(fsaveDirectory);
+			System.out.println("Photo save directory: "+fsaveDirectory);
 			
 			if (fileUploadFileName!=null && !fileUploadFileName.isEmpty()){
 				String ext = fileUploadFileName.substring(fileUploadFileName.indexOf('.'));				
 				fileUploadFileName = "img_"+memberVO.getEmail()+ext;
 				File file2 = new File(fsaveDirectory,fileUploadFileName);
 				fileUpload.renameTo(file2); // relocate temp file to saveDirectory
+				memberVO.setPhoto(fileUploadFileName);
 			}
 			
 //			File file = memberVO.getPhoto(); //this is the uploaded photo
