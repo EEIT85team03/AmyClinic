@@ -38,7 +38,7 @@ CREATE TABLE Members(
   photo			VARBINARY(MAX)	,
   photoFileName	NVARCHAR(50)	,
   photoContentType VARCHAR(10)	,
-  act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 2 = waiting for email confirmation, 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
   num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
