@@ -7,7 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage_Old/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
 
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
@@ -76,6 +76,7 @@
 
 	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
 			<result>/login/editprofile.jsp</result>
+			<result name="updated">/login/verify.jsp</result>
 			<result name="input">/login/editprofile.jsp</result>
 		</action>
 		        

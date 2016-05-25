@@ -22,7 +22,8 @@ import javax.servlet.http.*;
 import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
-@WebServlet("/ProductServlet")
+@WebServlet("/Backstage/ProductServlet")
+//@WebServlet("/ProductServlet")
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -177,7 +178,7 @@ public class ProductServlet extends HttpServlet {
 					}
 					req.setAttribute("productVO", productVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage/addproduct.jsp");
+							.getRequestDispatcher("/Backstage/addProduct.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -199,7 +200,7 @@ public class ProductServlet extends HttpServlet {
 				System.out.println("我有執行-2");
 				errorMsg.add(e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage/addproduct.jsp");
+						.getRequestDispatcher("/Backstage/addProduct.jsp");
 				failureView.forward(req, res);
 			}
 		}
