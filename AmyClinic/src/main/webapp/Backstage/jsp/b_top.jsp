@@ -96,7 +96,7 @@
                     <li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-                    <li><a href="allProduct.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
+                    <li><a href="product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
                     <li>
@@ -114,6 +114,6 @@
                 </ul>
             </div>         
         </nav><!-- /.navbar-collapse -->
- <div class="bg"><img src="http://s3-ap-northeast-1.amazonaws.com/everydayobject/wp-content/uploads/2016/04/20175751/17-iris-van-herpen_0.gif"></div>
+ <div class="bg"><img src="<%=request.getContextPath()%>/images/b_01.jpg"></div>
 </body>
 </html>

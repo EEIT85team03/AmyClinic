@@ -25,13 +25,20 @@
 		height:18px;
 		cursor: pointer;
 	}
+	
+	.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+      color: black;
+/*       font-family: ...; */
+      font-size: 16px;
+      font-weight: bold;
+}
 
 </style>
 </head>
 <body>
 I am editprofile.jsp! <hr>
 
-<h3>${memberVO.name}</h3> 
+<h3>${memberVO.name}</h3> <img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
@@ -49,7 +56,7 @@ I am editprofile.jsp! <hr>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberpwd">Password: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.pwd" id="memberpwd" class="form-control" type="password" value="${memberVO.pwd}" readonly/>
+			<input name="memberVO.pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly/>
 		</div>
 		<div class="col-sm-1">
 			<a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		
@@ -103,12 +110,12 @@ I am editprofile.jsp! <hr>
 			<input name="memberVO.mass" id="membermass" class="form-control" type="text" value="${memberVO.mass}"/>
 		</div>
 	</div>
-	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberphoto">Photo: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.photo" id="memberphoto" class="form-control" type="text" value="${memberVO.photo}"/>
-		</div>
-	</div>
+<!-- 	<div class="form-group"> -->
+<!-- 		<label class="control-label col-sm-2" for="memberphoto">Photo: </label> -->
+<!-- 		<div class="col-sm-5"> -->
+<%-- 			<input name="memberVO.photo" id="memberphoto" class="form-control" type="text" value="${memberVO.photo}"/> --%>
+<!-- 		</div> -->
+<!-- 	</div> -->
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberact_status">Status: </label>
 		<div class="col-sm-5">			
@@ -159,8 +166,8 @@ I am editprofile.jsp! <hr>
 	</div>
 	<label class="control-label col-sm-2"></label>
  	<input type="hidden" name="memberVO.verify" value="${memberVO.verify}"> 
- 	<input type="hidden" name="memberVO.photoFileName" value="${memberVO.photoFileName}"> 
- 	<input type="hidden" name="memberVO.photoContentType" value="${memberVO.photoContentType}"> 
+ 	<input type="hidden" name="memberVO.photo" value="${memberVO.photo}"> 
+<%--  	<input type="hidden" name="memberVO.photoContentType" value="${memberVO.photoContentType}">  --%>
  	<input type="hidden" name="memberVO.total_spent" value="${memberVO.total_spent}"> 
  	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> 
 	<button type="submit" class="btn btn-default" >Submit</button>							
