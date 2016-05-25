@@ -8,9 +8,11 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class EmployeeDAO implements EmployeeDAO_interface {
 	private static final String GET_ALL_STMT = "from EmployeeVO order by eid";
+	private static final String FIND_EMP_BY_MAIL = "from EmployeeVO where email=?";
 
 	public void insert(EmployeeVO employeeVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -80,6 +82,41 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		}
 		return employeeVO;
 	}
+	
+	public EmployeeVO findByMail(String mail) {
+		List<EmployeeVO> list = null;
+		EmployeeVO empVO = new EmployeeVO();
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(FIND_EMP_BY_MAIL);
+			query.setParameter(0, mail);
+			list = query.list();
+			if(!list.isEmpty()){
+				
+			for (EmployeeVO aEmp : list) {
+				empVO.setEid(aEmp.getEid());
+				empVO.setName(aEmp.getName());
+				empVO.setPwd(aEmp.getPwd());
+				empVO.setEmail(aEmp.getEmail());
+				empVO.setPhoto(aEmp.getPhoto());
+				empVO.setEducation(aEmp.getEducation());
+				empVO.setExperience(aEmp.getExperience());
+				empVO.setSpecialty(aEmp.getSpecialty());
+				}
+			return empVO;
+			}
+						session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return null;
+		
+		
+		
+		
+	}
 
 	public List<EmployeeVO> getAll() {
 		List<EmployeeVO> list = null;
@@ -98,19 +135,34 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 	
 
 
-	public static void main(String[] args) {
-
-		EmployeeDAO dao = new EmployeeDAO();
-		List<EmployeeVO> list2 = dao.getAll();
-		for (EmployeeVO aEmp : list2) {
-			System.out.print(aEmp.getEid() + ",");
-			System.out.print(aEmp.getName() + ",");
-			System.out.print(aEmp.getPhoto() + ",");
-			System.out.print(aEmp.getEducation() + ",");
-			System.out.print(aEmp.getExperience() + ",");
-			System.out.print(aEmp.getSpecialty() + ",");
-			System.out.println("\n");
-		}
-
+//	public static void main(String[] args) {
+//		String mail = "jave0925@gmail.com";
+//			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+//			try {
+//				session.beginTransaction();
+//				Query query = session.createQuery("from EmployeeVO where email=?");
+//				query.setParameter(0, mail);
+//
+//				List<EmployeeVO> list = query.list();
+//				if(!list.isEmpty()){
+//					for (EmployeeVO aEmp : list) {
+//						System.out.print(aEmp.getEid() + ",");
+//						System.out.print(aEmp.getEmail() + ",");
+//						System.out.println();
+//						}
+//					
+//				}else{
+//					System.out.println("沒有此帳號!!");
+//				}
+//				session.getTransaction().commit();
+//				
+//			} catch (RuntimeException ex) {
+//				session.getTransaction().rollback();
+//				throw ex;
+//			}
+//			
+//		}
 	}
-}
+
+	
+

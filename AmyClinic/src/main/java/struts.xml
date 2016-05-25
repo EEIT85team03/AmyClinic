@@ -122,16 +122,16 @@
 <!-- k	-->
 
 <!-- beef -->
-	<package name="Emp" namespace="/emp" extends="struts-default">
-        <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction">
-            <result name="input">/BeefTest/AddEMP.jsp</result>
-            <result name="success">/BeefTest/AddSucces.jsp</result>
-		</action>
+<!-- 	<package name="Emp" namespace="/emp" extends="struts-default"> -->
+<!--         <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction"> -->
+<!--             <result name="input">/BeefTest/AddEMP.jsp</result> -->
+<!--             <result name="success">/BeefTest/AddSucces.jsp</result> -->
+<!-- 		</action> -->
     
-        <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction">
-            <result name="success">/BeefTest/update_emp_input.jsp</result>
-		</action>
-    </package>
+<!--         <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction"> -->
+<!--             <result name="success">/BeefTest/update_emp_input.jsp</result> -->
+<!-- 		</action> -->
+<!--     </package> -->
 <!-- beef -->
 
 
