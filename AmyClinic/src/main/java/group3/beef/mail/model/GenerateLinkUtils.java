@@ -27,10 +27,12 @@ public class GenerateLinkUtils {
 		 return randomCode;
 	 	}
 	 public static boolean verifyCheckcode(EmployeeVO empVO,String checkCode){
-		 
-		 generateCheckcode(empVO).equals(checkCode);
+		 if( generateCheckcode(empVO).equals(checkCode)){
+		
 		 return true;
-			 
+		 }else{
+			 return false;
+		 }
 	 }
 	 }
 

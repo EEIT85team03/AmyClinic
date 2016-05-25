@@ -148,17 +148,17 @@ public class EmpLoginServlet extends HttpServlet {
 			failureView.forward(req, res);
 			return;
 		  }else{
-			  errorMsg.add("帳號錯誤");
+			  errorMsg.add("認證碼錯誤");
 		  }
 		  if (!errorMsg.isEmpty()) {
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage/login.jsp");
+						.getRequestDispatcher("/Backstage/reset_pw.jsp");
 				failureView.forward(req, res);
 				return;
 			}
 			}catch(Exception e)  {
 				RequestDispatcher rd = req
-						.getRequestDispatcher("/Backstage/login.jsp");
+						.getRequestDispatcher("/Backstage/reset_pw.jsp");
 				rd.forward(req, res);} 
 			
 		}
