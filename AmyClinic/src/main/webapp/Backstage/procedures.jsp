@@ -1,14 +1,10 @@
-<%-- <%@page import="org.apache.struts2.components.Include"%> --%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
-<%-- <%@ taglib prefix="s"  uri="/struts-tags"  %> --%>
-<%-- <%@ taglib prefix="sx" uri="/struts-dojo-tags"%> --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
-<%@page import="group3.carrie.product.model.*"%>
-<%@page import="group3.carrie.catagory.model.*"%>
+<%@page import="group3.carrie.proc.model.*"%>
+<%@page import="group3.carrie.proctype.model.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
-<%-- <jsp:useBean id="baBean" class="group3.carrie.product.model.ProductVO" /> --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -43,7 +39,7 @@
                     <div class="col-lg-12">
                         <div class="page-header" >本月目標<font color="red">30億</font>
                        </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">療程資料維護</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -51,66 +47,56 @@
 <!--         開始 -->
  
  <%
- ProductVO productVO = (ProductVO) request.getAttribute("productVO");
- ProductService product = new ProductService();
- List<ProductVO> list = product.getAll();
+ ProcVO procVO = (ProcVO) request.getAttribute("procVO");
+ ProcService proc = new ProcService();
+ List<ProcVO> list = proc.getAll();
  pageContext.setAttribute("list",list);
  
- CatagoryService cataServ  = new CatagoryService();
- List<CatagoryVO> catagorys = cataServ.getAll();
- pageContext.setAttribute("catagorys", catagorys);
+ ProcTypeService procTServ  = new ProcTypeService();
+ List<ProcTypeVO> proctype = procTServ.getAll();
+ pageContext.setAttribute("proctype", proctype);
 %>
 <%-- <%@ include file="placeJsp/page1.file" %>  --%>
 <!-- <div class="form-group"> -->
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
-		<th>照片</th>
-		<th>商品編號</th>
-		<th>名稱</th>
-		<th>存貨</th>
-		<th>價格</th>
-		<th>折扣</th>
-		<th>商品描述</th>
-		<th>成分</th>
+		<th>療程類別</th>
+		<th>療程編號</th>
+		<th>療程名稱</th>
+		<th>療程價格</th>
 		<th>				  
-			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
+			     <a href="procedures.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
 		</th>
 		<th>			  
-			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
+			     <a href="addProcedures.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
 <%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
 	
-	<c:forEach var="ProductVO"  items="${list}"  >
+	<c:forEach var="ProcVO"  items="${list}"  >
 		<tr>
-		<td><img src="<%=request.getContextPath()%>/shopping/GetPic?num=${ProductVO.pid}" class="preview" style="max-width: 100px; max-height: 100px;"></td>
-			<td>${ProductVO.pid}</td>
-			<td>${ProductVO.name}</td>
-			<td>${ProductVO.amount}</td>
-			<td>${ProductVO.price}</td>
-			<td>${ProductVO.discount}</td>
-			<td>${ProductVO.descrip}</td>
-			<td>${ProductVO.ingredients}</td>
-<%-- 			<td>${ProductVO.photo}</td> --%>
+			<td>${ProcVO.procTypeVO.name}</td>
+			<td>${ProcVO.procedure_id}</td>
+			<td>${ProcVO.name}</td>
+			<td>${ProcVO.fee}</td>
 			
-<%-- 			src="<%=request.getContextPath()%>/shopping/GetPic?num=<%=productVO.getPid()%>"  --%>
-<%-- 			<img src="<%=request.getContextPath()%>/shopping/GetPic?num=<%=productVO.getPid()%>" class="preview" style="max-width: 150px; max-height: 150px;"> --%>
-			<td>
-			  <FORM METHOD="post" ACTION="ProductServlet">
+		<td>
+			  <FORM METHOD="post" ACTION="ProcServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="pid" value="${ProductVO.pid}">
+			     <input type="hidden" name="pid" value="${ProcVO.procedure_id}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="ProductServlet">
+			  <FORM METHOD="post" ACTION="ProcServlet">
 			    <input type="submit" value="刪除" class="btn btn-danger">
-			    <input type="hidden" name="pid" value="${ProductVO.pid}">
+			    <input type="hidden" name="pid" value="${ProcVO.procedure_id}">
 			    <input type="hidden" name="action"value="delete"></FORM>
 			</td>
 		</tr>
 	</c:forEach>
 
-	</table>        
+	</table>    
+	    
 	<c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:
 	<ul>
@@ -120,6 +106,7 @@
 	</ul>
 	</font>
 </c:if>
+
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>
