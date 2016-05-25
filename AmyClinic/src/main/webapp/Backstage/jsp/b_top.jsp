@@ -96,7 +96,7 @@
                     <li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-                    <li><a href="allProduct.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
+                    <li><a href="product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
                     <li>
