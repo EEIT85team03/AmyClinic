@@ -145,11 +145,12 @@ public class EmpServlet extends HttpServlet {
 				}
 
 				Part filePart = req.getPart("photo");
-				if (filePart.getSize() == 0){
+				int filesize = (int) filePart.getSize();
+				if (filesize == 0){
 					errorMsg.add("照片: 請勿空白");
 				}
 				InputStream is = filePart.getInputStream();
-				int filesize = (int) filePart.getSize();
+				
 				if(filesize > 30700200){
 					errorMsg.add("照片: 大小請勿超過30000KB");
 				}

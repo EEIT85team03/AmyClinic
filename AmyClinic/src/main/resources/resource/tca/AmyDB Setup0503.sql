@@ -35,10 +35,10 @@ CREATE TABLE Members(
   phone			VARCHAR(10)		NOT NULL,
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
-  photo			VARBINARY(MAX)	,
-  photoFileName	NVARCHAR(50)	,
-  photoContentType VARCHAR(10)	,
-  act_status	DECIMAL(1)		DEFAULT 1,	-- 1 = active, 0 = inactive    
+  photo			VARCHAR(50)		,
+-- photoFileName	NVARCHAR(50)	,
+--  photoContentType VARCHAR(10)	,
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 2 = waiting for email confirmation, 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
   num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
@@ -135,7 +135,7 @@ CREATE TABLE Appointments
  purpose		DECIMAL(1)		DEFAULT 0, -- 0 = new treatment, 1 = repeat visit
  apt_date		DATE			NOT NULL,
  apt_time		NVARCHAR(5)	NOT NULL,
- procedureid	VARCHAR(300)		, -- maybe foreign key? 
+-- procedureid	VARCHAR(300)		, -- maybe foreign key? 
  descrip		NVARCHAR(300)	DEFAULT ' ',  
  apt_status		DECIMAL(1)		DEFAULT 1, -- 0 = cancelled 1 = normal
  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 

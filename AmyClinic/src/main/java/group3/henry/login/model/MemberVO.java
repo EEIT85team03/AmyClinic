@@ -51,9 +51,9 @@ public class MemberVO implements Serializable {
 	private String    phone;
 	private Integer   height;
 	private Integer   mass;
-	private File	  photo;
-	private String	  photoFileName;
-	private String 	  photoContentType;
+	private String	  photo;
+//	private String	  photoFileName;
+//	private String 	  photoContentType;
 	private Integer	  act_status;
 	private Integer   num_trans;
 	private Integer   num_treatment;
@@ -190,24 +190,24 @@ public class MemberVO implements Serializable {
 	public void setMass(Integer mass) {
 		this.mass = mass;
 	}
-	public File getPhoto() {
+	public String getPhoto() {
 		return photo;
 	}
-	public void setPhoto(File photo) {
+	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public String getPhotoFileName() {
-		return photoFileName;
-	}
-	public void setPhotoFileName(String photoFileName) {
-		this.photoFileName = photoFileName;
-	}
-	public String getPhotoContentType() {
-		return photoContentType;
-	}
-	public void setPhotoContentType(String photoContentType) {
-		this.photoContentType = photoContentType;
-	}
+//	public String getPhotoFileName() {
+//		return photoFileName;
+//	}
+//	public void setPhotoFileName(String photoFileName) {
+//		this.photoFileName = photoFileName;
+//	}
+//	public String getPhotoContentType() {
+//		return photoContentType;
+//	}
+//	public void setPhotoContentType(String photoContentType) {
+//		this.photoContentType = photoContentType;
+//	}
 
 	public Integer getAct_status() {
 		return act_status;
