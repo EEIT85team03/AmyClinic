@@ -355,12 +355,12 @@ INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES
 
 update Schedule set appt_status = 0 where appt_num = 3
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','Description','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','Description','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','Description','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','1','2');
    -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');
