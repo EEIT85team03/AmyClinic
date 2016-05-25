@@ -22,7 +22,8 @@ import javax.servlet.http.*;
 import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
-@WebServlet("/Backstage_Old/ProductServlet")
+@WebServlet("/Backstage/ProductServlet")
+//@WebServlet("/ProductServlet")
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -55,7 +56,7 @@ public class ProductServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage_Old/product.jsp");
+							.getRequestDispatcher("/Backstage/product.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -67,7 +68,7 @@ public class ProductServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage_Old/product.jsp");
+							.getRequestDispatcher("/Backstage/product.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -84,20 +85,20 @@ public class ProductServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage_Old/product.jsp");
+							.getRequestDispatcher("/Backstage/product.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 				req.setAttribute("productVO", productVO);
 				RequestDispatcher successView = req
-						.getRequestDispatcher("/Backstage_Old/product.jsp");
+						.getRequestDispatcher("/Backstage/product.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add("無法取得資料:" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage_Old/product.jsp");
+						.getRequestDispatcher("/Backstage/product.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -177,7 +178,7 @@ public class ProductServlet extends HttpServlet {
 					}
 					req.setAttribute("productVO", productVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage_Old/addproduct.jsp");
+							.getRequestDispatcher("/Backstage/addProduct.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -188,7 +189,7 @@ public class ProductServlet extends HttpServlet {
 						 ingredients);
 				System.out.println("我有執行1");
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
-				String url = "/Backstage_Old/product.jsp";
+				String url = "/Backstage/product.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("我有執行2");
@@ -199,7 +200,7 @@ public class ProductServlet extends HttpServlet {
 				System.out.println("我有執行-2");
 				errorMsg.add(e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage_Old/addproduct.jsp");
+						.getRequestDispatcher("/Backstage/addProduct.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -309,13 +310,13 @@ public class ProductServlet extends HttpServlet {
 				Integer pid = new Integer(req.getParameter("pid").trim());
 				ProductService proSvc = new ProductService();
 				proSvc.deleteProduct(pid);
-				String url = "/Backstage_Old/product.jsp";
+				String url = "/Backstage/product.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 			} catch (Exception e) {
 				errorMsg.add("刪除資料失敗" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage_Old/product.jsp");
+						.getRequestDispatcher("/Backstage/product.jsp");
 				failureView.forward(req, res);
 			}
 
