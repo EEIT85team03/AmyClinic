@@ -26,9 +26,11 @@
 		cursor: pointer;
 	}
 	
+
 	#userphoto{
 		border-radius:25px;
 	}
+
 </style>
 </head>
 <body>
