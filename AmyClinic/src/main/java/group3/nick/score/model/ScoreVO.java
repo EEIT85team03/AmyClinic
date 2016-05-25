@@ -37,7 +37,7 @@ public class ScoreVO implements java.io.Serializable {
 		this.score_id = score_id;
 	}
 	
-	@Column(name = "score_date")
+	@Column(name = "score_date" ,insertable=false,updatable=false )
 	public Date getScoreDate() {
 		return scoreDate;
 	}

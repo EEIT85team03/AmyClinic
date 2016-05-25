@@ -105,7 +105,7 @@ body {
 <!--           	 namespace/action name.action  target registered in struts.xml-->
 		<a href="member/editprofile.action">Edit Account Information</a><br>
 <!--                    	 namespace/action name                      target registered in struts.xml-->		
-		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		
+<%-- 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		 --%>
 <!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
 		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a><br>
 <!-- Henry's test login -->
@@ -125,7 +125,7 @@ body {
 <hr>
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/b_login.jsp">後台專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/ininder.jsp">後台專區</a><br></p>
 		</footer>
 	</div>
 </div>

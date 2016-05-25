@@ -7,7 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage_Old/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
 
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
@@ -39,6 +39,13 @@
 		</action>
 		
 		<action name="register" class="group3.henry.register.controller.RegisterAction">
+            <interceptor-ref name="fileUpload">                        						<!-- 設定檔案上傳攔截器 -->
+       			<param name="maximumSize">2000000</param>              						<!-- 限制上傳單個檔案的大小，以byte為單位  -->
+       			<param name="allowedTypes">image/gif,image/jpeg,image/png</param>			<!-- 限制上傳檔案的檔案型態，以逗號(,)隔開 -->
+       			<param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>      			<!-- 限制上傳檔案的延伸檔名，以逗號(,)隔開 -->       			                                                       						
+  			</interceptor-ref>																<!-- 如以上兩者皆設限制的話，則必需兩者皆允許的才能上傳， 而檔案型態則會優先做錯誤提示 -->  			
+  			<interceptor-ref name="EncPw" />                     							<!-- 指定預設攔截器堆疊 -->    
+            <param name="saveDirectory">\user_photo</param>									<!-- 自訂上傳的目地目錄 -->			
 			<result name="success">/register/regsuccess.jsp</result>
 			<result name="input">/register/register.jsp</result>
 		</action>
@@ -76,6 +83,7 @@
 
 	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
 			<result>/login/editprofile.jsp</result>
+			<result name="updated">/login/verify.jsp</result>
 			<result name="input">/login/editprofile.jsp</result>
 		</action>
 		        
