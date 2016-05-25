@@ -27,16 +27,6 @@ public class EmployeeService {
 		employeeVO.setPwd(pwd);
 		employeeVO.setEmail(email);
 		employeeVO.setPhoto(photo);
-
-		// try {
-		// FileInputStream fileInputStream = new FileInputStream("c:\\dog.png");
-		// @SuppressWarnings("deprecation")
-		// Blob photo1 = Hibernate.createBlob(fileInputStream);
-		// employeeVO.setPhoto(photo1);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
 		employeeVO.setEducation(education);
 		employeeVO.setExperience(experience);
 		employeeVO.setSpecialty(specialty);
@@ -62,6 +52,12 @@ public class EmployeeService {
 		return employeeVO;
 
 	}
+	
+	//查詢員工byMail
+	public EmployeeVO findEmpByMail(String mail){
+		return dao.findByMail(mail);
+	}
+	
 
 	public void addEmp(EmployeeVO employeeVO) {
 		dao.insert(employeeVO);
