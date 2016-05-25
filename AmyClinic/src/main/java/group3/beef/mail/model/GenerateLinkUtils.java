@@ -3,6 +3,7 @@ package group3.beef.mail.model;
 
 import group3.beef.employee.model.EmployeeVO;
 import group3.beef.encryption.AES_Encryption;
+import group3.henry.encryption.interceptor.MD5_EncryptionInterceptor;
 
 public class GenerateLinkUtils {
 	 private static final String CHECK_CODE = "checkCode";  
@@ -17,24 +18,25 @@ public class GenerateLinkUtils {
 		 String randomCode = null;
 		 String mail = empVO.getEmail();
 		 String pwd = empVO.getPwd();
-		 AES_Encryption AES = new AES_Encryption();
+		MD5_EncryptionInterceptor md5 = new MD5_EncryptionInterceptor();
 		 try {
-			 randomCode = AES.getencrypt(mail+pwd);
-			System.out.println(randomCode);
+		//	 randomCode= md5.intercept(mail+pwd);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		 return randomCode;
 	 	}
 	 public static boolean verifyCheckcode(EmployeeVO empVO,String checkCode){
-		 if( generateCheckcode(empVO).equals(checkCode)){
-		
-		 return true;
-		 }else{
-			 return false;
-		 }
+		 System.out.println("checkCode:"+checkCode);
+		 System.out.println("gencode:"+generateCheckcode(empVO).trim());
+		 System.out.println("checkCode:"+checkCode.length());
+		 System.out.println("gencode:"+generateCheckcode(empVO).length());
+		 
+		 return generateCheckcode(empVO).trim().equals(checkCode.trim());
+			 }
 	 }
-	 }
+	 
 
 
 
