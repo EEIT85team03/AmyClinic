@@ -27,7 +27,7 @@
 	}
 	
 	.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
-      color: black;
+      color: black; 
 /*       font-family: ...; */
       font-size: 16px;
       font-weight: bold;
