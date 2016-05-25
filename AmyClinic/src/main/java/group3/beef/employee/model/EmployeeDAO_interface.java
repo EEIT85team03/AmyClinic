@@ -9,6 +9,7 @@ public interface EmployeeDAO_interface {
     public void update(EmployeeVO employeeVO);
     public void delete(Integer eid);
     public EmployeeVO findByPrimaryKey(Integer eid);
+    public EmployeeVO findByMail(String mail);
     public InputStream findEmpPicByPrimaryKey(Integer eid);
     public List<EmployeeVO> getAll();
 }

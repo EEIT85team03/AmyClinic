@@ -33,12 +33,16 @@
       font-weight: bold;
 }
 
+	#userphoto{
+		border-radius:25px;
+	}
+
 </style>
 </head>
 <body>
 I am editprofile.jsp! <hr>
 
-<h3>${memberVO.name}</h3> <img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+<h3>${memberVO.name}</h3> <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
