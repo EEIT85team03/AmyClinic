@@ -1,5 +1,8 @@
 package group3.nick.score.model;
 
+import group3.beef.employee.model.EmployeeVO;
+import group3.henry.login.model.MemberVO;
+
 import java.util.List;
 
 public class ScoreService {
@@ -12,9 +15,13 @@ public class ScoreService {
 	//增加一筆評論
 	public void addScore(String comment,Integer scores,Integer eid,Integer mid){
 		ScoreVO scoreVO=new ScoreVO();
+		EmployeeVO empVO = new EmployeeVO();
+		MemberVO memberVO = new MemberVO();
+		memberVO.setMid(mid);
+		empVO.setEid(eid);
 		scoreVO.setComment(comment);
-		scoreVO.setEid(eid);
-		scoreVO.setMid(mid);
+		scoreVO.setEmp(empVO);
+		scoreVO.setMb(memberVO);
 		scoreVO.setScores(scores);
 		dao.insert(scoreVO);
 		
@@ -28,9 +35,13 @@ public class ScoreService {
 	//修改一則評論
 	public void updateScore(String comment,Integer scores,Integer eid,Integer mid,Integer score_id){
 		ScoreVO scoreVO = new ScoreVO();
+		EmployeeVO empVO = new EmployeeVO();
+		MemberVO memberVO = new MemberVO();
+		memberVO.setMid(mid);
+		empVO.setEid(eid);
 		scoreVO.setComment(comment);
-		scoreVO.setEid(eid);
-		scoreVO.setMid(mid);
+		scoreVO.setEmp(empVO);
+		scoreVO.setMb(memberVO);
 		scoreVO.setScores(scores);
 		scoreVO.setScore_id(score_id);
 		dao.update(scoreVO);
@@ -45,6 +56,12 @@ public class ScoreService {
 	//看到全部評論
 	public List<ScoreVO> getAll(){
 		return dao.getAll();
+	}
+	
+	//列出某位員工的留言
+	public List<ScoreVO> getEmpScore(Integer eid){
+		
+		return dao.getEmpScore(eid);
 	}
 	
 	

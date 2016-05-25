@@ -2,6 +2,7 @@ package group3.henry.login.model;
 
 import group3.carrie.app.model.AppVO;
 import group3.carrie.orders.model.OrdersVO;
+import group3.nick.score.model.ScoreVO;
 
 import java.io.File;
 import java.io.Serializable;
@@ -70,7 +71,9 @@ public class MemberVO implements Serializable {
 	
 	//會員和訂單是一對多
 	private Set<OrdersVO> orders = new HashSet<OrdersVO>();
-
+	
+	//會員和平分 一對多
+	private Set<ScoreVO> scores = new HashSet<ScoreVO>();
 	
 	public MemberVO() {
 		super();
@@ -299,6 +302,17 @@ public class MemberVO implements Serializable {
 
 	public void setOrders(Set<OrdersVO> orders) {
 		this.orders = orders;
+	}
+	
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="mb")
+	@OrderBy("score_id asc")
+	public Set<ScoreVO> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<ScoreVO> scores) {
+		this.scores = scores;
 	}
 
 	// Reflection, gets properties of a class object. Testing method
