@@ -69,19 +69,20 @@ public class ProductService {
 		productVO.setOrderItems(set);
 		productVO.setPid(pid);
 		productVO.setName(name);
-		try {
-			File file = new File("d:/test1.jpg");
-			if (file != null) {
-				InputStream fin = new FileInputStream(file);
-				if (fin != null) {
-					@SuppressWarnings("deprecation")
-					Blob photo1 = Hibernate.createBlob(fin);
-					productVO.setPhoto(photo1);
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			File file = new File("d:/test1.jpg");
+//			if (file != null) {
+//				InputStream fin = new FileInputStream(file);
+//				if (fin != null) {
+//					@SuppressWarnings("deprecation")
+//					Blob photo1 = Hibernate.createBlob(fin);
+//					productVO.setPhoto(photo1);
+//				}
+//			}
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		productVO.setPhoto(photo);
 		productVO.setAmount(amount);
 		catagoryVO.setCid(cid);
 		productVO.setPrice(price);

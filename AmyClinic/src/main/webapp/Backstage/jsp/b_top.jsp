@@ -114,6 +114,6 @@
                 </ul>
             </div>         
         </nav><!-- /.navbar-collapse -->
- <div class="bg"><img src="../images/b_01.jpg"></div>
+ <div class="bg"><img src="<%=request.getContextPath()%>/images/b_01.jpg"></div>
 </body>
 </html>
