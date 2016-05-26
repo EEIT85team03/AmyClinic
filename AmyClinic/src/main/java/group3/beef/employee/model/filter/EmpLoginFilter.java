@@ -1,5 +1,7 @@
 package group3.beef.employee.model.filter;
 
+import group3.beef.employee.model.EmployeeVO;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -24,8 +26,8 @@ public class EmpLoginFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
-		String mail = (String) session.getAttribute("mail");
-		if (mail == null) {
+		EmployeeVO empVO = (EmployeeVO) session.getAttribute("empVO");
+		if (empVO == null) {
 			session.setAttribute("location", req.getRequestURI());
 			res.sendRedirect(req.getContextPath() + "/Backstage/login.jsp");
 			return;

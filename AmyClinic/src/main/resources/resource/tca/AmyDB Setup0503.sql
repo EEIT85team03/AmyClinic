@@ -135,7 +135,7 @@ CREATE TABLE Appointments
  purpose		DECIMAL(1)		DEFAULT 0, -- 0 = new treatment, 1 = repeat visit
  apt_date		DATE			NOT NULL,
  apt_time		NVARCHAR(5)	NOT NULL,
- procedureid	VARCHAR(300)		, -- maybe foreign key? 
+-- procedureid	VARCHAR(300)		, -- maybe foreign key? 
  descrip		NVARCHAR(300)	DEFAULT ' ',  
  apt_status		DECIMAL(1)		DEFAULT 1, -- 0 = cancelled 1 = normal
  eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 

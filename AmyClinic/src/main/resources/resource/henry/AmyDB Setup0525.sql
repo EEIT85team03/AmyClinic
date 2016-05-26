@@ -18,31 +18,31 @@ CREATE TABLE Catagory(
   name            NVARCHAR(30)    NOT NULL,
 );
 CREATE TABLE Members(
-  mid            DECIMAL(8)        IDENTITY(1000,1) PRIMARY KEY,
-  name            NVARCHAR(30)    DEFAULT 'Unknown',  
-  pwd            VARCHAR(50)        NOT NULL,
-  verify        VARCHAR(50)        DEFAULT '',
-  email            VARCHAR(50)        NOT NULL UNIQUE,
-  birthday        DATE            ,
-  country        NVARCHAR(20)        ,
-  gender        CHAR(1)            NOT NULL,
-  addr            NVARCHAR(50)    NOT NULL,
-  phone            VARCHAR(10)        NOT NULL,
-  height        DECIMAL(3)        ,    
-  mass            DECIMAL(3)        ,            -- weight    
-  photo            VARBINARY(MAX)    ,
-  photoFileName    NVARCHAR(50)    ,
-  photoContentType VARCHAR(10)    ,
-  act_status    DECIMAL(1)        DEFAULT 1,    -- 1 = active, 0 = inactive    
-  num_trans        DECIMAL(4)        DEFAULT 0,    -- number of times client spent money on merchandise
-  num_treatment    DECIMAL(4)        DEFAULT 0,  -- number of times client received treatments
-  num_visits    DECIMAL(4)        DEFAULT 0,    -- number of times client visited 
-  total_spent    DECIMAL(15)        DEFAULT 0,    -- total amount spent
-  reward_pts    DECIMAL(7)        DEFAULT 0,
-  spent_pts     DECIMAL(7)        DEFAULT 0,
-  last_visit    DATE            DEFAULT GETDATE(),            -- last client transaction
-  memo            NVARCHAR(300)    DEFAULT ' ',  
-  join_date        DATETIME        DEFAULT GETDATE(),  
+  mid			DECIMAL(8)		IDENTITY(1000,1) PRIMARY KEY,
+  name			NVARCHAR(30)	DEFAULT 'Unknown',  
+  pwd			VARCHAR(50)		NOT NULL,
+  verify		VARCHAR(50)		DEFAULT '',
+  email			VARCHAR(50)		NOT NULL UNIQUE,
+  birthday		DATE			,
+  country		NVARCHAR(20)		,
+  gender		CHAR(1)			NOT NULL,
+  addr			NVARCHAR(50)	NOT NULL,
+  phone			VARCHAR(10)		NOT NULL,
+  height		DECIMAL(3)		,    
+  mass			DECIMAL(3)		,			-- weight    
+  photo			VARCHAR(50)		,
+-- photoFileName	NVARCHAR(50)	,
+--  photoContentType VARCHAR(10)	,
+  act_status	DECIMAL(1)		DEFAULT 1,	-- 2 = waiting for email confirmation, 1 = active, 0 = inactive    
+  num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
+  num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
+  num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
+  total_spent	DECIMAL(15)		DEFAULT 0,	-- total amount spent
+  reward_pts	DECIMAL(7)		DEFAULT 0,
+  spent_pts 	DECIMAL(7)		DEFAULT 0,
+  last_visit	DATE			DEFAULT GETDATE(),			-- last client transaction
+  memo			NVARCHAR(300)	DEFAULT ' ',  
+  join_date		DATETIME		DEFAULT GETDATE(),  
 );
 CREATE TABLE Products
 ( 
@@ -117,15 +117,15 @@ CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
 );
 CREATE TABLE Appointments
 (
- aid            DECIMAL(6)        IDENTITY(1000,1) PRIMARY KEY,
- mid            DECIMAL(8)        FOREIGN KEY REFERENCES Members,
- purpose        DECIMAL(1)        DEFAULT 0, -- 0 = new treatment, 1 = repeat visit
- apt_date        DATE            NOT NULL,
- apt_time        NVARCHAR(5)    NOT NULL,
- procedureid    VARCHAR(300)        , -- maybe foreign key? 
- descrip        NVARCHAR(300)    DEFAULT ' ',  
- apt_status        DECIMAL(1)        DEFAULT 1, -- 0 = cancelled 1 = normal
- eid            DECIMAL(5)        FOREIGN KEY REFERENCES Employees, 
+ aid			DECIMAL(6)		IDENTITY(1000,1) PRIMARY KEY,
+ mid			DECIMAL(8)		FOREIGN KEY REFERENCES Members,
+ purpose		DECIMAL(1)		DEFAULT 0, -- 0 = new treatment, 1 = repeat visit
+ apt_date		DATE			NOT NULL,
+ apt_time		NVARCHAR(5)	NOT NULL,
+-- procedureid	VARCHAR(300)		, -- maybe foreign key? 
+ descrip		NVARCHAR(300)	DEFAULT ' ',  
+ apt_status		DECIMAL(1)		DEFAULT 1, -- 0 = cancelled 1 = normal
+ eid			DECIMAL(5)		FOREIGN KEY REFERENCES Employees, 
 );
 CREATE TABLE ProcedureType
 (
@@ -355,12 +355,12 @@ INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES
 
 update Schedule set appt_status = 0 where appt_num = 3
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','Description','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','Description','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','Description','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,procedureid,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','Description','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','1','2');
    -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');

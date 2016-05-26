@@ -91,8 +91,8 @@
             <!-- 側邊欄功能表項目-對應導航功能表 -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active"><a href="../index.jsp"><i class="fa fa-fw fa-dashboard"></i>-Amy醫美診所-</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
+                    <li class="active"><a href="<%=request.getContextPath()%>/index.jsp"><i class="fa fa-fw fa-dashboard"></i>-Amy醫美前端-</a></li>
+                    <li><a href="procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
