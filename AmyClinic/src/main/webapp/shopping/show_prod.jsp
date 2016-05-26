@@ -54,17 +54,40 @@
 						<td>打折後</td>
 						<td><fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="###"/>元</td>
 					</tr>
-					</c:if>	
+					</c:if>
+					<c:if test="${prodVO.amount!=0}">	
 					<tr>
+						
+							<td>
+						
+						選擇數量：
+						</td>
 						<td>
-						<c:if test="${prodVO.amount!=0}">
+							<select id="qty${prodVO.pid}">
+								<c:forEach begin="1" end="10" var="theqty">
+									<c:if test="${prodVO.amount - theqty >= 0}">
+							    		<option value="${theqty}">${theqty}</option>
+                    				</c:if>
+                    			</c:forEach>
+							</select>	 
+							</td>
+					</tr>
+					<tr>		
+						<td>
 							<input type="button" value="加入購物車" onclick="addToCart()">
-						</c:if>
-						<c:if test="${prodVO.amount==0}">
-							<b>存貨不足</b>
-						</c:if> 
 						</td>
 					</tr>	
+						</c:if>
+						<c:if test="${prodVO.amount==0}">
+						<tr>
+							<td>
+								<b>存貨不足</b>
+								
+							</td>
+							</tr>
+						</c:if> 
+						
+						
 				
 				</table>
 			
@@ -78,13 +101,17 @@ function addToCart(){
 	var pname = $('input[name="pname"]').val();
 	var price = $('input[name="price"]').val();
 	var discount = $('input[name="discount"]').val();
+	var qty = $('#qty'+pid).val();
 	$.ajax({
 		"type":"post",
 		"url":"BuyProdServlet",
-		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount},
+		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : qty},
 		"success":function(data){
 			alert("成功加入購物車！")
-		}
+		},
+		"error":function(data){
+			alert("加入購物車失敗")
+		},
 	});
 }
 </script>

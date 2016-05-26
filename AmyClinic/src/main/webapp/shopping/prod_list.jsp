@@ -68,7 +68,7 @@ a {
 	</div>
 	<div id="allpage">
 		<div id="content">
-			<aside>
+			<aside> 
 			<a href="shopping_list.jsp">購物車</a><br> 
 			<jsp:useBean id="cataSvc" scope="page"
 				class="group3.carrie.catagory.model.CatagoryService" />
@@ -107,16 +107,25 @@ a {
 						<tr>
 					</c:if>
 					<td>
-						<img src="GetPic?num=${prodVO.pid}"/><br>
+						<%-- 					<img src="GetPic?num=${prodVO.pid}"/> --%> 
 						<a href='ShowProductServlet?pid=${prodVO.pid}'>${prodVO.name}</a><br>
 						${prodVO.price}元<br>
 						<c:if test="${prodVO.discount != 0}">	
 						打折後：<fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="###"/>元<br>
-						</c:if>	 
-						<c:if test="${prodVO.amount!=0}">
+						</c:if>
+						<c:if test="${prodVO.amount != 0}">
+							選擇數量：
+							<select id="qty${prodVO.pid}">
+								<c:forEach begin="1" end="10" var="theqty">
+									<c:if test="${prodVO.amount - theqty >= 0}">
+							    		<option value="${theqty}">${theqty}</option>
+                    				</c:if>
+                    			</c:forEach>
+							</select>	 
+							<br>
 							<input type="button" value="加入購物車" onclick="addToCart(${prodVO.pid},'${prodVO.name}',${prodVO.price})">
 						</c:if> 
-						<c:if test="${prodVO.amount==0}">
+						<c:if test="${prodVO.amount == 0}">
 							<b>存貨不足</b>
 						</c:if> 
 						<input type="hidden" name="pid" value="${prodVO.pid}">
@@ -148,6 +157,7 @@ a {
 					var amount = data.amount;
 					var discount = data.discount;
 					var td = $('<td></td>');
+					var select = $('<select id="qty' + id + '"></select>');
 					
 					if(i==0){
 						var r = $('<tr></tr>');
@@ -157,18 +167,25 @@ a {
 						$('#prod > tbody').append(r);
 					}
 					
-					td.append('<img src="GetPic?num='+id+'"/><br>')
-					  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+// 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
+					td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
 					  .append(price + '元<br>');
 					if (discount != 0) {
 						td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
 					}  
 					if (amount != 0) {
-						  td.append('<input type="button" value="加入購物車" onclick="addToCart('+id+',\''+name+'\','+price+')">')
-							.append('<input type="hidden" name="pid" value="'+id+'">')
-							.append('<input type="hidden" name="pname" value="'+name+'">')
-							.append('<input type="hidden" name="price" value="'+price+'">')
-							.append('<input type="hidden" name="discount" value="'+discount+'">');
+							td.append('選擇數量：');
+							for(var j = 1; j <= 10; j++) {
+								 if(amount - j >= 0) {
+									 select.append('<option value="'+j+'">'+j+'</option>');
+								 } 
+							  }
+						  	td.append(select)
+						   	  .append('<br><input type="button" value="加入購物車" onclick="addToCart('+id+',\''+name+'\','+price+')">')
+							  .append('<input type="hidden" name="pid" value="'+id+'">')
+							  .append('<input type="hidden" name="pname" value="'+name+'">')
+							  .append('<input type="hidden" name="price" value="'+price+'">')
+							  .append('<input type="hidden" name="discount" value="'+discount+'">');
 					} else if (amount == 0) {
 						td.append('<b>存貨不足</b>');
 					}
@@ -192,13 +209,17 @@ a {
 // 			var pname = $('input[name="pname"]').val();
 // 			var price = $('input[name="price"]').val();
 			var discount = $('input[name="discount"]').val();
+			var qty = $('#qty'+pid).val();
 			$.ajax({
 				"type":"post",
 				"url":"BuyProdServlet",
-				"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount},
+				"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : qty},
 				"success":function(data){
 					alert("成功加入購物車！")
-				}
+				},
+				"error":function(data){
+					alert("加入購物車失敗")
+				},
 			});
 		}
 		
@@ -223,6 +244,7 @@ a {
 						var amount = data.amount;
 						var discount = data.discount;
 						var td = $('<td></td>');
+						var select = $('<select id="qty' + id + '"></select>');
 						
 						if(i==0){
 							var r = $('<tr></tr>');
@@ -233,14 +255,21 @@ a {
 						}	
 						
 						
-	 					td.append('<img src="GetPic?num='+id+'"/><br>')
-						  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+//	 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
+						td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
 						  .append(price + '元<br>');
 						if (discount != 0) {
 							td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
 						}    
 						if (amount != 0) {
-							  td.append('<input type="submit" value="加入購物車" onclick="addToCart('+id+',\''+name+'\','+price+')">')
+							td.append('選擇數量：');
+							for(var j = 1; j <= 10; j++) {
+								 if(amount - j >= 0) {
+									 select.append('<option value="'+j+'">'+j+'</option>');
+								 } 
+							  }
+						   	  td.append(select)
+						   	    .append('<br><input type="button" value="加入購物車" onclick="addToCart('+id+',\''+name+'\','+price+')">')
 							 	.append('<input type="hidden" name="pid" value="'+id+'">')
 								.append('<input type="hidden" name="pname" value="'+name+'">')
 								.append('<input type="hidden" name="price" value="'+price+'">')

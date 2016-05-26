@@ -56,9 +56,14 @@ public class BuyProdServlet extends HttpServlet {
 			if (discount != 0) {
 				price_per = Math.round(price_per * (1 - (discount/100.0f)));
 			}
-			Integer quantity = 1;
+			String qtyStr = request.getParameter("qty");
+			Integer quantity = Integer.parseInt(qtyStr);
 			OrderItemsVO oi = new OrderItemsVO(quantity, price_per, pid, name);
-			cart.addToCart(pid, oi);
+			try {
+				cart.addToCart(pid, oi);
+			} catch (Exception e) {
+				throw new ServletException();
+			}
 		} catch (NumberFormatException e) {
 			errorMsgs.add("輸入格式錯誤");
 			response.sendRedirect(request.getContextPath()+"/shopping/prod_list.jsp");
