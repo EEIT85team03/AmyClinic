@@ -14,20 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap Core CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet"><!-- Custom CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet"><!-- Morris Charts CSS -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> <!-- Custom Fonts -->
-    <script src="js/jquery.js"></script><!-- jQuery -->
-    <script src="js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script><!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/morris.min.js"></script><script src="js/plugins/morris/morris-data.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -45,7 +31,6 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
- 
  <%
  ProcVO procVO = (ProcVO) request.getAttribute("procVO");
  ProcService proc = new ProcService();
@@ -56,8 +41,6 @@
  List<ProcTypeVO> proctype = procTServ.getAll();
  pageContext.setAttribute("proctype", proctype);
 %>
-<%-- <%@ include file="placeJsp/page1.file" %>  --%>
-<!-- <div class="form-group"> -->
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>療程類別</th>
@@ -71,15 +54,13 @@
 			     <a href="addProcedures.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
-<%-- 	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>"> --%>
-	
+
 	<c:forEach var="ProcVO"  items="${list}"  >
 		<tr>
 			<td>${ProcVO.procTypeVO.name}</td>
 			<td>${ProcVO.procedure_id}</td>
 			<td>${ProcVO.name}</td>
 			<td>${ProcVO.fee}</td>
-			
 		<td>
 			  <FORM METHOD="post" ACTION="ProcServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
@@ -94,7 +75,6 @@
 			</td>
 		</tr>
 	</c:forEach>
-
 	</table>    
 	    
 	<c:if test="${not empty errorMsg}">
@@ -106,7 +86,6 @@
 	</ul>
 	</font>
 </c:if>
-
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>

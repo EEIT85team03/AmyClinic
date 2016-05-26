@@ -10,20 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap Core CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet"><!-- Custom CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet"><!-- Morris Charts CSS -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> <!-- Custom Fonts -->
-    <script src="js/jquery.js"></script><!-- jQuery -->
-    <script src="js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script><!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/morris.min.js"></script><script src="js/plugins/morris/morris-data.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -64,7 +50,7 @@
     
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="fee">商品價格</label>
+      <label class="control-label col-sm-2" for="fee">療程價格</label>
       <div class="col-sm-10">          
         <input type="text" class="form-control" id="fee" placeholder="新台幣值" size="45" name="fee">
       </div>
@@ -73,7 +59,7 @@
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       						<input type="hidden" name="action" value="addProduct">
-        <button type="submit" class="btn btn-default">新增產品</button>
+        <button type="submit" class="btn btn-default">新增療程</button>
       </div>
     </div>
 

@@ -1,6 +1,8 @@
 package group3.carrie.shopping.model;
 
 import group3.carrie.orderitems.model.OrderItemsVO;
+import group3.carrie.product.model.ProductService;
+import group3.carrie.product.model.ProductVO;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class ShoppingCart {
 	}
 	
 	//增加商品到ShoppingCart中
-	public void addToCart(Integer pid,OrderItemsVO oi) {
+	public void addToCart(Integer pid,OrderItemsVO oi) throws Exception {
 		if (oi.getQuantity() <= 0) {
 			return;
 		}
@@ -31,7 +33,13 @@ public class ShoppingCart {
 		//在Server端已有該物品的資料，則更新數量
 			OrderItemsVO oib = cart.get(pid);
 			//新的數量+原有的數量
-			oib.setQuantity(oi.getQuantity() + oib.getQuantity());
+			ProductService prodServ = new ProductService();
+			ProductVO prodVO = prodServ.getOneProduct(pid);
+			if (prodVO.getAmount() - (oi.getQuantity() + oib.getQuantity()) >= 0) {
+				oib.setQuantity(oi.getQuantity() + oib.getQuantity());
+			} else {
+				throw new Exception();
+			}
 		}
 	}
 	
@@ -40,9 +48,15 @@ public class ShoppingCart {
 		if(cart.get(pid) != null) {
 			//從Map中拿出來，改完再放回去
 			OrderItemsVO oi = (OrderItemsVO) cart.get(pid);
-			oi.setQuantity(newQty);
-			cart.put(pid, oi);
-			return true;
+			ProductService prodServ = new ProductService();
+			ProductVO prodVO = prodServ.getOneProduct(pid);
+			if (prodVO.getAmount() - newQty >= 0) {
+				oi.setQuantity(newQty);
+				cart.put(pid, oi);
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}

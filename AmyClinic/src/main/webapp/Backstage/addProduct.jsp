@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
 <%@page import="group3.carrie.product.model.*"%>
+<%@page import="group3.carrie.catagory.model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,20 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap Core CSS -->
-    <link href="css/sb-admin.css" rel="stylesheet"><!-- Custom CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet"><!-- Morris Charts CSS -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> <!-- Custom Fonts -->
-    <script src="js/jquery.js"></script><!-- jQuery -->
-    <script src="js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script><!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/morris.min.js"></script><script src="js/plugins/morris/morris-data.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -43,16 +30,27 @@
 <!--         開始 -->
 <%
  ProductVO productVO = (ProductVO) request.getAttribute("productVO");
+
+CatagoryService cataServ  = new CatagoryService();
+List<CatagoryVO> catagorys = cataServ.getAll();
+pageContext.setAttribute("catagorys", catagorys);
 %>
  <div class="container">
   <form class="form-horizontal" role="form" ACTION="ProductServlet"  ENCTYPE="multipart/form-data" method="post">
   
       <div class="form-group">
       <label class="control-label col-sm-2" for="cid">商品類別</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid">
-      </div>
+      		<div class="col-sm-10">          
+<!--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid"> -->
+      
+			<select size="1"  name="cid">
+      		<c:forEach var="catagoryVO" items="${catagorys}">
+				<option  value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' } >${catagoryVO.name}
+	  		</c:forEach>
+      		</select>
+      		</div>
     </div>
+    
       
   
     <div class="form-group">
