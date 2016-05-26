@@ -66,9 +66,7 @@ public class EmpLoginServlet extends HttpServlet {
 				HttpSession session = req.getSession();
 				//session.setAttribute("mail", mail);
 				session.setAttribute("empVO", empVO);
-				System.out.println("登入成功");
 				String location = (String) session.getAttribute("location");
-				System.out.println(location);
 				if(location != null){
 					session.removeAttribute("location");
 					res.sendRedirect(location);
@@ -140,9 +138,9 @@ public class EmpLoginServlet extends HttpServlet {
 			EmployeeService eSvc  =  new EmployeeService();
 			EmployeeVO empVO = eSvc.findEmpByMail(mail);
 		  boolean check = GenerateLinkUtils.verifyCheckcode(empVO, checkCode);
-		  System.out.println(check);
+		  //System.out.println(check);
 		  if(check){
-			 System.out.println("帳號比對成功");
+			// System.out.println("帳號比對成功");
 			 HttpSession session = req.getSession();
 			 session.setAttribute("empVO", empVO);
 			RequestDispatcher failureView = req
@@ -167,7 +165,6 @@ public class EmpLoginServlet extends HttpServlet {
 		}
 		//======================變更密碼============================
 		if ("change_pw".equals(action)){
-			System.out.println(action);
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
 			try{
