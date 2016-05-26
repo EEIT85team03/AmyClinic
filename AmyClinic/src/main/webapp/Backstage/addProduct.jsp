@@ -193,11 +193,8 @@ function format_float(num, pos)
 	</font>
 </c:if>
 
-    
   </form>
 </div>
-        
-
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>

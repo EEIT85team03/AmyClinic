@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
 <%@page import="group3.carrie.proc.model.*"%>
+<%@page import="group3.carrie.proctype.model.*"%>
+<%@page import="group3.k.proc.controller.*"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,26 +31,37 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
 <%
- ProcVO procVO = (ProcVO) request.getAttribute("procVO");
+ 
+ProcVO procVO = (ProcVO) request.getAttribute("procVO");
+ProcService proc = new ProcService();
+List<ProcVO> list = proc.getAll();
+pageContext.setAttribute("list",list);
+
+ProcTypeService procTServ  = new ProcTypeService();
+List<ProcTypeVO> proctype = procTServ.getAll();
+pageContext.setAttribute("proctype", proctype);
 %>
  <div class="container">
-  <form class="form-horizontal" role="form" ACTION="ProcServlet"  ENCTYPE="multipart/form-data" method="post">
+  <form class="form-horizontal" role="form" ACTION="ProcServlet"   method="post">
   
       <div class="form-group">
       <label class="control-label col-sm-2" for="pType_id">療程類別</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="pType_id" placeholder="1,2,3,4,5" size="45" name="pType_id">
+
+      <select size="1"  name="pType_id">
+      <c:forEach var="proctype" items="${proctype}">
+				<option  value="${proctype.pType_id}" ${(procVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
+	  </c:forEach>
+      </select>
       </div>
     </div>
       
-  
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">療程名稱</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="name"  placeholder="療程中英文學名" size="45" name="name">
       </div>
     </div>
-    
     
     <div class="form-group">
       <label class="control-label col-sm-2" for="fee">療程價格</label>
@@ -58,13 +72,16 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-      						<input type="hidden" name="action" value="addProduct">
-        <button type="submit" class="btn btn-default">新增療程</button>
+			     <input type="hidden" name="action"	value="addProc">
+			     <input type="submit" value="新增療程" class="btn btn-success">
+<!--         <button type="submit" class="btn btn-default">新增療程</button> -->
       </div>
     </div>
-
 <!-- </form> -->
-   <c:if test="${not empty errorMsg}">
+   
+
+  </form>
+  <c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
@@ -73,10 +90,8 @@
 	</ul>
 	</font>
 </c:if>
-
-  </form>
 </div>
 <!--         結束 -->
-        </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
+</div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>
 </html>

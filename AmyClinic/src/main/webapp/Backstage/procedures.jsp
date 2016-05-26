@@ -41,6 +41,13 @@
  List<ProcTypeVO> proctype = procTServ.getAll();
  pageContext.setAttribute("proctype", proctype);
 %>
+
+      <select size="1"  name="pType_id">
+      <c:forEach var="proctype" items="${proctype}">
+				<option  value="${proctype.pType_id}" ${(procVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
+	  </c:forEach>
+      </select>
+
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>療程類別</th>
@@ -58,34 +65,35 @@
 	<c:forEach var="ProcVO"  items="${list}"  >
 		<tr>
 			<td>${ProcVO.procTypeVO.name}</td>
-			<td>${ProcVO.procedure_id}</td>
+			<td>NO.${ProcVO.procedure_id}</td>
 			<td>${ProcVO.name}</td>
-			<td>${ProcVO.fee}</td>
+			<td>${ProcVO.fee}元</td>
 		<td>
 			  <FORM METHOD="post" ACTION="ProcServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="pid" value="${ProcVO.procedure_id}">
+			     <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 			<td>
 			  <FORM METHOD="post" ACTION="ProcServlet">
 			    <input type="submit" value="刪除" class="btn btn-danger">
-			    <input type="hidden" name="pid" value="${ProcVO.procedure_id}">
+			    <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
 			    <input type="hidden" name="action"value="delete"></FORM>
 			</td>
 		</tr>
 	</c:forEach>
 	</table>    
 	    
-	<c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
-	<ul>
-		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
-		</c:forEach>
-	</ul>
-	</font>
-</c:if>
+<%-- 	<c:if test="${not empty errorMsg}"> --%>
+<!-- 	<font color='red'>請修正以下錯誤: -->
+<!-- 	<ul> -->
+<%-- 		<c:forEach var="message" items="${errorMsg}"> --%>
+<%-- 			<li>${message}</li> --%>
+<%-- 		</c:forEach> --%>
+<!-- 	</ul> -->
+<!-- 	</font> -->
+<%-- </c:if> --%>
+
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>

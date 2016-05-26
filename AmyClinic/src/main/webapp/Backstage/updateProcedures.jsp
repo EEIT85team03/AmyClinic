@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.util.List"%>
-<%@page import="group3.carrie.product.model.*"%>
-<%@page import="group3.carrie.catagory.model.*"%>
+<%@page import="group3.carrie.proc.model.*"%>
+<%@page import="group3.carrie.proctype.model.*"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -30,34 +30,35 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
 <%
-ProductVO productVO = (ProductVO) request.getAttribute("productVO");
-ProductService product = new ProductService();
-List<ProductVO> list = product.getAll();
+ProcVO procVO = (ProcVO) request.getAttribute("procVO");
+ProcService proc = new ProcService();
+List<ProcVO> list = proc.getAll();
 pageContext.setAttribute("list",list);
-// CatagoryVO catagoryVO;
-CatagoryService cataServ  = new CatagoryService();
-List<CatagoryVO> catagorys = cataServ.getAll();
-pageContext.setAttribute("catagorys", catagorys);
+
+ProcTypeService procTServ  = new ProcTypeService();
+List<ProcTypeVO> proctype = procTServ.getAll();
+pageContext.setAttribute("proctype", proctype);
 %>
  <div class="container">
   
-  <form class="form-horizontal" role="form" ACTION="ProductServlet"  ENCTYPE="multipart/form-data" method="post">
+  <form class="form-horizontal" role="form" ACTION="ProcServlet"  method="post">
   	  
   	  <div class="form-group">
-      <label class="control-label col-sm-2" for="pid">療程編號</label>
+      <label class="control-label col-sm-2" for="procedure_id">療程編號</label>
       <div class="col-sm-10">          
-        <input type="text"  class="form-control" id="pid"  size="45" name="pid"  readonly value="<%=productVO.getPid()%>"     >
+        <input type="text"  class="form-control" id="procedure_id"  size="45" name="procedure_id"  readonly value="<%=procVO.getProcedure_id()%>"     >
       </div>
-    </div>
+      </div>
   	  
       <div class="form-group">
-      <label class="control-label col-sm-2" for="cid">療程類別</label>
+      <label class="control-label col-sm-2" for="">療程類別</label>
       <div class="col-sm-10">          
-<%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%=productVO.getCatagoryVO()%>" /> --%>
-  
-      <select size="1"  name="cid">
-      <c:forEach var="catagoryVO" items="${catagorys}">
-				<option  value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' } >${catagoryVO.name}
+<%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%= %>" /> --%>
+<%--   ${ProcVO.procTypeVO.name} --%>
+
+      <select size="1"  name="pType_id">
+      <c:forEach var="proctype" items="${proctype}">
+				<option  value="${proctype.pType_id}" ${(procVO.procTypeVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
 	  </c:forEach>
       </select>
       
@@ -68,21 +69,21 @@ pageContext.setAttribute("catagorys", catagorys);
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">療程名稱</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name"  placeholder="中英文學名" size="45" name="name" value="<%=productVO.getName()%>" />
+        <input type="text" class="form-control" id="name"  placeholder="中英文學名" size="45" name="name" value="<%=procVO.getName()%>" />
       </div>
     </div>
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="price">療程價格</label>
+      <label class="control-label col-sm-2" for="fee">療程價格</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%>" />
+        <input type="text" class="form-control" id="fee" placeholder="整數數字" size="45" name="fee"  value="<%=procVO.getFee()%>" />
       </div>
     </div>
    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       						<input type="hidden" name="action" value="update">
-        <button type="submit" class="btn btn-default">修改產品</button>
+        <button type="submit" class="btn btn-success">修改療程</button>
       </div>
     </div>
 
