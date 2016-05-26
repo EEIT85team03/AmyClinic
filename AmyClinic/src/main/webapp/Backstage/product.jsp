@@ -66,6 +66,9 @@
 	<tr>
 		<th>照片</th>
 		<th>商品編號</th>
+		
+<!-- 		<th>類別</th> -->
+		
 		<th>名稱</th>
 		<th>存貨</th>
 		<th>價格</th>
@@ -85,10 +88,13 @@
 		<tr>
 		<td><img src="<%=request.getContextPath()%>/shopping/GetPic?num=${ProductVO.pid}" class="preview" style="max-width: 100px; max-height: 100px;"></td>
 			<td>${ProductVO.pid}</td>
+			
+<%-- 			<td>${catagorys.name}</td> --%>
+			
 			<td>${ProductVO.name}</td>
-			<td>${ProductVO.amount}</td>
-			<td>${ProductVO.price}</td>
-			<td>${ProductVO.discount}</td>
+			<td>${ProductVO.amount}個</td>
+			<td>${ProductVO.price}元</td>
+			<td>${ProductVO.discount}％</td>
 			<td>${ProductVO.descrip}</td>
 			<td>${ProductVO.ingredients}</td>
 <%-- 			<td>${ProductVO.photo}</td> --%>
