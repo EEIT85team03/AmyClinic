@@ -23,6 +23,12 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.5.5</version>
 		</dependency>
+		<!-- http://mvnrepository.com/artifact/com.sendgrid/sendgrid-java -->
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>2.2.2</version>
+		</dependency>
 
 		<!-- Struts2 -->
 		<dependency>
@@ -126,7 +132,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 		<!-- JSON -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
