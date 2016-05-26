@@ -26,6 +26,12 @@
 		cursor: pointer;
 	}
 	
+	.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+      color: black; 
+/*       font-family: ...; */
+      font-size: 16px;
+      font-weight: bold;
+}
 
 	#userphoto{
 		border-radius:25px;

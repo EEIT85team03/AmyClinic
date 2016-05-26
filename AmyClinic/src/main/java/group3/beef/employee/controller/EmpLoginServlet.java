@@ -68,9 +68,13 @@ public class EmpLoginServlet extends HttpServlet {
 				session.setAttribute("empVO", empVO);
 				System.out.println("登入成功");
 				String location = (String) session.getAttribute("location");
+				System.out.println(location);
 				if(location != null){
 					session.removeAttribute("location");
 					res.sendRedirect(location);
+					return;
+				}else{
+					res.sendRedirect(req.getContextPath() + "/Backstage/login_success.jsp");
 					return;
 				}
 			} else{
@@ -78,17 +82,16 @@ public class EmpLoginServlet extends HttpServlet {
 			}
 			
 			if (!errorMsg.isEmpty()) {
-				req.setAttribute("mail", mail);
-				req.setAttribute("pwd", pwd);
+				req.setAttribute("empVO", empVO);
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/Backstage/login.jsp");
 				failureView.forward(req, res);
 				return;
 				}
 		} catch (Exception e)  {
-			RequestDispatcher rd = req
+			RequestDispatcher failureView = req
 					.getRequestDispatcher("/Backstage/login.jsp");
-			rd.forward(req, res);
+			failureView.forward(req, res);
 			 
 			
 		}
@@ -133,12 +136,11 @@ public class EmpLoginServlet extends HttpServlet {
 			req.setAttribute("errorMsg", errorMsg);
 			String mail = req.getParameter("mail");
 			String checkCode = req.getParameter("checkCode");
-			System.out.println("mail:"+mail);
-			System.out.println("checkCode:"+checkCode);
 			try {
 			EmployeeService eSvc  =  new EmployeeService();
 			EmployeeVO empVO = eSvc.findEmpByMail(mail);
 		  boolean check = GenerateLinkUtils.verifyCheckcode(empVO, checkCode);
+		  System.out.println(check);
 		  if(check){
 			 System.out.println("帳號比對成功");
 			 HttpSession session = req.getSession();
@@ -147,7 +149,8 @@ public class EmpLoginServlet extends HttpServlet {
 					.getRequestDispatcher("/Backstage/reset_pw.jsp");
 			failureView.forward(req, res);
 			return;
-		  }else{
+		  }
+		  else{
 			  errorMsg.add("認證碼錯誤");
 		  }
 		  if (!errorMsg.isEmpty()) {
@@ -185,7 +188,8 @@ public class EmpLoginServlet extends HttpServlet {
 				errorMsg.add("密碼:英文字母、數字 , 且長度必需在4到10之間");
 			}
 			}else{
-				errorMsg.add("認證信已失效，請重新發送");
+				PrintWriter out = res.getWriter();
+				out.println("認證信已失效，請重新發送");
 			}
 			AES_Encryption AES = new AES_Encryption();
 			
