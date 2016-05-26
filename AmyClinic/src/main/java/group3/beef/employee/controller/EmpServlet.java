@@ -21,7 +21,7 @@ import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
 //@MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
-@WebServlet("/BeefTest/emp.do")
+@WebServlet("/emp/emp.do")
 public class EmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -54,7 +54,7 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/BeefTest/select_page.jsp");
+							.getRequestDispatcher("/emp/select_page.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -66,7 +66,7 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/BeefTest/select_page.jsp");
+							.getRequestDispatcher("/emp/select_page.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -83,20 +83,20 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/BeefTest/select_page.jsp");
+							.getRequestDispatcher("/emp/select_page.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 				req.setAttribute("empVO", empVO);
 				RequestDispatcher successView = req
-						.getRequestDispatcher("/BeefTest/update_emp_input.jsp");
+						.getRequestDispatcher("/emp/update_emp_input.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add("無法取得資料:" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/BeefTest/select_page.jsp");
+						.getRequestDispatcher("/emp/select_page.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -170,7 +170,7 @@ public class EmpServlet extends HttpServlet {
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/BeefTest/AddEMP.jsp");
+							.getRequestDispatcher("/emp/AddEMP.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -183,14 +183,14 @@ public class EmpServlet extends HttpServlet {
 				EmployeeService empSvc = new EmployeeService();
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
-				String url = "/BeefTest/GetAllEMP.jsp";
+				String url = "/emp/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add(e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/BeefTest/AddEMP.jsp");
+						.getRequestDispatcher("/emp/AddEMP.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -238,20 +238,28 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("專長: 請勿空白");
 				}
 				Part filePart = req.getPart("photo");
-				if (filePart.getSize() == 0){
-					errorMsg.add("照片: 請勿空白");
+//				if (filePart.getSize() == 0){
+//					errorMsg.add("照片: 請勿空白");
+//				}
+				Blob photo = null;
+				if(filePart.getSize()==0){  //如果沒上傳照片，就從資料庫抓舊的
+					EmployeeService eSvc = new EmployeeService();
+					InputStream is = eSvc.getOneEmployeePic(eid);
+					photo = Hibernate.createBlob(is);
+				}else{
+					InputStream oldis = filePart.getInputStream();
+					int filesize = (int) filePart.getSize();
+					if(filesize > 307200){
+						errorMsg.add("照片: 大小請勿超過300KB");
+					}
+					photo = Hibernate.createBlob(oldis);
 				}
 				
-				InputStream is = filePart.getInputStream();
-				int filesize = (int) filePart.getSize();
-				if(filesize > 307200){
-					errorMsg.add("照片: 大小請勿超過300KB");
-				}
-				@SuppressWarnings("deprecation")
-				Blob photo = Hibernate.createBlob(is);
-				
-				
-				
+//				InputStream is = filePart.getInputStream();
+//				int filesize = (int) filePart.getSize();
+//				if(filesize > 307200){
+//					errorMsg.add("照片: 大小請勿超過300KB");
+//				}
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setEid(eid);
 				empVO.setName(ename);
@@ -261,10 +269,13 @@ public class EmpServlet extends HttpServlet {
 				empVO.setExperience(exp);
 				empVO.setSpecialty(spec);
 				empVO.setPhoto(photo);
+				
+		 
+								
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/BeefTest/update_emp_input.jsp");
+							.getRequestDispatcher("/emp/update_emp_input.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -278,14 +289,14 @@ public class EmpServlet extends HttpServlet {
 				empVO = empSvc
 						.updateEmp(eid, ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
-				String url = "/BeefTest/GetAllEMP.jsp";
+				String url = "/emp/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add(e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/BeefTest/AddEMP.jsp");
+						.getRequestDispatcher("/emp/AddEMP.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -299,13 +310,13 @@ public class EmpServlet extends HttpServlet {
 				Integer eid = new Integer(req.getParameter("eid").trim());
 				EmployeeService empSvc = new EmployeeService();
 				empSvc.deleteEmployee(eid);
-				String url = "/BeefTest/GetAllEMP.jsp";
+				String url = "/emp/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 			} catch (Exception e) {
 				errorMsg.add("刪除資料失敗" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/BeefTest/GetAllEMP.jsp");
+						.getRequestDispatcher("/emp/GetAllEMP.jsp");
 				failureView.forward(req, res);
 			}
 

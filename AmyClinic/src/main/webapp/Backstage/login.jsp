@@ -48,7 +48,7 @@
 	
 	
 	
-	<a href="<%=request.getContextPath()%>/BeefTest/AddEMP.jsp">註冊會員</a><br>
+	<a href="<%=request.getContextPath()%>/emp/AddEMP.jsp">註冊會員</a><br>
 	<a href="<%=request.getContextPath()%>/Backstage/foget_pw.jsp">忘記密碼</a><br><br><br><br>
 	
 	
