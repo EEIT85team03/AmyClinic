@@ -7,7 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/Score/ScoreServlet,/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
+<constant name="struts.action.excludePattern" value="/Score/ScoreServlet,/Score/GetPic,/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
 
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />

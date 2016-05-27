@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,28 +40,62 @@ public class ScoreServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");;
+		req.setCharacterEncoding("UTF-8");
 		res.setCharacterEncoding("UTF-8");
+		res.setContentType("text/json");
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
 		ScoreService daoScore = new ScoreService();
 		EmployeeService	dao=new EmployeeService();
+		
+//============顯現一開始Score.jsp的畫面=========================		
+		//JSON 回傳資料
 		if ("getEmpScore".equals(action)){
 			List<EmployeeVO> emp =dao.getAll();
+			
 			List l1 = new LinkedList();
 			for(EmployeeVO empvo :emp ){
 				Map m1 = new HashMap();
 				m1.put("eid", empvo.getEid());
 				m1.put("name", empvo.getName());
-				m1.put("photo", empvo.getPhoto());
+				List<ScoreVO> scoreVO=daoScore.getEmpScore(empvo.getEid());	
+				int times =0;
+				double sum = 0;
+				double avg =0;
+				for(ScoreVO score : scoreVO){
+					sum += score.getScores();
+					times++;
+				}
+				//判斷是否有被評論過的紀錄
+				if(times !=0){
+				avg = (sum/times);
+				String s=new Double(avg).toString().substring(0,3);
+				m1.put("avgScore", s);
+				
+				}else{
+					m1.put("avgScore","0");
+				}
+				
+				if(avg<0.5){
+					m1.put("avgPicture","0star.jpg");
+				}else if(avg<1.5){
+					m1.put("avgPicture", "1star.jpg");
+				}else if(avg<2.5){
+					m1.put("avgPicture", "2star.jpg");
+				}else if (avg<3.5){
+					m1.put("avgPicture", "3star.jpg");
+				}else if(avg<4.5){
+					m1.put("avgPicture", "4star.jpg");
+				}else{
+					m1.put("avgPicture", "5star.jpg");
+				}
+				
+				
+				
 				l1.add(m1);
 			}
 			String jsonString = JSONValue.toJSONString(l1);
 			out.println(jsonString);
-			
-			
-			
-			
 			
 //			List<ScoreVO> empscore ;
 //			List<Integer> eid = new ArrayList<Integer>();
@@ -89,10 +124,23 @@ public class ScoreServlet extends HttpServlet {
 //			String jsonString = JSONValue.toJSONString();
 //			out.println(jsonString);
 
-			
 			}
+		
+		
+//查詢單一位員工的所有流言及評分		
+		if ("getOne_Score".equals(action)){
+			String sEid=req.getParameter("eid");
+			int eid=Integer.parseInt(sEid);
+			
+			List<ScoreVO> scoreVO =daoScore.getEmpScore(eid);
+			req.setAttribute("scoreVO", scoreVO);
+			String str = "/Score/ListOneScore.jsp";
+			RequestDispatcher rd= req.getRequestDispatcher(str);
+			rd.forward(req, res);
+			
 			
 		}
+	}
 		
 		
 		
