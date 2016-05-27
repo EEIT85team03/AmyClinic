@@ -8,7 +8,7 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import group3.henry.email.model.VerifyService;
-import group3.henry.global.utility.GlobalService;
+import group3.henry.global.utility.GlobalConstants;
 import group3.henry.global.utility.Mailer;
 import group3.henry.global.utility.TokenGenerator;
 import group3.henry.login.model.MemberServices;
@@ -34,7 +34,7 @@ Action sets new pw in DB
 redirect user to Index.jsp
 
 */
-public class RecoverAction extends ActionSupport implements GlobalService{
+public class RecoverAction extends ActionSupport implements GlobalConstants{
 	private static final long serialVersionUID = 1L;
 	private static final String HEADER = "AmyClinic Password Recovery";
 

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import group3.henry.global.utility.GlobalService;
+import group3.henry.global.utility.GlobalConstants;
 import group3.henry.global.utility.Mailer;
 import group3.henry.global.utility.TokenGenerator;
 import group3.henry.login.model.MemberServices;
@@ -17,7 +17,7 @@ import group3.henry.login.model.MemberVO;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class RegisterAction extends ActionSupport implements GlobalService{
+public class RegisterAction extends ActionSupport implements GlobalConstants{
 	private static final String HEADER = "AmyClinic Registration Confirmation";
 
 	private MemberVO memberVO;	

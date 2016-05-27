@@ -15,7 +15,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Mailer implements GlobalService {	
+public class Mailer implements GlobalConstants {	
 	private final String SIGNATURE = "Sent by AmyClinic." + NL + "Visit us on our website!";
 /*
  create account
