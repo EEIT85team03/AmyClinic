@@ -8,15 +8,40 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div>${employeeVO.name}</div>
+	<div>${avgPicture}</div>
+	<div>${avgScore}</div>
+	<div><img width='300px' height='auto'src='${pageContext.request.contextPath}/images/${avgPicture}'></div>
+
+${memberVO}
+${employeeVO}
+<form METHOD='post' ACTION='ScoreServlet' >
+	<input type="submit" value="撰寫評論">
+	<input type="hidden" name="action" value="add_score">
+	<input type="hidden" name="employeeVO" value="${employeeVO}">
+
+
+</form>
+
+
 	<c:forEach var="ScoreVO" items="${scoreVO}" >
 		<div>
-		<span>${ScoreVO.mb.mib }</span>
-		<span>${ScoreVO.mb.name}</span>
+		
+		<span>${ScoreVO.mb.name }</span>
+		<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150" ></span>
 		${ScoreVO.scoreDate}
-		${ScoreVO.scores}
+		
+		<img width='300px' height='auto'src='${pageContext.request.contextPath}/images/${ScoreVO.scores}star.jpg'>
+
 		${ScoreVO.comment}
 		</div>
 	</c:forEach>
+
+
+
+
+
 
 
 </body>

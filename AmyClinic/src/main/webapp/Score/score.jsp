@@ -46,12 +46,12 @@ color: orange;
 // 		}
 		$(function(){
 
-			$.getJSON('ScoreServlet',{'action':'getEmpScore'},function(data){
+			$.getJSON('ScoreServlet',{'action':'getEmpScore','hello':'su3'},function(data){
 				$.each(data,function(i,emp){
 					var cell1 = $("<td ></td>").html("<img width='150px' height='200px'src='${pageContext.request.contextPath}/Score/GetPic?num="+emp.eid+"'>")
 					var cell2 = $("<td></td>").text(emp.name);
 					var cell3 = $("<td></td>").html("<img width='300px' height='auto'src='${pageContext.request.contextPath}/images/"+emp.avgPicture+"'>"+"<span id='font'>"+emp.avgScore+"</span>");
-					var cell4 = $("<td></td>").html("<FORM METHOD='post' ACTION='ScoreServlet' ><input  type='submit' value='參予留言'/><input type='hidden'name='action' value='getOne_Score'> <input type='hidden' name='eid' value='"+emp.eid+"'></form>")
+					var cell4 = $("<td></td>").html("<FORM  METHOD='post' ACTION='ScoreServlet' ><input  type='submit' value='參予留言'/><input type='hidden'name='action' value='getOne_Score'> <input type='hidden' name='eid' value='"+emp.eid+"'> <input type='hidden' name='avgPicture' value='"+emp.avgPicture+"'> <input type='hidden' name='avgScore' value='"+emp.avgScore+"'> </form>")
 					var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4])
 					$("#ta>tbody").append(row);
 
@@ -65,6 +65,14 @@ color: orange;
 	
 
 	</script>
+	<!-- TEST 可刪 -->
+	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
+	<script>
+	$(document).ready(function () {
+    $('#test').colorbox({ opacity:0.5, rel:'group1' });
+	});
+</script>
 
 
 

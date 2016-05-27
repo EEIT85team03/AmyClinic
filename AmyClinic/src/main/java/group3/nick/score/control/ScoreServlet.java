@@ -45,14 +45,16 @@ public class ScoreServlet extends HttpServlet {
 		res.setContentType("text/json");
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
+		
+		//對應Score Table的Service方法
 		ScoreService daoScore = new ScoreService();
+		//對應EmployeeService Table的Service方法
 		EmployeeService	dao=new EmployeeService();
 		
 //============顯現一開始Score.jsp的畫面=========================		
 		//JSON 回傳資料
 		if ("getEmpScore".equals(action)){
 			List<EmployeeVO> emp =dao.getAll();
-			
 			List l1 = new LinkedList();
 			for(EmployeeVO empvo :emp ){
 				Map m1 = new HashMap();
@@ -132,14 +134,57 @@ public class ScoreServlet extends HttpServlet {
 			String sEid=req.getParameter("eid");
 			int eid=Integer.parseInt(sEid);
 			
+			//查詢該員工在評分清單裡的資料
 			List<ScoreVO> scoreVO =daoScore.getEmpScore(eid);
+			
+			//查詢該員工的基本資料
+			EmployeeVO employeeVO=dao.getOneEmployee(eid);
+			
+			//拿到score.jsp的avgPicture評分資料
+			String avgPicture=req.getParameter("avgPicture");
+			
+			//拿到score.jsp的
+			String avgScore=req.getParameter("avgScore");
+			
+			
+			req.setAttribute("avgPicture",avgPicture);
+			req.setAttribute("avgScore",avgScore);
 			req.setAttribute("scoreVO", scoreVO);
+			req.setAttribute("employeeVO",employeeVO);
 			String str = "/Score/ListOneScore.jsp";
 			RequestDispatcher rd= req.getRequestDispatcher(str);
 			rd.forward(req, res);
 			
 			
 		}
+		
+		
+		
+//轉移到撰寫評論
+		if ("add_score".equals(action)){
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 		
 		
