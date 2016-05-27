@@ -41,7 +41,7 @@
                 <div class="page-header" >
  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
                 </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">新增會員</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>(M=男生，F=女生。狀態0=封鎖，1=正常，2=未開通)</li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->

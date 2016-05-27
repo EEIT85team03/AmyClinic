@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@page import="group3.carrie.product.model.*"%>
 <%@page import="group3.carrie.catagory.model.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
@@ -16,17 +16,18 @@
 <body>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper"><!-- Page Heading -->
+<div id="page-wrapper" style=background-color:#ADADAD  >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="page-header" >本月目標<font color="red">30億</font>
-                       </div>
+                <div class="page-header" >
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
+                </div>
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">新增產品</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
 <%
  ProductVO productVO = (ProductVO) request.getAttribute("productVO");
@@ -104,7 +105,7 @@ pageContext.setAttribute("catagorys", catagorys);
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
       						<input type="hidden" name="action" value="addProduct">
-        <button type="submit" class="btn btn-default">新增產品</button>
+        <button type="submit" class="btn btn-success">新增產品</button>
       </div>
     </div>
 <script type="text/javascript">
