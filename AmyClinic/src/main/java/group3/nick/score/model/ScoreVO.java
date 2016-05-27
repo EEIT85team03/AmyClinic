@@ -1,11 +1,20 @@
 package group3.nick.score.model;
 
+
+
+import group3.beef.employee.model.EmployeeVO;
+import group3.henry.login.model.MemberVO;
+
 import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,11 +26,17 @@ public class ScoreVO implements java.io.Serializable {
 
 	private Integer score_id;
 	private Date scoreDate;
-	private Integer mid;
-	private Integer eid;
+//	private Integer mid;
+//	private Integer eid;
 	private String comment;
 	private Integer scores;
+	//多評論對一位員工
+	private EmployeeVO emp ;
+
+	private MemberVO mb;
+
 	
+
 	public ScoreVO() { //必需有一個不傳參數建構子(JavaBean基本知識)
 	}
 	
@@ -44,20 +59,20 @@ public class ScoreVO implements java.io.Serializable {
 	public void setScoreDate(Date scoreDate) {
 		this.scoreDate = scoreDate;
 	}
-	@Column(name = "mid")
-	public Integer getMid() {
-		return mid;
-	}
-	public void setMid(Integer mid) {
-		this.mid = mid;
-	}
-	@Column(name = "eid")
-	public Integer getEid() {
-		return eid;
-	}
-	public void setEid(Integer eid) {
-		this.eid = eid;
-	}
+//	@Column(name = "mid")
+//	public Integer getMid() {
+//		return mid;
+//	}
+//	public void setMid(Integer mid) {
+//		this.mid = mid;
+//	}
+//	@Column(name = "eid")
+//	public Integer getEid() {
+//		return eid;
+//	}
+//	public void setEid(Integer eid) {
+//		this.eid = eid;
+//	}
 	@Column(name = "comment")
 	public String getComment() {
 		return comment;
@@ -73,5 +88,25 @@ public class ScoreVO implements java.io.Serializable {
 		this.scores = scores;
 	}
 
+	//多評論對一員工
+	@ManyToOne
+	@JoinColumn(name = "eid")
+	public EmployeeVO getEmp() {
+		return emp;
+	}
 	
+	public void setEmp(EmployeeVO emp) {
+		this.emp = emp;
+	}
+	
+	//多評論對一會員
+	@ManyToOne
+	@JoinColumn(name="mid")
+	public MemberVO getMb() {
+		return mb;
+	}
+	
+	public void setMb(MemberVO mb) {
+		this.mb = mb;
+	}
 }

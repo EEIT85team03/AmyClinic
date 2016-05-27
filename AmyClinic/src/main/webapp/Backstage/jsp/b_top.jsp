@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*"  pageEncoding="UTF-8"  errorPage="" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -130,26 +130,22 @@
 	<!-- 側邊欄功能表項目-對應導航功能表 -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active"><a
-				href="<%=request.getContextPath()%>/index.jsp"><i
-					class="fa fa-fw fa-dashboard"></i>-Amy醫美前端-</a></li>
-			<li><a href="procedures.jsp"><i
-					class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
+			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp">
+			<i 	class="fa fa-fw fa-dashboard">
+			</i>-Amy醫美前端-</a></li>
+			<li><a href="procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
+			<li><a href="members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
 			<li><a href="product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
-			<li><a href="javascript:;" data-toggle="collapse"
-				data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i
-					class="fa fa-fw fa-caret-down"></i></a>
+			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li><a href="#">熱銷產品</a></li>
 					<li><a href="#">熱銷療程</a></li>
 				</ul></li>
-			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL
-					Dashboard</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL	Dashboard</a></li>
 		</ul>
 	</div>
 	</nav>
