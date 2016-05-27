@@ -30,7 +30,7 @@ public class AppVO implements java.io.Serializable {
 	private Integer purpose;
 	private Date apt_date;
 	private String apt_time;
-	private String procedureid;
+//	private String procedureid;
 	private String descrip;
 	private Integer apt_status;
 //	private Integer eid;
@@ -81,13 +81,13 @@ public class AppVO implements java.io.Serializable {
 		this.apt_time = apt_time;
 	}
 
-	public String getProcedureid() {
-		return procedureid;
-	}
-
-	public void setProcedureid(String procedureid) {
-		this.procedureid = procedureid;
-	}
+//	public String getProcedureid() {
+//		return procedureid;
+//	}
+//
+//	public void setProcedureid(String procedureid) {
+//		this.procedureid = procedureid;
+//	}
 
 	public String getDescrip() {
 		return descrip;
@@ -126,7 +126,7 @@ public class AppVO implements java.io.Serializable {
 		this.employeeVO = employeeVO;
 	}
 
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="appVO")
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="appVO")
 	@OrderBy("ad_id asc")
 	public Set<AppDetailVO> getAppDetails() {
 		return appDetails;

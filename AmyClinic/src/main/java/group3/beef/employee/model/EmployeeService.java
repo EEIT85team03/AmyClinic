@@ -100,4 +100,9 @@ public class EmployeeService {
 	public EmployeeVO getOneEmployee(Integer eid) {
 		return dao.findByPrimaryKey(eid);
 	}
+	
+	//用姓名查
+	public EmployeeVO getOneEmployee(String name) {
+		return dao.findByName(name);
+	}
 }

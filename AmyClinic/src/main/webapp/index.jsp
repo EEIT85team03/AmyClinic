@@ -115,6 +115,11 @@ body {
 		<a href="shopping/prod_list.jsp">商品列表(不需登入)</a><br>
 
 		<a href="shopping/OrdersServlet" >查詢訂單(需登入)</a><br>
+<!-- 預約系統測試 -->
+		
+		<a href="app/add_app.jsp">線上預約(需登入)</a><br>
+
+		<a href="app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
 		<a href="Backstage/login.jsp" >員工登入</a><br>
 		

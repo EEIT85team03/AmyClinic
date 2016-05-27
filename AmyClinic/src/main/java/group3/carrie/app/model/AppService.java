@@ -4,6 +4,7 @@ import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.appdetail.model.AppDetailVO;
 import group3.henry.login.model.MemberVO;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -16,73 +17,59 @@ public class AppService {
 	}
 		
 	//新增
-	public AppVO addApp(Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String procedureid,String descrip,Integer apt_status,Integer eid){
-		
-		AppVO appVO = new AppVO();
-		MemberVO memberVO = new MemberVO();
-		EmployeeVO employeeVO = new EmployeeVO();
-		
-		appVO.setPurpose(purpose);
-		appVO.setApt_date(apt_date);
-		appVO.setApt_time(apt_time);
-		appVO.setProcedureid(procedureid);
-		appVO.setDescrip(descrip);
-		appVO.setApt_status(apt_status);
-		memberVO.setMid(mid);
-		employeeVO.setEid(eid);
-		appVO.setMemberVO(memberVO);
-		appVO.setEmployeeVO(employeeVO);
-		
-		dao.insert(appVO);
-	
-		return appVO;
-	}
-	
-//預約主檔+預約明細新增(需再研究)
-//	public AppVO addApp(Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String procedureid,String descrip,Integer apt_status,Integer eid){
+//	public AppVO addApp(Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String descrip,Integer eid){
 //		
 //		AppVO appVO = new AppVO();
 //		MemberVO memberVO = new MemberVO();
 //		EmployeeVO employeeVO = new EmployeeVO();
-//		ProcVO procVO1 = new ProcVO();
-//		ProcVO procVO2 = new ProcVO();
-//		Set<AppDetailVO> set1 = new HashSet<AppDetailVO>();
-//		
-//		AppDetailVO appDT1 = new AppDetailVO();
-//		procVO1.setProcedure_id(1);
-//		appDT1.setProcVO(procVO1);
-//		appDT1.setAppVO(appVO);
-//		
-//		
-//		AppDetailVO appDT2 = new AppDetailVO();
-//		procVO2.setProcedure_id(10);
-//		appDT2.setProcVO(procVO2);
-//		appDT2.setAppVO(appVO);
-//		
-//		set1.add(appDT1);
-//		set1.add(appDT2);
 //		
 //		appVO.setPurpose(purpose);
 //		appVO.setApt_date(apt_date);
 //		appVO.setApt_time(apt_time);
 //		appVO.setProcedureid(procedureid);
 //		appVO.setDescrip(descrip);
-//		appVO.setApt_status(apt_status);
 //		memberVO.setMid(mid);
 //		employeeVO.setEid(eid);
 //		appVO.setMemberVO(memberVO);
 //		appVO.setEmployeeVO(employeeVO);
-//		appVO.setAppDetails(set1);
 //		
 //		dao.insert(appVO);
 //	
 //		return appVO;
 //	}
 	
+//預約主檔+預約明細新增
+	public AppVO addApp(Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String descrip,Integer eid,Set<AppDetailVO> set){
+		
+		AppVO appVO = new AppVO();
+		MemberVO memberVO = new MemberVO();
+		EmployeeVO employeeVO = new EmployeeVO();
+		Set<AppDetailVO> appVOs = new HashSet<AppDetailVO>();
+		
+		for(AppDetailVO a : set) {
+			a.setAppVO(appVO);
+			appVOs.add(a);
+		}
+		
+		appVO.setPurpose(purpose);
+		appVO.setApt_date(apt_date);
+		appVO.setApt_time(apt_time);
+		appVO.setDescrip(descrip);
+		memberVO.setMid(mid);
+		employeeVO.setEid(eid);
+		appVO.setMemberVO(memberVO);
+		appVO.setEmployeeVO(employeeVO);
+		appVO.setAppDetails(appVOs);
+		
+		dao.insert(appVO);
+	
+		return appVO;
+	}
+	
 	
 	
 	//修改
-	public AppVO updateApp(Integer aid,Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String procedureid,String descrip,Integer apt_status,Integer eid){
+	public AppVO updateApp(Integer aid,Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String descrip,Integer eid){
 		
 		AppVO appVO = new AppVO();
 		MemberVO memberVO = new MemberVO();
@@ -92,9 +79,8 @@ public class AppService {
 		appVO.setPurpose(purpose);
 		appVO.setApt_date(apt_date);
 		appVO.setApt_time(apt_time);
-		appVO.setProcedureid(procedureid);
+//		appVO.setProcedureid(procedureid);
 		appVO.setDescrip(descrip);
-		appVO.setApt_status(apt_status);
 		memberVO.setMid(mid);
 		employeeVO.setEid(eid);
 		appVO.setMemberVO(memberVO);
@@ -102,6 +88,11 @@ public class AppService {
 		dao.update(appVO);
 		
 		return dao.findByPrimaryKey(aid);
+	}
+	
+	//整個物件丟進去修改
+	public void updateApp(AppVO appVO) {
+		dao.update(appVO);
 	}
 	
 	//刪除
@@ -119,6 +110,15 @@ public class AppService {
 		return dao.getAll();
 	}
 	
+	//依照會員編號查今天以前的歷史預約
+	public List<AppVO> findByMid_BF(Integer mid){
+		return dao.findByMid_BF(mid);
+	}
+	
+	//依照會員編號查今天(含)之後的預約
+	 public List<AppVO> findByMid_AF(Integer mid){
+		 return dao.findByMid_AF(mid);
+	 }
 	
 	//查預約明細
 	public Set<AppDetailVO> getAppDetailByAid(Integer aid){

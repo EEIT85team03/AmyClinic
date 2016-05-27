@@ -28,6 +28,10 @@ public class AppDetailVO implements java.io.Serializable {
 	public AppDetailVO() {
 
 	}
+	
+	public AppDetailVO(ProcVO procVO) {
+		this.procVO = procVO;
+	}
 
 	@Id
 	@Column(name = "ad_id")

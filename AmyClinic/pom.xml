@@ -146,6 +146,13 @@
 		    <artifactId>json-simple</artifactId>
 		    <version>1.1.1</version>
 		</dependency>
+		
+		<!-- jxl(讀excel的) -->
+		<dependency>
+    		<groupId>net.sourceforge.jexcelapi</groupId>
+    		<artifactId>jxl</artifactId>
+    		<version>2.6.12</version>
+		</dependency>
 
 	</dependencies>
 	<build>

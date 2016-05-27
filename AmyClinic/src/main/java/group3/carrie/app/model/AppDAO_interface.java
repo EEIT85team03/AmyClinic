@@ -11,6 +11,8 @@ public interface AppDAO_interface {
     public void delete(Integer aid);
     public AppVO findByPrimaryKey(Integer aid);
     public List<AppVO> getAll();
+    public List<AppVO> findByMid_BF(Integer mid);
+    public List<AppVO> findByMid_AF(Integer mid);
     //查詢某次預約的明細(一對多)(回傳 Set)
     public Set<AppDetailVO> getAppDetailByAid(Integer aid);
 

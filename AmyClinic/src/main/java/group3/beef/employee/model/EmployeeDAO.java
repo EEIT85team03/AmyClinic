@@ -8,11 +8,11 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 public class EmployeeDAO implements EmployeeDAO_interface {
 	private static final String GET_ALL_STMT = "from EmployeeVO order by eid";
 	private static final String FIND_EMP_BY_MAIL = "from EmployeeVO where email=?";
+	private static final String GET_BY_NAME_STMT = "from EmployeeVO where name = ?";
 
 	public void insert(EmployeeVO employeeVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -75,6 +75,27 @@ public class EmployeeDAO implements EmployeeDAO_interface {
 		try {
 			session.beginTransaction();
 			employeeVO = (EmployeeVO) session.get(EmployeeVO.class, eid);
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return employeeVO;
+	}
+	
+	@Override
+	public EmployeeVO findByName(String name) {
+		EmployeeVO employeeVO = null;
+		List<EmployeeVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_BY_NAME_STMT);
+			query.setParameter(0, name);
+			list = query.list();
+			for (EmployeeVO aArray : list) {
+				employeeVO = aArray;
+			}
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
 			session.getTransaction().rollback();

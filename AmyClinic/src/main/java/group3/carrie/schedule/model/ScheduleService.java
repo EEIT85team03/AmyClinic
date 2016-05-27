@@ -47,6 +47,10 @@ public class ScheduleService {
 		return scheduleVO;
 	}
 	
+	public void updateSchedule(ScheduleVO scheVO) {
+		dao.update(scheVO);
+	}
+	
 	//刪除
 	public void deleteSchedule(Integer sch_id) {
 		dao.delete(sch_id);
@@ -57,10 +61,19 @@ public class ScheduleService {
 		return dao.findByPrimaryKey(sch_id);
 	}
 	
+	//依日期和時段查單一
+	public List<ScheduleVO> findByDateAndHour(Date date,String c_hours) {
+		return dao.findByDateAndHour(date, c_hours);
+	}
+	
 	//查全部
 	public List<ScheduleVO> getAll() { 
 		return dao.getAll();
 	}
-
+	
+	//依時段查詢
+	public List<ScheduleVO> getByDayAndHour(Integer day, String c_hours) {
+		return dao.getByDayAndHour(day, c_hours);
+	}
 
 }
