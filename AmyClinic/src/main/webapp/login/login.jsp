@@ -6,13 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/General/css/style.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/login/css/login.css"
-	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 <title>會員登入</title>
 </head>
 <body>
+
 	<s:include value="/General/header.jsp"></s:include>
 	<hr>
 	<div id="page">
@@ -49,10 +50,12 @@
 							placeholder="    您的密碼" />
 					</div>
 					<div>
-						<s:submit value="確定登入" method="login" />
+						<s:submit value="確定登入" method="login" />						
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
+						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
 			</s:form>
@@ -82,11 +85,34 @@
 	
 
 	<s:include value="/General/footer.jsp"></s:include>
-	<script>
-		$(function() {
-			$(":text").attr("autocomplete", "off");
-		});
-	</script>
+<script>
+function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail());
+	  var user = {'name': profile.getName()};
+	  
+	  sessionStorage.setItem('user', JSON.stringify(user));
+	  
+	  var obj = JSON.parse(sessionStorage.user);
+	  console.log(obj.name);
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+}
+</script>
+
+<script>
+	$(function() {
+		$(":text").attr("autocomplete", "off");
+	});
+</script>
 <script>
 var modal = document.getElementById('myModal');
 
