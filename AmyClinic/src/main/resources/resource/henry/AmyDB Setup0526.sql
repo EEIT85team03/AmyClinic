@@ -30,7 +30,7 @@ CREATE TABLE Members(
   phone			VARCHAR(10)		NOT NULL,
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
-  photo			VARBINARY(MAX)		,
+  photo			VARCHAR(50)		,
 -- photoFileName	NVARCHAR(50)	,
 --  photoContentType VARCHAR(10)	,
   act_status	DECIMAL(1)		DEFAULT 1,	-- 2 = waiting for email confirmation, 1 = active, 0 = inactive    
@@ -179,12 +179,14 @@ INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, h
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Tca','b15e5db3836bff058b253de60c467e00','Tca@group3.com','2000-02-28','Taiwan','M','台北市大安區復興南路一段390號2樓','0945976183','185','63','1');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('K','b15e5db3836bff058b253de60c467e00','k@group3.com','1970-01-01','Taiwan','M','台北市大安區復興南路一段390號2樓','0909865731','200','59','1');
 
+/* Member Images are managed by Struts2 and are stored on the server HDD, not stored in DB. DB only contains path information
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1000;
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1001;
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m3.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1002;
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m4.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1003;
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m5.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1004;
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m6.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1005;
+*/
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('多芬淨白美肌制汗爽身噴霧','500','40','80','20','多芬最懂得呵護女性腋下肌膚有效制汗X淨白美肌','169ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('濟州島綠茶清爽保濕身體乳液','500','40','340','0','清爽補水保濕，潔淨滋養，防敏抗氧化，讓肌膚水潤透亮','300ml');
