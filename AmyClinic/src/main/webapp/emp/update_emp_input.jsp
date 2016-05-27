@@ -44,41 +44,53 @@
 
 	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data">
 		<table border="0">
+		<tr>
+				<td>員工編號:</td>
+				<td><input type="text" name="eid" value="${request.empVO.eid}" value="readonly" readonly size="20" ></td>
+			</tr>
 			<tr>
 				<td>員工姓名:</td>
-				<td><input type="text" name="name" size="20" value="${request.empVO.name}"></td>
+				<td><input type="text" name="name" value="${request.empVO.name}" size="20"></td>
 			</tr>
 			<tr>
 				<td>密碼</td>
-				<td><input type="password" name="pwd" size="20"  ></td>
+				<td><input type="password" name="pwd" value="${request.empVO.pwd}" size="20" ></td>
 			</tr>
 			<tr>
 				<td>重新輸入密碼</td>
-				<td><input type="password" name="pwd2" size="20"  ></td>
+				<td><input type="password" name="pwd2" value="${request.empVO.pwd}" size="20" ></td>
 			</tr>
 			<tr>
 				<td>e-mail</td>
-				<td><input type="text" name="email" size="20" value="${request.empVO.email}"></td>
+				<td><input type="text" name="email" value="${request.empVO.email}" size="20"></td>
 			</tr>
 			<tr>
 				<td>教育程度</td>
-				<td><input type="text" name="edu" size="20" value="${request.empVO.education}"></td>
+				<td><input type="text" name="edu" value="${request.empVO.education}" size="20"></td>
 			</tr>
 			<tr>
 				<td>經歷</td>
-				<td><input type="text" name="exp" size="20" value="${request.empVO.experience}" ></td>
+				<td><input type="text" name="exp" value="${request.empVO.experience}" size="20"></td>
 			</tr>
 			<tr>
 				<td>專長</td>
-				<td><input type="text" name="spec" size="20" value="${request.empVO.specialty}"></td>
+				<td><input type="text" name="spec" value="${request.empVO.specialty}" size="20"></td>
 			</tr>
 			<tr>
 				<td>照片</td>
 				<td><input type="file" name="photo" size="20" ></td>
 			</tr>
+			<tr>
+			<td><img width='180' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${request.empVO.eid}' /></td>
+			</tr>
+			
 		</table>
-		<input type="hidden" name="action" value="insert"><br>
-		<input type="submit" value="送出新增">
+		<input type="hidden" name="action" value="update"><br>
+		<input type="submit" value="送出修改">
+		<%String ref = request.getHeader("REFERER");%>  
+  	<input type="button" name="returngo" value="上一頁"   
+    onclick="javascript:window.location='<%=ref%>'" > 
+    <h6>上一頁是<%=ref%></h6>
 	</FORM>
 
 

@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import group3.henry.global.utility.GlobalConstants;
 import group3.henry.global.utility.Mailer;
 import group3.henry.global.utility.TokenGenerator;
 import group3.henry.login.model.MemberServices;
@@ -17,9 +16,8 @@ import group3.henry.login.model.MemberVO;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class RegisterAction extends ActionSupport implements GlobalConstants{
+public class RegisterAction_old extends ActionSupport{
 	private static final String HEADER = "AmyClinic Registration Confirmation";
-
 	private MemberVO memberVO;	
 	private String message;
 	private File   fileUpload;            //Struts 2 將上傳的原始檔案，封裝到此(xxx)暫時File物件變數，暫時保存到伺服器的臨時目錄區，所以上傳後 Struts 2 會將之刪除
@@ -66,8 +64,9 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 	}
 	
 	private String compose(String token, String email){
+		String nl = System.getProperty("line.separator");
 		return "Thank you for registering on our site! Please click the link below to validate your email!" 
-				+ NL + NL + "http://" + SERVER + "/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
+				+ nl + nl + "http://localhost:8080/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
 	}
 	
 	public String register(){

@@ -1,10 +1,6 @@
-/*
-SendGrid documentation / sample URL
-https://azure.microsoft.com/en-us/documentation/articles/store-sendgrid-java-how-to-send-email/ 
-*/
-
 package group3.henry.global.utility;
 
+import java.util.IllegalFormatException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -15,8 +11,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Mailer implements GlobalConstants {	
-	private final String SIGNATURE = "Sent by AmyClinic." + NL + "Visit us on our website!";
+public class Mailer_Old {
+	private String nl = System.getProperty("line.separator");
+	private final String SIGNATURE = "Sent by AmyClinic." + nl + "Visit us on our website!";
 /*
  create account
  set status to 2 (awaiting verification)
@@ -39,6 +36,7 @@ public class Mailer implements GlobalConstants {
 		this.send(name, destination, subject, text, "text");
 	}		  
 		
+
 	//					Person			Email		  Email Subject   Email Text   text or html
 	public void send(String name, String destination, String subject, String text, String format) {		  
 		format = format.toUpperCase();
@@ -46,34 +44,40 @@ public class Mailer implements GlobalConstants {
 			System.out.println("Mailer.java - Invalid email format specified");
 			return;
 		}
+		
+		//sender
+	    String from = "eeit85group3@gmail.com";
+	    final String username = "eeit85group3@gmail.com";
+	    final String password = "thisismygroupthreepassword";
+	    
+	    //email host routing
+	    String host = "smtp.gmail.com";
+	    String port = "587";
 
 	    Properties props = new Properties();
-	    props.put("mail.transport.protocol", "smtp");
-	    props.put("mail.smtp.auth", "true");	    
-	    props.put("mail.smtp.host", EMAIL_HOST);
-	    props.put("mail.smtp.port", EMAIL_PORT);
+	    props.put("mail.smtp.auth", "true");
 	    props.put("mail.smtp.starttls.enable", "true");
-	    props.put("mail.smtp.ssl.trust", EMAIL_HOST);
+	    props.put("mail.smtp.host", host);
+	    props.put("mail.smtp.port", port);
+	    props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
 	    // Get the Session 
 	    Session session = Session.getInstance(props, 
 	    		new javax.mail.Authenticator() {
 			        protected PasswordAuthentication getPasswordAuthentication() {
-			        	return new PasswordAuthentication(EMAIL_USER, EMAIL_PASSWORD);
+			        	return new PasswordAuthentication(username, password);
 			        }
 	      		});
 	    try {         
 	    	Message message = new  MimeMessage(session); // Create a default MimeMessage object.
-	        message.setFrom(new InternetAddress(EMAIL_FROM)); // Set From: header field of the header.         
+	        message.setFrom(new InternetAddress(from)); // Set From: header field of the header.         
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
 	        message.setSubject(subject); // Set Subject: header field
-	        
-	        String outbound = "Hello, "+ name + "!" + NL + NL + text + NL + NL + SIGNATURE;
 	        if (format.equals("TEXT"))
-	        	message.setText(outbound); // Set the actual message
+	        	message.setText("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE); // Set the actual message
 	        else if (format.equals("HTML"))
 	        	//為了測試用先把編碼寫死成utf-8
-	        	message.setContent(outbound, "text/html;charset=UTF-8");
+	        	message.setContent("Hello, "+ name + "!" + nl + nl + text + nl + nl + SIGNATURE, "text/html;charset=UTF-8");
 	        else{
 	        	System.out.println("Invalid format");
 	        	return;

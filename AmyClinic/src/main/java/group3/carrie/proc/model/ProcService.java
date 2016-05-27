@@ -26,8 +26,21 @@ public class ProcService {
 		return procVO;
 	}
 	
+	//新增2
+public ProcVO addProc(String name,Integer pType_id,Integer fee) {
+		ProcVO procVO = new ProcVO();
+		ProcTypeVO procTypeVO = new ProcTypeVO();
+		
+		procVO.setName(name);
+		procTypeVO.setpType_id(pType_id);
+		procVO.setFee(fee);
+		procVO.setProcTypeVO(procTypeVO);
+		dao.insert(procVO);
+		
+		return procVO;
+	}
 	//修改
-	public ProcVO updateProc(Integer procedure_id,String name,Integer pType_id) {
+	public ProcVO updateProc(Integer procedure_id,String name,Integer pType_id,Integer fee) {
 		
 		ProcVO procVO = new ProcVO();
 		ProcTypeVO procTypeVO = new ProcTypeVO();
@@ -35,6 +48,7 @@ public class ProcService {
 		procVO.setProcedure_id(procedure_id);
 		procVO.setName(name);
 		procTypeVO.setpType_id(pType_id);
+		procVO.setFee(fee);
 		procVO.setProcTypeVO(procTypeVO);
 		dao.update(procVO);
 		

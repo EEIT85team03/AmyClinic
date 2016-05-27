@@ -14,7 +14,7 @@
  * Inspiration from jQuery color animation plugin by John Resig.
  *
  * Released under the MIT license by Ole Laursen, October 2009.
- *
+ * 
  * Examples:
  *
  *   $.color.parse("#fff").scale('rgb', 0.25).add('a', -0.5).toString()
@@ -33,7 +33,7 @@
 // the actual Flot code
 (function($) {
     function Plot(placeholder, data_, options_, plugins) {
-        // data is on the form:
+        // data is on the form: 
         //   [ series1, series2 ... ]
         // where series is either just the data as [ [x1, y1], [x2, y2], ... ]
         // or { data: [ [x1, y1], [x2, y2], ... ], label: "some label", ... }

@@ -27,18 +27,22 @@
 	}
 	
 	.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
-      color: black;
+      color: black; 
 /*       font-family: ...; */
       font-size: 16px;
       font-weight: bold;
 }
+
+	#userphoto{
+		border-radius:25px;
+	}
 
 </style>
 </head>
 <body>
 I am editprofile.jsp! <hr>
 
-<h3>${memberVO.name}</h3> <img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+<h3>${memberVO.name}</h3> <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
@@ -181,7 +185,13 @@ I am editprofile.jsp! <hr>
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>  
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png" });
+		var d = new Date();
+		var year = d.getFullYear() - 13;
+		console.log(year);
+		var dynamicDate = d.setFullYear(year);
+		console.log(dynamicDate);
+		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png"});
+		$("#memberbirthday").datepicker("setDate", dynamicDate);
 	});
 </script>
 

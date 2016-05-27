@@ -7,8 +7,7 @@
 
 <!-- Specifies url patterns / servlets to exclude from struts2 -->
 <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-<constant name="struts.action.excludePattern" value="/Score/ScoreServlet,/Score/GetPic,/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/shopping/[a-zA-Z_0-9]*"/>
-
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Backstage/ProductServlet,/Backstage/ProcServlet,/shopping/[a-zA-Z_0-9]*"/>
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
 
@@ -130,16 +129,16 @@
 <!-- k	-->
 
 <!-- beef -->
-	<package name="Emp" namespace="/emp" extends="struts-default">
-        <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction">
-            <result name="input">/BeefTest/AddEMP.jsp</result>
-            <result name="success">/BeefTest/AddSucces.jsp</result>
-		</action>
+<!-- 	<package name="Emp" namespace="/emp" extends="struts-default"> -->
+<!--         <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction"> -->
+<!--             <result name="input">/emp/AddEMP.jsp</result> -->
+<!--             <result name="success">/emp/AddSucces.jsp</result> -->
+<!-- 		</action> -->
     
-        <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction">
-            <result name="success">/BeefTest/update_emp_input.jsp</result>
-		</action>
-    </package>
+<!--         <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction"> -->
+<!--             <result name="success">/emp/update_emp_input.jsp</result> -->
+<!-- 		</action> -->
+<!--     </package> -->
 <!-- beef -->
 
 

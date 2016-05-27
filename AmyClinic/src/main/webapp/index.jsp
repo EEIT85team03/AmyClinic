@@ -116,6 +116,8 @@ body {
 
 		<a href="shopping/OrdersServlet" >查詢訂單(需登入)</a><br>
 		
+		<a href="Backstage/login.jsp" >員工登入</a><br>
+		
 		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
 </div>		
 		</article>
@@ -125,7 +127,7 @@ body {
 <hr>
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/ininder.jsp">後台專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/0ininder.jsp">後台專區</a><br></p>
 		</footer>
 	</div>
 </div>

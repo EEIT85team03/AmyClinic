@@ -25,7 +25,7 @@ public class ProcVO implements java.io.Serializable {
 	private Integer procedure_id;
 	private String name;
 	private Integer fee;
-//	private Integer pType_id;
+	//private Integer pType_id;
 	//療程和療程種類是多對一
 	private ProcTypeVO procTypeVO;
 	//療程和預約明細是一對多
@@ -34,6 +34,14 @@ public class ProcVO implements java.io.Serializable {
 	public ProcVO() {
 
 	}
+
+//	public Integer getpType_id() {
+//		return pType_id;
+//	}
+//
+//	public void setpType_id(Integer pType_id) {
+//		this.pType_id = pType_id;
+//	}
 
 	@Id
 	@Column(name = "procedure_id")
@@ -55,7 +63,7 @@ public class ProcVO implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(insertable = false)
+//	@Column(insertable = false)
 	public Integer getFee() {
 		return fee;
 	}
@@ -83,8 +91,4 @@ public class ProcVO implements java.io.Serializable {
 	public void setAppDetails(Set<AppDetailVO> appDetails) {
 		this.appDetails = appDetails;
 	}
-
-	
-
-
 }
