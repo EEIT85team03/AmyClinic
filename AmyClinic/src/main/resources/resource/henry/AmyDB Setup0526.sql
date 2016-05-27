@@ -25,7 +25,7 @@ CREATE TABLE Members(
   --email			VARCHAR(50)		NOT NULL UNIQUE,
   email			VARCHAR(50)		NOT NULL,
   birthday		DATE			,
-  country		NVARCHAR(20)		,
+  country		NVARCHAR(20)	,
   gender		CHAR(1)			NOT NULL,
   addr			NVARCHAR(50)	NOT NULL,
   phone			VARCHAR(10)		NOT NULL,

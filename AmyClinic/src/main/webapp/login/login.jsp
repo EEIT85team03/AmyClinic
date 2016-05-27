@@ -92,6 +92,12 @@ function onSignIn(googleUser) {
 	  console.log('Name: ' + profile.getName());
 	  console.log('Image URL: ' + profile.getImageUrl());
 	  console.log('Email: ' + profile.getEmail());
+	  var user = {'name': profile.getName()};
+	  
+	  sessionStorage.setItem('user', JSON.stringify(user));
+	  
+	  var obj = JSON.parse(sessionStorage.user);
+	  console.log(obj.name);
 }
 
 function signOut() {
