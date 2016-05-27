@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <%@page import="group3.henry.login.model.*"%>
 
-<!DOCTYPE html ">
+<!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
@@ -18,17 +18,18 @@
 <body>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper"><!-- Page Heading -->
+<div id="page-wrapper" style=background-color:#ADADAD  >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="page-header" >本月目標<font color="red">30億</font>
-                       </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font></li></ol>
+                <div class="page-header" >
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
+                </div>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>(M=男生，F=女生。狀態0=封鎖，1=正常，2=未開通)</li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
  <%
 MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
@@ -37,8 +38,8 @@ List<MemberVO> list = memberSer.getAll();
 pageContext.setAttribute("list",list);
 %>
 
- <a href="addMember.jsp"><input type="submit" value="新增會員" class="btn btn-primary"></a>
- <font>M=男生，F=女生。狀態1=正常，0=封鎖</font>     
+ 
+     
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>照片</th>	
@@ -54,7 +55,7 @@ pageContext.setAttribute("list",list);
 		<th>最後消費日期</th>
 		<th>加入日期</th>
 		<th>狀態</th>
-		<th><a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>  </th>
+		<th><a href="addMember.jsp"><input type="submit" value="新增會員" class="btn btn-primary"></a>  </th>
 	</tr>
 	<c:forEach var="MemberVO"  items="${list}"  >
 		<tr>
@@ -70,19 +71,18 @@ pageContext.setAttribute("list",list);
 			<td>${MemberVO.spent_pts}</td>
 			<td>${MemberVO.last_visit}</td>
 			<td>${MemberVO.join_date}</td>
-			<td>${MemberVO.act_status}</td>
+			<td>${MemberVO.act_status}
+			<script>
+		
+			</script>
+			</td>
 			<td>
 			  <FORM METHOD="post" ACTION="MemberServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
 			     <input type="hidden" name="mid" value="${MemberVO.mid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
-<!-- 			<td> -->
-<!-- 			  <FORM METHOD="post" ACTION="MemberServlet"> -->
-<!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
-<%-- 			    <input type="hidden" name="mid" value="${MemberVO.mid}"> --%>
-<!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
-<!-- 			</td> -->
+
 		</tr>
 	</c:forEach>
 	</table>  

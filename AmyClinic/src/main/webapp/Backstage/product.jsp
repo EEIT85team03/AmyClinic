@@ -5,7 +5,7 @@
 <%@page import="group3.carrie.catagory.model.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
@@ -18,17 +18,18 @@
 <body>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper"><!-- Page Heading -->
+<div id="page-wrapper" style=background-color:#ADADAD  >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="page-header" >本月目標<font color="red">30億</font>
-                       </div>
+                <div class="page-header" >
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
+                </div>
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
  <%
  ProductVO productVO = (ProductVO) request.getAttribute("productVO");
@@ -57,9 +58,9 @@
 		<th>折扣</th>
 		<th>商品描述</th>
 		<th>規格</th>
-		<th>				  
-			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
-		</th>
+<!-- 		<th>				   -->
+<!-- 			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>    -->
+<!-- 		</th> -->
 		<th>			  
 			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
@@ -81,12 +82,12 @@
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
-			<td>
-			  <FORM METHOD="post" ACTION="ProductServlet">
-			    <input type="submit" value="刪除" class="btn btn-danger">
-			    <input type="hidden" name="pid" value="${ProductVO.pid}">
-			    <input type="hidden" name="action"value="delete"></FORM>
-			</td>
+<!-- 			<td> -->
+<!-- 			  <FORM METHOD="post" ACTION="ProductServlet"> -->
+<!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
+<%-- 			    <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
+<!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
+<!-- 			</td> -->
 		</tr>
 	</c:forEach>
 	</table>  
