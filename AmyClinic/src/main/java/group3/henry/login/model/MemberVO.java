@@ -2,6 +2,7 @@ package group3.henry.login.model;
 
 import group3.carrie.app.model.AppVO;
 import group3.carrie.orders.model.OrdersVO;
+import group3.nick.score.model.ScoreVO;
 
 import java.io.File;
 import java.io.Serializable;
@@ -39,38 +40,40 @@ import javax.persistence.Table;
 @Table(name = "Members")  
 public class MemberVO implements Serializable {
 	
-	private Integer   mid;
-	private String 	  name;
-	private String 	  pwd;
-	private String    verify;
-	private String 	  email;
-	private Date 	  birthday;
-	private String	  country;
-	private Character gender;
-	private String	  addr;
-	private String    phone;
-	private Integer   height;
-	private Integer   mass;
-	private String	  photo;
-//	private String	  photoFileName;
-//	private String 	  photoContentType;
-	private Integer	  act_status;
-	private Integer   num_trans;
-	private Integer   num_treatment;
-	private Integer   num_visits;
-	private Integer   total_spent;
-	private Integer   reward_pts;
-	private Integer   spent_pts;
-	private Date      last_visit;
-	private String	  memo;
-	private Timestamp join_date;
+	private Integer   mid;								//編號
+	private String 	  name;							//名稱
+	private String 	  pwd;								//密碼
+	private String    verify;							//驗證
+	private String 	  email;							//信箱
+	private Date 	  birthday;							//生日
+	private String	  country;						//國家
+	private Character gender;						//性別
+	private String	  addr;								//地址
+	private String    phone;							//電話
+	private Integer   height;							//身高
+	private Integer   mass;							//體重
+	private String	  photo;							//照片
+//	private String	  photoFileName;			//檔名
+//	private String 	  photoContentType;	//附檔名
+	private Integer	  act_status;					//帳號狀態
+	private Integer   num_trans;					//消費次數
+	private Integer   num_treatment;			//療程次數
+	private Integer   num_visits;					//來訪次數
+	private Integer   total_spent;					//總消費
+	private Integer   reward_pts;					//獎勵點數
+	private Integer   spent_pts;					//花費點數
+	private Date      last_visit;						//最後上線
+	private String	  memo;							//備註
+	private Timestamp join_date;				//加入日期
 	
 	//One member -> Many appointments
 	private Set<AppVO> appVO = new HashSet<AppVO>();
 	
 	//會員和訂單是一對多
 	private Set<OrdersVO> orders = new HashSet<OrdersVO>();
-
+	
+	//會員和平分 一對多
+	private Set<ScoreVO> scores = new HashSet<ScoreVO>();
 	
 	public MemberVO() {
 		super();
@@ -299,6 +302,17 @@ public class MemberVO implements Serializable {
 
 	public void setOrders(Set<OrdersVO> orders) {
 		this.orders = orders;
+	}
+	
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="mb")
+	@OrderBy("score_id asc")
+	public Set<ScoreVO> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<ScoreVO> scores) {
+		this.scores = scores;
 	}
 
 	// Reflection, gets properties of a class object. Testing method

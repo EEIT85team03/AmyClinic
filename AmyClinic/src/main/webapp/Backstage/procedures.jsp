@@ -32,7 +32,7 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
  <%
- ProcVO procVO = (ProcVO) request.getAttribute("procVO");
+//  ProcVO procVO = (ProcVO) request.getAttribute("procVO");
  ProcService proc = new ProcService();
  List<ProcVO> list = proc.getAll();
  pageContext.setAttribute("list",list);
@@ -44,7 +44,7 @@
 
       <select size="1"  name="pType_id">
       <c:forEach var="proctype" items="${proctype}">
-				<option  value="${proctype.pType_id}" ${(procVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
+				<option  value="${proctype.pType_id}"  >${proctype.name}
 	  </c:forEach>
       </select>
 

@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
@@ -127,10 +126,11 @@
 		});
 	</script>
 	<script>
-$(document).ready(function() {
-   $('#birthday').datepicker({
-   	 buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png", 
-   	});
+$(document).ready(function() {    
+	var d = new Date();		
+	var dynamicDate = new Date(d.setFullYear(d.getFullYear() - 22));	
+	$('#birthday').datepicker({buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png"});
+	$("#birthday").datepicker("setDate", dynamicDate);
 }); 
 </script>
 </body>

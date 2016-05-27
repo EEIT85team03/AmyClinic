@@ -1,5 +1,7 @@
 package group3.nick.score.model;
 
+import group3.beef.employee.model.EmployeeVO;
+import group3.henry.login.model.MemberVO;
 import hibernate.util.HibernateUtil;
 
 import org.hibernate.*;
@@ -7,6 +9,8 @@ import org.hibernate.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+
+import javassist.compiler.MemberCodeGen;
 
 public class ScoreHibernateDAO implements Score_interface {
 	
@@ -108,33 +112,39 @@ public class ScoreHibernateDAO implements Score_interface {
 	
 	
 ////測試用	
-	public static void main(String[] args) {
-		ScoreHibernateDAO dao 	= new ScoreHibernateDAO();
-		ScoreVO scorevo = new ScoreVO();
+//	public static void main(String[] args) {
+//		ScoreHibernateDAO dao 	= new ScoreHibernateDAO();
+//		ScoreVO scorevo = new ScoreVO();
+//		MemberVO memberVO = new MemberVO();
+//		EmployeeVO employeeVO = new EmployeeVO();
 //=====================		
+		
 //		scorevo.setComment("想吃飯");
-//		scorevo.setEid(3);
-//		scorevo.setMid(1000);
+//		employeeVO.setEid(3);
+//		scorevo.setEmp(employeeVO);
+//		memberVO.setMid(1000);
+//		scorevo.setMb(memberVO);
 //		scorevo.setScores(2);
+//		scorevo.setComment("廢物畫多");
 //		scorevo.setScoreDate(java.sql.Date.valueOf("1991-08-01"));
 //		dao.insert(scorevo);
 		
 //=============
 		
-		List<ScoreVO> list=dao.getEmpScore(3);
-		for( ScoreVO test: list){
-			System.out.println(test.getEid());
-			System.out.println(test.getComment());
-			System.out.println(test.getScore_id());
-			System.out.println(test.getMid());
-			System.out.println(test.getScoreDate());
-			System.out.println("=================");
-		}
+//		List<ScoreVO> list=dao.getEmpScore(3);
+//		for( ScoreVO test: list){
+//			System.out.println(test.getEmp().getName());
+//			System.out.println(test.getComment());
+//			System.out.println(test.getScore_id());
+//			System.out.println(test.getMb().getName());
+//			System.out.println(test.getScoreDate());
+//			System.out.println("=================");
+//		}
 		
 		
 		
 		
 	
 		
-	}
+//	}
 }
