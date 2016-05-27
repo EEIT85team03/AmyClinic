@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>     
 <%@ page import="group3.carrie.orders.model.*" %>    
 <%
 	//避免瀏覽器對文件的快取
@@ -58,7 +59,7 @@ ps.輸入卡號及有效期限時請保持在英文輸入法狀態，否則plug-
 	
 	</div>
 			<div style="padding-left: 750px; padding-top: 10px; padding-bottom: 10px">
-				<b>應付金額：${ordersVO.total}元</b>
+				<b>應付金額：<fmt:formatNumber value="${ordersVO.total}" type="number"/>元</b>
 			</div>
 	      <div class="card-wrapper"></div>
 

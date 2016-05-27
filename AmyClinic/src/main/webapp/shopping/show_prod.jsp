@@ -55,7 +55,7 @@
 					<c:if test="${prodVO.discount != 0}">	
 					<tr>
 						<td>打折後</td>
-						<td><fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="#,###"/>元</td>
+						<td><fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern=",###"/>元</td>
 					</tr>
 					</c:if>
 					<c:if test="${prodVO.amount!=0}">	

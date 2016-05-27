@@ -119,7 +119,7 @@
 						本次消費可得紅利點數：
 					</td>
 					<td colspan="2" height="50px" style="text-align: center;">
-						<fmt:formatNumber value="${(ShoppingCart.subTotal/100)+0.0001}" pattern="#,###"/>點
+						<fmt:formatNumber value="${(ShoppingCart.subTotal/100)+0.0001}" pattern=",###"/>點
 					</td>
 				</tr>
 				</c:if>

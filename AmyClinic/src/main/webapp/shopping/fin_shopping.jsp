@@ -117,7 +117,7 @@
 					本次所得的紅利點數
 				</td>
 				<td>
-					<fmt:formatNumber value="${(ordersVO.total/100)+0.0001}" pattern="#,###"/>點
+					<fmt:formatNumber value="${(ordersVO.total/100)+0.0001}" pattern=",###"/>點
 				</td>
 			</tr>	
 			<tr>

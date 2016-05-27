@@ -114,7 +114,7 @@ a {
 						<a href='ShowProductServlet?pid=${prodVO.pid}'>${prodVO.name}</a><br>
 						<fmt:formatNumber value="${prodVO.price}" type="number"/>元<br>
 						<c:if test="${prodVO.discount != 0}">	
-						打折後：<fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="#,###"/>元<br>
+						打折後：<fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern=",###"/>元<br>
 						</c:if>
 						<c:if test="${prodVO.amount != 0}">
 							選擇數量：
@@ -241,6 +241,8 @@ a {
 					if(datas.length==0) {
 // 						$('#prod > tbody').append('<tr><td>查無資料！</td></tr>');
 						$( "#dialog" ).dialog();
+					} else {
+						$( "#dialog" ).dialog('close');
 					}
 					var tr = $('<tr></tr>');
 					$.each(datas, function(i, data) {

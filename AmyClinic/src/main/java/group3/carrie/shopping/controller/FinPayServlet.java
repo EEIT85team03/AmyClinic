@@ -8,6 +8,7 @@ import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Set;
 
@@ -106,6 +107,7 @@ public class FinPayServlet extends HttpServlet {
 	//寄給使用者的email內要寫的文字
 	protected String msgForEmail(MemberVO mb,OrdersVO ordersVO,String date) {
 		String msg = "";
+		DecimalFormat df=new DecimalFormat(",###");
 		StringBuffer msgBuffer = new StringBuffer();
 		msgBuffer.append("<br>您的訂購已完成，以下是您的訂單明細：<br><br>");
 		msgBuffer.append("<table border='1' width='1000px' style='border-collapse:collapse'>");
@@ -116,14 +118,14 @@ public class FinPayServlet extends HttpServlet {
 		for (OrderItemsVO orderItems : set) {
 			msgBuffer.append("<tr><td>"+orderItems.getProductVO().getName()+"</td>");
 			msgBuffer.append("<td>"+orderItems.getQuantity()+"</td>");
-			msgBuffer.append("<td>"+orderItems.getPrice_per()+"元</td>");
-			msgBuffer.append("<td>"+(orderItems.getPrice_per()*orderItems.getQuantity())+"元</td></tr>");
+			msgBuffer.append("<td>"+df.format(orderItems.getPrice_per())+"元</td>");
+			msgBuffer.append("<td>"+df.format(orderItems.getPrice_per()*orderItems.getQuantity())+"元</td></tr>");
 		}
-		msgBuffer.append("<tr><td></td><td></td><td>合計</td><td>"+(ordersVO.getTotal()+ordersVO.getPoints_spent())+"元</td></tr>");
-		msgBuffer.append("<tr><td></td><td></td><td>使用的紅利點數</td><td>"+ordersVO.getPoints_spent()+"點</td></tr>");
-		msgBuffer.append("<tr><td></td><td></td><td>本次所得的紅利點數</td><td>"+Math.round(ordersVO.getTotal()/100.0)+"點</td></tr>");
-		msgBuffer.append("<tr><td></td><td></td><td>剩餘的紅利點數</td><td>"+mb.getReward_pts()+"點</td></tr>");
-		msgBuffer.append("<tr><td></td><td></td><td>總金額</td><td>"+ordersVO.getTotal()+"元</td></tr></table>");
+		msgBuffer.append("<tr><td></td><td></td><td>合計</td><td>"+df.format(ordersVO.getTotal()+ordersVO.getPoints_spent())+"元</td></tr>");
+		msgBuffer.append("<tr><td></td><td></td><td>使用的紅利點數</td><td>"+df.format(ordersVO.getPoints_spent())+"點</td></tr>");
+		msgBuffer.append("<tr><td></td><td></td><td>本次所得的紅利點數</td><td>"+df.format(Math.round(ordersVO.getTotal()/100.0))+"點</td></tr>");
+		msgBuffer.append("<tr><td></td><td></td><td>剩餘的紅利點數</td><td>"+df.format(mb.getReward_pts())+"點</td></tr>");
+		msgBuffer.append("<tr><td></td><td></td><td>總金額</td><td>"+df.format(ordersVO.getTotal())+"元</td></tr></table>");
 		msgBuffer.append("<table border='1' width='1000px' style='border-collapse:collapse'>");
 		msgBuffer.append("<tr><td><br>收件人姓名："+ordersVO.getRecipient()+"<br><br>地址："+ordersVO.getAddr()+"<br><br>電話："+ordersVO.getPhone()+"<br><br>E-mail："+ordersVO.getEmail()+"<br><br></td></tr></table>");
 		
