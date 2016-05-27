@@ -2,7 +2,7 @@ package group3.henry.global.utility;
 
 // Container for reused variables
 
-public interface GlobalService {
+public interface GlobalConstants {
 	public static final String NL = System.getProperty("line.separator");
 	
 	//Local Machine ----------------------

@@ -184,8 +184,11 @@ I am editprofile.jsp! <hr>
 <!-- required for .datepicker() -->
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>  
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png" });
+	$(document).ready(function() {		
+		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png"});
+// 		var d = new Date();		
+// 		var dynamicDate = new Date(d.setFullYear(d.getFullYear() - 13));
+// 		$("#memberbirthday").datepicker("setDate", dynamicDate);
 	});
 </script>
 

@@ -2,6 +2,7 @@ package group3.beef.employee.model;
 
 import group3.carrie.app.model.AppVO;
 import group3.carrie.schedule.model.ScheduleVO;
+import group3.nick.score.model.ScoreVO;
 
 import java.io.Serializable;
 import java.sql.Blob;
@@ -34,6 +35,8 @@ public class EmployeeVO implements Serializable {
 	private Set<AppVO> apps = new HashSet<AppVO>();
 	//員工和排班是一對多
 	private Set<ScheduleVO> schedules = new HashSet<ScheduleVO>();
+	//員工和評分是一對多
+	private Set<ScoreVO> scores = new HashSet<ScoreVO>();
 	
 	public EmployeeVO(){
 		
@@ -128,6 +131,20 @@ public class EmployeeVO implements Serializable {
 	public void setSchedules(Set<ScheduleVO> schedules) {
 		this.schedules = schedules;
 	}
+	
+	//一個員工對多個評論
+	//【mappedBy="多方的關聯屬性名"：用在雙向關聯中，把關係的控制權反轉】【目前emp是ScoreVO的一個屬性】
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="emp")
+	@OrderBy("score_id asc")
+	public Set<ScoreVO> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<ScoreVO> scores) {
+		this.scores = scores;
+	}
+	
+	
 
 	
 }
