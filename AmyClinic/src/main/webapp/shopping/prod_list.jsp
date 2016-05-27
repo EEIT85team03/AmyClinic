@@ -20,6 +20,9 @@
 4.ProductNameServlet：商品搜尋，like %?% 用Ajax做部分更新
 5.加入購物車的按鈕，按下後把資料存到session(ShoppingServlet)，如庫存量不足則顯示存貨不足
 ps.加入購物車的部分改成部分更新
+2016.05.26新增
+購物系統新增直接在商品列表/商品頁面選擇數量加入購物車
+庫存量在10以下時option會減少
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -107,16 +110,17 @@ a {
 						<tr>
 					</c:if>
 					<td>
-						<%-- 					<img src="GetPic?num=${prodVO.pid}"/> --%> 
+						<img width="200px" src="GetPic?num=${prodVO.pid}"/> 
 						<a href='ShowProductServlet?pid=${prodVO.pid}'>${prodVO.name}</a><br>
-						${prodVO.price}元<br>
+						<fmt:formatNumber value="${prodVO.price}" type="number"/>元<br>
 						<c:if test="${prodVO.discount != 0}">	
-						打折後：<fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="###"/>元<br>
+						打折後：<fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="#,###"/>元<br>
 						</c:if>
 						<c:if test="${prodVO.amount != 0}">
 							選擇數量：
 							<select id="qty${prodVO.pid}">
 								<c:forEach begin="1" end="10" var="theqty">
+								<!-- 如果庫存量減掉theqty大於等於0才顯示選項 -->
 									<c:if test="${prodVO.amount - theqty >= 0}">
 							    		<option value="${theqty}">${theqty}</option>
                     				</c:if>
@@ -156,6 +160,7 @@ a {
 					var id = data.pid;
 					var amount = data.amount;
 					var discount = data.discount;
+					var tt = Math.round(price * (1 - (discount/100.0)));
 					var td = $('<td></td>');
 					var select = $('<select id="qty' + id + '"></select>');
 					
@@ -167,15 +172,16 @@ a {
 						$('#prod > tbody').append(r);
 					}
 					
-// 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
-					td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
-					  .append(price + '元<br>');
+					td.append('<img width="200px" src="GetPic?num='+id+'"/><br>')
+					  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+					  .append(price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元<br>');
 					if (discount != 0) {
-						td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
+						td.append('打折後：'+ tt.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元<br>');
 					}  
 					if (amount != 0) {
 							td.append('選擇數量：');
 							for(var j = 1; j <= 10; j++) {
+								//如果庫存量減掉j大於等於0才顯示選項
 								 if(amount - j >= 0) {
 									 select.append('<option value="'+j+'">'+j+'</option>');
 								 } 
@@ -230,7 +236,7 @@ a {
 				$('#prod > tbody').empty();
 				var byName = $('#search_txt').val();
 				var prodname = $('#search').val();
-				$('#search').val("");
+// 				$('#search').val("");
 				$.getJSON('ProductSearchServlet',{"prodname" : prodname , "action" : byName},function(datas) {
 					if(datas.length==0) {
 // 						$('#prod > tbody').append('<tr><td>查無資料！</td></tr>');
@@ -243,6 +249,7 @@ a {
 						var id = data.pid;
 						var amount = data.amount;
 						var discount = data.discount;
+						var tt = Math.round(price * (1 - (discount/100.0)));
 						var td = $('<td></td>');
 						var select = $('<select id="qty' + id + '"></select>');
 						
@@ -255,15 +262,16 @@ a {
 						}	
 						
 						
-//	 					td.append('<img src="GetPic?num='+id+'"/><br>') //圖片還沒進db先註解起來
-						td.append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
-						  .append(price + '元<br>');
+	 					td.append('<img width="200px" src="GetPic?num='+id+'"/><br>') 
+						  .append('<a href="ShowProductServlet?pid=' + id + '">' + name+ '</a><br>')
+						  .append(price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元<br>');
 						if (discount != 0) {
-							td.append('打折後：'+ Math.round(price * (1 - (discount/100.0))) + '元<br>');
+							td.append('打折後：'+ tt.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元<br>');
 						}    
 						if (amount != 0) {
 							td.append('選擇數量：');
 							for(var j = 1; j <= 10; j++) {
+								//如果庫存量減掉j大於等於0才顯示選項
 								 if(amount - j >= 0) {
 									 select.append('<option value="'+j+'">'+j+'</option>');
 								 } 

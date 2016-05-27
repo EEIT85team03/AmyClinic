@@ -79,7 +79,7 @@ public class NewOrderServlet extends HttpServlet {
 		}
 		
 		String should_payStr = request.getParameter("should_pay");
-		Integer should_pay = new Integer(should_payStr.trim());
+		Integer should_pay = new Integer(should_payStr.replaceAll(",", "").trim());
 		if (should_payStr == null || should_payStr.trim().length() == 0 || should_pay < 0) {
 			throw new ServletException();
 		}

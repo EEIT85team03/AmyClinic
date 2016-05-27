@@ -6,7 +6,10 @@
 <html>
 <!-- 
 1.顯示單樣產品的資料(大張圖+名稱+價格+成分+描述)
-2.加入購物車的按鈕(存到session內(一個set?))，如果庫存為0就顯示存貨不足
+2.加入購物車的按鈕(存到session(ShoppingServlet))，如果庫存為0就顯示存貨不足
+2016.05.26新增
+購物系統新增直接在商品列表/商品頁面選擇數量加入購物車
+庫存量在10以下時option會減少
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -47,12 +50,12 @@
 					</tr>	
 					<tr>
 						<td>產品定價</td>
-						<td>${prodVO.price}元</td>
+						<td><fmt:formatNumber value="${prodVO.price}" type="number"/>元</td>
 					</tr>
 					<c:if test="${prodVO.discount != 0}">	
 					<tr>
 						<td>打折後</td>
-						<td><fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="###"/>元</td>
+						<td><fmt:formatNumber value="${prodVO.price * ((1 - (prodVO.discount/100.0)) +0.0001)}" pattern="#,###"/>元</td>
 					</tr>
 					</c:if>
 					<c:if test="${prodVO.amount!=0}">	
@@ -65,6 +68,7 @@
 						<td>
 							<select id="qty${prodVO.pid}">
 								<c:forEach begin="1" end="10" var="theqty">
+								<!-- 如果庫存量減掉theqty大於等於0才顯示選項 -->
 									<c:if test="${prodVO.amount - theqty >= 0}">
 							    		<option value="${theqty}">${theqty}</option>
                     				</c:if>

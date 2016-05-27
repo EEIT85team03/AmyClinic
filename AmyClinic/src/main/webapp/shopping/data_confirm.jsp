@@ -74,10 +74,10 @@ if(session.getAttribute("ShoppingCart") == null) {
 						${entry.value.quantity}
 					</td>
 					<td>
-						${entry.value.price_per}元
+						<fmt:formatNumber value="${entry.value.price_per}" type="number"/>元
 					</td>
 					<td>
-						${entry.value.price_per * entry.value.quantity}元
+						<fmt:formatNumber value="${entry.value.price_per * entry.value.quantity}" type="number"/>元
 					</td>
 				</tr>
 				</c:forEach>
@@ -88,13 +88,13 @@ if(session.getAttribute("ShoppingCart") == null) {
 						合計金額　
 					</td>
 					<td height="50px" style="text-align: center;">
-						${ShoppingCart.subTotal}元
+						<fmt:formatNumber value="${ShoppingCart.subTotal}" type="number"/>元
 						<input type="hidden" id="subtotal" value="${ShoppingCart.subTotal}">
 					</td>
 				</tr>
 				<tr>
 					<td width="799px" height="50px" style="text-align: right;">
-						目前紅利：${memberVO.reward_pts}點　使用<input type="text" name="reward" id="reward_pts" value="0" size="1" style="text-align: center">點　
+						目前紅利：<fmt:formatNumber value="${memberVO.reward_pts}" type="number"/>點　使用<input type="text" name="reward" id="reward_pts" value="0" size="1" style="text-align: center">點　
 						<input type="hidden" id="member_reward_pts" value="${memberVO.reward_pts}">
 					</td>
 					<td height="50px" style="text-align: center;">
@@ -106,7 +106,7 @@ if(session.getAttribute("ShoppingCart") == null) {
 						應付金額　
 					</td>
 					<td height="50px" style="text-align: center;">
-						<span id="should_pay">${ShoppingCart.subTotal}</span>元
+						<span id="should_pay"><fmt:formatNumber value="${ShoppingCart.subTotal}" type="number"/></span>元
 					</td>
 				</tr>
 				<tr>
@@ -162,7 +162,7 @@ if(session.getAttribute("ShoppingCart") == null) {
 		var newRwd = $("#newRwd");
 		var subtotal = $("#subtotal").val();
 		//設定本次可得紅利點數的預設值
-		newRwd.append(Math.round(subtotal/100));
+		newRwd.append(Math.round(subtotal/100).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 		
 		//要來驗證每個欄位的長度和格式
 		
@@ -185,8 +185,12 @@ if(session.getAttribute("ShoppingCart") == null) {
 		//地址
 		$('input[name="addr"]').blur(function(){
 			var warn_addr = $("#warnaddr");
+			var patt_addr = /^[^\u0020\u3000][\u4e00-\u9fa5\u0020a-zA-Z0-9]{1,50}$/
 			if($(this).val().length == 0) {
 				warn_addr.text("請勿空白");
+				$("#confirm").prop("disabled",true);
+			} else if (!patt_addr.test($(this).val())) {
+				warn_addr.text("格式錯誤");
 				$("#confirm").prop("disabled",true);
 			} else {
 				warn_addr.empty();
@@ -284,17 +288,17 @@ if(session.getAttribute("ShoppingCart") == null) {
 				reward_dis.empty()
 				          .append(0);
 				should_pay.empty()
-				          .append(subtotal);
+				          .append(subtotal.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 				newRwd.empty()
-					  .append(Math.round((subtotal/100)));
+					  .append(Math.round((subtotal/100)).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 				return;
 			}
 			reward_dis.empty()
-			          .append(myReward_pts);
+			          .append((myReward_pts).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 			should_pay.empty()
-			          .append(subtotal - myReward_pts);
+			          .append((subtotal - myReward_pts).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 			newRwd.empty()
-			      .append(Math.round((subtotal - myReward_pts)/100));
+			      .append(Math.round((subtotal - myReward_pts)/100).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"));
 		})
 		
 		//如果使用者輸入不合法的紅利點數，blur之後會回到0

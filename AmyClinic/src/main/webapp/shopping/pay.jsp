@@ -116,17 +116,28 @@ $(function() {
 	})
 	
 	var number = $('input[name="number"]');
+	number.bind('cut copy paste', function (e) {
+		e.preventDefault(); //取消動作
+		});
 	number.blur(function() {
-		if ($(this).val().length == 0 ) {
+		var patt_number = /^[^\u0020\u3000][0-9\u0020]*$/
+		if ($(this).val().length == 0 || !patt_number.test($(this).val())) {
 			pay.prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");
 		}
 	})
 	
+	
+	
+	
 	var expiry = $('input[name="expiry"]');
+	
+	expiry.bind('cut copy paste', function (e) {
+		e.preventDefault(); //取消動作
+		});
 	expiry.blur(function() {
-		if ($(this).val().length == 0 ) {
+		if ($(this).val().length == 0) {
 			pay.prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");
@@ -134,8 +145,12 @@ $(function() {
 	})
 	
 	var cvc = $('input[name="cvc"]');
+	cvc.bind('cut copy paste', function (e) {
+		e.preventDefault(); //取消動作
+		});
+	var patt_cvc = /^[0-9]{3}$/
 	cvc.blur(function() {
-		if ($(this).val().length == 0 ) {
+		if ($(this).val().length == 0 || !patt_cvc.test($(this).val())) {
 			pay.prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");
@@ -143,14 +158,16 @@ $(function() {
 	})
 	
 	pay.click(function() {
-		if(name.val().length==0 || number.val().length==0 || expiry.val().length==0 || cvc.val().length==0) {
+		if(name.val().length==0 || number.val().length==0 || expiry.val().length==0 || cvc.val().length==0 || !patt_name.test(name.val()) || !patt_cvc.test(cvc.val())) {
 			$(this).prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");
 		}
 	})	
 	
-})		
+		
+	
+})	
 </script>
 </body>
 </html>

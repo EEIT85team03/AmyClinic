@@ -87,10 +87,10 @@
 						<input type="text" id="send_qty${status.index}" value="${entry.value.quantity}" size="5" >
 					</td>
 					<td>
-						${entry.value.price_per}元
+						<fmt:formatNumber value="${entry.value.price_per}" type="number"/>元
 					</td>
 					<td id="subtotal">
-						${entry.value.price_per * entry.value.quantity}元
+						<fmt:formatNumber value="${entry.value.price_per * entry.value.quantity}" type="number"/>元
 					</td>
 					<td>
 						<input type="button" name="update" value="修改" onclick="upd(${entry.key},${entry.value.quantity},${status.index})">
@@ -111,7 +111,7 @@
 						合計金額：
 					</td>
 					<td colspan="2" height="50px" style="text-align: center;">
-						${ShoppingCart.subTotal}元
+						<fmt:formatNumber value="${ShoppingCart.subTotal}" type="number"/>元
 					</td>
 				</tr>
 				<tr>
@@ -119,7 +119,7 @@
 						本次消費可得紅利點數：
 					</td>
 					<td colspan="2" height="50px" style="text-align: center;">
-						<fmt:formatNumber value="${(ShoppingCart.subTotal/100)+0.0001}" pattern="###"/>點
+						<fmt:formatNumber value="${(ShoppingCart.subTotal/100)+0.0001}" pattern="#,###"/>點
 					</td>
 				</tr>
 				</c:if>

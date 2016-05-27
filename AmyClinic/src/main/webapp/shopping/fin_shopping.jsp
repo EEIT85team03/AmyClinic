@@ -77,10 +77,10 @@
 					${orderItems.quantity}
 				</td>
 				<td>
-					${orderItems.price_per}元
+					<fmt:formatNumber value="${orderItems.price_per}" type="number"/>元
 				</td>
 				<td>
-					${orderItems.quantity * orderItems.price_per}元
+					<fmt:formatNumber value="${orderItems.quantity * orderItems.price_per}" type="number"/>元
 				</td>
 			</c:forEach>	
 			</tr>
@@ -93,7 +93,7 @@
 					合計
 				</td>
 				<td>
-					${ordersVO.total+ordersVO.points_spent}元
+					<fmt:formatNumber value="${ordersVO.total+ordersVO.points_spent}" type="number"/>元
 				</td>
 			</tr>	
 			<tr>
@@ -105,7 +105,7 @@
 					使用的紅利點數
 				</td>
 				<td>
-					${ordersVO.points_spent}點
+					<fmt:formatNumber value="${ordersVO.points_spent}" type="number"/>點
 				</td>
 			</tr>	
 			<tr>
@@ -117,7 +117,7 @@
 					本次所得的紅利點數
 				</td>
 				<td>
-					<fmt:formatNumber value="${(ordersVO.total/100)+0.0001}" pattern="###"/>點
+					<fmt:formatNumber value="${(ordersVO.total/100)+0.0001}" pattern="#,###"/>點
 				</td>
 			</tr>	
 			<tr>
@@ -129,7 +129,7 @@
 					剩餘的紅利點數
 				</td>
 				<td>
-					${memberVO.reward_pts}點
+					<fmt:formatNumber value="${memberVO.reward_pts}" type="number"/>點
 				</td>
 			</tr>	
 			<tr>
@@ -141,7 +141,7 @@
 					總金額
 				</td>
 				<td>
-					${ordersVO.total}元
+					<fmt:formatNumber value="${ordersVO.total}" type="number"/>元
 				</td>
 			</tr>	
 		

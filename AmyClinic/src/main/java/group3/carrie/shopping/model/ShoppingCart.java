@@ -35,6 +35,7 @@ public class ShoppingCart {
 			//新的數量+原有的數量
 			ProductService prodServ = new ProductService();
 			ProductVO prodVO = prodServ.getOneProduct(pid);
+			//如果新的數量+原有的數量沒超過庫存量才過關
 			if (prodVO.getAmount() - (oi.getQuantity() + oib.getQuantity()) >= 0) {
 				oib.setQuantity(oi.getQuantity() + oib.getQuantity());
 			} else {

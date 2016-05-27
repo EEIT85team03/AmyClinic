@@ -17,7 +17,7 @@
 </head>
 <body>
 	<b>訂單查詢：</b><br><br>
-	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30">
+	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30" value="${param.name}">
 	<input type="button" id="query" value="查詢">
 		<input type="button" id="query_all" value="查全部"><br><br>
 	<c:if test="${empty list}">
