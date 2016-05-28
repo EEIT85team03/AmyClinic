@@ -41,7 +41,7 @@ public class MembersVO implements Serializable {
 	private String    phone;							//電話
 	private Integer   height;							//身高
 	private Integer   mass;							//體重
-	private String	  photo;							//照片
+//	private String	  photo;							//照片
 	private Integer	  act_status;					//帳號狀態
 	private Integer   num_trans;					//消費次數
 	private Integer   num_treatment;			//療程次數
@@ -136,12 +136,12 @@ public class MembersVO implements Serializable {
 	public void setMass(Integer mass) {
 		this.mass = mass;
 	}
-	public String getPhoto() {
-		return photo;
-	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+//	public String getPhoto() {
+//		return photo;
+//	}
+//	public void setPhoto(String photo) {
+//		this.photo = photo;
+//	}
 	public Integer getAct_status() {
 		return act_status;
 	}

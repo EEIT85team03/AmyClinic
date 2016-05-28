@@ -109,7 +109,7 @@
 		<label class="control-label col-sm-2" for="membergender">性別: </label>
 		<div class="col-sm-5">
 <!-- 			<input name="memberVO.gender" id="membergender" class="form-control" type="text" placeholder="庫存量"	style="width:80px;"/> -->
-		<select name='gender' class="selectpicker" data-style="btn-warning">
+		<select name='gender' class="selectpicker"  id="membergender" data-style="btn-warning">
   			<option value="M">男人</option>
   			<option value="F">女人</option>
   			<option value="A">其他</option>
