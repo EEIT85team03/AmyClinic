@@ -60,7 +60,8 @@
 		<mapping class="group3.carrie.proc.model.ProcVO"/>
 		<mapping class="group3.carrie.schedule.model.ScheduleVO"/>
 		<mapping class="group3.beef.employee.model.EmployeeVO"/>
-
+		
+<!-- 		<mapping class="group3.k.members.model.MemberVO"/> -->
 
 
 	</session-factory>

@@ -3,8 +3,8 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
-<%@page import="group3.henry.login.model.*"%>
-
+<%-- <%@page import="group3.henry.login.model.*"%> --%>
+<%@page import="group3.k.members.model.*"%>
 <!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,12 +37,9 @@ MemberServices memberSer = new MemberServices();
 List<MemberVO> list = memberSer.getAll();
 pageContext.setAttribute("list",list);
 %>
-
- 
-     
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
-		<th>照片</th>	
+<!-- 		<th>照片</th>	 -->
 		<th>姓名/性別</th>
 		<th>信箱</th>
 		<th>生日</th>
@@ -59,7 +56,7 @@ pageContext.setAttribute("list",list);
 	</tr>
 	<c:forEach var="MemberVO"  items="${list}"  >
 		<tr>
-			<td><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td>
+<%-- 			<td><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td> --%>
 			<td>${MemberVO.name}		/	${MemberVO.gender}</td>
 			<td>${MemberVO.email}</td>
 			<td>${MemberVO.birthday}</td>
@@ -73,7 +70,7 @@ pageContext.setAttribute("list",list);
 			<td>${MemberVO.join_date}</td>
 			<td>${MemberVO.act_status}
 			<script>
-		
+			
 			</script>
 			</td>
 			<td>
@@ -82,7 +79,6 @@ pageContext.setAttribute("list",list);
 			     <input type="hidden" name="mid" value="${MemberVO.mid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
-
 		</tr>
 	</c:forEach>
 	</table>  

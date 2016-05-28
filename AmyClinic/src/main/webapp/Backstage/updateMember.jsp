@@ -134,16 +134,16 @@
 <!-- 	</div> -->
 
 <%-- <h3>${memberVO.name}</h3> <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150"> --%>
-<div class="form-group">
-<label class="control-label col-sm-2" for="memberVO.photo">照片</label>
-<div class="col-sm-10">
-    <input type='file' class="upl"  name="memberVO.photo">
-</div>
-    <div>
-        <img class="preview" style="max-width: 150px; max-height: 150px;">
-        <div class="size"></div>
-    </div>
-    </div>
+<!-- <div class="form-group"> -->
+<!-- <label class="control-label col-sm-2" for="memberVO.photo">照片</label> -->
+<!-- <div class="col-sm-10"> -->
+<!--     <input type='file' class="upl"  name="memberVO.photo"> -->
+<!-- </div> -->
+<!--     <div> -->
+<!--         <img class="preview" style="max-width: 150px; max-height: 150px;"> -->
+<!--         <div class="size"></div> -->
+<!--     </div> -->
+<!--     </div> -->
 
 	<label class="control-label col-sm-2"></label>
  	<input type="hidden" name="memberVO.verify" value="${memberVO.verify}"> 
@@ -154,7 +154,7 @@
 	<hr>
 </form>
 <script type="text/javascript">
-$(function (){ 
+/*$(function (){ 
     function format_float(num, pos)
     {
         var size = Math.pow(10, pos);
@@ -182,6 +182,7 @@ $("body").on("change", ".upl", function (){
  * 預覽圖
  * @param   input 輸入 input[type=file] 的 this
  */
+ /*
 function preview(input) {
  
     // 若有選取檔案
@@ -214,12 +215,14 @@ function preview(input) {
  * @param   num 要轉換的數字
  * @param   pos 指定小數第幾位做四捨五入
  */
-function format_float(num, pos)
+ 
+/*function format_float(num, pos)
 {
     var size = Math.pow(10, pos);
     return Math.round(num * size) / size;
 }
-</script>
+*/
+ </script> 
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png" });

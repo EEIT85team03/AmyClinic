@@ -47,7 +47,7 @@ pageContext.setAttribute("proctype", proctype);
   	  <div class="form-group">
       <label class="control-label col-sm-2" for="procedure_id">療程編號</label>
       <div class="col-sm-10">          
-        <input type="text"  class="form-control" id="procedure_id"  size="45" name="procedure_id"  readonly value="<%=procVO.getProcedure_id()%>"     >
+        <input type="text"  class="form-control" id="procedure_id"  size="45" name="procedure_id"  readonly value="<%=procVO.getProcedure_id()%>"   style="width:80px;"  >
       </div>
       </div>
   	  
@@ -77,7 +77,7 @@ pageContext.setAttribute("proctype", proctype);
     <div class="form-group">
       <label class="control-label col-sm-2" for="fee">療程價格</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="fee" placeholder="整數數字" size="45" name="fee"  value="<%=procVO.getFee()%>" />
+        <input type="number" class="form-control" id="fee" placeholder="整數數字" size="45" name="fee"  value="<%=procVO.getFee()%>"  style="width:120px;"/>
       </div>
     </div>
    
@@ -88,7 +88,7 @@ pageContext.setAttribute("proctype", proctype);
       </div>
     </div>
 
-</script>
+
 
 <%-- 錯誤表列 --%>
    <c:if test="${not empty errorMsg}">

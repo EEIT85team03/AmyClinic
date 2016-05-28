@@ -57,38 +57,38 @@ pageContext.setAttribute("catagorys", catagorys);
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">商品名稱</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name"  placeholder="中英文學名" size="45" name="name">
+        <input type="text" class="form-control" id="name"  placeholder="中英文學名" size="45" name="name"	>
       </div>
     </div>
     
     <div class="form-group">
       <label class="control-label col-sm-2" for="price">商品價格</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="price" placeholder="整數數字" size="45" name="price">
+        <input type="number" class="form-control" id="price" placeholder="整數數字" size="45" name="price"		style="width:120px;">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="discount">商品折扣</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="discount" placeholder="0～99％" size="45" name="discount">
+        <input type="text" class="form-control" id="discount" placeholder="0～99％" size="45" name="discount"		style="width:120px;">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="descrip">商品描述</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="descrip" placeholder="用途介紹" size="45" name="descrip">
+        <input type="text" class="form-control" id="descrip" placeholder="用途介紹" size="45" name="descrip"		>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="ingredients">商品成分</label>
+      <label class="control-label col-sm-2" for="ingredients">商品規格</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="ingredients" placeholder="依食品衛生法標示" size="45" name="ingredients">
+        <input type="text" class="form-control" id="ingredients" placeholder="依食品衛生法標示" size="45" name="ingredients"		>
       </div>
     </div>
    <div class="form-group">
       <label class="control-label col-sm-2" for="amount">庫存量</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="amount" placeholder="庫存量" size="45" name="amount">
+        <input type="number" class="form-control" id="amount" placeholder="庫存量" size="45" name="amount"		style="width:120px;">
       </div>
     </div>
 
