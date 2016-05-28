@@ -28,7 +28,7 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Entity 
 @Table(name = "Members")  
-public class MemberVO implements Serializable {	
+public class MembersVO implements Serializable {	
 	private Integer   mid;								//編號
 	private String 	  name;							//名稱
 	private String 	  pwd;								//密碼
@@ -58,7 +58,7 @@ public class MemberVO implements Serializable {
 	private Set<OrdersVO> orders = new HashSet<OrdersVO>();
 	//會員和平分 一對多
 	private Set<ScoreVO> scores = new HashSet<ScoreVO>();
-	public MemberVO() {		super();		}	
+	public MembersVO() {		super();		}	
 
 	@Id  
 	@SequenceGenerator(name="midGen", allocationSize=1) 
@@ -280,7 +280,7 @@ public class MemberVO implements Serializable {
 		  System.out.println(sb.toString());
 		}
 	public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException{
-		MemberVO vo = new MemberVO();
+		MembersVO vo = new MembersVO();
 		vo.getProperties();
 	}
 }

@@ -23,17 +23,17 @@ import hibernate.util.HibernateUtil;
 
 import java.util.*;
 
-public class MemberDAO implements MemberDAO_interface {
+public class MembersDAO implements MembersDAO_interface {
 
 	private static final String GET_ALL_STMT = "from MemberVO order by mid";
 
 	@Override
-	public void insert(MemberVO memberVO) {
+	public void insert(MembersVO memberVO) {
 		update(memberVO);
 	}
 
 	@Override
-	public void update(MemberVO memberVO) {
+	public void update(MembersVO memberVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
@@ -50,7 +50,7 @@ public class MemberDAO implements MemberDAO_interface {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			MemberVO memberVO = (MemberVO) session.get(MemberVO.class, mid);
+			MembersVO memberVO = (MembersVO) session.get(MembersVO.class, mid);
 			session.delete(memberVO);
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
@@ -60,12 +60,12 @@ public class MemberDAO implements MemberDAO_interface {
 	}
 
 	@Override
-	public MemberVO findByPrimaryKey(Integer mid) {
-		MemberVO memberVO = null;
+	public MembersVO findByPrimaryKey(Integer mid) {
+		MembersVO memberVO = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			memberVO = (MemberVO) session.get(MemberVO.class, mid);
+			memberVO = (MembersVO) session.get(MembersVO.class, mid);
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
 			session.getTransaction().rollback();
@@ -75,8 +75,8 @@ public class MemberDAO implements MemberDAO_interface {
 	}
 
 	@Override
-	public List<MemberVO> getAll() {
-		List<MemberVO> list = null;
+	public List<MembersVO> getAll() {
+		List<MembersVO> list = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
@@ -98,7 +98,7 @@ public class MemberDAO implements MemberDAO_interface {
 
 	public static void main(String[] args) {
 
-		MemberDAO dao = new MemberDAO();
+		MembersDAO dao = new MembersDAO();
 
 		//�� �s�W-1(�@��dept2.hbm.xml������cascade="save-update" ��cascade="all"���]�w)(���M�j�j,���L��ȤW�ä��`��)(��,�i�Φb�q��D�ɻP�����ɤ@���s�W���\)
 //		DeptVO deptVO = new DeptVO(); // ����POJO
@@ -216,11 +216,8 @@ public class MemberDAO implements MemberDAO_interface {
 //			System.out.println();
 //		}
 
-
-
-		//�� �d��-getAll-2 (�u�q!!!) (�@��dept2.hbm.xml�����]��lazy="false")
-		List<MemberVO> list2 = dao.getAll();
-		for (MemberVO aMember : list2) {
+		List<MembersVO> list2 = dao.getAll();
+		for (MembersVO aMember : list2) {
 			System.out.print(aMember.getMid() + ",");
 			System.out.print(aMember.getName() + ",");
 			System.out.print(aMember.getEmail() + ",");
@@ -228,23 +225,8 @@ public class MemberDAO implements MemberDAO_interface {
 			System.out.print(aMember.getPhone() + ",");
 			System.out.print(aMember.getAddr() + ",");
 			System.out.print(aMember.getJoin_date() + ",");
-
-			
 			System.out.println("\n-----------------");
 			Set<AppVO> set2 = aMember.getAppVO();
-//			System.out.println(set2);
-//			for (AppVO anApp : set2) {
-//				System.out.print(aEmp.getEmpno() + ",");
-//				System.out.print(aEmp.getEname() + ",");
-//				System.out.print(aEmp.getJob() + ",");
-//				System.out.print(aEmp.getHiredate() + ",");
-//				System.out.print(aEmp.getSal() + ",");
-//				System.out.print(aEmp.getComm() + ",");
-//				System.out.print(aEmp.getDeptVO().getDeptno() + ",");
-//				System.out.print(aEmp.getDeptVO().getDname() + ",");
-//				System.out.print(aEmp.getDeptVO().getLoc());
-//				System.out.println();
-//			}
 			System.out.println();
 		}
 

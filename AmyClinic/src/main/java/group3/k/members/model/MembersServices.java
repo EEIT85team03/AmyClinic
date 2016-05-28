@@ -8,28 +8,28 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
-public class MemberServices {
-	static private MemberDAO dao = new MemberDAO();
-	static private List<MemberVO> memberList = new ArrayList<MemberVO>();	
+public class MembersServices {
+	static private MembersDAO dao = new MembersDAO();
+	static private List<MembersVO> memberList = new ArrayList<MembersVO>();	
 
-	public MemberServices() {
+	public MembersServices() {
 		if (memberList.isEmpty()) //populates memberlist on init
 			memberList = this.getAll(); 	
 	}
 	
-	public MemberVO addMember(MemberVO memberVO) {	
+	public MembersVO addMember(MembersVO memberVO) {	
 		dao.insert(memberVO);
 		return memberVO;
 	}
-	public void update(MemberVO memberVO) {	
+	public void update(MembersVO memberVO) {	
 		dao.update(memberVO);
 		return;
 	}
 	
-	public MemberVO validate(String id, String pw) { // validates user name / password against current memberlist
+	public MembersVO validate(String id, String pw) { // validates user name / password against current memberlist
 		System.out.println("MemberServices validate(id, pw)");
 		memberList = this.getAll();
-		for (MemberVO mb : memberList) {
+		for (MembersVO mb : memberList) {
 			if (mb.getName().trim().equals(id.trim()) && mb.getPwd().trim().equals(pw.trim()) ) {
 				System.out.println(mb.getPwd().trim() + " " + pw.trim());
 				return mb;
@@ -38,12 +38,12 @@ public class MemberServices {
 		return null;
 	}
 	
-	public MemberVO emailExists(String email) { //determines if entered email exists in memberlist		
+	public MembersVO emailExists(String email) { //determines if entered email exists in memberlist		
 		List results = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			Criteria cr = session.createCriteria(MemberVO.class);
+			Criteria cr = session.createCriteria(MembersVO.class);
 			cr.add(Restrictions.eq("email", email));
 			results = cr.list(); 		
 			session.getTransaction().commit();
@@ -56,15 +56,15 @@ public class MemberServices {
 		if (results.isEmpty())
 			return null;		
 		else
-			return (MemberVO)results.get(0);			
+			return (MembersVO)results.get(0);			
 	}
 	
-	public List<MemberVO> getMemberList() { 
+	public List<MembersVO> getMemberList() { 
 		return memberList;
 	}
 		
-	public List<MemberVO> getAll() {
-		List<MemberVO> list = null;
+	public List<MembersVO> getAll() {
+		List<MembersVO> list = null;
 		list = dao.getAll();
 		return list;
 	}
@@ -77,10 +77,10 @@ public class MemberServices {
 	//testing
 	public static void main(String[] args){
 
-		MemberServices dao = new MemberServices();
+		MembersServices dao = new MembersServices();
 		
-		List<MemberVO> list = dao.getAll();
-		for (MemberVO aMem : list) {
+		List<MembersVO> list = dao.getAll();
+		for (MembersVO aMem : list) {
 			System.out.print(aMem.getName() + ",");
 			System.out.print(aMem.getPwd());
 

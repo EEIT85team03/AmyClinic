@@ -1,7 +1,7 @@
 package group3.k.members.controller;
 
-import group3.k.members.model.MemberServices;
-import group3.k.members.model.MemberVO;
+import group3.k.members.model.MembersServices;
+import group3.k.members.model.MembersVO;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -36,7 +36,7 @@ public class MemberServlet extends HttpServlet {
 					System.out.println("新增指令");
 					List<String> errorMsg = new LinkedList<String>();
 					req.setAttribute("errorMsg", errorMsg);
-					MemberVO memberVO = new MemberVO();
+					MembersVO memberVO = new MembersVO();
 					try {
 						
 //						名稱
@@ -106,7 +106,7 @@ public class MemberServlet extends HttpServlet {
 							return;
 						}
 						/*************************** 2.5開始新增資料 ***************************************/
-						MemberServices memberSvc = new MemberServices();
+						MembersServices memberSvc = new MembersServices();
 						memberVO = memberSvc.addMember(memberVO);
 						System.out.println("新增2");
 						/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/

@@ -32,11 +32,11 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
  <%
-MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
-MemberServices memberSer = new MemberServices();
-List<MemberVO> list = memberSer.getAll();
-pageContext.setAttribute("list",list);
-%>
+ 	MembersVO memberVO= (MembersVO) request.getAttribute("memberVO");
+  MembersServices memberSer = new MembersServices();
+  List<MembersVO> list = memberSer.getAll();
+  pageContext.setAttribute("list",list);
+ %>
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 <!-- 		<th>照片</th>	 -->
