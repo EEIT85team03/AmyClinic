@@ -3,8 +3,8 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
-<%-- <%@page import="group3.henry.login.model.*"%> --%>
-<%@page import="group3.k.members.model.*"%>
+<%@page import="group3.henry.login.model.*"%>
+<%-- <%@page import="group3.k.mytest.*"%> --%>
 <!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,9 +32,9 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
  <%
- 	MembersVO memberVO= (MembersVO) request.getAttribute("memberVO");
-  MembersServices memberSer = new MembersServices();
-  List<MembersVO> list = memberSer.getAll();
+ 	MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
+  MemberServices memberSer = new MemberServices();
+  List<MemberVO> list = memberSer.getAll();
   pageContext.setAttribute("list",list);
  %>
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
