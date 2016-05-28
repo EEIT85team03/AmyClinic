@@ -65,10 +65,10 @@ a {
 </style>
 </head>
 <body>
-	<div style="display:none" id="dialog" title="查詢結果">
-		<p><b>查無資料！</b></p>
+<!-- 	<div style="display:none" id="dialog" title="查詢結果"> -->
+<!-- 		<p><b>查無資料！</b></p> -->
 
-	</div>
+<!-- 	</div> -->
 	<div id="allpage">
 		<div id="content">
 			<aside> 
@@ -239,10 +239,7 @@ a {
 // 				$('#search').val("");
 				$.getJSON('ProductSearchServlet',{"prodname" : prodname , "action" : byName},function(datas) {
 					if(datas.length==0) {
-// 						$('#prod > tbody').append('<tr><td>查無資料！</td></tr>');
-						$( "#dialog" ).dialog();
-					} else {
-						$( "#dialog" ).dialog('close');
+						$('#prod > tbody').append('<tr><td>查無資料！</td></tr>');
 					}
 					var tr = $('<tr></tr>');
 					$.each(datas, function(i, data) {
