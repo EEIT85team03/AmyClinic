@@ -90,10 +90,8 @@ public class EmpLoginServlet extends HttpServlet {
 			RequestDispatcher failureView = req
 					.getRequestDispatcher("/Backstage/login.jsp");
 			failureView.forward(req, res);
-			 
-			
+			return;
 		}
-		res.sendRedirect(req.getContextPath()+"/Backstage/login_success.jsp");
 	}
 		//=====================發送驗證信======================
 		if ("forgetpw".equals(action)) {

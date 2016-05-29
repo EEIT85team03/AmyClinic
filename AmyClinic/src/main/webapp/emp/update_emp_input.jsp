@@ -87,10 +87,9 @@
 		</table>
 		<input type="hidden" name="action" value="update"><br>
 		<input type="submit" value="送出修改">
-		<%String ref = request.getHeader("REFERER");%>  
+		 
   	<input type="button" name="returngo" value="上一頁"   
-    onclick="javascript:window.location='<%=ref%>'" > 
-    <h6>上一頁是<%=ref%></h6>
+    onclick="location.href='<%=request.getContextPath()%>/emp/GetAllEMP.jsp'" > 
 	</FORM>
 
 

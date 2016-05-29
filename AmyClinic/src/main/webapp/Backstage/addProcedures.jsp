@@ -60,14 +60,14 @@ pageContext.setAttribute("proctype", proctype);
     <div class="form-group">
       <label class="control-label col-sm-2" for="name">療程名稱</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name"  placeholder="療程中英文學名" size="45" name="name">
+        <input type="text" class="form-control" id="name"  placeholder="療程中英文學名" size="45" name="name"  >
       </div>
     </div>
     
     <div class="form-group">
       <label class="control-label col-sm-2" for="fee">療程價格</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="fee" placeholder="新台幣值" size="45" name="fee">
+        <input type="number" class="form-control" id="fee" placeholder="新台幣值" size="45" name="fee"		style="width:120px;">
       </div>
     </div>
     

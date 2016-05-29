@@ -240,9 +240,10 @@ a {
 				$.getJSON('ProductSearchServlet',{"prodname" : prodname , "action" : byName},function(datas) {
 					if(datas.length==0) {
 // 						$('#prod > tbody').append('<tr><td>查無資料！</td></tr>');
-						$( "#dialog" ).dialog();
-					} else {
-						$( "#dialog" ).dialog('close');
+// 						$( "#dialog" ).dialog();
+						alert('查無資料');
+						location.reload();
+						
 					}
 					var tr = $('<tr></tr>');
 					$.each(datas, function(i, data) {

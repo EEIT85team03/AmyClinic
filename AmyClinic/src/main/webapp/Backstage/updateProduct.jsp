@@ -47,7 +47,7 @@ pageContext.setAttribute("catagorys", catagorys);
   	  <div class="form-group">
       <label class="control-label col-sm-2" for="pid">商品編號</label>
       <div class="col-sm-10">          
-        <input type="text"  class="form-control" id="pid"  size="45" name="pid"  readonly value="<%=productVO.getPid()%>"     >
+        <input type="text"  class="form-control" id="pid"  size="45" name="pid"  readonly value="<%=productVO.getPid()%>"   style="width:80px;"  >
       </div>
     </div>
   	  
@@ -74,15 +74,15 @@ pageContext.setAttribute("catagorys", catagorys);
     </div>
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="price">商品價格</label>
+      <label class="control-label col-sm-2" for="price">商品價格(元)</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%>" />
+        <input type="number" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%> 元"   style="width:120px;"/>
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="discount">商品折扣</label>
+      <label class="control-label col-sm-2" for="discount">商品折扣(%)</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="discount" placeholder="0～99％" size="45" name="discount" value="<%=productVO.getDiscount()%>" />
+        <input type="text" class="form-control" id="discount" placeholder="0～99％" size="45" name="discount" value="<%=productVO.getDiscount()%> " style="width:80px;"/>
       </div>
     </div>
     <div class="form-group">
@@ -92,7 +92,7 @@ pageContext.setAttribute("catagorys", catagorys);
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="ingredients">商品成分</label>
+      <label class="control-label col-sm-2" for="ingredients">商品規格</label>
       <div class="col-sm-10">          
         <input type="text" class="form-control" id="ingredients" placeholder="依食品衛生法標示" size="45" name="ingredients" value="<%=productVO.getIngredients()%>" />
       </div>
@@ -100,7 +100,7 @@ pageContext.setAttribute("catagorys", catagorys);
    <div class="form-group">
       <label class="control-label col-sm-2" for="amount">庫存量</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="amount" placeholder="庫存量" size="45" name="amount" value="<%=productVO.getAmount()%>" />
+        <input type="number" class="form-control" id="amount" placeholder="庫存量" size="45" name="amount" value="<%=productVO.getAmount()%>" style="width:80px;"/>
       </div>
     </div>
 
