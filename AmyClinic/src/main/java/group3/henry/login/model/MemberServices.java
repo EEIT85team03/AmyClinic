@@ -1,9 +1,8 @@
 package group3.henry.login.model;
 
 import hibernate.util.HibernateUtil;
-
+import java.sql.Date;
 import java.util.*;
-
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -25,6 +24,30 @@ public class MemberServices {
 		dao.update(memberVO);
 		return;
 	}
+//k b_memberupdate test	
+//	public void update(Integer mid,String name, String pwd,String email,
+//			Date birthday,String country,char gender, String addr,String phone,
+//			Integer height,Integer mass,Integer act_status,Integer num_visits,
+//			Integer reward_pts,Integer spent_pts) {
+//		MemberVO memberVO=new MemberVO();
+//		memberVO.setMid(mid);
+//		memberVO.setName(name);
+//		memberVO.setPwd(pwd);
+//		memberVO.setEmail(email);
+//		memberVO.setBirthday(birthday);
+//		memberVO.setCountry(country);
+//		memberVO.setGender(gender);
+//		memberVO.setAddr(addr);
+//		memberVO.setPhone(phone);
+//		memberVO.setHeight(height);
+//		memberVO.setMass(mass);
+//		memberVO.setAct_status(act_status);
+//		memberVO.setNum_visits(num_visits);
+//		memberVO.setReward_pts(reward_pts);
+//		memberVO.setSpent_pts(spent_pts);
+//		dao.update(memberVO);
+//		return	;
+//	}//k b_memberupdate	
 	
 	public MemberVO validate(String id, String pw) { // validates user name / password against current memberlist
 		System.out.println("MemberServices validate(id, pw)");
@@ -73,7 +96,12 @@ public class MemberServices {
 //		memberList.add(memberVO);
 //	}
 	
+		//k查單一
+		public MemberVO getOneMember(Integer mid) {
+			return dao.findByPrimaryKey(mid);
+		}//k查單一
 	
+		
 	//testing
 	public static void main(String[] args){
 

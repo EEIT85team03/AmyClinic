@@ -83,7 +83,7 @@ pageContext.setAttribute("proctype", proctype);
    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-      						<input type="hidden" name="action" value="update">
+      	<input type="hidden" name="action" value="update">
         <button type="submit" class="btn btn-success">修改療程</button>
       </div>
     </div>

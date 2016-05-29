@@ -74,10 +74,11 @@
 			</script>
 			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="MemberServlet">
+			  <FORM METHOD="post" ACTION="MemberServletTest">
+			   <input type="hidden" name="mid" value="${MemberVO.mid}">
+			     <input type="hidden" name="action"	value="getOne_For_Update">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="mid" value="${MemberVO.mid}">
-			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
+			    </FORM>
 			</td>
 		</tr>
 	</c:forEach>

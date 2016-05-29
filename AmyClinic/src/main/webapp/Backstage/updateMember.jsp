@@ -47,192 +47,185 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
-<form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberid">Member ID: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.mid" id="memberid" class="form-control disable" type="text" value="${memberVO.mid}" readonly/>			 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
+<form role="form" class="form-horizontal" method="post" action="MemberServletTest">
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberid">編號: </label>
+		<div class="col-sm-4">
+			<input name="mid" id="memberid" class="form-control disable" type="text" value="${memberVO.mid}" readonly style="width:80px;"/>			
+		</div>
+	</div>
+	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membername">姓名: </label>
+		<div class="col-sm-4">
+			<input name="name" id="membername" class="form-control" type="text" value="${memberVO.name}" style="width:120px;"/>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberlast_memo">備註: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.name" id="membername" class="form-control" type="text" value="${memberVO.name}"/>
+			<input name="memo" id="memberlast_memo" class="form-control disable" type="text" value="${memberVO.memo}"  />			
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberpwd">密碼: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly/>
-		</div>
-		
+		<div class="col-sm-4">
+			<input name="pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly		style="width:120px;"/>
+		</div>		
 <%-- 		<div class="col-sm-1"><a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		</div> --%>
-	
 	</div>
+
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberemail">信箱: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.email" id="memberemail" class="form-control" type="text" value="${memberVO.email}"/>
+		<div class="col-sm-6">
+			<input name="email" id="memberemail" class="form-control" type="text" value="${memberVO.email}" style="width:180px;"/>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberbirthday">生日: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width:80px;"/>
+		<div class="col-sm-6">
+			<input name="birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width:80px;"/>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membercountry">國家: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.country" id="membercountry" class="form-control" type="text" value="${memberVO.country}"/>
+		<div class="col-sm-6">
+<%-- 			<input name="country" id="membercountry" class="form-control" type="text" value="${memberVO.country}" style="width:80px;"/> --%>
+		<select name='country' class="selectpicker" data-style="btn-success"  	style="width:80px;">
+  			<option value="${memberVO.country}"  >${memberVO.country} </option>
+  			<option value="台灣">台灣</option>
+  			<option value="美國">美國</option>
+  			<option value="日本">日本</option>
+  			<option value="其他">其他</option>
+		</select>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membergender">性別: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.gender" id="membergender" class="form-control" type="text" value="${memberVO.gender}"/>
+		<div class="col-sm-6">
+<%-- 			<input name="gender" id="membergender" class="form-control" type="text" value="${memberVO.gender}" style="width:80px;"/> --%>
+		<select name='gender' class="selectpicker"  id="membergender" data-style="btn-warning"  style="width:80px;">
+  			<option value="${memberVO.gender}"  >${memberVO.gender} </option>
+  			<option value="M">男人</option>
+  			<option value="F">女人</option>
+  			<option value="A">其他</option>
+		</select>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberaddr">地址: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.addr" id="memberaddr" class="form-control" type="text" value="${memberVO.addr}"/>
+		<div class="col-sm-6">
+			<input name="addr" id="memberaddr" class="form-control" type="text" value="${memberVO.addr}" />
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberphone">電話: </label>
-		<div class="col-sm-5">
-			<input name="memberVO.phone" id="memberphone" class="form-control" type="text" value="${memberVO.phone}"/>
+		<div class="col-sm-6">
+			<input name="phone" id="memberphone" class="form-control" type="text" value="${memberVO.phone}" style="width:180px;"/>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberheight">身高: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.height" id="memberheight" class="form-control" type="text" value="${memberVO.height}"/>
+			<input name="height" id="memberheight" class="form-control" type="text" value="${memberVO.height}" style="width:80px;"/>
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membermass">體重: </label>
 		<div class="col-sm-5">
-			<input name="memberVO.mass" id="membermass" class="form-control" type="text" value="${memberVO.mass}"/>
+			<input name="mass" id="membermass" class="form-control" type="text" value="${memberVO.mass}" style="width:80px;"/>
 		</div>
 	</div>
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberphoto">照片: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.photo" id="memberphoto" class="form-control" type="text" value="${memberVO.photo}"/> --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberact_status">狀態: </label>
+		<div class="col-sm-5">			
+<%-- 			<input name="act_status" id="memberact_status" class="form-control disable" type="text" value="${memberVO.act_status}"  style="width:80px;"/>				 --%>
+		<select name='act_status' class="selectpicker"  id="memberAct_status" data-style="btn-warning"  style="width:80px;">
+  			<option value="${memberVO.act_status}" >${memberVO.act_status}</option>
+  			<option value="0">封鎖0</option>
+  			<option value="1">正常1</option>
+  			<option value="2">未開通2</option>
+		</select>
+		</div>
+	</div>
 
-<%-- <h3>${memberVO.name}</h3> <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150"> --%>
-<!-- <div class="form-group"> -->
-<!-- <label class="control-label col-sm-2" for="memberVO.photo">照片</label> -->
-<!-- <div class="col-sm-10"> -->
-<!--     <input type='file' class="upl"  name="memberVO.photo"> -->
-<!-- </div> -->
-<!--     <div> -->
-<!--         <img class="preview" style="max-width: 150px; max-height: 150px;"> -->
-<!--         <div class="size"></div> -->
-<!--     </div> -->
-<!--     </div> -->
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_trans">交易: </label>
+		<div class="col-sm-5">			
+			<input name="num_trans" id="membernum_trans" class="form-control disable" type="text" value="${memberVO.num_trans}" readonly style="width:80px;" />				
+		</div>
+	</div>
 
-	<label class="control-label col-sm-2"></label>
- 	<input type="hidden" name="memberVO.verify" value="${memberVO.verify}"> 
- 	<input type="hidden" name="memberVO.photo" value="${memberVO.photo}"> 
- 	<input type="hidden" name="memberVO.total_spent" value="${memberVO.total_spent}"> 
- 	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> 
-	<button type="submit" class="btn btn-success" >新增會員</button>							
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_treatment">診療: </label>
+		<div class="col-sm-5">
+			<input name="num_treatment" id="membernum_treatment" class="form-control disable" type="text" value="${memberVO.num_treatment}" readonly style="width:80px;" />				
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_visits">訪問次數: </label>
+		<div class="col-sm-5">
+			<input name="num_visits" id="membernum_visits" class="form-control disable" type="text" value="${memberVO.num_visits}" readonly style="width:80px;"/>						
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="membernum_total_spent">總花費: </label>
+		<div class="col-sm-5">
+			<input name="total_spent" id="membernum_total_spent" class="form-control disable" type="text" value="${memberVO.total_spent}" readonly style="width:80px;"/>						
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberreward_pts">獎勵點數: </label>
+		<div class="col-sm-5">
+			<input name="reward_pts" id="memberreward_pts" class="form-control disable" type="text" value="${memberVO.reward_pts}" readonly style="width:80px;"/>			
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="control-label col-sm-2" for="memberspent_pts">消費點數: </label>
+		<div class="col-sm-5">
+			<input name="spent_pts" id="memberspent_pts" class="form-control disable" type="text" value="${memberVO.spent_pts}" readonly style="width:80px;"/>			
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="memberlast_visit">最後消費日期: </label>
+		<div class="col-sm-5">
+			<input name="last_visit" id="memberlast_visit" class="form-control disable" type="text" value="${memberVO.last_visit}" readonly style="width:100px;"/>			
+		</div>
+	</div>
+	<div class="form-group">
+<!-- 		<label class="control-label col-sm-2" for="memberjoin_date">加入日期: </label> -->
+		<div class="col-sm-5">
+			<input name="join_date" id="memberjoin_date" class="form-control disable" type="hidden" value="${memberVO.join_date}" readonly style="width:100px;"/>			
+		</div>
+	</div>
+	
+	<input name="verify" type="hidden" value="${memberVO.verify}" />		
+	<input name="photo" type="hidden" value="${memberVO.photo}" />	
+	
+	<div class="form-group"> 
+	<div class="col-sm-offset-2 col-sm-10">
+	<input type="hidden" name="action"	value="Update">
+	<button type="submit" class="btn btn-success" >修改會員資料</button>		
+	</div>			
+	</div>		
 	<hr>
 </form>
-<script type="text/javascript">
-/*$(function (){ 
-    function format_float(num, pos)
-    {
-        var size = Math.pow(10, pos);
-        return Math.round(num * size) / size;
-    }
-    function preview(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();           
-            reader.onload = function (e) {
-                $('.preview').attr('src', e.target.result);
-                var KB = format_float(e.total / 1024, 2);
-                $('.size').text("檔案大小：" + KB + " KB");
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("body").on("change", ".upl", function (){
-        preview(this);
-    }) 
-})
-$("body").on("change", ".upl", function (){
-    preview(this);
-})
-/**
- * 預覽圖
- * @param   input 輸入 input[type=file] 的 this
- */
- /*
-function preview(input) {
- 
-    // 若有選取檔案
-    if (input.files && input.files[0]) {
- 
-        // 建立一個物件，使用 Web APIs 的檔案讀取器(FileReader 物件) 來讀取使用者選取電腦中的檔案
-        var reader = new FileReader();
- 
-        // 事先定義好，當讀取成功後會觸發的事情
-        reader.onload = function (e) {
-            
-            console.log(e);
- 
-            // 這裡看到的 e.target.result 物件，是使用者的檔案被 FileReader 轉換成 base64 的字串格式，
-            // 在這裡我們選取圖檔，所以轉換出來的，會是如 『data:image/jpeg;base64,.....』這樣的字串樣式。
-            // 我們用它當作圖片路徑就對了。
-            $('.preview').attr('src', e.target.result);
- 
-            // 檔案大小，把 Bytes 轉換為 KB
-            var KB = format_float(e.total / 1024, 2);
-            $('.size').text("檔案大小：" + KB + " KB");
-        }
- 
-        // 因為上面定義好讀取成功的事情，所以這裡可以放心讀取檔案
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-/**
- * 格式化
- * @param   num 要轉換的數字
- * @param   pos 指定小數第幾位做四捨五入
- */
- 
-/*function format_float(num, pos)
-{
-    var size = Math.pow(10, pos);
-    return Math.round(num * size) / size;
-}
-*/
- </script> 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#memberbirthday").datepicker({ showOn: 'button', buttonImageOnly: true, buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png" });
-	});
-</script>
-
-<script>
-	var gender = $(".membergender").val()=="M" ?"Male":"Female";
-	$(".membergender").text(gender);
-</script>
 <c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:
 	<ul>
@@ -242,59 +235,7 @@ function preview(input) {
 	</ul>
 	</font>
 </c:if>
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberact_status">狀態: </label> -->
-<!-- 		<div class="col-sm-5">			 -->
-<%-- 			<input name="memberVO.act_status" id="memberact_status" class="form-control disable" type="text" value="${memberVO.act_status}" readonly />				 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
 
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_trans">交易: </label> -->
-<!-- 		<div class="col-sm-5">			 -->
-<%-- 			<input name="memberVO.num_trans" id="membernum_trans" class="form-control disable" type="text" value="${memberVO.num_trans}" readonly />				 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_treatment">診療: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.num_treatment" id="membernum_treatment" class="form-control disable" type="text" value="${memberVO.num_treatment}" readonly />				 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-	
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_visits">訪問次數: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.num_visits" id="membernum_visits" class="form-control disable" type="text" value="${memberVO.num_visits}" readonly />						 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberreward_pts">獎勵點數: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.reward_pts" id="memberreward_pts" class="form-control disable" type="text" value="${memberVO.reward_pts}" readonly />			 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- 		<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberspent_pts">消費點數: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.spent_pts" id="memberspent_pts" class="form-control disable" type="text" value="${memberVO.spent_pts}" readonly />			 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberlast_visit">最後消費日期: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.last_visit" id="memberlast_visit" class="form-control disable" type="text" value="${memberVO.last_visit}" readonly />			 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberjoin_date">加入日期: </label> -->
-<!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.join_date" id="memberjoin_date" class="form-control disable" type="text" value="${memberVO.join_date}" readonly />			 --%>
-<!-- 		</div> -->
-<!-- 	</div> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <!-- required for .datepicker() -->

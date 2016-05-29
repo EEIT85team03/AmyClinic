@@ -37,13 +37,15 @@ public class MemberDAO implements MemberDAO_interface {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			session.saveOrUpdate(memberVO);
+			session.update(memberVO);
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
 			session.getTransaction().rollback();
 			throw ex;
 		}
 	}
+	
+	
 
 	@Override
 	public void delete(Integer mid) {
