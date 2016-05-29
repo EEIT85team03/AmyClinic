@@ -27,17 +27,28 @@
 						<td>${empVO.education}</td>
 					</tr>	
 					<tr>
-						<td>經驗</td>
-						<td>${empVO.experience}</td>
+						<td>經歷</td>
+						<td id="exp"></td>
 					</tr>	
 					<tr>
 						<td>專長</td>
 						<td>${empVO.specialty}</td>
 					</tr>	
 				</table>
-			
+			<input type="hidden" id="expstr" value="${empVO.experience}" />
 		</td>
 	</tr>
 </table>
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+<script>
+$(function() {
+	var expstr = $('#expstr').val();
+	var expArray = expstr.split(')');
+	for(var i = 0; i < expArray.length - 1; i++) {
+		$('#exp').append(expArray[i] + ')<br>');
+	}
+})
+
+</script>	
 </body>
 </html>
