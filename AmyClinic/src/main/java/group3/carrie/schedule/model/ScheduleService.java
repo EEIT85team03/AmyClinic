@@ -66,6 +66,11 @@ public class ScheduleService {
 		return dao.findByDateAndHour(date, c_hours);
 	}
 	
+	//依日期查單一
+		public List<ScheduleVO> findByDate(Date date) {
+			return dao.findByDate(date);
+		}
+	
 	//查全部
 	public List<ScheduleVO> getAll() { 
 		return dao.getAll();

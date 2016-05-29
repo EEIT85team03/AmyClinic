@@ -19,6 +19,8 @@ public class ScheduleDAO implements ScheduleDAO_interface {
 			"select * from Schedule where DatePart(weekday , c_date) = ? and c_hours = ? and c_date between GETDATE() and GETDATE()+30";
 	private static final String GET_ByDateAndHour_STMT =
 		      "FROM ScheduleVO where c_date = ? and c_hours = ?";
+	private static final String GET_ByDater_STMT =
+		      "FROM ScheduleVO where c_date = ?";
 	private static final String DELETE =
 		      "DELETE FROM ScheduleVO where sch_id = ?";
 
@@ -96,6 +98,25 @@ public class ScheduleDAO implements ScheduleDAO_interface {
 			Query query = session.createQuery(GET_ByDateAndHour_STMT);
 			query.setParameter(0, date);
 			query.setParameter(1, c_hours);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list	;
+	}
+	
+	@Override
+	public List<ScheduleVO> findByDate(Date date) {
+		List<ScheduleVO> list = null;
+		ScheduleVO scheduleVO = null;
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_ByDater_STMT);
+			query.setParameter(0, date);
 			list = query.list();
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {
