@@ -130,7 +130,7 @@ public class ScoreHibernateDAO implements Score_interface {
 //		dao.insert(scorevo);
 		
 //=============
-		
+//		
 //		List<ScoreVO> list=dao.getEmpScore(3);
 //		for( ScoreVO test: list){
 //			System.out.println(test.getEmp().getName());
@@ -140,11 +140,11 @@ public class ScoreHibernateDAO implements Score_interface {
 //			System.out.println(test.getScoreDate());
 //			System.out.println("=================");
 //		}
-		
-		
-		
-		
-	
-		
+//		
+//		
+//		
+//		
+//	
+//		
 //	}
 }

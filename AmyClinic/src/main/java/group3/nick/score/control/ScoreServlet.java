@@ -78,6 +78,7 @@ public class ScoreServlet extends HttpServlet {
 					m1.put("avgScore","0");
 				}
 				
+				//平均星數 給哪張圖片
 				if(avg<0.5){
 					m1.put("avgPicture","0star.jpg");
 				}else if(avg<1.5){
@@ -98,33 +99,6 @@ public class ScoreServlet extends HttpServlet {
 			}
 			String jsonString = JSONValue.toJSONString(l1);
 			out.println(jsonString);
-			
-//			List<ScoreVO> empscore ;
-//			List<Integer> eid = new ArrayList<Integer>();
-//			List<EmployeeVO> emp =dao.getAll();
-//			for(EmployeeVO empvo :emp ){
-//				//將全部的員工 塞入 List<Integer> eid 裡面
-//				eid.add(empvo.getEid());
-//			}
-//			List l1 = new LinkedList();
-//			for(int i=0;i<eid.size();i++){
-//				empscore=daoScore.getEmpScore(eid.get(i));
-//				for( ScoreVO test: empscore){
-//					Map m1 = new HashMap();
-//					m1.put("EmpName", test.getEmp().getName().toString());
-//					m1.put("Eid", test.getEmp().getEid().toString());
-//					m1.put("Comment", test.getComment().toString());
-//					m1.put("MbName", test.getMb().getName());
-//					m1.put("Mid", test.getMb().getMid().toString());
-//					m1.put("ScoreDate", test.getScoreDate().toString());
-//					m1.put("Scores", test.getScores().toString());
-//					l1.add(m1);
-//				}
-//
-//				
-//			}
-//			String jsonString = JSONValue.toJSONString();
-//			out.println(jsonString);
 
 			}
 		
@@ -162,7 +136,10 @@ public class ScoreServlet extends HttpServlet {
 		
 //轉移到撰寫評論
 		if ("add_score".equals(action)){
-			
+			String sEid=req.getParameter("eid");
+			int eid=Integer.parseInt(sEid);
+			EmployeeVO employeeVO=dao.getOneEmployee(eid);
+			req.setAttribute("eid", eid);
 			
 			
 			
