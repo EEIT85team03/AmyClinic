@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.*" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 </head>
 <body>
-<div style="background-color: gray">
-fagasdfdfasdf
-</div>
+
 	<div>${employeeVO.name}</div>
 	<div>${avgPicture}</div>
 	<div>${avgScore}</div>
@@ -19,17 +20,23 @@ fagasdfdfasdf
 ${memberVO.name}
 ${employeeVO}
 
-<!-- <form METHOD='post' ACTION='ScoreServlet' > -->
-<!-- 	<input type="submit" value="撰寫評論"> -->
-<!-- 	<input type="hidden" name="action" value="add_score"> -->
-<%-- 	<input type="hidden" name="eid" value="${employeeVO.eid}"> --%>
+
 
 
 <!-- </form> -->
+<% java.util.Date currentTime = new java.util.Date();
+   pageContext.setAttribute("currentTime", currentTime);
+  %>
+  
 
+  
+<%--   ${memberVO.appVO} --%>
+  
+  ${currentTime}
 
+<%-- <c:if test="${memberVO.appVO.apt_date > currentTime  }"> --%>
 <a class="iframe" href="addScore.jsp?eid=${employeeVO.eid }">撰寫評論</a>
-
+<%-- </c:if> --%>
 
 
 
@@ -74,16 +81,16 @@ ${employeeVO}
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
 	<script>
-// 		$(document).ready(function() {
-// 			$('.iframe').colorbox({
-// 				iframe:true,
-// 				width:"80%",
-// 				height:"80%",
-// 				overlayClose:false,
+		$(document).ready(function() {
+			$('.iframe').colorbox({
+				iframe:true,
+				width:"80%",
+				height:"80%",
+				overlayClose:false,
 				
 			
-// 			});
-// 		});
+			});
+		});
 	</script>
 
 

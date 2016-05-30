@@ -65,14 +65,7 @@ color: orange;
 	
 
 	</script>
-	<!-- TEST 可刪 -->
-	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
-	<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
-	<script>
-	$(document).ready(function () {
-    $('#test').colorbox({ opacity:0.5, rel:'group1' });
-	});
-</script>
+
 
 
 

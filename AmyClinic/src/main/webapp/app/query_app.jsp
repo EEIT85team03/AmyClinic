@@ -271,8 +271,9 @@ a {
 									var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
 									var td5 = $('<td width="300px"></td>').append(data.descrip);
 									var td6 = $('<td></td>').append(data.ename);
+									var td7 = $('<td></td>').html("<a  class='iframe' href='../Score/addScore.jsp?eid="+data.eid+"'>撰寫評論</a>")
 								
-									tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
+									tr2 = $('<tr>< /tr>').append([td1,td2,td3,td4,td5,td6,td7])
 									tb.append(tr2);
 								}
 							})

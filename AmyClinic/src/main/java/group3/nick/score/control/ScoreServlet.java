@@ -2,6 +2,7 @@ package group3.nick.score.control;
 
 import group3.beef.employee.model.EmployeeService;
 import group3.beef.employee.model.EmployeeVO;
+import group3.carrie.app.model.AppService;
 import group3.nick.score.model.ScoreService;
 import group3.nick.score.model.ScoreVO;
 
@@ -45,11 +46,18 @@ public class ScoreServlet extends HttpServlet {
 		res.setContentType("text/json");
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
+	
+		
+		
 		
 		//對應Score Table的Service方法
 		ScoreService daoScore = new ScoreService();
 		//對應EmployeeService Table的Service方法
 		EmployeeService	dao=new EmployeeService();
+		//對應AppService Table的Service方法
+		AppService appDao   = new AppService(); 
+		
+
 		
 //============顯現一開始Score.jsp的畫面=========================		
 		//JSON 回傳資料
@@ -108,6 +116,8 @@ public class ScoreServlet extends HttpServlet {
 			String sEid=req.getParameter("eid");
 			int eid=Integer.parseInt(sEid);
 			
+			//查詢該員工是否有看過該醫生
+			
 			//查詢該員工在評分清單裡的資料
 			List<ScoreVO> scoreVO =daoScore.getEmpScore(eid);
 			
@@ -147,6 +157,11 @@ public class ScoreServlet extends HttpServlet {
 			
 			
 			
+		}
+		
+//============如果沒有Query String 
+		if(req.getQueryString()==null){
+			res.sendRedirect(req.getContextPath()+"/Score/score.jsp");
 		}
 		
 		

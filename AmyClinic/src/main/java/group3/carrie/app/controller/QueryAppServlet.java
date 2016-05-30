@@ -70,6 +70,7 @@ public class QueryAppServlet extends HttpServlet {
 					o.addProperty("apt_status", src.getApt_status());
 					o.addProperty("descrip", src.getDescrip());
 					o.addProperty("ename", src.getEmployeeVO().getName());
+					o.addProperty("eid", src.getEmployeeVO().getEid());
 					Set<AppDetailVO> set = src.getAppDetails();
 					List<String> procname = new ArrayList<String>();
 					for(AppDetailVO a : set) {

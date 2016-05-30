@@ -20,9 +20,12 @@
 	<p>
 	<div id="star"></div>
 
-	<form>
-		<input type="text" style="width: 400PX; height: 300PX"> <input
-			type="submit" value="輸入"> <input type="reset" value="重置">
+	<form name="f1" action="ScoreServlet" method="post">
+		<input type="text" style="width: 400PX; height: 300PX" name="comment"> 
+		<input	type="submit" value="輸入">
+	    <input type="reset" value="重置">
+	    <input type="hidden" name="score">
+	    <input type="hidden" name="action" value="add_score">  
 
 	</form>
 	
@@ -30,7 +33,8 @@
 	<script>
 		$('#star').raty({
 			click : function(score) {
-				alert(score);
+				var x = parseInt(score);
+				document.f1.score.value=x;
 
 			}
 
