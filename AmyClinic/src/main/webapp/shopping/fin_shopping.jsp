@@ -82,8 +82,8 @@
 				<td>
 					<fmt:formatNumber value="${orderItems.quantity * orderItems.price_per}" type="number"/>元
 				</td>
-			</c:forEach>	
 			</tr>
+			</c:forEach>	
 			<tr>
 				<td>
 				</td>

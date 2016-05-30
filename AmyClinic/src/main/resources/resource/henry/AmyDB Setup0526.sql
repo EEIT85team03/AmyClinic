@@ -47,38 +47,38 @@ CREATE TABLE Members(
 );
 CREATE TABLE Products
 ( 
-  pid            DECIMAL(5)        IDENTITY PRIMARY KEY, 
-  name            NVARCHAR(200)    NOT NULL UNIQUE,  
-  photo            VARBINARY(MAX)    ,
-  amount        DECIMAL(5)        DEFAULT 0,
-  cid            DECIMAL(4)        FOREIGN KEY REFERENCES Catagory, 
-  price            DECIMAL(6)        NOT NULL,
-  discount        DECIMAL(2)        NOT NULL,
-  descrip        NVARCHAR(300)    DEFAULT 'Unspecified',
-  ingredients    NVARCHAR(300)    DEFAULT 'Unspecified',
+  pid           DECIMAL(5)       IDENTITY PRIMARY KEY, 
+  name          NVARCHAR(200)    NOT NULL UNIQUE,  
+  photo         VARBINARY(MAX)   ,
+  amount        DECIMAL(5)       DEFAULT 0,
+  cid           DECIMAL(4)       FOREIGN KEY REFERENCES Catagory, 
+  price         DECIMAL(6)       NOT NULL,
+  discount      DECIMAL(2)       NOT NULL,
+  descrip       NVARCHAR(300)    DEFAULT 'Unspecified',
+  ingredients   NVARCHAR(300)    DEFAULT 'Unspecified',
 --  date_entered    DATETIME        DEFAULT GETDATE(),  
 );
 CREATE TABLE Orders
 ( 
-  oid            DECIMAL(10)        IDENTITY PRIMARY KEY, 
-  mid            DECIMAL(8)        FOREIGN KEY REFERENCES Members,
-  recipient        NVARCHAR(20)    NOT NULL,
-  total            DECIMAL(10)        NOT NULL,
-  points_spent    DECIMAL(7)        DEFAULT 0,
-  addr            NVARCHAR(50)    NOT NULL,
-  phone            VARCHAR(10)        NOT NULL,
-  email            VARCHAR(50)        NOT NULL,
-  odate            DATETIME        DEFAULT GETDATE(),
-  ostatus        DECIMAL(1)        DEFAULT 0, /*    0 = Order Created / Cancellable
+  oid           DECIMAL(10)     IDENTITY PRIMARY KEY, 
+  mid           DECIMAL(8)      FOREIGN KEY REFERENCES Members,
+  recipient     NVARCHAR(20)    NOT NULL,
+  total         DECIMAL(10)     NOT NULL,
+  points_spent  DECIMAL(7)      DEFAULT 0,
+  addr          NVARCHAR(50)    NOT NULL,
+  phone         VARCHAR(10)     NOT NULL,
+  email         VARCHAR(50)     NOT NULL,
+  odate         DATETIME        DEFAULT GETDATE(),
+  ostatus       DECIMAL(1)      DEFAULT 0, /*   0 = Order Created / Cancellable
                                                 1 = Processing
                                                 2 = Order Complete
                                                 3 = Order Cancelled
                                            */
-  del_status    DECIMAL(1)        DEFAULT 0, /*    0 = Processing
+  del_status    DECIMAL(1)      DEFAULT 0, /*   0 = Processing
                                                 1 = Enroute                                                
                                                 2 = Delivered
                                             */
-  payment        DECIMAL(1)        DEFAULT 0, /*
+  payment       DECIMAL(1)      DEFAULT 0, /*
                                                 0 = Not yet paid
                                                 1 = Paid in Full
                                                 Partial payment?
@@ -159,11 +159,14 @@ CREATE TABLE Score
  score_id        DECIMAL(4)        IDENTITY PRIMARY KEY,  
  mid            DECIMAL(8),
  eid            DECIMAL(5),
+ aid			DECIMAL(6),
+ st				DECIMAL(1)		DEFAULT 1,  -- Score status, 1 = normal, 0 = "deleted" do not show
  scores            DECIMAL(1)        NOT NULL,        
  comment        NVARCHAR(MAX)    NOT NULL,
  score_date        DATETIME        DEFAULT GETDATE(),
  FOREIGN KEY (mid) REFERENCES Members(mid),
  FOREIGN KEY (eid) REFERENCES Employees(eid), 
+ FOREIGN KEY (aid) REFERENCES Appointments(aid), 
 );
 GO
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
