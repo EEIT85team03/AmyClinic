@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+<!-- Specifies url patterns / servlets to exclude from struts2 -->
+<!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
+
+
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Score/ScoreServlet,/Score/GetPic,/Backstage/ProductServlet,/Backstage/ProcServlet,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*"/>
+
+
+<!-- specifies the properties file to use for retrieving resources (I18N) -->
+<constant name="struts.custom.i18n.resources" value="global" />
+
+<!-- ********************** -->
+<!-- login/Register package: -->
+<!-- Intercepts password and encrypts them -->
+<!-- ********************** -->
+	<constant name="struts.devMode" value="true" />
+	
+	<package name="logRegPackage" namespace="/logreg" extends="struts-default">
+		
+		<interceptors>		        		
+			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />  
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+			<interceptor-stack name="EncPw">  
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="AESEncryption" />      
+				<interceptor-ref name="MD5Encryption" />    
+			</interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="EncPw" />
+		
+		<action name="login" class="group3.henry.login.controller.LoginAction">
+			<result name="success">/login/success.jsp</result>
+			<result name="verifyEmail">/login/verify.jsp</result>			
+			<result name="login">/login/login.jsp</result>
+		</action>
+		
+		<action name="register" class="group3.henry.register.controller.RegisterAction">
+            <interceptor-ref name="fileUpload">                        						<!-- 設定檔案上傳攔截器 -->
+       			<param name="maximumSize">2000000</param>              						<!-- 限制上傳單個檔案的大小，以byte為單位  -->
+       			<param name="allowedTypes">image/gif,image/jpeg,image/png</param>			<!-- 限制上傳檔案的檔案型態，以逗號(,)隔開 -->
+       			<param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>      			<!-- 限制上傳檔案的延伸檔名，以逗號(,)隔開 -->       			                                                       						
+  			</interceptor-ref>																<!-- 如以上兩者皆設限制的話，則必需兩者皆允許的才能上傳， 而檔案型態則會優先做錯誤提示 -->  			
+  			<interceptor-ref name="EncPw" />                     							<!-- 指定預設攔截器堆疊 -->    
+            <param name="saveDirectory">\user_photo</param>									<!-- 自訂上傳的目地目錄 -->			
+			<result name="success">/register/regsuccess.jsp</result>
+			<result name="input">/register/register.jsp</result>
+		</action>
+		
+		<action name="reset" class="group3.henry.login.controller.ResetPassAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="input">/login/resetpw.jsp</result>
+		</action>
+	</package>
+<!-- *************************	-->
+<!-- Access controlled package  -->
+<!-- *************************	-->
+    <package name="empPackage" namespace="/member" extends="struts-default">	
+		<interceptors>		        
+	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+<!--   			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />   -->
+<!-- 			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" /> -->
+		    <interceptor-stack name="AuthenticationRequired">  
+				<interceptor-ref name="defaultStack" />      
+				<interceptor-ref name="authentication" />
+<!-- 				<interceptor-ref name="AESEncryption" />       -->
+<!-- 				<interceptor-ref name="MD5Encryption" />         -->
+		    </interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="AuthenticationRequired" />
+
+        <global-results>
+			<result name="login">/login/login.jsp</result>
+		</global-results>
+		
+	    <action name="editprofile" class="group3.henry.login.controller.EditProfileAction">
+			<result>/login/editprofile.jsp</result>
+		</action>
+
+	    <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction" method="update">
+			<result>/login/editprofile.jsp</result>
+			<result name="updated">/login/verify.jsp</result>
+			<result name="input">/login/editprofile.jsp</result>
+		</action>
+		        
+        <action name="changepw" class="group3.henry.login.controller.MemberPageAction2">
+			<result>/member/memberonly2.jsp</result>
+			<result name="input">/member/memberonly2.jsp</result>
+		</action>
+		
+		<action name="*" >
+              <result>/member/{1}.jsp</result>                      
+         </action>
+	</package>
+	
+<!-- *****************************	-->		
+<!-- Non-Access controlled package  -->
+<!-- *****************************	-->
+	<package name="NoLogin" namespace="/free" extends="struts-default">
+        <action name="public" class="group3.henry.login.controller.PublicPageAction">
+            <result>/public/publicpage.jsp</result>
+        </action>
+        <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
+			<result>/login/verify.jsp</result>
+			<result name="failure">/login/verify.jsp</result>
+		</action>
+		<action name="recover" class="group3.henry.login.controller.RecoverAction">
+			<result name="success">/login/verify.jsp</result>
+			<result name="resetform">/login/resetpw.jsp</result>
+			<result name="failure">/login/verify.jsp</result>
+		</action>
+    </package>
+
+<!-- ******************************	-->		
+<!-- Employee(?) package  -->
+<!-- ******************************	-->		
+
+
+<!-- k	-->   
+<!--    <package name="product" namespace="/addproduct" extends="struts-default">	 -->
+<!-- 		<action name="addproduct" class="group3.carrie.product.controller.ProductServlet"> -->
+<!-- 			<result name="success">/Backstage_Old/success.jsp</result>	 -->
+<!-- 			<result name="add">/Backstage_Old/addproduct.jsp</result> -->
+<!-- 		</action> -->
+<!-- 	</package> -->
+<!-- k	-->
+
+<!-- beef -->
+<!-- 	<package name="Emp" namespace="/emp" extends="struts-default"> -->
+<!--         <action name="AddActionEmp" class="group3.beef.employee.controller.EmpAction"> -->
+<!--             <result name="input">/emp/AddEMP.jsp</result> -->
+<!--             <result name="success">/emp/AddSucces.jsp</result> -->
+<!-- 		</action> -->
+    
+<!--         <action name="getOne_Emp_Update" class="group3.beef.employee.controller.EmpnoAction"> -->
+<!--             <result name="success">/emp/update_emp_input.jsp</result> -->
+<!-- 		</action> -->
+<!--     </package> -->
+<!-- beef -->
+
+
+</struts>
