@@ -8,7 +8,9 @@ function queryProdById(index) {
 }
 function queryProdByName() {
 	$('#body').empty();  $('#Pagination').empty();
-	$('#description').html('您查詢的是：' +$('#query').val());
+	if($('#query').val()!='') {
+		$('#description').html('您查詢的是：' +$('#query').val());
+	}	
 	$.getJSON('ProductSearchServlet',{"prodname" : $('#query').val() , "action" : 'getByName'},function(datas) {callback(datas);});
 }
 function addToCart(pid,pname,price,discount){
