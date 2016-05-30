@@ -11,8 +11,8 @@ return result
 */
 
 public class DBExporter {
-	
-	public String dbConnect(String target, String format) {		
+	   
+	public String dbConnect(String target, String format) {
 		String connectionUrl = "jdbc:jtds:sqlserver://localhost:1433;DatabaseName=AmyDB;user=sa;password=01292013@Taichung";
 	    Connection conn = null;
 	    String tableName = "";
