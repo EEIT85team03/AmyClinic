@@ -13,7 +13,6 @@
 <constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Score/ScoreServlet,/Score/GetPic,/Backstage/[a-zA-Z_0-9]*,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*"/>
 
 
-
 <!-- specifies the properties file to use for retrieving resources (I18N) -->
 <constant name="struts.custom.i18n.resources" value="global" />
 
