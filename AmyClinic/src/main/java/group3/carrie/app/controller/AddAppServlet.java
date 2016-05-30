@@ -189,8 +189,8 @@ public class AddAppServlet extends HttpServlet {
 
 			// 全部塞進AppVO內
 			AppService appServ = new AppService();
-			AppVO appVO = appServ.addApp(mb.getMid(), purpose, date, time, descrip,
-					empVO.getEid(), set);
+			AppVO appVO = appServ.addApp(mb, purpose, date, time, descrip,
+					empVO, set);
 			
 
 			
