@@ -68,8 +68,8 @@
 					小計
 				</td>
 			</tr>
-			<tr>
 			<c:forEach var="orderItems" items="${ordersVO.orderItems}">
+			<tr>
 				<td>
 					${orderItems.productVO.name}
 				</td>
@@ -82,8 +82,8 @@
 				<td>
 					<fmt:formatNumber value="${orderItems.quantity * orderItems.price_per}" type="number"/>元
 				</td>
-			</c:forEach>	
 			</tr>
+			</c:forEach>	
 			<tr>
 				<td>
 				</td>

@@ -23,6 +23,7 @@ import com.google.gson.JsonSerializer;
 
 /*
  * 給prod_list.jsp用來做商品搜尋 like %?%
+ * 給shopping_list.jsp找商品目前的庫存量
  */
 @WebServlet("/shopping/ProductSearchServlet")
 public class ProductSearchServlet extends HttpServlet {

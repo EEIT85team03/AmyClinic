@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <%@page import="group3.henry.login.model.*"%>
-<%-- <%@page import="group3.k.mytest.*"%> --%>
+
 <!DOCTYPE html >
 <html lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

@@ -9,7 +9,8 @@
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/shopping/css/prod_list.css" />
 </head>
-<body onload="queryProdByName()">
+<body onload="queryProdByName('')">
+>>>>>>> branch 'master' of https://github.com/EEIT85team03/AmyClinic.git
 <jsp:include page="/General/header.jsp"></jsp:include>
 <a href="shopping_list.jsp">%購物車 ;</a> 
 			<div class="main">

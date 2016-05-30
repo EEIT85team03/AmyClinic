@@ -147,7 +147,8 @@
 	<script>
 	//更新數量
 		function upd(key,quantity,index) {
-			
+// 			console.log(index);
+// 			console.log(quantity)
 		//從產品找到目前庫存量
 			var amount;
 			$.ajax({
@@ -161,29 +162,30 @@
 				
 			})
 			
-			var price = $('input[name="price"]').val();
+			var price = $('#pri'+index).val();
+// 			console.log('price=' + price);
 			var newQty = $("#send_qty" + index).val();
 			var action = $('input[name="action4"]').val();
 		
 		//使用者輸入負數
 			if(newQty < 0) {
 				$("#send_qty" + index).val(quantity);
-				$("#subtotal").empty();
-				$("#subtotal").append(price * quantity + "元");
+				$("#subtotal" + index).empty();
+				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				return;
 			}
 		//使用者輸入0
 			if(newQty == 0) {
 				alert('請點刪除按鈕刪除');
-				$("#subtotal").empty();
-				$("#subtotal").append(price * quantity + "元");
+				$("#subtotal" + index).empty();
+				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				$("#send_qty" + index).val(quantity);
 				return;
 			}
 		//使用者輸入的數量與舊數量相同
 			if(newQty == quantity) {
-				$("#subtotal").empty();
-				$("#subtotal").append(price * quantity + "元");
+				$("#subtotal" + index).empty();
+				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				$("#send_qty" + index).val(quantity);
 				return;
 			}
@@ -191,16 +193,16 @@
 			if((amount - newQty) < 0) {
 				alert('庫存量不足！');
 				$("#send_qty" + index).val(quantity);
-				$("#subtotal").empty();
-				$("#subtotal").append(price * quantity + "元");
+				$("#subtotal" + index).empty();
+				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				return;
 			}
 		//使用者輸入非數字及0開頭的數字	
 			var patt = /^[1-9][0-9]*$/;
 			if(!patt.test(newQty)) {
 				$("#send_qty" + index).val(quantity);
-				$("#subtotal").empty();
-				$("#subtotal").append(price * quantity + "元");
+				$("#subtotal" + index).empty();
+				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				return;
 			}
 		//都通過才送到Servlet處理，如果成功就更改數量，發生例外回傳修改失敗訊息	
@@ -211,16 +213,16 @@
 					"success":function(data){
 						$("#send_qty" + index).attr("value",newQty);
 						$("#send_qty" + index).val(newQty);
-						$("#subtotal").empty();
-						$("#subtotal").append(price * newQty + "元");
+						$("#subtotal" + index).empty();
+						$("#subtotal" + index).append((price * newQty).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 						location.reload();
 						return;
 					},
 					"error":function(data){
 						alert("修改失敗！");
 						$("#send_qty" + index).val(quantity);
-						$("#subtotal").empty();
-						$("#subtotal").append(price * quantity + "元");
+						$("#subtotal" + index).empty();
+						$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 						return;
 					}
 					
@@ -273,6 +275,7 @@
 				} 
 			})
 		})
+	
 	
 
 	</script>	
