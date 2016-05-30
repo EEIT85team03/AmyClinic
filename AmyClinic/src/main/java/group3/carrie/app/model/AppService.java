@@ -39,11 +39,9 @@ public class AppService {
 //	}
 	
 //預約主檔+預約明細新增
-	public AppVO addApp(Integer mid,Integer purpose,java.sql.Date apt_date,String apt_time,String descrip,Integer eid,Set<AppDetailVO> set){
+	public AppVO addApp(MemberVO memberVO,Integer purpose,java.sql.Date apt_date,String apt_time,String descrip,EmployeeVO employeeVO,Set<AppDetailVO> set){
 		
 		AppVO appVO = new AppVO();
-		MemberVO memberVO = new MemberVO();
-		EmployeeVO employeeVO = new EmployeeVO();
 		Set<AppDetailVO> appVOs = new HashSet<AppDetailVO>();
 		
 		for(AppDetailVO a : set) {
@@ -55,8 +53,6 @@ public class AppService {
 		appVO.setApt_date(apt_date);
 		appVO.setApt_time(apt_time);
 		appVO.setDescrip(descrip);
-		memberVO.setMid(mid);
-		employeeVO.setEid(eid);
 		appVO.setMemberVO(memberVO);
 		appVO.setEmployeeVO(employeeVO);
 		appVO.setAppDetails(appVOs);

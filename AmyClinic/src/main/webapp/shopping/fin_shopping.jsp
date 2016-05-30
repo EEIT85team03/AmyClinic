@@ -68,8 +68,8 @@
 					小計
 				</td>
 			</tr>
-			<c:forEach var="orderItems" items="${ordersVO.orderItems}">
 			<tr>
+			<c:forEach var="orderItems" items="${ordersVO.orderItems}">
 				<td>
 					${orderItems.productVO.name}
 				</td>
