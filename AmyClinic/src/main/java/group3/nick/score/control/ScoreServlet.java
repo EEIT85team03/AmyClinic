@@ -2,6 +2,7 @@ package group3.nick.score.control;
 
 import group3.beef.employee.model.EmployeeService;
 import group3.beef.employee.model.EmployeeVO;
+import group3.carrie.product.model.ProductVO;
 import group3.nick.score.model.ScoreService;
 import group3.nick.score.model.ScoreVO;
 
@@ -149,41 +150,21 @@ public class ScoreServlet extends HttpServlet {
 			
 		}
 		
+//k-hotProduct
+		if ("hotProduct".equals(action)){
+			Integer pid=new Integer(req.getParameter("pid"));
+			
+			
+			ProductVO productVO=new ProductVO() ;
+			
+			String str = "/Backstage/hotProduct.jsp";
+			RequestDispatcher rd= req.getRequestDispatcher(str);
+			rd.forward(req, res);
 		
 		
 		
+		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
+}	
 	}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
-
-

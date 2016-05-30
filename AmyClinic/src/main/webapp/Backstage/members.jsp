@@ -28,7 +28,9 @@
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>
                  <form class="navbar-search pull-right">
   <input type="text" class="search-query" placeholder="請輸入姓名" value="" />
-</form></li></ol>
+  <input type="submit" value="123" />
+</form>
+</li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -41,7 +43,7 @@
   pageContext.setAttribute("list",list);
  %>
 
- <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
+ <table border='1'  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 <!-- 		<th>照片</th>	 -->
 		<th>詳細資料</th>
