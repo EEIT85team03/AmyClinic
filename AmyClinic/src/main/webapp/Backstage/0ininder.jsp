@@ -25,7 +25,16 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
-
+<div class="dropdown">
+  <!-- Link or button to toggle dropdown -->
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    <li><a tabindex="-1" href="#">Action</a></li>
+    <li><a tabindex="-1" href="#">Another action</a></li>
+    <li><a tabindex="-1" href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
         
         <font color="red">每個頁面不同位置</font>
         
