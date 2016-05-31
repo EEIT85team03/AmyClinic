@@ -1,4 +1,4 @@
-package group3.henry.login.controller;
+package henry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

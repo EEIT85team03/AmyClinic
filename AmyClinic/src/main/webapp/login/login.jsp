@@ -55,7 +55,10 @@
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						
+						<a href="${pageContext.request.contextPath}/register/register.jsp">
+						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						
 						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
