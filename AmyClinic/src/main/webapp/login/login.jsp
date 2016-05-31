@@ -109,12 +109,14 @@ function onSignIn(googleUser) {
 	  console.log(obj.name);
 
 	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
-	  xhr.open('POST', 'https://yourbackend.example.com/tokensignin'); // token verification servlet
+	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 	  xhr.onload = function() {
 	    console.log('Signed in as: ' + xhr.responseText);
 	  };
 	  xhr.send('idtoken=' + id_token);
+	  
+	  // upon success, redirect to front page
 }
 
 function signOut() {
