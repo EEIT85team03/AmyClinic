@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,6 +60,8 @@ public class ScheduleServlet extends HttpServlet {
 
 		}
 		if ("bydate".equals(action)) { 					 //用日期查詢
+			List<String> errorMsg = new LinkedList<String>();
+			req.setAttribute("errorMsg", errorMsg);
 			//System.out.println("跑bydate");
 			String strDate =req.getParameter("date");
 			System.out.println(strDate);
@@ -68,7 +71,13 @@ public class ScheduleServlet extends HttpServlet {
 			ScheduleService ss = new ScheduleService();
 			List l1 = new LinkedList();
 			List<ScheduleVO> list = ss.findByDate(date);
-
+			if(list.isEmpty()){
+				//System.out.println("list is empty!!");
+				out.println("null");
+				return;
+			}
+			
+		
 			for (ScheduleVO scheduleVO : list) {
 				//List m1 = new ArrayList();
 				HashedMap m1 = new HashedMap();
@@ -84,7 +93,8 @@ public class ScheduleServlet extends HttpServlet {
 			String str = gson.toJson(l1);
 			out.println(str);
 			return;
-
+			
+			
 		}
 	}
 
