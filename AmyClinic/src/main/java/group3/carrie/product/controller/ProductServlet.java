@@ -34,7 +34,43 @@ public class ProductServlet extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		doPost(req, res);
+		System.out.println("doGet_ok");
+		req.setCharacterEncoding("UTF-8");
+		String action = req.getParameter("action");
+		// ===================查詢一個商品類別=========================
+		if ("getCatagory".equals(action)) {
+			List<String> errorMsgs = new LinkedList<String>();
+			req.setAttribute("errorMsgs", errorMsgs);
+			System.out.println("查商品類別");
+			try {
+				Integer cid =new Integer( req.getParameter("cid"));
+				ProductService prodService = new ProductService();
+				List<ProductVO> products = prodService.findByCid(cid);
+				/*************************** 2.開始查詢資料 *****************************************/
+				for (ProductVO product : products) {
+					System.out.print(product.getPid() + ",");
+					System.out.print(product.getName() + ",");
+					System.out.print(product.getPhoto() + ",");
+					System.out.print(product.getAmount() + ",");
+					System.out.print(product.getCatagoryVO().getName() + ",");
+					System.out.print(product.getPrice() + ",");
+					System.out.print(product.getDiscount() + ",");
+					System.out.print(product.getDescrip() + ",");
+					System.out.print(product.getIngredients());
+					System.out.println();}
+				//productVO.iterator();
+				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
+				req.setAttribute("productss", products);
+				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/testProduct.jsp");
+				successView.forward(req, res);
+
+			} catch (Exception e) {
+				errorMsgs.add("無法取得資料:" + e.getMessage());
+				RequestDispatcher failureView = req
+						.getRequestDispatcher("/Backstage/product.jsp");
+				failureView.forward(req, res);
+			}
+		}
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {

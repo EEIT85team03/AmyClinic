@@ -34,10 +34,10 @@ pageContext.setAttribute("catagorys", catagorys);
                 </div>
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font>
                  
-      <FORM METHOD="post" ACTION="ProductServlet" >
-       <select size="1" name="mid">
+      <FORM METHOD="get" ACTION="ProductServlet" >
+       <select size="1" name="cid">
          <c:forEach var="catagoryVO" items="${catagorys}" > 
-          <option value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' }>${catagoryVO.name}
+          <option value="${catagoryVO.cid}" ${(param.cid==catagoryVO.cid)?'selected':'' }>${catagoryVO.name}
          </c:forEach>   
        </select>
        <input type="submit" value="查詢">
