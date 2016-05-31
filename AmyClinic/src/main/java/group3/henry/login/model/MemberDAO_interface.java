@@ -8,4 +8,5 @@ public interface MemberDAO_interface {
           public void delete(Integer mid);
           public MemberVO findByPrimaryKey(Integer mid);
           public List<MemberVO> getAll();
+		
 }
