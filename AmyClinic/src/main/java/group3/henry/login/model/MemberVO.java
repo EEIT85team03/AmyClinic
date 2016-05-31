@@ -40,30 +40,30 @@ import javax.persistence.Table;
 @Table(name = "Members")  
 public class MemberVO implements Serializable {
 	
-	private Integer   mid;								//編號
-	private String 	  name;							//名稱
-	private String 	  pwd;								//密碼
-	private String    verify;							//驗證
-	private String 	  email;							//信箱
-	private Date 	  birthday;							//生日
-	private String	  country;						//國家
-	private Character gender;						//性別
-	private String	  addr;								//地址
-	private String    phone;							//電話
-	private Integer   height;							//身高
-	private Integer   mass;							//體重
-	private String	  photo;							//照片
+	private Integer   mid;						//編號
+	private String 	  name;						//名稱
+	private String 	  pwd;						//密碼
+	private String    verify;					//驗證
+	private String 	  email;					//信箱
+	private Date 	  birthday;					//生日
+	private String	  country;					//國家
+	private Character gender;					//性別
+	private String	  addr;						//地址
+	private String    phone;					//電話
+	private Integer   height;					//身高
+	private Integer   mass;						//體重
+	private String	  photo;					//照片
 //	private String	  photoFileName;			//檔名
-//	private String 	  photoContentType;	//附檔名
-	private Integer	  act_status;					//帳號狀態
-	private Integer   num_trans;					//消費次數
+//	private String 	  photoContentType;			//附檔名
+	private Integer	  act_status;				//帳號狀態
+	private Integer   num_trans;				//消費次數
 	private Integer   num_treatment;			//療程次數
-	private Integer   num_visits;					//來訪次數
-	private Integer   total_spent;					//總消費
-	private Integer   reward_pts;					//獎勵點數
-	private Integer   spent_pts;					//花費點數
-	private Date      last_visit;						//最後上線
-	private String	  memo;							//備註
+	private Integer   num_visits;				//來訪次數
+	private Integer   total_spent;				//總消費
+	private Integer   reward_pts;				//獎勵點數
+	private Integer   spent_pts;				//花費點數
+	private Date      last_visit;				//最後上線
+	private String	  memo;						//備註
 	private Timestamp join_date;				//加入日期
 	
 	//One member -> Many appointments
@@ -219,6 +219,7 @@ public class MemberVO implements Serializable {
 		this.act_status = act_status;
 	}
 	
+	@Column(insertable=false)
 	public Integer getNum_trans() {
 		return num_trans;
 	}
@@ -226,6 +227,7 @@ public class MemberVO implements Serializable {
 		this.num_trans = num_trans;
 	}
 	
+	@Column(insertable=false)
 	public Integer getNum_treatment() {
 		return num_treatment;
 	}
@@ -233,6 +235,7 @@ public class MemberVO implements Serializable {
 		this.num_treatment = num_treatment;
 	}
 	
+	@Column(insertable=false)
 	public Integer getNum_visits() {
 		return num_visits;
 	}
@@ -240,6 +243,7 @@ public class MemberVO implements Serializable {
 		this.num_visits = num_visits;
 	}
 	
+	@Column(insertable=false)
 	public Integer getTotal_spent() {
 		return total_spent;
 	}
@@ -247,6 +251,7 @@ public class MemberVO implements Serializable {
 		this.total_spent = total_spent;
 	}
 	
+	@Column(insertable=false)
 	public Integer getReward_pts() {
 		return reward_pts;
 	}
@@ -254,6 +259,7 @@ public class MemberVO implements Serializable {
 		this.reward_pts = reward_pts;
 	}
 	
+	@Column(insertable=false)
 	public Integer getSpent_pts() {
 		return spent_pts;
 	}
@@ -261,7 +267,8 @@ public class MemberVO implements Serializable {
 	public void setSpent_pts(Integer spent_pts) {
 		this.spent_pts = spent_pts;
 	}
-
+	
+	@Column(insertable=false)
 	public Date getLast_visit() {
 		return last_visit;
 	}
@@ -269,6 +276,7 @@ public class MemberVO implements Serializable {
 		this.last_visit = last_visit;
 	}
 	
+	@Column(insertable=false)
 	public String getMemo() {
 		return memo;
 	}
@@ -276,7 +284,7 @@ public class MemberVO implements Serializable {
 		this.memo = memo;
 	}
 	
-	@Column(name = "join_date", insertable=false)
+	@Column(insertable=false)
 	public Timestamp getJoin_date() {
 		return join_date;
 	}
