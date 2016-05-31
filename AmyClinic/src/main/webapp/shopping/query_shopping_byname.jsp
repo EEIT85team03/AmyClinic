@@ -131,7 +131,7 @@
 					"url":"CancelOrderServlet",
 					"data":{"oid" : oid},
 					"success":function(data){
-						location.reload();
+						window.location.href = 'OrdersServlet';
 					}
 				})
 			}

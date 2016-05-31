@@ -14,6 +14,7 @@ public interface ProductDAO_interface {
     public InputStream getPhotoByPrimaryKey(Integer pid);
     public List<ProductVO> findByName(String name);
     public List<ProductVO> getAll();
+    public List<ProductVO> findByCid(Integer cid);
     public Set<OrderItemsVO> getOrderItemsByPid(Integer pid);
 
 }

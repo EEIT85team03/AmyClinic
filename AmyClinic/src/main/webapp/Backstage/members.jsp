@@ -16,6 +16,12 @@
 </head>
 
 <body>
+<%
+ 	MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
+  MemberServices memberSer = new MemberServices();
+  List<MemberVO> list = memberSer.getAll();
+  pageContext.setAttribute("list",list);
+ %>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <div id="page-wrapper" style=background-color:#ADADAD  >
@@ -25,65 +31,107 @@
                 <div class="page-header" >
  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
                 </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>(M=男生，F=女生。狀態0=封鎖，1=正常，2=未開通)</li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>
+<!-- <form class="navbar-search pull-right"  ACTION="MemberServletTest" method="post"> -->
+<!-- <input type="text" class="search-query" placeholder="請輸入姓名" value="getName_For_Update" /> -->
+
+<!-- <input type="submit" value="會員資料維護" /> -->
+<!-- </form> -->
+<FORM METHOD="post" ACTION="MemberServletTest" >
+       <select size="1" name="mid">
+         <c:forEach var="MemberVO" items="${list}" > 
+          <option value="${MemberVO.mid}">${MemberVO.name}
+         </c:forEach>   
+       </select>
+       <input type="submit" value="查詢">
+       <input type="hidden" name="action" value="getOne_For_Update">
+     </FORM>
+</li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
- <%
- 	MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
-  MemberServices memberSer = new MemberServices();
-  List<MemberVO> list = memberSer.getAll();
-  pageContext.setAttribute("list",list);
- %>
- <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
+ 
+
+ <table border='1'  bordercolor='green'  align='center'  class="table table-hover"  >
 	<tr>
 <!-- 		<th>照片</th>	 -->
-		<th>姓名/性別</th>
+		<th>詳細資料</th>
+<!-- 		<th>性別</th> -->
 		<th>信箱</th>
 		<th>生日</th>
 		<th>國家/地址</th>
 		<th>電話</th>
-		<th>身高/體重</th>	
-		<th>交易次/診療次</th>	
-		<th>訪問次數</th>
-		<th>獎勵點數/消費點數</th>	
-		<th>最後消費日期</th>
-		<th>加入日期</th>
-		<th>狀態</th>
+<!-- 		<th>身高/體重</th>	 -->
+<!-- 		<th>交易/診療</th>	 -->
+<!-- 		<th>來訪</th> -->
+<!-- 		<th>獎勵/消費</th>	 -->
+<!-- 		<th>最後消費日</th> -->
+<!-- 		<th>加入日</th> -->
+<!-- 		<th>狀態</th> -->
 		<th><a href="addMember.jsp"><input type="submit" value="新增會員" class="btn btn-primary"></a>  </th>
 	</tr>
-	<c:forEach var="MemberVO"  items="${list}"  >
+	<c:forEach var="MemberVO"  items="${list}"  varStatus='i'>
 		<tr>
 <%-- 			<td><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td> --%>
-			<td>${MemberVO.name}		/	${MemberVO.gender}</td>
+<!-- 			詳細資料 -->
+			<td>
+			<script><!-- 			性別 -->
+			var i ='${MemberVO.gender}';
+			if(i=='M'){document.write("男");}
+			if(i=='F'){document.write("女");}
+			if(i=='A'){document.write("中");}
+			</script>
+			<img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;">
+			<button type="button" class="btn btn-primary" data-toggle="collapse" data-target=" .${MemberVO.mid}">
+  			${MemberVO.name}
+			</button>
+			</td>
+
+<!-- 			<td> -->
+			
+<!-- 			</td> -->
+<!-- 			信箱 -->
 			<td>${MemberVO.email}</td>
 			<td>${MemberVO.birthday}</td>
 			<td>${MemberVO.country}-${MemberVO.addr}</td>
 			<td>${MemberVO.phone}</td>
-			<td>${MemberVO.height}公分/${MemberVO.mass}公斤</td>
-			<td>${MemberVO.num_trans}	/	${MemberVO.num_treatment}</td>			
-			<td>${MemberVO.num_visits}	/	${MemberVO.reward_pts}</td>		
-			<td>${MemberVO.spent_pts}</td>
-			<td>${MemberVO.last_visit}</td>
-			<td>${MemberVO.join_date}</td>
-			<td>${MemberVO.act_status}
-			<script>
 			
-			</script>
-			</td>
 			<td>
-			  <FORM METHOD="post" ACTION="MemberServletTest">
+			<FORM METHOD="post" ACTION="MemberServletTest">
 			   <input type="hidden" name="mid" value="${MemberVO.mid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update">
 			     <input type="submit" value="修改" class="btn btn-success">
 			    </FORM>
 			</td>
 		</tr>
+<!-- 			下拉的-->
+<tr>
+<%-- <td class="${MemberVO.mid} collapse" ><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td> --%>
+<td  class="${MemberVO.mid} collapse" >		
+						
+					身高:${MemberVO.height}公分		<br>	
+					體重:${MemberVO.mass}公斤<br>	
+					交易:${MemberVO.num_trans}次		<br>	
+					診療:${MemberVO.num_treatment}次	<br>	
+					來訪:${MemberVO.num_visits}次		<br>	
+					獎勵:${MemberVO.reward_pts}點		<br>		
+					消費:${MemberVO.spent_pts}點		<br>	
+					最後消費日:${MemberVO.last_visit}		<br>	
+					加入日:<script>var d ='${MemberVO.join_date}';	document.write(d.substring(0,10));</script><br>		
+					狀態:<c:if test="${MemberVO.act_status == 0}"><font>封鎖</font></c:if>			 
+							  <c:if test="${MemberVO.act_status == 1}"><font>正常</font></c:if>	 
+							  <c:if test="${MemberVO.act_status == 2}"><font>未開通</font></c:if>
+</td>
+				
+</tr>
 	</c:forEach>
 	</table>  
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
+        <script>
+        $('.btn-danger').collapse();
+        </script>
 </body>
 </html>

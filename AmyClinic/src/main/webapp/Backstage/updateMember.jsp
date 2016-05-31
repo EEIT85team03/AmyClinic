@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="group3.henry.login.model.*"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -32,6 +34,12 @@
 
 </head>
 <body>
+<%
+ 	MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
+  MemberServices memberSer = new MemberServices();
+  List<MemberVO> list = memberSer.getAll();
+  pageContext.setAttribute("list",list);
+ %>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <div id="page-wrapper" style=background-color:#ADADAD  >
@@ -112,14 +120,20 @@
 		<div class="col-sm-6">
 <%-- 			<input name="gender" id="membergender" class="form-control" type="text" value="${memberVO.gender}" style="width:80px;"/> --%>
 		<select name='gender' class="selectpicker"  id="membergender" data-style="btn-warning"  style="width:80px;">
-  			<option value="${memberVO.gender}"  >${memberVO.gender} </option>
-  			<option value="M">男人</option>
+  			<option  id='gender'  value="${memberVO.gender}"  ></option>
+  			<option value="M" >男人</option>
   			<option value="F">女人</option>
   			<option value="A">其他</option>
 		</select>
 		</div>
 	</div>
-	
+	  			<script>
+	  		var i=	document.getElementById('gender').value;
+	  		var sb=	document.getElementById('gender');
+			if(i=='M'){sb.text='男人';} 
+			if(i=='F'){sb.text='女人';} 
+ 			if(i=='A'){sb.text='其他';} 
+ 			</script>	 
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberaddr">地址: </label>
 		<div class="col-sm-6">
@@ -153,14 +167,20 @@
 		<div class="col-sm-5">			
 <%-- 			<input name="act_status" id="memberact_status" class="form-control disable" type="text" value="${memberVO.act_status}"  style="width:80px;"/>				 --%>
 		<select name='act_status' class="selectpicker"  id="memberAct_status" data-style="btn-warning"  style="width:80px;">
-  			<option value="${memberVO.act_status}" >${memberVO.act_status}</option>
-  			<option value="0">封鎖0</option>
-  			<option value="1">正常1</option>
-  			<option value="2">未開通2</option>
+  			<option id='act_status' value="${memberVO.act_status}" ></option>
+  			<option value="0">封鎖</option>
+  			<option value="1">正常</option>
+  			<option value="2">未開通</option>
 		</select>
 		</div>
 	</div>
-
+<script>
+	  		var i=	document.getElementById('act_status').value;
+	  		var sb=	document.getElementById('act_status');
+			if(i=='0'){sb.text='封鎖';} 
+			if(i=='1'){sb.text='正常';} 
+ 			if(i=='2'){sb.text='未開通';} 
+ 			</script>	 
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_trans">交易: </label>
 		<div class="col-sm-5">			

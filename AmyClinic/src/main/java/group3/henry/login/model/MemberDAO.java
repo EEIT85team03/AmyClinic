@@ -18,6 +18,7 @@ package group3.henry.login.model;
 
 import org.hibernate.*;
 
+import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.app.model.AppVO;
 import hibernate.util.HibernateUtil;
 
@@ -76,6 +77,26 @@ public class MemberDAO implements MemberDAO_interface {
 		return memberVO;
 	}
 
+//k
+	@Override
+	public List<MemberVO> findName(String name) {
+//		MemberVO memberVO = null;
+		List<MemberVO> list=null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query=session.createQuery("from MemberVO where name=?");
+			query .setParameter(0, name);
+			list=query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}	
+//k
+
 	@Override
 	public List<MemberVO> getAll() {
 		List<MemberVO> list = null;
@@ -97,11 +118,16 @@ public class MemberDAO implements MemberDAO_interface {
 //		Set<EmpVO>	set = findByPrimaryKeys(deptno).getEmps();
 //		return set;
 //	}
-
-	public static void main(String[] args) {
-
-		MemberDAO dao = new MemberDAO();
-
+//
+//	public static void main(String[] args) {
+//
+//		MemberDAO dao = new MemberDAO();
+//		List<MemberVO> m= dao.findName("K");
+//		for(MemberVO t:m){
+////			m.iterator();
+//			System.out.println(t.getPhone());
+//		}
+		
 		//�� �s�W-1(�@��dept2.hbm.xml������cascade="save-update" ��cascade="all"���]�w)(���M�j�j,���L��ȤW�ä��`��)(��,�i�Φb�q��D�ɻP�����ɤ@���s�W���\)
 //		DeptVO deptVO = new DeptVO(); // ����POJO
 //		Set<EmpVO> set = new HashSet<EmpVO>();// �ǳƸm�J���u�ƤH,�H�Kcascade="save-update"������
@@ -221,19 +247,19 @@ public class MemberDAO implements MemberDAO_interface {
 
 
 		//�� �d��-getAll-2 (�u�q!!!) (�@��dept2.hbm.xml�����]��lazy="false")
-		List<MemberVO> list2 = dao.getAll();
-		for (MemberVO aMember : list2) {
-			System.out.print(aMember.getMid() + ",");
-			System.out.print(aMember.getName() + ",");
-			System.out.print(aMember.getEmail() + ",");
-			System.out.print(aMember.getPwd() + ",");
-			System.out.print(aMember.getPhone() + ",");
-			System.out.print(aMember.getAddr() + ",");
-			System.out.print(aMember.getJoin_date() + ",");
-
-			
-			System.out.println("\n-----------------");
-			Set<AppVO> set2 = aMember.getAppVO();
+//		List<MemberVO> list2 = dao.getAll();
+//		for (MemberVO aMember : list2) {
+//			System.out.print(aMember.getMid() + ",");
+//			System.out.print(aMember.getName() + ",");
+//			System.out.print(aMember.getEmail() + ",");
+//			System.out.print(aMember.getPwd() + ",");
+//			System.out.print(aMember.getPhone() + ",");
+//			System.out.print(aMember.getAddr() + ",");
+//			System.out.print(aMember.getJoin_date() + ",");
+//
+//			
+//			System.out.println("\n-----------------");
+//			Set<AppVO> set2 = aMember.getAppVO();
 //			System.out.println(set2);
 //			for (AppVO anApp : set2) {
 //				System.out.print(aEmp.getEmpno() + ",");
@@ -247,8 +273,8 @@ public class MemberDAO implements MemberDAO_interface {
 //				System.out.print(aEmp.getDeptVO().getLoc());
 //				System.out.println();
 //			}
-			System.out.println();
-		}
+//			System.out.println();
+//		}
 
 	}
-}
+

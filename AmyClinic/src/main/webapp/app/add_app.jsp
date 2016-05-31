@@ -43,11 +43,11 @@
 	<td width="250px">預約時間</td>
 	<td>
 		<a class='iframe' href="TimeServlet">選擇</a>
-		<span id="sel_app_time"></span>
+		<span id="sel_app_time">${param.s_app_time}</span>
 		<span id="errortime"><font color="red">${error.date_timeErr}${error.apptErr}</font></span>
-		<input type="hidden" name="s_app_time">
-		<input type="hidden" name="ename">
-		<input type="hidden" name="id">
+		<input type="hidden" name="s_app_time" value="${param.s_app_time}">
+		<input type="hidden" name="ename" value="${param.ename}">
+		<input type="hidden" name="id" value="${param.id}">
 <!-- 		<input type="text" id="sel_app_time" name="app_ti" size="20" disabled="disabled"> -->
 	</td>
 </tr>
@@ -101,11 +101,6 @@ $(function(){
 		overlayClose:false,
 		escKey:false
 	});
-	var pid = ${proc}
-	console.log(pid);
-	var array = $('#pid').val().split(',');
-	console.log($('#pid').val());
-	console.log(array);
 });
 </script>
 </body>

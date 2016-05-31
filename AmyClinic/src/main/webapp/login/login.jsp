@@ -14,7 +14,31 @@
 <title>會員登入</title>
 </head>
 <body>
+<!-- facebook script -->
+<script> 
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1733704493575453',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- end facebook script -->
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 	<s:include value="/General/header.jsp"></s:include>
 	<hr>
 	<div id="page">
@@ -55,6 +79,12 @@
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
+
+						
+						<a href="${pageContext.request.contextPath}/register/register.jsp">
+						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						
+						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
 			</s:form>
@@ -89,29 +119,40 @@
 <script>
 function onSignIn(googleUser) {
 	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName()); // full name
-	  console.log('Given Name: ' + profile.getGivenName()); //first name
-      console.log('Family Name: ' + profile.getFamilyName()); //last name
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail());
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
-      console.log("ID Token: " + id_token);
-      
-	  var user = {'name': profile.getName()};
+//       console.log("ID Token: " + id_token);     
+// 	  var user = {'name': profile.getName()};
 	  	  
-	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
-	  var obj = JSON.parse(sessionStorage.user);
-	  console.log(obj.name);
+// 	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
+// 	  var obj = JSON.parse(sessionStorage.user);
+// 	  console.log(obj.name);
 
-	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
-	  xhr.open('POST', 'https://yourbackend.example.com/tokensignin'); // token verification servlet
-	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	  xhr.onload = function() {
-	    console.log('Signed in as: ' + xhr.responseText);
-	  };
-	  xhr.send('idtoken=' + id_token);
+
+// 	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
+// 	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
+// 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// 	  xhr.onload = function() {
+// 	    console.log('Signed in as: ' + xhr.responseText);
+// 	  };
+// 	  xhr.send('idtoken=' + id_token);
+	  	  
+	$.ajax({
+		type: "POST",
+		url: '${pageContext.request.contextPath}/GoogleLoginServlet',
+		data: 'idtoken=' + id_token,
+		dataType:'json',
+		success: function(data) {
+			console.log(data);
+			console.log(data[0].success);
+			console.log(data[0].redirect);
+			console.log(data[0].redirectURL);
+			if(data[0].redirect) {
+				console.log("redirecting");
+				window.location.href = data[0].redirectURL;
+			}
+		}
+	})
 }
 
 function signOut() {

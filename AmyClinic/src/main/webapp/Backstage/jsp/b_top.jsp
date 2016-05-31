@@ -41,6 +41,9 @@
 	min-height: 100%;
 	width: 100%;
 }
+.navbar navbar-inverse navbar-fixed-top{
+ background-color: #00FF00;
+}
 </style>
 </head>
 <body>
@@ -142,7 +145,12 @@
 			<li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
 			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
-					<li><a href="#">熱銷產品</a></li>
+					<li>
+					<a href="hotProduct.jsp" >熱銷產品
+<!-- 				<FORM METHOD="post" ACTION="ScoreServlet"> -->
+<!-- 			     <input type="hidden" name="action"	value="hotProduct"> -->
+<!-- 			    </FORM> -->
+					</a></li>
 					<li><a href="#">熱銷療程</a></li>
 				</ul></li>
 			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL	Dashboard</a></li>

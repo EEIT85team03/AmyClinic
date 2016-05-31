@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.*"%>
 <%@page import="group3.carrie.product.model.*"%>
 <%@page import="group3.carrie.catagory.model.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
@@ -17,13 +17,11 @@
 
 <body>
 <%
- ProductVO productVO = (ProductVO) request.getAttribute("productVO");
- ProductService product = new ProductService();
- List<ProductVO> list = product.getAll();
- pageContext.setAttribute("list",list);
- CatagoryService cataServ  = new CatagoryService();
- List<CatagoryVO> catagorys = cataServ.getAll();
- pageContext.setAttribute("catagorys", catagorys);
+// Set<ProductVO> productVO = (Set<ProductVO>)request.getAttribute("productVO");
+
+CatagoryService cataServ  = new CatagoryService();
+List<CatagoryVO> catagorys = cataServ.getAll();
+pageContext.setAttribute("catagorys", catagorys);
 %>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
@@ -36,10 +34,10 @@
                 </div>
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font>
                  
-      <FORM METHOD="get" ACTION="ProductServlet">
+      <FORM METHOD="get" ACTION="ProductServlet" >
        <select size="1" name="cid">
          <c:forEach var="catagoryVO" items="${catagorys}" > 
-          <option value="${catagoryVO.cid}" >${catagoryVO.name}
+          <option value="${catagoryVO.cid}" ${(param.cid==catagoryVO.cid)?'selected':'' }>${catagoryVO.name}
          </c:forEach>   
        </select>
        <input type="submit" value="查詢">
@@ -78,20 +76,20 @@
 		</th>
 	</tr>
 
-	<c:forEach var="ProductVO"  items="${list}"  >
+	<c:forEach var="productsss"  items="${productss}"  >
 		<tr>
-			<td>${ProductVO.pid}</td>
-		<td><img src="<%=request.getContextPath()%>/shopping/GetPic?num=${ProductVO.pid}" class="preview" style="max-width: 100px; max-height: 100px;"></td>
-			<td>${ProductVO.name}</td>
-			<td>${ProductVO.amount}個</td>
-			<td>${ProductVO.price}元</td>
-			<td>${ProductVO.discount}％</td>
-			<td>${ProductVO.descrip}</td>
-			<td>${ProductVO.ingredients}</td>
+			<td>${productsss.pid}</td>
+		<td><img src="<%=request.getContextPath()%>/shopping/GetPic?num=${productsss.pid}" class="preview" style="max-width: 100px; max-height: 100px;"></td>
+			<td>${productsss.name}</td>
+			<td>${productsss.amount}個</td>
+			<td>${productsss.price}元</td>
+			<td>${productsss.discount}％</td>
+			<td>${productsss.descrip}</td>
+			<td>${productsss.ingredients}</td>
 			<td>
 			  <FORM METHOD="post" ACTION="ProductServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="pid" value="${ProductVO.pid}">
+			     <input type="hidden" name="pid" value="${productsss.pid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 <!-- 			<td> -->

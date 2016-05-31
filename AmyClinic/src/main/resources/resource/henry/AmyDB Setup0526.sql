@@ -14,8 +14,8 @@ DROP TABLE Products;
 DROP TABLE Catagory;
 DROP TABLE Members;
 CREATE TABLE Catagory(
-  cid            DECIMAL(4)        IDENTITY(10,10) PRIMARY KEY,
-  name            NVARCHAR(30)    NOT NULL,
+  cid           DECIMAL(4)      IDENTITY(10,10) PRIMARY KEY,
+  name          NVARCHAR(30)    NOT NULL,
 );
 CREATE TABLE Members(
   mid			DECIMAL(8)		IDENTITY(1000,1) PRIMARY KEY,
@@ -26,9 +26,9 @@ CREATE TABLE Members(
   email			VARCHAR(50)		NOT NULL,
   birthday		DATE			,
   country		NVARCHAR(20)	,
-  gender		CHAR(1)			NOT NULL,
-  addr			NVARCHAR(50)	NOT NULL,
-  phone			VARCHAR(10)		NOT NULL,
+  gender		CHAR(1)			, -- enforce in registration code, not enforced to accomodate Google/FB login
+  addr			NVARCHAR(50)	, -- ^
+  phone			VARCHAR(10)		, -- ^
   height		DECIMAL(3)		,    
   mass			DECIMAL(3)		,			-- weight    
   photo			VARCHAR(50)		,
@@ -83,38 +83,38 @@ CREATE TABLE Orders
                                                 1 = Paid in Full
                                                 Partial payment?
                                             */ 
-  discount        DECIMAL(2)        DEFAULT 0,
+  discount      DECIMAL(2)      DEFAULT 0,
 );
 CREATE TABLE OrderItems
 ( 
-  id            DECIMAL(4)        IDENTITY PRIMARY KEY, 
-  oid            DECIMAL(10)        FOREIGN KEY REFERENCES Orders,
-  pid            DECIMAL(5)        FOREIGN KEY REFERENCES Products, 
+  id            DECIMAL(4)      IDENTITY PRIMARY KEY, 
+  oid           DECIMAL(10)     FOREIGN KEY REFERENCES Orders,
+  pid           DECIMAL(5)      FOREIGN KEY REFERENCES Products, 
                                                         -- Product name omitted, get from Products table 
-  quantity        DECIMAL(4)        NOT NULL,
-  price_per        DECIMAL(10)        NOT NULL,
---  discount        DECIMAL(2)        DEFAULT 0,
+  quantity      DECIMAL(4)      NOT NULL,
+  price_per     DECIMAL(10)     NOT NULL,
+--  discount        DECIMAL(2)  DEFAULT 0,
 );
 CREATE TABLE Employees
 (
-  eid            DECIMAL(5)        IDENTITY PRIMARY KEY,
-  name            NVARCHAR(30)    DEFAULT 'Unknown',
-  pwd            VARCHAR(40)        NOT NULL,
-  email            VARCHAR(50)        NOT NULL UNIQUE,
-  photo            VARBINARY(MAX)    ,    
-  education        NVARCHAR(500)    NOT NULL,
-  experience    NVARCHAR(500)    NOT NULL,
-  specialty        NVARCHAR(500)    NOT NULL,
+  eid           DECIMAL(5)      IDENTITY PRIMARY KEY,
+  name          NVARCHAR(30)    DEFAULT 'Unknown',
+  pwd           VARCHAR(40)     NOT NULL,
+  email         VARCHAR(50)     NOT NULL UNIQUE,
+  photo         VARBINARY(MAX)  ,    
+  education     NVARCHAR(500)   NOT NULL,
+  experience    NVARCHAR(500)   NOT NULL,
+  specialty     NVARCHAR(500)   NOT NULL,
 );
 CREATE TABLE Schedule  -- need to change PK, eid should be FK to employee table
 ( 
-  sch_id        DECIMAL(4)        IDENTITY(1000, 1) PRIMARY KEY,
-  eid            DECIMAL(5)        FOREIGN KEY REFERENCES Employees,   
+  sch_id        DECIMAL(4)      IDENTITY(1000, 1) PRIMARY KEY,
+  eid           DECIMAL(5)      FOREIGN KEY REFERENCES Employees,   
   c_date        DATE            NOT NULL,
-  c_hours        NVARCHAR(13)    NOT NULL,
-  appt_num        DECIMAL(3)        NOT NULL,
-  appt_status    DECIMAL(1)        DEFAULT 1, -- 1 = Normal, 0 = Stopped
-  memo            NVARCHAR(300)    DEFAULT ' ',  
+  c_hours       NVARCHAR(13)    NOT NULL,
+  appt_num      DECIMAL(3)      NOT NULL,
+  appt_status   DECIMAL(1)      DEFAULT 1, -- 1 = Normal, 0 = Stopped
+  memo          NVARCHAR(300)   DEFAULT ' ',  
 );
 CREATE TABLE Appointments
 (
@@ -130,40 +130,40 @@ CREATE TABLE Appointments
 );
 CREATE TABLE ProcedureType
 (
-  pType_id        DECIMAL(3)        IDENTITY PRIMARY KEY,
-  name            NVARCHAR(30)    NOT NULL
+  pType_id      DECIMAL(3)      IDENTITY PRIMARY KEY,
+  name          NVARCHAR(30)    NOT NULL
 );
 CREATE TABLE Procedures
 (
-  procedure_id    DECIMAL(3)        IDENTITY PRIMARY KEY,
-  name            NVARCHAR(30)    NOT NULL,
-  pType_id        DECIMAL(3)        FOREIGN KEY REFERENCES ProcedureType,
-  fee            DECIMAL(9)        DEFAULT '0',
+  procedure_id  DECIMAL(3)      IDENTITY PRIMARY KEY,
+  name          NVARCHAR(30)    NOT NULL,
+  pType_id      DECIMAL(3)      FOREIGN KEY REFERENCES ProcedureType,
+  fee           DECIMAL(9)      DEFAULT '0',
 );
 CREATE TABLE AppointmentDetail
 ( 
-  ad_id            DECIMAL(4)        IDENTITY PRIMARY KEY, 
-  procedure_id    DECIMAL(3)        FOREIGN KEY REFERENCES Procedures,
-  aid            DECIMAL(6)        FOREIGN KEY REFERENCES Appointments,
+  ad_id         DECIMAL(4)      IDENTITY PRIMARY KEY, 
+  procedure_id  DECIMAL(3)      FOREIGN KEY REFERENCES Procedures,
+  aid           DECIMAL(6)      FOREIGN KEY REFERENCES Appointments,
 );
 CREATE TABLE Chat 
 ( 
-  chat_id        DECIMAL(7)        IDENTITY(1,1) PRIMARY KEY,
-  eid            DECIMAL(5)        FOREIGN KEY REFERENCES Employees,
-  mid            DECIMAL(8)        FOREIGN KEY REFERENCES Members,
-  record        NVARCHAR(MAX)    NOT NULL,
-  chattime        DATETIME        DEFAULT GETDATE(),
+  chat_id       DECIMAL(7)      IDENTITY(1,1) PRIMARY KEY,
+  eid           DECIMAL(5)      FOREIGN KEY REFERENCES Employees,
+  mid           DECIMAL(8)      FOREIGN KEY REFERENCES Members,
+  record        NVARCHAR(MAX)   NOT NULL,
+  chattime      DATETIME        DEFAULT GETDATE(),
 );
 CREATE TABLE Score
 (
- score_id        DECIMAL(4)        IDENTITY PRIMARY KEY,  
- mid            DECIMAL(8),
- eid            DECIMAL(5),
- aid			DECIMAL(6),
+ score_id       DECIMAL(4)      IDENTITY PRIMARY KEY,  
+ mid            DECIMAL(8)		,
+ eid            DECIMAL(5)		,
+ aid			DECIMAL(6)		,
  st				DECIMAL(1)		DEFAULT 1,  -- Score status, 1 = normal, 0 = "deleted" do not show
- scores            DECIMAL(1)        NOT NULL,        
- comment        NVARCHAR(MAX)    NOT NULL,
- score_date        DATETIME        DEFAULT GETDATE(),
+ scores         DECIMAL(1)      NOT NULL,        
+ comment        NVARCHAR(MAX)   NOT NULL,
+ score_date     DATETIME        DEFAULT GETDATE(),
  FOREIGN KEY (mid) REFERENCES Members(mid),
  FOREIGN KEY (eid) REFERENCES Employees(eid), 
  FOREIGN KEY (aid) REFERENCES Appointments(aid), 

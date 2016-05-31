@@ -135,8 +135,7 @@ public class ScoreServlet extends HttpServlet {
 			RequestDispatcher rd= req.getRequestDispatcher(str);
 			rd.forward(req, res);
 		}
-		
-		
+	
 //確定新增該筆評論
 		if("addNewComment".equals(action)){
 		String seid =req.getParameter("eid");
@@ -168,6 +167,7 @@ public class ScoreServlet extends HttpServlet {
 			rd.forward(req,res);
 		}
 		
+
 //確認修改該則評論		
 		if("adjustComment".equals(action)){
 			String sscore_id=req.getParameter("score_id");

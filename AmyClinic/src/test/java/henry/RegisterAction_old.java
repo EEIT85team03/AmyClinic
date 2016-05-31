@@ -1,4 +1,4 @@
-package group3.henry.register.controller;
+package henry;
 
 
 import java.io.File;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
-import group3.henry.global.utility.GlobalConstants;
 import group3.henry.global.utility.Mailer;
 import group3.henry.global.utility.TokenGenerator;
 import group3.henry.login.model.MemberServices;
@@ -17,9 +16,8 @@ import group3.henry.login.model.MemberVO;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class RegisterAction extends ActionSupport implements GlobalConstants{
+public class RegisterAction_old extends ActionSupport{
 	private static final String HEADER = "AmyClinic Registration Confirmation";
-
 	private MemberVO memberVO;	
 	private String message;
 	private File   fileUpload;            //Struts 2 將上傳的原始檔案，封裝到此(xxx)暫時File物件變數，暫時保存到伺服器的臨時目錄區，所以上傳後 Struts 2 會將之刪除
@@ -66,8 +64,9 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 	}
 	
 	private String compose(String token, String email){
+		String nl = System.getProperty("line.separator");
 		return "Thank you for registering on our site! Please click the link below to validate your email!" 
-				+ NL + NL + "http://" + SERVER + "/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
+				+ nl + nl + "http://localhost:8080/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
 	}
 	
 	public String register(){
@@ -94,9 +93,6 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 				String ext = fileUploadFileName.substring(fileUploadFileName.indexOf('.'));				
 				fileUploadFileName = "img_"+memberVO.getEmail()+ext;
 				File file2 = new File(fsaveDirectory,fileUploadFileName);
-				if (file2.exists()){ //deletes existing profile photo to update
-					file2.delete();
-				}
 				fileUpload.renameTo(file2); // relocate temp file to saveDirectory
 				memberVO.setPhoto(fileUploadFileName);
 			}
@@ -118,15 +114,15 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 //			}
 			
 			memberVO.setAct_status(2); // status of 2 = awaiting email verification			
-//			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
-//			memberVO.setLast_visit(today); // initial values
-//			memberVO.setNum_trans(0);
-//			memberVO.setNum_treatment(0);
-//			memberVO.setNum_visits(0);
-//			memberVO.setTotal_spent(0);
-//			memberVO.setReward_pts(0);
-//			memberVO.setSpent_pts(0);
-//			memberVO.setMemo("");
+			java.sql.Date today = new java.sql.Date(Calendar.getInstance().getTime().getTime()); //get today's date in java.sql.Date format
+			memberVO.setLast_visit(today); // initial values
+			memberVO.setNum_trans(0);
+			memberVO.setNum_treatment(0);
+			memberVO.setNum_visits(0);
+			memberVO.setTotal_spent(0);
+			memberVO.setReward_pts(0);
+			memberVO.setSpent_pts(0);
+			memberVO.setMemo("");
 			String token = gen.secureToken().toUpperCase(); // generates verification token
 			memberVO.setVerify(token);		// stores token in current memberVO
 
