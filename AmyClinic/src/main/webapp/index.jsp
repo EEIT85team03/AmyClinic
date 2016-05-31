@@ -80,7 +80,7 @@ body {
 			<img	src="images/home06.jpg" title=""></a>
 	</div>
 	<!-- 		test -->
-<div style="z-index:9999; position: relative;" align="center"  valign="center">
+<div style="z-index:9999; position: relative;" align="center" align="center">
 <div id="allpage">
 		<header >
 			<marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#FF9D6F" direction="right" height="20" scrollamount="8" behavior="alternate">歡迎光臨-AMY-限時特價藥妝、醫美保養品,☆專業醫美品牌☆</marquee>

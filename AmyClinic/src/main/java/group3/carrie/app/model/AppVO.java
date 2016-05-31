@@ -125,7 +125,7 @@ public class AppVO implements java.io.Serializable {
 	public void setEmployeeVO(EmployeeVO employeeVO) {
 		this.employeeVO = employeeVO;
 	}
-
+	//一對多
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="appVO")
 	@OrderBy("ad_id asc")
 	public Set<AppDetailVO> getAppDetails() {

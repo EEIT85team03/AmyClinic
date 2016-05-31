@@ -9,5 +9,7 @@ public interface Score_interface {
 	public ScoreVO findByPrimaryKey(Integer score_id);
 	public List<ScoreVO> getAll();
 	public List<ScoreVO> getEmpScore(Integer eid);
+	public List<ScoreVO> getAidScore(Integer aid);
+	
 
 }

@@ -10,7 +10,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/shopping/css/prod_list.css" />
 </head>
 <body onload="queryProdByName('')">
->>>>>>> branch 'master' of https://github.com/EEIT85team03/AmyClinic.git
 <jsp:include page="/General/header.jsp"></jsp:include>
 <a href="shopping_list.jsp">%購物車 ;</a> 
 			<div class="main">
@@ -30,13 +29,7 @@
 				<a href="#" class="cbp-vm-icon cbp-vm-grid" data-view="cbp-vm-view-grid">Grid View</a>
 			</div>
 			<ul id="body"></ul>
-			<div id="Pagination">
-			<a href="#">1</a>
-			<a href="#">2</a>
-			<a href="#">3</a>
-			<a href="#">4</a>
-			<a href="#">5</a>			
-			</div>
+			<div id="Pagination"></div>
 			</div>
 			</div>
 			<jsp:include page="/General/footer.jsp"></jsp:include>
