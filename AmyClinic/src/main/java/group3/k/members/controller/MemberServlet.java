@@ -31,7 +31,7 @@ public class MemberServlet extends HttpServlet {
 		System.out.println("呼叫MemberServletTest=ok");
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
-		//ok ===================新增療程=========================
+		//ok ===================新增會員=========================
 				if ("add".equals(action)) {
 					System.out.println("新增指令");
 					List<String> errorMsg = new LinkedList<String>();
@@ -125,7 +125,7 @@ public class MemberServlet extends HttpServlet {
 						failureView.forward(req, res);
 					}
 				}//add
-				//getOne ===================更新查詢=========================				
+				//getOneid ===================更新查詢=========================				
 				if ("getOne_For_Update".equals(action)) {
 					System.out.println("更新查詢指令");
 					List<String> errorMsg = new LinkedList<String>();
@@ -303,7 +303,34 @@ public class MemberServlet extends HttpServlet {
 						failureView.forward(req, res);
 					}
 				}//update
-		
+				//getOneName===================更新查詢=========================				
+				if ("getOne_Name_Update".equals(action)) {
+					System.out.println("姓名查詢指令");
+					List<String> errorMsg = new LinkedList<String>();
+					req.setAttribute("errorMsg", errorMsg);
+					
+					try {
+//						name						
+						String name = req.getParameter("myname");
+						System.out.println("myname = "+name);
+						/***************************2.開始查詢資料****************************************/
+						MemberServices memberSvc = new MemberServices();
+//						MemberVO memberVO = new MemberVO();
+						List<MemberVO>  memberVO2= memberSvc.getOneNameMember(name);
+						/***************************3.查詢完成,準備轉交(Send the Success view)************/
+						req.setAttribute("memberVO2", memberVO2);         // 資料庫取出的memberVO物件,存入req
+						String url = "/Backstage/updateMember.jsp";
+						RequestDispatcher successView = req.getRequestDispatcher(url);// 成功轉交 Backstage/updateProduct.jsp
+						successView.forward(req, res);
+						System.out.println("查詢一筆會員");
+					}catch (Exception e) {
+						e.printStackTrace();
+						errorMsg.add("查詢失敗"+e.getMessage());
+						RequestDispatcher failureView = req
+								.getRequestDispatcher("/Backstage/members.jsp");
+						failureView.forward(req, res);
+					}
+				}//getOne_For_Update
 		
 	}
 

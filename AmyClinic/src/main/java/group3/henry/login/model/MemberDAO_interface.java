@@ -7,5 +7,8 @@ public interface MemberDAO_interface {
           public void update(MemberVO memberVO);
           public void delete(Integer mid);
           public MemberVO findByPrimaryKey(Integer mid);
+          //k
+          public List<MemberVO> findName(String name);
+          //k
           public List<MemberVO> getAll();
 }

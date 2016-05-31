@@ -1,8 +1,10 @@
 package group3.henry.login.model;
 
 import hibernate.util.HibernateUtil;
+
 import java.sql.Date;
 import java.util.*;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -99,6 +101,10 @@ public class MemberServices {
 		//k查單一
 		public MemberVO getOneMember(Integer mid) {
 			return dao.findByPrimaryKey(mid);
+		}//k查單一
+		//k查單一
+		public List<MemberVO> getOneNameMember(String name) {
+		return  dao.findName(name);
 		}//k查單一
 	
 		

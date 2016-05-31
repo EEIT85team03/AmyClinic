@@ -41,6 +41,9 @@
 	min-height: 100%;
 	width: 100%;
 }
+.navbar navbar-inverse navbar-fixed-top{
+ background-color: #00FF00;
+}
 </style>
 </head>
 <body>

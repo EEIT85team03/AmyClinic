@@ -3,6 +3,7 @@ package group3.carrie.product.controller;
 import group3.beef.employee.model.EmployeeService;
 import group3.beef.employee.model.EmployeeVO;
 import group3.beef.encryption.AES_Encryption;
+import group3.carrie.catagory.model.CatagoryService;
 import group3.carrie.product.model.ProductService;
 import group3.carrie.product.model.ProductVO;
 
@@ -12,6 +13,7 @@ import java.sql.Blob;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,59 +41,41 @@ public class ProductServlet extends HttpServlet {
 		System.out.println("doPost_ok");
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
-		// ===================查詢一個商品=========================
-//		if ("getOne_For_Display".equals(action)) {
-//			List<String> errorMsg = new LinkedList<String>();
-//			req.setAttribute("errorMsg", errorMsg);
-//
-//			try {
-//				String str = req.getParameter("name");
-//				if (str == null || (str.trim().length() == 0)) {
-//					errorMsg.add("請輸入商品名稱");
-//				}
-//				if (!errorMsg.isEmpty()) {
-//					RequestDispatcher failureView = req
-//							.getRequestDispatcher("/Backstage/product.jsp");
-//					failureView.forward(req, res);
-//					return;
-//				}
-//				Integer pid = null;
-//				try {
-//					pid = new Integer(str);
-//				} catch (Exception e) {
-//					errorMsg.add("價格格式不正確");
-//				}
-//				if (!errorMsg.isEmpty()) {
-//					RequestDispatcher failureView = req
-//							.getRequestDispatcher("/Backstage/product.jsp");
-//					failureView.forward(req, res);
-//					return;
-//				}
-//				/*************************** 2.開始查詢資料 *****************************************/
-//				ProductService proSvc = new ProductService();
-//				ProductVO productVO = proSvc.getOneProduct(pid);
-//				if (pid == null) {
-//					errorMsg.add("查無資料");
-//				}
-//				if (!errorMsg.isEmpty()) {
-//					RequestDispatcher failureView = req
-//							.getRequestDispatcher("/Backstage/product.jsp");
-//					failureView.forward(req, res);
-//					return;
-//				}
-//				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
-//				req.setAttribute("productVO", productVO);
-//				RequestDispatcher successView = req
-//						.getRequestDispatcher("/Backstage/product.jsp");
-//				successView.forward(req, res);
-//
-//			} catch (Exception e) {
-//				errorMsg.add("無法取得資料:" + e.getMessage());
-//				RequestDispatcher failureView = req
-//						.getRequestDispatcher("/Backstage/product.jsp");
-//				failureView.forward(req, res);
-//			}
-//		}
+		// ===================查詢一個商品類別=========================
+		if ("getCatagory".equals(action)) {
+			List<String> errorMsgs = new LinkedList<String>();
+			req.setAttribute("errorMsgs", errorMsgs);
+			System.out.println("查商品類別");
+			try {
+				Integer cid =new Integer( req.getParameter("cid"));
+				ProductService prodService = new ProductService();
+				List<ProductVO> products = prodService.findByCid(cid);
+				/*************************** 2.開始查詢資料 *****************************************/
+				for (ProductVO product : products) {
+					System.out.print(product.getPid() + ",");
+					System.out.print(product.getName() + ",");
+					System.out.print(product.getPhoto() + ",");
+					System.out.print(product.getAmount() + ",");
+					System.out.print(product.getCatagoryVO().getName() + ",");
+					System.out.print(product.getPrice() + ",");
+					System.out.print(product.getDiscount() + ",");
+					System.out.print(product.getDescrip() + ",");
+					System.out.print(product.getIngredients());
+					System.out.println();}
+				//productVO.iterator();
+				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
+				req.setAttribute("productss", products);
+				RequestDispatcher successView = req
+						.getRequestDispatcher("/Backstage/testProduct.jsp");
+				successView.forward(req, res);
+
+			} catch (Exception e) {
+				errorMsgs.add("無法取得資料:" + e.getMessage());
+				RequestDispatcher failureView = req
+						.getRequestDispatcher("/Backstage/product.jsp");
+				failureView.forward(req, res);
+			}
+		}
 		
 										//		查詢單一商品
 		if ("getOne_For_Update".equals(action)) { // 來自addProduct.jsp的請求
