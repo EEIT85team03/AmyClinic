@@ -12,7 +12,7 @@
 <br>
 I am success.jsp <hr>
 
-You are logged in, ${requestScope.memberVO.name}! Your password is: ${requestScope.memberVO.pwd}
+You are logged in, ${memberVO.name}! Your E-Mail is: ${memberVO.email}
 
 Redirecting in 3 seconds...
 

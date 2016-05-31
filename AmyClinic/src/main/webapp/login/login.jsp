@@ -92,31 +92,40 @@
 <script>
 function onSignIn(googleUser) {
 	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName()); // full name
-	  console.log('Given Name: ' + profile.getGivenName()); //first name
-      console.log('Family Name: ' + profile.getFamilyName()); //last name
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail());
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
-      console.log("ID Token: " + id_token);
-      
-	  var user = {'name': profile.getName()};
+//       console.log("ID Token: " + id_token);     
+// 	  var user = {'name': profile.getName()};
 	  	  
-	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
-	  var obj = JSON.parse(sessionStorage.user);
-	  console.log(obj.name);
+// 	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
+// 	  var obj = JSON.parse(sessionStorage.user);
+// 	  console.log(obj.name);
 
-	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
-	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
-	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-	  xhr.onload = function() {
-	    console.log('Signed in as: ' + xhr.responseText);
-	  };
-	  xhr.send('idtoken=' + id_token);
-	  
-	  // upon success, redirect to front page
+
+// 	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
+// 	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
+// 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// 	  xhr.onload = function() {
+// 	    console.log('Signed in as: ' + xhr.responseText);
+// 	  };
+// 	  xhr.send('idtoken=' + id_token);
+	  	  
+	$.ajax({
+		type: "POST",
+		url: '${pageContext.request.contextPath}/GoogleLoginServlet',
+		data: 'idtoken=' + id_token,
+		dataType:'json',
+		success: function(data) {
+			console.log(data);
+			console.log(data[0].success);
+			console.log(data[0].redirect);
+			console.log(data[0].redirectURL);
+			if(data[0].redirect) {
+				console.log("redirecting");
+				window.location.href = data[0].redirectURL;
+			}
+		}
+	})
 }
 
 function signOut() {

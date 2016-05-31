@@ -6,6 +6,7 @@ import group3.henry.login.model.MemberVO;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.sql.Date;
 import java.util.Calendar;
@@ -79,7 +80,16 @@ public class GoogleLoginServlet extends HttpServlet {
 				}	
 				session.setAttribute("account", memberVO.getName()); //set to logged in
 				session.setAttribute("memberVO", memberVO);
+																
+				String contextPath = getServletContext().getContextPath();
 				
+				response.setContentType("application/json");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out = response.getWriter();
+//				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");
+				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/success.jsp\"}]");
+				
+				out.flush();
 				//returns success					
 			} else {
 				//fail
