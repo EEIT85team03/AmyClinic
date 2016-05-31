@@ -169,7 +169,7 @@ a {
 							}
 							
 							var td5 = $('<td width="300px"></td>').append(data.descrip);
-							var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
+							var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')"><input type="hidden" id="action3" value="cancel">');
 							tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
 							tb.append(tr2);
 						}
@@ -221,7 +221,7 @@ a {
 									var td4 = $('<td width="150px"></td>').append();
 								}
 								var td5 = $('<td width="300px"></td>').append(data.descrip);
-								var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
+								var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')"><input type="hidden" id="action3" value="cancel">');
 								tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
 								tb.append(tr2);
 // 							console.log(data.purpose)
@@ -264,11 +264,12 @@ a {
 									var td2 = $('<td></td>').append(data.apt_time);
 									if (data.purpose == 0) {
 										var td3 = $('<td></td>').append('開始新療程');
+										var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
 									}
 									if (data.purpose == 1) {
 										var td3 = $('<td></td>').append('回診');
+										var td4 = $('<td width="150px"></td>').append();
 									}
-									var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
 									var td5 = $('<td width="300px"></td>').append(data.descrip);
 									var td6 = $('<td></td>').append(data.ename);
 								

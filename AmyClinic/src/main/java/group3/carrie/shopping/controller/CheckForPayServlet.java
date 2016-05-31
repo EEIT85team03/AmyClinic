@@ -48,7 +48,7 @@ public class CheckForPayServlet extends HttpServlet {
 		OrdersVO ordersVO = ordServ.getOneOrders(oid);
 		
 		//如果該筆訂單的mid跟Session當中的mid不一樣，或是訂單狀態為已付款，就導向首頁
-		if ((!ordersVO.getMemberVO().getMid().equals(mb.getMid())) || ordersVO.getOstatus() != 0 || ordersVO.getPayment() != 0) {
+		if (ordersVO == null || (!ordersVO.getMemberVO().getMid().equals(mb.getMid())) || ordersVO.getOstatus() != 0 || ordersVO.getPayment() != 0) {
 			response.sendRedirect(request.getContextPath() + "/index.jsp");
 			return;
 		}

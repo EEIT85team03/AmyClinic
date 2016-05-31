@@ -9,6 +9,7 @@
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 <title>會員登入</title>
 </head>
@@ -54,7 +55,10 @@
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
-						<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						
+						<a href="${pageContext.request.contextPath}/register/register.jsp">
+						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						
 						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
@@ -89,15 +93,28 @@
 function onSignIn(googleUser) {
 	  var profile = googleUser.getBasicProfile();
 	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName());
+	  console.log('Name: ' + profile.getName()); // full name
+	  console.log('Given Name: ' + profile.getGivenName()); //first name
+      console.log('Family Name: ' + profile.getFamilyName()); //last name
 	  console.log('Image URL: ' + profile.getImageUrl());
 	  console.log('Email: ' + profile.getEmail());
+      // The ID token you need to pass to your backend:
+      var id_token = googleUser.getAuthResponse().id_token;
+      console.log("ID Token: " + id_token);
+      
 	  var user = {'name': profile.getName()};
-	  
-	  sessionStorage.setItem('user', JSON.stringify(user));
-	  
+	  	  
+	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
 	  var obj = JSON.parse(sessionStorage.user);
 	  console.log(obj.name);
+
+	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
+	  xhr.open('POST', 'https://yourbackend.example.com/tokensignin'); // token verification servlet
+	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	  xhr.onload = function() {
+	    console.log('Signed in as: ' + xhr.responseText);
+	  };
+	  xhr.send('idtoken=' + id_token);
 }
 
 function signOut() {
