@@ -11,4 +11,5 @@ public interface MemberDAO_interface {
           public List<MemberVO> findName(String name);
           //k
           public List<MemberVO> getAll();
+		
 }

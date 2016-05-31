@@ -1,4 +1,4 @@
-package group3.henry.register.controller;
+package henry;
 
 
 import java.io.File;

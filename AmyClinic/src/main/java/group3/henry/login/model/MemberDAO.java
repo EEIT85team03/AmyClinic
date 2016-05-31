@@ -18,6 +18,7 @@ package group3.henry.login.model;
 
 import org.hibernate.*;
 
+import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.app.model.AppVO;
 import hibernate.util.HibernateUtil;
 
@@ -75,6 +76,7 @@ public class MemberDAO implements MemberDAO_interface {
 		}
 		return memberVO;
 	}
+
 //k
 	@Override
 	public List<MemberVO> findName(String name) {
@@ -94,6 +96,7 @@ public class MemberDAO implements MemberDAO_interface {
 		return list;
 	}	
 //k
+
 	@Override
 	public List<MemberVO> getAll() {
 		List<MemberVO> list = null;
