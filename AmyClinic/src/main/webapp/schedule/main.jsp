@@ -63,39 +63,73 @@ Doctor:<select id="eid_select">
 $(function() {
 	$('#buttonLoad').click(function() {
 		$('#productTable > tbody').empty(); //選擇後先清除欄位
-			$.get('Scheduleservlet',{'action':'getall'},function(data){
-				var json = JSON.parse(data);
-				//console.log(json);
-				var r= $('<input type="button" value="new button"/>');
-		 		$.each(json,function(i,item){
-		 			var status = item.Appt_status;
-		 			if(status==1){status='正常'}else{status='休診'};
-		 			
-				var cell1 = $('<td></td>').text(item.getSch_id);
-				var cell2 = $('<td></td>').text(item.C_date);
-				var cell3 = $('<td></td>').text(item.Name);
-				var cell4 = $('<td></td>').text(item.C_hours); 
-				var cell5 = $('<td></td>').text(item.Appt_num); 
-				var cell6 = $('<td></td>').text(status); 
-				var cell7 = $('<td></td>').text(item.Memo); 
-				var cell8 = $('<td></td>').append($('<input type="button">').val('修改'));
-				var row = $('<tr></tr>').append(cell1).append(cell2).append(cell3).append(cell4)
-				.append(cell5).append(cell6).append(cell7).append(cell8);
+			$.ajax({
+				'type':'get',
+				'url':'Scheduleservlet',
+				'dataType' :'json',
+				"data":{"action" : "getall"},
+				'success':function(data){
+					
+					
+					
+					var r= $('<input type="button" value="new button"/>');
+			 		$.each(data,function(i,item){
+			 			var status = item.Appt_status;
+			 			var appt_num = item.Appt_num;
+			 			var memo = item.Memo;
+			 			if(status==0 && appt_num==3){
+			 				status = "<font color='blue'>額滿</font>"}
+			 			else if(status==0 && memo=="休假"){
+			 				status = "<font color='red'>休診</font>"}
+			 			else{
+		 					status = "<font color='black'>正常</font>"
+		 				}
+			 		
+			 		
+					var cell1 = $('<td></td>').text(item.getSch_id);
+					var cell2 = $('<td></td>').text(item.C_date);
+					var cell3 = $('<td></td>').text(item.Name);
+					var cell4 = $('<td></td>').text(item.C_hours); 
+					var cell5 = $('<td></td>').text(appt_num); 
+					var cell6 = $('<td></td>').html(status); 
+					var cell7 = $('<td></td>').text(item.Memo); 
+					var cell8 = $('<td></td>').append($('<input type="button">').val('修改'));
+					var row = $('<tr></tr>').append(cell1).append(cell2).append(cell3).append(cell4)
+					.append(cell5).append(cell6).append(cell7).append(cell8);
+					
+					$('#productTable > tbody').append(row);
+				} ) 
+					
+					
+					
+					
+				}
 				
-				$('#productTable > tbody').append(row);
-			} ) 
-		})
+				
+				
+			});
 	})})
-		
+
+
+
+
+
+
+
+
+
 //照日期搜尋
 $(function(){
 	$('#b1').click(function(){
-		date = $("#datepicker").val();
-		//alert(date);
+		var  date = $("#datepicker").val();
 		$('#productTable > tbody').empty(); //選擇後先清除欄位
-		$.get('Scheduleservlet',{'action':'bydate','date':date},function(data){
-			var json = JSON.parse(data);
-			$.each(json,function(i,item){
+		$.ajax({
+			'type':'get',
+			'url':'Scheduleservlet',
+			'dataType' :'json',
+			"data":{"action" : "bydate","date" : date },
+			'success':function(data){
+			$.each(data,function(i,item){
 				var cell1 = $('<td></td>').text(item.getSch_id);
 				var cell2 = $('<td></td>').text(item.C_date);
 				var cell3 = $('<td></td>').text(item.Name);
@@ -108,6 +142,11 @@ $(function(){
 				.append(cell5).append(cell6).append(cell7);
 				$('#productTable > tbody').append(row);
 			});
+		},
+			"error" : function (datas) {
+			alert('查無資料');
+		}
+		
 		})
 	})
 })

@@ -4,6 +4,7 @@ import group3.beef.employee.model.EmployeeService;
 import group3.beef.employee.model.EmployeeVO;
 import group3.beef.encryption.AES_Encryption;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
@@ -105,6 +106,7 @@ public class EmpServlet extends HttpServlet {
 		if ("insert".equals(action)) {
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
+			EmployeeService empSvc = new EmployeeService();
 
 			try {
 				String ename = req.getParameter("name");
@@ -125,6 +127,11 @@ public class EmpServlet extends HttpServlet {
 				}
 
 				String email = req.getParameter("email");
+				
+				if(empSvc.findEmpByMail(email)!= null){ //判斷帳號是否已存在
+					errorMsg.add("帳號已存在");
+				}
+				
 				if (email == null || email.trim().length() == 0) {
 					errorMsg.add("e-mail: 請勿空白");
 				}
@@ -143,20 +150,22 @@ public class EmpServlet extends HttpServlet {
 				if (spec == null || spec.trim().length() == 0) {
 					errorMsg.add("專長: 請勿空白");
 				}
-
+				InputStream is =null;
 				Part filePart = req.getPart("photo");
 				int filesize = (int) filePart.getSize();
 				if (filesize == 0){
-					errorMsg.add("照片: 請勿空白");
-				}
-				InputStream is = filePart.getInputStream();
+					//errorMsg.add("照片: 請勿空白");
+					is = new FileInputStream("C:\\AmyDB\\e5.jpg");  //若沒上傳照片，給預設圖片
+					 
+				}else
+				{is = filePart.getInputStream();}
+				
 				
 				if(filesize > 1024*300){
 					errorMsg.add("照片: 大小請勿超過300KB");
 				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);
-				
 				
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
@@ -180,7 +189,7 @@ public class EmpServlet extends HttpServlet {
 				empVO.setPwd(pwd);
 				
 				/*************************** 2.5開始新增資料 ***************************************/
-				EmployeeService empSvc = new EmployeeService();
+				
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/emp/GetAllEMP.jsp";

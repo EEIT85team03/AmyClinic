@@ -34,7 +34,7 @@ import com.google.gson.JsonSerializer;
 /**
  * Servlet implementation class App_BackServlet
  */
-@WebServlet("/app_back/App_BackServlet")
+@WebServlet("/Backstage/app_check")
 public class App_BackServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -49,7 +49,7 @@ public class App_BackServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		System.out.println("call App_BackServlet");
+		System.out.println("call app_check");
 		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.setHeader("content-type", "text/html;charset=UTF-8");
 		res.setCharacterEncoding("UTF-8");
@@ -89,7 +89,7 @@ public class App_BackServlet extends HttpServlet {
 		List<HashedMap> l2 = new LinkedList<HashedMap>();
 		for(AppVO a : set){
 			HashedMap m2 = new HashedMap();
-			m2.put("eid", a.getEmployeeVO().getEid().toString());
+			m2.put("ename", a.getEmployeeVO().getName());
 			m2.put("aid", a.getAid().toString());
 			m2.put("purpose", a.getPurpose().toString());
 			m2.put("apt_date", a.getApt_date().toString());
