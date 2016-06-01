@@ -69,4 +69,8 @@ public ProcVO addProc(String name,Integer pType_id,Integer fee) {
 	public List<ProcVO> getAll() {
 		return dao.getAll();
 	}
+	//查單療程類別
+	public List<ProcVO> findByPType_id(Integer pType_id){
+		return dao.findByPType_id(pType_id);
+	}
 }

@@ -57,7 +57,7 @@
  <table border='1'  bordercolor='green'  align='center'  class="table table-hover"  >
 	<tr>
 <!-- 		<th>照片</th>	 -->
-		<th>詳細資料</th>
+		<th>詳細(點擊藍色姓名)</th>
 <!-- 		<th>性別</th> -->
 		<th>信箱</th>
 		<th>生日</th>
