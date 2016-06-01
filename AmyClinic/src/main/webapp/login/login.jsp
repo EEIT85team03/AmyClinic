@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
-<title>會員登入</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+	<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+	<title>會員登入</title>
 </head>
 <body>
 <!-- facebook script -->
@@ -33,12 +33,8 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- end facebook script -->
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+
+
 	<s:include value="/General/header.jsp"></s:include>
 	<hr>
 	<div id="page">
@@ -83,7 +79,12 @@
 						
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
 						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
-						
+						<div
+						  class="fb-like"
+						  data-share="true"
+						  data-width="450"
+						  data-show-faces="true">
+						</div>
 						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
@@ -108,61 +109,12 @@
       <hr/>
 		<s:include value="/login/recover.jsp"></s:include>
     </div>
-
   </div>
-
 </div>
-	
-	
 
-	<s:include value="/General/footer.jsp"></s:include>
-<script>
-function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-      // The ID token you need to pass to your backend:
-      var id_token = googleUser.getAuthResponse().id_token;
-//       console.log("ID Token: " + id_token);     
-// 	  var user = {'name': profile.getName()};
-	  	  
-// 	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
-// 	  var obj = JSON.parse(sessionStorage.user);
-// 	  console.log(obj.name);
+<s:include value="/General/footer.jsp"></s:include>
 
-
-// 	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
-// 	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
-// 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// 	  xhr.onload = function() {
-// 	    console.log('Signed in as: ' + xhr.responseText);
-// 	  };
-// 	  xhr.send('idtoken=' + id_token);
-	  	  
-	$.ajax({
-		type: "POST",
-		url: '${pageContext.request.contextPath}/GoogleLoginServlet',
-		data: 'idtoken=' + id_token,
-		dataType:'json',
-		success: function(data) {
-			console.log(data);
-			console.log(data[0].success);
-			console.log(data[0].redirect);
-			console.log(data[0].redirectURL);
-			if(data[0].redirect) {
-				console.log("redirecting");
-				window.location.href = data[0].redirectURL;
-			}
-		}
-	})
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-}
-</script>
-
+<script src="${pageContext.request.contextPath}/js/google.login.js"></script>
 <script>
 	$(function() {
 		$(":text").attr("autocomplete", "off");
