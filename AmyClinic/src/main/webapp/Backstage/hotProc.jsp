@@ -29,7 +29,7 @@
 <!--         開始 -->
 <div class="container-fluid">
 <div id="container" style="min-width:700px;height:400px"></div>
-<jsp:include page="droduct_Chart.jsp" /><!-- top and側邊欄功能表項目	位置 -->
+<jsp:include page="proc_Chart.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 </div><!--         結束 -->
 </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>

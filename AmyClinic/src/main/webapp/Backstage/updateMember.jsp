@@ -96,7 +96,7 @@
 			    				</div>
 			    			<div class="col-xs-2 col-sm-2 col-md-2">
 			    					<div class="form-group">							<label >狀態</label>
-			                				<select name='act_status' class="form-control form-control-sm"  id="memberAct_status" data-style="btn-warning"  >
+			                				<select name='act_status' class="form-control form-control-sm"  id="memberAct_status" data-style="btn-warning"  style="width:80px;">
   												<option id='act_status' value="${memberVO.act_status}" ></option>
   												<option value="0">封鎖</option>
   												<option value="1">正常</option>
@@ -129,9 +129,7 @@
 			if(i=='F'){sb.text='女人';} 
  			if(i=='A'){sb.text='其他';} 
 </script>	
-
-								
-			    				
+		    			
 			    				<div class="col-xs-2 col-sm-2 col-md-2">
 			    					<div class="form-group">								<label >身高</label>
 			    						<input name="height" id="memberheight" class="form-control form-control-sm" type="text" value="${memberVO.height}"  />
@@ -148,7 +146,7 @@
 			    			<div class="row"><!-- <row> -->
 			    			<div class="col-xs-2 col-sm-2 col-md-2">
 			    					<div class="form-group">								<label >國家</label>
-			    								<select name='country' class="form-control form-control-sm" data-style="btn-success"  	style="width:80px;">
+			    								<select name='country' class="form-control form-control-sm" data-style="btn-success"  	style="width:120px;">
   													<option value="${memberVO.country}"  >${memberVO.country} </option>
   													<option value="台灣">台灣</option>
   													<option value="美國">美國</option>
@@ -179,7 +177,7 @@
 
 			<div class="col-xs-4 col-sm-4 col-md-4">
 			    	<div class="form-group">								<label >總花費</label>
-<input name="total_spent" id="membernum_total_spent" class="form-control form-control-sm"  type="text" value="${memberVO.total_spent}點" readonly/>	
+<input name="total_spent" id="membernum_total_spent" class="form-control form-control-sm"  type="text" value="${memberVO.total_spent}" readonly/>點	
 			    	</div>
 			</div>
 
@@ -187,18 +185,18 @@
 <div class="row"><!-- <row> -->
 			<div class="col-xs-2 col-sm-2 col-md-2">
 			    	<div class="form-group">								<label >交易</label>
-			<input name="num_trans" id="membernum_trans" class="form-control form-control-sm"  type="text" value="${memberVO.num_trans}次" readonly/>
+			<input name="num_trans" id="membernum_trans" class="form-control form-control-sm"  type="text" value="${memberVO.num_trans}" readonly/>次
 			    	</div>
 			</div>
 			
 			<div class="col-xs-2 col-sm-2 col-md-2">
 			    	<div class="form-group">								<label >診療</label>
-<input name="num_treatment" id="membernum_treatment" class="form-control form-control-sm" type="text" value="${memberVO.num_treatment}次" readonly />
+<input name="num_treatment" id="membernum_treatment" class="form-control form-control-sm" type="text" value="${memberVO.num_treatment}" readonly />次
 			    	</div>
 			</div>
 <div class="col-xs-2 col-sm-2 col-md-2">
 			    	<div class="form-group">								<label >來訪</label>
-<input name="num_visits" id="membernum_visits" class="form-control form-control-sm" type="text" value="${memberVO.num_visits}次" readonly />
+<input name="num_visits" id="membernum_visits" class="form-control form-control-sm" type="text" value="${memberVO.num_visits}" readonly />次
 			    	</div>
 			</div>
 <!-- <div class="col-xs-2 col-sm-2 col-md-2"> -->
@@ -208,12 +206,12 @@
 <!-- 			</div> -->
 <div class="col-xs-3 col-sm-3 col-md-3">
 			    	<div class="form-group">								<label >消耗點</label>
-			<input name="spent_pts" id="memberspent_pts" class="form-control form-control-sm" type="text" value="${memberVO.spent_pts}點" readonly/>
+			<input name="spent_pts" id="memberspent_pts" class="form-control form-control-sm" type="text" value="${memberVO.spent_pts}" readonly/>點
 			    	</div>
 			</div>
 <div class="col-xs-3 col-sm-3 col-md-3">
 			    	<div class="form-group">								<label >獎勵點</label>
-			<input name="reward_pts" id="memberreward_pts" class="form-control form-control-sm"  type="text" value="${memberVO.reward_pts}點" readonly />
+			<input name="reward_pts" id="memberreward_pts" class="form-control form-control-sm"  type="text" value="${memberVO.reward_pts}" readonly />點
 			    	</div>
 			</div>
 			    			</div><!-- <row> -->			    			
@@ -236,27 +234,29 @@
 			    	</div>
 			</div>
 
-<!-- <div class="col-xs-2 col-sm-2 col-md-2"> -->
-<!-- 			    	<div class="form-group">							 -->
-<%-- 			<input name="photo" type="hidden" value="${memberVO.photo}" /> --%>
+<div class="col-xs-2 col-sm-2 col-md-2">
+			    	<div class="form-group">							
+			<input name="photo" type="hidden" value="${memberVO.photo}" />
 <%-- <img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"> --%>
-<!-- 			    	</div> -->
-<!-- 			</div>	 -->
+			    	</div>
+			</div>	
+</div><!-- <row> -->
+<div class="row"><!-- <row> -->
+
+<div class="col-xs-6 col-sm-6 col-md-6">
+			    	<div class="form-group">								<label >備註</label>
+<%-- 			<input name="memo" id="memo" class="form-control disable" type="text" value="${memberVO.memo}"  />	 --%>
+			    	<textarea class="form-control" rows="2" id="comment" name="memo"   >${memberVO.memo}</textarea>
+			    	</div>
+			</div>
 
 <div class="col-xs-2 col-sm-2 col-md-2">
 	<div class="form-group"> <!-- button -->
 <!-- 	<div class="col-sm-offset-2 col-sm-10"> -->
 	<input type="hidden" name="action"	value="Update">
 	<button type="submit" class="btn btn-success btn-lg" >修改會員資料</button>		
-<!-- 	</div>			 -->
-	</div><!-- button --></div>
-
-			    			</div><!-- <row> -->			    			
-			    			
-
-		
-	
-			    		
+<!-- 	</div>			 --></div><!-- button --></div>
+</div><!-- <row-->
 			    		</form>
 			    	</div>
 	    		</div>
