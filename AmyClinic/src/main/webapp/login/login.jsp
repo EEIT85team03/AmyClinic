@@ -15,25 +15,10 @@
 </head>
 <body>
 <!-- facebook script -->
-<script> 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1733704493575453',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+<div id="fb-root"></div>
+<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 <!-- end facebook script -->
-
+<!-- <div id="fb-root"></div> -->
 
 	<s:include value="/General/header.jsp"></s:include>
 	<hr>
@@ -79,18 +64,15 @@
 						
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
 						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
-						<div
-						  class="fb-like"
-						  data-share="true"
-						  data-width="450"
-						  data-show-faces="true">
-						</div>
-						<a href="#" onclick="signOut();">Sign out</a>
+						
+						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+<!-- 						<div id="status"></div> -->
+						<a href="#" onclick="logout();">Sign out</a>
 					</div>
 				</fieldset>
 			</s:form>
 						<div id="googleButtonPlaceholder"><div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div><span class="btn">使用 Google Gmail 登入</span></div>
-						<a href="#" onclick="signOut();" id="googlelogout">Sign out</a>
+						<a href="#" onclick="logout();" id="googlelogout">Sign out</a>
 		</div>
 
 	</div>
@@ -114,7 +96,16 @@
 
 <s:include value="/General/footer.jsp"></s:include>
 
+<!-- Google script -->
 <script src="${pageContext.request.contextPath}/js/google.login.js"></script>
+<!-- Henry's Custom logout -->
+<script>
+	function logout(){
+		signOut();
+		FB.logout();
+	}
+</script>
+
 <script>
 	$(function() {
 		$(":text").attr("autocomplete", "off");

@@ -1,4 +1,4 @@
-package group3.henry.google.login;
+package group3.henry.login.google;
 
 public class GoogleBean {
 	private String userId;
