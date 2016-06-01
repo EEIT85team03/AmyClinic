@@ -65,6 +65,7 @@ $(function() {
 		var mid=$('#mid').val();
 			$.get('App_BackServlet',{'action':'fmid','mid':mid},function(data){
 				var json = JSON.parse(data);
+				console.log(json);
 				 
 // 					var name = json.mem[0]["name"]; 
 // 					var bday = json.mem[0]["bday"]; 
