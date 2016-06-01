@@ -14,6 +14,23 @@ import javassist.compiler.MemberCodeGen;
 
 public class ScoreHibernateDAO implements Score_interface {
 	
+	@Override
+	public List<ScoreVO> getAidScore(Integer aid) {
+		List<ScoreVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try{
+			session.beginTransaction();
+			Query query = session.createQuery("from ScoreVO where aid=? order by scoreDate ");
+			query.setParameter(0, aid);
+			list = query.list();
+			session.getTransaction().commit();
+		}catch(RuntimeException ex){
+			session.getTransaction().rollback();
+		}
+		
+		return list;
+	}
+	
 	private static final String GET_ALL_STMT = "from ScoreVO order by scoreId";
 
 	@Override
@@ -115,6 +132,7 @@ public class ScoreHibernateDAO implements Score_interface {
 //	public static void main(String[] args) {
 //		ScoreHibernateDAO dao 	= new ScoreHibernateDAO();
 //		ScoreVO scorevo = new ScoreVO();
+
 //		MemberVO memberVO = new MemberVO();
 //		EmployeeVO employeeVO = new EmployeeVO();
 //=====================		
@@ -131,13 +149,15 @@ public class ScoreHibernateDAO implements Score_interface {
 		
 //=============
 //		
-//		List<ScoreVO> list=dao.getEmpScore(3);
+//		List<ScoreVO> list=dao.getAidScore(1009);
 //		for( ScoreVO test: list){
 //			System.out.println(test.getEmp().getName());
 //			System.out.println(test.getComment());
 //			System.out.println(test.getScore_id());
 //			System.out.println(test.getMb().getName());
 //			System.out.println(test.getScoreDate());
+//			System.out.println(test.getAid());
+//			System.out.println(test.getSt());
 //			System.out.println("=================");
 //		}
 //		

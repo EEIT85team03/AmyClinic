@@ -3,6 +3,7 @@ package group3.nick.score.model;
 import group3.beef.employee.model.EmployeeVO;
 import group3.henry.login.model.MemberVO;
 
+import java.sql.Date;
 import java.util.List;
 
 public class ScoreService {
@@ -13,7 +14,7 @@ public class ScoreService {
 		dao = new ScoreHibernateDAO();
 	}
 	//增加一筆評論
-	public void addScore(String comment,Integer scores,Integer eid,Integer mid){
+	public void addScore(String comment,Integer scores,Integer eid,Integer mid,Integer aid){
 		ScoreVO scoreVO=new ScoreVO();
 		EmployeeVO empVO = new EmployeeVO();
 		MemberVO memberVO = new MemberVO();
@@ -23,6 +24,7 @@ public class ScoreService {
 		scoreVO.setEmp(empVO);
 		scoreVO.setMb(memberVO);
 		scoreVO.setScores(scores);
+		scoreVO.setAid(aid);
 		dao.insert(scoreVO);
 		
 	}
@@ -33,17 +35,18 @@ public class ScoreService {
 		
 	}
 	//修改一則評論
-	public void updateScore(String comment,Integer scores,Integer eid,Integer mid,Integer score_id){
-		ScoreVO scoreVO = new ScoreVO();
-		EmployeeVO empVO = new EmployeeVO();
-		MemberVO memberVO = new MemberVO();
-		memberVO.setMid(mid);
-		empVO.setEid(eid);
-		scoreVO.setComment(comment);
-		scoreVO.setEmp(empVO);
-		scoreVO.setMb(memberVO);
-		scoreVO.setScores(scores);
-		scoreVO.setScore_id(score_id);
+	public void updateScore(ScoreVO scoreVO){
+//		ScoreVO scoreVO = new ScoreVO();
+//		EmployeeVO empVO = new EmployeeVO();
+//		MemberVO memberVO = new MemberVO();
+//		memberVO.setMid(mid);
+//		empVO.setEid(eid);
+//		scoreVO.setComment(comment);
+//		scoreVO.setEmp(empVO);
+//		scoreVO.setMb(memberVO);
+//		scoreVO.setScores(scores);
+//		scoreVO.setAid(aid);
+//		scoreVO.setScore_id(score_id);
 		dao.update(scoreVO);
 		
 	}
@@ -64,6 +67,10 @@ public class ScoreService {
 		return dao.getEmpScore(eid);
 	}
 	
+	//查看某個評分的紀錄
+	public List<ScoreVO> getAidScore(Integer aid) {
+		return dao.getAidScore(aid);
+	}
 	
 	
 	

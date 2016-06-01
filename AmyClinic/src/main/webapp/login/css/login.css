@@ -505,4 +505,48 @@ legend {
 
 .modal-body {padding: 2px 16px;}
 
-            
+#googleButtonPlaceholder {
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	margin-left: -30%;
+}
+
+#googleButtonPlaceholder div {
+	cursor: pointer;
+	font-size: 100px;
+	height: 100%;
+	filter: alpha(opacity = 1);
+	-moz-opacity: 0.01;
+	opacity: 0.01;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 9;
+}
+
+
+.btn {
+  font-size: 1.2em;
+  font-weight: normal;
+  position: relative;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 6px;
+  background: #f26964;
+  color: #f4f4f4;
+  box-shadow: 0px 3px 0px #ab4b47;
+  cursor: pointer;
+ }
+#googleButtonPlaceholder:active .btn{
+  top: 3px;
+  box-shadow: none;
+}
+
+#googlelogout {
+	margin-left: -100%;
+}            

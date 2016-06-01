@@ -132,7 +132,7 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 //		dao.update(catagoryVO2);
 				
 		//刪除
-		dao.delete(20);
+		//dao.delete(20);
 				
 		//查單一
 //		CatagoryVO catagoryVO3 = dao.findByPrimaryKey(20);
@@ -171,7 +171,7 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 //		System.out.println();
 //		}
 		
-		Set<ProductVO> set = dao.getProductByCid(10);
+		Set<ProductVO> set = dao.getProductByCid(20);
 		for (ProductVO product : set) {
 			System.out.print(product.getPid() + ",");
 			System.out.print(product.getName() + ",");
@@ -184,8 +184,6 @@ public class CatagoryDAO implements CatagoryDAO_interface {
 			System.out.print(product.getIngredients());
 			System.out.println();
 		}
-		
-	
 	}
 
 }

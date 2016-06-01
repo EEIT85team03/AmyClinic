@@ -6,6 +6,7 @@ import group3.carrie.appdetail.model.AppDetailVO;
 import group3.carrie.schedule.model.ScheduleService;
 import group3.carrie.schedule.model.ScheduleVO;
 import group3.henry.login.model.MemberVO;
+import group3.nick.score.model.ScoreVO;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -69,7 +70,8 @@ public class QueryAppServlet extends HttpServlet {
 					o.addProperty("apt_time", src.getApt_time());
 					o.addProperty("apt_status", src.getApt_status());
 					o.addProperty("descrip", src.getDescrip());
-					o.addProperty("ename", src.getEmployeeVO().getName());
+					o.addProperty("ename", src.getEmployeeVO().getName());				
+					o.addProperty("eid", src.getEmployeeVO().getEid());
 					Set<AppDetailVO> set = src.getAppDetails();
 					List<String> procname = new ArrayList<String>();
 					for(AppDetailVO a : set) {

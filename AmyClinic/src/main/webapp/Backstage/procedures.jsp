@@ -17,22 +17,7 @@
 </head>
 
 <body>
-    <div id="wrapper"><!-- all -->
-<jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper" style=background-color:#ADADAD  >
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
-                </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">療程資料維護</font></li></ol>
-                    </div>
-                </div><!-- /.row -->
-            </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
-<!--         開始 -->
- <%
+<%
 //  ProcVO procVO = (ProcVO) request.getAttribute("procVO");
  ProcService proc = new ProcService();
  List<ProcVO> list = proc.getAll();
@@ -42,12 +27,42 @@
  List<ProcTypeVO> proctype = procTServ.getAll();
  pageContext.setAttribute("proctype", proctype);
 %>
+    <div id="wrapper"><!-- all -->
+<jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
+<div id="page-wrapper" style=background-color:#ADADAD  >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                <div class="page-header" >
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
+                </div>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">療程資料維護</font>
+                 	
+<!--                  	<select size="1"  name="pType_id"> -->
+<%--       				<c:forEach var="proctype" items="${proctype}"> --%>
+<%-- 				<option  value="${proctype.pType_id}"  >${proctype.name} --%>
+<%-- 	  				</c:forEach> --%>
+<!--       				</select> -->
+      				
+      <FORM METHOD="post" ACTION="ProcServlet" >
+       <select size="1" name="pType_id">
+         <c:forEach var="proctype" items="${proctype}" > 
+          <option value="${proctype.pType_id}">${proctype.name}
+         </c:forEach>   
+       </select>
+       <input type="submit" value="查詢">
+       <input type="hidden" name="action" value="getOne_For_Update">
+     </FORM>
+                 
+                 </li></ol>
+                    </div>
+                </div><!-- /.row -->
+            </div> <!-- /.container-fluid -->
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
+<!--         開始 -->
+ 
 
-      <select size="1"  name="pType_id">
-      <c:forEach var="proctype" items="${proctype}">
-				<option  value="${proctype.pType_id}"  >${proctype.name}
-	  </c:forEach>
-      </select>
+      
 
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>

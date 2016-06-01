@@ -21,6 +21,7 @@ public class ProductDAO implements ProductDAO_interface {
 	private static final String GET_ALL_STMT = "FROM ProductVO order by pid";
 	private static final String GET_BY_NAME = "FROM ProductVO where name like ? order by pid";
 //	private static final String GET_ODItems_BYPid_STMT = "FROM OrderItemsVO where pid = ?";
+	private static final String GET_BY_CID = "FROM ProductVO where cid = ? order by pid";
 	private static final String DELETE_ITEM = "DELETE FROM OrderItemsVO where pid = ?";
 	private static final String DELETE_PROD = "DELETE FROM ProductVO where pid = ?";
 
@@ -136,6 +137,24 @@ public class ProductDAO implements ProductDAO_interface {
 		try {
 			session.beginTransaction();
 			Query query = session.createQuery(GET_ALL_STMT);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+
+	
+	@Override
+	public List<ProductVO> findByCid(Integer cid) {
+		List<ProductVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_BY_CID);
+			query.setParameter(0, cid);
 			list = query.list();
 			session.getTransaction().commit();
 		} catch (RuntimeException ex) {

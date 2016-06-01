@@ -75,6 +75,8 @@ public class MemberVO implements Serializable {
 	//會員和平分 一對多
 	private Set<ScoreVO> scores = new HashSet<ScoreVO>();
 	
+	
+	
 	public MemberVO() {
 		super();
 	}	

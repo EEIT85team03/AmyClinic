@@ -6,6 +6,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="group3.carrie.app.model.*"%>
 <%@ page import="group3.henry.login.model.*"%>
+
 <%
 	MemberVO mb = (MemberVO)session.getAttribute("memberVO");
 	AppService appServ = new AppService();
@@ -76,8 +77,12 @@ a {
 					<td padding="3px" id="t2">
 					<a id="a2" href="#">歷史預約紀錄</a> 
 					<input type="hidden" id="action2" value="before">
+
 					</td>
 				</tr>
+			</table>
+			
+			
 			</table>
 
 
@@ -237,6 +242,8 @@ a {
 				})
 			})
 			
+
+			
 			$('#a2').click(function(){
 				var action = $('#action2').val();
 				var tr2;
@@ -255,7 +262,8 @@ a {
 							var th4 = $('<th></th>').append('療程項目');
 							var th5 = $('<th></th>').append('需求描述');
 							var th6 = $('<th></th>').append('醫師');
-							var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
+							var th7 = $('<th></th>').append('參予評分');
+							var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6,th7]);
 							tb.append(tr1);
 							$.each(datas,function(i,data){
 								if(data.apt_status == 1) {
@@ -272,8 +280,7 @@ a {
 									}
 									var td5 = $('<td width="300px"></td>').append(data.descrip);
 									var td6 = $('<td></td>').append(data.ename);
-								
-									tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
+									tr2 = $('<tr id='+i+'>< /tr>').append([td1,td2,td3,td4,td5,td6])
 									tb.append(tr2);
 								}
 							})
@@ -281,14 +288,45 @@ a {
 							
 						
 					}
+				}).done(function(){
+					$.getJSON('../Score/ScoreServlet',{'action':'add_score'},function(data){
+						
+						$.each(data,function(i,emp){
+							if(emp.ok==true){
+								var cell1 = $("<td ></td>").html("<form action='../Score/ScoreServlet' method='post'><input type='submit' value='撰寫評論'><input type='hidden' name='action' value='gotoAddScore'><input type='hidden' name='aid' value='"+emp.aid+"'><input type='hidden' name='eid' value='"+emp.eid+"'></form>")
+	
+								
+							}else{
+								var cell1 = $("<td ></td>").html("<form action='../Score/ScoreServlet' method='post'><input type='submit' value='修改評論'><input type='hidden' name='action' value='gotoAdjustScore'><input type='hidden' name='aid' value='"+emp.aid+"'></form>")
+	
+								
+							}
+							
+							$('#'+i+'').append(cell1);
+	
+						})
+		
+					})
 				})
 				
+				
+				
+				
+				
+				
+				
+				
+				
 			})
+			
+			
 			//把fmt標籤產生的"星期"兩個字去掉
 			$('.adate').each(function() {
 				$(this).text($(this).text().substring(2));
 			})
 		})
 	</script>
+
+
 </body>
 </html>

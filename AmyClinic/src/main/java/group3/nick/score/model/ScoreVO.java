@@ -3,6 +3,7 @@ package group3.nick.score.model;
 
 
 import group3.beef.employee.model.EmployeeVO;
+import group3.carrie.app.model.AppVO;
 import group3.henry.login.model.MemberVO;
 
 import java.sql.Date;
@@ -30,6 +31,8 @@ public class ScoreVO implements java.io.Serializable {
 //	private Integer eid;
 	private String comment;
 	private Integer scores;
+	private Integer st;
+	private Integer aid;
 	//多評論對一位員工
 	private EmployeeVO emp ;
 
@@ -52,7 +55,7 @@ public class ScoreVO implements java.io.Serializable {
 		this.score_id = score_id;
 	}
 	
-	@Column(name = "score_date" ,insertable=false,updatable=false )
+	@Column(name = "score_date" ,insertable=false )
 	public Date getScoreDate() {
 		return scoreDate;
 	}
@@ -109,4 +112,25 @@ public class ScoreVO implements java.io.Serializable {
 	public void setMb(MemberVO mb) {
 		this.mb = mb;
 	}
+	
+
+
+	@Column(name = "aid")
+	public Integer getAid() {
+		return aid;
+	}
+
+	public void setAid(Integer aid) {
+		this.aid = aid;
+	}
+	@Column(name = "st" ,insertable=false)
+	public Integer getSt() {
+		return st;
+	}
+	
+	public void setSt(Integer st) {
+		this.st = st;
+	}
+
+	
 }

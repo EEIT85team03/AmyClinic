@@ -129,5 +129,9 @@ public class ProductService {
 	public Set<OrderItemsVO> getOrderItemsByPid(Integer pid) {
 		return dao.getOrderItemsByPid(pid);
 	}
-
+	
+	//根據產品分類查詢
+	 public List<ProductVO> findByCid(Integer cid) {
+		 return dao.findByCid(cid);
+	 }
 }
