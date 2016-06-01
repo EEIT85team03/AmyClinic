@@ -10,10 +10,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 
 public class ProcTypeDAO implements ProcTypeDAO_interface {
-	private static final String GET_ALL_STMT =
-		      "FROM ProcTypeVO order by pType_id";
-//	private static final String GET_PROC_BYPType_id_STMT =
-//			"FROM ProcVO where pType_id = ?";
+	private static final String GET_ALL_STMT = "FROM ProcTypeVO order by pType_id";
+	private static final String GET_PROC_BYPType_id_STMT ="FROM ProcVO where pType_id = ?";
 //	//子查詢有多筆資料時要用in
 //	private static final String DELETE_APPDT =
 //			"DELETE FROM AppDetailVO where procedure_id in (SELECT procedure_id FROM ProcVO where pType_id = ?)";
@@ -21,7 +19,7 @@ public class ProcTypeDAO implements ProcTypeDAO_interface {
 //			"DELETE FROM ProcVO where pType_id = ?";
 //	private static final String DELETE_PTYPE =
 //		      "DELETE FROM ProcTypeVO where pType_id = ?";
-
+	
 	@Override
 	public void insert(ProcTypeVO procTypeVO) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -152,8 +150,7 @@ public class ProcTypeDAO implements ProcTypeDAO_interface {
 //			System.out.print(procType.getName());
 //			System.out.println();
 //		}
-		
-		//查療程
+//		查療程
 		List<ProcTypeVO> list = dao.getAll();
 		for (ProcTypeVO procType : list) {
 			System.out.print(procType.getpType_id() + ",");
@@ -166,9 +163,7 @@ public class ProcTypeDAO implements ProcTypeDAO_interface {
 			System.out.println();
 		}
 		System.out.println();
-		}
-
+		}		
+//		Set<ProcVO> set = procType.getProcs(1);
 	}
-
-
 }

@@ -58,6 +58,7 @@ pageContext.setAttribute("catagorys", catagorys);
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
+
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>商品編號</th>
@@ -101,7 +102,8 @@ pageContext.setAttribute("catagorys", catagorys);
 		</tr>
 	</c:forEach>
 	</table>  
-	      
+	<c:if test="${empty productss}"> <font color='red' style="text-align: center;">此類別沒有商品</font></c:if>     
+	
 	<c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:
 	<ul>

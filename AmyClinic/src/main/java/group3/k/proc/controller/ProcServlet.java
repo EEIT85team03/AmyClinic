@@ -28,7 +28,45 @@ public class ProcServlet extends HttpServlet {
        
     public ProcServlet() {super();}
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		doPost(req, res);	
+    	//------5/31
+    	System.out.println("doGet_ok");
+		req.setCharacterEncoding("UTF-8");
+		String action = req.getParameter("action");
+		// ===================查詢一個商品類別=========================
+		if ("getCatagory".equals(action)) {
+			List<String> errorMsgs = new LinkedList<String>();
+			req.setAttribute("errorMsgs", errorMsgs);
+			System.out.println("查療程類別");
+			try {
+				Integer pType_id =new Integer( req.getParameter("pType_id"));
+				ProductService prodService = new ProductService();
+				List<ProductVO> products = prodService.findByCid(pType_id);
+				/*************************** 2.開始查詢資料 *****************************************/
+				for (ProductVO product : products) {
+					System.out.print(product.getPid() + ",");
+					System.out.print(product.getName() + ",");
+					System.out.print(product.getPhoto() + ",");
+					System.out.print(product.getAmount() + ",");
+					System.out.print(product.getCatagoryVO().getName() + ",");
+					System.out.print(product.getPrice() + ",");
+					System.out.print(product.getDiscount() + ",");
+					System.out.print(product.getDescrip() + ",");
+					System.out.print(product.getIngredients());
+					System.out.println();}
+				//productVO.iterator();
+				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
+				req.setAttribute("productss", products);
+				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/testProduct.jsp");
+				successView.forward(req, res);
+
+			} catch (Exception e) {
+				errorMsgs.add("無法取得資料:" + e.getMessage());
+				RequestDispatcher failureView = req
+						.getRequestDispatcher("/Backstage/product.jsp");
+				failureView.forward(req, res);
+			}
+		}
+	//-------------------------------5/31
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -146,7 +184,6 @@ public class ProcServlet extends HttpServlet {
 					errorMsg.add("療程名稱: 請勿空白");
 				}
 				System.out.println("療程名稱="+name);
-				
 //				療程價格			
 				Integer fee = new Integer(req.getParameter("fee"));
 //				if (fee <= 0 || fee.equals(0)) {
