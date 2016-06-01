@@ -44,8 +44,8 @@
           <option value="${proctype.pType_id}">${proctype.name}
          </c:forEach>   
        </select>
-       <input type="submit" value="查詢">
-       <input type="hidden" name="action" value="getOne_For_Update">
+       <input type="submit" value="查詢療程類別">
+       <input type="hidden" name="action" value="vPType_id">
      </FORM>
                  
                  </li></ol>
@@ -54,10 +54,6 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
- 
-
-      
-
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>療程類別</th>

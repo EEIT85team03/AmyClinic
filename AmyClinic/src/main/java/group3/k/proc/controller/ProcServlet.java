@@ -33,36 +33,32 @@ public class ProcServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
 		// ===================查詢一個商品類別=========================
-		if ("getCatagory".equals(action)) {
+		if ("vPType_id".equals(action)) {
 			List<String> errorMsgs = new LinkedList<String>();
 			req.setAttribute("errorMsgs", errorMsgs);
 			System.out.println("查療程類別");
 			try {
 				Integer pType_id =new Integer( req.getParameter("pType_id"));
-				ProductService prodService = new ProductService();
-				List<ProductVO> products = prodService.findByCid(pType_id);
+				System.out.println("pType_id="+pType_id);
+				ProcService procService = new ProcService();
+				List<ProcVO> proc = procService.findByPType_id(pType_id);
 				/*************************** 2.開始查詢資料 *****************************************/
-				for (ProductVO product : products) {
-					System.out.print(product.getPid() + ",");
-					System.out.print(product.getName() + ",");
-					System.out.print(product.getPhoto() + ",");
-					System.out.print(product.getAmount() + ",");
-					System.out.print(product.getCatagoryVO().getName() + ",");
-					System.out.print(product.getPrice() + ",");
-					System.out.print(product.getDiscount() + ",");
-					System.out.print(product.getDescrip() + ",");
-					System.out.print(product.getIngredients());
-					System.out.println();}
-				//productVO.iterator();
+				for (ProcVO pro : proc) {
+					System.out.print(pro.getProcedure_id() + ",");
+					System.out.print(pro.getName() + ",");
+					System.out.print(pro.getProcTypeVO().getName()+ ",");
+					System.out.println(pro.getFee());
+					}
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
-				req.setAttribute("productss", products);
-				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/testProduct.jsp");
+				req.setAttribute("procedures", proc);
+				System.out.println("療程類別轉交完成");
+				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/proceduresList.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsgs.add("無法取得資料:" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage/product.jsp");
+						.getRequestDispatcher("/Backstage/procedures.jsp");
 				failureView.forward(req, res);
 			}
 		}

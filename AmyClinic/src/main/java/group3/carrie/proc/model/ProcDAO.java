@@ -101,7 +101,6 @@ public class ProcDAO implements ProcDAO_interface {
 		return list;
 	}
 	//k-----查療程類別所有療程
-	
 	private static final String GET_BY_PTYPE_ID = "FROM ProcVO where pType_id = ? order by procedure_id";
 	@Override
 	public List<ProcVO> findByPType_id(Integer pType_id) {
@@ -149,7 +148,7 @@ public class ProcDAO implements ProcDAO_interface {
 //		System.out.println("---------------------------------");
 				
 		//查全部
-		List<ProcVO> list = dao.getAll();
+		List<ProcVO> list = dao.findByPType_id(2);
 		for (ProcVO proc : list) {
 			System.out.print(proc.getProcedure_id() + ",");
 			System.out.print(proc.getName() + ",");

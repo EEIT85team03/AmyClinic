@@ -19,9 +19,9 @@
 <body>
 <%
 //  ProcVO procVO = (ProcVO) request.getAttribute("procVO");
- ProcService proc = new ProcService();
- List<ProcVO> list = proc.getAll();
- pageContext.setAttribute("list",list);
+//  ProcService proc = new ProcService();
+//  List<ProcVO> list = proc.getAll();
+//  pageContext.setAttribute("list",list);
  
  ProcTypeService procTServ  = new ProcTypeService();
  List<ProcTypeVO> proctype = procTServ.getAll();
@@ -44,8 +44,8 @@
           <option value="${proctype.pType_id}">${proctype.name}
          </c:forEach>   
        </select>
-       <input type="submit" value="查詢">
-       <input type="hidden" name="action" value="getOne_For_Update">
+       <input type="submit" value="查詢療程類別">
+       <input type="hidden" name="action" value="vPType_id">
      </FORM>
                  
                  </li></ol>
@@ -54,10 +54,6 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
- 
-
-      
-
  <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
 	<tr>
 		<th>療程類別</th>
@@ -72,22 +68,23 @@
 		</th>
 	</tr>
 
-	<c:forEach var="ProcVO"  items="${list}"  >
+	<c:forEach var="procs"  items="${procedures}"  >
 		<tr>
-			<td>${ProcVO.procTypeVO.name}</td>
-			<td>NO.${ProcVO.procedure_id}</td>
-			<td>${ProcVO.name}</td>
-			<td>${ProcVO.fee}元</td>
+			<td>${procs.procTypeVO.name}</td>
+<%-- 			${Proc.procTypeVO.name} --%>
+			<td>NO.${procs.procedure_id}</td>
+			<td>${procs.name}</td>
+			<td>${procs.fee}元</td>
 		<td>
 			  <FORM METHOD="post" ACTION="ProcServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
+			     <input type="hidden" name="procedure_id" value="${procs.procedure_id}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 <!-- 			<td> -->
 <!-- 			  <FORM METHOD="post" ACTION="ProcServlet"> -->
 <!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
-<%-- 			    <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}"> --%>
+<%-- 			    <input type="hidden" name="procedure_id" value="${procs.procedure_id}"> --%>
 <!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
 <!-- 			</td> -->
 		</tr>
