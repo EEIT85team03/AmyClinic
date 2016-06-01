@@ -85,7 +85,6 @@ public class LoginAction extends ActionSupport {
 //				System.out.println("location(LoginHandler)="+location);
 //				response.sendRedirect(location);
 //			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 			

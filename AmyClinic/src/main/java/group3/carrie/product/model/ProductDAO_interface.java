@@ -16,5 +16,4 @@ public interface ProductDAO_interface {
     public List<ProductVO> getAll();
     public List<ProductVO> findByCid(Integer cid);
     public Set<OrderItemsVO> getOrderItemsByPid(Integer pid);
-
 }

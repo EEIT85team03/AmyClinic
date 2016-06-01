@@ -265,11 +265,11 @@ public class MemberServlet extends HttpServlet {
 						Integer total_spent =new Integer( req.getParameter("total_spent"));
 						System.out.println("total_spent="+total_spent);
 						memberVO.setTotal_spent(total_spent);
-//						verify			
+//						驗證			
 						String verify = req.getParameter("verify");
 						System.out.println("verify="+verify);
 						memberVO.setVerify(verify);
-//						photo			
+//						照片依信箱命名			
 						String photo = req.getParameter("photo");
 						System.out.println("photo="+photo);
 						memberVO.setPhoto(photo);

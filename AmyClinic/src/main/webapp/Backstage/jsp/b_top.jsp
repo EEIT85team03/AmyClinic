@@ -136,24 +136,24 @@
 			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp">
 			<i 	class="fa fa-fw fa-dashboard">
 			</i>-Amy醫美前端-</a></li>
-			<li><a href="procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
-			<li><a href="members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-			<li><a href="product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
-					<a href="hotProduct.jsp" >熱銷產品
+					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品
 <!-- 				<FORM METHOD="post" ACTION="ScoreServlet"> -->
 <!-- 			     <input type="hidden" name="action"	value="hotProduct"> -->
 <!-- 			    </FORM> -->
 					</a></li>
-					<li><a href="#">熱銷療程</a></li>
+					<li><a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a></li>
 				</ul></li>
-			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL	Dashboard</a></li>
+<!-- 			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL	Dashboard</a></li> -->
 		</ul>
 	</div>
 	</nav>

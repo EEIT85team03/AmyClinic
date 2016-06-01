@@ -1,5 +1,6 @@
 USE AmyDB
 GO
+
 DROP TABLE AppointmentDetail;
 DROP TABLE Procedures;
 DROP TABLE ProcedureType;
@@ -13,6 +14,7 @@ DROP TABLE Orders;
 DROP TABLE Products;
 DROP TABLE Catagory;
 DROP TABLE Members;
+
 CREATE TABLE Catagory(
   cid           DECIMAL(4)      IDENTITY(10,10) PRIMARY KEY,
   name          NVARCHAR(30)    NOT NULL,
@@ -24,8 +26,8 @@ CREATE TABLE Members(
   verify		VARCHAR(50)		DEFAULT '',
   --email			VARCHAR(50)		NOT NULL UNIQUE,
   email			VARCHAR(50)		NOT NULL,
-  birthday		DATE			,
-  country		NVARCHAR(20)	,
+  birthday		DATE			DEFAULT '1970-01-01',
+  country		NVARCHAR(20)	DEFAULT '',
   gender		CHAR(1)			, -- enforce in registration code, not enforced to accomodate Google/FB login
   addr			NVARCHAR(50)	, -- ^
   phone			VARCHAR(10)		, -- ^

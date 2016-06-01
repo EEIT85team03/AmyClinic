@@ -1,26 +1,17 @@
 package group3.carrie.product.controller;
 
-import group3.beef.employee.model.EmployeeService;
-import group3.beef.employee.model.EmployeeVO;
-import group3.beef.encryption.AES_Encryption;
-import group3.carrie.catagory.model.CatagoryService;
 import group3.carrie.product.model.ProductService;
 import group3.carrie.product.model.ProductVO;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
 import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
@@ -61,7 +52,7 @@ public class ProductServlet extends HttpServlet {
 				//productVO.iterator();
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 				req.setAttribute("productss", products);
-				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/testProduct.jsp");
+				RequestDispatcher successView = req.getRequestDispatcher("/Backstage/productList.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
@@ -102,7 +93,7 @@ public class ProductServlet extends HttpServlet {
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 				req.setAttribute("productss", products);
 				RequestDispatcher successView = req
-						.getRequestDispatcher("/Backstage/testProduct.jsp");
+						.getRequestDispatcher("/Backstage/productList.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
@@ -373,9 +364,6 @@ public class ProductServlet extends HttpServlet {
 						.getRequestDispatcher("/Backstage/product.jsp");
 				failureView.forward(req, res);
 			}
-
 		}
-		
-		
 	}
 }

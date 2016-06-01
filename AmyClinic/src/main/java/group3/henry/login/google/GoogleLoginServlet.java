@@ -1,4 +1,4 @@
-package group3.henry.google.login;
+package group3.henry.login.google;
 
 import group3.henry.global.utility.GetResource;
 import group3.henry.login.model.MemberServices;

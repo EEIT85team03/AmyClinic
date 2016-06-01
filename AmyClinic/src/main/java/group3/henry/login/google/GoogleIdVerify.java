@@ -1,4 +1,4 @@
-package group3.henry.google.login;
+package group3.henry.login.google;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
