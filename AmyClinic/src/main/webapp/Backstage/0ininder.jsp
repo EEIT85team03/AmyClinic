@@ -94,6 +94,7 @@ var chartdata80 = {
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-   <input type="button"  src="">
+
+
 </body>
 </html>

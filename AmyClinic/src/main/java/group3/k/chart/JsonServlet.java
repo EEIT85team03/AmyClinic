@@ -32,57 +32,14 @@ public class JsonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public JsonServlet() { super(); }
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		// response.setContentType("application/json");
-		// Get the printwriter object from response to write the required json
-		// object to the output stream
-		PrintWriter out = response.getWriter();
-		// Assuming your json object is **jsonObject**, perform the following,
-		// it will return your json object
-
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		String url = "jdbc:jtds:sqlserver://localhost:1433;DatabaseName=AmyDB";
-		String query = "select * from OrderItems";
-		//String keyword = request.getParameter("keyword");
-		//keyword = keyword + "%";
-		try {
-			DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
-			conn = DriverManager.getConnection(url, "sa", "P@ssw0rd");
-
-//			stmt = conn.prepareStatement(query);
-//			stmt.setString(1, keyword);
-
-			rs = stmt.executeQuery();
-			JSONArray list = new JSONArray();
-			while (rs.next()) {
-				list.add(rs.getString(1));
-			}
-			out.print(list);
-			rs.close();
-			stmt.close();
-			conn.close();
-		} catch (SQLException e) {
-			out.println("Error:" + e.getMessage());
-		} finally {
-			try {
-				if (stmt != null)
-					stmt.close();
-			} catch (SQLException se2) {
-			}
-			try {
-				if (conn != null)
-					conn.close();
-			} catch (SQLException se) {
-				se.printStackTrace();
-			}
-		}
+		doPost(req, res);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		System.out.println("doPost_OK");
 		req.setCharacterEncoding("UTF-8");
 		res.setCharacterEncoding("UTF-8");
 		res.setContentType("text/json");
