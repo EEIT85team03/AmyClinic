@@ -73,7 +73,7 @@ public class ScheduleServlet extends HttpServlet {
 			List<ScheduleVO> list = ss.findByDate(date);
 			if(list.isEmpty()){
 				//System.out.println("list is empty!!");
-				out.println("null");
+				out.println("nodata");
 				return;
 			}
 			

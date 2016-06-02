@@ -1,6 +1,7 @@
 	package group3.carrie.proc.model;
 
 import group3.carrie.proctype.model.ProcTypeVO;
+import group3.carrie.product.model.ProductVO;
 import hibernate.util.HibernateUtil;
 
 import java.util.List;
@@ -99,7 +100,25 @@ public class ProcDAO implements ProcDAO_interface {
 		}
 		return list;
 	}
-	
+	//k-----查療程類別所有療程
+	private static final String GET_BY_PTYPE_ID = "FROM ProcVO where pType_id = ? order by procedure_id";
+	@Override
+	public List<ProcVO> findByPType_id(Integer pType_id) {
+		List<ProcVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_BY_PTYPE_ID);
+			query.setParameter(0, pType_id);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
+//k
 	public static void main(String[] args) {
 		ProcDAO dao = new ProcDAO();
 		ProcTypeVO procTypeVO = new ProcTypeVO();
@@ -129,7 +148,7 @@ public class ProcDAO implements ProcDAO_interface {
 //		System.out.println("---------------------------------");
 				
 		//查全部
-		List<ProcVO> list = dao.getAll();
+		List<ProcVO> list = dao.findByPType_id(2);
 		for (ProcVO proc : list) {
 			System.out.print(proc.getProcedure_id() + ",");
 			System.out.print(proc.getName() + ",");

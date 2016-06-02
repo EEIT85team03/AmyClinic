@@ -40,50 +40,50 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
 <!--         開始 -->
-<div class="dropdown">
-  <!-- Link or button to toggle dropdown -->
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    <li><a tabindex="-1" href="#">Action</a></li>
-    <li><a tabindex="-1" href="#">Another action</a></li>
-    <li><a tabindex="-1" href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a tabindex="-1" href="#">Separated link</a></li>
-  </ul>
-</div>
-  <div class="row">
-                    <div class="col-lg-12"><!--圓餅圖 -->
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Pie Chart Example with Tooltips</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="flot-chart">
-                                    <div class="flot-chart-content" id="flot-pie-chart"></div>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--圓餅圖 --> 
-                    </div><!--         row -->   
-  <div class="row">               
-<div class="col-lg-12"><!-- 長條圖 -->
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Bar Graph Example</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                                <div class="text-right">
-                                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- 長條圖 -->
-                </div><!-- 最後排 -->                    
-        <font color="red">每個頁面不同位置</font>
+<!-- Chart.js -->
+<script src="http://cdn.bootcss.com/Chart.js/2.1.4/Chart.bundle.min.js" charset="utf-8"></script>
+<!-- ccchart.js -->
+<script src="http://ccchart.com/js/ccchart.js" charset="utf-8"></script>
+<canvas id="hoge"></canvas>
+<script>
+var chartdata80 = {
 
+  "config": {
+    "title": "WS Bar Chart",
+    "subTitle": "WebSocketで列データをリアルタイム受信し追記描画する",
+    "type": "bar",
+    "maxY": 100,
+    "minY": 0,
+    "barWidth": 24,
+    "useVal": "yes",
+    "maxWsColLen": 4,
+    "textColors": {"title":"#222","subTitle":"#222","hanrei":"#777","unit":"#777"
+          },
+    "colorSet": 
+          ["red","#FF9114","#3CB000","#00A8A2","#0036C0","#C328FF","#FF34C0"],
+    "shadows": {"all":["#444",5,5,5]}
+  },
+
+  "data": [
+    ["種別"],
+    ["朝"],
+    ["昼"],
+    ["夜"]
+  ]
+};
+
+  ccchart.wsCloseAll();//一旦クリア
+
+  ccchart
+      .init('hoge', chartdata80,
+        function () {
+          this
+            .ws('ws://ccchart.com:8017')
+            .on('message', ccchart.wscase.someColsAtATime)
+        }
+      );
+
+</script>
 
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper --> 
@@ -94,16 +94,6 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
-
-    <!-- Flot Charts JavaScript -->
-    <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="js/plugins/flot/flot-data.js"></script>  
+   
 </body>
 </html>

@@ -8,16 +8,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
-<title>會員登入</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+	<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+	<title>會員登入</title>
 </head>
 <body>
+<!-- facebook script -->
+<div id="fb-root"></div>
+<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
+<!-- end facebook script -->
+<!-- <div id="fb-root"></div> -->
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
@@ -63,13 +68,23 @@
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
 						</a>
 						
+
+						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+<!-- 						<div id="status"></div> -->
+						<a href="#" onclick="logout();">Sign out</a>
+
 					</div>
 				</fieldset>
 			</s:form>
+
 				<div id="googleButtonPlaceholder">
 					<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
 					<span class="btn">使用 Google Gmail 登入</span>
 				</div>
+
+						<div id="googleButtonPlaceholder"><div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div><span class="btn">使用 Google Gmail 登入</span></div>
+						<a href="#" onclick="logout();" id="googlelogout">Sign out</a>
+
 		</div>
 
 	</div>
@@ -88,58 +103,23 @@
       <hr/>
 		<s:include value="/login/recover.jsp"></s:include>
     </div>
-
   </div>
-
 </div>
+
 	
 
-	<s:include value="/General/footer.jsp"></s:include>
+
+
+<s:include value="/General/footer.jsp"></s:include>
+
+<!-- Google script -->
+<script src="${pageContext.request.contextPath}/js/google.login.js"></script>
+<!-- Henry's Custom logout -->
 <script>
-function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-      // The ID token you need to pass to your backend:
-      var id_token = googleUser.getAuthResponse().id_token;
-//       console.log("ID Token: " + id_token);     
-// 	  var user = {'name': profile.getName()};
-	  	  
-// 	  sessionStorage.setItem('user', JSON.stringify(user)); //session->JSON test	  
-// 	  var obj = JSON.parse(sessionStorage.user);
-// 	  console.log(obj.name);
-
-
-// 	  var xhr = new XMLHttpRequest(); //AJAX, sends token to backend for verification
-// 	  xhr.open('POST', '${pageContext.request.contextPath}/GoogleLoginServlet'); // token verification servlet
-// 	  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-// 	  xhr.onload = function() {
-// 	    console.log('Signed in as: ' + xhr.responseText);
-// 	  };
-// 	  xhr.send('idtoken=' + id_token);
-	  	  
-	$.ajax({
-		type: "POST",
-		url: '${pageContext.request.contextPath}/GoogleLoginServlet',
-		data: 'idtoken=' + id_token,
-		dataType:'json',
-		success: function(data) {
-			console.log(data);
-			console.log(data[0].success);
-			console.log(data[0].redirect);
-			console.log(data[0].redirectURL);
-			if(data[0].redirect) {
-				console.log("redirecting");
-				window.location.href = data[0].redirectURL;
-			}
-		}
-	})
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-}
+	function logout(){
+		signOut();
+		FB.logout();
+	}
 </script>
 
 <script>

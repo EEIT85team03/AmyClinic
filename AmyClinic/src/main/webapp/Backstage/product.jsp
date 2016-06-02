@@ -77,7 +77,6 @@
 			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
-
 	<c:forEach var="ProductVO"  items="${list}"  >
 		<tr>
 			<td>${ProductVO.pid}</td>

@@ -19,9 +19,9 @@
 <body>
 <%
 //  ProcVO procVO = (ProcVO) request.getAttribute("procVO");
- ProcService proc = new ProcService();
- List<ProcVO> list = proc.getAll();
- pageContext.setAttribute("list",list);
+//  ProcService proc = new ProcService();
+//  List<ProcVO> list = proc.getAll();
+//  pageContext.setAttribute("list",list);
  
  ProcTypeService procTServ  = new ProcTypeService();
  List<ProcTypeVO> proctype = procTServ.getAll();
@@ -68,22 +68,23 @@
 		</th>
 	</tr>
 
-	<c:forEach var="ProcVO"  items="${list}"  >
+	<c:forEach var="procs"  items="${procedures}"  >
 		<tr>
-			<td>${ProcVO.procTypeVO.name}</td>
-			<td>NO.${ProcVO.procedure_id}</td>
-			<td>${ProcVO.name}</td>
-			<td>${ProcVO.fee}元</td>
+			<td>${procs.procTypeVO.name}</td>
+<%-- 			${Proc.procTypeVO.name} --%>
+			<td>NO.${procs.procedure_id}</td>
+			<td>${procs.name}</td>
+			<td>${procs.fee}元</td>
 		<td>
 			  <FORM METHOD="post" ACTION="ProcServlet">
 			     <input type="submit" value="修改" class="btn btn-success">
-			     <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
+			     <input type="hidden" name="procedure_id" value="${procs.procedure_id}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
 <!-- 			<td> -->
 <!-- 			  <FORM METHOD="post" ACTION="ProcServlet"> -->
 <!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
-<%-- 			    <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}"> --%>
+<%-- 			    <input type="hidden" name="procedure_id" value="${procs.procedure_id}"> --%>
 <!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
 <!-- 			</td> -->
 		</tr>
