@@ -17,23 +17,30 @@ margin-left : 4em;
 <body>
 
 	<select id="selectEmp">
-		
+		<option>請選擇</option>
 	
 	</select>
 	
 	
 	
-	<table border="1px" id="firstTable" >
+	<table border="1px"  >
+		
 		<tr>
 			<th width="150px" >會員名稱</th>
 			<th width="200px">被評分員工</th>
 			<th width="100px">分數</th>
-			<th width="100px">留言</th>
+			<th width="400px">留言</th>
 			<th width="200px">最後新增修改的日期</th>
 			<th width="100px">狀態欄</th>
-			<th width="100px">確認修改</th>
+			<th width="75px">確認修改</th>
 			 
 		</tr>
+
+	</table>
+	
+		<table border="1px" id="firstTable" >
+		<tbody></tbody>
+
 
 	</table>
 	<script src="../js/jquery-1.9.1.js"></script>
@@ -42,13 +49,13 @@ margin-left : 4em;
 
 		$.getJSON('ScoreServlet',{'action':'ListAllScores'},function(data){
 			$.each(data,function(i,scoreVO){
-				var cell1 = $("<td ></td>").text(scoreVO.MebName);
-				var cell2 = $("<td></td>").text(scoreVO.EmpName);
-				var cell3 = $("<td></td>").text(scoreVO.Score);
-				var cell4 = $("<td></td>").text(scoreVO.Comment);
-				var cell5 = $("<td></td>").text(scoreVO.ScoreDate);
-				var cell6 = $("<td></td>").html("<select id='st"+i+"'><option value='0'>屏蔽該留言</option><option value='1'>正常</option></select>");
-				var cell7 = $("<td></td>").html("<form name='f"+i+"' action='ScoreServlet'><input type='hidden' id='stt"+i+"' name='st' value='"+scoreVO.St+"'><input type='submit' value='修改'><input type='hidden'name='scoreId' value='"+scoreVO.ScoreId+"'><input type='hidden' name='action' value='adjustSt'></form>");
+				var cell1 = $("<td width='150px' ></td>").text(scoreVO.MebName);
+				var cell2 = $("<td width='200px'></td>").text(scoreVO.EmpName);
+				var cell3 = $("<td width='100px'></td>").text(scoreVO.Score);
+				var cell4 = $("<td width='400px'></td>").text(scoreVO.Comment);
+				var cell5 = $("<td width='200px'></td>").text(scoreVO.ScoreDate);
+				var cell6 = $("<td width='100px'></td>").html("<select id='st"+i+"'><option value='0'>屏蔽該留言</option><option value='1'>正常</option></select>");
+				var cell7 = $("<td width='75px'></td>").html("<form name='f"+i+"' action='ScoreServlet'><input type='hidden' id='stt"+i+"' name='st' value='"+scoreVO.St+"'><input type='submit' value='修改'><input type='hidden'name='scoreId' value='"+scoreVO.ScoreId+"'><input type='hidden' name='action' value='adjustSt'></form>");
 				var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4,cell5,cell6,cell7]);
 				$("#firstTable>tbody").append(row);
 				$("#st"+i).val(scoreVO.St);
@@ -78,36 +85,36 @@ margin-left : 4em;
 			
 	})
 	
-// 	$("#selectEmp").change(function(){
-// 		var eid =$("#selectEmp").val();
+	$("#selectEmp").change(function(){
+		var eid =$("#selectEmp").val();
 	
-// 		$.getJSON('ScoreServlet',{'action':'ListAllScores'},function(data){
-// 			$("#firstTable").empty();
-// 			$.each(data,function(i,scoreVO){
+		$.getJSON('ScoreServlet',{'action':'ListAllScores'},function(data){
+			$("#firstTable").empty();
+			$.each(data,function(i,scoreVO){
 
-// 				if(scoreVO.Eid==eid){
-// 				var cell1 = $("<td ></td>").text(scoreVO.MebName);
-// 				var cell2 = $("<td></td>").text(scoreVO.EmpName);
-// 				var cell3 = $("<td></td>").text(scoreVO.Score);
-// 				var cell4 = $("<td></td>").text(scoreVO.Comment);
-// 				var cell5 = $("<td></td>").text(scoreVO.ScoreDate);
-// 				var cell6 = $("<td></td>").html("<select id='st"+i+"'><option value='0'>屏蔽該留言</option><option value='1'>正常</option></select>");
-// 				var cell7 = $("<td></td>").html("<form name='f"+i+"' action='ScoreServlet'><input type='hidden' id='stt"+i+"' name='st' value='"+scoreVO.St+"'><input type='submit' value='修改'><input type='hidden'name='scoreId' value='"+scoreVO.ScoreId+"'><input type='hidden' name='action' value='adjustSt'></form>");
-// 				var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4,cell5,cell6,cell7]);
-// 				$("#firstTable>tbody").append(row);
-// 				$("#st"+i).val(scoreVO.St);
-// 				$("#st"+i).change(function(){
-// 					var x=$("#st"+i).val();
-// 					$("#stt"+i).val(x);
+				if(scoreVO.Eid==eid){
+				var cell1 = $("<td width='150px' ></td>").text(scoreVO.MebName);
+				var cell2 = $("<td width='200px'></td>").text(scoreVO.EmpName);
+				var cell3 = $("<td width='100px'></td>").text(scoreVO.Score);
+				var cell4 = $("<td width='400px'></td>").text(scoreVO.Comment);
+				var cell5 = $("<td width='200px'></td>").text(scoreVO.ScoreDate);
+				var cell6 = $("<td width='100px'></td>").html("<select id='st"+i+"'><option value='0'>屏蔽該留言</option><option value='1'>正常</option></select>");
+				var cell7 = $("<td width='75px'></td>").html("<form name='f"+i+"' action='ScoreServlet'><input type='hidden' id='stt"+i+"' name='st' value='"+scoreVO.St+"'><input type='submit' value='修改'><input type='hidden'name='scoreId' value='"+scoreVO.ScoreId+"'><input type='hidden' name='action' value='adjustSt'></form>");
+				var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4,cell5,cell6,cell7]);
+				$("#firstTable").append(row);
+				$("#st"+i).val(scoreVO.St);
+				$("#st"+i).change(function(){
+					var x=$("#st"+i).val();
+					$("#stt"+i).val(x);
 
-// 				});
+				});
 				
-// 				}
+				}
 				  
-// 			})
+			})
 
-// 		})
-// 	});
+		})
+	});
 	
 	
 	</script>
