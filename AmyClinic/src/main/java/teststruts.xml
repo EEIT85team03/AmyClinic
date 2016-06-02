@@ -18,26 +18,26 @@
 	<!-- login package: -->
 	<!-- Intercepts password and encrypts them -->
 	<!-- ********************** -->
-<!-- 	<package name="loginPackage" namespace="/login" extends="struts-default"> -->
+	<package name="loginPackage" namespace="/login" extends="struts-default">
 
-<!-- 		<interceptors> -->
-<!-- 			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" /> -->
-<!-- 			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" /> -->
-<!-- 			<interceptor class="group3.henry.login.interceptor.LoggedInInterceptor" name="LoggedIn" /> -->
-<!-- 			<interceptor-stack name="EncPwLog"> -->
-<!-- 				<interceptor-ref name="defaultStack" /> -->
-<!-- 				<interceptor-ref name="LoggedIn" /> -->
-<!-- 				<interceptor-ref name="AESEncryption" /> -->
-<!-- 				<interceptor-ref name="MD5Encryption" /> -->
-<!-- 			</interceptor-stack> -->
-<!-- 		</interceptors> -->
-<!-- 		<default-interceptor-ref name="EncPwLog" /> -->
-<!-- 		<action name="login" class="group3.henry.login.controller.LoginAction"> -->
-<!-- 			<result name="success">/login/success.jsp</result> -->
-<!-- 			<result name="verifyEmail">/login/verify.jsp</result> -->
-<!-- 			<result name="login">/login/login.jsp</result> -->
-<!-- 		</action> -->
-<!-- 	</package> -->
+		<interceptors>
+			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />
+			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" />
+			<interceptor class="group3.henry.login.interceptor.LoggedInInterceptor" name="LoggedIn" />
+			<interceptor-stack name="EncPwLog">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="LoggedIn" />
+				<interceptor-ref name="AESEncryption" />
+				<interceptor-ref name="MD5Encryption" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="EncPwLog" />
+		<action name="login" class="group3.henry.login.controller.LoginAction">
+			<result name="success">/login/success.jsp</result>
+			<result name="verifyEmail">/login/verify.jsp</result>
+			<result name="login">/login/login.jsp</result>
+		</action>
+	</package>
 
 	<!-- ********************** -->
 	<!-- Register/reset package: -->
@@ -57,11 +57,11 @@
 
 		<default-interceptor-ref name="EncPw" />
 
-		<action name="login" class="group3.henry.login.controller.LoginAction">
-			<result name="success">/login/success.jsp</result>
-			<result name="verifyEmail">/login/verify.jsp</result>
-			<result name="login">/login/login.jsp</result>
-		</action>
+<!-- 		<action name="login" class="group3.henry.login.controller.LoginAction"> -->
+<!-- 			<result name="success">/login/success.jsp</result> -->
+<!-- 			<result name="verifyEmail">/login/verify.jsp</result> -->
+<!-- 			<result name="login">/login/login.jsp</result> -->
+<!-- 		</action> -->
 
 		<action name="register" class="group3.henry.register.controller.RegisterAction">
 			<interceptor-ref name="fileUpload">                        						<!-- 設定檔案上傳攔截器 -->

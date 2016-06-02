@@ -61,12 +61,9 @@
 						<s:submit value="確定登入" method="login" />						
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#10071; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
-							<strong>現在加入愛美</strong></a>
-
-						
-						<a href="${pageContext.request.contextPath}/register/register.jsp">
+							<strong>現在加入愛美</strong></a>				
 <!-- 							Google Login button -->
-						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						<span class="g-signin2" data-onsuccess="onSignIn"></span>
 <!-- 						Facebook login button -->
 						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 <!-- 						<div id="status"></div> -->
