@@ -1,4 +1,8 @@
 
+function getContextPath() { //obtains context path. EL doesn't work with separated .js
+		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
+
 $(function(){
 	var reward_dis = $("#reward_dis");
 	var should_pay = $("#should_pay");
@@ -93,13 +97,13 @@ $(function(){
 		}
 		$.ajax({
 			"type":"post",
-			"url":"NewOrderServlet",
+			"url": getContextPath()+ "/shoppings/neworder",
 			"dataType":"json",
-			"data":{"action":'ok', "reward_pts": myReward_pts, "should_pay":pay, "mname":mname, "addr":addr, "phone":phone, "email":email},
+			"data":{"reward_pts": myReward_pts, "should_pay":pay, "mname":mname, "addr":addr, "phone":phone, "email":email},
 			"success":function(datas) {
 				$.each(datas,function(i,data) {
 				var oid = data;
-				window.location.href = "CheckForPayServlet?oid="+oid;
+				window.location.href = getContextPath()+ "/shoppings/checkforpay?oid="+oid;
 				})
 				
 			}
@@ -107,15 +111,15 @@ $(function(){
 		
 	});
 	
+	
 	//取消訂單，把購物車殺掉
 	$("#cancel").click(function(){
 		if(confirm("要取消訂單嗎？")) {
 			$.ajax({
 				"type":"post",
-				"url":"NewOrderServlet",
-				"data":{"action" : 'cancel'},
+				"url": getContextPath()+ "/shoppings/killorder",
 				"success":function(data){
-					window.location.href = "prod_list.jsp";
+					window.location.href = getContextPath()+ "/shopping/prod_list.jsp";
 				}
 			})
 		}
