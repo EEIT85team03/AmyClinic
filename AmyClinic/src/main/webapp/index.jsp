@@ -121,7 +121,9 @@ body {
 
 		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
-		<a href="${pageContext.request.contextPath}/Backstage/login.jsp" >員工登入</a><br>
+ 
+		<a href="${pageContext.request.contextPath}/empLogin/login.jsp" >員工登入</a><br>
+ 
 		
 		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="/register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
 </div>		
