@@ -18,6 +18,9 @@ table {
 	border-color: green;
 	align: center;
 }
+th{
+background-color:#D6D6AD;
+}
 </style>
 </head>
 
@@ -30,13 +33,13 @@ table {
  %>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper" style=background-color:#ADADAD  >
+<div id="page-wrapper" style=background-color:#000000  >
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
-                </div>
+<!--                 <div class="page-header" > -->
+<!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
+<!--                 </div> -->
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>
 <!-- <form class="navbar-search pull-right"  ACTION="MemberServletTest" method="post"> -->
 <!-- <input type="text" class="search-query" placeholder="請輸入姓名" value="getName_For_Update" /> -->
@@ -56,7 +59,7 @@ table {
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->
 <!--         開始 -->
  
 

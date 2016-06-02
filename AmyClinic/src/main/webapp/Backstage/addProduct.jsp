@@ -16,18 +16,18 @@
 <body>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper" style=background-color:#ADADAD  >
+<div id="page-wrapper" style=background-color:#000000  >
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
-                </div>
+                    <div class="col-sm-12">
+<!--                 <div class="page-header" > -->
+<!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
+<!--                 </div> -->
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">新增產品</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->   
 <!--         開始 -->
 <%
  ProductVO productVO = (ProductVO) request.getAttribute("productVO");
@@ -36,7 +36,7 @@ CatagoryService cataServ  = new CatagoryService();
 List<CatagoryVO> catagorys = cataServ.getAll();
 pageContext.setAttribute("catagorys", catagorys);
 %>
- <div class="container">
+ <div class="container"><br>
   <form class="form-horizontal" role="form" ACTION="ProductServlet"  ENCTYPE="multipart/form-data" method="post">
   
       <div class="form-group">
@@ -44,7 +44,7 @@ pageContext.setAttribute("catagorys", catagorys);
       		<div class="col-sm-10">          
 <!--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid"> -->
       
-			<select size="1"  name="cid">
+			<select size="1"  name="cid" class="form-control form-control-sm"  style="width: 150px">
       		<c:forEach var="catagoryVO" items="${catagorys}">
 				<option  value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' } >${catagoryVO.name}
 	  		</c:forEach>

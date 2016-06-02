@@ -27,6 +27,7 @@
        color: black;  font-size: 16px;  font-weight: bold;
 /*        font-family: ...;  */
        } 
+    
 /* 	#userphoto{	border-radius:25px;}  */
 </style>
 
@@ -34,18 +35,18 @@
 <body>
     <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-<div id="page-wrapper" style=background-color:#ADADAD  >
+<div id="page-wrapper" style=background-color:#000000  >
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
-                </div>
+                    <div class="col-sm-12">
+<!--                 <div class="page-header" > -->
+<!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
+<!--                 </div> -->
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">新增會員</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     <hr> 
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->   
 <!--         開始 -->
 <form role="form" class="form-horizontal" method="post" action="MemberServletTest">
 <!-- 	<div class="form-group"> -->
@@ -53,7 +54,7 @@
 <!-- 		<div class="col-sm-5"> -->
 <%-- 			<input name="memberVO.mid" id="memberid" class="form-control disable" type="text" value="${memberVO.mid}" readonly/>			 --%>
 <!-- 		</div> -->
-<!-- 	</div> -->
+<!-- 	</div> --><br>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membername">姓名: </label>
 		<div class="col-sm-5">
@@ -96,7 +97,7 @@
 		<label class="control-label col-sm-2" for="membercountry">國家: </label>
 		<div class="col-sm-5">
 <!-- 			<input name="memberVO.country" id="membercountry" class="form-control" type="text" 	placeholder="庫存量"		style="width:80px;"/> -->
-		<select name='country' class="selectpicker" data-style="btn-success">
+		<select name='country'  data-style="btn-success" class="form-control form-control-sm"  style="width: 150px">
   			<option value="台灣">台灣</option>
   			<option value="美國">美國</option>
   			<option value="日本">日本</option>
@@ -109,7 +110,7 @@
 		<label class="control-label col-sm-2" for="membergender">性別: </label>
 		<div class="col-sm-5">
 <!-- 			<input name="memberVO.gender" id="membergender" class="form-control" type="text" placeholder="庫存量"	style="width:80px;"/> -->
-		<select name='gender' class="selectpicker"  id="membergender" data-style="btn-warning">
+		<select name='gender'  id="membergender" data-style="btn-warning" class="form-control form-control-sm"  style="width: 150px">
   			<option value="M">男人</option>
   			<option value="F">女人</option>
   			<option value="A">其他</option>

@@ -36,14 +36,32 @@
 	right: 0;
 	z-index: -999;
 }
-
 .bg img {
 	min-height: 100%;
 	width: 100%;
 }
-.navbar navbar-inverse navbar-fixed-top{
- background-color: #00FF00;
+table {
+	border-color: green;
+	align: center;
 }
+th{
+background-color:#D6D6AD;
+}
+/* 側邊 */
+.side-nav{
+/* background-color:#006030; */
+}
+/* 上面 */
+.navbar-fixed-top{
+background-color:#F3F3FA;
+}
+/* 導航 */
+.navbar-ex1-collapse{
+/* background-color:#006030; */
+}
+/* td{ */
+/* background-color:#D3FF93; */
+/* } */
 </style>
 </head>
 <body>
@@ -51,8 +69,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".navbar-ex1-collapse">
+		<button type="button" class="navbar-toggle" data-toggle="collapse"	data-target=".navbar-ex1-collapse">
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
@@ -60,9 +77,11 @@
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-			data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
-				class="caret"></b></a>
+		<li class="dropdown">
+		<a href="#" class="dropdown-toggle"	data-toggle="dropdown">
+		<i class="fa fa-envelope"></i>
+		 <b	class="caret"></b>
+		 </a>
 			<ul class="dropdown-menu message-dropdown">
 				<li class="message-preview"><a href="#">
 						<div class="media">
@@ -79,7 +98,7 @@
 								<p class="small text-muted">
 									<i class="fa fa-clock-o"></i> 昨天 at 4:32 PM
 								</p>
-								<p>從前有賣韮、蒜、蔥及白菜的四個朋友，每天收市以後，便在一處喝酒，但賣白菜的那位最吝嗇，從來不曾請過客。</p>
+								<p>你跨年有空嗎？......有..........那我跟你換班</p>
 							</div>
 						</div>
 				</a></li>
@@ -104,9 +123,8 @@
 			</ul></li>
 		<!--                                         訊息區over -->
 		<!--                                         通知區-->
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-			data-toggle="dropdown"><i class="fa fa-bell"></i> <b
-				class="caret"></b></a>
+		<li class="dropdown"><a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-bell"></i> 
+		<b	class="caret"></b></a>
 			<ul class="dropdown-menu alert-dropdown">
 				<li><a href="#">您的帳號已鎖定<span class="label label-default">0</span></a></li>
 				<li><a href="#">您的帳號已開通<span class="label label-primary">1</span></a></li>
@@ -118,9 +136,9 @@
 				<li><a href="#">查看所有通知</a></li>
 			</ul></li>
 		<!--                                         通知區over-->
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
-			data-toggle="dropdown"><i class="fa fa-user"></i>涼麵趁熱吃<b
-				class="caret"></b></a>
+		<li class="dropdown">
+		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
+		</i>涼麵趁熱吃<b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li>
@@ -143,6 +161,7 @@
 			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-desktop"></i>留言管理</a></li>
 			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>

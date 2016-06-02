@@ -307,8 +307,7 @@ public class MemberServlet extends HttpServlet {
 				if ("getOne_Name_Update".equals(action)) {
 					System.out.println("姓名查詢指令");
 					List<String> errorMsg = new LinkedList<String>();
-					req.setAttribute("errorMsg", errorMsg);
-					
+					req.setAttribute("errorMsg", errorMsg);				
 					try {
 //						name						
 						String name = req.getParameter("myname");
@@ -331,7 +330,5 @@ public class MemberServlet extends HttpServlet {
 						failureView.forward(req, res);
 					}
 				}//getOne_For_Update
-		
 	}
-
 }

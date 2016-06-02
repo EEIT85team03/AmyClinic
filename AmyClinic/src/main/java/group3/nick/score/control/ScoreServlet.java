@@ -49,11 +49,11 @@ public class ScoreServlet extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
 		HttpSession session =req.getSession(false);
-		//對應Score Table的Service方法
+		//對應Score Table的Service方法				聊天
 		ScoreService daoScore = new ScoreService();
-		//對應EmployeeService Table的Service方法
+		//對應EmployeeService Table的Service方法	員工
 		EmployeeService	dao=new EmployeeService();
-		//對應AppService Table的Service方法
+		//對應AppService Table的Service方法		預約
 		AppService appDao   = new AppService(); 
 		
 
@@ -221,7 +221,7 @@ public class ScoreServlet extends HttpServlet {
 					ScoreVO scoreVO=daoScore.findMyScore(score_id);
 					scoreVO.setSt(st);
 					daoScore.updateScore(scoreVO);
-					res.sendRedirect(req.getContextPath()+"/Score/backgroundScore.jsp");
+					res.sendRedirect(req.getContextPath()+"/Backstage/backgroundScore.jsp");
 				}
 		
 		

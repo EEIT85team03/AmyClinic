@@ -49,7 +49,7 @@ body {
 }
 
 .top-nav>li {
-    display: inline-block;
+    display: inline-coral;
     float: left;
 }
 
@@ -144,10 +144,10 @@ ul.alert-dropdown {
 }
 
 .side-nav>li>ul>li>a {
-    display: block;
+    display: coral;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: coral;
 }
 
 .side-nav>li>ul>li>a:hover {
@@ -157,7 +157,7 @@ ul.alert-dropdown {
 /* Flot Chart Containers */
 
 .flot-chart {
-    display: block;
+    display: coral;
     height: 400px;
 }
 
