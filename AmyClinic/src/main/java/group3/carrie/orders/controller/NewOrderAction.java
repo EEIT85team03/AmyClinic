@@ -105,7 +105,7 @@ public class NewOrderAction extends ActionSupport {
 		}
 		
 		session.removeAttribute("ShoppingCart");
-		return SUCCESS;
+		return null;
 		
 	}
 	
