@@ -1,9 +1,9 @@
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
 <!DOCTYPE html>
 <!-- saved from url=(0063)http://www.beide.com.tw/demotype/flash/FLASH-02/JQ-2/index.html -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -88,6 +88,7 @@ body {
 		<!--top image-->
 
 		<article>
+			<c:import url="/General/LoginBox.jsp"></c:import>
 			<h2 class="title"></h2>
 			<!--黒底標題-->
 			<section>
