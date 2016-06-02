@@ -262,16 +262,17 @@
 	    		</div>
     		</div>
     	</div>
-<!--     </div> -->
-<c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
+<%-- 錯誤表列 --%>
+   <c:if test="${not empty errorMsg}">
+	<font color='red'>請修正以下錯誤:</font>
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
+			<li><font color='red'>請修正以下錯誤:${message}</font></li>
 		</c:forEach>
 	</ul>
-	</font>
+	
 </c:if>
+<%-- 錯誤表列 --%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>

@@ -13,6 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
+<style>
+table {
+	border-color: green;
+	align: center;
+}
+</style>
 </head>
 
 <body>
@@ -54,7 +60,7 @@
 <!--         開始 -->
  
 
- <table border='1'  bordercolor='green'  align='center'  class="table table-hover"  >
+ <table border='1'  class="table table-hover"  >
 	<tr>
 <!-- 		<th>照片</th>	 -->
 		<th>詳細(點擊藍色姓名)</th>

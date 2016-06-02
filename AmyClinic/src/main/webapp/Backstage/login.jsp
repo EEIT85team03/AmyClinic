@@ -8,13 +8,13 @@
 </head>
 <body>
 <c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
+	<font color='red'>請修正以下錯誤:	</font>
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
+			<li><font color='red'>${message}</font></li>
 		</c:forEach>
 	</ul>
-	</font>
+
 </c:if>
 
 	

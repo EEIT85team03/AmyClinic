@@ -13,6 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
+<style>
+table {
+	border-color: blue;
+	align: center;
+}
+</style>
 </head>
 
 <body>
@@ -60,7 +66,7 @@
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><hr>     
 <!--         開始 -->
- <table border="2"  bordercolor='blue'  align='center'  class="table table-hover"  >
+ <table border="1"   class="table table-hover"  >
 	<tr>
 		<th>商品編號</th>
 		<th>照片</th>	
@@ -103,15 +109,17 @@
 	</c:forEach>
 	</table>  
 	      
-	<c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
+	<%-- 錯誤表列 --%>
+   <c:if test="${not empty errorMsg}">
+	<font color='red'>請修正以下錯誤:</font>
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
+			<li><font color='red'>請修正以下錯誤:${message}</font></li>
 		</c:forEach>
 	</ul>
-	</font>
+	
 </c:if>
+<%-- 錯誤表列 --%>
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>
