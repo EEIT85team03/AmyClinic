@@ -14,6 +14,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢訂單</title>
+<style>
+table {
+	width: 1000px;
+}
+</style>
 </head>
 <body>
 	<b>訂單查詢：</b><br><br>
@@ -21,7 +26,7 @@
 	<input type="button" id="query" value="查詢"><br><br>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
 	<c:if test="${ordersVO.ostatus != 3}">	
-		<table width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
+		<table border="1" style="text-align: center;border-collapse: collapse;">
 			<tr>
 				<th>訂單編號</th>
 				<th>日期</th>
@@ -75,7 +80,7 @@
 		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">
 		</div>
 		<div id="item${status.count}" style="display:none;">
-			<table  width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
+			<table border="1" style="text-align: center;border-collapse: collapse;">
 				<c:forEach varStatus="varSta" var="orderItems" items="${ordersVO.orderItems}">
 					<tr>
 						<td>

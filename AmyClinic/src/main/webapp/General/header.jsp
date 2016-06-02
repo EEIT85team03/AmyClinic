@@ -1,8 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<link rel="shortcut icon" type="image/png"
-	href="${pageContext.request.contextPath}/General/img/logo.ico" />
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/General/img/logo.ico" />
+<script> 
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1733704493575453',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<span class="fb-like" data-width="450" data-show-faces="true" data-layout="button"></span>
 <div id="banner">
 	<h1>
 		<a href="#"></a>
@@ -95,7 +110,7 @@
 							<li class='last'><a href='#'><span>審計部</span></a></li>
 						</ul></li>
 				</ul></li>
-			<li><a href="#">線上購物</a></li>
+			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">線上購物</a></li>
 			<li><a href="#">專員諮詢</a></li>
 		</ul>
 	</div>

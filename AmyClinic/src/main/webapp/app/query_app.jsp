@@ -13,6 +13,10 @@
 	List<AppVO> appVOs = appServ.findByMid_AF(mb.getMid());
 	pageContext.setAttribute("appVOs",appVOs);
 %>
+<%
+	String today =String.format("%tF%n",new java.util.Date());
+	pageContext.setAttribute("currentTime", today);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!-- 
@@ -299,6 +303,7 @@ a {
 	
 								
 							}else{
+								
 								var cell1 = $("<td ></td>").html("<form action='../Score/ScoreServlet' method='post'><input type='submit' value='修改評論'><input type='hidden' name='action' value='gotoAdjustScore'><input type='hidden' name='aid' value='"+emp.aid+"'></form>")
 	
 								

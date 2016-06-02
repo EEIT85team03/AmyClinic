@@ -32,10 +32,10 @@ function onSignIn(googleUser) {
 			console.log(data[0].success);
 			console.log(data[0].redirect);
 			console.log(data[0].redirectURL);
-			if(data[0].redirect) {
-				console.log("redirecting");
-				window.location.href = data[0].redirectURL;
-			}
+//			if(data[0].redirect) {
+//				console.log("redirecting");
+//				window.location.href = data[0].redirectURL;
+//			}
 		}
 	})
 }

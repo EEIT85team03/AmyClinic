@@ -116,6 +116,10 @@ public class ScoreServlet extends HttpServlet {
 					m1.put("ok",false);
 				}else{
 					m1.put("ok",true);
+					List<ScoreVO> lu=daoScore.getAidScore(appVO.getAid());
+					for(ScoreVO ss:lu){
+						m1.put("ScoreDate", ss.getScoreDate());
+					}
 				}
 				m1.put("eid", appVO.getEmployeeVO().getEid());
 				m1.put("aid",appVO.getAid());
@@ -184,7 +188,54 @@ public class ScoreServlet extends HttpServlet {
 			session.setAttribute("ScoreEid", scoreVO.getEmp().getEid());
 			res.sendRedirect(req.getContextPath()+"/Score/waitToForward.jsp");
 		}
+		
+		
+		//後台List 全部評論
+		if("ListAllScores".equals(action)){
+			List<ScoreVO> li=daoScore.getAll();
+			List l1 = new LinkedList();
+			for(ScoreVO scoreVO :li){
+				Map m1 = new HashMap();
+				m1.put("MebName", scoreVO.getMb().getName());
+				m1.put("EmpName", scoreVO.getEmp().getName());
+				m1.put("Eid", scoreVO.getEmp().getEid());
+				m1.put("Score", scoreVO.getScores());
+				m1.put("Comment", scoreVO.getComment());
+				m1.put("ScoreDate", scoreVO.getScoreDate().toString());
+				m1.put("St", scoreVO.getSt());
+				m1.put("ScoreId", scoreVO.getScore_id());
+				l1.add(m1);
+				
+			}
+			String jsonString = JSONValue.toJSONString(l1);
+			out.println(jsonString);
+			
+		}
+		
+		//後台修改評論狀態		
+				if("adjustSt".equals(action)){
+					String sscore_id=req.getParameter("scoreId");
+					String sst=req.getParameter("st");
+					int st=Integer.parseInt(sst);
+					int score_id=Integer.parseInt(sscore_id);
+					ScoreVO scoreVO=daoScore.findMyScore(score_id);
+					scoreVO.setSt(st);
+					daoScore.updateScore(scoreVO);
+					res.sendRedirect(req.getContextPath()+"/Score/backgroundScore.jsp");
+				}
+		
+		
+		
+		
+		
+		
+		
+		
 	}
+	
+	
+	
+	
 	
 	//=======計算平均星數的方法
 	

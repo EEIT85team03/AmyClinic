@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>${employeeVO.name }的評分紀錄</title>
 
 </head>
 <body>
@@ -40,18 +40,29 @@ ${employeeVO}
 <!-- 本人的留言放在第一個 -->
 	<c:forEach var="ScoreVO" items="${scoreVO}">
 		<c:if test="${ScoreVO.mb.mid == memberVO.mid }">
-			<div>
-
-				<span>${ScoreVO.mb.name }</span> 
-				<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
-				 <br>${ScoreVO.scoreDate}<br>
-				<img width='300px' height='auto' src='${pageContext.request.contextPath}/images/${ScoreVO.scores}star.jpg'>
-				<c:out value="${ScoreVO.comment}" />	
-
-				
-
-
-			</div>
+			<c:choose>
+				<c:when test="${ScoreVO.st==1 }">
+					<div>
+		
+						<span>${ScoreVO.mb.name }</span> 
+						<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
+						 <br>${ScoreVO.scoreDate}<br>
+						<img width='300px' height='auto' src='${pageContext.request.contextPath}/images/${ScoreVO.scores}star.jpg'>
+						<c:out value="${ScoreVO.comment}" />	
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div>
+		
+						<span>${ScoreVO.mb.name }</span> 
+						<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
+						 <br>${ScoreVO.scoreDate}<br>
+						 <H1>該則評論因不雅 被屏蔽</H1>
+						
+						
+					</div>
+				</c:otherwise>	
+			</c:choose>
 		</c:if>
 	</c:forEach>
 
@@ -59,15 +70,29 @@ ${employeeVO}
 	<!-- 不是本人的留言放在下面 -->
 	<c:forEach var="ScoreVO" items="${scoreVO}">
 		<c:if test="${ScoreVO.mb.mid != memberVO.mid }">
-			<div>
-
-				<span>${ScoreVO.mb.name }</span> 
-				<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
-				 ${ScoreVO.scoreDate} 
-				<img width='300px' height='auto' src='${pageContext.request.contextPath}/images/${ScoreVO.scores}star.jpg'>
-				<c:out value="${ScoreVO.comment}" />	
-
-			</div>
+			<c:choose>
+				<c:when test="${ScoreVO.st==1 }">
+					<div>
+		
+						<span>${ScoreVO.mb.name }</span> 
+						<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
+						 <br>${ScoreVO.scoreDate}<br>
+						<img width='300px' height='auto' src='${pageContext.request.contextPath}/images/${ScoreVO.scores}star.jpg'>
+						<c:out value="${ScoreVO.comment}" />	
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div>
+		
+						<span>${ScoreVO.mb.name }</span> 
+						<span><img src='${pageContext.request.contextPath}/user_photo/${ScoreVO.mb.photo}' height="150" width="150"></span>
+						 <br>${ScoreVO.scoreDate}<br>
+						 <H1>該則評論因不雅 被屏蔽</H1>
+						
+						
+					</div>
+				</c:otherwise>	
+			</c:choose>
 		</c:if>
 	</c:forEach>
 

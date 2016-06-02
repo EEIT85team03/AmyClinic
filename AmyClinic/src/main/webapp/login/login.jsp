@@ -1,6 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +23,8 @@
 <script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 <!-- end facebook script -->
 <!-- <div id="fb-root"></div> -->
-
 	<s:include value="/General/header.jsp"></s:include>
-	<hr>
+
 	<div id="page">
   <div class="welcome">
             <div class="balloon">
@@ -57,22 +60,31 @@
 					</div>
 					<div>
 						<s:submit value="確定登入" method="login" />						
-						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
+						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#10071; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
 
 						
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
+<!-- 							Google Login button -->
 						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
-						
+<!-- 						Facebook login button -->
 						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 <!-- 						<div id="status"></div> -->
 						<a href="#" onclick="logout();">Sign out</a>
+
 					</div>
 				</fieldset>
 			</s:form>
+
+				<div id="googleButtonPlaceholder">
+					<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
+					<span class="btn">使用 Google Gmail 登入</span>
+				</div>
+
 						<div id="googleButtonPlaceholder"><div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div><span class="btn">使用 Google Gmail 登入</span></div>
 						<a href="#" onclick="logout();" id="googlelogout">Sign out</a>
+
 		</div>
 
 	</div>
@@ -94,15 +106,34 @@
   </div>
 </div>
 
+	
+
+
+
 <s:include value="/General/footer.jsp"></s:include>
 
 <!-- Google script -->
 <script src="${pageContext.request.contextPath}/js/google.login.js"></script>
 <!-- Henry's Custom logout -->
-<script>
+<script>	
 	function logout(){
 		signOut();
 		FB.logout();
+     	function getContextPath() { //obtains context path. EL doesn't work with separated .js
+    	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+    	}
+     	console.log("${memberVO.email}");
+		$.ajax({
+			type: "POST",
+			url: (getContextPath()+'/member/logout'),
+			data: 'email=' + "${memberVO.email}", 
+			success: function(data) { 
+				if(data[0].redirect) {
+					window.location.href = data[0].redirectURL;
+				}
+			}
+		})
+		
 	}
 </script>
 
