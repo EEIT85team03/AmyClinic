@@ -1,26 +1,22 @@
 var ResultSet;
 var PAGESIZE = 5;
 
-function getContextPath() { //obtains context path. EL doesn't work with separated .js
-	 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
- }
-
 function queryProdById(index) {
 	$('#body').empty();  $('#Pagination').empty();
 	$('#description').html('當前類別：').append(event.path[0].innerText||'美容');
-	$.getJSON(getContextPath()+'/free/queryprodbycata', {"cid" : index}, function(datas) {callback(datas);})
+	$.getJSON('CatagoryServlet', {"cid" : index}, function(datas) {callback(datas);})
 }
 function queryProdByName() {
 	$('#body').empty();  $('#Pagination').empty();
 	if($('#query').val()!='') {
 		$('#description').html('您查詢的是：' +$('#query').val());
 	}	
-	$.getJSON(getContextPath()+'/free/queryprodbyname',{"prodname" : $('#query').val()},function(datas) {callback(datas);});
+	$.getJSON('ProductSearchServlet',{"prodname" : $('#query').val() , "action" : 'getByName'},function(datas) {callback(datas);});
 }
 function addToCart(pid,pname,price,discount){
 	$.ajax({
 		"type":"post",
-		"url":getContextPath()+'/free/jointocart',
+		"url":"BuyProdServlet",
 		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : 1},
 		"success":function(data){
 			alert("成功加入購物車！")
@@ -44,8 +40,8 @@ function callback(datas) {
 		
 		var tt = Math.round(data.price * (1 - (data.discount/100.0)));
 		var li = $('<li></li>');
-			li.append('<a class="cbp-vm-image"><img src="'+getContextPath()+'/free/getprodpic?num='+data.pid+'"/></a>') 
-		      .append('<h3 class="cbp-vm-title"><a href="'+getContextPath()+'/free/showprod?pid=' + data.pid + '">' + data.name + '</a></h3>')
+			li.append('<a class="cbp-vm-image"><img src="GetPic?num='+data.pid+'"/></a>') 
+		      .append('<h3 class="cbp-vm-title"><a href="ShowProductServlet?pid=' + data.pid + '">' + data.name + '</a></h3>')
 		      .append('<div class="cbp-vm-details">'+data.descrip+'</div>')
 		if (data.discount != 0) {
 			li.append('<div class="cbp-vm-price"><strong style="color:red;">優惠價: </strong>'+ tt.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元</div>');
@@ -69,8 +65,8 @@ function paginated() {
 	for(var i=index, max=ResultSet.length; i<max && i<index+PAGESIZE ;i++){
 		var tt = Math.round(ResultSet[i].price * (1 - (ResultSet[i].discount/100.0)));
 		var li = $('<li></li>');
-		li.append('<a class="cbp-vm-image"><img src="'+getContextPath()+'/free/getprodpic?num='+ResultSet[i].pid+'"/></a>') 
-		  .append('<h3 class="cbp-vm-title"><a href="'+getContextPath()+'/free/showprod?pid=' + ResultSet[i].pid + '">' + ResultSet[i].name + '</a></h3>')
+		li.append('<a class="cbp-vm-image"><img src="GetPic?num='+ResultSet[i].pid+'"/></a>') 
+		  .append('<h3 class="cbp-vm-title"><a href="ShowProductServlet?pid=' + ResultSet[i].pid + '">' + ResultSet[i].name + '</a></h3>')
 	      .append('<div class="cbp-vm-details">'+ResultSet[i].descrip+'</div>')
 	    if (ResultSet[i].discount != 0) {
 	    	li.append('<div class="cbp-vm-price"><strong style="color:red;">優惠價: </strong>'+ tt.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + '元</div>');

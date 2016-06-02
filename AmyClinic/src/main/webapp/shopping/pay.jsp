@@ -19,7 +19,7 @@ ps.輸入卡號及有效期限時請保持在英文輸入法狀態，否則plug-
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>付款</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div id="allpage">
@@ -64,7 +64,7 @@ ps.輸入卡號及有效期限時請保持在英文輸入法狀態，否則plug-
 	      <div class="card-wrapper"></div>
 
             <div class="form-container active">
-                <form action="${pageContext.request.contextPath}/shoppings/finpay" method="post">
+                <form action="FinPayServlet" method="post">
                     <table style="padding-left: 600px;padding-top: 5px">
                     	<tr>
                     		<td>
@@ -101,7 +101,6 @@ $('form').card({
 	},
 	placeholders: {
     name: '持卡人姓名',
-    expiry: 'MM/YY'
 },
 	})
 $(function() {
@@ -121,8 +120,8 @@ $(function() {
 	number.bind('cut copy paste', function (e) {
 		e.preventDefault(); //取消動作
 		});
-	var patt_number = /^[^\u0020\u3000][0-9\u0020]*$/
 	number.blur(function() {
+		var patt_number = /^[^\u0020\u3000][0-9\u0020]*$/
 		if ($(this).val().length == 0 || !patt_number.test($(this).val())) {
 			pay.prop("disabled",true);
 		} else {
@@ -134,12 +133,12 @@ $(function() {
 	
 	
 	var expiry = $('input[name="expiry"]');
+	
 	expiry.bind('cut copy paste', function (e) {
 		e.preventDefault(); //取消動作
 		});
-	var patt_expiry = /^(0[1-9])|(1[0-2]).*$/
 	expiry.blur(function() {
-		if ($(this).val().length == 0 || !patt_expiry.test($(this).val())) {
+		if ($(this).val().length == 0) {
 			pay.prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");
@@ -160,7 +159,7 @@ $(function() {
 	})
 	
 	pay.click(function() {
-		if(name.val().length==0 || number.val().length==0 || expiry.val().length==0 || cvc.val().length==0 || !patt_name.test(name.val()) || !patt_cvc.test(cvc.val()) || !patt_expiry.test(expiry.val())) {
+		if(name.val().length==0 || number.val().length==0 || expiry.val().length==0 || cvc.val().length==0 || !patt_name.test(name.val()) || !patt_cvc.test(cvc.val())) {
 			$(this).prop("disabled",true);
 		} else {
 			pay.removeAttr("disabled");

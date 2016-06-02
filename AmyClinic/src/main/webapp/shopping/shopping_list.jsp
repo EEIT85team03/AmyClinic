@@ -76,7 +76,7 @@
 						${status.count}
 					</td>
 					<td>
-						<img height="70px" src="${pageContext.request.contextPath}/free/getprodpic?num=${entry.key}"/>
+						<img height="70px" src="GetPic?num=${entry.key}"/>
 					</td>
 					<td>
 						${entry.value.productVO.name}
@@ -101,6 +101,7 @@
 				</tr>
 				</c:forEach>
 				<tr class="sortbottom">
+					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>

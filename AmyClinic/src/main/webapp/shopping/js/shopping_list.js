@@ -1,17 +1,14 @@
 addEvent(window, "load", sortables_init);
 
-function getContextPath() { //obtains context path. EL doesn't work with separated .js
-		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
-}
+
 function upd(key,quantity,index) {
 			var amount;
 			$.ajax({
 				"type":"get",
-				"url":getContextPath()+'/free/queryprodbyid',
-				"data":{"pid" : key},
+				"url":"ProductSearchServlet",
+				"data":{"pid" : key , "action" : "getById"},
 				"async":false,
 				"success":function(data){
-					//抓庫存量
 					amount = data.amount;
 				}
 				
@@ -19,7 +16,7 @@ function upd(key,quantity,index) {
 			
 			var price = $('#pri'+index).val();
 			var newQty = $("#send_qty" + index).val();
-			
+
 			if(newQty < 0) {
 				$("#send_qty" + index).val(quantity);
 				$("#subtotal" + index).empty();
@@ -59,8 +56,8 @@ function upd(key,quantity,index) {
 		//都通過才送到Servlet處理，如果成功就更改數量，發生例外回傳修改失敗訊息	
 			$.ajax({
 					"type":"post",
-					"url":getContextPath()+'/free/updateOIProd',
-					"data":{"pid" : key , "newQy" : newQty , "amount" : amount , "quantity" : quantity},
+					"url":"UpdateOIProdServlet",
+					"data":{"action" : 'update' , "pid" : key , "newQy" : newQty , "amount" : amount , "quantity" : quantity},
 					"success":function(data){
 						$("#send_qty" + index).attr("value",newQty);
 						$("#send_qty" + index).val(newQty);
@@ -85,8 +82,8 @@ function upd(key,quantity,index) {
 			if(confirm("確定要刪除此項商品嗎？")) {
 				$.ajax({
 					"type":"post",
-					"url":getContextPath()+'/free/deleteOIProd',
-					"data":{"pid" : key},
+					"url":"UpdateOIProdServlet",
+					"data":{"action" : 'delete', "pid" : key},
 					"success":function(data){
 						alert("已刪除！");
 						location.reload();
@@ -100,13 +97,13 @@ function upd(key,quantity,index) {
 			
 			//繼續購物
 			$('#continue').click(function(){
-				window.location.href = getContextPath()+"/shopping/prod_list.jsp";
+				window.location.href = "prod_list.jsp";
 			})
 			
 			//確認無誤
 			$('#confirm').click(function(){
 				if(confirm("確認無誤？")) {
-					window.location.href = getContextPath()+'/shoppings/checkfordata';
+					window.location.href = "CheckServlet";
 					
 				} 
 				
@@ -117,10 +114,10 @@ function upd(key,quantity,index) {
 				if(confirm("要放棄購物嗎？")) {
 					$.ajax({
 						"type":"post",
-						"url":getContextPath()+'/free/abanShopping',
+						"url":"AbanShoppingServlet",
 						"success":function(data){
 							alert("已放棄購物！");
-							window.location.href = getContextPath()+"/shopping/prod_list.jsp";
+							window.location.href = "prod_list.jsp";
 						}
 					})
 				} 

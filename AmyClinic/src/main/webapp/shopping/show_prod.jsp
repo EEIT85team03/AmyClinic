@@ -6,7 +6,7 @@
 <html>
 <!-- 
 1.顯示單樣產品的資料(大張圖+名稱+價格+成分+描述)
-2.加入購物車的按鈕(存到session(BuyProdAction))，如果庫存為0就顯示存貨不足
+2.加入購物車的按鈕(存到session(ShoppingServlet))，如果庫存為0就顯示存貨不足
 2016.05.26新增
 購物系統新增直接在商品列表/商品頁面選擇數量加入購物車
 庫存量在10以下時option會減少
@@ -16,12 +16,12 @@
 <title>${prodVO.name}</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">回商品列表</a><br>
+<a href="prod_list.jsp">回商品列表</a><br>
 <table>
 	<tr>
 		<td width="50"></td>
 		<td width="300">
-			<img src="${pageContext.request.contextPath}/free/getprodpic?num=${prodVO.pid}"/>
+			<img src="GetPic?num=${prodVO.pid}"/>
 		</td>
 		<td width="22"></td>
 		<td>
@@ -100,9 +100,6 @@
 </table>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script>
-function getContextPath() { //obtains context path. EL doesn't work with separated .js
-		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
-}
 function addToCart(){
 	var pid = $('input[name="pid"]').val();
 	var pname = $('input[name="pname"]').val();
@@ -111,7 +108,7 @@ function addToCart(){
 	var qty = $('#qty'+pid).val();
 	$.ajax({
 		"type":"post",
-		"url":getContextPath()+'/free/jointocart',
+		"url":"BuyProdServlet",
 		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : qty},
 		"success":function(data){
 			alert("成功加入購物車！")
