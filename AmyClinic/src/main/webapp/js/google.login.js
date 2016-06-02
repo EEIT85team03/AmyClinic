@@ -28,10 +28,6 @@ function onSignIn(googleUser) {
 		data: 'idtoken=' + id_token,
 		dataType:'json',
 		success: function(data) {
-			console.log(data);
-			console.log(data[0].success);
-			console.log(data[0].redirect);
-			console.log(data[0].redirectURL);
 			if(data[0].redirect) {
 				console.log("redirecting");
 				window.location.href = data[0].redirectURL;
@@ -40,9 +36,9 @@ function onSignIn(googleUser) {
 	})
 }
 
-function signOut() {
+function GoogleSignOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+      console.log('Google: User signed out.');
     });
 }

@@ -130,7 +130,7 @@ public class NewOrderServlet extends HttpServlet {
 		
 		//把明細放到訂單內，把購物車物件從Session移掉
 		OrdersService ordServ = new OrdersService();
-		OrdersVO odVO = ordServ.addOrders(mb.getMid(), mname, should_pay, reward_pts, addr, phone, email, new Timestamp(new java.util.Date().getTime()), 0, 0, 0, 0, orderItems);
+		OrdersVO odVO = ordServ.addOrders(mb, mname, should_pay, reward_pts, addr, phone, email, new Timestamp(new java.util.Date().getTime()), 0, 0, 0, 0, orderItems);
 		session.removeAttribute("ShoppingCart");
 		//把產生的OrdersVO丟到json物件裡傳到前端，方便下一個網頁抓出來使用
 		Gson gson = new GsonBuilder().registerTypeAdapter(OrdersVO.class,new JsonSerializer<OrdersVO>(){

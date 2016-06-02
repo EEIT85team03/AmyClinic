@@ -449,6 +449,8 @@ hr {
 	padding: 0px;
 	height: 99px;
 	background: #e499ba;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer p {
@@ -525,3 +527,9 @@ hr {
 .required {
 	color: red;
 }
+
+.fb-like {
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}    

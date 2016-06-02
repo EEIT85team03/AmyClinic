@@ -50,58 +50,58 @@
 <%-- 					</c:if> --%>
 <%-- 					<td height="125px"><a href="QueryScheduleServlet?c_hours=早診">${emp.name}</a></td> --%>
 						<c:if test="${status.index == 0}">
-							<td height="125px"><a href="QueryScheduleServlet?day=2&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=2&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 1}">
-							<td height="125px"><a href="QueryScheduleServlet?day=3&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=3&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 2}">
-							<td height="125px"><a href="QueryScheduleServlet?day=4&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=4&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 3}">
-							<td height="125px"><a href="QueryScheduleServlet?day=5&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=5&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 4}">
-							<td height="125px"><a href="QueryScheduleServlet?day=6&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=6&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 5}">
-							<td height="125px"><a href="QueryScheduleServlet?day=7&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=7&c_hours=早診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 6}">
-							<td height="125px"><a href="QueryScheduleServlet?day=2&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=2&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 7}">
-							<td height="125px"><a href="QueryScheduleServlet?day=3&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=3&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 8}">
-							<td height="125px"><a href="QueryScheduleServlet?day=4&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=4&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 9}">
-							<td height="125px"><a href="QueryScheduleServlet?day=5&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=5&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 10}">
-							<td height="125px"><a href="QueryScheduleServlet?day=6&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=6&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 11}">
-							<td height="125px"><a href="QueryScheduleServlet?day=7&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=7&c_hours=午診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 12}">
-							<td height="125px"><a href="QueryScheduleServlet?day=2&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=2&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 13}">
-							<td height="125px"><a href="QueryScheduleServlet?day=3&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=3&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 14}">
-							<td height="125px"><a href="QueryScheduleServlet?day=4&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=4&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 15}">
-							<td height="125px"><a href="QueryScheduleServlet?day=5&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=5&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 16}">
-							<td height="125px"><a href="QueryScheduleServlet?day=6&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=6&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 						<c:if test="${status.index == 17}">
-							<td height="125px"><a href="QueryScheduleServlet?day=7&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
+							<td height="125px"><a href="${pageContext.request.contextPath}/apps/showsche?day=7&c_hours=晚診&name=${emp.name}">${emp.name}</a></td>
 						</c:if>
 				
 				</c:forEach>
