@@ -3,6 +3,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+
+<!-- bootstrap -->
+<!-- 最新編譯和最佳化的 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- 選擇性佈景主題 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
+
+<!-- 最新編譯和最佳化的 JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
+
+
+
+
+<%-- <script	src="${pageContext.request.contextPath}/General/js/bootstrap.js"></script> --%>
+<%-- <script	src="${pageContext.request.contextPath}/General/js/bootstrap.min.js"></script> --%>
+
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
@@ -150,6 +175,10 @@ html,body{
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
+
 <div class="container">
 	<div class="login-container">
             <div id="output"></div>
@@ -159,7 +188,8 @@ html,body{
                     <input type="text" name="mail" id="mail" placeholder="usermail">
                     <input type="password" id="pwd" placeholder="password">
                     <button class="btn btn-info btn-block login" type="button">Login</button>
-                    <a id="fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a>
+                    <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a>
+                    <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
             </div>
@@ -167,27 +197,20 @@ html,body{
         
 </div>
 
-<script type="text/javascript">
-// $(function(){
-// 	var textfield = $("input[name=user]");
-// 	            $('button[type="submit"]').click(function() {
-	            	
-// 	            	$.ajax({
-// 	        			'type':'post',
-// 	        			'url':'app_check',
-// 	        			'dataType' :'JSON',
-// 	        			"data":{"action" : "fmid" , "mid" : mid},
-// 	        			'success':function(data){
-	        				
-// 	        			}
-// 	        		})
-	            	
-	                
+</body>
 
-// 	            });
-// 	});
- 
-	
+
+<script type="text/javascript">
+
+
+function OpenLink(link) {     
+	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "50%" });
+	}
+
+
+
+
+
 $(function() {
 	//alert()
 	var hsn = window.location.host;
@@ -201,7 +224,7 @@ $(function() {
 		var mail = $('#mail').val();
 		var pwd = $('#pwd').val();
 		$.ajax({
-			'type':'get',
+			'type':'post',
 			'url':'EmpLoginServlet.do',
 			'dataType' :'TEXT',
 			"data":{"action" : "loginAjax" , "mail" : mail , "pwd" : pwd},
@@ -210,7 +233,7 @@ $(function() {
 				//little validation just to check username
                 if (data == "success") {
                     //$("body").scrollTo("#output");
-                    $('#fpw').remove();
+                    $('.add_fpw').removeClass();
                     $("#output").addClass("alert alert-success animated fadeInUp").html("Welcome back " + "<span style='text-transform:uppercase'>" + textfield.val() + "</span>");
                     $("#output").removeClass(' alert-danger');
                     $("input").css({
@@ -254,17 +277,9 @@ $(function() {
 	})})
 
 
-
-	
-	
-	
-		
-	
-	
-
 </script>
 
 
 
-</body>
+
 </html>
