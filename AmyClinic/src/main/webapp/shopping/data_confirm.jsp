@@ -14,7 +14,7 @@ if(session.getAttribute("ShoppingCart") == null) {
 <html>
 <!-- 
 1.顯示商品名稱、數量、單價、小計(不可修改)、合計
-2.從MemberServlet抓來紅利點數，依紅利使用規則動態更新隔壁欄位，-xx元
+2.抓來會員的紅利點數，依紅利使用規則動態更新隔壁欄位，-xx元
 3.收件人資料預設顯示從Session抓來的會員資料
  -->
 <head>
@@ -155,6 +155,9 @@ if(session.getAttribute("ShoppingCart") == null) {
 	</div>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script>
+	function getContextPath() { //obtains context path. EL doesn't work with separated .js
+   	 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+	 }
 	$(function(){
 		var reward_dis = $("#reward_dis");
 		var should_pay = $("#should_pay");
@@ -250,13 +253,13 @@ if(session.getAttribute("ShoppingCart") == null) {
 			}
 			$.ajax({
 				"type":"post",
-				"url":"NewOrderServlet",
+				"url": getContextPath()+ "/shoppings/neworder",
 				"dataType":"json",
 				"data":{"action":action, "reward_pts": myReward_pts, "should_pay":pay, "mname":mname, "addr":addr, "phone":phone, "email":email},
 				"success":function(datas) {
 					$.each(datas,function(i,data) {
 					var oid = data;
-					window.location.href = "CheckForPayServlet?oid="+oid;
+					window.location.href = getContextPath()+ "/shoppings/checkforpay?oid="+oid;
 					})
 					
 				}
@@ -270,10 +273,10 @@ if(session.getAttribute("ShoppingCart") == null) {
 				var action = $('input[name="action2"]').val();
 				$.ajax({
 					"type":"post",
-					"url":"NewOrderServlet",
+					"url": getContextPath()+ "/shoppings/killorder",
 					"data":{"action" : action},
 					"success":function(data){
-						window.location.href = "prod_list.jsp";
+						window.location.href = getContextPath()+ "/shopping/prod_list.jsp";
 					}
 				})
 			}
