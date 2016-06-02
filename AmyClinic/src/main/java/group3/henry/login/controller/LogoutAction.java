@@ -46,7 +46,7 @@ public class LogoutAction extends ActionSupport implements ServletRequestAware, 
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out = response.getWriter();
-			out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/verify.jsp\"}]");			
+			out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");			
 			out.flush();
 			
 			return null;				
