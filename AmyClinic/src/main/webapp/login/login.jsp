@@ -1,6 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,33 +18,8 @@
 <title>會員登入</title>
 </head>
 <body>
-<!-- facebook script -->
-<script> 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1733704493575453',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- end facebook script -->
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
 	<s:include value="/General/header.jsp"></s:include>
-	<hr>
+
 	<div id="page">
   <div class="welcome">
             <div class="balloon">
@@ -76,20 +55,21 @@
 					</div>
 					<div>
 						<s:submit value="確定登入" method="login" />						
-						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#x26E8; <strong>忘記密碼</strong></span>
+						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#10071; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
 							<strong>現在加入愛美</strong></a>
 
 						
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
-						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						</a>
 						
-						<a href="#" onclick="signOut();">Sign out</a>
 					</div>
 				</fieldset>
 			</s:form>
-						<div id="googleButtonPlaceholder"><div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div><span class="btn">使用 Google Gmail 登入</span></div>
-						<a href="#" onclick="signOut();" id="googlelogout">Sign out</a>
+				<div id="googleButtonPlaceholder">
+					<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
+					<span class="btn">使用 Google Gmail 登入</span>
+				</div>
 		</div>
 
 	</div>
@@ -112,7 +92,6 @@
   </div>
 
 </div>
-	
 	
 
 	<s:include value="/General/footer.jsp"></s:include>
