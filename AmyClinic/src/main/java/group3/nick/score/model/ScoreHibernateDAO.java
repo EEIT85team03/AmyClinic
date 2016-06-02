@@ -31,7 +31,7 @@ public class ScoreHibernateDAO implements Score_interface {
 		return list;
 	}
 	
-	private static final String GET_ALL_STMT = "from ScoreVO order by scoreId";
+	private static final String GET_ALL_STMT = "from ScoreVO order by score_id";
 
 	@Override
 	public void insert(ScoreVO scoreVO) {
@@ -116,7 +116,7 @@ public class ScoreHibernateDAO implements Score_interface {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try{
 			session.beginTransaction();
-			Query query = session.createQuery("from ScoreVO where eid=? order by scoreDate ");
+			Query query = session.createQuery("from ScoreVO where eid=? order by scoreDate desc");
 			query.setParameter(0, eid);
 			list = query.list();
 			session.getTransaction().commit();
