@@ -79,6 +79,7 @@ public class BuyProdAction extends ActionSupport {
 			e.printStackTrace();
 			return ERROR;
 		}
+		System.out.println("加入購物車囉~");
 		return null;
 	}
 	

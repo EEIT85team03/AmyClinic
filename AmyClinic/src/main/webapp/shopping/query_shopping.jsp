@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <!-- 
-根據mid來查詢Order及OrderItem(OrderServlet 如果訂單的mid=session物件中的mid才顯示出來)
+根據mid來查詢Order及OrderItem(OrdersAction 如果訂單的mid=session物件中的mid才顯示出來)
 每筆訂單底下的按鈕按下去可以查詢OrderItem，再按一次就隱藏起來
 如果訂單狀態為0or1，可以取消
 如果訂單狀態為0，可以前往付款
@@ -14,11 +14,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢訂單</title>
-<style>
-table {
-	width: 1000px;
-}
-</style>
 </head>
 <body>
 	<b>訂單查詢：</b><br><br>
@@ -26,7 +21,7 @@ table {
 	<input type="button" id="query" value="查詢"><br><br>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
 	<c:if test="${ordersVO.ostatus != 3}">	
-		<table border="1" style="text-align: center;border-collapse: collapse;">
+		<table width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
 			<tr>
 				<th>訂單編號</th>
 				<th>日期</th>
@@ -53,7 +48,7 @@ table {
 					<td>訂單取消</td>
 				</c:if>
 				<c:if test="${ordersVO.payment == 0}">
-					<td><a href="CheckForPayServlet?oid=${ordersVO.oid}">未付款</a></td>
+					<td><a href="${pageContext.request.contextPath}/shoppings/checkforpay?oid=${ordersVO.oid}">未付款</a></td>
 				</c:if>
 				<c:if test="${ordersVO.payment == 1}">
 					<td>已付款</td>
@@ -80,7 +75,7 @@ table {
 		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">
 		</div>
 		<div id="item${status.count}" style="display:none;">
-			<table border="1" style="text-align: center;border-collapse: collapse;">
+			<table  width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
 				<c:forEach varStatus="varSta" var="orderItems" items="${ordersVO.orderItems}">
 					<tr>
 						<td>
@@ -115,12 +110,17 @@ table {
 		$(function(){
 			$('#query').click(function(){
 				var name = $('#for_name').val();
-				window.location.href = 'QueryOrdersByPNameServlet?name='+name;
+				window.location.href = getContextPath()+'/shoppings/showorderbyname?name='+name;
 				
 			})
 			
 			
 		})
+		
+		function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	 		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+ 		}
+		
 		function showORhide(count) {
 			var item = $('#item'+count);
 			var bt = $('#showbt'+count);
@@ -138,7 +138,7 @@ table {
 			if (confirm("確認取消訂單？")){
 				$.ajax({
 					"type":"post",
-					"url":"CancelOrderServlet",
+					"url": getContextPath()+'/shoppings/cancelorder',
 					"data":{"oid" : oid},
 					"success":function(data){
 						location.reload();
