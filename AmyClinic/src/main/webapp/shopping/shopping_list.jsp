@@ -76,7 +76,7 @@
 						${status.count}
 					</td>
 					<td>
-						<img height="70px" src="GetPic?num=${entry.key}"/>
+						<img height="70px" src="${pageContext.request.contextPath}/free/getprodpic?num=${entry.key}"/>
 					</td>
 					<td>
 						${entry.value.productVO.name}
@@ -94,11 +94,9 @@
 						<input type="button" name="update" value="修改" onclick="upd(${entry.key},${entry.value.quantity},${status.index})">
 						<input type="hidden" name="price" value="${entry.value.price_per}">
 						<input type="hidden" name="amount" value="${entry.value.productVO.amount}">
-						<input type="hidden" name="action4" value="update">
 					</td>
 					<td>
 						<input type="button" name="delete" value="刪除" onclick="del(${entry.key})">
-						<input type="hidden" name="action5" value="delete">
 					</td>
 				</tr>
 				</c:forEach>
@@ -135,17 +133,14 @@
 				</c:if>
 			</table>
 								<input style="margin-left:450px;" type="button" id="continue" value="繼續購物">
-					<input type="hidden" name="action1" value="continue">
 				
 					<c:if test="${ShoppingCart == null || empty ShoppingCart.content}">
 						<input style="margin-left:10px;" type="button" id="confirm" disabled="disabled" value="確認無誤">
 					</c:if>
 					<c:if test="${!empty ShoppingCart.content}">
 						<input style="margin-left:10px;" type="button" id="confirm" value="確認無誤">
-						<input type="hidden" name="action2" value="ok">
 					</c:if>
 					<input style="margin-left:10px;" type="button" id="abandon" value="放棄購物">
-					<input type="hidden" name="action3" value="abandon">
 				</div>
 
 			</div>

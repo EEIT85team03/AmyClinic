@@ -6,7 +6,7 @@
 <!-- 
 可能用colorbox帶出來
 帶出所選時段的醫生名、時段、日期
-用ScheduleServlet查出預約狀態、備註
+用QueryScheduleAction查出預約狀態、備註
 如為可預約狀態則在左邊顯示"掛號"超連結
 點選後將值傳回add_app.jsp
  -->
@@ -56,7 +56,7 @@
 	<input type="hidden" id="hour" value="${c_hours}">
 </c:if>
 
-<span id="emp">${empVO.name}</span>　醫師　<a target="_new" href="ShowDoctorServlet?id=${empVO.eid}">查看醫師資料</a><br><br>
+<span id="emp">${empVO.name}</span>　醫師　<a target="_new" href="${pageContext.request.contextPath}/free/showdoctor?id=${empVO.eid}">查看醫師資料</a><br><br>
 
 <table border="1" width="900px" height="500px" align="center" style="border-collapse: collapse;text-align: center;">
 	<tr>
@@ -97,7 +97,7 @@
 <table align="center">
 	<tr>
 <!-- 		<td><a id="b1" href="#">測試</a></td> -->
-		<td><a id="b2" href="${pageContext.request.contextPath}/app/TimeServlet">重新選擇</a></td>
+		<td><a id="b2" href="${pageContext.request.contextPath}/apps/showtime">重新選擇</a></td>
 		<td><a id="b3" href="#">取消</a></td>
 	</tr>
 

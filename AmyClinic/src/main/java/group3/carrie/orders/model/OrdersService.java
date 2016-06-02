@@ -41,9 +41,8 @@ public class OrdersService {
 //	}
 	
 	//訂單主檔+訂單明細新增
-	public OrdersVO addOrders(Integer mid,String recipient,Integer total,Integer points_spent,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount,Set<OrderItemsVO> set) {
+	public OrdersVO addOrders(MemberVO memberVO,String recipient,Integer total,Integer points_spent,String addr,String phone,String email,Timestamp odate,Integer ostatus,Integer del_status,Integer payment,Integer discount,Set<OrderItemsVO> set) {
 		OrdersVO ordersVO = new OrdersVO();
-		MemberVO memberVO = new MemberVO();
 		Set<OrderItemsVO> orderItemsVOs = new HashSet<OrderItemsVO>();
 		
 		//把傳進來的Set抓出來塞OrdersVO進去，再塞到另一個Set內，這樣才會吃到oid
@@ -52,7 +51,6 @@ public class OrdersService {
 			orderItemsVOs.add(k);
 		}
 		
-		memberVO.setMid(mid);
 		ordersVO.setRecipient(recipient);
 		ordersVO.setTotal(total);
 		ordersVO.setPoints_spent(points_spent);

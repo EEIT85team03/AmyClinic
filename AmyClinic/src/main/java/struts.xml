@@ -107,6 +107,119 @@
               <result>/member/{1}.jsp</result>                      
          </action>
 	</package>
+
+<!-- *************************	-->
+<!-- 預約系統  -->
+<!-- *************************	-->
+    <package name="appPackage" namespace="/apps" extends="struts-default">	
+		<interceptors>		        
+	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+<!--   			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />   -->
+<!-- 			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" /> -->
+		    <interceptor-stack name="AuthenticationRequired">  
+				<interceptor-ref name="defaultStack" />      
+				<interceptor-ref name="authentication" />
+<!-- 				<interceptor-ref name="AESEncryption" />       -->
+<!-- 				<interceptor-ref name="MD5Encryption" />         -->
+		    </interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="AuthenticationRequired" />
+
+        <global-results>
+			<result name="login">/login/login.jsp</result>
+		</global-results>
+				
+   		<action name="showtime" class="group3.carrie.app.controller.TimeAction">
+			<result name="success">/app/sel_time.jsp</result>
+			<result name="error">/app/sel_errorpage.jsp</result>
+		</action>
+		
+   		<action name="showsche" class="group3.carrie.schedule.controller.QueryScheduleAction">
+			<result name="success">/app/sel_doc.jsp</result>
+		</action>
+		
+		<action name="addapp" class="group3.carrie.app.controller.AddAppAction">
+			<result name="success">/app/fin_app.jsp</result>
+			<result name="input">/app/add_app.jsp</result>
+			<result name="appfail">/app/add_app.jsp</result>
+			<result name="failure">/login/login.jsp</result>
+
+		</action>
+		
+		<action name="querybefore" class="group3.carrie.app.controller.QueryAppAction" method="before"></action>
+		<action name="queryafter" class="group3.carrie.app.controller.QueryAppAction" method="after"></action>
+		<action name="cancelapp" class="group3.carrie.app.controller.QueryAppAction" method="cancel"></action>
+		
+	</package>	
+	
+<!-- *************************	-->
+<!-- 購物系統  -->
+<!-- *************************	-->
+    <package name="shoppingPackage" namespace="/shoppings" extends="struts-default">	
+		<interceptors>		        
+	    	<interceptor class="group3.henry.login.interceptor.AuthenticationInterceptor" name="authentication" />  
+<!--   			<interceptor class="group3.henry.encryption.interceptor.AES_EncryptionInterceptor" name="AESEncryption" />   -->
+<!-- 			<interceptor class="group3.henry.encryption.interceptor.MD5_EncryptionInterceptor" name="MD5Encryption" /> -->
+		    <interceptor-stack name="AuthenticationRequired">  
+				<interceptor-ref name="defaultStack" />      
+				<interceptor-ref name="authentication" />
+<!-- 				<interceptor-ref name="AESEncryption" />       -->
+<!-- 				<interceptor-ref name="MD5Encryption" />         -->
+		    </interceptor-stack>		
+		</interceptors>
+				
+        <default-interceptor-ref name="AuthenticationRequired" />
+
+        <global-results>
+			<result name="login">/login/login.jsp</result>
+		</global-results>
+				
+   		<action name="showorder" class="group3.carrie.orders.controller.OrdersAction">
+			<result name="success">/shopping/query_shopping.jsp</result>
+			<result name="nomb">/login/login.jsp</result>
+		</action>
+		
+   		<action name="showorderbyname" class="group3.carrie.orders.controller.QueryOrdersByPNameAction">
+			<result name="success">/shopping/query_shopping_byname.jsp</result>
+			<result name="nomb">/login/login.jsp</result>
+			<result name="noname" type="redirectAction">showorder</result>
+		</action>
+		
+   		<action name="cancelorder" class="group3.carrie.orders.controller.CancelOrderAction">
+			<result name="nomb">/login/login.jsp</result>
+			<result name="noorder" type="redirectAction">showorder</result>
+		</action>
+		
+   		<action name="checkfordata" class="group3.carrie.shopping.controller.CheckAction" method="checkfordataconfirm">
+			<result name="nocart">/shopping/prod_list.jsp</result>
+			<result name="success">/shopping/data_confirm.jsp</result>
+		</action>
+		
+   		<action name="checkforpay" class="group3.carrie.shopping.controller.CheckAction" method="checkforpay">
+			<result name="nomb">/login/login.jsp</result>
+			<result name="cantpay">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="success">/shopping/pay.jsp</result>
+		</action>
+		
+   		<action name="neworder" class="group3.carrie.orders.controller.NewOrderAction" method="ok">
+			<result name="nomb">/login/login.jsp</result>
+			<result name="nocart">/shopping/prod_list.jsp</result>
+		</action>
+		
+   		<action name="killorder" class="group3.carrie.orders.controller.NewOrderAction" method="cancel">
+			<result name="nomb">/login/login.jsp</result>
+			<result name="nocart">/shopping/prod_list.jsp</result>
+		</action>
+		
+   		<action name="finpay" class="group3.carrie.shopping.controller.FinPayAction">
+			<result name="success">/shopping/fin_shopping.jsp</result>
+			<result name="nomb">/login/login.jsp</result>
+			<result name="failure">/index.jsp</result>
+		</action>
+		
+	</package>		
 	
 <!-- *****************************	-->		
 <!-- Non-Access controlled package  -->
@@ -123,6 +236,41 @@
 			<result name="success">/login/verify.jsp</result>
 			<result name="resetform">/login/resetpw.jsp</result>
 			<result name="failure">/login/verify.jsp</result>
+		</action>
+		
+				<action name="queryprodbycata" class="group3.carrie.catagory.controller.CatagoryAction"></action>
+		<action name="queryprodbyname" class="group3.carrie.product.controller.ProductSearchAction" method="getByName"></action>
+		<action name="queryprodbyid" class="group3.carrie.product.controller.ProductSearchAction" method="getById"></action>
+   		<action name="getprodpic" class="group3.carrie.product.controller.GetPicAction"></action>
+   		
+   		<action name="showprod" class="group3.carrie.product.controller.ShowProductAction">
+			<result name="success">/shopping/show_prod.jsp</result>
+			<result name="input">/shopping/prod_list.jsp</result>
+			<result name="noprod">/shopping/prod_list.jsp</result>
+		</action>
+   		
+   		<action name="showdoctor" class="group3.beef.employee.controller.ShowDoctorAction">
+			<result name="success">/doctor/querydoctor.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="nodoctor">/index.jsp</result>
+		</action>
+		
+		<action name="updateOIProd" class="group3.carrie.shopping.controller.ShoppingListAction" method="updateOIProd">
+			<result name="success">/shopping/shopping_list.jsp</result>
+			<result name="nocart">/shopping/prod_list.jsp</result>
+		</action>
+		
+   		<action name="deleteOIProd" class="group3.carrie.shopping.controller.ShoppingListAction" method="deleteOIProd">
+			<result name="success">/shopping/shopping_list.jsp</result>
+			<result name="nocart">/shopping/prod_list.jsp</result>
+		</action>
+		
+   		<action name="abanShopping" class="group3.carrie.shopping.controller.ShoppingListAction" method="abanShopping">
+			<result name="success">/shopping/prod_list.jsp</result>
+		</action>
+		
+		<action name="jointocart" class="group3.carrie.shopping.controller.BuyProdAction">
+			<result name="error">/shopping/prod_list.jsp</result>
 		</action>
     </package>
 

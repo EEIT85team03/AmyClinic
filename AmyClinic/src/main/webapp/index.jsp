@@ -99,31 +99,31 @@ body {
 			</section>
 <!-- Henry's test login --><hr/>
 <div style="bgcolor='#FF9D6F'">
-		<a href="login/login.jsp">Login page</a><br>
-		<a href="register/register.jsp">Register a new account</a><br>		
+		<a href="${pageContext.request.contextPath}/login/login.jsp">Login page</a><br>
+		<a href="${pageContext.request.contextPath}/register/register.jsp">Register a new account</a><br>		
 
 <!--           	 namespace/action name.action  target registered in struts.xml-->
-		<a href="member/editprofile.action">Edit Account Information</a><br>
+		<a href="${pageContext.request.contextPath}/member/editprofile.action">Edit Account Information</a><br>
 <!--                    	 namespace/action name                      target registered in struts.xml-->		
 <%-- 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		 --%>
 <!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
-		<a href="<s:url action="free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a><br>
+		<a href="<s:url action="/free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a><br>
 <!-- Henry's test login -->
 
 <!-- 購物系統測試 -->
 
-		<a href="shopping/prod_list.jsp">商品列表(不需登入)</a><br>
+		<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">商品列表(不需登入)</a><br>
 
-		<a href="shopping/OrdersServlet" >查詢訂單(需登入)</a><br>
+		<a href="${pageContext.request.contextPath}/shoppings/showorder" >查詢訂單(需登入)</a><br>
 <!-- 預約系統測試 -->
 		
-		<a href="app/add_app.jsp">線上預約(需登入)</a><br>
+		<a href="${pageContext.request.contextPath}/app/add_app.jsp">線上預約(需登入)</a><br>
 
-		<a href="app/query_app.jsp" >查詢預約(需登入)</a><br>
+		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
-		<a href="Backstage/login.jsp" >員工登入</a><br>
+		<a href="${pageContext.request.contextPath}/Backstage/login.jsp" >員工登入</a><br>
 		
-		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
+		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="/register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
 </div>		
 		</article>
 		<aside></aside>
