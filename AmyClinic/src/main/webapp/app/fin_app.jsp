@@ -40,7 +40,7 @@
 		<c:if test="${not empty appVO.descrip}">
 			需求描述：${appVO.descrip}<br>
 		</c:if>
-		預約時間：${date_time}<br>
+		預約時間：${s_app_time}<br>
 		醫師：${empVO.name}<br>
 	
 	</div>

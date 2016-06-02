@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <!-- 
-根據mid及商品名稱來查詢Order及OrderItem(QueryOrdersByPNameServlet 如果訂單的mid=session物件中的mid才顯示出來)
+根據mid及商品名稱來查詢Order及OrderItem(QueryOrdersByPNameAction 如果訂單的mid=session物件中的mid才顯示出來)
 每筆訂單底下的按鈕按下去可以查詢OrderItem，再按一次就隱藏起來
 如果訂單狀態為0or1，可以取消
 如果訂單狀態為0，可以前往付款
@@ -21,7 +21,7 @@
 	<input type="button" id="query" value="查詢">
 		<input type="button" id="query_all" value="查全部"><br><br>
 	<c:if test="${empty list}">
-		查無資料！
+		<b>查無資料！</b>
 	</c:if>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
 	<c:if test="${ordersVO.ostatus != 3}">	
@@ -52,7 +52,7 @@
 					<td>訂單取消</td>
 				</c:if>
 				<c:if test="${ordersVO.payment == 0}">
-					<td><a href="CheckForPayServlet?oid=${ordersVO.oid}">未付款</a></td>
+					<td><a href="${pageContext.request.contextPath}/shoppings/checkforpay?oid=${ordersVO.oid}">未付款</a></td>
 				</c:if>
 				<c:if test="${ordersVO.payment == 1}">
 					<td>已付款</td>
@@ -111,6 +111,10 @@
 	
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script>
+		function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	 		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+ 		}
+		
 		function showORhide(count) {
 			var item = $('#item'+count);
 			var bt = $('#showbt'+count);
@@ -128,10 +132,10 @@
 			if (confirm("確認取消訂單？")){
 				$.ajax({
 					"type":"post",
-					"url":"CancelOrderServlet",
+					"url": getContextPath()+'/shoppings/cancelorder',
 					"data":{"oid" : oid},
 					"success":function(data){
-						window.location.href = 'OrdersServlet';
+						window.location.href = getContextPath()+'/shoppings/showorder';
 					}
 				})
 			}
@@ -140,11 +144,11 @@
 		$(function(){
 			$('#query').click(function(){
 				var name = $('#for_name').val();
-				window.location.href = 'QueryOrdersByPNameServlet?name='+name;
+				window.location.href = getContextPath()+'/shoppings/showorderbyname?name='+name;
 			})
 			
 				$('#query_all').click(function(){
-					window.location.href = 'OrdersServlet';	
+					window.location.href = getContextPath()+'/shoppings/showorder';	
 					
 				})
 			

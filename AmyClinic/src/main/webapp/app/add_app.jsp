@@ -6,9 +6,9 @@
 <!-- 
 新增預約
 1.預約時間使用colorbox帶出門診時間表，搭配Dialog查詢該時段預約狀況，整個關閉後將值傳回本視窗
-2.預約療程只有開始新療程時要有(用字串方式傳到Servlet)
+2.預約療程只有開始新療程時要有(用字串方式傳到Action)
 3.要思考如果還沒確定完成預約，有別人先完成預約，且讓預約數滿了的狀況
-4.submit後送往AppServlet，insert一筆新預約及預約明細，並發email給使用者
+4.submit後送往AddAppAction，insert一筆新預約及預約明細，並發email給使用者
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +25,7 @@
 </style>
 </head>
 <body>
-<FORM METHOD="post" ACTION="AddAppServlet" name="form1">
+<FORM METHOD="post" ACTION="${pageContext.request.contextPath}/apps/addapp" name="form1">
 <table width="1000px">
 <tr>
 	<th colspan="2">線上預約</th>
@@ -42,9 +42,9 @@
 <tr>
 	<td width="250px">預約時間</td>
 	<td>
-		<a class='iframe' href="TimeServlet">選擇</a>
+		<a class='iframe' href="${pageContext.request.contextPath}/apps/showtime">選擇</a>
 		<span id="sel_app_time">${param.s_app_time}</span>
-		<span id="errortime"><font color="red">${error.date_timeErr}${error.apptErr}</font></span>
+		<span id="errortime"><font color="red">${message_time}</font></span>
 		<input type="hidden" name="s_app_time" value="${param.s_app_time}">
 		<input type="hidden" name="ename" value="${param.ename}">
 		<input type="hidden" name="id" value="${param.id}">
@@ -64,7 +64,7 @@
 			<br>
 		</c:forEach>
 <%-- 	</c:if>	 --%>
-	<font color="red">${error.procsErr}</font>
+	<font color="red">${message_proc}</font>
 	</td>
 </tr>
 <tr>

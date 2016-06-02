@@ -80,7 +80,7 @@
 				<c:forEach varStatus="status" var="entry" items="${ShoppingCart.content}">
 				<tr>
 					<td>
-						<img height="70px" src="GetPic?num=${entry.key}"/>
+						<img height="70px" src="${pageContext.request.contextPath}/free/getprodpic?num=${entry.key}"/>
 						${entry.value.productVO.name}
 					</td>
 					<td>
@@ -145,6 +145,10 @@
 	
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script>
+		function getContextPath() { //obtains context path. EL doesn't work with separated .js
+ 			return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+		}
+		
 	//更新數量
 		function upd(key,quantity,index) {
 // 			console.log(index);
@@ -153,8 +157,8 @@
 			var amount;
 			$.ajax({
 				"type":"get",
-				"url":"ProductSearchServlet",
-				"data":{"pid" : key , "action" : "getById"},
+				"url":getContextPath()+'/free/queryprodbyid',
+				"data":{"pid" : key},
 				"async":false,
 				"success":function(data){
 					amount = data.amount;
@@ -205,10 +209,10 @@
 				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				return;
 			}
-		//都通過才送到Servlet處理，如果成功就更改數量，發生例外回傳修改失敗訊息	
+		//都通過才送到Action處理，如果成功就更改數量，發生例外回傳修改失敗訊息	
 			$.ajax({
 					"type":"post",
-					"url":"UpdateOIProdServlet",
+					"url":getContextPath()+'/free/updateOIProd',
 					"data":{"action" : action , "pid" : key , "newQy" : newQty , "amount" : amount , "quantity" : quantity},
 					"success":function(data){
 						$("#send_qty" + index).attr("value",newQty);
@@ -235,7 +239,7 @@
 				var action = $('input[name="action5"]').val();
 				$.ajax({
 					"type":"post",
-					"url":"UpdateOIProdServlet",
+					"url":getContextPath()+'/free/deleteOIProd',
 					"data":{"action" : action , "pid" : key},
 					"success":function(data){
 						alert("已刪除！");
@@ -249,27 +253,27 @@
 		$(function() {
 			//繼續購物
 			$('#cont').click(function(){
-				window.location.href = "prod_list.jsp";
+				window.location.href = getContextPath()+"/shopping/prod_list.jsp";
 			})
 			
 			//確認無誤
 			$('#confirm').click(function(){
 				if(confirm("確認無誤？")) {
-					window.location.href = "CheckServlet";
+					window.location.href = getContextPath()+'/shoppings/checkfordata';
 					
 				} 
 				
 			})
 			
-			//放棄購物，請Servlet把ShoppingCart物件刪掉
+			//放棄購物，請Action把ShoppingCart物件刪掉
 			$('#aband').click(function(){
 				if(confirm("要放棄購物嗎？")) {
 					$.ajax({
 						"type":"post",
-						"url":"AbanShoppingServlet",
+						"url":getContextPath()+'/free/abanShopping',
 						"success":function(data){
 							alert("已放棄購物！");
-							window.location.href = "prod_list.jsp";
+							window.location.href = getContextPath()+"/shopping/prod_list.jsp";
 						}
 					})
 				} 

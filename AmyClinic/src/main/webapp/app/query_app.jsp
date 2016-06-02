@@ -139,18 +139,72 @@ a {
 	</div>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script>
-		function cancel(id) {
-			if(confirm("確定取消預約？")){
-			var action = $('#action3').val();
-			var tb = $('#app');
+	function getContextPath() { //obtains context path. EL doesn't work with separated .js
+   	 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+	 }
+
+	function cancel(id) {
+		if(confirm("確定取消預約？")){
+		var tb = $('#app');
+		var tr2;
+		$.ajax({
+			"type":"get",
+			"url":getContextPath()+"/apps/cancelapp",
+			"dataType":"JSON",
+			"data":{"id" : id},
+			"success" : function (datas) {
+				tb.empty();
+				var th1 = $('<th></th>').append('日期');
+				var th2 = $('<th></th>').append('時段');
+				var th3 = $('<th></th>').append('預約目的');
+				var th4 = $('<th></th>').append('療程項目');
+				var th5 = $('<th></th>').append('需求描述');
+				var th6 = $('<th></th>').append('取消預約');
+				var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
+				tb.append(tr1);
+				$.each(datas,function(i,data){
+					if(data.apt_status == 1) {
+						var td1 = $('<td></td>').append(data.apt_date);
+						var td2 = $('<td></td>').append(data.apt_time);
+						if (data.purpose == 0) {
+							var td3 = $('<td></td>').append('開始新療程');
+							//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
+							var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
+						}
+						if (data.purpose == 1) {
+							var td3 = $('<td></td>').append('回診');
+							var td4 = $('<td width="150px"></td>').append();
+						}
+						
+						var td5 = $('<td width="300px"></td>').append(data.descrip);
+						var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
+						tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
+						tb.append(tr2);
+					}
+				})
+			},
+			"error" : function (datas) {
+				alert('無法取消預約！')
+			}
+		})
+	}
+}
+	$(function() {
+		var t1 = $('#t1');
+		var t2 = $('#t2');
+		var tb = $('#app');
+		t1.addClass("class1");
+		$('#a1').click(function(){
+			tb.empty();
 			var tr2;
+			t2.removeClass();
+			t1.addClass("class1");
 			$.ajax({
 				"type":"get",
-				"url":"QueryAppServlet",
+				"url":getContextPath()+"/apps/queryafter",
 				"dataType":"JSON",
-				"data":{"action" : action, "id" : id},
+				"data":{},
 				"success" : function (datas) {
-					tb.empty();
 					var th1 = $('<th></th>').append('日期');
 					var th2 = $('<th></th>').append('時段');
 					var th3 = $('<th></th>').append('預約目的');
@@ -161,7 +215,8 @@ a {
 					tb.append(tr1);
 					$.each(datas,function(i,data){
 						if(data.apt_status == 1) {
-							var td1 = $('<td></td>').append(data.apt_date);
+							var weekdays = "日,一,二,三,四,五,六".split(",");
+							var td1 = $('<td></td>').append(data.apt_date+'('+ weekdays[new Date(data.apt_date).getDay()]+')');
 							var td2 = $('<td></td>').append(data.apt_time);
 							if (data.purpose == 0) {
 								var td3 = $('<td></td>').append('開始新療程');
@@ -172,75 +227,22 @@ a {
 								var td3 = $('<td></td>').append('回診');
 								var td4 = $('<td width="150px"></td>').append();
 							}
-							
 							var td5 = $('<td width="300px"></td>').append(data.descrip);
-							var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')"><input type="hidden" id="action3" value="cancel">');
+							var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
 							tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
 							tb.append(tr2);
+//							console.log(data.purpose)
+//							console.log(data.apt_date)
+//							console.log(data.apt_time)
+//							console.log(data.descrip)
+//							console.log(data.ename)
+//							console.log(data.procName)
 						}
 					})
-				},
-				"error" : function (datas) {
-					alert('無法取消預約！')
+					
 				}
 			})
-		}
-	}
-		$(function() {
-			var t1 = $('#t1');
-			var t2 = $('#t2');
-			var tb = $('#app');
-			t1.addClass("class1");
-			$('#a1').click(function(){
-				tb.empty();
-				var action = $('#action1').val();
-				var tr2;
-				t2.removeClass();
-				t1.addClass("class1");
-				$.ajax({
-					"type":"get",
-					"url":"QueryAppServlet",
-					"dataType":"JSON",
-					"data":{"action" : action},
-					"success" : function (datas) {
-						var th1 = $('<th></th>').append('日期');
-						var th2 = $('<th></th>').append('時段');
-						var th3 = $('<th></th>').append('預約目的');
-						var th4 = $('<th></th>').append('療程項目');
-						var th5 = $('<th></th>').append('需求描述');
-						var th6 = $('<th></th>').append('取消預約');
-						var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
-						tb.append(tr1);
-						$.each(datas,function(i,data){
-							if(data.apt_status == 1) {
-								var weekdays = "日,一,二,三,四,五,六".split(",");
-								var td1 = $('<td></td>').append(data.apt_date+'('+ weekdays[new Date(data.apt_date).getDay()]+')');
-								var td2 = $('<td></td>').append(data.apt_time);
-								if (data.purpose == 0) {
-									var td3 = $('<td></td>').append('開始新療程');
-									//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
-									var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
-								}
-								if (data.purpose == 1) {
-									var td3 = $('<td></td>').append('回診');
-									var td4 = $('<td width="150px"></td>').append();
-								}
-								var td5 = $('<td width="300px"></td>').append(data.descrip);
-								var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')"><input type="hidden" id="action3" value="cancel">');
-								tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
-								tb.append(tr2);
-// 							console.log(data.purpose)
-// 							console.log(data.apt_date)
-// 							console.log(data.apt_time)
-// 							console.log(data.descrip)
-// 							console.log(data.ename)
-// 							console.log(data.procName)
-							}
-						})
-						
-					}
-				})
-			})
+		})
 			
 
 			
@@ -252,7 +254,7 @@ a {
 				t2.addClass("class1");
 				$.ajax({
 					"type":"get",
-					"url":"QueryAppServlet",
+					"url":getContextPath()+"/apps/querybefore",
 					"dataType":"JSON",
 					"data":{"action" : action},
 					"success" : function (datas) {

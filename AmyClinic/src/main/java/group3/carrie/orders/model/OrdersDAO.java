@@ -13,7 +13,7 @@ public class OrdersDAO implements OrdersDAO_interface {
 	private static final String GET_ALL_STMT =
 		     "FROM OrdersVO order by oid";
 	private static final String GET_BY_PROD_NAME_STMT =
-			"SELECT DISTINCT o FROM OrdersVO AS o INNER JOIN o.orderItems AS oi INNER JOIN oi.productVO AS p where p.name like ? and o.memberVO.mid = ? order by o.oid";
+			"SELECT DISTINCT o FROM OrdersVO AS o INNER JOIN o.orderItems AS oi INNER JOIN oi.productVO AS p where p.name like ? and o.memberVO.mid = ? and o.ostatus != 3 order by o.oid";
 //	private static final String GET_BY_PROD_NAME_STMT =
 //			"select o.oid from Orders o join OrderItems oi on o.oid = oi.oid join Products p on oi.pid = p.pid where p.name like ? order by o.oid";
 	private static final String GET_BY_MID_STMT =

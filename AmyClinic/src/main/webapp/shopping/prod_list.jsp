@@ -11,7 +11,7 @@
 </head>
 <body onload="queryProdByName('')">
 <jsp:include page="/General/header.jsp"></jsp:include>
-<a href="shopping_list.jsp">%購物車 ;</a> 
+<a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">%購物車 ;</a> 
 			<div class="main">
 				<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-list">
 				<h1 style="display:inline;">愛美診所美妝商城</h1>
@@ -29,7 +29,13 @@
 				<a href="#" class="cbp-vm-icon cbp-vm-grid" data-view="cbp-vm-view-grid">Grid View</a>
 			</div>
 			<ul id="body"></ul>
-			<div id="Pagination"></div>
+			<div id="Pagination">
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>			
+			</div>
 			</div>
 			</div>
 			<jsp:include page="/General/footer.jsp"></jsp:include>
