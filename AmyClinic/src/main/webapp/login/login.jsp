@@ -63,8 +63,9 @@
 
 						
 						<a href="${pageContext.request.contextPath}/register/register.jsp">
+<!-- 							Google Login button -->
 						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
-						
+<!-- 						Facebook login button -->
 						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 <!-- 						<div id="status"></div> -->
 						<a href="#" onclick="logout();">Sign out</a>
@@ -99,10 +100,25 @@
 <!-- Google script -->
 <script src="${pageContext.request.contextPath}/js/google.login.js"></script>
 <!-- Henry's Custom logout -->
-<script>
+<script>	
 	function logout(){
 		signOut();
 		FB.logout();
+     	function getContextPath() { //obtains context path. EL doesn't work with separated .js
+    	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+    	}
+     	console.log("${memberVO.email}");
+		$.ajax({
+			type: "POST",
+			url: (getContextPath()+'/member/logout'),
+			data: 'email=' + "${memberVO.email}", 
+			success: function(data) { 
+				if(data[0].redirect) {
+					window.location.href = data[0].redirectURL;
+				}
+			}
+		})
+		
 	}
 </script>
 
