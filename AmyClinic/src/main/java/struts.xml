@@ -11,7 +11,9 @@
 
  
 
-<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Score/ScoreServlet,/Score/GetPic,/Backstage/[a-zA-Z_0-9]*,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*,/GoogleLoginServlet,/app_back/[a-zA-Z_0-9]*"/>
+ 
+<constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Score/ScoreServlet,/Score/GetPic,/Backstage/[a-zA-Z_0-9]*,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*,/FacebookLoginServlet,/GoogleLoginServlet,/app_back/[a-zA-Z_0-9]*,/empLogin/[a-zA-Z_0-9]*,/ShowPicByAjax"/>
+ 
  
 
 

@@ -22,7 +22,6 @@
 <div id="fb-root"></div>
 <script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 <!-- end facebook script -->
-<!-- <div id="fb-root"></div> -->
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
@@ -69,7 +68,7 @@
 <!-- 							Google Login button -->
 						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
 <!-- 						Facebook login button -->
-						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 <!-- 						<div id="status"></div> -->
 						<a href="#" onclick="logout();">Sign out</a>
 
@@ -117,12 +116,12 @@
 <!-- Henry's Custom logout -->
 <script>	
 	function logout(){
-		signOut();
-		FB.logout();
+		GoogleSignOut();
+		FacebookSignOut();
+
      	function getContextPath() { //obtains context path. EL doesn't work with separated .js
     	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
     	}
-     	console.log("${memberVO.email}");
 		$.ajax({
 			type: "POST",
 			url: (getContextPath()+'/member/logout'),
