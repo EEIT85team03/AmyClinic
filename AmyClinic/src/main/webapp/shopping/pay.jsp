@@ -121,8 +121,8 @@ $(function() {
 	number.bind('cut copy paste', function (e) {
 		e.preventDefault(); //取消動作
 		});
-	var patt_number = /^[^\u0020\u3000][0-9\u0020]*$/
 	number.blur(function() {
+		var patt_number = /^[^\u0020\u3000][0-9\u0020]*$/
 		if ($(this).val().length == 0 || !patt_number.test($(this).val())) {
 			pay.prop("disabled",true);
 		} else {
@@ -138,7 +138,7 @@ $(function() {
 		e.preventDefault(); //取消動作
 		});
 	var patt_expiry = /^(0[1-9])|(1[0-2]).*$/
-	expiry.blur(function() {
+		expiry.blur(function() {
 		if ($(this).val().length == 0 || !patt_expiry.test($(this).val())) {
 			pay.prop("disabled",true);
 		} else {

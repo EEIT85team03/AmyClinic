@@ -1,9 +1,9 @@
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
 <!DOCTYPE html>
 <!-- saved from url=(0063)http://www.beide.com.tw/demotype/flash/FLASH-02/JQ-2/index.html -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="jquery-1.3.2.js"></script> -->
-<script type="text/javascript" src="js/supersized.2.0.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/supersized.2.0.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$.fn.supersized.options = {
@@ -67,17 +67,17 @@ body {
 <body marginwidth="0" marginheight="0">
 	<div id="supersize" 	style="height: 856px; width: 1521.77777777778px; display: none;">
 		<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img src="images/home01.jpg" title="" ></a> 
+			<img src="${pageContext.request.contextPath}/images/home01.jpg" title="" ></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home02.jpg" title=""></a> 
+			<img	src="${pageContext.request.contextPath}/images/home02.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home03.jpg" title=""></a> 
+			<img	src="${pageContext.request.contextPath}/images/home03.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home04.jpg" title=""></a> 
+			<img	src="${pageContext.request.contextPath}/images/home04.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home05.jpg" title=""></a> 
+			<img	src="${pageContext.request.contextPath}/images/home05.jpg" title=""></a> 
 			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="images/home06.jpg" title=""></a>
+			<img	src="${pageContext.request.contextPath}/images/home06.jpg" title=""></a>
 	</div>
 	<!-- 		test -->
 <div style="z-index:9999; position: relative;" align="center" align="center">
@@ -88,6 +88,7 @@ body {
 		<!--top image-->
 
 		<article>
+			<c:import url="/General/LoginBox.jsp"></c:import>
 			<h2 class="title"></h2>
 			<!--黒底標題-->
 			<section>
@@ -121,7 +122,9 @@ body {
 
 		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
-		<a href="${pageContext.request.contextPath}/Backstage/login.jsp" >員工登入</a><br>
+ 
+		<a href="${pageContext.request.contextPath}/empLogin/login.jsp" >員工登入</a><br>
+ 
 		
 		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="/register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
 </div>		
@@ -132,7 +135,7 @@ body {
 <hr>
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="Backstage/0ininder.jsp">後台專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="${pageContext.request.contextPath}/Backstage/0ininder.jsp">後台專區</a><br></p>
 		</footer>
 	</div>
 </div>

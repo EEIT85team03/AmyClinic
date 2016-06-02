@@ -21,10 +21,10 @@
 <html>
 <!-- 
 1.預約查詢/取消
-用QueryAppServlet查今日之後、預約狀態為未取消，帶出日期、時間、目的
-如要取消則先彈訊息詢問後才用QueryAppServlet更新預約狀態後再跳出已取消的訊息，讓該筆預約在畫面上消失
+用QueryAppAction查今日之後、預約狀態為未取消，帶出日期、時間、目的
+如要取消則先彈訊息詢問後才用QueryAppAction更新預約狀態後再跳出已取消的訊息，讓該筆預約在畫面上消失
 2.歷史預約
-用QueryAppServlet查今日之前的預約
+用QueryAppAction查今日之前的預約
  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -207,7 +207,6 @@ a {
 				"type":"get",
 				"url":getContextPath()+"/apps/queryafter",
 				"dataType":"JSON",
-				"data":{},
 				"success" : function (datas) {
 					var th1 = $('<th></th>').append('日期');
 					var th2 = $('<th></th>').append('時段');
@@ -260,7 +259,6 @@ a {
 					"type":"get",
 					"url":getContextPath()+"/apps/querybefore",
 					"dataType":"JSON",
-					"data":{"action" : action},
 					"success" : function (datas) {
 							var th1 = $('<th></th>').append('日期');
 							var th2 = $('<th></th>').append('時段');

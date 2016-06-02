@@ -22,7 +22,6 @@
 <div id="fb-root"></div>
 <script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 <!-- end facebook script -->
-<!-- <div id="fb-root"></div> -->
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
@@ -62,14 +61,11 @@
 						<s:submit value="確定登入" method="login" />						
 						<span id="mybtn" class="button button-orange"><i class="fa"></i> &#10071; <strong>忘記密碼</strong></span>
 						<a href="${pageContext.request.contextPath}/register/register.jsp" class="button button-green"> <i class="fa"></i>&#10133;
-							<strong>現在加入愛美</strong></a>
-
-						
-						<a href="${pageContext.request.contextPath}/register/register.jsp">
+							<strong>現在加入愛美</strong></a>				
 <!-- 							Google Login button -->
-						<span class="g-signin2" data-onsuccess="onSignIn"></span></a>
+						<span class="g-signin2" data-onsuccess="onSignIn"></span>
 <!-- 						Facebook login button -->
-						<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 <!-- 						<div id="status"></div> -->
 						<a href="#" onclick="logout();">Sign out</a>
 
@@ -117,12 +113,12 @@
 <!-- Henry's Custom logout -->
 <script>	
 	function logout(){
-		signOut();
-		FB.logout();
+		GoogleSignOut();
+		FacebookSignOut();
+
      	function getContextPath() { //obtains context path. EL doesn't work with separated .js
     	   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
     	}
-     	console.log("${memberVO.email}");
 		$.ajax({
 			type: "POST",
 			url: (getContextPath()+'/member/logout'),

@@ -102,7 +102,4 @@ public class LoginAction extends ActionSupport {
 			return "success";
 		}
 	}
-
-	
-
 }
