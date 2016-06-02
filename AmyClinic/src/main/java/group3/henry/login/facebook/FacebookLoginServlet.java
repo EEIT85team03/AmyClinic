@@ -1,6 +1,8 @@
 package group3.henry.login.facebook;
 
 import group3.henry.global.utility.GetResource;
+import group3.henry.login.google.GoogleBean;
+import group3.henry.login.google.GoogleIdVerify;
 import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
