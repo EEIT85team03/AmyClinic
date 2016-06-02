@@ -1,8 +1,6 @@
 package group3.henry.login.facebook;
 
 import group3.henry.global.utility.GetResource;
-import group3.henry.login.google.GoogleBean;
-import group3.henry.login.google.GoogleIdVerify;
 import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
@@ -21,13 +19,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 
 @WebServlet("/FacebookLoginServlet")
 public class FacebookLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private HttpSession session;
 	private File fsaveDirectory;
-
+ 
     public FacebookLoginServlet() {
         super();        
     }
@@ -37,75 +37,68 @@ public class FacebookLoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("FacebookLoginServlet doPost()");
-		String idTokenString = request.getParameter("idtoken");
+		System.out.println("-----------------------------");
+		System.out.println("FacebookLoginServlet doPost()");		
 		this.session = request.getSession(); 
 		this.fsaveDirectory = new File(request.getServletContext().getRealPath("/")+"\\user_photo");
-		
 		System.out.println("fsaveDirectory = " + fsaveDirectory);
-		
-		System.out.println("idTokenString = " + idTokenString);
-		if (idTokenString != null && !idTokenString.isEmpty()){
-			GoogleIdVerify verify = new GoogleIdVerify();
-			GoogleBean gbean = verify.verify(idTokenString);
-			if (gbean != null){				
-				MemberServices service = new MemberServices();
-				String email = gbean.getEmail();
-				
-				System.out.println("gbean.getEmail() = " + email);
-				MemberVO memberVO = service.emailExists(email);
-				if (memberVO != null){	//email already in use || change to find existing member and updating last visit date										
-					java.sql.Date today = new Date(Calendar.getInstance().getTimeInMillis());					
-					memberVO.setLast_visit(today);
-					memberVO = retrievePhoto(memberVO, gbean);
-					service.update(memberVO);					
-					System.out.println("Google Login: " + email + " already in use, User Updated: " + memberVO.getName());
-				} else {
-					System.out.println("Google Login: " + email + " not in use, creating new account");
-					memberVO = new MemberVO(); // create account					
-					memberVO.setName(gbean.getName());
-					memberVO.setEmail(email);
-					memberVO.setPwd(gbean.getUserId());
-					memberVO.setVerify("");
-					Date defaultBirthday = new Date(0);
-					memberVO.setBirthday(defaultBirthday);
-					memberVO.setCountry("");
-					memberVO.setAddr("");
-					memberVO.setPhone("0000000000");
-					memberVO.setGender(' ');
-					memberVO.setHeight(0);
-					memberVO.setMass(0);
-					memberVO.setAct_status(1);
-					memberVO = retrievePhoto(memberVO, gbean);
-					service.addMember(memberVO);
-					System.out.println("User added: " + memberVO.getName());
-				}	
-				session.setAttribute("account", memberVO.getName()); //set to logged in
-				session.setAttribute("memberVO", memberVO);
-																
-				String contextPath = getServletContext().getContextPath();
-				
-				response.setContentType("application/json");
-				response.setCharacterEncoding("UTF-8");
-				PrintWriter out = response.getWriter();
-//				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");
-				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/success.jsp\"}]");
-				
-				out.flush();
-				//returns success					
+		String json = request.getParameter("data");
+		Gson g = new Gson();
+		FaceBookBean fbBean = g.fromJson(json, FaceBookBean.class);
+		if (null!=fbBean){				
+			MemberServices service = new MemberServices();
+			String email = fbBean.getEmail();
+			System.out.println("fbBean.getEmail() = " + email);
+			MemberVO memberVO = service.emailExists(email);
+			if (null!=memberVO){
+				java.sql.Date today = new Date(Calendar.getInstance().getTimeInMillis());					
+				memberVO.setLast_visit(today);
+				memberVO = retrievePhoto(memberVO, fbBean);
+				service.update(memberVO);					
+				System.out.println("Facebook Login: " + email + " already in use, User Updated: " + memberVO.getName());
 			} else {
-				//fail
-				session.setAttribute("message", "Login Failed: Invalid Google Login!");
-				RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
-				failureView.forward(request, response);
+				System.out.println("Google Login: " + email + " not in use, creating new account");
+				memberVO = new MemberVO(); // create account					
+				memberVO.setName(fbBean.getName());
+				memberVO.setEmail(email);
+				memberVO.setPwd(fbBean.getId());
+				memberVO.setVerify("");
+				Date defaultBirthday = new Date(0);
+				memberVO.setBirthday(defaultBirthday);
+				memberVO.setCountry("");
+				memberVO.setAddr("");
+				memberVO.setPhone("0000000000");
+				memberVO.setGender(' ');
+				memberVO.setHeight(0);
+				memberVO.setMass(0);
+				memberVO.setAct_status(1);
+				memberVO = retrievePhoto(memberVO, fbBean);
+				service.addMember(memberVO);
+				System.out.println("User added: " + memberVO.getName());
 			}
+			session.setAttribute("account", memberVO.getName()); //set to logged in
+			session.setAttribute("memberVO", memberVO);
+			String contextPath = getServletContext().getContextPath();
 			
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out = response.getWriter();
+			out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/success.jsp\"}]");
+			
+			out.flush();
+			//returns success
+		} else {
+			//fail
+			session.setAttribute("message", "Login Failed: Invalid Facebook Login!");
+			RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
+			failureView.forward(request, response);
 		}
+
 	}
 
-	private MemberVO retrievePhoto(MemberVO memberVO, GoogleBean gbean) {		
+	private MemberVO retrievePhoto(MemberVO memberVO, FaceBookBean fbBean) {		
 		String filename = null;
-		GetResource gr = new GetResource(fsaveDirectory,gbean.getPictureUrl());
+		GetResource gr = new GetResource(fsaveDirectory,fbBean.getPicture());
 		try {
 			filename = gr.download();
 		} catch (MalformedURLException e) {

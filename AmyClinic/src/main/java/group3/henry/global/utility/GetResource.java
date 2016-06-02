@@ -27,7 +27,12 @@ public class GetResource {
 	}
 	
     public String download() throws MalformedURLException{
-    	String filename = urlStr.substring(urlStr.lastIndexOf("/")+1);
+    	System.out.println(urlStr.length());
+    	System.out.println(urlStr.lastIndexOf("/")+1);
+    	System.out.println(urlStr.indexOf('?'));
+    	
+    	String filename = urlStr.substring(urlStr.lastIndexOf("/")+1, (urlStr.indexOf('?')<0?urlStr.length():urlStr.indexOf('?')));
+    	System.out.println("GetResource download() filename = "+filename);
     	URL url = new URL(urlStr);
     	try (    			
     	InputStream is = url.openStream();

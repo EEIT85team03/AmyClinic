@@ -88,8 +88,8 @@
       var timezone = response.timezone;
 //      console.log(response.updated_time);
 //      console.log(response.verified);
-      var data = {'id':id,'name':name,'email':email,'first_name':first_name,'gender':gender,'locale':locale,'picture':picture,'timezone':timezone};
-//      console.log(data);
+      var data = {"id":id,"name":name,"email":email,"first_name":first_name,"gender":gender,"locale":locale,"picture":picture,"timezone":timezone};
+      console.log(data);
 //      console.log(data.id);
 //      console.log(data.picture);
       function getContextPath() { //obtains context path. EL doesn't work with separated .js
@@ -98,8 +98,8 @@
       $.ajax({
           url: getContextPath() + '/FacebookLoginServlet',
           type: 'POST',
-          contentType:'application/json', //sent type
-          data: data,
+//          contentType:'application/json', //sent type
+          data: {"data" : JSON.stringify(data)},
           dataType:'json', //response type
           success: function(data){
             //On ajax success do this
