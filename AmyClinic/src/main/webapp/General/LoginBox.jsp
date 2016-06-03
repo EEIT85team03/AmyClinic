@@ -21,7 +21,7 @@
 	<c:choose>
 	    <c:when test="${memberVO != null}">
 	        <c:choose>
-	        	<c:when test="${memberVO.photo != null}">
+	        	<c:when test="${memberVO.photo != null && memberVO.photo != \"\"}">
 	        		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="50" width="50">
 	        	</c:when>
 	        	<c:otherwise>
