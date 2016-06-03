@@ -432,7 +432,22 @@ INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('14','1002');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1003');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('19','1004');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('5','1005');
-      -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+--最終版jack------------------------------------------------------------------------------------------------
+select   identity(int, 1,1) as id,year(apt_date) year, month(apt_date) month,pType_id , name , count(*) counts  
+INTO SpaToSales
+from(
+SELECT   Appointments.apt_date apt_date, ProcedureType.pType_id pType_id, ProcedureType.name name
+FROM     AppointmentDetail 
+INNER JOIN Appointments ON AppointmentDetail.aid = Appointments.aid 
+INNER JOIN Procedures ON AppointmentDetail.procedure_id = Procedures.procedure_id 
+INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
+		   ) Spatosales
+where  YEAR(apt_date) = 2016
+group by name,pType_id,MONTH(apt_date) ,year(apt_date)
+order by pType_id, MONTH(apt_date)
+
+select * from SpaToSales
+------------------------------------------------------------------------------------------------------
 select * from Members
 select * from Products
 select * from Orders
