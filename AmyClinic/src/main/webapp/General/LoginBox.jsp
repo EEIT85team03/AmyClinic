@@ -32,15 +32,15 @@
 				</c:choose>
 				<br /> 
 	        	Welcome, ${memberVO.name}!<br />
-				<a href="#" onclick="logout();" id="logoutbutton"> Sign out </a> 
-				<a href="${pageContext.request.contextPath}/member/editprofile.action"> Profile </a>
+				<a href="#" onclick="logout();" id="logoutbutton">Sign out</a> 
+				<a href="${pageContext.request.contextPath}/member/editprofile.action">Profile</a> | 
 			</c:when>
 			<c:otherwise>
 				<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="50" width="50">
 				<br />
 	        	Welcome, Guest!<br />
-				<a href="${pageContext.request.contextPath}/login/login.jsp"> Login </a> 
-				<a href="${pageContext.request.contextPath}/register/register.jsp"> Sign up! </a>
+				<a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> |
+				<a href="${pageContext.request.contextPath}/register/register.jsp">Sign up!</a>
 			</c:otherwise>
 		</c:choose>
 	</div>
