@@ -28,11 +28,11 @@
 <script>
 //Google
 
-// function init(){
-// 	gapi.load('auth2', function() {
-//     	gapi.auth2.init();
-// 	});
-// }
+function init(){
+	gapi.load('auth2', function() {
+    	gapi.auth2.init();
+	});
+}
 
 function GoogleSignOut() {
     var auth2 = gapi.auth2.getAuthInstance();
