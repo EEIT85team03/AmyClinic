@@ -15,80 +15,111 @@
 <!-- 最新編譯和最佳化的 JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
-
+<script	src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 
 
 <head>
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+
 <title>AddEMP</title>
-<s:head theme="xhtml" />
-<!--預設為 xhtml -->
-<!--theme 可為 xhtml 或 simple 或 css_xhtml -->
+
+  
 </head>
 
 <body>
-	<c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
-	<ul>
-		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
-		</c:forEach>
-	</ul>
-	</font>
-</c:if>
+	 
 	
+	
+<form ACTION="emp.do" class="form-horizontal"  method=post   enctype="multipart/form-data"> 
+<fieldset> 
 
-	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data">
-		<table border="0">
-			<tr>
-				<td>員工姓名:</td>
-				<td><input type="text" name="name" size="20" value="${request.empVO.name}"></td>
-			</tr>
-			<tr>
-				<td>密碼</td>
-				<td><input type="password" name="pwd" size="20"  ></td>
-			</tr>
-			<tr>
-				<td>重新輸入密碼</td>
-				<td><input type="password" name="pwd2" size="20"  ></td>
-			</tr>
-			<tr>
-				<td>e-mail</td>
-				<td><input type="text" name="email" size="20" value="${request.empVO.email}"></td>
-			</tr>
-			<tr>
-				<td>教育程度</td>
-				<td><input type="text" name="edu" size="20" value="${request.empVO.education}"></td>
-			</tr>
-			<tr>
-				<td>經歷</td>
-				<td><input type="text" name="exp" size="20" value="${request.empVO.experience}" ></td>
-			</tr>
-			<tr>
-				<td>專長</td>
-				<td><input type="text" name="spec" size="20" value="${request.empVO.specialty}"></td>
-			</tr>
-			<tr>
-				<td>照片</td>
-				<td><input type="file" name="photo" size="20" class="upl"></td>
-			</tr>
-			
-			
-		</table>
-		
-		<input type="hidden" name="action" value="insert"><br>
-		<input type="submit" value="送出新增">
-		<div>
-        <img class="preview" style="max-width: 150px; max-height: 150px;">
-        <div class="size"></div>
-    </div>
-	</FORM>
-	
-	
+
+<!-- Form Name -->
+<legend>愛美員工-> 新增員工 </legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">員工姓名</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="name" type="text" value="${request.empVO.name}" class="form-control input-md">
+  </div> <span style="color:red">${errorMsg.ename}</span>
+</div> 
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">密碼</label> 
+  <div class="col-md-4">
+  <input id="textinput" name="pwd" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.npwd}</span><span style="color:red">${errorMsg.pwdReg}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">重新輸入密碼</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="pwd2" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.npwd2}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">e-mail</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="email" type="text" value="${request.empVO.email}" placeholder="xxx@xxx.com" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.email}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">教育程度</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="edu" type="text" value="${request.empVO.education}" placeholder="xxx" class="form-control input-md">
+      </div><span style="color:red">${errorMsg.edu}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">經歷</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="exp" type="text" value="${request.empVO.experience}"  placeholder="" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.exp}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">專長</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="spec" type="text" value="${request.empVO.specialty}"  placeholder="" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.spec}</span>
+</div>
+
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">照片</label>
+  <div class="col-md-4">
+    <input id="filebutton" name="photo" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+  	<input type="hidden" name="action" value="insert">
+    <input type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary" value="送出新增">
+  </div>
+</div>
+
+</fieldset>
+
+</div>
  
+</form>
 
 
 </body>
+
+
 <script>
 $(function (){
  
