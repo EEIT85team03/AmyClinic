@@ -2,18 +2,23 @@ package group3.k.chart.controller;
 
 import group3.k.chart.model.SpaToSalesService;
 import group3.k.chart.model.SpaToSalesVO;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.json.simple.JSONValue;
+
+import com.google.gson.Gson;
 
 @WebServlet("/Backstage/SpaToSalesServlet")
 public class SpaToSalesServlet extends HttpServlet {
@@ -48,18 +53,23 @@ public class SpaToSalesServlet extends HttpServlet {
 			
 			Map procAllMap=new HashMap();//for( )裝入map轉
 			for(SpaToSalesVO spa :  spaTable ){//將table拆解 用vo分裝
-				procAllMap.put("療程科目",spa.getName());	
-				procAllMap.put("西元年", spa.getYear());
-				procAllMap.put("月份", spa.getMonth());
+				procAllMap.put("a",spa.getYear());	
+				procAllMap.put("b", spa.getMonth());
+				procAllMap.put("c", spa.getName());
 				//procAllMap.put("療程id", spa.getpType_id());
-				procAllMap.put("消費次數", spa.getCounts());
+				procAllMap.put("d", spa.getCounts());
 				spaToSales.add(procAllMap);//療程名稱
 				
-System.out.println( spa.getYear()+"年"+spa.getMonth()+"月"+spa.getName()+"科"+spa.getCounts()+"次");//test
+System.out.println( spa.getYear()+"年"+spa.getMonth()+"月"+spa.getName()+"科"+spa.getCounts()+"次;");//test
 			}
-			String jsonName = JSONValue.toJSONString(spaToSales);//變成jsonName
-			out.println(jsonName);				
-			System.out.println(jsonName);	
+//			String jsonName = JSONValue.toJSONString(spaToSales);//變成jsonName
+//			out.println(jsonName);				
+//			System.out.println(jsonName);
+			
+			Gson gson = new Gson();
+		   String str = gson.toJson(spaToSales);
+			out.println(str);
+			System.out.println(str);
 	}
 		}//doPost
 }
