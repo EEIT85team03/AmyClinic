@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+<%-- <%@ taglib prefix="s" uri="/struts-tags"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
 	#userphoto{
 		border-radius:50%;
@@ -15,11 +16,27 @@
 <div id="fb-root"></div>
 <div id="LoginBox">
 	<div>
-	<input type="hidden" class="g-signin2"/>		
-		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="50" width="50">
+	<input type="hidden" class="g-signin2"/>
+	
+	<c:choose>
+	    <c:when test="${memberVO.photo != null}">
+	        <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="50" width="50">
+	        <br /> 
+	        Welcome, ${memberVO.name}!<br />
+	        <a href="#" onclick="logout();" id="logoutbutton">Sign out</a> | <a href="${pageContext.request.contextPath}/member/editprofile.action">Profile</a>
+	    </c:when>    
+	    <c:otherwise>
+	        <img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="50" width="50">
+	        <br />
+	        Welcome, Guest!<br />
+	        <a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> | <a href="${pageContext.request.contextPath}/register/register.jsp">Sign up!</a>
+	    </c:otherwise>
+	</c:choose>
+			
+		
 		<div>
-			${memberVO.name}!
-			<a href="#" onclick="logout();" id="logoutbutton">Sign out</a> | Profile
+			
+			
 		</div>
 	</div>	
 </div>
