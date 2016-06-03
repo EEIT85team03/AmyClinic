@@ -42,9 +42,12 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#bt").click(function(){
     $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){
-    	$.each(data, function(i, jsonString){
+    	var items = [];
+    	$.each(data, function(key, val){
     		document.writeln(i[0]);
     		document.writeln(jsonString[0]);
+    		items.push( "<li id='" + key + "'>" + val + "</li>" );
+    	 
 for(var k in jsonString) {
 	console.log(k);
 	console.log(jsonString[k]);
