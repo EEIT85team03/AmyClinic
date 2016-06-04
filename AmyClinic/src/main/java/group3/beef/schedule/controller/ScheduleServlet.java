@@ -41,6 +41,19 @@ public class ScheduleServlet extends HttpServlet {
 			List l1 = new LinkedList();
 			List<ScheduleVO> list = ss.getAll();
 
+//			for (ScheduleVO scheduleVO : list) {
+//				//List m1 = new ArrayList();
+//				HashedMap m1 = new HashedMap();
+//				m1.put("getSch_id",scheduleVO.getSch_id());
+//				m1.put("Name",scheduleVO.getEmployeeVO().getName());
+//				m1.put("C_date",scheduleVO.getC_date());
+//				m1.put("C_hours",scheduleVO.getC_hours());
+//				m1.put("Appt_num",scheduleVO.getAppt_num());
+//				m1.put("Appt_status",scheduleVO.getAppt_status());
+//				m1.put("Memo",scheduleVO.getMemo());
+//				l1.add(m1);
+//			}
+			
 			for (ScheduleVO scheduleVO : list) {
 				//List m1 = new ArrayList();
 				HashedMap m1 = new HashedMap();
@@ -48,12 +61,18 @@ public class ScheduleServlet extends HttpServlet {
 				m1.put("Name",scheduleVO.getEmployeeVO().getName());
 				m1.put("C_date",scheduleVO.getC_date());
 				m1.put("C_hours",scheduleVO.getC_hours());
-				m1.put("Appt_num",scheduleVO.getAppt_num());
-				m1.put("Appt_status",scheduleVO.getAppt_status());
+				int appt_num = scheduleVO.getAppt_num();
+				int appt_status = scheduleVO.getAppt_status();
+				if(appt_status==0 && appt_num==3){
+					return ;
+				}
+				
+				
 				m1.put("Memo",scheduleVO.getMemo());
 				l1.add(m1);
+				
+				
 			}
-			
 			String str = gson.toJson(l1);
 			out.println(str);
 			return;
