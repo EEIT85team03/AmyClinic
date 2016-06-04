@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.json.simple.JSONValue;
 
 import com.google.gson.Gson;
@@ -44,15 +45,16 @@ public class SpaToSalesServlet extends HttpServlet {
 		//SpaToSalesVO spaToSalesVO= new SpaToSalesVO();
 		//============顯現一開始Chart.jsp的畫面=========================
 //List產品 全部
+		
 		if("熱門預約療程".equals(action)){
 			System.out.println("熱門預約療程_OK");
 			//-------療程名稱
 			List<SpaToSalesVO> spaTable=spaToSalesService.getAll();//取得tab全部
-			
 			List spaToSales=new LinkedList();
 			
-			Map procAllMap=new HashMap();//for( )裝入map轉
+			//HashMap procAllMap=new HashMap();//for( )裝入map轉
 			for(SpaToSalesVO spa :  spaTable ){//將table拆解 用vo分裝
+				HashedMap procAllMap = new HashedMap();//for( )裝入map轉
 				procAllMap.put("a",spa.getYear());	
 				procAllMap.put("b", spa.getMonth());
 				procAllMap.put("c", spa.getName());
