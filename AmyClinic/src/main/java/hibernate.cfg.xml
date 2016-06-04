@@ -62,6 +62,9 @@
 		<mapping class="group3.carrie.proc.model.ProcVO"/>
 		<mapping class="group3.carrie.schedule.model.ScheduleVO"/>
 		<mapping class="group3.beef.employee.model.EmployeeVO"/>
+<!-- 		k -->
+		<mapping class="group3.k.chart.model.SpaToSalesVO"/>
+<!-- 		k -->
 	</session-factory>
 	
 </hibernate-configuration>

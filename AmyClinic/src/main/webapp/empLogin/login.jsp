@@ -204,7 +204,7 @@ html,body{
 
 
 function OpenLink(link) {     
-	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "50%" });
+	  parent.$.colorbox({ href: link, iframe: true, width: "70%", height: "60%" });
 	}
 
 

@@ -1,9 +1,12 @@
 package group3.k.members.controller;
 
+import group3.beef.employee.model.EmployeeService;
+import group3.beef.employee.model.EmployeeVO;
 import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.LinkedList;
@@ -15,6 +18,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.collections.map.HashedMap;
+
+import com.google.gson.Gson;
 
 
 @WebServlet("/Backstage/MemberServletTest")
@@ -330,5 +337,55 @@ public class MemberServlet extends HttpServlet {
 						failureView.forward(req, res);
 					}
 				}//getOne_For_Update
+				
+				
+					// ===================全部員工json=========================
+				if ("getAllJson".equals(action)){
+					
+					System.out.println("call getAllJson");
+					res.setContentType("application/json");
+					res.setCharacterEncoding("UTF-8");
+					PrintWriter out = res.getWriter();
+					Gson gson = new Gson();
+					MemberServices mSvc = new MemberServices();
+					List<MemberVO> list = mSvc.getAll();
+					List l1 = new LinkedList();
+					for(MemberVO memVO : list){
+						HashedMap m1 = new HashedMap();
+						m1.put("mid", memVO.getMid().toString());
+						m1.put("name", memVO.getName());
+						m1.put("verify", memVO.getVerify());
+						m1.put("email", memVO.getEmail());
+						m1.put("birthday", memVO.getBirthday().toString());
+						m1.put("cuntry", memVO.getCountry());
+						m1.put("gender", memVO.getGender().toString());
+						m1.put("addr", memVO.getAddr());
+						m1.put("phone", memVO.getPhone());
+						m1.put("height", memVO.getHeight().toString());
+						m1.put("mass", memVO.getMass().toString());
+						m1.put("act_satus", memVO.getAct_status().toString());
+						m1.put("num_trans", memVO.getNum_trans().toString());
+						m1.put("num_treatment", memVO.getNum_treatment().toString());
+						m1.put("num_visits", memVO.getNum_visits().toString());
+						m1.put("total_spent", memVO.getTotal_spent().toString());
+						m1.put("reward_pts", memVO.getReward_pts().toString());
+						m1.put("spent_pts", memVO.getSpent_pts().toString());
+						m1.put("last_visit", memVO.getLast_visit());
+						m1.put("join_date", memVO.getJoin_date());
+						l1.add(m1);
+					}
+					
+				
+					//res.setHeader("Access-Control-Allow-Origin", "*");
+					//res.setHeader("content-type", "text/html;charset=UTF-8");
+					
+					String json = gson.toJson(l1);
+					out.print(json);
+				
+				}
+				
+				
+				
+				
 	}
 }
