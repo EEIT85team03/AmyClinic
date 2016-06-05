@@ -59,6 +59,11 @@ public class OrderItemsService {
 		return dao.findByPrimaryKey(id);
 	}
 	
+	//依訂單編號查詢
+	public List<OrderItemsVO> getByOid(Integer oid) {
+		return dao.getByOid(oid);
+	}
+	
 	//查全部
 	public List<OrderItemsVO> getAll() {
 		return dao.getAll();

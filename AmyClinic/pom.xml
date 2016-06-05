@@ -47,6 +47,12 @@
 			<artifactId>struts2-dojo-plugin</artifactId>
 			<version>2.3.4</version>
 		</dependency>
+		
+		<dependency>
+       		<groupId>org.apache.struts</groupId>
+       		<artifactId>struts2-json-plugin</artifactId>
+       		<version>2.3.4</version>
+  		 </dependency>
 		<!-- End Struts2 -->
 
 		<!-- Alternative JDBC drivers (because, sqljdbc4.jar sucks!) -->
