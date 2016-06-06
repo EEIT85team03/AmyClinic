@@ -42,7 +42,10 @@ public class HotProdServlet extends HttpServlet {
 			
 			List<SalesToProdVO> ProdVO=salesToProdService.getAll();
 			List ProdList=new LinkedList();
+			int i =0;
 			for(SalesToProdVO prod :ProdVO){
+				if( i <=4){
+				i++;
 				Map prodAllMap=new HashMap();
 				prodAllMap.put("id",prod.getId());
 				prodAllMap.put("name",prod.getName());
@@ -50,6 +53,7 @@ public class HotProdServlet extends HttpServlet {
 				prodAllMap.put("year",prod.getYears());
 				ProdList.add(prodAllMap);//療程名稱
 System.out.println( prod.getId()+"名次"+prod.getName()+"名稱"+prod.getQuantity()+"賣出"+prod.getYears()+"年份;");//test				
+			}else break;
 			}
 			Gson gson = new Gson();
 			   String str = gson.toJson(ProdList);
