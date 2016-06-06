@@ -114,12 +114,12 @@
 			<li><a href="#">專員諮詢</a></li>
 		</ul>
 	</div>
-	<div id="search">
-		<form method="get" action="">
-			<fieldset>
-				<input type="text" name="s" id="search-text" size="15" /> <input
-					type="submit" id="search-submit" value="GO" />
-			</fieldset>
-		</form>
-	</div>
+<!-- 	<div id="search"> -->
+<!-- 		<form method="get" action=""> -->
+<!-- 			<fieldset> -->
+<!-- 				<input type="text" name="s" id="search-text" size="15" /> <input -->
+<!-- 					type="submit" id="search-submit" value="GO" /> -->
+<!-- 			</fieldset> -->
+<!-- 		</form> -->
+<!-- 	</div> -->
 </div>
