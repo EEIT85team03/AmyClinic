@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,16 @@
 <body>
 I am editprofile.jsp! <hr>
 
-<h3>${memberVO.name}</h3> <img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+<h3>${memberVO.name}</h3> 
+
+<c:choose>
+	<c:when test="${memberVO.photo != null}">
+		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+	</c:when>
+	<c:otherwise>
+		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
+	</c:otherwise>
+</c:choose>	
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">

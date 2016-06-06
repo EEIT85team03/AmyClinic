@@ -58,6 +58,11 @@ body {
 	z-index: 2;
 }
 </style>
+<!-- Google API -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+
 <!--[if lt IE 9]>
 		<script src="http://htmL5shim.googlecode.com/svn/trunk/html5.js">	
 		</script>
@@ -100,11 +105,11 @@ body {
 			</section>
 <!-- Henry's test login --><hr/>
 <div style="bgcolor='#FF9D6F'">
-		<a href="${pageContext.request.contextPath}/login/login.jsp">Login page</a><br>
-		<a href="${pageContext.request.contextPath}/register/register.jsp">Register a new account</a><br>		
+<%-- 		<a href="${pageContext.request.contextPath}/login/login.jsp">Login page</a><br> --%>
+<%-- 		<a href="${pageContext.request.contextPath}/register/register.jsp">Register a new account</a><br>		 --%>
 
-<!--           	 namespace/action name.action  target registered in struts.xml-->
-		<a href="${pageContext.request.contextPath}/member/editprofile.action">Edit Account Information</a><br>
+<!-- <!--           	 namespace/action name.action  target registered in struts.xml --> -->
+<%-- 		<a href="${pageContext.request.contextPath}/member/editprofile.action">Edit Account Information</a><br> --%>
 <!--                    	 namespace/action name                      target registered in struts.xml-->		
 <%-- 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		 --%>
 <!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->

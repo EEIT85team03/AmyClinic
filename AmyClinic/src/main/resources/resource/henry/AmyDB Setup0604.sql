@@ -14,6 +14,7 @@ DROP TABLE Orders;
 DROP TABLE Products;
 DROP TABLE Catagory;
 DROP TABLE Members;
+DROP TABLE SpaToSales;
 
 CREATE TABLE Catagory(
   cid           DECIMAL(4)      IDENTITY(10,10) PRIMARY KEY,
@@ -24,8 +25,8 @@ CREATE TABLE Members(
   name			NVARCHAR(30)	DEFAULT 'Unknown',  
   pwd			VARCHAR(50)		NOT NULL,
   verify		VARCHAR(50)		DEFAULT '',
-  --email			VARCHAR(50)		NOT NULL UNIQUE,
-  email			VARCHAR(50)		NOT NULL,
+  email			VARCHAR(50)		NOT NULL UNIQUE,
+  --email			VARCHAR(50)		NOT NULL,
   birthday		DATE			DEFAULT '1970-01-01',
   country		NVARCHAR(20)	DEFAULT '',
   gender		CHAR(1)			, -- enforce in registration code, not enforced to accomodate Google/FB login
@@ -419,30 +420,291 @@ INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES
 
 update Schedule set appt_status = 0 where appt_num = 3
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-2-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-2-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-2-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-2-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-2-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-2-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-3-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-3-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-3-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-3-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-3-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-3-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-4-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-4-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-4-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-4-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-4-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-4-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-5-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-5-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-5-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-5-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-5-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-5-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','1','1');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','1','2');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','1','3');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','1','1');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','1','1');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','1','2');
-   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-7-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-7-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-7-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-7-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-7-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-7-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-8-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-8-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-8-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-8-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-8-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-8-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-9-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-9-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-9-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-9-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-9-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-9-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-10-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-10-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-10-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-10-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-10-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-10-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-11-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-11-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-11-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-11-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-11-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-11-24','早上','整形手術','1','2');
+-------------------------------------------------------------------------------------------
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+   --90 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('14','1002');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1003');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('19','1004');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('5','1005');
-      -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1006');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('17','1007');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1008');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1009');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('9','1010');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1011');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1012');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1013');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1014');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1015');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1016');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1017');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1018');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1019');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('13','1020');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1021');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1022');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1023');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1024');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1025');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1026');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1027');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1028');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1029');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1030');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1031');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('13','1032');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1033');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1034');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1035');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1036');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1037');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('14','1038');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1039');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('19','1040');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('5','1041');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1042');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('17','1043');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1044');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1045');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('9','1046');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1047');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1048');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1049');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1050');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1051');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1052');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1053');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1054');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1055');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('13','1056');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1057');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1058');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1059');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1060');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1061');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1062');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1063');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1064');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1065');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1066');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1067');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('13','1068');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1069');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1070');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1071');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1072');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1073');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('14','1074');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1075');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('19','1076');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('5','1077');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1078');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('17','1079');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1080');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1081');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('9','1082');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1083');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1084');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1085');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1086');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1087');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1088');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1089');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('3','1090');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1091');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('13','1092');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('22','1093');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1094');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1095');
+
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('2','1096');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('8','1097');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1098');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1099');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1100');
+--最終版jack------------------------------------------------------------------------------------------------
+USE AmyDB;
+GO
+IF OBJECT_ID ( 'g3_jack', 'P' ) IS NOT NULL 
+    DROP PROCEDURE g3_jack;
+GO
+CREATE PROCEDURE g3_jack
+AS
+ select   identity(int, 1,1) as id,
+		 year(apt_date) as year,
+		 month(apt_date) as month,pType_id as pType_id, name as name, count(*) as counts  
+INTO SpaToSales
+from(
+SELECT   Appointments.apt_date as apt_date  , ProcedureType.pType_id as pType_id , ProcedureType.name as name
+FROM     AppointmentDetail
+INNER JOIN Appointments ON AppointmentDetail.aid = Appointments.aid 
+INNER JOIN Procedures ON AppointmentDetail.procedure_id = Procedures.procedure_id 
+INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
+		   ) Spatosales
+group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
+GO
+
+execute g3_jack
+/*
+select   identity(int, 1,1) as id,
+		 year(apt_date) as year,
+		 month(apt_date) as month,pType_id as pType_id, name as name, count(*) as counts  
+INTO SpaToSales
+from(
+SELECT   Appointments.apt_date as apt_date  , ProcedureType.pType_id as pType_id , ProcedureType.name as name
+FROM     AppointmentDetail
+--FROM     Appointments 
+INNER JOIN Appointments ON AppointmentDetail.aid = Appointments.aid 
+--INNER JOIN AppointmentDetail ON AppointmentDetail.aid = Appointments.aid 
+INNER JOIN Procedures ON AppointmentDetail.procedure_id = Procedures.procedure_id 
+INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
+		   ) Spatosales
+--where  YEAR(apt_date) = 2016
+group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
+--order by year(apt_date), MONTH(apt_date);
+*/
+
+select * from SpaToSales;
+select * from AppointmentDetail;
+select * from Appointments;
+select * from Procedures;
+select * from ProcedureType;
+------------------------------------------------------------------------------------------------------
 select * from Members
 select * from Products
 select * from Orders
 select * from OrderItems
 select * from Schedule
-select * from Appointments
 select * from Employees
 select * from Catagory
 select * from Chat
 select * from Score
-select * from Procedures;
-select * from ProcedureType;
-select * from AppointmentDetail;

@@ -204,7 +204,7 @@ html,body{
 
 
 function OpenLink(link) {     
-	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "50%" });
+	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "65%" });
 	}
 
 
@@ -213,11 +213,6 @@ function OpenLink(link) {
 
 $(function() {
 	//alert()
-	var hsn = window.location.host;
-	var cpn = window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
-	var ctx ='http://'+hsn+cpn+'/ShowPicByAjax';
-	//alert(cpn);
-	//alert(ctx);
 	var textfield = $("input[name=mail]");
 	$('button[type="button"]').click(function() {
 		//alert("btn click")
@@ -255,12 +250,12 @@ $(function() {
                     
                     //show avatar
                     $(".avatar").css({
-                        "background-image": "url("+ctx+")"
+                        "background-image": "url('<%=request.getContextPath()%>/ShowPicByAjax')"
                         
                     });
                     setTimeout(login, 2000 )
                     function login(){
-                    	window.location = ""+cpn+"/Backstage/product.jsp"
+                    	window.location = "<%=request.getContextPath()%>/Backstage/product.jsp";
                     }
                     
                 } else {

@@ -4,121 +4,161 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
+<!-- jQuery -->
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+
 <!-- bootstrap -->
 <!-- 最新編譯和最佳化的 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
+<link rel="stylesheet"	href="${pageContext.request.contextPath}/css/bootstrap.css">
 <!-- 選擇性佈景主題 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
-
+<link rel="stylesheet" 	href="${pageContext.request.contextPath}/css/bootstrap-theme.css">
 <!-- 最新編譯和最佳化的 JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
+<!-- file input -->
+<script src="${pageContext.request.contextPath}/js/fileinput.js"></script>
+<link rel="stylesheet" 	href="${pageContext.request.contextPath}/css/fileinput.css">
+
+
+<style type="text/css">
+.container{
+	width: 1000px;
+};
+
+</style>
 
 
 <head>
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+
+
 <title>AddEMP</title>
-<s:head theme="xhtml" />
-<!--預設為 xhtml -->
-<!--theme 可為 xhtml 或 simple 或 css_xhtml -->
+
+  
 </head>
 
 <body>
-	<c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
-	<ul>
-		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
-		</c:forEach>
-	</ul>
-	</font>
-</c:if>
+	 
 	
+	
+<form ACTION="emp.do" class="form-horizontal"  method=post   enctype="multipart/form-data"> 
+<fieldset> 
 
-	<FORM METHOD="post" ACTION="emp.do" name="form1" enctype="multipart/form-data">
-		<table border="0">
-			<tr>
-				<td>員工姓名:</td>
-				<td><input type="text" name="name" size="20" value="${request.empVO.name}"></td>
-			</tr>
-			<tr>
-				<td>密碼</td>
-				<td><input type="password" name="pwd" size="20"  ></td>
-			</tr>
-			<tr>
-				<td>重新輸入密碼</td>
-				<td><input type="password" name="pwd2" size="20"  ></td>
-			</tr>
-			<tr>
-				<td>e-mail</td>
-				<td><input type="text" name="email" size="20" value="${request.empVO.email}"></td>
-			</tr>
-			<tr>
-				<td>教育程度</td>
-				<td><input type="text" name="edu" size="20" value="${request.empVO.education}"></td>
-			</tr>
-			<tr>
-				<td>經歷</td>
-				<td><input type="text" name="exp" size="20" value="${request.empVO.experience}" ></td>
-			</tr>
-			<tr>
-				<td>專長</td>
-				<td><input type="text" name="spec" size="20" value="${request.empVO.specialty}"></td>
-			</tr>
-			<tr>
-				<td>照片</td>
-				<td><input type="file" name="photo" size="20" class="upl"></td>
-			</tr>
-			
-			
-		</table>
-		
-		<input type="hidden" name="action" value="insert"><br>
-		<input type="submit" value="送出新增">
-		<div>
-        <img class="preview" style="max-width: 150px; max-height: 150px;">
-        <div class="size"></div>
-    </div>
-	</FORM>
-	
-	
+
+<!-- Form Name -->
+<legend align="center">愛美員工-> 新增員工 </legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">員工姓名</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="name" type="text" value="${request.empVO.name}" class="form-control input-md">
+  </div> <span style="color:red">${errorMsg.ename}</span>
+</div> 
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">密碼</label> 
+  <div class="col-xs-4">
+  <input id="textinput" name="pwd" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.npwd}</span><span style="color:red">${errorMsg.pwdReg}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">重新輸入密碼</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="pwd2" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.npwd2}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">e-mail</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="email" type="text" value="${request.empVO.email}" placeholder="xxx@xxx.com" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.email}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">教育程度</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="edu" type="text" value="${request.empVO.education}" placeholder="xxx" class="form-control input-md">
+      </div><span style="color:red">${errorMsg.edu}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">經歷</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="exp" type="text" value="${request.empVO.experience}"  placeholder="" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.exp}</span>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="textinput">專長</label>  
+  <div class="col-xs-4">
+  <input id="textinput" name="spec" type="text" value="${request.empVO.specialty}"  placeholder="" class="form-control input-md">
+  </div><span style="color:red">${errorMsg.spec}</span>
+</div>
+
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="filebutton">照片</label>
+  <div class="col-xs-4">
+    <input id="filebutton" name="photo" class="input-file" type="file">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-xs-4 control-label" for="singlebutton"></label>
+  <div class="col-xs-4">
+  	<input type="hidden" name="action" value="insert">
+    <input type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary" value="送出新增">
+  </div>
+</div>
+
+</fieldset>
+
  
+ 
+</form>
 
 
 </body>
+
+
 <script>
-$(function (){
+// $(function (){
  
-    function format_float(num, pos)
-    {
-        var size = Math.pow(10, pos);
-        return Math.round(num * size) / size;
-    }
+//     function format_float(num, pos)
+//     {
+//         var size = Math.pow(10, pos);
+//         return Math.round(num * size) / size;
+//     }
  
-    function preview(input) {
+//     function preview(input) {
  
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+//         if (input.files && input.files[0]) {
+//             var reader = new FileReader();
             
-            reader.onload = function (e) {
-                $('.preview').attr('src', e.target.result);
-                var KB = format_float(e.total / 1024, 2);
-                $('.size').text("檔案大小：" + KB + " KB");
-            }
+//             reader.onload = function (e) {
+//                 $('.preview').attr('src', e.target.result);
+//                 var KB = format_float(e.total / 1024, 2);
+//                 $('.size').text("檔案大小：" + KB + " KB");
+//             }
  
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+//             reader.readAsDataURL(input.files[0]);
+//         }
+//     }
  
-    $("body").on("change", ".upl", function (){
-        preview(this);
-    })
+//     $("body").on("change", ".upl", function (){
+//         preview(this);
+//     })
     
-})
-
-
+// })
 </script>
 </html>

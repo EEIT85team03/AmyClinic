@@ -28,6 +28,7 @@ public class VerifyService {
 					HttpServletRequest request = ServletActionContext.getRequest();
 					HttpSession session = request.getSession();
 					session.setAttribute("memberVO", mb); // sets current active user in session
+					session.setAttribute("account",mb.getName());
 					if (mb.getAct_status()==2) //if the account status = waiting for verification (aka not banned)
 						mb.setAct_status(1); //sets account to active
 					mb.setVerify(""); // removes token
