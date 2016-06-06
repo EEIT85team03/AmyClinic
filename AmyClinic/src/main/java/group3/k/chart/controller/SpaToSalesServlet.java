@@ -40,11 +40,11 @@ public class SpaToSalesServlet extends HttpServlet {
 		res.setContentType("text/json");
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
-		//熱門產品類別
+		//熱門療程類別
 		SpaToSalesService	 spaToSalesService= new SpaToSalesService(); 
 		//SpaToSalesVO spaToSalesVO= new SpaToSalesVO();
 		//============顯現一開始Chart.jsp的畫面=========================
-//List產品 全部
+//List療程 全部
 		
 		if("熱門預約療程".equals(action)){
 			System.out.println("熱門預約療程_OK");
