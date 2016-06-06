@@ -7,6 +7,7 @@ public interface OrderItemsDAO_interface {
     public void update(OrderItemsVO orderItemsVO);
     public void delete(Integer id);
     public OrderItemsVO findByPrimaryKey(Integer id);
+    public List<OrderItemsVO> getByOid(Integer oid);
     public List<OrderItemsVO> getAll();
 
 }

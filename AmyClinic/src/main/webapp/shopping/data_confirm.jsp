@@ -12,12 +12,34 @@ if(session.getAttribute("ShoppingCart") == null) {
 %>      
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/shopping/css/data_confirm.css" />
+<link href="${pageContext.request.contextPath}/shopping/css/phase.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/shopping/css/data_confirm.css" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>確認資料</title>
 </head>
 <body>
+<jsp:include page="/General/header.jsp"></jsp:include>
+<br>
+
+				<div id="phase">
+					<div class="sign">
+					   <p><span>1</span></p>
+					   <p>購物清單</p>
+					</div>
+					<div class="sign current">
+					   <p><span>2</span></p>
+					   <p>確認資料</p>
+					</div><div class="sign">
+					   <p><span>3</span></p>
+					   <p>開始付款</p>
+					</div><div class="sign">
+					   <p><span>4</span></p>
+					   <p>結帳完成</p>
+					</div>
+				</div>
+<br><br><br>
 <div class="data_container">
 <div class="div1">訂單明細</div>
 		<table>
@@ -122,5 +144,6 @@ if(session.getAttribute("ShoppingCart") == null) {
 	</div>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script src="${pageContext.request.contextPath}/shopping/js/data_confirm.js"></script>	
+		<jsp:include page="/General/footer.jsp"></jsp:include>
 </body>
 </html>

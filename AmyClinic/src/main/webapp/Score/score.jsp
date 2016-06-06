@@ -54,6 +54,15 @@ color: orange;
 					var cell4 = $("<td></td>").html("<FORM  METHOD='get' ACTION='ScoreServlet' ><input  type='submit' value='參予留言'/><input type='hidden'name='action' value='getOne_Score'> <input type='hidden' name='eid' value='"+emp.eid+"'> </form>")
 					var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4])
 					$("#ta>tbody").append(row);
+					console.log("emp[name] 外面"+emp["name"]);
+					console.log("emp.name 外面"+emp.name);
+					console.log(emp);
+					for(var k in emp ){
+						console.log(emp);
+						console.log("emp的KEY"+k);
+						console.log("emp.k裡面"+emp.k);
+						console.log("emp[k] 裡面"+emp[k]);
+					}
 
 					
 					

@@ -12,6 +12,8 @@ import org.hibernate.Session;
 public class OrderItemsDAO implements OrderItemsDAO_interface {
 	private static final String GET_ALL_STMT =
 		      "FROM OrderItemsVO order by id";
+	private static final String GET_BY_OID_STMT =
+			"FROM OrderItemsVO where oid = ? order by id";
 	private static final String DELETE =
 		      "DELETE FROM OrderItemsVO where id = ?";
 
@@ -73,6 +75,25 @@ public class OrderItemsDAO implements OrderItemsDAO_interface {
 		}
 		return orderItemsVO;
 	}
+	
+	
+
+	@Override
+	public List<OrderItemsVO> getByOid(Integer oid) {
+		List<OrderItemsVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_BY_OID_STMT);
+			query.setParameter(0, oid);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch(RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list;
+	}
 
 	@Override
 	public List<OrderItemsVO> getAll() {
@@ -129,11 +150,9 @@ public class OrderItemsDAO implements OrderItemsDAO_interface {
 //		System.out.println(orderItemsVO3.getPrice_per());
 //		System.out.println("---------------------------------------");
 	
-		
-				
-		//查全部
-		List<OrderItemsVO> list = dao.getAll();
-		for (OrderItemsVO orderItems : list) {
+		//依訂單編號查詢
+		List<OrderItemsVO> list1 = dao.getByOid(1);
+		for (OrderItemsVO orderItems : list1) {
 			System.out.print(orderItems.getId() + ",");
 			System.out.print(orderItems.getOrdersVO().getOid() + ",");
 			System.out.print(orderItems.getProductVO().getPid() + ",");
@@ -142,6 +161,19 @@ public class OrderItemsDAO implements OrderItemsDAO_interface {
 			System.out.print(orderItems.getPrice_per());
 			System.out.println();
 		}
+		
+				
+		//查全部
+//		List<OrderItemsVO> list = dao.getAll();
+//		for (OrderItemsVO orderItems : list) {
+//			System.out.print(orderItems.getId() + ",");
+//			System.out.print(orderItems.getOrdersVO().getOid() + ",");
+//			System.out.print(orderItems.getProductVO().getPid() + ",");
+//			System.out.print(orderItems.getProductVO().getName() + ",");
+//			System.out.print(orderItems.getQuantity() + ",");
+//			System.out.print(orderItems.getPrice_per());
+//			System.out.println();
+//		}
 
 	}
 
