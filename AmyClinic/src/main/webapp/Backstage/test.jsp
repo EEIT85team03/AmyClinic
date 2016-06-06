@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>-AMY-testJSON</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/Backstage/js/jquery.js"></script>
-
 </head>
 <body >
 <div id='t'></div>	<hr>

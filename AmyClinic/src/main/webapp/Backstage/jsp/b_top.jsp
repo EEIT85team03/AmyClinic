@@ -77,64 +77,64 @@ background-color:#F3F3FA;
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
-		<li class="dropdown">
-		<a href="#" class="dropdown-toggle"	data-toggle="dropdown">
-		<i class="fa fa-envelope"></i>
-		 <b	class="caret"></b>
-		 </a>
-			<ul class="dropdown-menu message-dropdown">
-				<li class="message-preview"><a href="#">
-						<div class="media">
-							<span class="pull-left"> <img class="media-object"
-								width="50px"
-								src="http://2.blog.xuite.net/2/5/0/b/22959614/blog_1733140/txt/35316357/0.jpg"
-								alt=""> <!--                                         訊息圖 -->
-							</span>
-							<div class="media-body">
-								<h5 class="media-heading">
-									<strong>涼麵趁熱吃</strong>
-								</h5>
-								<!--                                         簡訊名 -->
-								<p class="small text-muted">
-									<i class="fa fa-clock-o"></i> 昨天 at 4:32 PM
-								</p>
-								<p>你跨年有空嗎？......有..........那我跟你換班</p>
-							</div>
-						</div>
-				</a></li>
-				<li class="message-preview"><a href="#">
-						<div class="media">
-							<span class="pull-left"> <img class="media-object"
-								width="50px"
-								src="http://ext.pimg.tw/yysky/1396003820-231168804.jpg" alt="">
-							</span>
-							<div class="media-body">
-								<h5 class="media-heading">
-									<strong>鈴兒兔</strong>
-								</h5>
-								<p class="small text-muted">
-									<i class="fa fa-clock-o"></i> 昨天 at 14:25 PM
-								</p>
-								<p>你跨年有空嗎？......有..........那我跟你換班</p>
-							</div>
-						</div>
-				</a></li>
-				<li class="message-footer"><a href="#">訊息管理</a></li>
-			</ul></li>
-		<!--                                         訊息區over -->
-		<!--                                         通知區-->
-		<li class="dropdown"><a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-bell"></i> 
-		<b	class="caret"></b></a>
-			<ul class="dropdown-menu alert-dropdown">
-				<li><a href="#">您的帳號已鎖定<span class="label label-default">0</span></a></li>
-				<li><a href="#">您的帳號已開通<span class="label label-primary">1</span></a></li>
-				<li><a href="#">您的帳號已鎖定<span class="label label-success">0</span></a></li>
-				<li><a href="#">您的帳號已開通<span class="label label-info">1</span></a></li>
-				<li><a href="#">您的帳號已鎖定<span class="label label-warning">0</span></a></li>
-				<li><a href="#">您的帳號已開通<span class="label label-danger">1</span></a></li>
-				<li class="divider"></li>
-				<li><a href="#">查看所有通知</a></li>
-			</ul></li>
+<!-- 		<li class="dropdown"> -->
+<!-- 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"> -->
+<!-- 		<i class="fa fa-envelope"></i> -->
+<!-- 		 <b	class="caret"></b> -->
+<!-- 		 </a> -->
+<!-- 			<ul class="dropdown-menu message-dropdown"> -->
+<!-- 				<li class="message-preview"><a href="#"> -->
+<!-- 						<div class="media"> -->
+<!-- 							<span class="pull-left"> <img class="media-object" -->
+<!-- 								width="50px" -->
+<!-- 								src="http://2.blog.xuite.net/2/5/0/b/22959614/blog_1733140/txt/35316357/0.jpg" -->
+<!-- 								alt="">                                         訊息圖 -->
+<!-- 							</span> -->
+<!-- 							<div class="media-body"> -->
+<!-- 								<h5 class="media-heading"> -->
+<!-- 									<strong>涼麵趁熱吃</strong> -->
+<!-- 								</h5> -->
+<!-- 								                                        簡訊名 -->
+<!-- 								<p class="small text-muted"> -->
+<!-- 									<i class="fa fa-clock-o"></i> 昨天 at 4:32 PM -->
+<!-- 								</p> -->
+<!-- 								<p>你跨年有空嗎？......有..........那我跟你換班</p> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 				</a></li> -->
+<!-- 				<li class="message-preview"><a href="#"> -->
+<!-- 						<div class="media"> -->
+<!-- 							<span class="pull-left"> <img class="media-object" -->
+<!-- 								width="50px" -->
+<!-- 								src="http://ext.pimg.tw/yysky/1396003820-231168804.jpg" alt=""> -->
+<!-- 							</span> -->
+<!-- 							<div class="media-body"> -->
+<!-- 								<h5 class="media-heading"> -->
+<!-- 									<strong>鈴兒兔</strong> -->
+<!-- 								</h5> -->
+<!-- 								<p class="small text-muted"> -->
+<!-- 									<i class="fa fa-clock-o"></i> 昨天 at 14:25 PM -->
+<!-- 								</p> -->
+<!-- 								<p>你跨年有空嗎？......有..........那我跟你換班</p> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 				</a></li> -->
+<!-- 				<li class="message-footer"><a href="#">訊息管理</a></li> -->
+<!-- 			</ul></li> -->
+<!-- 		<!--                                         訊息區over --> 
+<!-- 		<!--                                         通知區--> 
+<!-- 		<li class="dropdown"><a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-bell"></i>  -->
+<!-- 		<b	class="caret"></b></a> -->
+<!-- 			<ul class="dropdown-menu alert-dropdown"> -->
+<!-- 				<li><a href="#">您的帳號已鎖定<span class="label label-default">0</span></a></li> -->
+<!-- 				<li><a href="#">您的帳號已開通<span class="label label-primary">1</span></a></li> -->
+<!-- 				<li><a href="#">您的帳號已鎖定<span class="label label-success">0</span></a></li> -->
+<!-- 				<li><a href="#">您的帳號已開通<span class="label label-info">1</span></a></li> -->
+<!-- 				<li><a href="#">您的帳號已鎖定<span class="label label-warning">0</span></a></li> -->
+<!-- 				<li><a href="#">您的帳號已開通<span class="label label-danger">1</span></a></li> -->
+<!-- 				<li class="divider"></li> -->
+<!-- 				<li><a href="#">查看所有通知</a></li> -->
+<!-- 			</ul></li> -->
 		<!--                                         通知區over-->
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
@@ -165,17 +165,17 @@ background-color:#F3F3FA;
 			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
-					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品
+					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品</a></li>
+					<li><a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a></li>
+				</ul></li>
+					</ul>
+	</div>
+	</nav>
 <!-- 				<FORM METHOD="post" ACTION="ScoreServlet"> -->
 <!-- 			     <input type="hidden" name="action"	value="hotProduct"> -->
 <!-- 			    </FORM> -->
-					</a></li>
-					<li><a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a></li>
-				</ul></li>
 <!-- 			<li><a href="#"><i class="fa fa-fw fa-dashboard"></i> RTL	Dashboard</a></li> -->
-		</ul>
-	</div>
-	</nav>
+	
 	<!-- /.navbar-collapse -->
 	<div class="bg">
 		<img src="<%=request.getContextPath()%>/images/b_01.jpg">
