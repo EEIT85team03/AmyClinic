@@ -25,8 +25,8 @@ CREATE TABLE Members(
   name			NVARCHAR(30)	DEFAULT 'Unknown',  
   pwd			VARCHAR(50)		NOT NULL,
   verify		VARCHAR(50)		DEFAULT '',
-  --email			VARCHAR(50)		NOT NULL UNIQUE,
-  email			VARCHAR(50)		NOT NULL,
+  email			VARCHAR(50)		NOT NULL UNIQUE,
+  --email			VARCHAR(50)		NOT NULL,
   birthday		DATE			DEFAULT '1970-01-01',
   country		NVARCHAR(20)	DEFAULT '',
   gender		CHAR(1)			, -- enforce in registration code, not enforced to accomodate Google/FB login
