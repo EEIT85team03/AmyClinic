@@ -25,6 +25,7 @@ public class AuthenticationInterceptor extends AbstractInterceptor {
 			String location = request.getRequestURI();
 			session.put("location", location);
 			ctx.put("message", "You are not logged in!"); 
+			System.out.println(location);
 			return "login";
 		} else {
 			return invocation.invoke(); // passes control to the next intercepter
