@@ -9,25 +9,25 @@
 </head>
 <body >
 <div id='t'></div>	<hr>
-<div id ='d'></div>
+
 <script type="text/javascript">
 $(function(){
-    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){	
+    $.getJSON("${pageContext.request.contextPath}/Backstage/HotProdServlet",{'action':'熱門產品'},function(data){	
     	var row=' ';
-    	var year=[];
-    	var month=[];
-    	var name=[];//科
-    	var counts=[];//次
+//     	var id=[];//排行
+//     	var year=[];
+//     	var name=[];
+//     	var q=[];//個
     	$.each(data, function(k, a){
-    			row +=a.a+'年'+a.b+'月'+a.c+'科'+a.d+'次'+'<br>';
-    			var yaerAry=a.a;
-    			var monthAry=a.b;
-    			var nameAry=a.c;
-    			var countsAry=a.d;
+    			row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<br>';
+//     			var yaerAry=a.a;
+//     			var monthAry=a.b;
+//     			var nameAry=a.c;
+//     			var countsAry=a.d;
     			//陣列的 distinct : 取得陣列中不重複的元素值，輸出成新陣列 (有用到 jQuery)
     			
     	});$('#t').html(row);
-    		$('#d').html(yaer);
+    		
 //     	for (var i = 0; i < year.length; i++) {
 //     		$('#t').html(year[i]);
 //     		Alert(year[i]);
@@ -35,30 +35,3 @@ $(function(){
 	})
 });
 </script>
-
-
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript" src="${pageContext.request.contextPath}/Back/js/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("button").click(function(){
-    $.getJSON("${pageContext.request.contextPath}/JsonServlet",function(result){
-      $.each(result, function(i, field){
-		for(var k in aaa){
-			console.log(aaa[k]);
-		}
-      });
-    });
-  });
-});
-</script>
-</head>
-
-<body>
-<button>取得JSON</button>
-
-</body>
-</html>

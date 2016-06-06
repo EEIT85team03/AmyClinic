@@ -15,6 +15,7 @@ DROP TABLE Products;
 DROP TABLE Catagory;
 DROP TABLE Members;
 DROP TABLE SpaToSales;
+DROP TABLE SalesToProd;
 
 CREATE TABLE Catagory(
   cid           DECIMAL(4)      IDENTITY(10,10) PRIMARY KEY,
@@ -301,19 +302,38 @@ INSERT INTO Chat (eid,mid,record) VALUES ('1','1004','7');
 INSERT INTO Chat (eid,mid,record) VALUES ('2','1005','9');
 INSERT INTO Chat (eid,mid,record) VALUES ('3','1000','16');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1000','梁啟超','3000','1880 Hartwell Road','0989118086','alvinreidKHg@teleosaurs.xyz');
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1001','Halle Ray','100','3897 Ottawa Road','0937071705','halleraycVv@teleosaurs.xyz');
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1002','Christ Richard','750','1880 Hartwell Road','0973182850','christ@teleosaurs.xyz');
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1003','Jonatan Mendoza','50','5413 Natchez Boulevard','0917301245','jonatanmendozaZaq@teleosaurs.xyz');
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1004','Angelica Booth','6000','    9084 Rundell Lane','0987243640','angelicaboothyHe@teleosaurs.xyz');
-INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','3000','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1000','梁啟超','690','1880 Hartwell Road','0989118086','alvinreidKHg@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1001','Halle Ray','139','3897 Ottawa Road','0937071705','halleraycVv@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1002','Christ Richard','340','1880 Hartwell Road','0973182850','christ@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1003','Jonatan Mendoza','390','5413 Natchez Boulevard','0917301245','jonatanmendozaZaq@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1004','Angelica Booth','1380','    9084 Rundell Lane','0987243640','angelicaboothyHe@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','690','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','139','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','139','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','139','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','139','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','680','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1005','Randy Shelton','890','5672 Mccook Road','0915525479','randysheltonK7r@teleosaurs.xyz');
+
+INSERT INTO Orders (mid,recipient,total,addr,phone,email) VALUES ('1000','梁啟超','770','1880 Hartwell Road','0989118086','alvinreidKHg@teleosaurs.xyz');
+INSERT INTO Orders (mid,recipient,total,addr,phone,email,odate) VALUES ('1000','梁啟超','800','1880 Hartwell Road','0989118086','alvinreidKHg@teleosaurs.xyz','2015-6-6');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('1','4','1','3000');
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('2','5','1','100');
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('3','2','1','750');
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('4','3','1','50');
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('5','4','2','6000');
-INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('6','4','1','3000');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('1','4','1','690');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('2','5','1','139');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('3','2','1','340');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('4','3','1','390');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('5','4','2','1380');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('6','4','1','690');
+
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('7','5','1','139');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('8','5','1','139');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('9','5','1','139');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('10','5','1','139');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('11','3','2','680');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('12','20','1','890');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('13','13','7','770');
+INSERT INTO OrderItems (oid,pid,quantity,price_per) VALUES ('14','1','10','800');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-5-24' , '早診' , '2' , '整形手術' );
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-5-24' , '午診' , '3' , '整形手術' );
@@ -692,7 +712,15 @@ INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
 group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
 --order by year(apt_date), MONTH(apt_date);
 */
-
+select top 5 (sum(OrderItems.quantity)) as quantity , Products.name as name, identity(int, 1,1) as id,year(odate) as years
+into SalesToProd
+from OrderItems 
+inner join Products on OrderItems.pid = Products.pid
+inner join Orders on OrderItems.oid = Orders.oid
+group by Products.name , Orders.odate
+ORDER BY quantity DESC
+--------------------------------------------------------------------------------------------------------------------
+select * from SalesToProd
 select * from SpaToSales;
 select * from AppointmentDetail;
 select * from Appointments;
