@@ -66,6 +66,7 @@ public class FinPayAction extends ActionSupport {
 		Integer myNewRwd = Math.round(ordersVO.getTotal()/100.0f);
 		//會員目前所擁有的紅利點數
 		Integer oldPts = mb.getReward_pts();
+		System.out.println("Reward_pts1=" + mb.getReward_pts());
 		mb.setReward_pts(oldPts - reward_pts + myNewRwd);
 		mb.setSpent_pts(mb.getSpent_pts() + reward_pts);
 		MemberServices mbServ = new MemberServices();

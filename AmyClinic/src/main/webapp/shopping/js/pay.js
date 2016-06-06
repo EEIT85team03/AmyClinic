@@ -10,7 +10,7 @@ $('form').card({
 },
 	})
 $(function() {
-	var pay = $('#pay');
+	var pay = $('#paysubmit');
 	pay.prop("disabled",true);
 	var name = $('input[name="name"]');
 	var patt_name = /^[^\u0020\u3000][\u4e00-\u9fa5\u0020a-zA-Z]{1,20}$/
