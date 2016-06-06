@@ -58,7 +58,8 @@ public class GoogleLoginServlet extends HttpServlet {
 					java.sql.Date today = new Date(Calendar.getInstance().getTimeInMillis());					
 					memberVO.setLast_visit(today);
 					memberVO = retrievePhoto(memberVO, gbean);
-					service.update(memberVO);					
+					service.update(memberVO);
+					System.out.println("gReward_pts3: " + memberVO.getReward_pts());
 					System.out.println("Google Login: " + email + " already in use, User Updated: " + memberVO.getName());
 				} else {
 					System.out.println("Google Login: " + email + " not in use, creating new account");
@@ -79,9 +80,11 @@ public class GoogleLoginServlet extends HttpServlet {
 					memberVO = retrievePhoto(memberVO, gbean);
 					service.addMember(memberVO);
 					System.out.println("User added: " + memberVO.getName());
+					System.out.println("gReward_pts1: " + memberVO.getReward_pts());
 				}	
 				session.setAttribute("account", memberVO.getName()); //set to logged in
 				session.setAttribute("memberVO", memberVO);
+				System.out.println("gReward_pts2: " + memberVO.getReward_pts());
 																
 				
 				String location = (String)session.getAttribute("location");
@@ -130,6 +133,7 @@ public class GoogleLoginServlet extends HttpServlet {
 			}
 			original.renameTo(renamed); // rename downloaded file to proper format
 			memberVO.setPhoto(filename);
+			System.out.println("gReward_pts4: " + memberVO.getReward_pts());
 		}
 		return memberVO;
 	}
