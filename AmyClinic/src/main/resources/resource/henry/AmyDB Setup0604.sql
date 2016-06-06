@@ -652,6 +652,29 @@ INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('11','1098');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1099');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1100');
 --最終版jack------------------------------------------------------------------------------------------------
+USE AmyDB;
+GO
+IF OBJECT_ID ( 'g3_jack', 'P' ) IS NOT NULL 
+    DROP PROCEDURE g3_jack;
+GO
+CREATE PROCEDURE g3_jack
+AS
+ select   identity(int, 1,1) as id,
+		 year(apt_date) as year,
+		 month(apt_date) as month,pType_id as pType_id, name as name, count(*) as counts  
+INTO SpaToSales
+from(
+SELECT   Appointments.apt_date as apt_date  , ProcedureType.pType_id as pType_id , ProcedureType.name as name
+FROM     AppointmentDetail
+INNER JOIN Appointments ON AppointmentDetail.aid = Appointments.aid 
+INNER JOIN Procedures ON AppointmentDetail.procedure_id = Procedures.procedure_id 
+INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
+		   ) Spatosales
+group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
+GO
+
+execute g3_jack
+/*
 select   identity(int, 1,1) as id,
 		 year(apt_date) as year,
 		 month(apt_date) as month,pType_id as pType_id, name as name, count(*) as counts  
@@ -668,6 +691,7 @@ INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
 --where  YEAR(apt_date) = 2016
 group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
 --order by year(apt_date), MONTH(apt_date);
+*/
 
 select * from SpaToSales;
 select * from AppointmentDetail;
