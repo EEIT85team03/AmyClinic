@@ -12,44 +12,31 @@
 <meta charset=UTF-8>
 <title>購物清單</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/shopping/js/sortable.js"></script>
+<link href="${pageContext.request.contextPath}/shopping/css/phase.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/shopping/css/shopping_list.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
 
-<div id="page">
-<div id="content">
-			<div class="table-wrapper">
+		<div class="table-wrapper">
 			<div class="table-header"><strong>我的購物車</strong></div>
-			<table style="margin-right:100px; margin-top:10px;">
-				<tr>
-					<td width="700px">
-					</td>
-					<td>
-						<img width="70px" height="70px" style="border:2px red solid;" src="${pageContext.request.contextPath}/images/1.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/2.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/3.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/4.jpg">
-					</td>
-					
-				</tr>
-			</table>
+				<div id="phase">
+					<div class="sign current">
+					   <p><span>1</span></p>
+					   <p>購物清單</p>
+					</div>
+					<div class="sign">
+					   <p><span>2</span></p>
+					   <p>確認資料</p>
+					</div><div class="sign">
+					   <p><span>3</span></p>
+					   <p>開始付款</p>
+					</div><div class="sign">
+					   <p><span>4</span></p>
+					   <p>結帳完成</p>
+					</div>
+				</div>
 			<table class="sortable order details">
 				<tr>
 					<th class="unsortable"><label><input type="checkbox"></label></th>
@@ -144,17 +131,12 @@
 					<input style="margin-left:10px;" type="button" id="abandon" value="放棄購物">
 				</div>
 
-			</div>
-				<div id="sidebar-wrapper">
-				<div id="sidebar-content">
-					<jsp:include page="/General/sidebar.jsp"></jsp:include>
-				</div>
-				</div>
+<!-- 				<div id="sidebar-wrapper"> -->
+<!-- 				<div id="sidebar-content"> -->
+<%-- 					<jsp:include page="/General/sidebar.jsp"></jsp:include> --%>
+<!-- 				</div> -->
+<!-- 				</div> -->
 				
-
-				
-				
-			</div>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script src="${pageContext.request.contextPath}/shopping/js/shopping_list.js"></script>	
 

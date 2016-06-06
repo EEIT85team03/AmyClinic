@@ -4,10 +4,11 @@
 	border-radius: 20px;
 	overflow: hidden;
 	padding-bottom: 30px;
-	width: 170%;
+	width: 90%;
 	border: 1px solid gray;
-	margin-left: -23%;
-	margin-bottom: 12%;
+/* 	margin-left: -23%; */
+	margin: 0 auto;
+	margin-top: 5%;
 }
 
 .table-header {
@@ -34,7 +35,7 @@
 }
 
 .order tr:hover {
-	background-color: #E0E0E0;
+	background-color: whitesmoke;
 }
 
 
@@ -71,3 +72,4 @@
 	margin-top: 15%;
 	margin-left: 13%;
 }
+

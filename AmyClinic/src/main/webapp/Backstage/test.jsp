@@ -4,13 +4,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Back/js/jquery.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
   $("button").click(function(){
     $.getJSON("${pageContext.request.contextPath}/JsonServlet",function(result){
       $.each(result, function(i, field){
-        $("p").append(field + " ");
+		for(var k in aaa){
+			console.log(aaa[k]);
+		}
       });
     });
   });
