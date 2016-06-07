@@ -11,7 +11,7 @@
 </head>
 <body onload="queryProdByName('')">
 <jsp:include page="/General/header.jsp"></jsp:include>
-<a href="shopping_list.jsp">%購物車 ;</a> 
+<a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">%購物車 ;</a> 
 
 <div class="main">
 	<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-list">

@@ -49,7 +49,7 @@ public class CheckAction extends ActionSupport {
 		if (mb == null) {
 			return "nomb";
 		}
-		
+		System.out.println("Reward_pts=" + mb.getReward_pts());
 		//根據oid取出對應的ordersVO並放入request物件中
 		OrdersService ordServ = new OrdersService();
 		OrdersVO ordersVO = ordServ.getOneOrders(oid);

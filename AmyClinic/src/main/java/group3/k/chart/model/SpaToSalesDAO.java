@@ -13,17 +13,18 @@ public class SpaToSalesDAO implements SpaToSalesDAO_interface {
 	//取全部依類別	ID   							FROM ScheduleVO order by sch_id		
 //	private static final String GET_ALL=  "select year ,month, name,pType_id,counts from SpaToSales  group by pType_id,year,month, name,counts order by pType_id";
 //	private static final String GET_ALL="select * from SpaToSales";
-		private static final String GET_ALL=  "FROM SpaToSalesVO  order by pType_id";
+private static final String GET_ALL=  "FROM SpaToSalesVO  order by pType_id";
 	//依輸入年查詢	0=年限
 //	private static final String GET_By_YEAR="select year ,month, name,pType_id,counts from SpaToSales where year = ?  group by pType_id,year,month, name,counts";
-	private static final String GET_By_YEAR= "FROM SpaToSalesVO  where year = ?";
-	/*依類別id排序*/
-	@Override
+private static final String GET_By_YEAR= "FROM SpaToSalesVO  where year = ?";
+
+private static final String GET_By_HOTPROD= "select top 5 (sum(OrderItems.quantity)) as quantity , Products.name as name from OrderItems  inner join Products on OrderItems.pid = Products.pid group by Products.name ORDER BY quantity DESC";
+/*依類別id排序*/
+@Override
 	public List<SpaToSalesVO> getAll() {
 		List<SpaToSalesVO> list = null;
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 //		SessionFactory sessionFactory = null;
-		
 //		Session session = sessionFactory.openSession();
 		try {
 			session.beginTransaction();
@@ -55,6 +56,8 @@ public class SpaToSalesDAO implements SpaToSalesDAO_interface {
 			throw ex;
 		}return list;
 	}
+	
+	
 	
 	public static void main(String[ ] args) {
 		SpaToSalesDAO dao = new SpaToSalesDAO();
