@@ -12,11 +12,13 @@
 		var row=' '; var counts=[];//次
 	    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){		
 	    	$.each(data, function(i, a){
+	    		row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<hr>';
 	    			if($.inArray(a.a, year) === -1) year.push(a.a);
 	     			if($.inArray(a.b, month) === -1) month.push(a.b);
 	     			if($.inArray(a.c, name) === -1) name.push(a.c);
 	     			counts.push(a.d);
 	    	});
+	    	$('#t').html(row);
 	    	var newHTML = [];
 	    	newHTML.push(year.length+'個年:'+year+'<br>');
 	    	newHTML.push(month.length+'個月:'+month+'<br>');
@@ -76,6 +78,7 @@
   </script>
 </head>
 <body>
+
   <div id="container" style="min-width:700px;height:400px"></div>
   
 </body>

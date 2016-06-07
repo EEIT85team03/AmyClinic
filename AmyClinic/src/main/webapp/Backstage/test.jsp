@@ -1,43 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>-AMY-testJSON</title>
-<script type="text/javascript" src="${pageContext.request.contextPath}/Backstage/js/jquery.js"></script>
-</head>
-<body >
-<div id='t'></div>	<hr>
-<div class ='element'></div>
-<script type="text/javascript">
-$(function(){
-    $.getJSON("${pageContext.request.contextPath}/Backstage/HotProdServlet",{'action':'熱門產品'},function(data){	
-    	var row=' ';var t1,t2,t3,t4,t5;
-    	var name=[];
-    	var counts=[];//個
-    	var htodata;
-    	$.each(data, function(k, a){
-    			row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<br>';
-    			name.push(a.name);
-    			counts.push(a.q);		
-    	});
-    	$(function(){//百分比運算
-    		var sum=counts[0]+counts[1]+counts[2]+counts[3]+counts[4];
-    		t1=((counts[0]/sum)*100).toFixed(1);
-    		t2=((counts[1]/sum)*100).toFixed(1);
-    		t3=((counts[2]/sum)*100).toFixed(1);
-    		t4=((counts[3]/sum)*100).toFixed(1);
-    		t5=((counts[4]/sum)*100).toFixed(1);
-    	})
-    	$('#t').html(row);
-    	var newHTML = [];
-    	newHTML.push(counts.length+'個:'+counts[0]+'<br>');	
-    	newHTML.push(t1+'，'+t2+'，'+t3+'，'+t4+'，'+t5+'<br>');
-    	$(".element").html(newHTML.join(""));
-    })// $.getJSON line:13
-});//$(function () line:10
-</script>
-
-</body>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>-AMY-</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu_topside.css" />
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu-wrap">
+				<nav class="menu-top">
+					<div class="profile"><img src="img/user1.png" alt="Matthew Greenberg"/><span>Matthew Greenberg</span></div>
+					<div class="icon-list">
+						<a href="#"><i class="fa fa-fw fa-star-o"></i></a>
+						<a href="#"><i class="fa fa-fw fa-bell-o"></i></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i></a>
+					</div>
+				</nav>
+				<nav class="menu-side">
+					<a href="#">Recent Stories</a>
+					<a href="#">Reading List</a>
+					<a href="#">My Stories</a>
+					<a href="#">Categories</a>
+				</nav>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap">
+				<div class="content">
+					<header class="codrops-header">
+						
+							<a href="wave.html">你好啊</a>
+						
+					</header>
+				</div>
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
