@@ -5,10 +5,11 @@ import group3.carrie.schedule.model.ScheduleVO;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+ 
+import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,54 +36,66 @@ public class ScheduleServlet extends HttpServlet {
 		PrintWriter out = res.getWriter();
 		Gson gson = new Gson();
 		String action = req.getParameter("action");
-		
-		if ("getall".equals(action)) {				//抓出全部排班
+
+		if ("getall".equals(action)) { // 抓出全部排班
 			ScheduleService ss = new ScheduleService();
 			List l1 = new LinkedList();
 			List<ScheduleVO> list = ss.getAll();
 
-//			for (ScheduleVO scheduleVO : list) {
-//				//List m1 = new ArrayList();
-//				HashedMap m1 = new HashedMap();
-//				m1.put("getSch_id",scheduleVO.getSch_id());
-//				m1.put("Name",scheduleVO.getEmployeeVO().getName());
-//				m1.put("C_date",scheduleVO.getC_date());
-//				m1.put("C_hours",scheduleVO.getC_hours());
-//				m1.put("Appt_num",scheduleVO.getAppt_num());
-//				m1.put("Appt_status",scheduleVO.getAppt_status());
-//				m1.put("Memo",scheduleVO.getMemo());
-//				l1.add(m1);
-//			}
+			// for (ScheduleVO scheduleVO : list) {
+			// //List m1 = new ArrayList();
+			// HashedMap m1 = new HashedMap();
+			// m1.put("getSch_id",scheduleVO.getSch_id());
+			// m1.put("Name",scheduleVO.getEmployeeVO().getName());
+			// m1.put("C_date",scheduleVO.getC_date());
+			// m1.put("C_hours",scheduleVO.getC_hours());
+			// m1.put("Appt_num",scheduleVO.getAppt_num());
+			// m1.put("Appt_status",scheduleVO.getAppt_status());
+			// m1.put("Memo",scheduleVO.getMemo());
+			// l1.add(m1);
+			// }
 			
 			for (ScheduleVO scheduleVO : list) {
-				//List m1 = new ArrayList();
+				// List m1 = new ArrayList();
 				HashedMap m1 = new HashedMap();
-				m1.put("getSch_id",scheduleVO.getSch_id());
-				m1.put("Name",scheduleVO.getEmployeeVO().getName());
-				m1.put("C_date",scheduleVO.getC_date());
-				m1.put("C_hours",scheduleVO.getC_hours());
+				m1.put("getSch_id", scheduleVO.getSch_id());
+				m1.put("Name", scheduleVO.getEmployeeVO().getName());
+				java.sql.Date sqlC_date  = scheduleVO.getC_date(); 
+				SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+				String C_date = sdf.format(sqlC_date); //日期轉換
+				m1.put("C_date", C_date);
+				//m1.put("C_date", scheduleVO.getC_date());
+				m1.put("C_hours", scheduleVO.getC_hours());
 				int appt_num = scheduleVO.getAppt_num();
 				int appt_status = scheduleVO.getAppt_status();
-				if(appt_status==0 && appt_num==3){
-					return ;
+				m1.put("Appt_num", appt_num);
+				// m1.put("Appt_status",appt_status);   //判斷額滿、正常、休假
+				if (appt_status == 0 && appt_num == 3) {
+					m1.put("Appt_status", "額滿");
+				} else if (appt_status == 0 && appt_num == 0) {
+					m1.put("Appt_status", "休診");
+				} else {
+					m1.put("Appt_status", "正常");
 				}
-				
-				
-				m1.put("Memo",scheduleVO.getMemo());
+				String button= "<input type='button' value='查看' name='dbutton' value="+scheduleVO.getSch_id()+" >";
+				m1.put("button", button);
+				m1.put("aaa", "bbb");
+				m1.put("bbb", "bbb");
+
+				m1.put("Memo", scheduleVO.getMemo());
 				l1.add(m1);
-				
-				
+
 			}
 			String str = gson.toJson(l1);
 			out.println(str);
 			return;
 
 		}
-		if ("bydate".equals(action)) { 					 //用日期查詢
+		if ("bydate".equals(action)) { // 用日期查詢
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
-			//System.out.println("跑bydate");
-			String strDate =req.getParameter("date");
+			// System.out.println("跑bydate");
+			String strDate = req.getParameter("date");
 			System.out.println(strDate);
 			java.sql.Date date = java.sql.Date.valueOf(strDate);
 			System.out.println(date);
@@ -90,30 +103,27 @@ public class ScheduleServlet extends HttpServlet {
 			ScheduleService ss = new ScheduleService();
 			List l1 = new LinkedList();
 			List<ScheduleVO> list = ss.findByDate(date);
-			if(list.isEmpty()){
-				//System.out.println("list is empty!!");
+			if (list.isEmpty()) {
+				// System.out.println("list is empty!!");
 				out.println("nodata");
 				return;
 			}
-			
-		
+
 			for (ScheduleVO scheduleVO : list) {
-				//List m1 = new ArrayList();
+				// List m1 = new ArrayList();
 				HashedMap m1 = new HashedMap();
-				m1.put("getSch_id",scheduleVO.getSch_id());
-				m1.put("Name",scheduleVO.getEmployeeVO().getName());
-				m1.put("C_date",scheduleVO.getC_date());
-				m1.put("C_hours",scheduleVO.getC_hours());
-				m1.put("Appt_num",scheduleVO.getAppt_num());
-				m1.put("Appt_status",scheduleVO.getAppt_status());
-				m1.put("Memo",scheduleVO.getMemo());
+				m1.put("getSch_id", scheduleVO.getSch_id());
+				m1.put("Name", scheduleVO.getEmployeeVO().getName());
+				m1.put("C_date", scheduleVO.getC_date());
+				m1.put("C_hours", scheduleVO.getC_hours());
+				m1.put("Appt_num", scheduleVO.getAppt_num());
+				m1.put("Appt_status", scheduleVO.getAppt_status());
+				m1.put("Memo", scheduleVO.getMemo());
 				l1.add(m1);
-				}
+			}
 			String str = gson.toJson(l1);
 			out.println(str);
 			return;
-			
-			
 		}
 	}
 

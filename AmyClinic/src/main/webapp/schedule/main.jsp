@@ -28,7 +28,7 @@
 <p>Date: <input type="text" id="datepicker"></p>
 <p>預約編號: <input type="text" id="sch_id"></p>
 
-
+<input type="button" value="修改">
 
 
  <input type="button" id="b1" value="date">
