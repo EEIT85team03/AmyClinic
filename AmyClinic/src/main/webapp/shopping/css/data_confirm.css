@@ -72,7 +72,8 @@ input[type="button"] {
 
 #confirm {
 	font-weight: bold;
-	color: 	#;
+	color: 	#000000;
+	outline: none;
     width:150px;
     height:50px;
     cursor: pointer;
@@ -110,7 +111,7 @@ table:nth-of-type(1) > tbody > tr:not(last-child) > td:first-child {
   position: absolute;
   font-size: 22px;
   z-index: 700;
-  top: -15px;
+  top: -10px;
   left: 15px;
 }
 
