@@ -54,7 +54,8 @@ public class FacebookLoginServlet extends HttpServlet {
 				java.sql.Date today = new Date(Calendar.getInstance().getTimeInMillis());					
 				memberVO.setLast_visit(today);
 				memberVO = retrievePhoto(memberVO, fbBean);
-				service.update(memberVO);					
+				service.update(memberVO);	
+				System.out.println("fReward_pts1: " + memberVO.getReward_pts());
 				System.out.println("Facebook Login: " + email + " already in use, User Updated: " + memberVO.getName());
 			} else {
 				System.out.println("Google Login: " + email + " not in use, creating new account");
@@ -74,10 +75,12 @@ public class FacebookLoginServlet extends HttpServlet {
 				memberVO.setAct_status(1);
 				memberVO = retrievePhoto(memberVO, fbBean);
 				service.addMember(memberVO);
+				System.out.println("fReward_pts2: " + memberVO.getReward_pts());
 				System.out.println("User added: " + memberVO.getName());
 			}
 			session.setAttribute("account", memberVO.getName()); //set to logged in
 			session.setAttribute("memberVO", memberVO);
+			System.out.println("fReward_pts3: " + memberVO.getReward_pts());
 						
 			String location = (String)session.getAttribute("location");
 	 	    String redirect;
@@ -124,6 +127,7 @@ public class FacebookLoginServlet extends HttpServlet {
 			}
 			original.renameTo(renamed); // rename downloaded file to proper format
 			memberVO.setPhoto(filename);
+			System.out.println("fReward_pts4: " + memberVO.getReward_pts());
 		}
 		return memberVO;
 	}

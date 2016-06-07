@@ -64,6 +64,7 @@
 		<mapping class="group3.beef.employee.model.EmployeeVO"/>
 <!-- 		k -->
 		<mapping class="group3.k.chart.model.SpaToSalesVO"/>
+		<mapping class="group3.k.SalesToProd.model.SalesToProdVO"/>
 <!-- 		k -->
 	</session-factory>
 	
