@@ -150,7 +150,7 @@
 <%--  	<input type="hidden" name="memberVO.photo" value="${memberVO.photo}"> <!-- 	</div> --> --%>
 <%--  	<input type="hidden" name="memberVO.total_spent" value="${memberVO.total_spent}"> <!-- 	</div> --> --%>
 <%--  	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> <!-- 	</div> --> --%>
- 	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> <!-- 	</div> -->
+ 	<input type="hidden" name="act_status" value="2"> <!-- 	狀態 -->
  	<input type="hidden" name="action" value="add"> <!-- 	</div> -->
 	<button type="submit" class="btn btn-success" >新增會員</button>	
 		
