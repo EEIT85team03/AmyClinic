@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>     
 <%@ page import="group3.carrie.orders.model.*" %>    
 <%
@@ -37,7 +36,7 @@
 					   <p><span>4</span></p>
 					   <p>結帳完成</p>
 					</div>
-				</div>
+		</div>
 			<div class="pay-amount">
 				<b>應付金額：NT<fmt:formatNumber value="${ordersVO.total}" type="number"/>元</b>
 			</div>
@@ -70,6 +69,7 @@
       	      <div class="vcode-wrapper">
 			          請輸入驗證碼：<input type="text" id="code1"/>
     			<div id="vcode"></div>
+    			<div><label> <input type="checkbox" name="kontact" id="kontact" required/> 我同意以下使用者條款:《 <a href="#">愛美消費者保護法</a> 》</label></div>
 			  </div>
              	<input type="submit" id="paysubmit" value="付款">
              	<input type="hidden" name="oid" value="${ordersVO.oid}">
@@ -78,22 +78,7 @@
             </div>
             
 	<jsp:include page="/General/footer.jsp"></jsp:include>
-	<script>
- 	 onload = function () {
-          var container1 = document.getElementById("vcode");
-          var code1 = new vCode(container1);
 
-//           document.getElementById("paysubmit").addEventListener("click", function () {
-//         	 if(code1.verify(document.getElementById("code1").value))
-//         		 return true;
-//         	 else {
-//              	alert('false');
-//              	return false;
-//         	 }
-//          }, false);
-
-     };
-	</script>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 	<script src="${pageContext.request.contextPath}/js/jquery.card.js"></script>
 	<script src="${pageContext.request.contextPath}/shopping/js/pay.js"></script>
