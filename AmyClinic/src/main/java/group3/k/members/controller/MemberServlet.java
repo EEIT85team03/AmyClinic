@@ -102,6 +102,11 @@ public class MemberServlet extends HttpServlet {
 //						if (mass == null || mass.trim().length() >= 10) {errorMsg.add("體重: 請勿空白");}
 						System.out.println("mass="+mass);
 						memberVO.setMass(mass);
+						
+//						狀態		
+						Integer act_status =new Integer( req.getParameter("act_status"));
+						System.out.println("act_status="+act_status);
+						memberVO.setAct_status(act_status);
 									 					
 						if (!errorMsg.isEmpty()) {
 							for (String e : errorMsg) {System.out.println(e);}

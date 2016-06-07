@@ -75,7 +75,7 @@ public class FacebookLoginServlet extends HttpServlet {
 				memberVO.setAct_status(1);
 				memberVO = retrievePhoto(memberVO, fbBean);
 				service.addMember(memberVO);
-				System.out.println("fReward_pts2: " + memberVO.getReward_pts());
+				memberVO = service.emailExists(memberVO.getEmail());
 				System.out.println("User added: " + memberVO.getName());
 			}
 			session.setAttribute("account", memberVO.getName()); //set to logged in
