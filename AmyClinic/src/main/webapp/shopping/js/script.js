@@ -219,6 +219,32 @@
 	};
 
 	this.vCode = vCode;
+	
+	var container1 = document.getElementById("vcode");
+    var code1 = new vCode(container1);
+
+    document.getElementById("paysubmit").addEventListener("click", function () {
+  	 if(!code1.verify(document.getElementById("code1").value)) {
+  		 alert('now:'+code1.code);
+  		 event.preventDefault();
+  	 }
+  	
+   }, false);
+	
+	var intputElements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < intputElements.length; i++) {
+        intputElements[i].oninvalid = function (e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                if (e.target.name == "kontact") {
+                    e.target.setCustomValidity("是否同意合約");
+                }
+                else {
+                   // e.target.setCustomValidity("");
+                }
+            }
+        };
+    }
 
 }).call(this);/**
  * 
