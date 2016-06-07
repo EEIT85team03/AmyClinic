@@ -58,14 +58,15 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membername">姓名: </label>
 		<div class="col-sm-5">
-			<input name="name" id="membername" class="form-control" type="text" placeholder="真實姓名" 		style="width:120px;"/>
+			<input name="name" id="membername" class="form-control required"  type="text" placeholder="真實姓名" 		style="width:120px;"/><em>(必填)</em>
+			
 		</div>
 	</div>
 	
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberpwd">密碼: </label>
 		<div class="col-sm-5">
-			<input name="pwd" id="memberpwd" class="form-control disable" type="password" placeholder="4碼以上" 	style="width:120px;"/>
+			<input name="pwd" id="memberpwd" class="form-control disable" type="password" placeholder="4碼以上" 	style="width:120px;"/><em>(必填)</em>
 		</div>
 		
 <%-- 		<div class="col-sm-1"><a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		</div> --%>
@@ -75,7 +76,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberemail">信箱: </label>
 		<div class="col-sm-5">
-			<input name="email" id="memberemail" class="form-control" type="email" placeholder="aaa@bbb.ccc"	style="width:180px;"	/>
+			<input name="email" id="memberemail" class="form-control" type="email" placeholder="aaa@bbb.ccc"	style="width:180px;"	/><em>(必填)</em>
 		</div>
 	</div>
 	
@@ -128,7 +129,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberphone">電話: </label>
 		<div class="col-sm-5">
-			<input name="phone" id="memberphone" class="form-control" type="number" placeholder="0988123456"	style="width:180px;"/>
+			<input name="phone" id="memberphone" class="form-control" type="number" placeholder="0988123456"	style="width:180px;"/><em>(必填)</em>
 		</div>
 	</div>
 	
@@ -248,13 +249,13 @@ function format_float(num, pos)
 
 
 <c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
+	
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
+			<li><font color='red'>${message}</font></li>
 		</c:forEach>
 	</ul>
-	</font>
+	
 </c:if>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
