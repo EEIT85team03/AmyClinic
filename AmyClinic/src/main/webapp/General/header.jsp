@@ -18,14 +18,15 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <span class="fb-like" data-width="450" data-show-faces="true" data-layout="button"></span>
-<div id="banner">
-	<h1>
-		<a href="#"></a>
-	</h1>
-	<p></p>
-</div>
-<hr />
-<div id="header">
+<div id="headerbox">
+	<a href="${pageContext.request.contextPath}/index.jsp">
+	<div id="banner">
+		<h1>			
+		</h1>
+		<p></p>
+	</div></a>
+	<hr />
+	<div id="header">
 	<div id="menu">
 		<ul>
 			<li class='has-sub'><a href="#">關於我們</a>
@@ -122,4 +123,5 @@
 <!-- 			</fieldset> -->
 <!-- 		</form> -->
 <!-- 	</div> -->
+</div>
 </div>
