@@ -79,9 +79,6 @@ public class ScheduleServlet extends HttpServlet {
 				}
 				String button= "<input type='button' value='查看' name='dbutton' value="+scheduleVO.getSch_id()+" >";
 				m1.put("button", button);
-				m1.put("aaa", "bbb");
-				m1.put("bbb", "bbb");
-
 				m1.put("Memo", scheduleVO.getMemo());
 				l1.add(m1);
 

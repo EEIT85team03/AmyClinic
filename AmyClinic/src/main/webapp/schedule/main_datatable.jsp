@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -27,24 +28,14 @@
 
 
 
-<title>Insert title here</title>
+<title>醫生門診班表</title>
 </head>
 <body>
-
-	<!-- <p>Date: <input type="text" id="datepicker"></p> -->
-	<!-- <p>預約編號: <input type="text" id="sch_id"></p> -->
-
-
-
-
-	<!--  <input type="button" id="b1" value="date"> -->
-	<!-- 	<input type="button" value="load" id="buttonLoad"> -->
-
+<input type="button" id="addsch" value="GO">
 
 	<table id="table_id" class="display" width="80%" align="center">
 		<thead>
 			<tr>
-				<th>詳細</th>
 				<th>排班編號</th>
 				<th>醫師姓名</th>
 				<th>門診日期</th>
@@ -52,64 +43,68 @@
 				<th>預約人數</th>
 				<th>門診狀態</th>
 				<th>備註</th>
-
 			</tr>
 		</thead>
+		<jsp:useBean id="schSvc" scope="page"
+			class="group3.carrie.schedule.model.ScheduleService" />
+		<c:forEach var="schVO" items="${schSvc.all}">
+			<tr>
+				<td>${schVO.sch_id}</td>
+				<td>${schVO.employeeVO.name}</td>
+				<td>${schVO.c_date}</td>
+				<td>${schVO.c_hours}</td>
+				<td>${schVO.appt_num}</td>
+				<c:choose>
+					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '3'}">
+						<td style="color: blue">額滿</td>
+					</c:when>
+					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '0'}">
+						<td style="color: red">休診</td>
+					</c:when>
+					<c:otherwise>
+						<td>正常</td>
+					</c:otherwise>
 
+				</c:choose>
+				<td>${schVO.memo}</td>
+			</tr>
+
+
+		</c:forEach>
 	</table>
 
 
 </body>
 <script type="text/javascript">
-
-
-
-$(document).ready( function () {
-   //alert('');
-    $.ajax({
-    	'type':'get',
-		'url':'Scheduleservlet',
-		'dataType' :'json',
-		"data":{"action" : "getall"},
-		'success':function(data){
-			//console.log(data);
-			var counter = 1;
-			var table = $('#table_id').DataTable({
-				language:{search: "搜索:"},
-				 dom: 'Bfrtip',
-				 "order": [[ 1, "desc" ]], //預設編號排序
-				 buttons: [
-				            {
-				                text: '新增排班',
-				                action: function ( e, dt, node, config ) {
-				                    alert( 'Button activated' );
-				                }
-				            }
-				        ],
-				
-		         data: data,
-				columns: [
-				{ data: 'button' },
-				{ data: 'getSch_id' },
-				{ data: 'Name' },
-				{ data: 'C_date' },
-				{ data: 'C_hours' },
-				{ data: 'Appt_num' },
-				{ data: 'Appt_status' },
-				{ data: 'Memo' },
-				
-				          ],
-				"iDisplayLength": 15,
-				"columnDefs": [
-			   {"className": "dt-center", "targets": "_all"}
-				             ],
-// 		"lengthMenu": [[10, 15, 50, -1], [10, 15, 50, "All"]]
-				          
-			});
-		}
-    })
-} );
-
+	$(document).ready(function() {
+		var table = $('#table_id').DataTable({
+			"order": [[ 0, "desc" ]], //預設編號排序
+			"columnDefs": [
+			{"className": "dt-center", "targets": "_all"}
+			
+							             ],
+ 		"lengthMenu": [[10, 15, 30, 50, -1], [10, 15, 30, 50, "All"]],
+ 		"iDisplayLength": 10,
+//  		dom: 'Bfrtip',
+//  		buttons: [
+// 		            {
+// 		                text: '新增排班',
+// 		                action: function ( e, dt, node, config ) {
+// 		                    alert( 'Button activated' );
+// 		                }
+// 		            }
+// 		        ],
+			
+			
+			
+		})
+	})
+	
+	$("#addsch").click(function(){
+		window.location = '${pageContext.request.contextPath}/schedule/add_schedule.jsp';
+		
+	});
+ 
 </script>
 
 </html>
