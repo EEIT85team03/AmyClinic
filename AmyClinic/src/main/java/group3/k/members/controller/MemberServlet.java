@@ -58,7 +58,7 @@ public class MemberServlet extends HttpServlet {
 						memberVO.setPwd(pwd);
 //						信箱		
 						String email = req.getParameter("email");
-//						if (email == null || email.trim().length() >= 10) {errorMsg.add("信箱: 請勿空白");}
+						if (email == null || email.trim().length() >= 30) {errorMsg.add("信箱: 請勿空白");}
 						System.out.println("email="+email);
 						memberVO.setEmail(email);
 //						生日			
@@ -131,7 +131,7 @@ public class MemberServlet extends HttpServlet {
 						System.out.println(e.getMessage());
 						e.printStackTrace();
 						System.out.println("新增失敗");
-						errorMsg.add("新增失敗"+e.getMessage());
+						errorMsg.add("新增失敗，請輸入正確格式"+e.getMessage());
 						RequestDispatcher failureView = req
 								.getRequestDispatcher("/Backstage/addMember.jsp");
 						failureView.forward(req, res);
@@ -188,7 +188,7 @@ public class MemberServlet extends HttpServlet {
 						memberVO.setPwd(pwd);
 //						信箱		
 						String email = req.getParameter("email");
-//						if (email == null || email.trim().length() >= 10) {errorMsg.add("信箱: 請勿空白");}
+						if (email == null || email.trim().length() >= 30) {errorMsg.add("信箱: 請勿空白");}
 						System.out.println("email="+email);
 						memberVO.setEmail(email);
 //						生日			

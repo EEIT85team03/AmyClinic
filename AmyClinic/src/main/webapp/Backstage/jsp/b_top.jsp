@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
+
 <link href="<%=request.getContextPath()%>/Backstage/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="<%=request.getContextPath()%>/Backstage/css/sb-admin.css" rel="stylesheet">
@@ -21,6 +23,8 @@
 <!-- Morris Charts JavaScript -->
 <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script>
 <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script>
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -59,6 +63,8 @@ background-color:#F3F3FA;
 .navbar-ex1-collapse{
 /* background-color:#006030; */
 }
+
+em{  color:red; }
 /* td{ */
 /* background-color:#D3FF93; */
 /* } */
