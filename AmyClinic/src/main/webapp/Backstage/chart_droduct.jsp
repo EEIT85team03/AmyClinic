@@ -79,11 +79,11 @@ $(function(){
 //     	                ['庶務客日本 現貨 雪肌粹洗面乳',    8.5],
 //     	                ['親柔芙爽身蜜粉',     6.2],
 //     	                ['科士威~浪漫香水身體乳液',   0.7]
-						['超導恆潤飽水面膜',   parseInt(t1)],
-    	                ['DHC 純欖護唇膏',   parseInt(t2)],
-    	                ['蘆薈潤澤乳霜',       parseInt(t3)],
-    	                ['庶務客日本 現貨 雪肌粹洗面乳',    parseInt(t4)],
-    	                ['親柔芙爽身蜜粉',     parseInt(t5)]
+						['Top1：'+name[0],   parseInt(t1)],
+    	                ['Top2：'+name[1],   parseInt(t2)],
+    	                ['Top3：'+name[2],       parseInt(t3)],
+    	                ['Top4：'+name[3],    parseInt(t4)],
+    	                ['Top5：'+name[4],     parseInt(t5)]
     	            ]
     	        }]
     	    });
