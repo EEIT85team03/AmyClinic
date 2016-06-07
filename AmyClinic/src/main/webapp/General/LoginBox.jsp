@@ -26,7 +26,7 @@
 						<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="50" width="50">
 					</c:when>
 					<c:otherwise>
-						<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="50" width="50">
+						<img id="userphoto" src='${pageContext.request.contextPath}/images/anon.jpg' height="50" width="50">
 					</c:otherwise>
 				</c:choose>
 				<br /> 
@@ -35,7 +35,7 @@
 				<a href="${pageContext.request.contextPath}/member/editprofile.action">Profile</a> 
 			</c:when>
 			<c:otherwise>
-				<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="50" width="50">
+				<img id="userphoto" src='${pageContext.request.contextPath}/images/anon.jpg' height="50" width="50">
 				<br />
 	        	Welcome, Guest!<br />
 				<a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> |

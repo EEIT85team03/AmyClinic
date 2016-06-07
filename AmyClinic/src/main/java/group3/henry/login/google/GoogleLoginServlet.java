@@ -79,8 +79,8 @@ public class GoogleLoginServlet extends HttpServlet {
 					memberVO.setAct_status(1);
 					memberVO = retrievePhoto(memberVO, gbean);
 					service.addMember(memberVO);
+					memberVO = service.emailExists(memberVO.getEmail());
 					System.out.println("User added: " + memberVO.getName());
-					System.out.println("gReward_pts1: " + memberVO.getReward_pts());
 				}	
 				session.setAttribute("account", memberVO.getName()); //set to logged in
 				session.setAttribute("memberVO", memberVO);
