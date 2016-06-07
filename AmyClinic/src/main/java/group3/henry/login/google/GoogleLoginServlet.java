@@ -19,8 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.struts2.ServletActionContext;
-
 
 @WebServlet("/GoogleLoginServlet")
 public class GoogleLoginServlet extends HttpServlet {
@@ -83,22 +81,13 @@ public class GoogleLoginServlet extends HttpServlet {
 				session.setAttribute("account", memberVO.getName()); //set to logged in
 				session.setAttribute("memberVO", memberVO);
 																
+				String contextPath = getServletContext().getContextPath();
 				
-				String location = (String)session.getAttribute("location");
-		 	    String redirect;
-				
-				if (location != null) {
-		            session.removeAttribute("location");
-		            redirect = location;
-		        } else {
-		        	redirect = getServletContext().getContextPath() +"/login/success.jsp";
-		        }
-				System.out.println(redirect);
-								
 				response.setContentType("application/json");
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out = response.getWriter();
-				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+redirect+"\"}]");
+//				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");
+				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/success.jsp\"}]");
 				
 				out.flush();
 				//returns success					
