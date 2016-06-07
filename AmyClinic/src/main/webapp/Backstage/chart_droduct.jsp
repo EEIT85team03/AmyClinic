@@ -12,7 +12,9 @@
   </script>
 </head>
 <body>
+
   <div id="container" style="min-width:700px;height:400px"></div>
+  <div id='t'></div><hr>
   <div class ='element'></div>
 <script type="text/javascript">
 $(function(){
@@ -91,6 +93,7 @@ $(function(){
     })// $.getJSON line:13
 });//$(function () line:10
 </script>
-  
+
+
 </body>
 </html>

@@ -157,9 +157,7 @@ em{  color:red; }
 	<!-- 側邊欄功能表項目-對應導航功能表 -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp">
-			<i 	class="fa fa-fw fa-dashboard">
-			</i>-Amy醫美前端-</a></li>
+			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp"><i 	class="fa fa-fw fa-dashboard"></i>-Amy醫美前端-</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
