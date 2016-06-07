@@ -13,6 +13,8 @@
 	height: 60px;
 	width: 100px;
 	color: red;
+	dispaly: inline-block;
+	text-align: right;
 }
 </style>
 <div id="fb-root"></div>
