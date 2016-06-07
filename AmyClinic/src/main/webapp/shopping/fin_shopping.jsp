@@ -4,45 +4,46 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- 
-帶出本次訂單的資料
- -->
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>結帳完成</title>
+<link href="${pageContext.request.contextPath}/shopping/css/phase.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<style>
+	table {
+		margin: 0 auto;
+	}
+	
+	h1 {
+		text-align: center;
+	}
+</style>
 </head>
 <body>
-	<div id="allpage">
-		<div id="content">
-			<table>
-				<tr>
-					<td width="700px">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/1.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/2.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" src="${pageContext.request.contextPath}/images/3.jpg">
-					</td>
-					<td>
-						<img width="50px" height="50px" src="${pageContext.request.contextPath}/images/5.png">
-					</td>
-					<td>
-						<img width="70px" height="70px" style="border:2px red solid;" src="${pageContext.request.contextPath}/images/4.jpg">
-					</td>
-					
-				</tr>
-			</table>
-		<b>您的訂購已完成，系統已發出通知信，以下是您的訂單明細：</b><br><br>
+<jsp:include page="/General/header.jsp"></jsp:include>
+	
+		<div id="phase">
+			<div class="sign">
+			   <p><span>1</span></p>
+			   <p>購物清單</p>
+			</div>
+			<div class="sign">
+			   <p><span>2</span></p>
+			   <p>確認資料</p>
+			</div><div class="sign">
+			   <p><span>3</span></p>
+			   <p>開始付款</p>
+			</div><div class="sign current">
+			   <p><span>4</span></p>
+			   <p>結帳完成</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<h1>您的訂購已完成，系統已發出通知信，以下是您的訂單明細：</h1>
+		<br>
+		<br>
 		<table border="1" width="1000px" style="border-collapse:collapse">
 			<tr>
 				<td colspan="4">
@@ -156,13 +157,10 @@
 					E-mail：${ordersVO.email}<br><br>
 				</td>
 			</tr>
-		
-		
 		</table>
+		<br>
+		<br>
 		
-		</div>
-	
-	
-	</div>
+<jsp:include page="/General/footer.jsp"></jsp:include>
 </body>
 </html>

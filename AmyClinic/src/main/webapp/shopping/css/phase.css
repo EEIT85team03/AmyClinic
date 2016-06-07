@@ -13,7 +13,7 @@
   transform-origin: 50% -65px;
 }
 .sign:hover {
-  animation-play-state: paused;
+/*   animation-play-state: paused; */
 }
 .sign p {
   text-transform: uppercase;
