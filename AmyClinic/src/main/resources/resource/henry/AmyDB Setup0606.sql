@@ -712,7 +712,7 @@ INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
 group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
 --order by year(apt_date), MONTH(apt_date);
 */
-select top 5 (sum(OrderItems.quantity)) as quantity , Products.name as name, identity(int, 1,1) as id,year(odate) as years
+select sum(OrderItems.quantity) as quantity , Products.name as name, identity(int, 1,1) as id,year(odate) as years
 into SalesToProd
 from OrderItems 
 inner join Products on OrderItems.pid = Products.pid
