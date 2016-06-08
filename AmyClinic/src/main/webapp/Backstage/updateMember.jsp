@@ -176,7 +176,7 @@
 			</div>
 
 			<div class="col-xs-4 col-sm-4 col-md-4">
-			    	<div class="form-group">								<label >總花費</label>
+			    	<div class="form-group">								<label >累積點數</label>
 <input name="total_spent" id="membernum_total_spent" class="form-control form-control-sm"  type="text" value="${memberVO.total_spent}" readonly/>點	
 			    	</div>
 			</div>

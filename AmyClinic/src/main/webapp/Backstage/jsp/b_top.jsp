@@ -21,9 +21,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/raphael.min.js"></script>
 <!-- Morris Charts JavaScript -->
-<script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script>
-<script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script>
+<%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script> --%>
+<%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script> --%>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script> -->
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
