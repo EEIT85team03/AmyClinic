@@ -4,10 +4,12 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Single Instrument :: w3layouts</title>
+<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -145,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<ul class="nav navbar-nav nav_1">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
-				<li class="dropdown">
+				<li class="dropdown current_page">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lab<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="laboratory.html">About Lab</a></li>
@@ -168,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -187,47 +189,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- instrument-section -->
+		<section class="instrument-section">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Instrument</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- instrument ---->
+			<div class="instrument">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
-							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+					<h3 class="last-updated">Instrument</h3>	
+					<div class="instrument-view">
+						<div class="col-md-6 ins-image">
+							<img src="images/instrument.jpg" title="instrument" alt="" />
 						</div>
-					</div>
-				<!-- //login -->
-			<!--- /login ---->
+						<div class="col-md-6 ins-details">
+							<div class="ins-name">
+								<h3>LOREM IPSUM AIS</h3>
+								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
+							</div>
+							<div class="span span1">
+								<p class="left">BRAND</p>
+								<p class="right">: Sed Perst</p>
+								<div class="clearfix"></div>
+							</div>
+							<div class="span span2">
+								<p class="left">MADE IN</p>
+								<p class="right">: USA</p>
+								<div class="clearfix"></div>
+							</div>
+							<div class="span span1">
+								<p class="left">INSTALLATIONS</p>
+								<p class="right">: 1</p>
+								<div class="clearfix"></div>
+							</div>
+							<div class="span span4">
+								<p class="left">TECHNOLOGY</p>
+								<p class="right">: AISO</p>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clerfix"></div>
+				</div>
+			</div>
+			</div>
+			<!--- /instrument ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //instrument-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">

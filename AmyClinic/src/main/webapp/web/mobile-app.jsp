@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Mobile App :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -187,107 +188,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- mobile-app-section -->
+		<section class="mobile-app">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Prevention App</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- mobile-app ---->
+			<div class="mobilaapp main-grid-border">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
+					<div class="app">
+						<div class="col-md-5 app-left mpl">
+							<h3>Prevention mobile app on your smartphone!</h3>
+							<p>Download and Avail Special Discounts on Packages and Tests.</p>
+							<div class="app-devices">
+								<h5>Gets the app from</h5>
+								<a href="#"><img src="images/1.png" alt=""></a>
+								<a href="#"><img src="images/2.png" alt=""></a>
+								<div class="clearfix"> </div>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 						</div>
+						<div class="col-md-7 app-image">
+							<img src="images/mob.png" alt="">
+						</div>
+						<div class="clearfix"></div>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+				</div>
+				<div class="app-bottom-grids text-center">
+					<div class="container">
+						<div class="col-md-3 app-bottom-grid">
+							<i class="glyphicon glyphicon-list-alt"></i>
+							<h3>Book Tests, Profiles and Packages</h3>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry's standard industry.</p>
+						</div>
+						<div class="col-md-3 app-bottom-grid">
+							<i class="glyphicon glyphicon-map-marker"></i>
+							<h3>Tracking Become Easier</h3>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+						</div>
+						<div class="col-md-3 app-bottom-grid">
+							<i class="fa fa-lock"></i>
+							<h3>100% Secure Payment Gateway</h3>
+							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+						</div>
+						<div class="col-md-3 app-bottom-grid">
+							<i class="fa fa-users"></i>
+							<h3>Book for Your Family</h3>
+							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>	
+			</div>
+			<!--- /mobile-app ---->
 		</section>
-		<!-- //login-section -->
-		<!-- book an appointment -->
-		<div class="appointment">
-			<div class="container">
-				<div class="col-md-9 appointment-left">
-					<h3>FREE APPOINTMENT BOOKING</h3>
-					<p>Lorem Ipsum is simply dummy printing and typesetting industry. when an unknown printer took a galley of type and scrambled.</p>
-				</div>
-				<div class="col-md-3 appointment-right">
-					<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
-					<div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
-				  	<div class="modal-dialog dialog_3">
-				    	<div class="modal-content">
-					      	<div class="modal-header">
-					        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-					        	<h4 class="modal-title" id="myModalLabel"><div class="head_4">
-			                         <h3>Make An appointment Now</h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique ipsa deleniti doloribus fuga dicta id voluptate, excepturi nostrum cupiditate</p>
-			                        </div></h4>
-					      	</div>
-							<div class="modal-body">
-								<form name="row" method="post" class="register">
-                                    <input type="text" name="name" id="name" placeholder="Name" required="">
-                                    <input type="text" name="email id" id="Email id" placeholder="Email id" required="">
-                                    <input type="text" name="mobile number" id="Mobile Number" placeholder="Mobile Number" required="">
-									<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=>
-									<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Message...';}" required="">Enter Message...</textarea>
-									<input type="submit" onclick="myFunction()" value="Submit Now">
-								</form>
-							</div>
-							<!---start-date-piker---->
-								<link rel="stylesheet" href="css/jquery-ui.css" />
-								<script src="js/jquery-ui.js"></script>
-									<script>
-										$(function() {
-										$( "#datepicker" ).datepicker();
-										});
-									</script>
-							<!---/End-date-piker---->
-                     </div>
-		         </div>
-		     </div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- //book an appointment -->
-		
-		<!-- news letter -->
-		<div class="subscribe text-center">
-			<div class="container">
-				<h3>Subscribe to Our Newsletter</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
-				<form>
-					<input placeholder="Email Address" class="user" type="text" required="">
-					<input type="submit" value="Subscribe">
-				</form>
-				<p class="spam">We never share your information or use it to spam you</p>
-			</div>
-		</div>
-		<!-- //news letter -->
+		<!-- //mobile-app-section -->
 		
 		<!-- footer -->
 		<footer>

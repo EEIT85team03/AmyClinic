@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Book-a-Test :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -153,8 +154,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="technologies.html">Technologies</a></li>
 					<li><a href="instruments.html">Instruments</a></li>
 				  </ul>
-				</li>
-				<li class="dropdown">
+				</li>				
+				<li class="dropdown current_page">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Book Test<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="book-a-test.html">Book a Test</a></li>
@@ -168,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -187,108 +188,112 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- Book-a-test-section -->
+		<section class="book-a-test">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Book Your Test</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- Book-a-test ---->
+			<div class="test-booking">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
+					<h3 class="last-updated">Book Your Test</h3>
+					<div class="text-booking-form">
+						<div class="col-md-6 text-booking-form-left">
+							<form>
+								<label>Name <span>*</span></label>
+									<input type="text" class="phone" placeholder="">
 									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
+								<label>Mobile Number<span>*</span></label>
+									<input type="text" class="phone" placeholder="">
 									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
+								<label>Gender <span>*</span></label>
+									<select class="">
+									  <option>Gender</option>
+									  <option>Male</option>
+									  <option>Female</option>
+									</select>
+									<div class="clearfix"></div>
+								<label>Age<span>*</span></label>
+									<input type="text" class="phone" placeholder="">
+									<div class="clearfix"></div>
+								<label>Address <span>*</span></label>
+									<textarea class="mess" placeholder="Address"></textarea>
+									<div class="clearfix"></div>
+								<label>Pin<span>*</span></label>
+									<input type="text" class="phone" placeholder="">
+									<div class="clearfix"></div>								
+								<label>Email<span>*</span></label>
+									<input type="text" class="phone" placeholder="">
+									<div class="clearfix"></div>
+								<label>Select Package <span>*</span></label>
+									<select class="">
+									  <option>Select Package</option>
+									  <option>MASTER HEALTH CHECK</option>
+									  <option>WHOLE BODY CHECKUP</option>
+									  <option>HEALTH CHECK 1 AND 2</option>
+									</select>
+									<div class="clearfix"></div>
+									<div class="c-lang">
+									<p class="update"><input type="checkbox" id="c1" name="cc">Keep me updated on the latest offers and much more	</p>							</div>
+									<div class="book-submit">
+										<input type="submit" value="Book Now">
 									</div>
-									<input type="submit" value="Login">
-								</form>
-							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+							</form>
 						</div>
+						<div class="col-md-6 text-booking-form-right">
+							<img src="images/bookshow.jpg" alt="" />
+						</div>
+						<div class="clearfix"></div>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
-		</section>
-		<!-- //login-section -->
-		<!-- book an appointment -->
-		<div class="appointment">
-			<div class="container">
-				<div class="col-md-9 appointment-left">
-					<h3>FREE APPOINTMENT BOOKING</h3>
-					<p>Lorem Ipsum is simply dummy printing and typesetting industry. when an unknown printer took a galley of type and scrambled.</p>
-				</div>
-				<div class="col-md-3 appointment-right">
-					<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
-					<div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
-				  	<div class="modal-dialog dialog_3">
-				    	<div class="modal-content">
-					      	<div class="modal-header">
-					        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-					        	<h4 class="modal-title" id="myModalLabel"><div class="head_4">
-			                         <h3>Make An appointment Now</h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique ipsa deleniti doloribus fuga dicta id voluptate, excepturi nostrum cupiditate</p>
-			                        </div></h4>
-					      	</div>
-							<div class="modal-body">
-								<form name="row" method="post" class="register">
-                                    <input type="text" name="name" id="name" placeholder="Name" required="">
-                                    <input type="text" name="email id" id="Email id" placeholder="Email id" required="">
-                                    <input type="text" name="mobile number" id="Mobile Number" placeholder="Mobile Number" required="">
-									<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=>
-									<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Message...';}" required="">Enter Message...</textarea>
-									<input type="submit" onclick="myFunction()" value="Submit Now">
-								</form>
+					<div class="preventive-desc">
+						<h4>Why do we need Preventive Health Checkup?</h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					</div>
+					<div class="health-packages">
+							<h4 class="package-title">PREVENTIVE HEALTH CHECK UP PACKAGES</h4>
+								<div class="modal-body packages">
+									<div class="col-md-4 text-center modal-align">
+										<div class="package">
+											<p>A set of basic tests that can give a broad overview of your health status.</p>
+											<i class="fa fa-heartbeat"></i>
+											<h4>MASTER HEALTH CHECK</h4>
+											<a href="book-a-test.html">Book Now</a>
+										</div>
+									</div>
+									<div class="col-md-4 text-center modal-align">
+										<div class="package">
+											<p>Are you looking for a comprehensive health check that includes even Eye, Dental and ENT checks?</p>
+											<i class="fa fa-medkit"></i>
+											<h4>WHOLE BODY CHECKUP</h4>
+											<a href="book-a-test.html">Book Now</a>
+										</div>
+									</div>
+									<div class="col-md-4 text-center modal-align">
+										<div class="package">
+											<p>Do you wish to check your body out for an entire spectrum of diseases in a luxurious ambience?</p>
+											<i class="fa fa-user-md"></i>
+											<h4>HEALTH CHECK 1 AND 2</h4>
+											<a href="book-a-test.html">Book Now</a>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
 							</div>
-							<!---start-date-piker---->
-								<link rel="stylesheet" href="css/jquery-ui.css" />
-								<script src="js/jquery-ui.js"></script>
-									<script>
-										$(function() {
-										$( "#datepicker" ).datepicker();
-										});
-									</script>
-							<!---/End-date-piker---->
-                     </div>
-		         </div>
-		     </div>
 				</div>
-				<div class="clearfix"></div>
 			</div>
-		</div>
-		<!-- //book an appointment -->
-		
-		<!-- news letter -->
-		<div class="subscribe text-center">
-			<div class="container">
-				<h3>Subscribe to Our Newsletter</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
-				<form>
-					<input placeholder="Email Address" class="user" type="text" required="">
-					<input type="submit" value="Subscribe">
-				</form>
-				<p class="spam">We never share your information or use it to spam you</p>
-			</div>
-		</div>
-		<!-- //news letter -->
-		
+			<!--- /Book-a-test ---->
+		</section>
+		<!-- //Book-a-test-section -->
+				
 		<!-- footer -->
 		<footer>
 			<div class="footer-grids">

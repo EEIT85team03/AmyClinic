@@ -4,14 +4,14 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/gallery.css" rel="stylesheet" type="text/css" media="all" /> <!-- gallery css -->
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -168,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -181,53 +181,84 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  </ul>
 				</li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li class="current_page"><a href="contact.html">Contact</a></li>
 			</ul>
 		 </div><!-- /.navbar-collapse -->
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- Contact-section -->
+		<section class="contact">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Contact Us</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
-				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
-							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
-						</div>
+			<!--contact-->
+	<div class="contact">
+		<div class="container">
+			<div class="map">
+				<h4>GET IN TOUCH</h4>
+				<div id="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" frameborder="0" style="border:0"></iframe>
+				</div>
+			</div>
+			<div class="contact-infom">
+				<h4>CONTACT INFO</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages, 
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.It was popularised in the 1960s with the release of Letraset
+					  and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>	
+			<div class="address">
+				<div class="row">
+					<div class="col-md-4 location">
+						<h4>Address1 :</h4>
+						<p>Eiusmod Tempor inc</p>
+						<p>9560 St Dolore Place,</p>
+						<p>Telephone : +2 800 544 6035</p>
+						<p>FAX : +1 800 889 4444</p>
+						<p>Email : <a href="mailto:example@email.com">mail@example.com</a></p>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+					<div class="col-md-4 location">
+						<h4>Address2 :</h4>
+						<p>Tempor Eiusmod  inc</p>
+						<p>9560 St Dolore Place,</p>
+						<p>Telephone : +1 800 300 5555</p>
+						<p>FAX : +1 100 889 9466</p>
+						<p>Email : <a href="mailto:example@email.com">mail@example.com</a></p>
+					</div>	
+					<div class="col-md-4 location">
+						<h4>Address3 :</h4>
+						<p>Eiusmod Tempor inc</p>
+						<p>9560 St Dolore Place,</p>
+						<p>Telephone : +2 800 544 6035</p>
+						<p>FAX : +1 800 889 4444</p>
+						<p>Email : <a href="mailto:example@email.com">mail@example.com</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="contact-form">
+				<h4>CONTACT FORM</h4>
+				<form>
+					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+					<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+					<input type="text" value="Telephone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Telephone';}" required="">
+					<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+					<input type="submit" value="Submit" >
+				</form>
+			</div>
+			
+		</div>
+	</div>
 		</section>
-		<!-- //login-section -->
+		<!-- //contact-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">
@@ -252,7 +283,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <input type="text" name="name" id="name" placeholder="Name" required="">
                                     <input type="text" name="email id" id="Email id" placeholder="Email id" required="">
                                     <input type="text" name="mobile number" id="Mobile Number" placeholder="Mobile Number" required="">
-									<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=>
+									<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required="">
 									<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Message...';}" required="">Enter Message...</textarea>
 									<input type="submit" onclick="myFunction()" value="Submit Now">
 								</form>
@@ -335,10 +366,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<!-- maps -->
-			<div id="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" frameborder="0" style="border:0"></iframe>
-			</div>
 			<div class="copy-right-grids">
 				<div class="container">
 					<div class="copy-left">
@@ -356,6 +383,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</footer>
 		<!-- //footer -->
+
 		<script type="text/javascript">
 						$(document).ready(function() {
 							/*

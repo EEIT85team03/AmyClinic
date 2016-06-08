@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Sitemap :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -187,107 +188,84 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- sitemap-section -->
+		<section class="sitemap-section">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Sitemap</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- sitemap ---->
+			<div class="sitemap">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
-							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
-						</div>
+					<h3 class="last-updated">Sitemap</h3>
+					<div class="col-md-4 sitemap-grid">
+						<h4>Lab</h4>
+						<ul>
+							<li><span>&#62;</span><a href="laboratory.html">About Lab</a></li>
+							<li><span>&#62;</span><a href="quality.html">Quality</a></li>
+							<li><span>&#62;</span><a href="technologies.html">Technologies</a></li>
+							<li><span>&#62;</span><a href="instruments.html">Instruments</a>
+							 <ul class="sub-child">
+								<li><a href="single-instrument.html">Single-instrument</a></li>
+							 </ul>
+							</li>
+						</ul>
+						<h4>Book Test</h4>
+						<ul>
+							<li><span>&#62;</span><a href="book-a-test.html">Book a Test</a></li>
+							<li><span>&#62;</span><a href="test-list.html">Test Menu</a>
+							<ul class="sub-child">
+								<li><a href="test-desc.html">Test-desc</a></li>
+							 </ul>
+							</li>
+						</ul>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+					<div class="col-md-4 sitemap-grid">
+						<h4>Opportunity</h4>
+						<ul>
+							<li><span>&#62;</span><a href="career.html">Careers</a>
+							<ul class="sub-child">
+								<li><a href="jobs_single.html">Jobs-single</a></li>
+							 </ul>
+							</li>
+							<li><span>&#62;</span><a href="404.html">Franchisee</a></li>
+						</ul>
+						<h4>Pages</h4>
+						<ul>
+							<li><span>&#62;</span><a href="news.html">News</a></li>
+							<li><span>&#62;</span><a href="faq.html">Faq</a></li>
+							<li><span>&#62;</span><a href="mobile-app.html">App</a></li>
+							<li><span>&#62;</span><a href="terms.html">Terms of Use</a></li>
+							<li><span>&#62;</span><a href="shortcodes.html">Shortcodes</a></li>
+							<li><span>&#62;</span><a href="privacy_policy.html">Privacy Policy</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 sitemap-grid">
+						<h4>Blog</h4>
+						<ul>
+							<li><span>&#62;</span><a href="blog.html">Blog-post</a></li>
+							<li><span>&#62;</span><a href="single.html">Single-post</a></li>
+						</ul>
+						<h4>Remaining</h4>
+						<ul>
+							<li><span>&#62;</span><a href="index.html">Home</a></li>
+							<li><span>&#62;</span><a href="about.html">About</a></li>
+							<li><span>&#62;</span><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!--- /sitemap ---->
 		</section>
-		<!-- //login-section -->
-		<!-- book an appointment -->
-		<div class="appointment">
-			<div class="container">
-				<div class="col-md-9 appointment-left">
-					<h3>FREE APPOINTMENT BOOKING</h3>
-					<p>Lorem Ipsum is simply dummy printing and typesetting industry. when an unknown printer took a galley of type and scrambled.</p>
-				</div>
-				<div class="col-md-3 appointment-right">
-					<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
-					<div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
-				  	<div class="modal-dialog dialog_3">
-				    	<div class="modal-content">
-					      	<div class="modal-header">
-					        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-					        	<h4 class="modal-title" id="myModalLabel"><div class="head_4">
-			                         <h3>Make An appointment Now</h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique ipsa deleniti doloribus fuga dicta id voluptate, excepturi nostrum cupiditate</p>
-			                        </div></h4>
-					      	</div>
-							<div class="modal-body">
-								<form name="row" method="post" class="register">
-                                    <input type="text" name="name" id="name" placeholder="Name" required="">
-                                    <input type="text" name="email id" id="Email id" placeholder="Email id" required="">
-                                    <input type="text" name="mobile number" id="Mobile Number" placeholder="Mobile Number" required="">
-									<input class="date" id="datepicker" type="text" value="Appointment date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Appointment date';}" required=>
-									<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Message...';}" required="">Enter Message...</textarea>
-									<input type="submit" onclick="myFunction()" value="Submit Now">
-								</form>
-							</div>
-							<!---start-date-piker---->
-								<link rel="stylesheet" href="css/jquery-ui.css" />
-								<script src="js/jquery-ui.js"></script>
-									<script>
-										$(function() {
-										$( "#datepicker" ).datepicker();
-										});
-									</script>
-							<!---/End-date-piker---->
-                     </div>
-		         </div>
-		     </div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- //book an appointment -->
-		
-		<!-- news letter -->
-		<div class="subscribe text-center">
-			<div class="container">
-				<h3>Subscribe to Our Newsletter</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
-				<form>
-					<input placeholder="Email Address" class="user" type="text" required="">
-					<input type="submit" value="Subscribe">
-				</form>
-				<p class="spam">We never share your information or use it to spam you</p>
-			</div>
-		</div>
-		<!-- //news letter -->
+		<!-- //sitemap-section -->
 		
 		<!-- footer -->
 		<footer>
