@@ -21,9 +21,9 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/raphael.min.js"></script>
 <!-- Morris Charts JavaScript -->
-<script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script>
-<script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script>
+<%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script> --%>
+<%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script> --%>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js" type="text/javascript"></script> -->
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -157,9 +157,7 @@ em{  color:red; }
 	<!-- 側邊欄功能表項目-對應導航功能表 -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp">
-			<i 	class="fa fa-fw fa-dashboard">
-			</i>-Amy醫美前端-</a></li>
+			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp"><i 	class="fa fa-fw fa-dashboard"></i>-Amy醫美前端-</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
