@@ -1,7 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%-- <%@ taglib prefix="s" uri="/struts-tags"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<head>
+<!-- Google API -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-scope" content="profile email">
+	<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+</head>
 <style>
 #userphoto {
 	border-radius: 50%;
@@ -46,7 +51,7 @@ p {
 					<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' >
 				</c:when>
 				<c:otherwise>
-					<img id="userphoto" src='${pageContext.request.contextPath}/images/anon.jpg' >
+					<img id="userphoto" src='${pageContext.request.contextPath}/web/images/anon.jpg' >
 				</c:otherwise>
 			</c:choose>
 			<div id="LoginBoxText"> 
@@ -58,11 +63,11 @@ p {
 			</div>				 
 		</c:when>
 		<c:otherwise>
-			<img id="userphoto" src='${pageContext.request.contextPath}/images/anon.jpg' >
+			<img id="userphoto" src='${pageContext.request.contextPath}/web/images/anon.jpg' >
 			<div id="LoginBoxText">
 	        	<p>Welcome, Guest!</p>
 				<p>
-					<a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> |
+					<a href="${pageContext.request.contextPath}/web/login.jsp">Login</a> |
 					<a href="${pageContext.request.contextPath}/register/register.jsp">Sign up!</a>
 				</p>
 			</div>
