@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="login-page">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
@@ -49,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</form>
 							</div>
 							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+							<p><a href="register.jsp">Register Here</a> (or) go to <a href="index.jsp">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 						</div>
 					</div>
 				<!-- //login -->

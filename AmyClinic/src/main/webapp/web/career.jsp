@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="career-page">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
@@ -45,11 +45,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">HR RECRUITER</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">HR RECRUITER</a></h6>
 												  <span class="meta">HR, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -58,11 +58,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">IT HARDWARE EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">IT HARDWARE EXECUTIVE</a></h6>
 												  <span class="meta">IT, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -71,11 +71,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">SALES EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">SALES EXECUTIVE</a></h6>
 												  <span class="meta">MSP, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -84,11 +84,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">Front-end Developer</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">Front-end Developer</a></h6>
 												  <span class="meta">Envato, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -97,11 +97,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">BUSINESS DEVELOPMENT EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">BUSINESS DEVELOPMENT EXECUTIVE</a></h6>
 												  <span class="meta">BDN, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -110,11 +110,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">IT SOFTWARE EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">IT SOFTWARE EXECUTIVE</a></h6>
 												  <span class="meta">IT, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -123,11 +123,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">LABORATORY - EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">LABORATORY - EXECUTIVE</a></h6>
 												  <span class="meta">LAB, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -136,11 +136,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 											<div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">MAINTENANCE ENGINEER</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">MAINTENANCE ENGINEER</a></h6>
 												  <span class="meta">ENG, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -151,11 +151,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">BUSINESS DEVELOPMENT MANAGER</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">BUSINESS DEVELOPMENT MANAGER</a></h6>
 												  <span class="meta">BDN, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -164,11 +164,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">LABORATORY - EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">LABORATORY - EXECUTIVE</a></h6>
 												  <span class="meta">LAB, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -177,11 +177,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">IT SOFTWARE EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">IT SOFTWARE EXECUTIVE</a></h6>
 												  <span class="meta">IT, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -190,11 +190,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">HR RECRUITER</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">HR RECRUITER</a></h6>
 												  <span class="meta">HR, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -203,11 +203,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">IT HARDWARE EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">IT HARDWARE EXECUTIVE</a></h6>
 												  <span class="meta">IT, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -216,11 +216,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">BUSINESS DEVELOPMENT EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">BUSINESS DEVELOPMENT EXECUTIVE</a></h6>
 												  <span class="meta">BDN, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -229,11 +229,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">Front-end Developer</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">Front-end Developer</a></h6>
 												  <span class="meta">Envato, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -242,11 +242,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">MAINTENANCE ENGINEER</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">MAINTENANCE ENGINEER</a></h6>
 												  <span class="meta">ENG, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>
@@ -255,11 +255,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="jobs-item with-thumb">
 										   <div class="jobs_right">
 												<div class="date">30 <span>Jul</span></div>
-												<div class="date_desc"><h6 class="title"><a href="jobs_single.html">SALES EXECUTIVE</a></h6>
+												<div class="date_desc"><h6 class="title"><a href="jobs_single.jsp">SALES EXECUTIVE</a></h6>
 												  <span class="meta">MSP, Sydney, AU</span>
 												</div>
 												<div class="clearfix"> </div>
-												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.html" class="read-more">Read More</a></p>
+												<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae. <a href="jobs_single.jsp" class="read-more">Read More</a></p>
 											</div>
 											<div class="clearfix"> </div>
 										</div>

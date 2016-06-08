@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //header -->
 	<div class="demo-2">	
 		<header class="logo">
-			<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+			<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
 		</header>
             <div id="slider" class="sl-slider-wrapper">
 
@@ -261,7 +261,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -281,7 +281,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -302,7 +302,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -321,7 +321,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -340,7 +340,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -399,28 +399,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-4 news-section-grid">
 						<img src="images/n1.jpg" alt="" />
 						<div class="info">
-							<a class="news-title" href="single.html">There are sit amet</a>
+							<a class="news-title" href="single.jsp">There are sit amet</a>
 							<label>March 18</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
 						<img src="images/n2.jpg" alt="" />
 						<div class="info">
-							<a class="news-title" href="single.html">Lorem ipsum dolor</a>
+							<a class="news-title" href="single.jsp">Lorem ipsum dolor</a>
 							<label>August 28</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
 						<img src="images/n3.jpg" alt="" />
 						<div class="info">
-						    <a class="news-title" href="single.html">The standard chunk</a>
+						    <a class="news-title" href="single.jsp">The standard chunk</a>
 							<label>September 12</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
