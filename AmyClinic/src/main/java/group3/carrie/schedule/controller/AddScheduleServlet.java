@@ -71,7 +71,7 @@ public class AddScheduleServlet extends HttpServlet {
 
 				// req.setAttribute("schVO", schVO);
 				RequestDispatcher rd = req
-						.getRequestDispatcher("/schedule/add_schedule.jsp");
+						.getRequestDispatcher("/schedule/main_datatable.jsp");
 				rd.forward(req, res);
 				return;
 			}

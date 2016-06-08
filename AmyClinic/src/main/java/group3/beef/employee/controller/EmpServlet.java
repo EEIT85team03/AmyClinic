@@ -44,7 +44,9 @@ public class EmpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
+		res.setHeader("Content-type", "text/html;charset=UTF-8");
 		res.setContentType("UTF-8");
+		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
 		// ===================查詢一位員工=========================
 
@@ -199,9 +201,13 @@ public class EmpServlet extends HttpServlet {
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				System.out.println("員工新增成功");
-				String url = "/empLogin/GetAllEMP.jsp";
-				RequestDispatcher successView = req.getRequestDispatcher(url);
-				successView.forward(req, res);
+				//String url = "/empLogin/GetAllEMP.jsp";
+				//RequestDispatcher successView = req.getRequestDispatcher(url);
+				//successView.forward(req, res);
+//				res.sendRedirect("/AmyClinic/empLogin/login.jsp");
+//				PrintWriter out = res.getWriter();
+				out.print("員工新增成功");
+				return;
 
 			} catch (Exception e) {
 				errorMsg.put("otherErr",e.getMessage());
