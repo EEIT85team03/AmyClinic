@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Careers :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -161,20 +162,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="test-list.html">Test Menu</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown">
+				<li class="dropdown current_page">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunity<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="career.html">Careers</a></li>
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
 					<li><a href="faq.html">Faq</a></li>
-					<li><a href="mobile-app.html">App</a></li>
 					<li><a href="login.html">Login</a></li>
+					<li><a href="mobile-app.html">App</a></li>
 					<li><a href="terms.html">Terms of Use</a></li>
 					<li><a href="shortcodes.html">Shortcodes</a></li>
 					<li><a href="privacy_policy.html">Privacy Policy</a></li>
@@ -187,47 +188,85 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- Careers-section -->
+		<section class="career-page">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Career</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- Careers ---->
+			<div class="careers">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
+					<h3 class="last-updated">Current Opening</h3>	
+					<div class="job-lists">  
+					   <div class="col-md-9 single_right">
+							<div class="job-detailed">
+									<div class="jobs-item with-thumb">
+										<div class="jobs_right">
+											<div class="date_desc"><h6 class="job-title">HR RECRUITER</h6>
+												<span class="meta">Sydney, AU, Vacancies: 5, Views: 130</span>
+											</div>
+											<div class="clearfix"> </div>
+											<p class="job-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, maxime, excepturi, mollitia, voluptatibus similique aliquid a dolores autem laudantium sapiente ad enim ipsa modi laborum accusantium deleniti neque architecto vitae</p>
+										    <div class="job-summary">
+												<h6>Job Summary</h6>
+												<ol start="1">
+													<li>Lorem Ipsum is simply dummy as opposed  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+													<li>voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</li>
+													<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.it has a more-or-less normal distribution of letters, as opposed  Lorem Ipsum has been the industry's.</li>
+													<li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium standard dummy text ever since the 1500s.</li>
+													<li>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam.</li>
+													<li>Lorem Ipsum is simply dummy as opposed  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+													<li>voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</li>
+													<li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.it has a more-or-less normal distribution of letters, as opposed  Lorem Ipsum has been the industry's.</li>
+													<li>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam.</li>
+												</ol>
+											</div>
+											<div class="skill-req">
+												<h6>Skills Required</h6>
+												<ul>
+													<li><i class="fa fa-long-arrow-right"></i>Lorem Ipsum is simply dummy as opposed  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+													<li><i class="fa fa-long-arrow-right"></i>voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</li>
+													<li><i class="fa fa-long-arrow-right"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry.it has Lorem Ipsum has been the industry's.</li>
+													<li><i class="fa fa-long-arrow-right"></i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium standard dummy text.</li>
+													<li><i class="fa fa-long-arrow-right"></i>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</li>
+													<li><i class="fa fa-long-arrow-right"></i>Lorem Ipsum is simply dummy as opposed  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
+													<li><i class="fa fa-long-arrow-right"></i>voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</li>
+													<li><i class="fa fa-long-arrow-right"></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry as opposed  Lorem Ipsum has been the industry's.</li>
+													<li><i class="fa fa-long-arrow-right"></i>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta Nemo enim ipsam.</li>
+												</ul>
+											</div>
+											<div class="qualification">
+												<h6>Qualification</h6>
+												<p>Graduate : Any</p>
+											</div>
+										</div>
+										<div class="clearfix"> </div>
 									</div>
-									<input type="submit" value="Login">
-								</form>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 						</div>
-					</div>
-				<!-- //login -->
-			<!--- /login ---->
+						<div class="col-md-3">
+						  <div class="job-contact">
+							<h5 class="widget-title">Contact</h5>
+							<p>Email: <a href="mailto:example@mail.com">example@mail.com</a></p>
+							<p>Ph: 080-565982</p>
+						  </div>
+					   </div>
+				  <div class="clearfix"> </div>
+				 </div>
+			</div>
+			</div>
+			<!--Horizontal Tab-->
+			<!--- /Careers ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //Careers-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">
@@ -354,6 +393,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 			</div>
+			
 		</footer>
 		<!-- //footer -->
 		<script type="text/javascript">

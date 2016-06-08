@@ -44,6 +44,23 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- 
+        <LI><font color="blue"><b>傳統的Html標籤</b></font>       
+        <form action="<%=request.getContextPath()%>/myNamespace/myAction.action"	method="post">
+			     員工姓名: 
+			    <input type="text" name="ename" value="peter1吳永志" /><p>
+				<input type="submit" />
+		</form><BR>	</LI>
+		
+		
+		<LI><font color="blue"><b>Struts2的表單UI標籤</b></font>
+		<s:form action="myAction" namespace="/myNamespace" >
+			<s:textfield name="ename" label="員工姓名"  value="peter1吳永志" />
+			<s:submit value="送出" />
+		</s:form></LI>
+		 -->
+		
 		<div id="loginpage">
 			<s:form namespace="/logreg" action="login" id="loginform"
 				theme="simple">

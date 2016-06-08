@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Blog :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -168,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -180,54 +181,121 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="privacy_policy.html">Privacy Policy</a></li>
 				  </ul>
 				</li>
-				<li><a href="blog.html">Blog</a></li>
+				<li class="current_page"><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		 </div><!-- /.navbar-collapse -->
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- blog-section -->
+		<section class="error">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Blog-page</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- blog ---->
+			<div class="blog">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
+					<div class="bolg-posts">
+							<div class="col-md-12 blog-top">
+								<div class="blog-in">
+									<a href="single.html" class="blog-post"><img src="images/b1.jpg" alt=" "></a>
+									<div class="blog-grid">
+										<div class="date">
+											<span class="date-in"><i class="fa fa-calendar"></i>29.3.2016</span>
+											<a href="single.html" class="comments"><i class="fa fa-comment"></i>48</a>
+											<div class="clearfix"> </div>
+										</div>
+										<h3><a href="single.html">Distribution of clinical laboratories in health</a></h3>
+										<p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray, <span>
+										casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</span></p>
+										<a href="single.html" class="smore">READ MORE</a>										
 									</div>
-									<input type="submit" value="Login">
-								</form>
+									<div class="clearfix"></div>					
+								</div>
+								<i class="black"> </i>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
-						</div>
+							<div class="col-md-12 blog-top">
+								<div class="blog-in blog-in1">
+									<a href="single.html" class="blog-post1"><img src="images/b2.jpg" alt=" "></a>
+									<div class="blog-grid">
+										<div class="date">
+											<span class="date-in"><i class="fa fa-calendar"></i>25.03.2016</span>
+											<a href="single.html" class="comments"><i class="fa fa-comment"></i>42</a>
+											<div class="clearfix"> </div>
+										</div>
+										<h3><a href="single.html">Cytopathology examines smears of cells from all over the body</a></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, dapibus magna, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</span></p>
+										<a href="single.html" class="smore">READ MORE</a>										
+									</div>
+									<div class="clearfix"></div>					
+								</div>
+								<i class="black"> </i>
+							</div>
+							<div class="col-md-12 blog-top">
+								<div class="blog-in">
+									<a href="single.html" class="blog-post"><img src="images/b3.jpg" alt=" "></a>
+									<div class="blog-grid">
+										<div class="date">
+											<span class="date-in"><i class="fa fa-calendar"></i>19.3.2016</span>
+											<a href="single.html" class="comments"><i class="fa fa-comment"></i>34</a>
+											<div class="clearfix"> </div>
+										</div>
+										<h3><a href="single.html">Electron microscopy prepares specimens and takes micrographs</a></h3>
+										<p>Photography Daniel Jackson,  styling by Alastair McKimm, hair by Shon  and Esther Langham, make-up by Yadim,  Francelle and Hannah Murray, <span>
+										casting by AM casting. Production  by Nikki Stromberg and Matthew Youmans at M.A.P New York.</span></p>
+										<a href="single.html" class="smore">READ MORE</a>										
+									</div>
+									<div class="clearfix"></div>					
+								</div>
+								<i class="black"> </i>
+							</div>
+							<div class="col-md-12 blog-top">
+								<div class="blog-in blog-in1">
+									<a href="single.html" class="blog-post1"><img src="images/b4.jpg" alt=" "></a>
+									<div class="blog-grid">
+										<div class="date">
+											<span class="date-in"><i class="fa fa-calendar"></i>25.03.2016</span>
+											<a href="single.html" class="comments"><i class="fa fa-comment"></i>42</a>
+											<div class="clearfix"> </div>
+										</div>
+										<h3><a href="single.html">Cytopathology examines smears of cells from all over the body</a></h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie, eget aliquam diam erat at velit. Suspendisse in diam sit amet erat blandit efficitur at eget lorem. Aenean elementum lobortis tellus, sit amet mollis tortor rhoncus id.</span></p>
+										<a href="single.html" class="smore">READ MORE</a>										
+									</div>
+									<div class="clearfix"></div>					
+								</div>
+								<i class="black"> </i>
+							</div>
+							<div class="clearfix"> </div>
+							<ul class="start">
+									<li><a href="#"><span class="prev">Prev</span></a></li>
+									<li><span>1</span></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#">6</a></li>
+									<li><a href="#">7</a></li>
+									<li><a href="#">8</a></li>
+									<li><span>.....</span></li>
+									<li><a href="#">12</a></li>
+									<li><a href="#" class="next">Next</a></li>
+								</ul>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+				</div>
+			</div>
+			<!--- /404 ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //404-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">

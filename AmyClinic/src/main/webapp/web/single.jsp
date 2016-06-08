@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -168,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -180,54 +181,148 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="privacy_policy.html">Privacy Policy</a></li>
 				  </ul>
 				</li>
-				<li><a href="blog.html">Blog</a></li>
+				<li class="current_page"><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		 </div><!-- /.navbar-collapse -->
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- blog-section -->
+		<section class="blog-single-post">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Blog-post</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- blog ---->
+			<div class="blog">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
+					<div class="single">		
+				<div class="single-top">
+					<img  src="images/single-post-img.jpg" alt=""/>
+				</div>
+				<div class="top-single">
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+					<div class="grid-single">
+						<div class="single-one"><span><i class="fa fa-calendar"></i>12/03/2014 </div></li>
+						<div class="single-one"><span><a href="#"><i class="fa fa-comment"></i>20l</a></span></div>
+						<div class="single-one"><span><i class="fa fa-heart"></i>400</span></div>
+						<div class="clearfix"> </div>
+					</div>
+					<p class="eget"><b>Duis dapibus aliquam mi,</b> eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur vitae velit in neque dictum blandit. <b>Proin in iaculis neque.</b> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> 
+			<p class="eget">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. <b>Vivamus at elit quis urna adipiscing iaculis.</b> Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+
+			<p class="eget">Duis dapibus aliquam mi, eget euismod sem scelerisque ut. Vivamus at elit quis urna adipiscing iaculis. Curabitur <b>vitae velit in neque dictum blandit.</b> Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae velit in neque dictum blandit. Proin in iaculis neque. Pellentesque habitant morbi tristique senectus et netus <b>et malesuada fames ac turpis egestas.</b> </p>
+						
+					<ul class="share">
+						<li>share :</li>
+						<li>							
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+	   						
+	   						<div class="fb-like" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div></li>
+						<li><a href="https://twitter.com/w3layouts" class="twitter-share-button" data-dnt="true">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+					</ul>
+						<div class="top-comments">
+						<h3>10 Comments</h3>
+						<div class="met">
+							<div class="code-in">
+								<p class="smith"><a href="#">Robert Smith</a> <span>05 march 2016, 15:20</span></p>
+								<p class="reply"><a href="#"><i class="fa fa-reply"></i>REPLY</a></p>
+								<div class="clearfix"> </div>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+							<div class="comments-top-top">
+								<div class="men" >
+									<img   src="images/men.png" alt=""> 
+								</div>					
+									<p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="met met-in">
+							<div class="code-in">
+								<p class="smith"><a href="#">Robert Smith</a> <span>02 april 2016, 15:20</span></p>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="comments-top-top top-in">
+								<div class="men" >
+									<img   src="images/men.png" alt=""> 
+								</div>					
+									<p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="met">
+							<div class="code-in">
+								<p class="smith"><a href="#">Robert Smith</a> <span>18 may 2016, 15:20</span></p>
+								<p class="reply"><a href="#"><i class="fa fa-reply"></i>REPLY</a></p>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="comments-top-top">
+								<div class="men" >
+									<img   src="images/men.png" alt=""> 
+								</div>					
+									<p class="men-it">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less </p>
+								<div class="clearfix"> </div>
+							</div>
 						</div>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+					<div class="leave">
+						<h3>Leave a comment</h3>
+							<form>
+								<div class="single-grid">
+									<div class="col-md-6 single-us">
+										<input type="text" placeholder="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+									</div>
+									<div class="col-md-6 single-us">
+										<input type="text" placeholder="E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'E-mail';}" required="">
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="single-grid">
+									<div class="col-md-6 single-us">
+										<input type="text" placeholder="Web site" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Web site';}" required="">
+									</div>
+									<div class="col-md-6 single-us">
+										<input type="text" placeholder="Job" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Job';}" required="">
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="text-top">
+									<div class="col-md-8 text-in">
+										<textarea  placeholder="Comment" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Comment';}" required="">Comment</textarea>
+									</div>
+									<div class="col-md-4 text-in">
+										<input type="submit" value="SEND" >
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+							</form>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis semper nisl, vitae malesuada massa egestas a. Vestibulum vestibulum urna sapien, eu bibendum magna ornare non.</p>
+							</div>
+						</div>			
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<!--- /blog ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //blog-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">

@@ -4,10 +4,11 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | News :: w3layouts</title>
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -187,47 +188,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- news-section -->
+		<section class="news-page">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>News</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- news ---->
+			<div class="news">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
-									</div>
-									<input type="submit" value="Login">
-								</form>
+					<h3 class="last-updated">news</h3>	
+				<div class="public-relations">
+					<img src="images/public.jpg" class="img-responsive" alt="" />
+					<h3 class="p-c-text text-center">Press Contact</h3>
+					<div class="news-grids">
+								<div class="col-md-6 news-left">
+									<h3>Statistics</h3>
+									<ol>
+										<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+										<li>Sed euismod faucibus malesuada dui vitae egestas malesuada ante malesuada Morbi luctus accumsan risus</li>
+										<li>Malesuada Sed euismod faucibus dui, vitae egestas ante. Morbi luctus accumsan Sed euismod faucibus dui, vitae egestas ante malesuada Morbi luctus accumsan</li>
+										<li>Proin rutrum, turpis at accumsan vestibulum, sem justo aliquam mi, sed bibendum metus risus et odio. Etiam vulputate mauris eget vestibulum lacinia.</li>
+										<li>Pellentesque posuere dui a erat pellentesque, eget ultricies tellus rutrum. Mauris et molestie dolor. Phasellus condimentum feugiat</li>
+										<li>Integer placerat, eros a ullamcorper venenatis, diam erat vestibulum elit, quis fringilla velit ipsum at dolor.</li>
+										<li>Sed euismod faucibus malesuada dui vitae egestas malesuada ante malesuada Morbi luctus accumsan risus</li>
+										<li>Malesuada Sed euismod faucibus dui, vitae egestas ante. Morbi luctus accumsan Sed euismod faucibus dui, vitae egestas ante malesuada Morbi luctus accumsan</li>
+										<li>Proin rutrum, turpis at accumsan vestibulum, sem justo aliquam mi, sed bibendum metus risus et odio. Etiam vulputate mauris eget vestibulum lacinia.</li>
+									</ol>
+								</div>
+								<div class="col-md-6 news-left news-right">
+									<h3>Blogs and Social Media</h3>
+									<ol>
+										<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+										<li><a href="#">Sed euismod faucibus malesuada</a></li>
+										<li><a href="#">Malesuada Sed euismod faucibus</a></li>
+										<li><a href="#">Proin rutrum, turpis at accumsan</a></li>
+										<li><a href="#">Pellentesque posuere dui a erat</a></li>
+										<li><a href="#">Integer placerat eros a ullamcorper</a></li>
+										<li><a href="#">Sed euismod faucibus malesuada</a></li>
+										<li><a href="#">Malesuada Sed euismod faucibus</a></li>
+										<li><a href="#">Proin rutrum, turpis at accumsan</a></li>
+									</ol>
+								</div>
+								<div class="clearfix"> </div>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
-						</div>
+						<div class="clearfix"></div>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+				</div>
+			</div>
+			<!--- /news ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //news-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">

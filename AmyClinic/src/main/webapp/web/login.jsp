@@ -4,10 +4,13 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Amy | Login </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -209,10 +212,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-form-grids">
 								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
 									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
+									<input type="text" name="memberVO.name" placeholder="Enter Username" required=" " >
 									<div class="clearfix"></div>
 									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
+									<input type="password"name="memberVO.pwd" placeholder="Password" required=" " >
 									<div class="clearfix"></div>
 									<div class="forgot">
 										<a href="#">Forgot Password?</a>

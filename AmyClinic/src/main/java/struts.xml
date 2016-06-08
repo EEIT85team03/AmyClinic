@@ -57,7 +57,7 @@
 
 		<default-interceptor-ref name="EncPw" />
 
-		<action name="login" class="group3.henry.login.controller.LoginAction">
+		<action name="login" class="group3.henry.login.controller.LoginAction" method="login">
 			<result name="success">/login/success.jsp</result>
 			<result name="verifyEmail">/login/verify.jsp</result>
 			<result name="login">/login/login.jsp</result>

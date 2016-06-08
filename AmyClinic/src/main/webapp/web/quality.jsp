@@ -4,10 +4,12 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Prevention a Medical Category Flat Bootstrap Responsive Website Template | Quality :: w3layouts</title>
+<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 <link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -145,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<ul class="nav navbar-nav nav_1">
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About</a></li>
-				<li class="dropdown">
+				<li class="dropdown current_page">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lab<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="laboratory.html">About Lab</a></li>
@@ -168,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="404.html">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
+				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="news.html">News</a></li>
@@ -187,47 +189,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
-		<!-- login-section -->
-		<section class="login-page">
+		<!-- quality-section -->
+		<section class="laboratory">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
 					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
+						<h2>Quality</h2>
 						<h6>add a short description here</h6>
 					</div>
 				</div>
 			</div>
-			<!--- login ---->
-			<!-- login -->
-			<div class="login">
+			<!--- quality ---->
+			<div class="terms">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-							<div class="login-form-grids">
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" placeholder="Enter Username" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password" placeholder="Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">Forgot Password?</a>
+					<h3>Quality</h3>
+					<h6>Accreditation</h6>
+						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+						<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</p>
+					<div class="quality">	
+						<div class="panel-group" id="accordion">
+							<!-- First Panel -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
+										 <span>&#8594;</span>ISO 9001
+									 </h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
 									</div>
-									<input type="submit" value="Login">
-								</form>
+								</div>
 							</div>
-							<h4>For New People</h4>
-							<p><a href="register.html">Register Here</a> (or) go to <a href="index.html">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+							
+							<!-- Second Panel -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									 <h4 class="panel-title" data-toggle="collapse"  data-target="#collapseTwo">
+										<span>&#8594;</span> NABL
+									 </h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body">								
+										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
+										<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+										<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing. </p>
+										<p>Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+									</div>
+								</div>
+							</div>
+							
+							<!-- Third Panel -->
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">
+										<span>&#8594;</span> CAP
+									 </h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+									<div class="panel-body">
+										<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				<!-- //login -->
-			<!--- /login ---->
+				</div>
+			</div>
+			<!--- /quality ---->
 		</section>
-		<!-- //login-section -->
+		<!-- //quality-section -->
 		<!-- book an appointment -->
 		<div class="appointment">
 			<div class="container">
