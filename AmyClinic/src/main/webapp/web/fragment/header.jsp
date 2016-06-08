@@ -1,8 +1,8 @@
 <head>
-<link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/gallery.css" rel="stylesheet" type="text/css" media="all" /> <!-- gallery css -->
+<link href="${pageContext.request.contextPath}/web/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/web/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<link href="${pageContext.request.contextPath}/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/web/css/gallery.css" rel="stylesheet" type="text/css" media="all" /> <!-- gallery css -->
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,17 +15,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
 <!-- js -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/custom.css" />
-		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>		
+<script src="${pageContext.request.contextPath}/web/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/js/modernizr.custom.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/custom.css" />
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/modernizr.custom.79639.js"></script>		
 		<!-- js for news -->
-		<script src="js/jquery.easing.min.js"></script>
-		<script type="text/javascript" src="js/pignose.layerslider.js"></script>
+		<script src="${pageContext.request.contextPath}/web/js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/pignose.layerslider.js"></script>
 		<script type="text/javascript">
 			//<![CDATA[
 				$(window).load(function() {
@@ -41,8 +41,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- /js for news -->
 		
 		<!-- for smooth scrolling -->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/move-top.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/easing.js"></script>
 		<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -53,8 +53,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<!-- //for smooth scrolling -->
 		  <!-- for easy-responsive-tabs -->	  
-		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
-		<script src="js/easyResponsiveTabs.js"></script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/easy-responsive-tabs.css " />
+		<script src="${pageContext.request.contextPath}/web/js/easyResponsiveTabs.js"></script>
 		<script type="text/javascript">
     $(document).ready(function() {
         //Horizontal Tab

@@ -35,6 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h3>Login Here</h3>
 					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 							<div class="login-form-grids">
+								<div style="color: red;">${message}</div>
 								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
 									<label class="test-info">User Name <span>*</span></label>
 									<input type="text" name="memberVO.name" placeholder="Enter Username" required=" " >
