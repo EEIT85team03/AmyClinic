@@ -38,7 +38,7 @@ CREATE TABLE Members(
   photo			VARCHAR(50)		,
 -- photoFileName	NVARCHAR(50)	,
 --  photoContentType VARCHAR(10)	,
-  act_status	DECIMAL(1)		DEFAULT 1,	-- 2 = waiting for email confirmation, 1 = active, 0 = inactive    
+  act_status	DECIMAL(1)		DEFAULT 1,	--狀態 2 = waiting for email confirmation, 1 = active, 0 = inactive    
   num_trans		DECIMAL(4)		DEFAULT 0,	-- number of times client spent money on merchandise
   num_treatment	DECIMAL(4)		DEFAULT 0,  -- number of times client received treatments
   num_visits	DECIMAL(4)		DEFAULT 0,	-- number of times client visited 
@@ -173,19 +173,33 @@ CREATE TABLE Score
  FOREIGN KEY (aid) REFERENCES Appointments(aid), 
 );
 GO
--- -------------------------------------------------------------------------------------------------------------------------------------------------------------
+--產品類別 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Catagory VALUES ('美容');
 INSERT INTO Catagory VALUES ('保養');    
 INSERT INTO Catagory VALUES ('面膜');    
 INSERT INTO Catagory VALUES ('香水/體香劑');    
-INSERT INTO Catagory VALUES ('醫學');        
--- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Henry','b15e5db3836bff058b253de60c467e00','Henry@group3.com','1981-06-24','Taiwan','M','台北市大安區復興南路一段390號2樓','0925377000','178','80','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Carrie','b15e5db3836bff058b253de60c467e00','Carrie@group3.com','1990-12-12','Taiwan','F','台北市大安區復興南路一段390號2樓','0925332156','160','42','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Beef','b15e5db3836bff058b253de60c467e00','Beef@group3.com','1989-03-09','Taiwan','M','台北市大安區復興南路一段390號2樓','0959487612','170','65','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Nick','b15e5db3836bff058b253de60c467e00','Nick@group3.com','1985-07-30','Taiwan','M','台北市大安區復興南路一段390號2樓','0936598102','169','70','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('Tca','b15e5db3836bff058b253de60c467e00','Tca@group3.com','2000-02-28','Taiwan','M','台北市大安區復興南路一段390號2樓','0945976183','185','63','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status) VALUES ('K','b15e5db3836bff058b253de60c467e00','k@group3.com','1970-01-01','Taiwan','M','台北市大安區復興南路一段390號2樓','0909865731','200','59','1');
+INSERT INTO Catagory VALUES ('防曬');        
+--會員 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Henry','b15e5db3836bff058b253de60c467e00','Henry@group3.com','1981-06-24','台灣','M','台北市大安區復興南路一段390號2樓','0925377000','178','80','1','21');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Carrie','b15e5db3836bff058b253de60c467e00','Carrie@group3.com','1990-12-12','台灣','F','台北市松山區南京東路3段303巷5號','0925332156','160','42','1','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Beef','b15e5db3836bff058b253de60c467e00','Beef@group3.com','1989-03-09','台灣','F','台北市大安區復興南路一段390號2-1樓','0959487612','170','65','1','3');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Nick','b15e5db3836bff058b253de60c467e00','Nick@group3.com','1985-07-30','台灣','M','新北市永和區中山路一段58號','0936598102','169','70','1','3');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Tca','b15e5db3836bff058b253de60c467e00','Tca@group3.com','2000-02-28','台灣','M','台北市松山區八德路3段27號','0945976183','185','63','1','13');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('K','b15e5db3836bff058b253de60c467e00','k@group3.com','1970-01-01','台灣','M','新北市永和區中山路一段58號','0909865731','200','59','1','24');
+
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('劉心悠','b15e5db3836bff058b253de60c467e00','amy7@group3.com','1981-06-24','台灣','F','台北市四維路170巷60號4樓','0925377000','178','50','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('夏語心','b15e5db3836bff058b253de60c467e00','amy8@group3.com','1990-12-12','台灣','F','台北市基隆路二段210號3樓','0925332156','160','42','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林嘉綺','b15e5db3836bff058b253de60c467e00','amy9@group3.com','1989-03-09','台灣','F','台北市復興南路二段90巷30號14樓','0959487612','170','55','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('劉致妤','b15e5db3836bff058b253de60c467e00','amy10@group3.com','1985-07-30','台灣','F','台北市敦化南路一段233巷130號10樓','0936598102','169','60','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林芳雪','b15e5db3836bff058b253de60c467e00','amy11@group3.com','2000-02-28','台灣','F','台北市泰順街40巷30號9樓','0945976183','185','43','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林雨宣','b15e5db3836bff058b253de60c467e00','amy232@group3.com','1970-01-01','台灣','F','台北市潮州街150號2樓','0909865731','200','69','1','0');
+
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('李亦捷','b15e5db3836bff058b253de60c467e00','amy12@group3.com','1981-06-24','台灣','F','台北市三水街121號','0925377000','178','40','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('李宗望','b15e5db3836bff058b253de60c467e00','amy913@group3.com','1990-12-12','台灣','F','台北市中華路一段90號2樓','0925332156','160','42','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('劉曉憶','b15e5db3836bff058b253de60c467e00','amy914@group3.com','1989-03-09','台灣','F','台北市內江街110巷30號3樓','0959487612','170','65','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林星潼','b15e5db3836bff058b253de60c467e00','amy915@group3.com','1985-07-30','台灣','F','台北市南寧路48巷1號5樓','0936598102','169','50','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('李相林','b15e5db3836bff058b253de60c467e00','amy916@group3.com','2000-02-28','台灣','F','台北市萬華區廣州街121號','0945976183','185','63','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林雅惠','b15e5db3836bff058b253de60c467e00','amy917@group3.com','1970-01-01','台灣','F','台北市和平西路三段271號4樓','0909865731','200','59','1','0');
 
 /* Member Images are managed by Struts2 and are stored on the server HDD, not stored in DB. DB only contains path information
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1000;
@@ -219,6 +233,37 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('超導恆潤飽水面膜','500','30','890','0','Dr’s Formula來自長庚專業團隊 ‧玻尿酸、胺基酸、維他命B3、高濃縮美容液完美基底 ','7片/盒');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('金盞花敏弱呵護面膜','500','30','890','0','‧特別適用曬後肌膚、肌膚敏感者 ‧創新3D立體面膜紙材','7片/盒');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淡斑淨膚面膜','500','30','890','0','‧黃金比例3重完美綻白配方 打造細緻純淨之透白亮肌 ‧創新3D立體緊顏面膜 打造迷人肌質 ','7片/盒');
+--6/8----
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('5V肌因抗老眼部精華','500','20','3600','10','vitasourceTM端粒激活素、白珍珠萃取、金雀花萃取、雙效黃金、海洋抗皺、3D隱形網狀結構、法國醣蛋白','星采S-5V-1肌因抗老眼部精華15ml、星采5V眼周導入棒*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('綻白淨斑精華','100','10','1800','10','Dermawhite肌膚淨白因子、維他命 B3 、桑白皮、和梅果、黃岑漢方複合精華 、玻尿酸、甘草精華、尿囊素。','15ml(DermalRxR SRC-黯沉掃除科技、維他命C(AA-2G) 、專利)');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('雪漾鑽白凝乳','100','10','2500','10','SRC-黯沉掃除科技、維他命C醣苷(AA-2G)、桑白皮、和梅果、黃岑漢方複合精華、玻尿酸、甘草精華、尿囊素、甜沒藥醇。','30ml,Nano Bright多元美白微囊球、Actiwhite肌因亮白元素、DermalRx®');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('柔白晶透防曬乳SPF50+','100','10','1400','10','物理性防曬、化學性防曬、GIGAWHITE阿爾卑斯山複合植物淨白精華、阿爾卑斯山雙有機夢蝶草精華、專利和梅果精華。','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極速美白璀璨組','100','10','4300','10','適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚。','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('全面美白強效組','150','10','5700','20','詳見盒面產品說明或成分說明頁面-適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1、柔白晶透防曬乳SPF50+★★★ 50ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('明星組★星采水潤4步修護組','200','20','5600','20','奇肌修復菁粹15ml、肌密水潤透白精華液PLUS+30ml 、極致活妍精質霜50ml、輕透醒膚水凝霜50ml','15ml、30ml、50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('星采極效3步組','200','20','3800','10','星采奇肌修復菁粹15ml*1瓶 、星采肌密水潤透白精華液PLUS+30ml*1瓶、星采輕透醒膚水凝霜50ml*1瓶','15ml*1瓶30ml*1、50ml*1瓶');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/單片裝','120','30','290','10','γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','單片裝28ml *1 片');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/三片裝','120','30','790','10','γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','三片裝28ml *3 片');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('卸妝潔顏幕絲','120','10','800','10','胺基酸潔淨因子、蜂蜜潤澤精華、水解膠原蛋白、木瓜酵素、甘草精華','180ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奇肌修復菁粹','200','10','1100','10','第三型神經醯胺CeramideⅢ、角鯊烯Squalene、西蘭花苗萃取物、紫草萃取物','15ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奢華升級星采肌密水潤透白精華液PLUS+','150','20','1200','10','玻尿酸鈉、小分子玻尿酸、海洋保濕因子、SK-influx微脂囊包覆神經醯胺','玻尿酸鈉、小分子玻尿酸、海洋保濕因子');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極致活妍精質霜','200','20','1800','10','蜂王漿水解蛋白、冰洋紅藻精萃、白柳葉萃取、微型海藻精萃、紫草萃取物、西蘭花苗萃取、第三型神經醯胺','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('輕透醒膚水凝霜','200','20','1500','10','r-PGA高效活水保濕因子、神經醯胺修護素、深海微量礦物元素、海藻萃取精華、維生素E衍生物','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Snow Eau de Parfum','500','40','5400','20','天然香料:香碗豆、雪花蓮、檸檬*、香橙*、佛手柑*、蘋果、布冧、黑加侖子、香雪蘭','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Eau de Parfum','500','40','5400','20','前調是以水漾感覺及惹人憐愛感覺編織而成的純潔水晶花香味。香碗豆、雪花蓮柔弱的甜味洋溢著溫柔的香氣，橙花油和香橙韻蘊釀出無限的透明感。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Tuberose & Rose fabric fragrance','300','40','1900','20','噴在衣物或床單上，享受浪漫幸福玫瑰香氣的衣物香水。在窗簾或手袋內側布料上亦可大範圍使用。','200ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX eau de white floral','400','40','2850','10','由白色和粉紅色的鮮花，天然香薰油芳香的絕妙配合而成aromatic white floral bouquet香氣，包圍柔軟幸福感的eau de cologne','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fabric fragrance','100','40','1900','10','･噴在衣物或床單上，享受舒適幸福香氣的衣物香水。･以富透明感、清潔感的白色作為主要顏色設計。標籤部分以可愛的碎花圖案及JILL STUART的粉紅色為重點。','200ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('BON MARIAGE pillow & room fragrance','300','40','6700','10','･來自橙花精油的奢華香氣，為你帶來幸福時間和空間的香皂。可因應環境及心情，享受2種香味的快樂。','100mL x 2瓶');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Vanilla Lust Eau de Parfum','500','40','5600','10','從前調的核果糖甜蜜美味吸引鼻子注意力，愛吃者的甜美香調。像溶化一樣的牛奶糖和椰子的香味散發開來。中調以白色茉莉花瓣的香氣為中心，成熟的水果花香味。','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Night Jewel Summer Bloom Eau de Toilette','500','40','3700','10','舒適奢華又清新甜美的純真花香。藴含百合、木蘭花、Beauty of the Night（紫茉莉）、Queen of the Night（曇花）等動人的花朵，猶如散發璀璨光輝般相繼綻放。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Jill by JILL STUART Eau De Toilette','200','40','5200','10','「香味是最與我們最貼身的珠寶」。香水，是Jill Stuart重視是item。以「注入實現夢想和願望魔法的小瓶」為設計靈感，甜美的香水就此誕生。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral UV protector','200','50','1900','10','融入肌膚的清爽輕盈觸感，於紫外線下守護肌膚的限定防曬霜。可用於面部和全身。(SPF50+/PA++++)','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX aqua chiffon protectorW','200','50','1900','10','水潤質地，能順滑地延展，啫喱狀的防曬霜。滋潤度、無負擔感的質感和防曬度數SPF50+/PA++++不變的同時，提升了從強烈紫外線和空氣污染等環境下守護肌膚的效果。','60g');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('ANGEL mild UV milk','200','50','2200','10','･順滑柔和的質感，易於推勻的防曬乳。･Milky lotion type，清爽不黏稠的觸感，在肌膚上形成的舒適薄膜，守護肌膚避免紫外線所造成的傷害。･配合杏仁油、植物性角鯊烷，同時給予肌膚滋潤。','60mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX shimmer body protector','200','50','1900','10','･輕薄的觸感潤澤地延展，如薄膜的面紗一樣，對肌膚零負擔，可以阻擋強烈的紫外線的身體專用防曬。即使是戶外活動的時候亦不易脫落，可安心享受戶外活動的快樂。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral mist refresh oil control','300','20','1800','10','噴上後細緻的噴霧延展，滋潤每寸肌膚。2種清涼成分(薄荷腦)給予肌膚清涼感，鎮靜泛紅肌膚的觸感。每當噴上都有清涼爽快的舒適感，享受清新的香味。','60mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fresh hand gel','500','20','1500','10','不用水卻讓手部清新乾爽的hand gel。在手部感到黏稠的時候或從室外回來的時候簡單使用。･清爽的涼快感讓手部肌膚乾爽同時沒有乾燥感，締造水潤的手部肌膚。','250mL');
 --UPDATE Products 
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 1;
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 2;
@@ -243,6 +288,42 @@ UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p17.jpg', SI
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p18.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 18;
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p19.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 19;
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p20.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 20;
+--6/8----
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p21.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 21;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p22.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 22;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p23.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 23;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p24.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 24;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p25.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 25;
+
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p26.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 26;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p27.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 27;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p28.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 28;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p29.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 29;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p30.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 30;
+
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p31.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 31;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p32.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 32;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p33.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 33;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p34.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 34;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p35.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 35;
+
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p36.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 36;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p37.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 37;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p38.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 38;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p39.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 39;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p40.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 40;
+
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p41.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 41;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p42.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 42;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p43.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 43;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p44.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 44;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p45.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 45;
+
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p46.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 46;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p47.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 47;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p48.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 48;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p49.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 49;
+UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p50.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 50;
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張文遠','台灣大學醫學院','123','Pocky@Amy.com','臺北馬偕紀念醫院實習醫師(1989-1990)高雄海軍總醫院小兒科少尉醫官(1990-1991)烏坵海軍檢診所內兒科少尉醫官(1991-1992)','雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('諸葛亮','成功醫學大學','123','Kindle@Amy.com','成功大學醫學院附設醫院小兒科住院醫師(1992-1995)成功大學醫學院附設醫院小兒科住院總醫師(1995-1996)成功大學醫學院附設醫院美容醫學科研究員(1995-1996)','玻尿酸、肉毒桿菌、美白針、植髮');
@@ -288,12 +369,19 @@ INSERT INTO Procedures (name,pType_id,fee) VALUES ('膠原蛋白','4','4000');
 INSERT INTO Procedures (name,pType_id,fee) VALUES ('微針療程','4','4000');
 INSERT INTO Procedures (name,pType_id,fee) VALUES ('無痕植髮','4','4000');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','1','1','GoodBoy');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','2','0','奧客');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','3','1','VIP');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','1','1','代宰貴婦');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','2','1','小氣巴拉');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','3','1','出手大方');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','1','1','阿不就好棒棒');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','2','1','好棒棒');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','3','1','好棒');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','1','1','好');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','2','1','醫生好漂亮');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','3','1','無效退費');
+
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','4','3','GoodBoy');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','4','1','奧客');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','4','5','VIP');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','5','5','代宰貴婦');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','6','1','小氣巴拉');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','6','5','出手大方');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Chat (eid,mid,record) VALUES ('1','1001','30');
 INSERT INTO Chat (eid,mid,record) VALUES ('2','1002','15');
