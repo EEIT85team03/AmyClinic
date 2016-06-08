@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="about">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
@@ -34,21 +34,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-stethoscope"></i>
 						<div class="clearfix"></div>
 						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
-						<a href="laboratory.html">Read More</a>
+						<a href="${pageContext.request.contextPath}/web/laboratory.jsp">Read More</a>
 					</div>
 					<div class="col-md-4 abt-grid">
 						<h3>Technologies</h3>
 						<i class="fa fa-plus-square"></i>
 						<div class="clearfix"></div>
 						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
-						<a href="laboratory.html">Read More</a>
+						<a href="${pageContext.request.contextPath}/web/laboratory.jsp">Read More</a>
 					</div>
 					<div class="col-md-4 abt-grid">
 						<h3>Automation</h3>
 						<i class="glyphicon glyphicon-globe"></i>
 						<div class="clearfix"></div>
 						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
-						<a href="laboratory.html">Read More</a>
+						<a href="${pageContext.request.contextPath}/web/laboratory.jsp">Read More</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>

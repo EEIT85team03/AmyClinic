@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //header -->
 	<div class="demo-2">	
 		<header class="logo">
-			<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+			<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
 		</header>
             <div id="slider" class="sl-slider-wrapper">
 
@@ -74,8 +74,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div><!-- /slider-wrapper -->
 
         </div>
-		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
-		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.slitslider.js"></script>
 		<script type="text/javascript">	
 			$(function() {
 			
@@ -173,7 +173,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col-md-4 abt-img">
-					<img src="images/abt1.png" alt="doctor" title="doctor" />
+					<img src="${pageContext.request.contextPath}/web/images/abt1.png" alt="doctor" title="doctor" />
 				</div>
 				<div class="col-md-4 abt-dec">
 					<h2>Ken Jeong</h2>
@@ -218,7 +218,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 		<!-- //Stats -->
-		<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
 		
 		<!-- tabs -->	
 		<div class="vertical-tabs">
@@ -250,7 +250,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="bhoechie-tab-content active">
 								<div class="services">
 									<div class="ser-img">
-										<img src="images/ser1.jpg" title="service" alt="" />
+										<img src="${pageContext.request.contextPath}/web/images/ser1.jpg" title="service" alt="" />
 									</div>
 									<div class="ser-info">
 										<h3>Contrary to popular belief, Lorem Ipsum is not simply random text</h3>
@@ -261,7 +261,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -270,7 +270,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="bhoechie-tab-content">
 								<div class="services">
 									<div class="ser-img">
-										<img src="images/ser2.jpg" title="service" alt="" />
+										<img src="${pageContext.request.contextPath}/web/images/ser2.jpg" title="service" alt="" />
 									</div>
 									<div class="ser-info">
 										<h3>At vero eos et accusamus et iusto dignissimos ducimus qui blanditiis</h3>
@@ -281,7 +281,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -291,7 +291,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="bhoechie-tab-content">
 								<div class="services">
 									<div class="ser-img">
-										<img src="images/ser3.jpg" title="service" alt="" />
+										<img src="${pageContext.request.contextPath}/web/images/ser3.jpg" title="service" alt="" />
 									</div>
 									<div class="ser-info">
 										<h3>On the other hand, we denounce with righteous indignation</h3>
@@ -302,7 +302,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -310,7 +310,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="bhoechie-tab-content">
 								<div class="services">
 									<div class="ser-img">
-										<img src="images/ser4.jpg" title="service" alt="" />
+										<img src="${pageContext.request.contextPath}/web/images/ser4.jpg" title="service" alt="" />
 									</div>
 									<div class="ser-info">
 										<h3>Laboris nisi ut aliquip ex ea commodo consequat</h3>
@@ -321,7 +321,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -329,7 +329,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="bhoechie-tab-content">
 								<div class="services">
 									<div class="ser-img">
-										<img src="images/ser5.jpg" title="service" alt="" />
+										<img src="${pageContext.request.contextPath}/web/images/ser5.jpg" title="service" alt="" />
 									</div>
 									<div class="ser-info">
 										<h3>Temporibus autem quibusdam et aut officiis debitis</h3>
@@ -340,7 +340,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="single.html">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -350,7 +350,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  </div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/tabs.js"></script>		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/tabs.js"></script>		
 		<!-- //tabs -->
 	
 		<!-- news -->
@@ -361,26 +361,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="slide-visual slideanim">
 					<!-- Slide Image Area (1000 x 424) -->
 					<ul class="slide-group">
-						<li><img src="images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
 					</ul>
 					<!-- Slide Description Image Area (316 x 328) -->
 					<div class="script-wrap">
 						<ul class="script-group">
-							<li><div class="inner-script"><img src="images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
 						</ul>
 						<div class="slide-controller">
-							<a href="#" class="btn-prev"><img src="images/btn_prev.png" alt="Prev Slide" /></a>
-							<a href="#" class="btn-play"><img src="images/btn_play.png" alt="Start Slide" /></a>
-							<a href="#" class="btn-pause"><img src="images/btn_pause.png" alt="Pause Slide" /></a>
-							<a href="#" class="btn-next"><img src="images/btn_next.png" alt="Next Slide" /></a>
+							<a href="#" class="btn-prev"><img src="${pageContext.request.contextPath}/web/images/btn_prev.png" alt="Prev Slide" /></a>
+							<a href="#" class="btn-play"><img src="${pageContext.request.contextPath}/web/images/btn_play.png" alt="Start Slide" /></a>
+							<a href="#" class="btn-pause"><img src="${pageContext.request.contextPath}/web/images/btn_pause.png" alt="Pause Slide" /></a>
+							<a href="#" class="btn-next"><img src="${pageContext.request.contextPath}/web/images/btn_next.png" alt="Next Slide" /></a>
 						</div>
 					</div>
 				</div>
@@ -397,30 +397,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="news-section-grids">
 					<div class="col-md-4 news-section-grid">
-						<img src="images/n1.jpg" alt="" />
+						<img src="${pageContext.request.contextPath}/web/images/n1.jpg" alt="" />
 						<div class="info">
-							<a class="news-title" href="single.html">There are sit amet</a>
+							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">There are sit amet</a>
 							<label>March 18</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
-						<img src="images/n2.jpg" alt="" />
+						<img src="${pageContext.request.contextPath}/web/images/n2.jpg" alt="" />
 						<div class="info">
-							<a class="news-title" href="single.html">Lorem ipsum dolor</a>
+							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">Lorem ipsum dolor</a>
 							<label>August 28</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
-						<img src="images/n3.jpg" alt="" />
+						<img src="${pageContext.request.contextPath}/web/images/n3.jpg" alt="" />
 						<div class="info">
-						    <a class="news-title" href="single.html">The standard chunk</a>
+						    <a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">The standard chunk</a>
 							<label>September 12</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="single.html">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
 						</div>
 					</div>
 					<div class="clearfix"></div>

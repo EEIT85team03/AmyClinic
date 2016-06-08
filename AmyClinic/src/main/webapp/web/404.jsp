@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="error">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		

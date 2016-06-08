@@ -1,8 +1,8 @@
 <head>
-<link href="css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/gallery.css" rel="stylesheet" type="text/css" media="all" /> <!-- gallery css -->
+<link href="${pageContext.request.contextPath}/web/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/web/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<link href="${pageContext.request.contextPath}/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/web/css/gallery.css" rel="stylesheet" type="text/css" media="all" /> <!-- gallery css -->
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,17 +15,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
 <!-- js -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/custom.css" />
-		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>		
+<script src="${pageContext.request.contextPath}/web/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/web/js/modernizr.custom.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/custom.css" />
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/modernizr.custom.79639.js"></script>		
 		<!-- js for news -->
-		<script src="js/jquery.easing.min.js"></script>
-		<script type="text/javascript" src="js/pignose.layerslider.js"></script>
+		<script src="${pageContext.request.contextPath}/web/js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/pignose.layerslider.js"></script>
 		<script type="text/javascript">
 			//<![CDATA[
 				$(window).load(function() {
@@ -41,8 +41,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- /js for news -->
 		
 		<!-- for smooth scrolling -->
-		<script type="text/javascript" src="js/move-top.js"></script>
-		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/move-top.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/easing.js"></script>
 		<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -53,8 +53,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<!-- //for smooth scrolling -->
 		  <!-- for easy-responsive-tabs -->	  
-		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
-		<script src="js/easyResponsiveTabs.js"></script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/web/css/easy-responsive-tabs.css " />
+		<script src="${pageContext.request.contextPath}/web/js/easyResponsiveTabs.js"></script>
 		<script type="text/javascript">
     $(document).ready(function() {
         //Horizontal Tab
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<p>A set of basic tests that can give a broad overview of your health status.</p>
 											<i class="fa fa-heartbeat"></i>
 											<h4>MASTER HEALTH CHECK</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="col-md-4 text-center modal-align">
@@ -146,7 +146,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<p>Are you looking for a comprehensive health check that includes even Eye, Dental and ENT checks?</p>
 											<i class="fa fa-medkit"></i>
 											<h4>WHOLE BODY CHECKUP</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="col-md-4 text-center modal-align">
@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<p>Do you wish to check your body out for an entire spectrum of diseases in a luxurious ambience?</p>
 											<i class="fa fa-user-md"></i>
 											<h4>HEALTH CHECK 1 AND 2</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="clearfix"></div>
@@ -184,45 +184,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 			<ul class="nav navbar-nav nav_1">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="about.jsp">About</a></li>
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lab<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
-					<li><a href="laboratory.html">About Lab</a></li>
-					<li><a href="quality.html">Quality</a></li>
-					<li><a href="technologies.html">Technologies</a></li>
-					<li><a href="instruments.html">Instruments</a></li>
+					<li><a href="laboratory.jsp">About Lab</a></li>
+					<li><a href="quality.jsp">Quality</a></li>
+					<li><a href="technologies.jsp">Technologies</a></li>
+					<li><a href="instruments.jsp">Instruments</a></li>
 				  </ul>
 				</li>
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Book Test<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
-					<li><a href="book-a-test.html">Book a Test</a></li>
-					<li><a href="test-list.html">Test Menu</a></li>
+					<li><a href="book-a-test.jsp">Book a Test</a></li>
+					<li><a href="test-list.jsp">Test Menu</a></li>
 				  </ul>
 				</li>
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunity<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
-					<li><a href="career.html">Careers</a></li>
-					<li><a href="404.html">Franchisee</a></li>
+					<li><a href="career.jsp">Careers</a></li>
+					<li><a href="404.jsp">Franchisee</a></li>
 				  </ul>
 				</li>
 				<li class="dropdown current_page">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
-					<li><a href="news.html">News</a></li>
-					<li><a href="faq.html">Faq</a></li>
-					<li><a href="mobile-app.html">App</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="terms.html">Terms of Use</a></li>
-					<li><a href="shortcodes.html">Shortcodes</a></li>
-					<li><a href="privacy_policy.html">Privacy Policy</a></li>
+					<li><a href="news.jsp">News</a></li>
+					<li><a href="faq.jsp">Faq</a></li>
+					<li><a href="mobile-app.jsp">App</a></li>
+					<li><a href="login.jsp">Login</a></li>
+					<li><a href="terms.jsp">Terms of Use</a></li>
+					<li><a href="shortcodes.jsp">Shortcodes</a></li>
+					<li><a href="privacy_policy.jsp">Privacy Policy</a></li>
 				  </ul>
 				</li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="blog.jsp">Blog</a></li>
+				<li><a href="contact.jsp">Contact</a></li>
 			</ul>
 		 </div><!-- /.navbar-collapse -->
 	   </div>

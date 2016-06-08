@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="book-a-test">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
@@ -92,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<p>A set of basic tests that can give a broad overview of your health status.</p>
 											<i class="fa fa-heartbeat"></i>
 											<h4>MASTER HEALTH CHECK</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="col-md-4 text-center modal-align">
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<p>Are you looking for a comprehensive health check that includes even Eye, Dental and ENT checks?</p>
 											<i class="fa fa-medkit"></i>
 											<h4>WHOLE BODY CHECKUP</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="col-md-4 text-center modal-align">
@@ -108,7 +108,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<p>Do you wish to check your body out for an entire spectrum of diseases in a luxurious ambience?</p>
 											<i class="fa fa-user-md"></i>
 											<h4>HEALTH CHECK 1 AND 2</h4>
-											<a href="book-a-test.html">Book Now</a>
+											<a href="book-a-test.jsp">Book Now</a>
 										</div>
 									</div>
 									<div class="clearfix"></div>

@@ -54,9 +54,9 @@
 					</div>
 					<div class="footer-links">
 						<ul>
-							<li><a href="sitemap.html">Sitemap</a></li>
-							<li><a href="privacy_policy.html">Privacy Policy</a></li>
-							<li><a href="terms.html">Terms of Use</a></li>
+							<li><a href="${pageContext.request.contextPath}/web/sitemap.jsp">Sitemap</a></li>
+							<li><a href="${pageContext.request.contextPath}/web/privacy_policy.jsp">Privacy Policy</a></li>
+							<li><a href="${pageContext.request.contextPath}/web/terms.jsp">Terms of Use</a></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>

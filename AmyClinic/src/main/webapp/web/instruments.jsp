@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<section class="instruments-section">
 			<div class="inner-banner demo-2 text-center">
 				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.html">Prevention <span>is better than cure.</span></a></h1>
+					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins1.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -65,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins2.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -75,7 +75,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins3.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins4.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -95,7 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins5.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -105,7 +105,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -115,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins7.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins8.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -135,7 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins9.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -145,7 +145,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins10.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -155,7 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins11.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -165,7 +165,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins12.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -175,7 +175,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins13.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -185,7 +185,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -195,7 +195,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins15.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -205,7 +205,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins16.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -219,7 +219,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins4.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -229,7 +229,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins5.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -239,7 +239,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -249,7 +249,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins7.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -259,7 +259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins8.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -269,7 +269,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins9.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -279,7 +279,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins10.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -292,7 +292,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins12.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -302,7 +302,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins13.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -312,7 +312,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -322,7 +322,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins15.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -332,7 +332,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins16.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -345,7 +345,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins1.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -355,7 +355,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins2.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -365,7 +365,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins3.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -378,7 +378,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins2.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -388,7 +388,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins4.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -398,7 +398,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -408,7 +408,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins8.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -418,7 +418,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins10.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -428,7 +428,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins16.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -442,7 +442,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins3.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -452,7 +452,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins4.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -462,7 +462,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins5.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -472,7 +472,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -482,7 +482,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins7.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -492,7 +492,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins8.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -502,7 +502,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins11.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -512,7 +512,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -522,7 +522,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins15.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -535,7 +535,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins5.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -545,7 +545,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins8.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -555,7 +555,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins13.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -565,7 +565,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -578,7 +578,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins1.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -588,7 +588,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins2.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -598,7 +598,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins9.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -608,7 +608,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins11.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -618,7 +618,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins13.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Lorem Ipsum</div>
 										</div>
@@ -628,7 +628,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins15.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">At vero eos</div>
 										</div>
@@ -641,7 +641,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins11.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>
@@ -651,7 +651,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="jm-item-image">
 												<img src="images/ins14.jpg" alt="instrument" />
 												<span class="jm-item-overlay"> </span>
-												<div class="jm-item-button"><a href="single-instrument.html">View</a></div>
+												<div class="jm-item-button"><a href="single-instrument.jsp">View</a></div>
 											</div>	
 											<div class="jm-item-title">Sed ut perspiciatis</div>
 										</div>

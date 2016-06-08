@@ -27,8 +27,8 @@
 								</form>
 							</div>
 							<!---start-date-piker---->
-								<link rel="stylesheet" href="css/jquery-ui.css" />
-								<script src="js/jquery-ui.js"></script>
+								<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
+								<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
 									<script>
 										$(function() {
 										$( "#datepicker" ).datepicker();
