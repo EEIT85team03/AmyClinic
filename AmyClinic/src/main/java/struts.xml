@@ -123,7 +123,7 @@
 		</action>
 
 		<action name="logout" class="group3.henry.login.controller.LogoutAction">
-			<result>/login/verify.jsp</result>
+			<result>/web/index.jsp</result>
 			<result name="input">/login/login.jsp</result>
 		</action>
 
