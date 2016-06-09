@@ -20,6 +20,13 @@
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<%=request.getContextPath()%>/js/plugins/morris/raphael.min.js"></script>
+<script>
+$(window).load(function() {
+	var s1 ={'color':'#000000','background-color':'#fff',};
+	var s2 ={'color':'#4F4F4F','background-color':'#F2EBE4',};
+	$('tr').css(s1).mouseover(function(){$(this).css(s2)}).mouseout(function(){$(this).css(s1)});	
+        });
+</script>        
 <!-- Morris Charts JavaScript -->
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script> --%>
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script> --%>
@@ -32,6 +39,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@font-face { font-family: 'Noto Sans TC', sans-serif;}
 .bg {
 	position: fixed;
 	top: 0;
@@ -39,17 +48,18 @@
 	bottom: 0;
 	right: 0;
 	z-index: -999;
+	background-color: #fff;
 }
 .bg img {
 	min-height: 100%;
 	width: 100%;
 }
 table {
-	border-color: green;
+	
 	align: center;
 }
 th{
-background-color:#D6D6AD;
+background-color:#BFB2AB;
 }
 /* 側邊 */
 .side-nav{
@@ -57,7 +67,7 @@ background-color:#D6D6AD;
 }
 /* 上面 */
 .navbar-fixed-top{
-background-color:#000093;
+background-color:#FF8000;
 }
 /* 導航 */
 .navbar-ex1-collapse{
@@ -65,9 +75,15 @@ background-color:#000093;
 }
 em{  color:red; }
 /* td{ */
+/* b{ */
+#wrapper{
+font-family: 'Noto Sans TC'; 
+font-size:20px;
+}
 /* background-color:#D3FF93; */
 /* } */
 </style>
+
 </head>
 <body>
 	<!--top Navigation 導航-->
@@ -78,7 +94,7 @@ em{  color:red; }
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="ininder.jsp">☆AMY診所☆終極管理系統☆Pro_3_01☆</a>
+		<a class="navbar-brand" href="<%=request.getContextPath()%>/Backstage/login.jsp" ><font color="#fff">☆AMY診所☆終極管理系統☆Pro_3_01☆</font></a>
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
@@ -143,7 +159,7 @@ em{  color:red; }
 		<!--                                         通知區over-->
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
-		</i>涼麵趁熱吃<b class="caret"></b></a>
+		</i><font color="#fff">涼麵趁熱吃</font><b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li>
@@ -186,7 +202,8 @@ em{  color:red; }
 	
 	<!-- /.navbar-collapse -->
 	<div class="bg">
-		<img src="<%=request.getContextPath()%>/images/b_01.jpg">
+<%-- 		<img src="<%=request.getContextPath()%>/images/b_01.jpg"> --%>
 	</div>
+	
 </body>
 </html>

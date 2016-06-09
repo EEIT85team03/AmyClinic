@@ -14,10 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
 <style>
-table {
-	border-color: blue;
-	align: center;
-}
+
 </style>
 </head>
 

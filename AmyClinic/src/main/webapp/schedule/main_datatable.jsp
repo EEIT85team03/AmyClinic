@@ -1,16 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="group3.beef.employee.*"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- jQuery -->
-<script type="text/javascript" charset="utf8"src="<%=request.getContextPath()%>/js/jquery-1.9.1.js"></script>
+<%-- <script type="text/javascript" charset="utf8"src="<%=request.getContextPath()%>/js/jquery-1.9.1.js"></script> --%>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <!-- DataTables CSS -->
@@ -18,7 +17,7 @@
 
 
 <%-- <link href="<%=request.getContextPath()%>/schedule/ext/bootstrap.css" rel="stylesheet"> --%>
-<link href="<%=request.getContextPath()%>/schedule/ext/font-awesome.min.css"	rel="stylesheet">
+<%-- <link href="<%=request.getContextPath()%>/schedule/ext/font-awesome.min.css"	rel="stylesheet"> --%>
 <%-- <script src="<%=request.getContextPath()%>/schedule/ext/bootstrap.min.js"></script> --%>
 
 
@@ -44,13 +43,13 @@ float: right;
 
 
 <body>
-     <jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
+<div id="wrapper"><!-- all -->  <jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->   
      
      <script type="text/javascript"	src="<%=request.getContextPath()%>/js/datatables.js"></script>
       <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     
 
- <div id="wrapper"><!-- all -->
+ 
 <div id="page-wrapper" style=background-color:#000000  >
             <div class="container-fluid">
                 <div class="row">

@@ -57,11 +57,10 @@ pageContext.setAttribute("catagorys", catagorys);
 <%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%=productVO.getCatagoryVO()%>" /> --%>
   
       <select size="1"  name="cid">
-      <c:forEach var="catagoryVO" items="${catagorys}">
-				<option  value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' } >${catagoryVO.name}
+      <c:forEach var="catagorys" items="${catagorys}">
+				<option  value="${catagorys.cid}" ${(productVO.catagoryVO.cid==catagorys.cid)?'selected':'' } >${catagorys.name}
 	  </c:forEach>
       </select>
-      
       </div>
     </div>
       
@@ -76,7 +75,7 @@ pageContext.setAttribute("catagorys", catagorys);
     <div class="form-group">
       <label class="control-label col-sm-2" for="price">商品價格(元)</label>
       <div class="col-sm-10">          
-        <input type="number" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%> 元"   style="width:120px;"/>
+        <input type="text" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%> 元"   style="width:120px;"/>
       </div>
     </div>
     <div class="form-group">
