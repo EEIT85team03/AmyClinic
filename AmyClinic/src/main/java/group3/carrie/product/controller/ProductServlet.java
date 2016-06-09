@@ -1,17 +1,21 @@
 package group3.carrie.product.controller;
 
+import group3.carrie.catagory.model.CatagoryVO;
 import group3.carrie.product.model.ProductService;
 import group3.carrie.product.model.ProductVO;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+
 import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
@@ -233,7 +237,9 @@ public class ProductServlet extends HttpServlet {
 			}
 		}
 		// ===================修改=========================
-		Integer price,discount,amount,cid,pid=0;
+		Integer price,discount,amount,pid = null,cid=0;
+		
+		
 		if ("update".equals(action)) {			
 			System.out.println("接收修改");
 			
@@ -297,12 +303,18 @@ public class ProductServlet extends HttpServlet {
 				System.out.println("cid="+cid);
 				}catch(Exception e){
 					price=0;
-					discount=0;cid=0;	amount=0;
+					discount=0;	amount=0;
 				}
 				ProductVO productVO = new ProductVO();
+				 CatagoryVO  catagoryVO=new CatagoryVO();
+				
 				productVO.setPid(pid);
 				productVO.setName(name);
 				productVO.setPrice(price);
+				
+				catagoryVO.setCid(cid);
+				productVO.setCatagoryVO(catagoryVO);
+				
 				productVO.setDiscount(discount);
 				productVO.setDescrip(descrip);
 				productVO.setIngredients(ingredients);

@@ -15,7 +15,7 @@
 		var row=' '; var counts=[];//次
 	    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){		
 	    	$.each(data, function(i, a){
-	    		row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<hr>';
+	    		row +='<b>'+a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'</b><hr>';
 	    			if($.inArray(a.a, year) === -1) year.push(a.a);
 	     			if($.inArray(a.b, month) === -1) month.push(a.b);
 	     			if($.inArray(a.c, name) === -1) name.push(a.c);
@@ -23,13 +23,13 @@
 	    	});
 	    	$('#t').html(row);
 	    	var newHTML = [];
-	    	newHTML.push(year.length+'個年:'+year+'<br>');
-	    	newHTML.push(month.length+'個月:'+month+'<br>');
-	    	newHTML.push(name.length+'個科:'+name+'<br>');
-	    	newHTML.push(counts.length+'個數:'+counts+'<br>');
+	    	newHTML.push('<b>'+year.length+'個年:'+year+'</b><br>');
+	    	newHTML.push('<b>'+month.length+'個月:'+month+'</b><br>');
+	    	newHTML.push('<b>'+name.length+'個科:'+name+'</b><br>');
+	    	newHTML.push('<b>'+counts.length+'個數:'+counts+'</b><br>');
 	    	$(".element").html(newHTML.join(""));
 		
-		//---------------------------------------------------------------
+		//-----------來源: 雲端資料庫JSON-------------------------年度熱門療程預約比較圖---------------------------<font color="red" style="text-align: center;">熱銷產品</font>
 	    $('#container').highcharts({
 	        chart: {  type: 'column'  },
 	        title: {  text: year+'年度熱門療程預約比較圖'  },

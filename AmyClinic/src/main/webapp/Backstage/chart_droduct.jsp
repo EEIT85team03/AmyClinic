@@ -22,7 +22,7 @@ $(function(){
     	var counts=[];//個
     	var htodata=[];
     	$.each(data, function(k, a){
-    			row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<br>';
+    			row +='<b>'+a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'</b><br>';
     			name.push(a.name);
     			counts.push(a.q);		
     	});
@@ -32,16 +32,16 @@ $(function(){
     		t2=((counts[1]/sum)*100).toFixed(1);
     		t3=((counts[2]/sum)*100).toFixed(1);
     		t4=((counts[3]/sum)*100).toFixed(1);
-    		t5=((counts[4]/sum)*100+0.1).toFixed(1);
+    		t5=((counts[4]/sum)*100).toFixed(1);
     		for(var i=0;htodata.length<=4;i++){
     			htodata[i]= name[i] + ", " +counts[i];	
     		}
     	})
     	$('#t').html(row);
     	var newHTML = [];
-    	newHTML.push(counts.length+'個:'+name+'<br>');	
-    	newHTML.push('百分比運算：'+counts+'='+t1+'，'+t2+'，'+t3+'，'+t4+'，'+t5+'='+(parseInt(t1)+parseInt(t2)+parseInt(t3)+parseInt(t4)+parseInt(t5))+'<br>');
-    	newHTML.push(htodata.length+'htodata:'+htodata[0]+'<br>');	
+    	newHTML.push('<b>'+counts.length+'個:'+name+'</b><br>');	
+    	newHTML.push('<b>百分比運算：'+counts+'='+t1+'，'+t2+'，'+t3+'，'+t4+'，'+t5+'='+(parseFloat(t1)+parseFloat(t2)+parseFloat(t3)+parseFloat(t4)+parseFloat(t5))+'</b><br>');
+    	
     	$(".element").html(newHTML.join(""));
  //製圖------------------------------------------------------------------------------   	
     	$(function () {

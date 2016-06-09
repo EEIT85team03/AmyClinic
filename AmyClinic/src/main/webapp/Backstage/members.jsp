@@ -144,5 +144,8 @@ background-color:#D6D6AD;
         <script>
         $('.btn-danger').collapse();
         </script>
+        
+
+        
 </body>
 </html>

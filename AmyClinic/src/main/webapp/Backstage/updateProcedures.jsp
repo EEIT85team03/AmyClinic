@@ -55,14 +55,12 @@ pageContext.setAttribute("proctype", proctype);
       <label class="control-label col-sm-2" for="">療程類別</label>
       <div class="col-sm-10">          
 <%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%= %>" /> --%>
-<%--   ${ProcVO.procTypeVO.name} --%>
 
       <select size="1"  name="pType_id">
       <c:forEach var="proctype" items="${proctype}">
 				<option  value="${proctype.pType_id}" ${(procVO.procTypeVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
 	  </c:forEach>
-      </select>
-      
+      </select> 
       </div>
     </div>
       
