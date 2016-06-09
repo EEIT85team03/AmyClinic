@@ -223,7 +223,7 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('日本原裝境內版 酵素&酵母','500','20','1500','30','【日本代購-現貨在台】日本原裝境內版 酵素&酵母 自然 革命 體內環保 2G X 60包 日本銷售第一推','2GX60包 ');
 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('藥片型泡泡沐浴劑','500','20','670','10','適合容易發冷，血液運行緩慢人士。靜靜地享受香氣的milky pink浸浴，消除一整天的疲勞。','50g×8個');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('庶務客日本 現貨 雪肌粹洗面乳','500','20','170','0','* 日本第一品牌洗面乳 * 擠一點點，就有滿滿的泡泡 * 深層清潔,洗後乾爽不黏膩 ','高濃度膠原蛋白');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('庶務客日本 現貨 雪肌粹洗面乳','500','20','170','0','* 日本第一品牌洗面乳 * 擠一點點，就有滿滿的泡泡 * 深層清潔,洗後乾爽不黏膩 ','50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('科士威~浪漫香水身體乳液','500','40','110','0','淡淡香味','200ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('DHC 純欖護唇膏','500','10','160','0',N'現貨供應，目前日本鎖貨，價格變動大，要買要快!!日本進口、無香料、完美滋潤雙唇!','1.5g');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('孕婦孩童指甲油 水性指甲油 花香指甲油','500','10','894','10',N'ALLOYA 愛若雅 水性環保 指甲油 不再有難聞的化學氣味 而是讓香味持續蔓延 絕對值得您擁有','10ml');
@@ -234,19 +234,19 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('金盞花敏弱呵護面膜','500','30','890','0',N'‧特別適用曬後肌膚、肌膚敏感者 ‧創新3D立體面膜紙材','7片/盒');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淡斑淨膚面膜','500','30','890','0',N'‧黃金比例3重完美綻白配方 打造細緻純淨之透白亮肌 ‧創新3D立體緊顏面膜 打造迷人肌質 ','7片/盒');
 --6/8----
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('5V肌因抗老眼部精華','500','20','3600','10',N'vitasourceTM端粒激活素、白珍珠萃取、金雀花萃取、雙效黃金、海洋抗皺、3D隱形網狀結構、法國醣蛋白','星采S-5V-1肌因抗老眼部精華15ml、星采5V眼周導入棒*1');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('綻白淨斑精華','100','10','1800','10',N'Dermawhite肌膚淨白因子、維他命 B3 、桑白皮、和梅果、黃岑漢方複合精華 、玻尿酸、甘草精華、尿囊素。','15ml(DermalRxR SRC-黯沉掃除科技、維他命C(AA-2G) 、專利)');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('雪漾鑽白凝乳','100','10','2500','10',N'SRC-黯沉掃除科技、維他命C醣苷(AA-2G)、桑白皮、和梅果、黃岑漢方複合精華、玻尿酸、甘草精華、尿囊素、甜沒藥醇。','30ml,Nano Bright多元美白微囊球、Actiwhite肌因亮白元素、DermalRx®');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('5V肌因抗老眼部精華','500','20','3600','10',N'vitasourceTM端粒激活素、白珍珠萃取、金雀花萃取、雙效黃金、海洋抗皺、3D隱形網狀結構、法國醣蛋白','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('綻白淨斑精華','100','10','1800','10',N'Dermawhite肌膚淨白因子、維他命 B3 、桑白皮、和梅果、黃岑漢方複合精華 、玻尿酸、甘草精華、尿囊素。','15ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('雪漾鑽白凝乳','100','10','2500','10',N'SRC-黯沉掃除科技、維他命C醣苷(AA-2G)、桑白皮、和梅果、黃岑漢方複合精華、玻尿酸、甘草精華、尿囊素、甜沒藥醇。','30ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('柔白晶透防曬乳SPF50+','100','10','1400','10',N'物理性防曬、化學性防曬、GIGAWHITE阿爾卑斯山複合植物淨白精華、阿爾卑斯山雙有機夢蝶草精華、專利和梅果精華。','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極速美白璀璨組','100','10','4300','10',N'適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚。','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('全面美白強效組','150','10','5700','20',N'詳見盒面產品說明或成分說明頁面-適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1、柔白晶透防曬乳SPF50+★★★ 50ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極速美白璀璨組','100','10','4300','10',N'適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚。','15ml*1、30ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('全面美白強效組','150','10','5700','20',N'詳見盒面產品說明或成分說明頁面-適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚','15ml*1、30ml*1、50ml*1');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('明星組★星采水潤4步修護組','200','20','5600','20',N'奇肌修復菁粹15ml、肌密水潤透白精華液PLUS+30ml 、極致活妍精質霜50ml、輕透醒膚水凝霜50ml','15ml、30ml、50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('星采極效3步組','200','20','3800','10',N'星采奇肌修復菁粹15ml*1瓶 、星采肌密水潤透白精華液PLUS+30ml*1瓶、星采輕透醒膚水凝霜50ml*1瓶','15ml*1瓶30ml*1、50ml*1瓶');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/單片裝','120','30','290','10',N'γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','單片裝28ml *1 片');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/三片裝','120','30','790','10',N'γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','三片裝28ml *3 片');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('卸妝潔顏幕絲','120','10','800','10',N'胺基酸潔淨因子、蜂蜜潤澤精華、水解膠原蛋白、木瓜酵素、甘草精華','180ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奇肌修復菁粹','200','10','1100','10',N'第三型神經醯胺CeramideⅢ、角鯊烯Squalene、西蘭花苗萃取物、紫草萃取物','15ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奢華升級星采肌密水潤透白精華液PLUS+','150','20','1200','10',N'玻尿酸鈉、小分子玻尿酸、海洋保濕因子、SK-influx微脂囊包覆神經醯胺','玻尿酸鈉、小分子玻尿酸、海洋保濕因子');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奢華升級星采肌密水潤透白精華液PLUS+','150','20','1200','10',N'玻尿酸鈉、小分子玻尿酸、海洋保濕因子、SK-influx微脂囊包覆神經醯胺、玻尿酸鈉、小分子玻尿酸、海洋保濕因子','50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極致活妍精質霜','200','20','1800','10',N'蜂王漿水解蛋白、冰洋紅藻精萃、白柳葉萃取、微型海藻精萃、紫草萃取物、西蘭花苗萃取、第三型神經醯胺','50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('輕透醒膚水凝霜','200','20','1500','10',N'r-PGA高效活水保濕因子、神經醯胺修護素、深海微量礦物元素、海藻萃取精華、維生素E衍生物','50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Snow Eau de Parfum','500','40','5400','20',N'天然香料:香碗豆、雪花蓮、檸檬*、香橙*、佛手柑*、蘋果、布冧、黑加侖子、香雪蘭','50mL');

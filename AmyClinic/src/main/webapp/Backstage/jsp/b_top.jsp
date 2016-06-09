@@ -39,6 +39,8 @@ $(window).load(function() {
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style type="text/css">
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@font-face { font-family: 'Noto Sans TC', sans-serif;}
 .bg {
 	position: fixed;
 	top: 0;
@@ -75,7 +77,7 @@ em{  color:red; }
 /* td{ */
 /* b{ */
 #wrapper{
-font-family:monospace;
+font-family: 'Noto Sans TC'; 
 font-size:20px;
 }
 /* background-color:#D3FF93; */
@@ -92,7 +94,7 @@ font-size:20px;
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="ininder.jsp" ><font color="#fff">☆AMY診所☆終極管理系統☆Pro_3_01☆</font></a>
+		<a class="navbar-brand" href="<%=request.getContextPath()%>/Backstage/login.jsp" ><font color="#fff">☆AMY診所☆終極管理系統☆Pro_3_01☆</font></a>
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
