@@ -73,8 +73,8 @@ table {
 			     <a href="addProcedures.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
-
-	<c:forEach var="ProcVO"  items="${list}"  >
+<%@ include file="jsp/page1_10.file" %>
+	<c:forEach var="ProcVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		<tr>
 			<td>${ProcVO.procTypeVO.name}</td>
 			<td>NO.${ProcVO.procedure_id}</td>
@@ -95,7 +95,7 @@ table {
 		</tr>
 	</c:forEach>
 	</table>    
-	    
+	    <%@ include file="jsp/page2.file" %>
 <%-- 	<c:if test="${not empty errorMsg}"> --%>
 <!-- 	<font color='red'>請修正以下錯誤: -->
 <!-- 	<ul> -->

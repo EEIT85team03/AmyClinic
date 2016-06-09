@@ -210,9 +210,9 @@ UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m5.jpg', SING
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m6.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1005;
 */
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('多芬淨白美肌制汗爽身噴霧','500','40','80','20','多芬最懂得呵護女性腋下肌膚有效制汗X淨白美肌','169ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淨白美肌制汗爽身噴霧','500','40','80','20','最懂得呵護女性腋下肌膚有效制汗X淨白美肌','169ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('濟州島綠茶清爽保濕身體乳液','500','40','340','0','清爽補水保濕，潔淨滋養，防敏抗氧化，讓肌膚水潤透亮','300ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('足香粉','500','20','390','10','足部作起=避邪、除穢、化煞，抗菌孳生，泡澡、都舒爽','280ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('植萃淨顏三步組','500','20','390','10','淨顏眼唇卸妝液120ml*1、淨顏卸妝乳150ml*1、淨顏潔膚露150ml*1','420ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('親柔芙爽身蜜粉','500','40','690','10','足部作起=避邪、除穢、化煞，抗菌孳生，泡澡、都舒爽','280ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('蘆薈潤澤乳霜','500','20','139','50','極佳保濕防止乾裂肌膚 清爽不黏膩 適用於臉部及全身','220g');
 
@@ -222,7 +222,7 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('夜遲新谷酵素ORIHIRO NIGHT DIET','500','20','699','10','日本原裝，保證正品','30天份1包5粒');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('日本原裝境內版 酵素&酵母','500','20','1500','30','【日本代購-現貨在台】日本原裝境內版 酵素&酵母 自然 革命 體內環保 2G X 60包 日本銷售第一推','2GX60包 ');
 
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('酵素奶昔','500','20','670','10','日本 Natural Healthy Standard 代購 大人氣 酵素 奶昔 現貨在台','風靡日本的人氣酵素現貨在台現貨【印度櫻桃*1、蜂蜜檸檬');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('藥片型泡泡沐浴劑','500','20','670','10','適合容易發冷，血液運行緩慢人士。靜靜地享受香氣的milky pink浸浴，消除一整天的疲勞。','50g×8個');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('庶務客日本 現貨 雪肌粹洗面乳','500','20','170','0','* 日本第一品牌洗面乳 * 擠一點點，就有滿滿的泡泡 * 深層清潔,洗後乾爽不黏膩 ','高濃度膠原蛋白');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('科士威~浪漫香水身體乳液','500','40','110','0','淡淡香味','200ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('DHC 純欖護唇膏','500','10','160','0','現貨供應，目前日本鎖貨，價格變動大，要買要快!!日本進口、無香料、完美滋潤雙唇!','1.5g');

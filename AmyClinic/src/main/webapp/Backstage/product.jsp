@@ -7,9 +7,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <!DOCTYPE html >
 <html lang="en">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
@@ -83,7 +83,9 @@ table {
 			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
-	<c:forEach var="ProductVO"  items="${list}"  >
+<%-- 	<jsp:include page="jsp/page1.file" /> --%>
+	<%@ include file="jsp/page1_5.file" %>
+	<c:forEach var="ProductVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		<tr>
 			<td>${ProductVO.pid}</td>
 		<td><img src="<%=request.getContextPath()%>/shopping/GetPic?num=${ProductVO.pid}" class="preview" style="max-width: 100px; max-height: 100px;"></td>
@@ -108,7 +110,7 @@ table {
 		</tr>
 	</c:forEach>
 	</table>  
-	      
+<%@ include file="jsp/page2.file" %>	      
 	<%-- 錯誤表列 --%>
    <c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:</font>

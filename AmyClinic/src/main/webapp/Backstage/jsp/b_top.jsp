@@ -7,19 +7,19 @@
 <title>Insert title here</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
 
-<link href="<%=request.getContextPath()%>/Backstage/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
-<link href="<%=request.getContextPath()%>/Backstage/css/sb-admin.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
-<link href="<%=request.getContextPath()%>/Backstage/css/plugins/morris.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/plugins/morris.css" rel="stylesheet">
 <!-- Morris Charts CSS -->
-<link href="<%=request.getContextPath()%>/Backstage/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- Custom Fonts -->
-<script src="<%=request.getContextPath()%>/Backstage/js/jquery.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.js"></script>
 <!-- jQuery -->
-<script src="<%=request.getContextPath()%>/Backstage/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/raphael.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/plugins/morris/raphael.min.js"></script>
 <!-- Morris Charts JavaScript -->
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script> --%>
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script> --%>
@@ -57,7 +57,7 @@ background-color:#D6D6AD;
 }
 /* 上面 */
 .navbar-fixed-top{
-background-color:#F3F3FA;
+background-color:#000093;
 }
 /* 導航 */
 .navbar-ex1-collapse{
@@ -165,13 +165,18 @@ em{  color:red; }
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-desktop"></i>留言管理</a></li>
-			<li><a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
+			<li>
+			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
-					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品</a></li>
-					<li><a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a></li>
-				</ul></li>
-					</ul>
+					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品</a>
+					</li>
+					<li>
+					<a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a>
+					</li>
+				</ul>
+		  </li>
+	</ul><!-- 			nav navbar-nav side-nav -->
 	</div>
 	</nav>
 <!-- 				<FORM METHOD="post" ACTION="ScoreServlet"> -->
