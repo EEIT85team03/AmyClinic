@@ -143,83 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 			});
 		</script>
-		
-		<!-- banner-bottom -->
-		<div class="banner-bottom">
-			<div class="container">
-				<div class="col-md-4 timing">
-					<div class="opening-hours">
-						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
-						<ul>
-							<li>Monday - Friday</li>
-							<li>9.00 AM - 8.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-						<ul>
-							<li>Saturday</li>
-							<li>9.00 AM - 8.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-						<ul>
-							<li>Sunday</li>
-							<li>9.30 AM - 6.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-					</div>
-					<div class="help">
-						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
-						<p>Just Make an Appointment to Get Help From Our Experts</p>
-						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
-					</div>
-				</div>
-				<div class="col-md-4 abt-img">
-					<img src="${pageContext.request.contextPath}/web/images/abt1.png" alt="doctor" title="doctor" />
-				</div>
-				<div class="col-md-4 abt-dec">
-					<h2>Ken Jeong</h2>
-					<p class="diff">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-					
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>		
-		<!-- //banner-bottom -->
-		
-		<!-- Stats -->
-		<div class="stats">
-			<div class="container">
-				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
-				<div class="stats-info">
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-smile-o"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
-						<p class="stats-info">Happy Smiles</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-facebook"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
-						<p class="stats-info">Facebook Likes</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-twitter"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
-						<p class="stats-info">Twitter Followers</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-flask"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
-						<p class="stats-info">Lorem Ipsum</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
 
-			</div>
-		</div>
-		<!-- //Stats -->
-		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
-		
 		<!-- tabs -->	
 		<div class="vertical-tabs">
 			<div class="container">
@@ -352,6 +276,84 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/tabs.js"></script>		
 		<!-- //tabs -->
+
+		
+		<!-- banner-bottom -->
+		<div class="banner-bottom">
+			<div class="container">
+				<div class="col-md-4 timing">
+					<div class="opening-hours">
+						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
+						<ul>
+							<li>Monday - Friday</li>
+							<li>9.00 AM - 8.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+						<ul>
+							<li>Saturday</li>
+							<li>9.00 AM - 8.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+						<ul>
+							<li>Sunday</li>
+							<li>9.30 AM - 6.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+					</div>
+					<div class="help">
+						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
+						<p>Just Make an Appointment to Get Help From Our Experts</p>
+						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
+					</div>
+				</div>
+				<div class="col-md-4 abt-img">
+					<img src="${pageContext.request.contextPath}/web/images/abt1.png" alt="doctor" title="doctor" />
+				</div>
+				<div class="col-md-4 abt-dec">
+					<h2>Ken Jeong</h2>
+					<p class="diff">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>		
+		<!-- //banner-bottom -->
+		
+		<!-- Stats -->
+		<div class="stats">
+			<div class="container">
+				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+				<div class="stats-info">
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-smile-o"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
+						<p class="stats-info">Happy Smiles</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-facebook"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
+						<p class="stats-info">Facebook Likes</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-twitter"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
+						<p class="stats-info">Twitter Followers</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-flask"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
+						<p class="stats-info">Lorem Ipsum</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //Stats -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
+		
 	
 		<!-- news -->
 		<div class="our-news">
