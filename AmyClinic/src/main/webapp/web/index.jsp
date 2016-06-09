@@ -358,7 +358,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 		<!-- environment -->
 		<div class="our-news">
-		<h3 class="text-center">Our laboratories</h3>
+		<h3 class="text-center">Our Office</h3>
 		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 			<div id="visual">
 				<div class="slide-visual slideanim">
