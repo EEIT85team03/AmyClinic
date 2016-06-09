@@ -63,54 +63,9 @@ float: right;
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
+<!-- =======================Bootstrap dialog============================== -->
 
 
-	<table id="table_id" class="display" width="90%" align="center">
-		<thead>
-			<tr>
-				<th>排班編號</th>
-				<th>醫師姓名</th>
-				<th>門診日期</th>
-				<th>預約時段</th>
-				<th>預約人數</th>
-				<th>門診狀態</th>
-				<th>備註</th>
-			</tr>
-		</thead>
-		<jsp:useBean id="schSvc" scope="page"
-			class="group3.carrie.schedule.model.ScheduleService" />
-		<c:forEach var="schVO" items="${schSvc.all}">
-			<tr>
-				<td>${schVO.sch_id}</td>
-				<td>${schVO.employeeVO.name}</td>
-				<td>${schVO.c_date}</td>
-				<td>${schVO.c_hours}</td>
-				<td>${schVO.appt_num}</td>
-				<c:choose>
-					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '3'}">
-						<td style="color: blue">額滿</td>
-					</c:when>
-					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '0'}">
-						<td style="color: red">休診</td>
-					</c:when>
-					<c:otherwise>
-						<td>正常</td>
-					</c:otherwise>
-
-				</c:choose>
-				<td>${schVO.memo}</td>
-			</tr>
-
-
-		</c:forEach>
-	</table>
-
-<!-- ==================================================================== -->
-
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
-    Launch Normal Form
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
@@ -183,12 +138,63 @@ float: right;
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary"
                         data-dismiss="modal">
-                            Close
+                            關閉
                 </button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- =============================================================================== -->
+
+
+
+	<table id="table_id" class="display" width="90%" align="center">
+		<thead>
+			<tr>
+				<th>排班編號</th>
+				<th>醫師姓名</th>
+				<th>門診日期</th>
+				<th>預約時段</th>
+				<th>預約人數</th>
+				<th>門診狀態</th>
+				<th>備註</th>
+			</tr>
+		</thead>
+		<jsp:useBean id="schSvc" scope="page"
+			class="group3.carrie.schedule.model.ScheduleService" />
+		<c:forEach var="schVO" items="${schSvc.all}">
+			<tr>
+				<td>${schVO.sch_id}</td>
+				<td>${schVO.employeeVO.name}</td>
+				<td>${schVO.c_date}</td>
+				<td>${schVO.c_hours}</td>
+				<td>${schVO.appt_num}</td>
+				<c:choose>
+					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '3'}">
+						<td style="color: blue">額滿</td>
+					</c:when>
+					<c:when test="${schVO.appt_status=='0' && schVO.appt_num == '0'}">
+						<td style="color: red">休診</td>
+					</c:when>
+					<c:otherwise>
+						<td>正常</td>
+					</c:otherwise>
+
+				</c:choose>
+				<td>${schVO.memo}</td>
+			</tr>
+
+
+		</c:forEach>
+	</table>
+
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
+    新增排班
+</button>
+<!-- Button trigger modal -->
 
 
 
