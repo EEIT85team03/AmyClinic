@@ -278,118 +278,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- //tabs -->
 
 		
-		<!-- banner-bottom -->
-		<div class="banner-bottom">
-			<div class="container">
-				<div class="col-md-4 timing">
-					<div class="opening-hours">
-						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
-						<ul>
-							<li>Monday - Friday</li>
-							<li>9.00 AM - 8.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-						<ul>
-							<li>Saturday</li>
-							<li>9.00 AM - 8.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-						<ul>
-							<li>Sunday</li>
-							<li>9.30 AM - 6.00 PM</li>
-							<div class="clearfix"></div>
-						</ul>
-					</div>
-					<div class="help">
-						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
-						<p>Just Make an Appointment to Get Help From Our Experts</p>
-						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
-					</div>
-				</div>
-				<div class="col-md-4 abt-img">
-					<img src="${pageContext.request.contextPath}/web/images/abt1.png" alt="doctor" title="doctor" />
-				</div>
-				<div class="col-md-4 abt-dec">
-					<h2>Ken Jeong</h2>
-					<p class="diff">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
-					
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>		
-		<!-- //banner-bottom -->
-		
-		<!-- Stats -->
-		<div class="stats">
-			<div class="container">
-				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
-				<div class="stats-info">
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-smile-o"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
-						<p class="stats-info">Happy Smiles</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-facebook"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
-						<p class="stats-info">Facebook Likes</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-twitter"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
-						<p class="stats-info">Twitter Followers</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-flask"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
-						<p class="stats-info">Lorem Ipsum</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
-			</div>
-		</div>
-		<!-- //Stats -->
-		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
-		
-	
-		<!-- news -->
-		<div class="our-news">
-		<h3 class="text-center">Our laboratories</h3>
-		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-			<div id="visual">
-				<div class="slide-visual slideanim">
-					<!-- Slide Image Area (1000 x 424) -->
-					<ul class="slide-group">
-						<li><img src="${pageContext.request.contextPath}/web/images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
-					</ul>
-					<!-- Slide Description Image Area (316 x 328) -->
-					<div class="script-wrap">
-						<ul class="script-group">
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-						</ul>
-						<div class="slide-controller">
-							<a href="#" class="btn-prev"><img src="${pageContext.request.contextPath}/web/images/btn_prev.png" alt="Prev Slide" /></a>
-							<a href="#" class="btn-play"><img src="${pageContext.request.contextPath}/web/images/btn_play.png" alt="Start Slide" /></a>
-							<a href="#" class="btn-pause"><img src="${pageContext.request.contextPath}/web/images/btn_pause.png" alt="Pause Slide" /></a>
-							<a href="#" class="btn-next"><img src="${pageContext.request.contextPath}/web/images/btn_next.png" alt="Next Slide" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /news -->
-		
 		<!-- quick links -->
 		<div class="news-section" id="news">
 			<div class="container">
@@ -431,6 +319,120 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 
 		<!-- //quick links -->
+
+		
+		
+		<!-- Stats -->
+		<div class="stats">
+			<div class="container">
+				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+				<div class="stats-info">
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-smile-o"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
+						<p class="stats-info">Happy Smiles</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-facebook"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
+						<p class="stats-info">Facebook Likes</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-twitter"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
+						<p class="stats-info">Twitter Followers</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-flask"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
+						<p class="stats-info">Lorem Ipsum</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //Stats -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
+		
+	
+		<!-- environment -->
+		<div class="our-news">
+		<h3 class="text-center">Our laboratories</h3>
+		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			<div id="visual">
+				<div class="slide-visual slideanim">
+					<!-- Slide Image Area (1000 x 424) -->
+					<ul class="slide-group">
+						<li><img src="${pageContext.request.contextPath}/web/images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
+					</ul>
+					<!-- Slide Description Image Area (316 x 328) -->
+					<div class="script-wrap">
+						<ul class="script-group">
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+						</ul>
+						<div class="slide-controller">
+							<a href="#" class="btn-prev"><img src="${pageContext.request.contextPath}/web/images/btn_prev.png" alt="Prev Slide" /></a>
+							<a href="#" class="btn-play"><img src="${pageContext.request.contextPath}/web/images/btn_play.png" alt="Start Slide" /></a>
+							<a href="#" class="btn-pause"><img src="${pageContext.request.contextPath}/web/images/btn_pause.png" alt="Pause Slide" /></a>
+							<a href="#" class="btn-next"><img src="${pageContext.request.contextPath}/web/images/btn_next.png" alt="Next Slide" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /environment -->
+
+		<!-- doctor -->
+		<div class="banner-bottom">
+			<div class="container">
+				<div class="col-md-4 timing">
+					<div class="opening-hours">
+						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
+						<ul>
+							<li>Monday - Friday</li>
+							<li>9.00 AM - 8.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+						<ul>
+							<li>Saturday</li>
+							<li>9.00 AM - 8.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+						<ul>
+							<li>Sunday</li>
+							<li>9.30 AM - 6.00 PM</li>
+							<div class="clearfix"></div>
+						</ul>
+					</div>
+					<div class="help">
+						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
+						<p>Just Make an Appointment to Get Help From Our Experts</p>
+						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
+					</div>
+				</div>
+				<div class="col-md-4 abt-img">
+					<img src="${pageContext.request.contextPath}/web/images/abt1.png" alt="doctor" title="doctor" />
+				</div>
+				<div class="col-md-4 abt-dec">
+					<h2>Ken Jeong</h2>
+					<p class="diff">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia</p>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>		
+		<!-- //doctor -->
 		
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />
