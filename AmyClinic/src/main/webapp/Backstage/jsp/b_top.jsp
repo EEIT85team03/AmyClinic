@@ -73,10 +73,10 @@ background-color:#FF8000;
 }
 em{  color:red; }
 /* td{ */
-b{
+/* b{ */
+#wrapper{
 font-family:monospace;
 font-size:20px;
-
 }
 /* background-color:#D3FF93; */
 /* } */
