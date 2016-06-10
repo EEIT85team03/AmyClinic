@@ -18,17 +18,14 @@
 }
 
 #LoginBox {
-	/* 	border:3px double green; */
 	padding-top: 5px;
 	padding-right: 10px;
-	/* 	background-color: grey; */
 	height: auto;
-	/* 	width: 200px; */
 	color: red;
-	/* 	dispaly: inline-block; */
 	text-align: right;
-	/* 	float:right; */
-	/* 	clear:both; */
+  	position: absolute;
+  	top: 20%;
+  	right: 3%;
 }
 
 #LoginBoxText {

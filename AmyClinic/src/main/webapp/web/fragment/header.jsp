@@ -108,69 +108,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- header -->
 	<div class="top-strip">
 		<div class="container-fluid">
-			<div class="social-icons">
-				<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-				<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-				<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-				<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-				<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-			</div>
+			<div class="social-icons"></div> <!-- Left spacer -->
 			<div class="contact-info">
-				<ul>
-					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+0123 384 920</li>
-					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">contact@yourdomain.com</a></li>
-				</ul>
+				<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+			</div>					
+			<div class="selectpackage">
+				<jsp:include page="loginbox.jsp" />
 			</div>
-			<!-- Large modal -->
-<!-- 			<div class="selectpackage"> -->
-<!-- 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Packages</button> -->
-<!-- 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> -->
-<!-- 						<div class="modal-dialog modal-lg"> -->
-<!-- 							<div class="modal-content"> -->
-<!-- 								<div class="modal-header"> -->
-<!-- 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> -->
-<!-- 										&times;</button> -->
-<!-- 									<h4 class="modal-title package-title" id="myModalLabel"> -->
-<!-- 										PREVENTIVE HEALTH CHECK UP PACKAGES</h4> -->
-<!-- 								</div> -->
-<!-- 								<div class="modal-body packages"> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>A set of basic tests that can give a broad overview of your health status.</p> -->
-<!-- 											<i class="fa fa-heartbeat"></i> -->
-<!-- 											<h4>MASTER HEALTH CHECK</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>Are you looking for a comprehensive health check that includes even Eye, Dental and ENT checks?</p> -->
-<!-- 											<i class="fa fa-medkit"></i> -->
-<!-- 											<h4>WHOLE BODY CHECKUP</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>Do you wish to check your body out for an entire spectrum of diseases in a luxurious ambience?</p> -->
-<!-- 											<i class="fa fa-user-md"></i> -->
-<!-- 											<h4>HEALTH CHECK 1 AND 2</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="clearfix"></div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				<script> -->
-<!-- 				$('#myModal').modal(''); -->
-<!-- 				</script> -->
-<!-- 			</div> -->
-				
-			<div class="clearfix"></div>			
+			<div class="clearfix"></div>	
 		</div>
-		<jsp:include page="loginbox.jsp" />
 	</div>
 	<nav class="navbar nav_bottom" role="navigation">
 	 <div class="container">
