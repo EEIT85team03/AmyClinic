@@ -11,7 +11,8 @@
 /* General style */
 h3.title {
     font-size: 33px;
-    color: #8F44AD;
+/*     color: #8F44AD; */ /* purple */
+    color: #BFB3AA;
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 25px;

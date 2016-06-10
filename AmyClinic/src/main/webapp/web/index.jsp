@@ -147,7 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- tabs -->	
 		<div class="vertical-tabs">
 			<div class="container">
-				<h3 class="title text-center">What We Do</h3>
+				<h3 class="title text-center">Before / After</h3>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">

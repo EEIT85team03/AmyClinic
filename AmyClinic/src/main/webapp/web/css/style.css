@@ -136,16 +136,16 @@ button.close {
 }
 .package p {
 	font-size: 15px;
-    color: #472654;
+    color: #472654; /* purple */
     font-family: 'Roboto Condensed', sans-serif;
 }
 .package i {
 	font-size:50px;
 	margin: 20px 0 10px 0;
-	color: #D43535;
+	color: #D43535; /* red */
 }
 .package h4 {
-    color: #000000;
+    color: #000000; /* black */
     font-size: 19px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -166,7 +166,7 @@ button.close {
     color: #fff;
 }
 .package a:hover {
-    color: #263D48;
+    color: #263D48; /* deep blue */
     border: 2px solid #BFB3AA;
     background: #fff;
 }
@@ -174,7 +174,7 @@ button.close {
 
 /*-- nav bar --*/
 .navbar-default {
-    background-color:#f1b458 !important;
+    background-color:#f1b458 !important; /* yellow */
     border-color:#f1b458;
     border-radius: 0px;
 	-webkit-border-radius: 0;
@@ -224,7 +224,7 @@ button.close {
 .navbar-nav > li > a {
     padding: 0 !important;
     text-align: center;
-    color: #263D48;
+    color: #263D48; /* blue */
     font-weight: 400;
     font-size: 15px;
     margin: 0px 30px;
@@ -244,7 +244,7 @@ button.close {
 }
 .navbar-nav > li.current_page>a, .navbar-nav > li.current_page>a:hover {
     border-bottom: 2px solid #BFB3AA;
-	color: #BFB3AA;
+	color: #BFB3	AA;
 }
 .nav_1>li>a:hover, .nav_1>li>a:focus {
     background-color: rgba(86, 207, 202, 0) !important;
