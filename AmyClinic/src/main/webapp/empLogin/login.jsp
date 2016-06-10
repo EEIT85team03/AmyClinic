@@ -172,7 +172,7 @@ html,body{
 
 
 
-<title>Insert title here</title>
+<title>Amy後台登入系統</title>
 </head>
 <body>
 
@@ -187,9 +187,11 @@ html,body{
                 <form action="" method="">
                     <input type="text" name="mail" id="mail" placeholder="usermail">
                     <input type="password" id="pwd" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="button">Login</button>
+                    <button class="btn btn-info btn-block login" type="button" id="loginbtn">Login</button>
                     <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a>
-                    <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a>
+                       <a href="" class="text-primary" data-toggle="modal" data-target="#addemp">Addemp</a>
+                      <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
+<%--                     <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a> --%>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
             </div>
@@ -197,10 +199,133 @@ html,body{
         
 </div>
 
+
+<!-- ==================================================================== -->
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+<!--       <div class="modal-content"> -->
+<!--         <div class="modal-header"> -->
+<!--           <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+<!--           <h4 class="modal-title">Modal Header</h4> -->
+<!--         </div> -->
+<!--         <div class="modal-body"> -->
+<!--           <p>Some text in the modal.</p> -->
+<!--         </div> -->
+<!--         <div class="modal-footer"> -->
+<!--           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+<!--         </div> -->
+<!--       </div> -->
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+<!-- =========================忘記密碼dialog============================== -->
+
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="resetpw" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">請輸入您的email帳號</h4>
+        </div>
+        <div class="modal-body">
+        
+<form role="form">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="remail">
+  </div>
+   <button type="submit" class="btn btn-default" id="rebtn">Submit</button>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<!-- =========================新增員工dialog============================== -->
+ 
+ <div class="container">
+   <!-- Modal -->
+  <div class="modal fade" id="addemp" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">請輸入您的email帳號</h4>
+        </div>
+        <div class="modal-body">
+ 
+  <form role="form" id="addemp">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+    </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+ 
+ 
+ 
+ 
+
 </body>
 
 
-<script type="text/javascript">
+<script>
 
 
 function OpenLink(link) {     
@@ -211,10 +336,11 @@ function OpenLink(link) {
 
 
 
+// ====================登入Ajax==================================
 $(function() {
-	//alert()
 	var textfield = $("input[name=mail]");
-	$('button[type="button"]').click(function() {
+	//$('button[type="button"]').click(function() {
+		$('#loginbtn').click(function() {
 		//alert("btn click")
 		var mail = $('#mail').val();
 		var pwd = $('#pwd').val();
@@ -224,7 +350,7 @@ $(function() {
 			'dataType' :'TEXT',
 			"data":{"action" : "loginAjax" , "mail" : mail , "pwd" : pwd},
 			'success':function(data){
-				
+				alert(data);
 				//little validation just to check username
                 if (data == "success") {
                     //$("body").scrollTo("#output");
@@ -270,11 +396,30 @@ $(function() {
 		})
 			
 	})})
+	
+	//====================忘記密碼ajax==================================
+$(function() {
+	$('#rebtn').click(function(){
+		var remail = $('#remail').val();
+		$.ajax({
+		'type':'post',
+		'url' :'EmpLoginServlet.do',
+		'datatype' : 'text',
+		'data':{"action" : "forgetpwAjx" , "restmail" : remail},
+		'success':function(data){
+			// console.log(data);
+			 alert(data);
+			 return;
+		}
+			
+		})
+		
+	})
+})
 
+
+	
 
 </script>
-
-
-
 
 </html>
