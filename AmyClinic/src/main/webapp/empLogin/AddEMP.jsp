@@ -117,7 +117,7 @@
   <label class="col-xs-4 control-label" for="singlebutton"></label>
   <div class="col-xs-4">
   	<input type="hidden" name="action" value="insert">
-    <input type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary" value="送出新增">
+    <input type="submit" id="singlebutton" name="singlebutton" class="btn btn-info btn-block login" value="送出新增">
   </div>
 </div>
 

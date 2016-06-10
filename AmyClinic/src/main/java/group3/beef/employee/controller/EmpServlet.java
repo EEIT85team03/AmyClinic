@@ -26,7 +26,8 @@ import org.hibernate.Hibernate;
 import com.google.gson.Gson;
 
 @MultipartConfig(maxFileSize = 16177215)
-//@MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
+// @MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize
+// = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
 @WebServlet("/empLogin/emp.do")
 public class EmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -48,6 +49,21 @@ public class EmpServlet extends HttpServlet {
 		res.setContentType("UTF-8");
 		PrintWriter out = res.getWriter();
 		String action = req.getParameter("action");
+		// ===================查email是否已註冊(ajax)=========================
+		if ("checkmail".equals(action)) {
+			System.out.println("call checkmail");
+			String regmail = (req.getParameter("regmail")).trim();
+			EmployeeService eSvc = new EmployeeService();
+			EmployeeVO empVO = eSvc.findEmpByMail(regmail);
+			if (empVO != null) {
+				System.out.println("帳號已存在");
+				out.print("notnull");
+			}else{
+				System.out.println("帳號不存在");
+				out.print("null");
+			}
+		}
+
 		// ===================查詢一位員工=========================
 
 		if ("getOne_For_Display".equals(action)) {
@@ -84,7 +100,7 @@ public class EmpServlet extends HttpServlet {
 				AES_Encryption AES = new AES_Encryption();
 				String pwd = AES.getdecrypt(empVO.getPwd());
 				empVO.setPwd(pwd);
-				
+
 				if (empno == null) {
 					errorMsg.add("查無資料");
 				}
@@ -110,71 +126,72 @@ public class EmpServlet extends HttpServlet {
 
 		// ===================新增員工=========================
 		if ("insert".equals(action)) {
-			//List<String> errorMsg = new LinkedList<String>();
-			HashMap<String,String>  errorMsg = new HashMap<String, String> ();
+			System.out.println("call insert");
+			// List<String> errorMsg = new LinkedList<String>();
+			HashMap<String, String> errorMsg = new HashMap<String, String>();
 			req.setAttribute("errorMsg", errorMsg);
 			EmployeeService empSvc = new EmployeeService();
 
 			try {
 				String ename = req.getParameter("name");
 				if (ename == null || ename.trim().length() == 0) {
-					//String err= "醫師姓名: 請勿空白";
-					errorMsg.put("ename","請勿空白");
+					// String err= "醫師姓名: 請勿空白";
+					errorMsg.put("ename", "請勿空白");
 				}
 				String npwd = req.getParameter("pwd");
 				String npwd2 = req.getParameter("pwd2");
 				if (npwd == null || npwd.trim().length() == 0) {
-					//errorMsg.put("npwd","請勿空白");
+					// errorMsg.put("npwd","請勿空白");
 				}
-				if (!npwd.equals(npwd2)){
-					errorMsg.put("npwd2","密碼不一致");
+				if (!npwd.equals(npwd2)) {
+					errorMsg.put("npwd2", "密碼不一致");
 				}
 				String pwdReg = "^[(a-zA-Z0-9)]{4,10}$";
 				if (!npwd.trim().matches(pwdReg)) {
-					errorMsg.put("pwdReg","密碼長度必需在4到10之間");
+					errorMsg.put("pwdReg", "密碼長度必需在4到10之間");
 				}
 
 				String email = req.getParameter("email");
-				
-				if(empSvc.findEmpByMail(email)!= null){ //判斷帳號是否已存在
-					errorMsg.put("email","帳號已存在");
+
+				if (empSvc.findEmpByMail(email) != null) { // 判斷帳號是否已存在
+					errorMsg.put("email", "帳號已存在");
 				}
-				
+
 				if (email == null || email.trim().length() == 0) {
-					errorMsg.put("email","請勿空白");
+					errorMsg.put("email", "請勿空白");
 				}
 
 				String edu = req.getParameter("edu");
 				if (edu == null || edu.trim().length() == 0) {
-					errorMsg.put("edu","請勿空白");
+					errorMsg.put("edu", "請勿空白");
 				}
 
 				String exp = req.getParameter("exp");
 				if (exp == null || exp.trim().length() == 0) {
-					errorMsg.put("exp","請勿空白");
+					errorMsg.put("exp", "請勿空白");
 				}
 
 				String spec = req.getParameter("spec");
 				if (spec == null || spec.trim().length() == 0) {
-					errorMsg.put("spec","請勿空白");
+					errorMsg.put("spec", "請勿空白");
 				}
-				InputStream is =null;
+				InputStream is = null;
 				Part filePart = req.getPart("photo");
 				int filesize = (int) filePart.getSize();
-				if (filesize == 0){
-					//errorMsg.put("photo","照片: 請勿空白");
-					is = new FileInputStream("C:\\AmyDB\\e5.jpg");  //若沒上傳照片，給預設圖片
-					 
-				}else
-				{is = filePart.getInputStream();}
-				
-				
-				if(filesize > 1024*300){
-					errorMsg.put("photo","照片: 大小請勿超過300KB");
+				if (filesize == 0) {
+					// errorMsg.put("photo","照片: 請勿空白");
+					is = new FileInputStream("C:\\AmyDB\\e5.jpg"); // 若沒上傳照片，給預設圖片
+
+				} else {
+					is = filePart.getInputStream();
+				}
+
+				if (filesize > 1024 * 300) {
+					errorMsg.put("photo", "照片: 大小請勿超過300KB");
 				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);
-				
+
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
 				empVO.setPwd(npwd);
@@ -195,22 +212,23 @@ public class EmpServlet extends HttpServlet {
 				AES_Encryption AES = new AES_Encryption();
 				String pwd = AES.getencrypt(npwd);
 				empVO.setPwd(pwd);
-				
+
 				/*************************** 2.5開始新增資料 ***************************************/
-				
+
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				System.out.println("員工新增成功");
-				//String url = "/empLogin/GetAllEMP.jsp";
-				//RequestDispatcher successView = req.getRequestDispatcher(url);
-				//successView.forward(req, res);
-//				res.sendRedirect("/AmyClinic/empLogin/login.jsp");
-//				PrintWriter out = res.getWriter();
+				// String url = "/empLogin/GetAllEMP.jsp";
+				// RequestDispatcher successView =
+				// req.getRequestDispatcher(url);
+				// successView.forward(req, res);
+				res.sendRedirect("/AmyClinic/empLogin/login.jsp");
+				// PrintWriter out = res.getWriter();
 				out.print("員工新增成功");
 				return;
 
 			} catch (Exception e) {
-				errorMsg.put("otherErr",e.getMessage());
+				errorMsg.put("otherErr", e.getMessage());
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/empLogin/AddEMP.jsp");
 				failureView.forward(req, res);
@@ -222,7 +240,9 @@ public class EmpServlet extends HttpServlet {
 			req.setAttribute("errorMsg", errorMsg);
 			Integer eid = new Integer(req.getParameter("eid").trim());
 			try {
+				//String ename = "王牛肉";
 				String ename = req.getParameter("name");
+				System.out.println(ename);
 				if (ename == null || ename.trim().length() == 0) {
 					errorMsg.add("醫師姓名: 請勿空白");
 				}
@@ -230,11 +250,11 @@ public class EmpServlet extends HttpServlet {
 				String npwd2 = req.getParameter("pwd2");
 				if (npwd == null || npwd.trim().length() == 0) {
 					errorMsg.add("密碼: 請勿空白");
-				}	
-				if (!npwd.equals(npwd2)){
+				}
+				if (!npwd.equals(npwd2)) {
 					errorMsg.add("密碼: 密碼不一致");
-					}
-				
+				}
+
 				String pwdReg = "^[(a-zA-Z0-9)]{4,10}$";
 				if (!npwd.trim().matches(pwdReg)) {
 					errorMsg.add("密碼:英文字母、數字 , 且長度必需在4到10之間");
@@ -260,28 +280,28 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("專長: 請勿空白");
 				}
 				Part filePart = req.getPart("photo");
-//				if (filePart.getSize() == 0){
-//					errorMsg.add("照片: 請勿空白");
-//				}
+				// if (filePart.getSize() == 0){
+				// errorMsg.add("照片: 請勿空白");
+				// }
 				Blob photo = null;
-				if(filePart.getSize()==0){  //如果沒上傳照片，就從資料庫抓舊的
+				if (filePart.getSize() == 0) { // 如果沒上傳照片，就從資料庫抓舊的
 					EmployeeService eSvc = new EmployeeService();
 					InputStream is = eSvc.getOneEmployeePic(eid);
 					photo = Hibernate.createBlob(is);
-				}else{
+				} else {
 					InputStream oldis = filePart.getInputStream();
 					int filesize = (int) filePart.getSize();
-					if(filesize > 1024*300){
+					if (filesize > 1024 * 300) {
 						errorMsg.add("照片: 大小請勿超過300KB");
 					}
 					photo = Hibernate.createBlob(oldis);
 				}
-				
-//				InputStream is = filePart.getInputStream();
-//				int filesize = (int) filePart.getSize();
-//				if(filesize > 307200){
-//					errorMsg.add("照片: 大小請勿超過300KB");
-//				}
+
+				// InputStream is = filePart.getInputStream();
+				// int filesize = (int) filePart.getSize();
+				// if(filesize > 307200){
+				// errorMsg.add("照片: 大小請勿超過300KB");
+				// }
 				EmployeeVO empVO = new EmployeeVO();
 				empVO.setEid(eid);
 				empVO.setName(ename);
@@ -291,9 +311,7 @@ public class EmpServlet extends HttpServlet {
 				empVO.setExperience(exp);
 				empVO.setSpecialty(spec);
 				empVO.setPhoto(photo);
-				
-		 
-								
+
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
@@ -301,15 +319,15 @@ public class EmpServlet extends HttpServlet {
 					failureView.forward(req, res);
 					return;
 				}
-			
+
 				/*************************** 2.員工密碼AES加密 ***************************************/
 				AES_Encryption AES = new AES_Encryption();
 				String pwd = AES.getencrypt(npwd);
 				empVO.setPwd(pwd);
 				/*************************** 2.5開始新增資料 ***************************************/
 				EmployeeService empSvc = new EmployeeService();
-				empVO = empSvc
-						.updateEmp(eid, ename, pwd, email, photo, edu, exp, spec);
+				empVO = empSvc.updateEmp(eid, ename, pwd, email, photo, edu,
+						exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/emp/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
@@ -343,7 +361,6 @@ public class EmpServlet extends HttpServlet {
 			}
 
 		}
-		
-		
+
 	}
 }
