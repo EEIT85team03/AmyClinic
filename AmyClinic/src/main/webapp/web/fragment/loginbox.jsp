@@ -56,6 +56,7 @@ p {
 #loginboximage{
 	position: relative;
 	display: inline;
+    text-decoration:none;
 }
 
 #loginboximagetext{
@@ -63,13 +64,14 @@ p {
    top: -2px;  
    left: -5px; 
    width: 100%;
+   opacity:0.8;
 }
 #loginboximagetext span { 
    color: white; 
    font: 14px Helvetica, Sans-Serif; 
    letter-spacing: -1px;  
    background: #bfb3aa;
-   padding: 2px; 
+   padding: 2px;
 }
 
 </style>
@@ -81,8 +83,9 @@ p {
 
 
 	<c:choose>
-		<c:when test="${memberVO != null}">
+		<c:when test="${memberVO != null}">			
 			<div id="loginboximage">
+			<a href="${pageContext.request.contextPath}/member/editprofile.action">
 				<c:choose>
 					<c:when test="${memberVO.photo != null && memberVO.photo != \"\"}">
 						<img id="userphoto" alt="user photo" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}'>
@@ -90,12 +93,15 @@ p {
 					<c:otherwise>
 						<img id="userphoto" alt="user photo" src='${pageContext.request.contextPath}/web/images/anon.jpg'>
 					</c:otherwise>
-				</c:choose>
+				</c:choose>			
 				<div id="loginboximagetext"><span>${account}</span></div>
+			</a>
 			</div>
 			<div id="LoginBoxText">
+			
 				<button class="btn btn-primary" onclick="logout();">登出 /</button>
 				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/member/editprofile.action';"> 會員專區</button>
+<!-- 				<button id="customerservice" class="btn btn-primary" onclick="alert('haha');"> <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;線 上 客 服</button> -->
 				
 				<div id="customerservice">
 					<span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;線&nbsp;上&nbsp;客&nbsp;服
@@ -107,9 +113,9 @@ p {
 			<div id="LoginBoxText">
 				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/web/login.jsp';">登入 /</button>
 				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/register/register.jsp';"> 註冊會員</button>
-				<div id="customerservice">
+				<div id="customerservice" onclick="alert('haha');">
 					<span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;線&nbsp;上&nbsp;客&nbsp;服
-				</div>
+				</div>							
 			</div>
 		</c:otherwise>
 	</c:choose>
