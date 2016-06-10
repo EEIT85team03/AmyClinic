@@ -329,7 +329,7 @@ public class EmpServlet extends HttpServlet {
 				empVO = empSvc.updateEmp(eid, ename, pwd, email, photo, edu,
 						exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
-				String url = "/emp/GetAllEMP.jsp";
+				String url = "/empLogin/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 
