@@ -84,6 +84,20 @@ font-size:20px;
 /* } */
 </style>
 
+<style type="text/css">
+#loading {
+    position:absolute;
+    width:300px;
+    top:250px;
+    left:50%;
+    margin-left:-150px;
+    text-align:center;
+    padding: 10px;
+    font:bold 30px Arial, Helvetica, sans-serif;
+  
+}
+</style>
+
 </head>
 <body>
 	<!--top Navigation 導航-->
@@ -205,5 +219,13 @@ font-size:20px;
 <%-- 		<img src="<%=request.getContextPath()%>/images/b_01.jpg"> --%>
 	</div>
 	
+	<div id="loading">
+    									讀取中.........<img src="<%=request.getContextPath()%>/images/loader.gif" />
+							</div>
+							<script type="text/javascript">
+										$(window).load(function(){
+										$("#loading").hide();
+										})
+							</script>
 </body>
 </html>

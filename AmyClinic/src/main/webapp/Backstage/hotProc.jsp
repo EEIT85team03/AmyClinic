@@ -9,10 +9,14 @@
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body>
     <div id="wrapper"><!-- all -->
+    
+    						
+
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <div id="page-wrapper" style=background-color:#BFB2AB  >
             <div class="container-fluid">
@@ -32,6 +36,7 @@
 <div class ='element'></div>
 <jsp:include page="chart_proc.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 </div><!--         結束 -->
+
 </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
 </body>
 </html>
