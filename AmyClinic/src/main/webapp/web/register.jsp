@@ -4,6 +4,25 @@
 <html>
 <head>
 <title>Amy | 會員註冊</title>
+<style>
+select {
+	font-size: 14px;
+    display: block;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 20px !important;
+    border: 1px solid #E8AEFF;
+    font-weight: 600;
+    outline: none;
+    letter-spacing: 2px;
+    color: #000;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	width:100%;	
+}
+</style>
 </head>
 <body>
 	<!-- header -->
@@ -32,14 +51,20 @@
 									<h5>required information</h5>
 								<form action="${pageContext.request.contextPath}/logreg/register.action" method="post">
 									<input type="text" name="memberVO.name" placeholder="姓名" required id="username" >								
-									<input type="password" name="memberVO.pwd" placeholder="會員密碼" required id="password" >																	
-									<input type="password" name="" placeholder="確認密碼" required >								
+									<input type="password" name="memberVO.pwd" placeholder="密碼" required id="password" >																	
+<!-- 									<input type="password" name="" placeholder="確認密碼" required >								 -->
 									<input type="email" name="memberVO.email" placeholder="電子信箱" required id="email" >								
 
 									<h6>optional information</h6>																	
 									
-									<input type="text" name="memberVO.birthday" placeholder="出生日期" value="2016-05-20" id="birthday" readonly id="country">								
-									<input type="text" name="memberVO.country" placeholder="選擇國籍" id="country" >								
+									<input type="text" name="memberVO.birthday" placeholder="出生日期" value="1996-05-20" id="birthday" readonly id="country">								
+									<select name="memberVO.country" id="country">
+									  <option value="">選擇國籍</option>
+									  <option value="Taiwan">台灣</option>
+									  <option value="United States">美國</option>
+									  <option value="Japan">日本</option>
+									  <option value="Korea">韓國</option>
+									</select>								
 									<input type="text" name="memberVO.gender" placeholder="選擇性別" id="gender" >								
 									<input type="text" name="memberVO.addr" placeholder="用戶地址" id="address" >								
 									<input type="text" name="memberVO.phone" placeholder="電話號碼" id="phone" >								

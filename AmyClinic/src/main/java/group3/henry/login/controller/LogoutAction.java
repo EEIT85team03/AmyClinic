@@ -38,6 +38,7 @@ public class LogoutAction extends ActionSupport implements ServletRequestAware, 
 		System.out.println("LogoutAction this.email = " + email);
 		System.out.println("LogoutAction current = " + current.getEmail());
 		String currentEmail = current.getEmail();
+		if (null==email || null==currentEmail) return INPUT;		
 		if (email.equals(currentEmail)){
 			if (session != null) {
 			    session.invalidate();
