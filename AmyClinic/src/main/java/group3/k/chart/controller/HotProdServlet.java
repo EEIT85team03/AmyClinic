@@ -51,8 +51,9 @@ public class HotProdServlet extends HttpServlet {
 				prodAllMap.put("name",prod.getName());
 				prodAllMap.put("q",prod.getQuantity());
 				prodAllMap.put("year",prod.getYears());
-				ProdList.add(prodAllMap);//療程名稱
-System.out.println( prod.getId()+"名次"+prod.getName()+"名稱"+prod.getQuantity()+"賣出"+prod.getYears()+"年份;");//test				
+				prodAllMap.put("pid",prod.getPid());
+				ProdList.add(prodAllMap);
+System.out.println( prod.getId()+"名次"+prod.getPid()+"ID"+prod.getName()+"名稱"+prod.getQuantity()+"賣出"+prod.getYears()+"年份;");//test				
 			}else break;
 			}
 			Gson gson = new Gson();

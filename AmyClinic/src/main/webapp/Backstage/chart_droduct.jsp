@@ -3,6 +3,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
   <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
   <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
   <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
@@ -15,16 +16,22 @@
   <div id='t'></div><hr>
   <div class ='element'></div>
 <script type="text/javascript">
+function getContextPath() { //obtains context path. EL doesn't work with separated .js
+ 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
+//****----------------------------------------------------------------------
 $(function(){
     $.getJSON("${pageContext.request.contextPath}/Backstage/HotProdServlet",{'action':'熱門產品'},function(data){	
     	var row=' ';var t1,t2,t3,t4,t5;
     	var name=[];
     	var counts=[];//個
     	var htodata=[];
+    	var pid=[];
     	$.each(data, function(k, a){
-    			row +='<b>'+a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'</b><br>';
+    			//row +='<b>'+a.id+'名'+a.name+'Id:'+a.pid+'，賣出:'+a.q+'個'+a.year+'年'+k+'</b><br>';
     			name.push(a.name);
-    			counts.push(a.q);		
+    			pid.push(a.pid);
+    			counts.push(a.q);	
     	});
     	$(function(){//百分比運算
     		var sum=counts[0]+counts[1]+counts[2]+counts[3]+counts[4];
@@ -37,11 +44,17 @@ $(function(){
     			htodata[i]= name[i] + ", " +counts[i];	
     		}
     	})
-    	$('#t').html(row);
+    	//$('#t').html(row);						<img src="'+getContextPath()+'/free/getprodpic?num='
     	var newHTML = [];
-    	newHTML.push('<b>'+counts.length+'個:'+name+'</b><br>');	
-    	newHTML.push('<b>百分比運算：'+counts+'='+t1+'，'+t2+'，'+t3+'，'+t4+'，'+t5+'='+(parseFloat(t1)+parseFloat(t2)+parseFloat(t3)+parseFloat(t4)+parseFloat(t5))+'</b><br>');
-    	
+    	newHTML.push('<center><table border="1"  class="table table-hover" ><tr><th>Top1</th><th>Top2</th><th>Top3</th><th>Top4</th><th>Top5</th></tr>');
+    	newHTML.push("<tr><td ><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[0]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[1]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[2]+"' /></td>"+  	
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[3]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[4]+"' /></td></tr>");
+    	newHTML.push('<tr><td>'+name[0]+'</td><td>'+name[1]+'</td><td>'+name[2]+'</td><td>'+name[3]+'</td><td>'+name[4]+'</td></tr>');
+    	newHTML.push('<tr><td>'+counts[0]+'個='+parseFloat(t1)+'%</td><td>'+counts[1]+'個='+parseFloat(t2)+'%</td><td>'+counts[2]+'個='+parseFloat(t3)+'%</td><td>'+counts[3]+'個='+parseFloat(t4)+'%</td><td>'+counts[4]+'個='+parseFloat(t5)+'%</td></tr></table></center>');
+    	newHTML.push('<b>合計：'+(parseFloat(t1)+parseFloat(t2)+parseFloat(t3)+parseFloat(t4)+parseFloat(t5)).toFixed(1)+'</b>');
     	$(".element").html(newHTML.join(""));
  //製圖------------------------------------------------------------------------------   	
     	$(function () {

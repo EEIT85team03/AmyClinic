@@ -17,9 +17,15 @@
   </script>
 </head>
 <body>
- 
+<img width='120' height='180' src='${pageContext.request.contextPath}/GetPic.servlet?num=1' />
+ <script type="text/javascript">
+ function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+	}
+ </script>
+ <img class='preview' style='max-width: 100px; max-height: 100px;' src='"+getContextPath()+"\free\getprodpic?num=1"'/>
 <div id="progressbar"></div>
- 
+
  
 </body>
 </html>
