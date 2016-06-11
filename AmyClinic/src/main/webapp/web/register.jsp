@@ -1,10 +1,5 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
 						<h2>Register</h2>
-						<h6>add a short description here</h6>
+						<h6>Registeration is required to make appointments and purchases!</h6>
 					</div>
 				</div>
 			</div>
@@ -32,23 +27,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="login">
 				<div class="container">
 					<h3>Register Here</h3>
-						<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+						<p class="est">Thank you for taking the time to register your information with Amy! We promise to never sell or share your personal information with anyone else!</p>
 							<div class="login-form-grids">
-									<h5>profile information</h5>
+									<h5>required information</h5>
 								<form>
-									<input type="text" placeholder="First Name..." required=" " >
-									<input type="text" placeholder="Last Name..." required=" " >
-								</form>
-								<div class="register-check-box animated wow slideInUp" data-wow-delay=".5s">
-									<div class="check">
-										<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Subscribe to Newsletter</label>
-									</div>
-								</div>
-								<h6>Login information</h6>
-								<form>
-									<input type="email" placeholder="Email Address" required=" " >
-									<input type="password" placeholder="Password" required=" " >
-									<input type="password" placeholder="Password Confirmation" required=" " >
+									<input type="text" placeholder="Name" required >
+									<input type="text" placeholder="Last Name..." required >								
+									<h6>optional information</h6>								
+									<input type="email" placeholder="Email Address" >
+									<input type="password" placeholder="Password" >
+									<input type="password" placeholder="Password Confirmation" >
 									<div class="register-check-box">
 										<div class="check">
 											<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label>
