@@ -44,14 +44,14 @@ $(function(){
     			htodata[i]= name[i] + ", " +counts[i];	
     		}
     	})
-    	//$('#t').html(row);						<img src="'+getContextPath()+'/free/getprodpic?num='
+    	//$('#t').html(row);						
     	var newHTML = [];
     	newHTML.push('<center><table border="1"  class="table table-hover" ><tr><th>Top1</th><th>Top2</th><th>Top3</th><th>Top4</th><th>Top5</th></tr>');
-    	newHTML.push("<tr><td ><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[0]+"' /></td>"+
-    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[1]+"' /></td>"+
-    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[2]+"' /></td>"+  	
-    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[3]+"' /></td>"+
-    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/free/getprodpic?num='+pid[4]+"' /></td></tr>");
+    	newHTML.push("<tr><td ><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/shopping/GetPic?num='+pid[0]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/shopping/GetPic?num='+pid[1]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/shopping/GetPic?num='+pid[2]+"' /></td>"+  	
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/shopping/GetPic?num='+pid[3]+"' /></td>"+
+    	"<td><img class='preview' style='max-width: 50px; max-height: 50px;' src='"+getContextPath()+'/shopping/GetPic?num='+pid[4]+"' /></td></tr>");
     	newHTML.push('<tr><td>'+name[0]+'</td><td>'+name[1]+'</td><td>'+name[2]+'</td><td>'+name[3]+'</td><td>'+name[4]+'</td></tr>');
     	newHTML.push('<tr><td>'+counts[0]+'個='+parseFloat(t1)+'%</td><td>'+counts[1]+'個='+parseFloat(t2)+'%</td><td>'+counts[2]+'個='+parseFloat(t3)+'%</td><td>'+counts[3]+'個='+parseFloat(t4)+'%</td><td>'+counts[4]+'個='+parseFloat(t5)+'%</td></tr></table></center>');
     	newHTML.push('<b>合計：'+(parseFloat(t1)+parseFloat(t2)+parseFloat(t3)+parseFloat(t4)+parseFloat(t5)).toFixed(1)+'</b>');

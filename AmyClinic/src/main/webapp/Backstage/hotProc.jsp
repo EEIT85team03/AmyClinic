@@ -32,7 +32,7 @@
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->
 <!--         開始 -->
 <div class="container-fluid">
-<div id="container" style="min-width:700px;height:400px"></div>
+<div id="container" ></div>
 <div class ='element'></div>
 <jsp:include page="chart_proc.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 </div><!--         結束 -->

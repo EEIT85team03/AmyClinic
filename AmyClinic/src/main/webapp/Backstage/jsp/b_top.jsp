@@ -191,9 +191,9 @@ font-size:20px;
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/empLogin/GetAllEMP.jsp"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
-			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-desktop"></i>留言管理</a></li>
 			<li>
 			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
