@@ -58,10 +58,10 @@ p {
 
 #loginboximagetext{
    position: absolute; 
-   top: 5px;  
+   top: -2px;  
    left: 0px; 
    width: 50px;
-   opacity:0.8;
+   opacity:0.9;
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;

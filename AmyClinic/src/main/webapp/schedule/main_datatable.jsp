@@ -46,7 +46,7 @@ float: right;
 <div id="wrapper"><!-- all -->  <jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->   
      
      <script type="text/javascript"	src="<%=request.getContextPath()%>/js/datatables.js"></script>
-      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+       <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
     
 
  
@@ -101,7 +101,7 @@ float: right;
                       <div class="form-group">
                     <label for="datepicker">值班日期</label>
                       <input type="text"  name="c_date" class="form-control"
-                          id="datepicker" placeholder="date"  dateISO/>
+                          id="datepicker" placeholder="date"  />
                   </div>
                       
                       <div class="form-group">
@@ -160,8 +160,7 @@ float: right;
 				<th>備註</th>
 			</tr>
 		</thead>
-		<jsp:useBean id="schSvc" scope="page"
-			class="group3.carrie.schedule.model.ScheduleService" />
+		<jsp:useBean id="schSvc" scope="page"	class="group3.carrie.schedule.model.ScheduleService" />
 		<c:forEach var="schVO" items="${schSvc.all}">
 			<tr>
 				<td>${schVO.sch_id}</td>
