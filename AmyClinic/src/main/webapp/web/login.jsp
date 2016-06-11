@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<% response.setHeader("Cache-Control", "no-store"); response.setHeader("Pragma", "no-cache"); response.setDateHeader("Expires", 0); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,59 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+
+<style>
+#googleButtonPlaceholder {
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	margin-left: 55%;
+}
+
+#googleButtonPlaceholder div {
+	cursor: pointer;
+	font-size: 100px;
+	height: 100%;
+	filter: alpha(opacity = 1);
+	-moz-opacity: 0.01;
+	opacity: 0.01;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 9;
+}
+
+
+.loginbtn {
+  font-size: 1.2em;
+  font-weight: normal;
+  position: relative;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 6px;
+  background: #f26964;
+  color: #f4f4f4;
+  box-shadow: 0px 3px 0px #ab4b47;
+  cursor: pointer;
+ }
+
+#googleButtonPlaceholder:active .loginbtn,
+.loginbtn:active{
+  top: 3px;
+  box-shadow: none;
+}
+
+.fb {
+	background: #4D6AB6;
+	box-shadow: 0px 3px 0px #3D5998;
+	margin-left: 61%;
+}
+
+</style>
 </head>
 <body>
 	<!-- header -->
@@ -46,6 +100,11 @@
 									</div>
 									<input type="submit" value="登 入">
 								</form>
+								<div class="loginbtn fb" onclick="fb_login();" >使用 FaceBook 登入</div>
+								<div id="googleButtonPlaceholder">
+									<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
+									<span class="loginbtn">使用 Google Gmail 登入</span>
+								</div>							
 							</div>
 							<h4>For New People</h4>
 							<p><a href="register.jsp">Register Here</a> (or) go to <a href="index.jsp">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
@@ -80,7 +139,14 @@
 			});
 		</script>
 	<!-- Google script -->
-	<script src="${pageContext.request.contextPath}/js/google.login.js"></script>		
+	<script src="${pageContext.request.contextPath}/js/google.login.js"></script>
+	<!-- FB script -->
+	<script>
+	function fb_login() {
+	    FB.login( function() {checkLoginState();}, { scope: 'email,public_profile' } );
+	    
+	}
+	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>
