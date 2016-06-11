@@ -237,7 +237,7 @@ public class ProductServlet extends HttpServlet {
 			}
 		}
 		// ===================修改=========================
-		Integer price,discount,amount,pid = null,cid=0;
+		Integer price,discount,amount,pid = null,cid = null;
 		
 		
 		if ("update".equals(action)) {			
@@ -247,7 +247,7 @@ public class ProductServlet extends HttpServlet {
 			req.setAttribute("errorMsg", errorMsg);
 
 			try {
-				String pidStr = req.getParameter("pid");
+				pid =new Integer( req.getParameter("pid"));
 				
 				String name = req.getParameter("name");
 				if (name == null || name.trim().length() == 0) {
@@ -267,8 +267,9 @@ public class ProductServlet extends HttpServlet {
 //					errorMsg.add("折扣: 請勿空白");
 //				}//折扣可空白？
 				String amountStr = req.getParameter("amount");
-				String cidStr = req.getParameter("cid");
-				System.out.println("cidStr="+cidStr);
+				
+				 cid = new Integer(req.getParameter("cid"));
+				System.out.println("cid="+cid);
 			
 				String descrip = req.getParameter("descrip");
 				if (descrip == null || descrip.trim().length() == 0) {
@@ -295,12 +296,12 @@ public class ProductServlet extends HttpServlet {
 				
 				
 				try{
-				pid = Integer.parseInt(pidStr);
+				
 				price = Integer.parseInt(priceStr);
 				discount = Integer.parseInt(discountStr);
 				amount = Integer.parseInt(amountStr);
-				cid = Integer.parseInt(cidStr);
-				System.out.println("cid="+cid);
+				
+				
 				}catch(Exception e){
 					price=0;
 					discount=0;	amount=0;
