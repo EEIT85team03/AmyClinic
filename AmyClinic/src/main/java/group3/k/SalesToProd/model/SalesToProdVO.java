@@ -15,6 +15,15 @@ public class SalesToProdVO implements java.io.Serializable {
 	private Integer quantity;   
 	private String name;			
 	private Integer years;
+	private Integer pid;
+	public Integer getPid() {
+		return pid;
+	}
+
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
+
 	@Id
 	@Column(name = "id")
 	@SequenceGenerator(name="id", allocationSize=1)
