@@ -84,6 +84,20 @@ font-size:20px;
 /* } */
 </style>
 
+<style type="text/css">
+#loading {
+    position:absolute;
+    width:300px;
+    top:250px;
+    left:50%;
+    margin-left:-150px;
+    text-align:center;
+    padding: 10px;
+    font:bold 30px Arial, Helvetica, sans-serif;
+  
+}
+</style>
+
 </head>
 <body>
 	<!--top Navigation 導航-->
@@ -176,7 +190,7 @@ font-size:20px;
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/empLogin/GetAllEMP.jsp"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
@@ -205,5 +219,13 @@ font-size:20px;
 <%-- 		<img src="<%=request.getContextPath()%>/images/b_01.jpg"> --%>
 	</div>
 	
+	<div id="loading">
+    									讀取中.........<img src="<%=request.getContextPath()%>/images/loader.gif" />
+							</div>
+							<script type="text/javascript">
+										$(window).load(function(){
+										$("#loading").hide();
+										})
+							</script>
 </body>
 </html>

@@ -6,15 +6,19 @@
 
 <!-- bootstrap -->
 <!-- 最新編譯和最佳化的 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
 
 <!-- 選擇性佈景主題 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 
 <!-- 最新編譯和最佳化的 JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
 <script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.validate.js"></script>
+<script src="${pageContext.request.contextPath}/js/messages_zh_TW.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.metadata.js"></script>
+
 
 
 
@@ -31,6 +35,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
+
+.my-error-class {
+    color:red;
+}
+
+.my-valid-class {
+    color:green;
+}
+
+
 body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
 html,body{
     position: relative;
@@ -172,7 +186,7 @@ html,body{
 
 
 
-<title>Insert title here</title>
+<title>Amy後台登入系統</title>
 </head>
 <body>
 
@@ -185,11 +199,13 @@ html,body{
             <div class="avatar"></div>
             <div class="form-box">
                 <form action="" method="">
-                    <input type="text" name="mail" id="mail" placeholder="usermail">
-                    <input type="password" id="pwd" placeholder="password">
-                    <button class="btn btn-info btn-block login" type="button">Login</button>
+                    <input type="text" name="maillog" id="maillog" placeholder="usermail">
+                    <input type="password" id="pwdlog" placeholder="password">
+                    <button class="btn btn-info btn-block login" type="button" id="loginbtn">Login</button>
                     <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a>
-                    <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a>
+<!--                        <a href="" class="text-primary" data-toggle="modal" data-target="#addemp">Addemp</a> -->
+                      <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
+<%--                     <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a> --%>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
             </div>
@@ -197,34 +213,171 @@ html,body{
         
 </div>
 
-</body>
+
+
+
+<!-- =========================忘記密碼dialog============================== -->
+
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="resetpw" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">請輸入您的email帳號</h4>
+        </div>
+        <div class="modal-body">
+        
+<form role="form">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="remail">
+  </div>
+   <button type="submit" class="btn btn-default" id="rebtn">Submit</button>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<!-- =========================新增員工dialog============================== -->
+ 
+ <div class="container">
+   <!-- Modal -->
+  <div class="modal fade" id="addemp" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">新增員工</h4>
+        </div>
+        <div class="modal-body">
+ 
+  <form action="emp.do" method="post" role="form" id="addempform" enctype="multipart/form-data">
+  
+      <div class="form-group">
+      <label class=" " for="name">員工姓名:</label>
+      <input type="text" class= "form-control" name="name" id="name"  placeholder="name">
+    </div>
+    
+    <div class="form-group">
+      <label class=" " for="pwd1">密碼:</label>
+      <input type="password" class="form-control" name="pwd" id="pwd1" placeholder="">
+    </div>
+    
+    <div class="form-group">
+      <label class=" " for="pwd">請重新輸入密碼:</label>
+      <input type="password" class="form-control" name="pwd2" id="pwd2" equalTo="#pwd" placeholder="" >
+    </div>
+    
+     <div class="form-group"  >
+      <label class=" " id="maillab" for="regmail">電子信箱:</label> 
+      <input type="mail" class="form-control" name="regmail" id="regmail" placeholder="" >
+    </div>
+    
+     <div class="form-group">
+      <label class=" " for="edu">教育程度:</label>
+      <input type="text" class="form-control" name="edu" id="edu" placeholder="" > 
+    </div>
+   
+	<div class="form-group">
+      <label class=" " for="exp">經歷:</label>
+      <input type="text" class="form-control" name="exp" id="exp" placeholder="" >
+    </div>
+    
+    <div class="form-group">
+      <label class=" " for="spec">專長:</label>
+      <input type="text" class="form-control" name="spec" id="spec" placeholder="" >
+    </div>
+    
+    <div class="form-group">
+  <label class="" for="photo">照片</label>
+    <input id="filebutton" name="photo" class="input-file" type="file">
+     
+</div>
+    <div class="form-group">
+<button type="submit"  id="addsub" class="btn btn-default">送出</button>
+<input type="hidden" name="action" value="insert">
+   </div>
+  </form>
+    </div>
+        <div class="modal-footer">
+         
+          <button type="button"  class="btn btn-default" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+   
+    </div>
+  </div>
+  
+</div>
+ 
+ 
+ 
+ 
+
+
 
 
 <script type="text/javascript">
 
 
 function OpenLink(link) {     
-	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "65%" });
+	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "55%" });
 	}
+//====================確認帳號是否存在==================================
+$(function(){
+	$('#regmail').blur(function(){
+		var regmail = $('#regmail').val();
+		$.ajax({
+			'type':'post',
+			'url':'emp.do',
+			'dataType' :'TEXT',
+			"data":{"action" : "checkmail" , "regmail" : regmail},
+			'success':function(data){
+				if(data == "notnull"){
+// 					alert("notnull");
+					$('#mspan').remove();
+					$('#maillab').append("<span class='text-danger' id='mspan'>   帳號已存在!!</span>");
+					
+				}
+				
+			}
+			
+		});
+	});
+});	
 
 
 
 
-
+// ====================登入Ajax==================================
 $(function() {
-	//alert()
 	var textfield = $("input[name=mail]");
-	$('button[type="button"]').click(function() {
+	//$('button[type="button"]').click(function() {
+		$('#loginbtn').click(function() {
 		//alert("btn click")
-		var mail = $('#mail').val();
-		var pwd = $('#pwd').val();
+		var maillog = $('#maillog').val();
+		var pwdlog = $('#pwdlog').val();
 		$.ajax({
 			'type':'post',
 			'url':'EmpLoginServlet.do',
 			'dataType' :'TEXT',
-			"data":{"action" : "loginAjax" , "mail" : mail , "pwd" : pwd},
+			"data":{"action" : "loginAjax" , "mail" : maillog , "pwd" : pwdlog},
 			'success':function(data){
-				
+			//	alert(data);
 				//little validation just to check username
                 if (data == "success") {
                     //$("body").scrollTo("#output");
@@ -270,11 +423,74 @@ $(function() {
 		})
 			
 	})})
-
+	
+	//====================忘記密碼ajax==================================
+$(function() {
+	$('#rebtn').click(function(){
+		var remail = $('#remail').val();
+		$.ajax({
+		'type':'post',
+		'url' :'EmpLoginServlet.do',
+		'datatype' : 'text',
+		'data':{"action" : "forgetpwAjx" , "restmail" : remail},
+		'success':function(data){
+			// console.log(data);
+			 alert(data);
+			 return;
+		}
+			
+		})
+		
+	})
+})
+//====================表單驗證==================================
+// $().ready(function() {
+//  $("#addempform").validate({
+// 	// debug:true,   
+// 	 errorClass: "my-error-class",
+// 	 validClass: "my-valid-class",
+	 
+	 
+// 	 rules: {
+//      name: "required",
+//      regmail: {
+//     required: true,
+//     email: true
+//    },
+//    pwd: {
+//     required: true,
+//     minlength: 4
+//    },
+//    pwd2: {
+//     required: true,
+//     minlength: 4,
+//     equalTo: "#pwd1"
+//    },
+   
+//    edu:"required",
+//    exp:"required",
+//    spec:"required"   
+   
+//   },
+// //         messages: {
+// //      name: "請輸入姓名",
+// //      regmail: {
+// //     required: "請輸入Email地址",
+// //     email: "請輸入正確的email地址"
+// //    },
+// //    pwd: {
+// //     required: "請輸入密碼",
+// //    minlength: ("密碼不能小於4個字")
+// //    },
+// //    pwd2: {
+// //     required: "請輸入確認密碼",
+// //     minlength: "確認密碼不能小於4個字符",
+// //     equalTo: "兩次輸入密碼不一致"
+// //   }
+// //   }
+//     });
+// });
 
 </script>
-
-
-
-
+</body>
 </html>

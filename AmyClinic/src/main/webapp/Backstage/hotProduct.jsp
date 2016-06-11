@@ -19,9 +19,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                 <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#BFB2AB" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                           
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#BFB2AB" direction="right" height="20" scrollamount="5" behavior="alternate"><font >希望透過操作友善且功能完整的資訊系統，提昇顧客滿意度及診所競爭優勢</font></marquee>                                           
                 </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">熱銷產品</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">熱銷產品</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->

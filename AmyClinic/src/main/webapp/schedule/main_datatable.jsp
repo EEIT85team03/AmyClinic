@@ -79,7 +79,7 @@ float: right;
                        <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Modal title
+                    新增排班
                 </h4>
             </div>
             
