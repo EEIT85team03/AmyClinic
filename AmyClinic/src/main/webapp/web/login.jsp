@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Login </title>
+<title>Amy | 會員登入 </title>
 </head>
 <body>
 	<!-- header -->
@@ -17,8 +17,8 @@
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Login</h2>
-						<h6>add a short description here</h6>
+						<h2>登 入 愛 美</h2>
+						<h6>Log into Amy</h6>
 					</div>
 				</div>
 			</div>
@@ -26,21 +26,21 @@
 			<!-- login -->
 			<div class="login">
 				<div class="container">
-					<h3>Login Here</h3>
-					<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+					<h3>登 入</h3>
+					<p class="est">Login</p>
 							<div class="login-form-grids">
 								<div style="color: red;">${message}</div>
 								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">User Name <span>*</span></label>
-									<input type="text" name="memberVO.name" placeholder="Enter Username" required=" " >
+									<label class="test-info">會員帳號 <span>*</span></label>
+									<input type="text" name="memberVO.name" placeholder="電子信箱 / Email" required=" " >
 									<div class="clearfix"></div>
-									<label class="test-info">Password <span>*</span></label>
-									<input type="password"name="memberVO.pwd" placeholder="Password" required=" " >
+									<label class="test-info">會員密碼 <span>*</span></label>
+									<input type="password"name="memberVO.pwd" placeholder="密碼 / Password" required=" " >
 									<div class="clearfix"></div>
 									<div class="forgot">
-										<a href="#">Forgot Password?</a>
+										<a href="#">忘記密碼?</a>
 									</div>
-									<input type="submit" value="Login">
+									<input type="submit" value="登 入">
 								</form>
 							</div>
 							<h4>For New People</h4>
