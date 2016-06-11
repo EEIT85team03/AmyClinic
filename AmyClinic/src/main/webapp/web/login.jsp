@@ -16,6 +16,7 @@
 	overflow: hidden;
 	position: relative;
 /* 	margin-left: 55%; */
+	vertical-align:top;
 }
 
 #googleButtonPlaceholder div {
@@ -37,8 +38,7 @@
   font-weight: normal;
   position: relative;
   display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin:15px;
   padding: 10px;
   width: 200px;
   border-radius: 6px;
@@ -57,11 +57,12 @@
 .fb {
 	background: #4D6AB6;
 	box-shadow: 0px 3px 0px #3D5998;
- 	margin-left: 61%; 
+/*  	margin-left: 61%;  */
+	display: inline-block;
+	vertical-align:top;
 }
 #customlogin{
-	width:100%;
-	display:block;
+	text-align:center;
 }
 
 </style>
