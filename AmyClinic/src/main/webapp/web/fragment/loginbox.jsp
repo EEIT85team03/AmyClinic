@@ -109,7 +109,7 @@ p {
 			<%-- 			<img id="userphoto" src='${pageContext.request.contextPath}/web/images/anon.jpg' > --%>
 			<div id="LoginBoxText">
 				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/web/login.jsp';">登入 /</button>
-				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/register/register.jsp';"> 註冊會員</button>
+				<button class="btn btn-primary" onclick="location.href ='${pageContext.request.contextPath}/web/register.jsp';"> 註冊會員</button>
 				<div id="customerservice" onclick="alert('haha');">
 					<span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;線&nbsp;上&nbsp;客&nbsp;服
 				</div>							
