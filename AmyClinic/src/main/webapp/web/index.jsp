@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <title>Amy | Home</title>
 </head>
 <body>
@@ -147,7 +147,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- tabs -->	
 		<div class="vertical-tabs">
 			<div class="container">
-				<h3 class="title text-center">Before / After</h3>
+				<h3 class="title text-center">美麗見證</h3>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
@@ -185,7 +185,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -205,7 +205,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -226,7 +226,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -245,7 +245,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -264,7 +264,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
 										    ipsa quae ab illo inventore dicta sunt explicabo
 										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -282,7 +282,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="news-section" id="news">
 			<div class="container">
 				<div class="news-section-head text-center">
-					<h3>Latest news</h3>
+					<h3 class="title">最新消息</h3>
 					<p>Here, there and everywhere... what we've been doing</p>
 				</div>
 				<div class="news-section-grids">
@@ -292,7 +292,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">There are sit amet</a>
 							<label>March 18</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
@@ -301,7 +301,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">Lorem ipsum dolor</a>
 							<label>August 28</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 						</div>
 					</div>
 					<div class="col-md-4 news-section-grid">
@@ -310,7 +310,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						    <a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">The standard chunk</a>
 							<label>September 12</label>
 							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -358,7 +358,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 		<!-- environment -->
 		<div class="our-news">
-		<h3 class="text-center">Our Office</h3>
+		<h3 class="title text-center">診所環境</h3>
 		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 			<div id="visual">
 				<div class="slide-visual slideanim">
@@ -391,8 +391,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- /environment -->
 
-		<!-- doctor -->
+		<!-- doctor 醫療團隊-->
 		<div class="banner-bottom">
+			<h3 class="title text-center">醫療團隊</h3>
+			<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 			<div class="container">
 				<div class="col-md-4 timing">
 					<div class="opening-hours">
