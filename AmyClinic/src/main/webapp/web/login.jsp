@@ -15,7 +15,7 @@
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
-	margin-left: 55%;
+/* 	margin-left: 55%; */
 }
 
 #googleButtonPlaceholder div {
@@ -57,7 +57,11 @@
 .fb {
 	background: #4D6AB6;
 	box-shadow: 0px 3px 0px #3D5998;
-	margin-left: 61%;
+ 	margin-left: 61%; 
+}
+#customlogin{
+	width:100%;
+	display:block;
 }
 
 </style>
@@ -100,10 +104,12 @@
 									</div>
 									<input type="submit" value="登 入">
 								</form>
-								<div class="loginbtn fb" onclick="fb_login();" >使用 FaceBook 登入</div>
-								<div id="googleButtonPlaceholder">
-									<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
-									<span class="loginbtn">使用 Google Gmail 登入</span>
+								<div id="customlogin">
+									<div class="loginbtn fb" onclick="fb_login();" >使用 FaceBook 登入</div>
+									<div id="googleButtonPlaceholder">
+										<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
+										<span class="loginbtn">使用 Google Gmail 登入</span>
+									</div>
 								</div>							
 							</div>
 							<h4>For New People</h4>
