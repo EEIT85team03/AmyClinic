@@ -90,7 +90,7 @@
 			<div class="login">
 				<div class="container">
 					<h3>登 入</h3>
-					<p class="est">Login</p>
+					<p class="est">Welcome back!</p>
 							<div class="login-form-grids">
 								<div style="color: red;">${message}</div>
 								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
