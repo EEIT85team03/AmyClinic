@@ -4,10 +4,14 @@
 <html>
 <head>
 <title>Amy | 會員登入 </title>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 </head>
 <body>
 	<!-- header -->
 	<jsp:include page="fragment/header.jsp" />
+	<script src="${pageContext.request.contextPath}/web/js/facebook.login.js"></script>	
 	<!-- //header -->
 		<!-- login-section -->
 		<section class="login-page">
@@ -63,20 +67,20 @@
 		<jsp:include page="fragment/footer.jsp" />
 		<!-- //footer -->
 		<script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
-							$().UItoTop({ easingType: 'easeOutQuart' });
-							
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			$(document).ready(function() {
+				/*
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				*/				
+				$().UItoTop({ easingType: 'easeOutQuart' });				
+			});
+		</script>
+	<!-- Google script -->
+	<script src="${pageContext.request.contextPath}/js/google.login.js"></script>		
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>

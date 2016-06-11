@@ -58,10 +58,13 @@ p {
 
 #loginboximagetext{
    position: absolute; 
-   top: -2px;  
-   left: -5px; 
-   width: 100%;
+   top: 5px;  
+   left: 0px; 
+   width: 50px;
    opacity:0.8;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 #loginboximagetext span { 
    color: white; 
@@ -140,8 +143,8 @@ p {
 
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
-		console.log(response);
-		console.log(response.authResponse);
+// 		console.log(response);
+// 		console.log(response.authResponse);
 		var accessToken = response.authResponse.accessToken;
 
 		if (response.status === 'connected') {

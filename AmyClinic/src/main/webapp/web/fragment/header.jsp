@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
+<!-- js -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
+<!-- js -->
+<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
+<link href="${pageContext.request.contextPath}/web/css/jquery-ui.css" rel="stylesheet">
+
 <link href="${pageContext.request.contextPath}/web/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="${pageContext.request.contextPath}/web/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="${pageContext.request.contextPath}/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -15,9 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
-<!-- js -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
-<!-- js -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="${pageContext.request.contextPath}/web/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/web/js/modernizr.custom.js"></script>

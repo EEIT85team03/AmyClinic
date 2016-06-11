@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script	src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/web/css/jquery-ui.css" rel="stylesheet">
-<script src="${pageContext.request.contextPath}/web/js/jquery-ui.min.js"></script>
-
 <title>Amy | 會員註冊</title>
 </head>
 <body>
