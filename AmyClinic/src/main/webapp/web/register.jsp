@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Register</title>
+<title>Amy | 會員註冊</title>
 </head>
 <body>
 	<!-- header -->
