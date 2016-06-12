@@ -64,10 +64,10 @@
 									<input type="text" name="memberVO.birthday" placeholder="出生日期" value="1996-05-20" id="birthday" readonly>								
 									<select name="memberVO.country" id="country">
 									  <option value="Unspecified">選擇國籍</option>
-									  <option value="Taiwan">台灣</option>
-									  <option value="United States">美國</option>
-									  <option value="Japan">日本</option>
-									  <option value="Korea">韓國</option>
+									  <option value="台灣">台灣</option>
+									  <option value="美國">美國</option>
+									  <option value="日本">日本</option>
+									  <option value="韓國">韓國</option>
 									</select>								
 									<select name="memberVO.gender" id="country" id="gender">
 									  <option value="?">選擇性別</option>
@@ -78,8 +78,7 @@
 									<input type="text" name="memberVO.phone" placeholder="電話號碼" id="phone" >								
 									<input type="text" name="memberVO.height" placeholder="身高 (公分)" id="height" >								
 									<input type="text" name="memberVO.mass" placeholder="體重 (公斤)" id="weigt" >								
-									<input type="text" name="fileUpload" placeholder="會員圖片" id="uploader" >								
-									
+									<input type="text" name="fileUpload" placeholder="會員圖片" id="uploader" >																	
 <!-- 									<div class="register-check-box"> -->
 <!-- 										<div class="check"> -->
 <!-- 											<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label> -->
@@ -164,6 +163,11 @@ jQuery(function($) {
 		    changeYear: true,
 	      });
 	}); 
+</script>
+<script>
+	$(function() {
+		$("input").attr("autocomplete", "off");
+	});
 </script>
 		
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>

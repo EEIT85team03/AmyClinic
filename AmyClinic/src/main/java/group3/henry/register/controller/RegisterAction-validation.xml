@@ -59,15 +59,15 @@
 <!-- 		</field-validator> -->
 <!-- 	</field> -->
 
-<!-- 	<field name="memberVO.phone"> -->
+	<field name="memberVO.phone">
 <!-- 		<field-validator type="required"> -->
 <!-- 			<param name="trim">true</param> -->
 <!-- 			<message key="phone.required" /> -->
 <!-- 		</field-validator> -->
 		
-<!-- 		<field-validator type="regex">		 -->
-<!-- 			<param name="expression"> <![CDATA[([0-9]{10,})]]> </param> -->
-<!-- 			<message key="phone.invalid"/> -->
-<!-- 		</field-validator> -->
-<!-- 	</field> -->
+		<field-validator type="regex">		
+			<param name="expression"> <![CDATA[([0-9]{10,})]]> </param>
+			<message key="phone.invalid"/>
+		</field-validator>
+	</field>
 </validators>
