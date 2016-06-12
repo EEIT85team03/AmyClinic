@@ -76,6 +76,7 @@
 <tr>
 	<td colspan="2" align="center">
 		<input type="submit" value="確認送出"></input>
+		<input type="button" id="onekey" value="一鍵選擇時間"></input>
 	</td>
 </tr>
 </table>
@@ -101,6 +102,13 @@ $(function(){
 		overlayClose:false,
 		escKey:false
 	});
+	$("#onekey").click(function(){
+		$('#sel_app_time').text('2016-07-11　星期一　早診');
+		$('input[name="s_app_time"]').val('2016-07-11　星期一　早診');
+		$('input[name="ename"]').val('張君雅');
+		$('input[name="id"]').val('1123');
+		$('#errortime').empty();
+	})
 });
 </script>
 </body>
