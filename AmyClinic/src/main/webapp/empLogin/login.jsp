@@ -334,10 +334,16 @@ html,body{
 
 <script type="text/javascript">
 
-
-function OpenLink(link) {     
-	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "55%" });
+$("#pwdlog").keypress(function(e){
+	code = (e.keyCode ? e.keyCode : e.which);
+	if (code == 13)
+	{
+	     //targetForm是表單的ID
+	 $("#loginbtn").click();
 	}
+	});
+
+
 //====================確認帳號是否存在==================================
 $(function(){
 	$('#regmail').blur(function(){
