@@ -27,7 +27,14 @@ function upd(key,quantity,index) {
 				return;
 			}
 			if(newQty == 0) {
-				alert('請點刪除按鈕刪除');
+				Lobibox.notify("error", {
+					size: 'mini',
+					title: '請點刪除按鈕刪除',
+					delay: 1500,
+					delayIndicator: false,
+					sound: false,
+					position: "center top"
+					});
 				$("#subtotal" + index).empty();
 				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
 				$("#send_qty" + index).val(quantity);
@@ -42,7 +49,14 @@ function upd(key,quantity,index) {
 			}
 		//使用者輸入的數量超過庫存量
 			if((amount - newQty) < 0) {
-				alert('庫存量不足！');
+				Lobibox.notify("error", {
+					size: 'mini',
+					title: '庫存量不足！',
+					delay: 1500,
+					delayIndicator: false,
+					sound: false,
+					position: "center top"
+					});
 				$("#send_qty" + index).val(quantity);
 				$("#subtotal" + index).empty();
 				$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
@@ -70,7 +84,14 @@ function upd(key,quantity,index) {
 						return;
 					},
 					"error":function(data){
-						alert("修改失敗！");
+						Lobibox.notify("error", {
+							size: 'mini',
+							title: '修改失敗！',
+							delay: 1500,
+							delayIndicator: false,
+							sound: false,
+							position: "center top"
+							});
 						$("#send_qty" + index).val(quantity);
 						$("#subtotal" + index).empty();
 						$("#subtotal" + index).append((price * quantity).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "元");
@@ -82,17 +103,54 @@ function upd(key,quantity,index) {
 		
 		//從購物車內把某商品刪掉
 		function del(key) {
-			if(confirm("確定要刪除此項商品嗎？")) {
-				$.ajax({
-					"type":"post",
-					"url":getContextPath()+'/free/deleteOIProd',
-					"data":{"pid" : key},
-					"success":function(data){
-						alert("已刪除！");
-						location.reload();
-					}
-				})
-			}
+			Lobibox.confirm({
+				title: "請確認",
+				msg: "要刪除此項商品嗎？",
+				callback: function ($this, type, ev) {
+				    if(type == 'yes') {
+				    	$.ajax({
+							"type":"post",
+							"url":getContextPath()+'/free/deleteOIProd',
+							"data":{"pid" : key},
+							"success":function(data){
+								Lobibox.notify("success", {
+									size: 'mini',
+									title: '已刪除！',
+									delay: 1000,
+									delayIndicator: false,
+									sound: false,
+									position: "center top"
+									});
+								 window.setTimeout(function(){
+									 window.location.reload();
+									 }, 1500);
+						       
+							}
+						})
+				    } else {}
+				}
+				});
+//			if(confirm("確定要刪除此項商品嗎？")) {
+//				$.ajax({
+//					"type":"post",
+//					"url":getContextPath()+'/free/deleteOIProd',
+//					"data":{"pid" : key},
+//					"success":function(data){
+//						Lobibox.notify("success", {
+//							size: 'mini',
+//							title: '已刪除！',
+//							delay: 1000,
+//							delayIndicator: false,
+//							sound: false,
+//							position: "center top"
+//							});
+//						 window.setTimeout(function(){
+//							 window.location.reload();
+//							 }, 1500);
+//				       
+//					}
+//				})
+//			}
 		}
 		
 		
@@ -105,24 +163,60 @@ function upd(key,quantity,index) {
 			
 			//確認無誤
 			$('#confirm').click(function(){
-				if(confirm("確認無誤？")) {
-					window.location.href = getContextPath()+'/shoppings/checkfordata';
-					
-				} 
-				
+				Lobibox.confirm({
+					title: "請確認",
+					msg: "即將前往結帳頁面",
+					callback: function ($this, type, ev) {
+					    if(type == 'yes') {
+					    	window.location.href = getContextPath()+'/shoppings/checkfordata';
+					    } else {}
+					}
+				})
 			})
 			
 			//放棄購物，請Servlet把ShoppingCart物件刪掉
 			$('#abandon').click(function(){
-				if(confirm("要放棄購物嗎？")) {
-					$.ajax({
-						"type":"post",
-						"url":getContextPath()+'/free/abanShopping',
-						"success":function(data){
-							alert("已放棄購物！");
-							window.location.href = getContextPath()+"/shopping/prod_list.jsp";
-						}
-					})
-				} 
+				Lobibox.confirm({
+					title: "請確認",
+					msg: "要放棄購物嗎？",
+					callback: function ($this, type, ev) {
+					    if(type == 'yes') {
+							$.ajax({
+								"type":"post",
+								"url":getContextPath()+'/free/abanShopping',
+								"success":function(data){
+									Lobibox.notify("success", {
+										size: 'mini',
+										title: '已放棄購物！',
+										delay: 1500,
+										delayIndicator: false,
+										sound: false,
+										position: "center top"
+										});
+//									alert("");
+									window.location.href = getContextPath()+"/shopping/prod_list.jsp";
+								}
+							})
+					    } else {}
+					}
+					});
+//				if(confirm("要放棄購物嗎？")) {
+//					$.ajax({
+//						"type":"post",
+//						"url":getContextPath()+'/free/abanShopping',
+//						"success":function(data){
+//							Lobibox.notify("success", {
+//								size: 'mini',
+//								title: '已放棄購物！',
+//								delay: 1500,
+//								delayIndicator: false,
+//								sound: false,
+//								position: "center top"
+//								});
+////							alert("");
+//							window.location.href = getContextPath()+"/shopping/prod_list.jsp";
+//						}
+//					})
+				
 			})
 		})

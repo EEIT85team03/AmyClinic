@@ -53,6 +53,9 @@ $(function(){
 		if($(this).val().length > 10) {
 			warn.html("&nbsp;&nbsp;&nbsp;&nbsp;<span class='fontisred'>電話長度超過</span>");
 			$("#confirm").prop("disabled",true);
+		} else if($(this).val().length < 7){
+			warn.html("&nbsp;&nbsp;&nbsp;&nbsp;<span class='fontisred'>電話長度太短</span>");
+			$("#confirm").prop("disabled",true);
 		} else if(!patt.test($(this).val())){
 			warn.html("&nbsp;&nbsp;&nbsp;&nbsp;<span class='fontisred'>請輸入純數字</span>");
 			$("#confirm").prop("disabled",true);
@@ -92,7 +95,14 @@ $(function(){
 		var email = $('input[name="email"]').val();
 		var myNewRwd = $("#newRwd").text();
 		if(mname.length == 0 || addr.length == 0 || phone.length == 0 || email.length == 0) {
-			alert("資料請填寫完整");
+			Lobibox.notify("error", {
+				size: 'mini',
+				title: '資料請填寫完整',
+				delay: 1500,
+				delayIndicator: false,
+				sound: false,
+				position: "center top"
+				});
 			return;
 		}
 		$.ajax({
@@ -114,15 +124,30 @@ $(function(){
 	
 	//取消訂單，把購物車殺掉
 	$("#cancel").click(function(){
-		if(confirm("要取消訂單嗎？")) {
-			$.ajax({
-				"type":"post",
-				"url": getContextPath()+ "/shoppings/killorder",
-				"success":function(data){
-					window.location.href = getContextPath()+ "/shopping/prod_list.jsp";
-				}
-			})
-		}
+		Lobibox.confirm({
+			title: "請確認",
+			msg: "要取消訂單嗎？",
+			callback: function ($this, type, ev) {
+			    if(type == 'yes') {
+			    	$.ajax({
+						"type":"post",
+						"url": getContextPath()+ "/shoppings/killorder",
+						"success":function(data){
+							window.location.href = getContextPath()+ "/shopping/prod_list.jsp";
+						}
+					})
+			    } else {}
+			}
+			});
+//		if(confirm("要取消訂單嗎？")) {
+//			$.ajax({
+//				"type":"post",
+//				"url": getContextPath()+ "/shoppings/killorder",
+//				"success":function(data){
+//					window.location.href = getContextPath()+ "/shopping/prod_list.jsp";
+//				}
+//			})
+//		}
 	});
 	
 	//依照使用者輸入的紅利點數動態改變扣抵金額、應付金額、所得紅利點數，並且針對值去做驗證
