@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
 
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="<%=request.getContextPath()%>/css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
@@ -16,8 +16,10 @@
 <link href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- Custom Fonts -->
 <script src="<%=request.getContextPath()%>/js/jquery.js"></script>
+<!-- fileinput CSS -->
+<link href="<%=request.getContextPath()%>/css/fileinput.css" rel="stylesheet" >
 <!-- jQuery -->
-<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<%=request.getContextPath()%>/js/plugins/morris/raphael.min.js"></script>
 <script>

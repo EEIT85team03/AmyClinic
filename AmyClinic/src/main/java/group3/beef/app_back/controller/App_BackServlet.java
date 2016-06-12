@@ -6,6 +6,7 @@ import group3.carrie.schedule.model.ScheduleService;
 import group3.carrie.schedule.model.ScheduleVO;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -50,8 +51,13 @@ public class App_BackServlet extends HttpServlet {
 						appVO.setApt_status(0); //完成取消
 						
 						ScheduleService scheSvc = new ScheduleService();
-						List<ScheduleVO> list = scheSvc.findByDateAndHour(appVO.getApt_date(), appVO.getApt_time());
+						java.sql.Date date= appVO.getApt_date();
+						String time = appVO.getApt_time();
+						System.out.println(date);
+						System.out.println(time);
+						List<ScheduleVO> list = scheSvc.findByDateAndHour(date, time);
 						System.out.println(list.isEmpty());
+						
 						ScheduleVO schVO = list.get(0);
 						schVO.setAppt_num(schVO.getAppt_num()-1);
 						if(schVO.getAppt_num()<3){

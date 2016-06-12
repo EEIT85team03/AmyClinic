@@ -8,9 +8,10 @@
 <html>
 <head>
 <style type="text/css">
-.table {
-/* text-align:left; */
-}
+/* table { */
+/*   background-color: transparent; */
+/*   table-layout: fixed; */
+/* } */
 
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,11 +42,10 @@
 		list = eSvc.getAll();
 		pageContext.setAttribute("list", list);
 	%>
-	
- 
-	<table border="1"   class="table table-hover"  >
+	<div class="container-fluid">
+	<table border="1"   class="table table-hover table-responsive" >
 	<tr>
-		<th width="70px;">員工編號</th>
+		<th>員工編號</th>
 		<th>員工照片</th>
 		<th>員工姓名</th>
 		<th>email</th>
@@ -58,7 +58,7 @@
 	<c:forEach var="employeeVO" items="${list}">
 		<tr>
 			<td>${employeeVO.eid}</td>
-			<td><img width='180' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
+			<td><img width='100' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
 			<td>${employeeVO.name}</td>
 			<td>${employeeVO.email}</td>
 			<td>${employeeVO.education}</td>
@@ -83,6 +83,6 @@
 	</c:forEach>
 	</table>
 </div>
- 
+</div>
 </body>
 </html>
