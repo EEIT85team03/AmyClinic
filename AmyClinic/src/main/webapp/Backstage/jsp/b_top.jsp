@@ -54,13 +54,8 @@ $(window).load(function() {
 	min-height: 100%;
 	width: 100%;
 }
-table {
-	
-	align: center;
-}
-th{
-background-color:#BFB2AB;
-}
+table {align: center;}
+th{background-color:#BFB2AB;}
 /* 側邊 */
 .side-nav{
 /* background-color:#006030; */
@@ -74,17 +69,12 @@ background-color:#FF8000;
 /* background-color:#006030; */
 }
 em{  color:red; }
-/* td{ */
-/* b{ */
+
 #wrapper{
 font-family: 'Noto Sans TC'; 
 font-size:20px;
 }
-/* background-color:#D3FF93; */
-/* } */
-</style>
 
-<style type="text/css">
 #loading {
     position:absolute;
     width:300px;
@@ -94,7 +84,6 @@ font-size:20px;
     text-align:center;
     padding: 10px;
     font:bold 30px Arial, Helvetica, sans-serif;
-  
 }
 </style>
 

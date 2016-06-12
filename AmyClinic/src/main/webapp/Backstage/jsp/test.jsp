@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="">
     <meta name="author" content=""><title>☆AMY診所☆管理系統☆pro版☆</title>
+    <script src="<%=request.getContextPath()%>/js/jquery.js"></script>
 </head>
+
 <script >
 function ale()
 {
@@ -51,5 +53,40 @@ function prom()
 <p>
   <input type="submit" name="Submit3" value="提交" onclick="prom()" />
 </p>
+
+<form id="form1" name="form1" method="post" action="" onclick="return false">
+  <p>姓名：
+    <input type="text" name="name" id="name" />
+  </p>
+  <p>電話：
+    <input type="text" name="phone" id="phone" />
+  </p>
+  <p>地址：
+    <input type="text" name="address" id="address" />
+  </p>
+  <p>
+    <input type="submit" name="button" id="button" value="送出" />
+  </p>
+  <script>
+ $(document).ready(function(){
+    $("#button").click(function(){
+        if($("#name").val()==""){
+            alert("你尚未填寫姓名");
+            eval("document.form1['name'].focus()");       
+        }else if($("#phone").val()==""){
+            alert("你尚未填寫電話");
+            eval("document.form1['phone'].focus()");    
+        }else if($("#address").val()==""){
+            alert("你尚未填寫地址");
+            eval("document.form1['address'].focus()");       
+        }else{
+            document.form1.submit();
+        }
+    })
+ })
+</script>
+
+</form>
+
 </body>
 </html>
