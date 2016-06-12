@@ -45,8 +45,8 @@ a:hover {
     <div class="page-header">
 <font color=#FF8000>-AMY-內部員工系統</font><br>
 <a href='' data-toggle="modal" data-target="#myModalNorm" >登入</a><br>
-<a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'>新增員工</a><br>
-<a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
+<a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">忘記密碼</a><br>
+<a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'>加入新員工</a><br>
     </div>
   
 </center>       
@@ -109,7 +109,7 @@ a:hover {
                 
             <div class="modal-body"><!-- Modal Body -->             
                 <div class="form-box">
-                <form action="" method="/EmpLoginServlet.do">
+                <form >
                 		<label class="control-label col-sm-2" for="maillog">信箱</label>
                     <input type="text" name="maillog" id="maillog" placeholder="使用者信箱">
                     	<label class="control-label col-sm-2" for="pwdlog">密碼</label>
