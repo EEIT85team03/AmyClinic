@@ -10,10 +10,12 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+@WebFilter({"/Backstage/*","/appBack/*","/schedule/*"})
 public class EmpLoginFilter implements Filter {
 	private FilterConfig config;
 
@@ -29,7 +31,7 @@ public class EmpLoginFilter implements Filter {
 		EmployeeVO empVO = (EmployeeVO) session.getAttribute("empVO");
 		if (empVO == null) {
 			session.setAttribute("location", req.getRequestURI());
-			res.sendRedirect(req.getContextPath() + "/Backstage/login.jsp");
+			res.sendRedirect(req.getContextPath() + "/empLogin/login.jsp");
 			return;
 		} else {
 			chain.doFilter(req, res);
