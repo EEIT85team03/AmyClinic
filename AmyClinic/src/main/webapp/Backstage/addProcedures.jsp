@@ -84,13 +84,14 @@ pageContext.setAttribute("proctype", proctype);
 
   </form>
   <c:if test="${not empty errorMsg}">
-	
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
 			<li><font color='red'>${message}</font></li>
 		</c:forEach>
 	</ul>
-	
+</c:if>
+<c:if test="${empty errorMsg}">
+	<script >$(function () { alert("新增療程成功");});</script>
 </c:if>
 </div>
 <!--         結束 -->
