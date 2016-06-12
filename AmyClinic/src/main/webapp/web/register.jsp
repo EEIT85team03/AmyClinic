@@ -5,6 +5,10 @@
 <head>
 <title>Amy | 會員註冊</title>
 <style>
+.ui-datepicker-month,
+.ui-datepicker-year {
+   color: #3f3731 !important;
+ }
 .login-form-grids form select {
 	font-size: 14px;
     display: block;
@@ -116,13 +120,49 @@
 				$().UItoTop({ easingType: 'easeOutQuart' });
 				
 			});
-		</script>
-<script>
+		</script>		
+<script> /* Datepicker settings*/
+
+jQuery(function($) {
+	  $('input.datetimepicker').datepicker({
+	    duration: '',
+	    changeMonth: true,
+	    changeYear: true,
+	    yearRange: '1950:2016',
+	    showTime: false,
+	    time24h: false
+	  });
+
+	$.datepicker.regional[ "zh-TW" ] = {
+		closeText: "關閉",
+		prevText: "&#x3C;上月",
+		nextText: "下月&#x3E;",
+		currentText: "今天",
+		monthNames: [ "一月","二月","三月","四月","五月","六月",
+		"七月","八月","九月","十月","十一月","十二月" ],
+		monthNamesShort: [ "一月","二月","三月","四月","五月","六月",
+		"七月","八月","九月","十月","十一月","十二月" ],
+		dayNames: [ "星期日","星期一","星期二","星期三","星期四","星期五","星期六" ],
+		dayNamesShort: [ "周日","周一","周二","周三","周四","周五","周六" ],
+		dayNamesMin: [ "日","一","二","三","四","五","六" ],
+		weekHeader: "周",
+		dateFormat: "yy-mm-dd",
+		firstDay: 1,
+		isRTL: false,
+		showMonthAfterYear: true,
+		yearSuffix: "年" };
+	$.datepicker.setDefaults( $.datepicker.regional[ "zh-TW" ] );
+	});
+
+/* ----------------------------------- */
 	$(document).ready(function() {    
 		var d = new Date();		
 		var dynamicDate = new Date(d.setFullYear(d.getFullYear() - 22));	
-		$('#birthday').datepicker({changeMonth: true, changeYear: true});
 		$("#birthday").datepicker("setDate", dynamicDate);
+		$('#birthday').datepicker({
+		    changeMonth: true,
+		    changeYear: true,
+	      });
 	}); 
 </script>
 		
