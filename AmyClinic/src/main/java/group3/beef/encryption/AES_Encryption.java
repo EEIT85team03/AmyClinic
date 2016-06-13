@@ -9,7 +9,7 @@ import javax.crypto.spec.*;
 
 public class AES_Encryption { 
 	
-	private static final String KEY = "beefgood";
+	private static final String KEY = "AMY";
 	@SuppressWarnings("restriction")
 	public   String getencrypt(String p) throws Exception
 	  {
@@ -24,7 +24,7 @@ public class AES_Encryption {
 	      cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
 	      byte[] encrypt =
 	      cipher.doFinal( p.getBytes());
-	      encrypted=new BASE64Encoder().encodeBuffer(encrypt);
+	      encrypted=new BASE64Encoder().encodeBuffer(encrypt).trim();
 	      //System.out.println("encrypted="+encrypted);
 	      }//try
 	      catch(Exception e){System.out.println(e);
