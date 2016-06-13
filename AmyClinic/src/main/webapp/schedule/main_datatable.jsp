@@ -1,39 +1,151 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="group3.beef.employee.*"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/u/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.12,b-1.2.1,b-colvis-1.2.1,b-flash-1.2.1,b-html5-1.2.1,b-print-1.2.1,se-1.2.0/datatables.min.css" />
-
 <!-- jQuery -->
-<script type="text/javascript" charset="utf8"
-	src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.datatables.net/u/dt/jszip-2.5.0,pdfmake-0.1.18,dt-1.10.12,b-1.2.1,b-colvis-1.2.1,b-flash-1.2.1,b-html5-1.2.1,b-print-1.2.1,se-1.2.0/datatables.min.js"></script>
-<!-- jQuery UI -->
-<script type="text/javascript" charset="utf8"
-	src="http://cdn.datatables.net/plug-ins/28e7751dbec/integration/jqueryui/dataTables.jqueryui.js"></script>
+<%-- <script type="text/javascript" charset="utf8"src="<%=request.getContextPath()%>/js/jquery-1.9.1.js"></script> --%>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-<!-- DataTables -->
-<!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script> -->
-<script type="text/javascript"
-	src="https://cdn.datatables.net/u/dt/dt-1.10.12,af-2.1.2,b-1.2.1,b-colvis-1.2.1,b-print-1.2.1,cr-1.3.2,fc-3.2.2,fh-3.1.2,kt-2.1.2,r-2.1.0,rr-1.1.2,sc-1.4.2,se-1.2.0/datatables.js"></script>
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css"	href="<%=request.getContextPath()%>/css/datatables.css"/>
+
+
+<%-- <link href="<%=request.getContextPath()%>/schedule/ext/bootstrap.css" rel="stylesheet"> --%>
+<%-- <link href="<%=request.getContextPath()%>/schedule/ext/font-awesome.min.css"	rel="stylesheet"> --%>
+<%-- <script src="<%=request.getContextPath()%>/schedule/ext/bootstrap.min.js"></script> --%>
+
+
+<style type="text/css">
+
+/* .modal-body { */
+/* 	padding:35px; */
+/* 	margin-right:10%; */
+
+/* } */
+
+.errors {
+float: right;
+}
+
+</style>
 
 
 
 <title>醫生門診班表</title>
 </head>
-<body>
-<input type="button" id="addsch" value="GO">
 
-	<table id="table_id" class="display" width="80%" align="center">
+
+
+<body>
+<div id="wrapper"><!-- all -->  <jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->   
+     
+     <script type="text/javascript"	src="<%=request.getContextPath()%>/js/datatables.js"></script>
+       <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
+    
+
+ 
+<div id="page-wrapper" style=background-color:#000000  >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font>
+                 
+                 </li></ol>
+                    </div>
+                </div><!-- /.row -->
+            </div> <!-- /.container-fluid -->
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
+<!--         開始 -->
+<!-- =======================Bootstrap dialog============================== -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增排班
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form action="AddScheduleServlet" id="schform" role="form" method="post">
+                  
+                  <div class="form-group">
+                    <label for="doctor">值班醫師</label>
+                    <jsp:useBean id="empSvc" scope="page" class="group3.beef.employee.model.EmployeeService" />
+                      <select  id="doctor" name="eid" class="form-control" > 
+                      <c:forEach var="empVO" items="${empSvc.all}">
+						<option value="${empVO.eid}">${empVO.name}</option>
+                      </c:forEach>
+                      </select>
+                      </div>
+                      
+                      <div class="form-group">
+                    <label for="datepicker">值班日期</label>
+                      <input type="text"  name="c_date" class="form-control"
+                          id="datepicker" placeholder="date"  required/>
+                  </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">值班時段</label>
+                        <select name="c_hours" class="form-control" id="datepicker"> 
+						<option value="早上">早上</option>
+					  <option value="下午">下午</option>
+  					<option value="晚上">晚上</option>
+                      </select>
+                      </div>
+                      
+                      <div class="form-group">
+                    <label for="memo">memo</label> 
+                      <input type="text" id="memo" name="memo" class="form-control"
+                          id="datepicker" placeholder="" required/>
+                  </div>
+                      
+                  
+                  <div class="row">
+                  <div class="checkbox col-md-offset-10">
+                    <label>  <input type="checkbox"/>休假 </label>
+                  </div>
+                  </div>
+                  <button type="submit" class="btn btn-default col-md-offset-0.5"> 送出 </button>
+                  <input type="hidden" name="action" value="addsch">
+                </form>
+                
+                  
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal"> 關閉  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =============================================================================== -->
+
+
+
+	<table id="table_id" class="display" width="90%" align="center">
 		<thead>
 			<tr>
 				<th>排班編號</th>
@@ -45,8 +157,7 @@
 				<th>備註</th>
 			</tr>
 		</thead>
-		<jsp:useBean id="schSvc" scope="page"
-			class="group3.carrie.schedule.model.ScheduleService" />
+		<jsp:useBean id="schSvc" scope="page"	class="group3.carrie.schedule.model.ScheduleService" />
 		<c:forEach var="schVO" items="${schSvc.all}">
 			<tr>
 				<td>${schVO.sch_id}</td>
@@ -74,8 +185,29 @@
 	</table>
 
 
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
+    新增排班
+</button>
+<!-- Button trigger modal -->
+
+
+
+</div>
+
+
+
 </body>
 <script type="text/javascript">
+ 
+$(function() {
+    $( "#datepicker" ).datepicker({
+    	dateFormat: "yy-mm-dd"
+    });
+  });
+
+
+
 	$(document).ready(function() {
 		var table = $('#table_id').DataTable({
 			"order": [[ 0, "desc" ]], //預設編號排序
@@ -84,7 +216,7 @@
 			
 							             ],
  		"lengthMenu": [[10, 15, 30, 50, -1], [10, 15, 30, 50, "All"]],
- 		"iDisplayLength": 10,
+ 		"iDisplayLength": 15,
 //  		dom: 'Bfrtip',
 //  		buttons: [
 // 		            {

@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <title>Amy | Home</title>
 </head>
 <body>
@@ -143,9 +137,258 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 			});
 		</script>
+
+		<!-- tabs -->	
+		<div class="vertical-tabs">
+			<div class="container">
+				<h3 class="title text-center">美麗見證</h3>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+						  <div class="list-group">
+							<a href="#" class="list-group-item active text-center">
+							    Services 1
+							</a>
+							<a href="#" class="list-group-item text-center">
+							    Services 2
+							</a>
+							<a href="#" class="list-group-item text-center">
+							    Services 3
+							</a>
+							<a href="#" class="list-group-item text-center">
+							    Services 4
+							</a>
+							<a href="#" class="list-group-item text-center">
+							    Services 5
+							</a>
+						  </div>
+						</div>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+							<!-- flight section -->
+							<div class="bhoechie-tab-content active">
+								<div class="services">
+									<div class="ser-img">
+										<img src="${pageContext.request.contextPath}/web/images/ser1.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Contrary to popular belief, Lorem Ipsum is not simply random text</h3>
+										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
+											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
+											by English versions from the 1914 translation by H. Rackham.
+										</p>
+										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
+										    ipsa quae ab illo inventore dicta sunt explicabo
+										</p>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<!-- train section -->
+							<div class="bhoechie-tab-content">
+								<div class="services">
+									<div class="ser-img">
+										<img src="${pageContext.request.contextPath}/web/images/ser2.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>At vero eos et accusamus et iusto dignissimos ducimus qui blanditiis</h3>
+										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
+											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
+											by English versions from the 1914 translation by H. Rackham.
+										</p>
+										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
+										    ipsa quae ab illo inventore dicta sunt explicabo
+										</p>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+				
+							<!-- hotel search -->
+							<div class="bhoechie-tab-content">
+								<div class="services">
+									<div class="ser-img">
+										<img src="${pageContext.request.contextPath}/web/images/ser3.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>On the other hand, we denounce with righteous indignation</h3>
+										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
+											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
+											by English versions from the 1914 translation by H. Rackham.
+										</p>
+										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
+										    ipsa quae ab illo inventore dicta sunt explicabo
+										</p>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="bhoechie-tab-content">
+								<div class="services">
+									<div class="ser-img">
+										<img src="${pageContext.request.contextPath}/web/images/ser4.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Laboris nisi ut aliquip ex ea commodo consequat</h3>
+										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
+											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
+											by English versions from the 1914 translation by H. Rackham.
+										</p>
+										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
+										    ipsa quae ab illo inventore dicta sunt explicabo
+										</p>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="bhoechie-tab-content">
+								<div class="services">
+									<div class="ser-img">
+										<img src="${pageContext.request.contextPath}/web/images/ser5.jpg" title="service" alt="" />
+									</div>
+									<div class="ser-info">
+										<h3>Temporibus autem quibusdam et aut officiis debitis</h3>
+										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
+											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
+											by English versions from the 1914 translation by H. Rackham.
+										</p>
+										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
+										    ipsa quae ab illo inventore dicta sunt explicabo
+										</p>
+										<a href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+			  </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/tabs.js"></script>		
+		<!-- //tabs -->
+
 		
-		<!-- banner-bottom -->
+		<!-- quick links -->
+		<div class="news-section" id="news">
+			<div class="container">
+				<div class="news-section-head text-center">
+					<h3 class="title">最新消息</h3>
+					<p>Here, there and everywhere... what we've been doing</p>
+				</div>
+				<div class="news-section-grids">
+					<div class="col-md-4 news-section-grid">
+						<img src="${pageContext.request.contextPath}/web/images/n1.jpg" alt="" />
+						<div class="info">
+							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">There are sit amet</a>
+							<label>March 18</label>
+							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+						</div>
+					</div>
+					<div class="col-md-4 news-section-grid">
+						<img src="${pageContext.request.contextPath}/web/images/n2.jpg" alt="" />
+						<div class="info">
+							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">Lorem ipsum dolor</a>
+							<label>August 28</label>
+							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+						</div>
+					</div>
+					<div class="col-md-4 news-section-grid">
+						<img src="${pageContext.request.contextPath}/web/images/n3.jpg" alt="" />
+						<div class="info">
+						    <a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">The standard chunk</a>
+							<label>September 12</label>
+							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
+							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">繼續閱讀</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- //quick links -->
+
+		
+		
+		<!-- Stats -->
+		<div class="stats">
+			<div class="container">
+				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
+				<div class="stats-info">
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-smile-o"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
+						<p class="stats-info">Happy Smiles</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-facebook"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
+						<p class="stats-info">Facebook Likes</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-twitter"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
+						<p class="stats-info">Twitter Followers</p>
+					</div>
+					<div class="col-md-3 col-sm-3 stats-grid slideanim">
+						<i class="fa fa-flask"></i>
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
+						<p class="stats-info">Lorem Ipsum</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //Stats -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
+		
+	
+		<!-- environment -->
+		<div class="our-news">
+		<h3 class="title text-center">診所環境</h3>
+		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			<div id="visual">
+				<div class="slide-visual slideanim">
+					<!-- Slide Image Area (1000 x 424) -->
+					<ul class="slide-group">
+						<li><img src="${pageContext.request.contextPath}/web/images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
+						<li><img src="${pageContext.request.contextPath}/web/images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
+					</ul>
+					<!-- Slide Description Image Area (316 x 328) -->
+					<div class="script-wrap">
+						<ul class="script-group">
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
+						</ul>
+						<div class="slide-controller">
+							<a href="#" class="btn-prev"><img src="${pageContext.request.contextPath}/web/images/btn_prev.png" alt="Prev Slide" /></a>
+							<a href="#" class="btn-play"><img src="${pageContext.request.contextPath}/web/images/btn_play.png" alt="Start Slide" /></a>
+							<a href="#" class="btn-pause"><img src="${pageContext.request.contextPath}/web/images/btn_pause.png" alt="Pause Slide" /></a>
+							<a href="#" class="btn-next"><img src="${pageContext.request.contextPath}/web/images/btn_next.png" alt="Next Slide" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /environment -->
+
+		<!-- doctor 醫療團隊-->
 		<div class="banner-bottom">
+			<h3 class="title text-center">醫療團隊</h3>
+			<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 			<div class="container">
 				<div class="col-md-4 timing">
 					<div class="opening-hours">
@@ -185,250 +428,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="clearfix"></div>
 			</div>
 		</div>		
-		<!-- //banner-bottom -->
-		
-		<!-- Stats -->
-		<div class="stats">
-			<div class="container">
-				<p class="slideanim">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
-				<div class="stats-info">
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-smile-o"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='18000' data-delay='.5' data-increment="50">18000</div>
-						<p class="stats-info">Happy Smiles</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-facebook"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="5">1700</div>
-						<p class="stats-info">Facebook Likes</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-twitter"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21500' data-delay='.5' data-increment="20">21500</div>
-						<p class="stats-info">Twitter Followers</p>
-					</div>
-					<div class="col-md-3 col-sm-3 stats-grid slideanim">
-						<i class="fa fa-flask"></i>
-						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='285' data-delay='.5' data-increment="1">285</div>
-						<p class="stats-info">Lorem Ipsum</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
-			</div>
-		</div>
-		<!-- //Stats -->
-		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/numscroller-1.0.js"></script>
-		
-		<!-- tabs -->	
-		<div class="vertical-tabs">
-			<div class="container">
-				<h3 class="title text-center">What We Do</h3>
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
-						  <div class="list-group">
-							<a href="#" class="list-group-item active text-center">
-							    Services 1
-							</a>
-							<a href="#" class="list-group-item text-center">
-							    Services 2
-							</a>
-							<a href="#" class="list-group-item text-center">
-							    Services 3
-							</a>
-							<a href="#" class="list-group-item text-center">
-							    Services 4
-							</a>
-							<a href="#" class="list-group-item text-center">
-							    Services 5
-							</a>
-						  </div>
-						</div>
-						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
-							<!-- flight section -->
-							<div class="bhoechie-tab-content active">
-								<div class="services">
-									<div class="ser-img">
-										<img src="${pageContext.request.contextPath}/web/images/ser1.jpg" title="service" alt="" />
-									</div>
-									<div class="ser-info">
-										<h3>Contrary to popular belief, Lorem Ipsum is not simply random text</h3>
-										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
-											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
-											by English versions from the 1914 translation by H. Rackham.
-										</p>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
-										    ipsa quae ab illo inventore dicta sunt explicabo
-										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<!-- train section -->
-							<div class="bhoechie-tab-content">
-								<div class="services">
-									<div class="ser-img">
-										<img src="${pageContext.request.contextPath}/web/images/ser2.jpg" title="service" alt="" />
-									</div>
-									<div class="ser-info">
-										<h3>At vero eos et accusamus et iusto dignissimos ducimus qui blanditiis</h3>
-										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
-											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
-											by English versions from the 1914 translation by H. Rackham.
-										</p>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
-										    ipsa quae ab illo inventore dicta sunt explicabo
-										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-				
-							<!-- hotel search -->
-							<div class="bhoechie-tab-content">
-								<div class="services">
-									<div class="ser-img">
-										<img src="${pageContext.request.contextPath}/web/images/ser3.jpg" title="service" alt="" />
-									</div>
-									<div class="ser-info">
-										<h3>On the other hand, we denounce with righteous indignation</h3>
-										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
-											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
-											by English versions from the 1914 translation by H. Rackham.
-										</p>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
-										    ipsa quae ab illo inventore dicta sunt explicabo
-										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<div class="bhoechie-tab-content">
-								<div class="services">
-									<div class="ser-img">
-										<img src="${pageContext.request.contextPath}/web/images/ser4.jpg" title="service" alt="" />
-									</div>
-									<div class="ser-info">
-										<h3>Laboris nisi ut aliquip ex ea commodo consequat</h3>
-										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
-											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
-											by English versions from the 1914 translation by H. Rackham.
-										</p>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
-										    ipsa quae ab illo inventore dicta sunt explicabo
-										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<div class="bhoechie-tab-content">
-								<div class="services">
-									<div class="ser-img">
-										<img src="${pageContext.request.contextPath}/web/images/ser5.jpg" title="service" alt="" />
-									</div>
-									<div class="ser-info">
-										<h3>Temporibus autem quibusdam et aut officiis debitis</h3>
-										<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 
-											1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their 
-											by English versions from the 1914 translation by H. Rackham.
-										</p>
-										<p>Sed ut perspiciatis unde omnis iste natus error sit, totam rem aperiam, eaque
-										    ipsa quae ab illo inventore dicta sunt explicabo
-										</p>
-										<a href="${pageContext.request.contextPath}/web/single.jsp">Read More</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-			  </div>
-			</div>
-		</div>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/tabs.js"></script>		
-		<!-- //tabs -->
-	
-		<!-- news -->
-		<div class="our-news">
-		<h3 class="text-center">Our laboratories</h3>
-		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-			<div id="visual">
-				<div class="slide-visual slideanim">
-					<!-- Slide Image Area (1000 x 424) -->
-					<ul class="slide-group">
-						<li><img src="${pageContext.request.contextPath}/web/images/news1.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news2.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news3.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news4.jpg" alt="Dummy Image" class="img-responsive"/></li>
-						<li><img src="${pageContext.request.contextPath}/web/images/news5.jpg" alt="Dummy Image" class="img-responsive"/></li>
-					</ul>
-					<!-- Slide Description Image Area (316 x 328) -->
-					<div class="script-wrap">
-						<ul class="script-group">
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news1-1.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news2-2.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news3-3.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news4-4.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-							<li><div class="inner-script"><img src="${pageContext.request.contextPath}/web/images/news5-5.jpg" alt="Dummy Image" class="img-responsive"/></div></li>
-						</ul>
-						<div class="slide-controller">
-							<a href="#" class="btn-prev"><img src="${pageContext.request.contextPath}/web/images/btn_prev.png" alt="Prev Slide" /></a>
-							<a href="#" class="btn-play"><img src="${pageContext.request.contextPath}/web/images/btn_play.png" alt="Start Slide" /></a>
-							<a href="#" class="btn-pause"><img src="${pageContext.request.contextPath}/web/images/btn_pause.png" alt="Pause Slide" /></a>
-							<a href="#" class="btn-next"><img src="${pageContext.request.contextPath}/web/images/btn_next.png" alt="Next Slide" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- /news -->
-		
-		<!-- quick links -->
-		<div class="news-section" id="news">
-			<div class="container">
-				<div class="news-section-head text-center">
-					<h3>Latest news</h3>
-					<p>Here, there and everywhere... what we've been doing</p>
-				</div>
-				<div class="news-section-grids">
-					<div class="col-md-4 news-section-grid">
-						<img src="${pageContext.request.contextPath}/web/images/n1.jpg" alt="" />
-						<div class="info">
-							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">There are sit amet</a>
-							<label>March 18</label>
-							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
-						</div>
-					</div>
-					<div class="col-md-4 news-section-grid">
-						<img src="${pageContext.request.contextPath}/web/images/n2.jpg" alt="" />
-						<div class="info">
-							<a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">Lorem ipsum dolor</a>
-							<label>August 28</label>
-							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
-						</div>
-					</div>
-					<div class="col-md-4 news-section-grid">
-						<img src="${pageContext.request.contextPath}/web/images/n3.jpg" alt="" />
-						<div class="info">
-						    <a class="news-title" href="${pageContext.request.contextPath}/web/single.jsp">The standard chunk</a>
-							<label>September 12</label>
-							<p>The Duchess took her choice, and was gone in a moment. 'Let's go on with the game,' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground.</p>
-							<a class="more" href="${pageContext.request.contextPath}/web/single.jsp">Read more</a>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- //quick links -->
+		<!-- //doctor -->
 		
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />

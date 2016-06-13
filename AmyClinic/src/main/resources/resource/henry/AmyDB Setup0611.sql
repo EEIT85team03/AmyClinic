@@ -210,9 +210,9 @@ UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m5.jpg', SING
 UPDATE Members SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/m6.jpg', SINGLE_BLOB) AS CategoryImage) WHERE mid = 1005;
 */
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('多芬淨白美肌制汗爽身噴霧','500','40','80','20','多芬最懂得呵護女性腋下肌膚有效制汗X淨白美肌','169ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淨白美肌制汗爽身噴霧','500','40','80','20','最懂得呵護女性腋下肌膚有效制汗X淨白美肌','169ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('濟州島綠茶清爽保濕身體乳液','500','40','340','0','清爽補水保濕，潔淨滋養，防敏抗氧化，讓肌膚水潤透亮','300ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('足香粉','500','20','390','10','足部作起=避邪、除穢、化煞，抗菌孳生，泡澡、都舒爽','280ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('植萃淨顏三步組','500','20','390','10','淨顏眼唇卸妝液120ml*1、淨顏卸妝乳150ml*1、淨顏潔膚露150ml*1','420ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('親柔芙爽身蜜粉','500','40','690','10','足部作起=避邪、除穢、化煞，抗菌孳生，泡澡、都舒爽','280ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('蘆薈潤澤乳霜','500','20','139','50','極佳保濕防止乾裂肌膚 清爽不黏膩 適用於臉部及全身','220g');
 
@@ -220,50 +220,50 @@ INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) 
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('瑪莉貓 marie cat 純欖護唇膏','500','10','550','20','純天然的橄欖精華，無色無味，使用起來安心又滋潤，限定款千萬別錯過','1.5g');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('蜜桃美臀去角質酵素粉','500','20','599','0','MicCosmo日本原裝 Mic COSMO B3蜜桃美臀去角質酵素粉','125g');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('夜遲新谷酵素ORIHIRO NIGHT DIET','500','20','699','10','日本原裝，保證正品','30天份1包5粒');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('日本原裝境內版 酵素&酵母','500','20','1500','30','【日本代購-現貨在台】日本原裝境內版 酵素&酵母 自然 革命 體內環保 2G X 60包 日本銷售第一推','2GX60包 ');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('日本原裝境內版 酵素&酵母','500','20','1500','30','【日本代購-現貨在台】日本原裝境內版 酵素&酵母 自然 革命 體內環保 2G X 60包 日本銷售第一推','2GX60包 ');
 
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('酵素奶昔','500','20','670','10','日本 Natural Healthy Standard 代購 大人氣 酵素 奶昔 現貨在台','風靡日本的人氣酵素現貨在台現貨【印度櫻桃*1、蜂蜜檸檬');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('庶務客日本 現貨 雪肌粹洗面乳','500','20','170','0','* 日本第一品牌洗面乳 * 擠一點點，就有滿滿的泡泡 * 深層清潔,洗後乾爽不黏膩 ','高濃度膠原蛋白');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('藥片型泡泡沐浴劑','500','20','670','10','適合容易發冷，血液運行緩慢人士。靜靜地享受香氣的milky pink浸浴，消除一整天的疲勞。','50g×8個');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('庶務客日本 現貨 雪肌粹洗面乳','500','20','170','0','* 日本第一品牌洗面乳 * 擠一點點，就有滿滿的泡泡 * 深層清潔,洗後乾爽不黏膩 ','50ml');
 INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('科士威~浪漫香水身體乳液','500','40','110','0','淡淡香味','200ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('DHC 純欖護唇膏','500','10','160','0','現貨供應，目前日本鎖貨，價格變動大，要買要快!!日本進口、無香料、完美滋潤雙唇!','1.5g');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('孕婦孩童指甲油 水性指甲油 花香指甲油','500','10','894','10','ALLOYA 愛若雅 水性環保 指甲油 不再有難聞的化學氣味 而是讓香味持續蔓延 絕對值得您擁有','10ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('DHC 純欖護唇膏','500','10','160','0',N'現貨供應，目前日本鎖貨，價格變動大，要買要快!!日本進口、無香料、完美滋潤雙唇!','1.5g');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('孕婦孩童指甲油 水性指甲油 花香指甲油','500','10','894','10',N'ALLOYA 愛若雅 水性環保 指甲油 不再有難聞的化學氣味 而是讓香味持續蔓延 絕對值得您擁有','10ml');
 
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('馬油保濕乳霜','500','20','150','10','貓麻吉 日本 Loshi 馬油保濕乳霜 尿素特別配合 身體乳液 220g 原裝進口 馬油護膚霜','220g');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('急潤保濕面膜','500','30','890','0','‧妝前急救，打底保濕 ‧3重水潤威力，妝感服服貼貼 ‧玻尿酸、胺基酸、維他命B3、高濃縮美容液完美基底','7片/盒');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('超導恆潤飽水面膜','500','30','890','0','Dr’s Formula來自長庚專業團隊 ‧玻尿酸、胺基酸、維他命B3、高濃縮美容液完美基底 ','7片/盒');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('金盞花敏弱呵護面膜','500','30','890','0','‧特別適用曬後肌膚、肌膚敏感者 ‧創新3D立體面膜紙材','7片/盒');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淡斑淨膚面膜','500','30','890','0','‧黃金比例3重完美綻白配方 打造細緻純淨之透白亮肌 ‧創新3D立體緊顏面膜 打造迷人肌質 ','7片/盒');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('馬油保濕乳霜','500','20','150','10',N'貓麻吉 日本 Loshi 馬油保濕乳霜 尿素特別配合 身體乳液 220g 原裝進口 馬油護膚霜','220g');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('急潤保濕面膜','500','30','890','0',N'‧妝前急救，打底保濕 ‧3重水潤威力，妝感服服貼貼 ‧玻尿酸、胺基酸、維他命B3、高濃縮美容液完美基底','7片/盒');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('超導恆潤飽水面膜','500','30','890','0',N'Dr’s Formula來自長庚專業團隊 ‧玻尿酸、胺基酸、維他命B3、高濃縮美容液完美基底 ','7片/盒');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('金盞花敏弱呵護面膜','500','30','890','0',N'‧特別適用曬後肌膚、肌膚敏感者 ‧創新3D立體面膜紙材','7片/盒');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('淡斑淨膚面膜','500','30','890','0',N'‧黃金比例3重完美綻白配方 打造細緻純淨之透白亮肌 ‧創新3D立體緊顏面膜 打造迷人肌質 ','7片/盒');
 --6/8----
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('5V肌因抗老眼部精華','500','20','3600','10','vitasourceTM端粒激活素、白珍珠萃取、金雀花萃取、雙效黃金、海洋抗皺、3D隱形網狀結構、法國醣蛋白','星采S-5V-1肌因抗老眼部精華15ml、星采5V眼周導入棒*1');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('綻白淨斑精華','100','10','1800','10','Dermawhite肌膚淨白因子、維他命 B3 、桑白皮、和梅果、黃岑漢方複合精華 、玻尿酸、甘草精華、尿囊素。','15ml(DermalRxR SRC-黯沉掃除科技、維他命C(AA-2G) 、專利)');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('雪漾鑽白凝乳','100','10','2500','10','SRC-黯沉掃除科技、維他命C醣苷(AA-2G)、桑白皮、和梅果、黃岑漢方複合精華、玻尿酸、甘草精華、尿囊素、甜沒藥醇。','30ml,Nano Bright多元美白微囊球、Actiwhite肌因亮白元素、DermalRx®');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('柔白晶透防曬乳SPF50+','100','10','1400','10','物理性防曬、化學性防曬、GIGAWHITE阿爾卑斯山複合植物淨白精華、阿爾卑斯山雙有機夢蝶草精華、專利和梅果精華。','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極速美白璀璨組','100','10','4300','10','適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚。','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('全面美白強效組','150','10','5700','20','詳見盒面產品說明或成分說明頁面-適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚','綻白淨斑精華15ml*1、雪漾鑽白凝乳30ml*1、柔白晶透防曬乳SPF50+★★★ 50ml*1');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('明星組★星采水潤4步修護組','200','20','5600','20','奇肌修復菁粹15ml、肌密水潤透白精華液PLUS+30ml 、極致活妍精質霜50ml、輕透醒膚水凝霜50ml','15ml、30ml、50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('星采極效3步組','200','20','3800','10','星采奇肌修復菁粹15ml*1瓶 、星采肌密水潤透白精華液PLUS+30ml*1瓶、星采輕透醒膚水凝霜50ml*1瓶','15ml*1瓶30ml*1、50ml*1瓶');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/單片裝','120','30','290','10','γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','單片裝28ml *1 片');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/三片裝','120','30','790','10','γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','三片裝28ml *3 片');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('卸妝潔顏幕絲','120','10','800','10','胺基酸潔淨因子、蜂蜜潤澤精華、水解膠原蛋白、木瓜酵素、甘草精華','180ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奇肌修復菁粹','200','10','1100','10','第三型神經醯胺CeramideⅢ、角鯊烯Squalene、西蘭花苗萃取物、紫草萃取物','15ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奢華升級星采肌密水潤透白精華液PLUS+','150','20','1200','10','玻尿酸鈉、小分子玻尿酸、海洋保濕因子、SK-influx微脂囊包覆神經醯胺','玻尿酸鈉、小分子玻尿酸、海洋保濕因子');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極致活妍精質霜','200','20','1800','10','蜂王漿水解蛋白、冰洋紅藻精萃、白柳葉萃取、微型海藻精萃、紫草萃取物、西蘭花苗萃取、第三型神經醯胺','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('輕透醒膚水凝霜','200','20','1500','10','r-PGA高效活水保濕因子、神經醯胺修護素、深海微量礦物元素、海藻萃取精華、維生素E衍生物','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Snow Eau de Parfum','500','40','5400','20','天然香料:香碗豆、雪花蓮、檸檬*、香橙*、佛手柑*、蘋果、布冧、黑加侖子、香雪蘭','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Eau de Parfum','500','40','5400','20','前調是以水漾感覺及惹人憐愛感覺編織而成的純潔水晶花香味。香碗豆、雪花蓮柔弱的甜味洋溢著溫柔的香氣，橙花油和香橙韻蘊釀出無限的透明感。','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Tuberose & Rose fabric fragrance','300','40','1900','20','噴在衣物或床單上，享受浪漫幸福玫瑰香氣的衣物香水。在窗簾或手袋內側布料上亦可大範圍使用。','200ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX eau de white floral','400','40','2850','10','由白色和粉紅色的鮮花，天然香薰油芳香的絕妙配合而成aromatic white floral bouquet香氣，包圍柔軟幸福感的eau de cologne','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fabric fragrance','100','40','1900','10','･噴在衣物或床單上，享受舒適幸福香氣的衣物香水。･以富透明感、清潔感的白色作為主要顏色設計。標籤部分以可愛的碎花圖案及JILL STUART的粉紅色為重點。','200ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('BON MARIAGE pillow & room fragrance','300','40','6700','10','･來自橙花精油的奢華香氣，為你帶來幸福時間和空間的香皂。可因應環境及心情，享受2種香味的快樂。','100mL x 2瓶');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Vanilla Lust Eau de Parfum','500','40','5600','10','從前調的核果糖甜蜜美味吸引鼻子注意力，愛吃者的甜美香調。像溶化一樣的牛奶糖和椰子的香味散發開來。中調以白色茉莉花瓣的香氣為中心，成熟的水果花香味。','50ml');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Night Jewel Summer Bloom Eau de Toilette','500','40','3700','10','舒適奢華又清新甜美的純真花香。藴含百合、木蘭花、Beauty of the Night（紫茉莉）、Queen of the Night（曇花）等動人的花朵，猶如散發璀璨光輝般相繼綻放。','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Jill by JILL STUART Eau De Toilette','200','40','5200','10','「香味是最與我們最貼身的珠寶」。香水，是Jill Stuart重視是item。以「注入實現夢想和願望魔法的小瓶」為設計靈感，甜美的香水就此誕生。','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral UV protector','200','50','1900','10','融入肌膚的清爽輕盈觸感，於紫外線下守護肌膚的限定防曬霜。可用於面部和全身。(SPF50+/PA++++)','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX aqua chiffon protectorW','200','50','1900','10','水潤質地，能順滑地延展，啫喱狀的防曬霜。滋潤度、無負擔感的質感和防曬度數SPF50+/PA++++不變的同時，提升了從強烈紫外線和空氣污染等環境下守護肌膚的效果。','60g');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('ANGEL mild UV milk','200','50','2200','10','･順滑柔和的質感，易於推勻的防曬乳。･Milky lotion type，清爽不黏稠的觸感，在肌膚上形成的舒適薄膜，守護肌膚避免紫外線所造成的傷害。･配合杏仁油、植物性角鯊烷，同時給予肌膚滋潤。','60mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX shimmer body protector','200','50','1900','10','･輕薄的觸感潤澤地延展，如薄膜的面紗一樣，對肌膚零負擔，可以阻擋強烈的紫外線的身體專用防曬。即使是戶外活動的時候亦不易脫落，可安心享受戶外活動的快樂。','50mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral mist refresh oil control','300','20','1800','10','噴上後細緻的噴霧延展，滋潤每寸肌膚。2種清涼成分(薄荷腦)給予肌膚清涼感，鎮靜泛紅肌膚的觸感。每當噴上都有清涼爽快的舒適感，享受清新的香味。','60mL');
-INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fresh hand gel','500','20','1500','10','不用水卻讓手部清新乾爽的hand gel。在手部感到黏稠的時候或從室外回來的時候簡單使用。･清爽的涼快感讓手部肌膚乾爽同時沒有乾燥感，締造水潤的手部肌膚。','250mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('5V肌因抗老眼部精華','500','20','3600','10',N'vitasourceTM端粒激活素、白珍珠萃取、金雀花萃取、雙效黃金、海洋抗皺、3D隱形網狀結構、法國醣蛋白','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('綻白淨斑精華','100','10','1800','10',N'Dermawhite肌膚淨白因子、維他命 B3 、桑白皮、和梅果、黃岑漢方複合精華 、玻尿酸、甘草精華、尿囊素。','15ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('雪漾鑽白凝乳','100','10','2500','10',N'SRC-黯沉掃除科技、維他命C醣苷(AA-2G)、桑白皮、和梅果、黃岑漢方複合精華、玻尿酸、甘草精華、尿囊素、甜沒藥醇。','30ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('柔白晶透防曬乳SPF50+','100','10','1400','10',N'物理性防曬、化學性防曬、GIGAWHITE阿爾卑斯山複合植物淨白精華、阿爾卑斯山雙有機夢蝶草精華、專利和梅果精華。','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極速美白璀璨組','100','10','4300','10',N'適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚。','15ml*1、30ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('全面美白強效組','150','10','5700','20',N'詳見盒面產品說明或成分說明頁面-適合各種肌膚類型，特別是斑點、黯沉、膚色不均的肌膚','15ml*1、30ml*1、50ml*1');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('明星組★星采水潤4步修護組','200','20','5600','20',N'奇肌修復菁粹15ml、肌密水潤透白精華液PLUS+30ml 、極致活妍精質霜50ml、輕透醒膚水凝霜50ml','15ml、30ml、50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('星采極效3步組','200','20','3800','10',N'星采奇肌修復菁粹15ml*1瓶 、星采肌密水潤透白精華液PLUS+30ml*1瓶、星采輕透醒膚水凝霜50ml*1瓶','15ml*1瓶30ml*1、50ml*1瓶');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/單片裝','120','30','290','10',N'γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','單片裝28ml *1 片');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('3D魔法星采生物纖維面膜/三片裝','120','30','790','10',N'γ-PGA、玻尿酸、五胜肽、甜杏仁精華、Pentacare-Na','三片裝28ml *3 片');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('卸妝潔顏幕絲','120','10','800','10',N'胺基酸潔淨因子、蜂蜜潤澤精華、水解膠原蛋白、木瓜酵素、甘草精華','180ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奇肌修復菁粹','200','10','1100','10',N'第三型神經醯胺CeramideⅢ、角鯊烯Squalene、西蘭花苗萃取物、紫草萃取物','15ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('奢華升級星采肌密水潤透白精華液PLUS+','150','20','1200','10',N'玻尿酸鈉、小分子玻尿酸、海洋保濕因子、SK-influx微脂囊包覆神經醯胺、玻尿酸鈉、小分子玻尿酸、海洋保濕因子','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('極致活妍精質霜','200','20','1800','10',N'蜂王漿水解蛋白、冰洋紅藻精萃、白柳葉萃取、微型海藻精萃、紫草萃取物、西蘭花苗萃取、第三型神經醯胺','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('輕透醒膚水凝霜','200','20','1500','10',N'r-PGA高效活水保濕因子、神經醯胺修護素、深海微量礦物元素、海藻萃取精華、維生素E衍生物','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Snow Eau de Parfum','500','40','5400','20',N'天然香料:香碗豆、雪花蓮、檸檬*、香橙*、佛手柑*、蘋果、布冧、黑加侖子、香雪蘭','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Crystal Bloom Eau de Parfum','500','40','5400','20',N'前調是以水漾感覺及惹人憐愛感覺編織而成的純潔水晶花香味。香碗豆、雪花蓮柔弱的甜味洋溢著溫柔的香氣，橙花油和香橙韻蘊釀出無限的透明感。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Tuberose & Rose fabric fragrance','300','40','1900','20',N'噴在衣物或床單上，享受浪漫幸福玫瑰香氣的衣物香水。在窗簾或手袋內側布料上亦可大範圍使用。','200ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX eau de white floral','400','40','2850','10',N'由白色和粉紅色的鮮花，天然香薰油芳香的絕妙配合而成aromatic white floral bouquet香氣，包圍柔軟幸福感的eau de cologne','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fabric fragrance','100','40','1900','10',N'･噴在衣物或床單上，享受舒適幸福香氣的衣物香水。･以富透明感、清潔感的白色作為主要顏色設計。標籤部分以可愛的碎花圖案及JILL STUART的粉紅色為重點。','200ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('BON MARIAGE pillow & room fragrance','300','40','6700','10',N'･來自橙花精油的奢華香氣，為你帶來幸福時間和空間的香皂。可因應環境及心情，享受2種香味的快樂。','100mL x 2瓶');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Vanilla Lust Eau de Parfum','500','40','5600','10',N'從前調的核果糖甜蜜美味吸引鼻子注意力，愛吃者的甜美香調。像溶化一樣的牛奶糖和椰子的香味散發開來。中調以白色茉莉花瓣的香氣為中心，成熟的水果花香味。','50ml');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Night Jewel Summer Bloom Eau de Toilette','500','40','3700','10',N'舒適奢華又清新甜美的純真花香。藴含百合、木蘭花、Beauty of the Night（紫茉莉）、Queen of the Night（曇花）等動人的花朵，猶如散發璀璨光輝般相繼綻放。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Jill by JILL STUART Eau De Toilette','200','40','5200','10',N'「香味是最與我們最貼身的珠寶」。香水，是Jill Stuart重視是item。以「注入實現夢想和願望魔法的小瓶」為設計靈感，甜美的香水就此誕生。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral UV protector','200','50','1900','10',N'融入肌膚的清爽輕盈觸感，於紫外線下守護肌膚的限定防曬霜。可用於面部和全身。(SPF50+/PA++++)','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX aqua chiffon protectorW','200','50','1900','10',N'水潤質地，能順滑地延展，啫喱狀的防曬霜。滋潤度、無負擔感的質感和防曬度數SPF50+/PA++++不變的同時，提升了從強烈紫外線和空氣污染等環境下守護肌膚的效果。','60g');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('ANGEL mild UV milk','200','50','2200','10',N'･順滑柔和的質感，易於推勻的防曬乳。･Milky lotion type，清爽不黏稠的觸感，在肌膚上形成的舒適薄膜，守護肌膚避免紫外線所造成的傷害。･配合杏仁油、植物性角鯊烷，同時給予肌膚滋潤。','60mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX shimmer body protector','200','50','1900','10',N'･輕薄的觸感潤澤地延展，如薄膜的面紗一樣，對肌膚零負擔，可以阻擋強烈的紫外線的身體專用防曬。即使是戶外活動的時候亦不易脫落，可安心享受戶外活動的快樂。','50mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('Floral marine mineral mist refresh oil control','300','20','1800','10',N'噴上後細緻的噴霧延展，滋潤每寸肌膚。2種清涼成分(薄荷腦)給予肌膚清涼感，鎮靜泛紅肌膚的觸感。每當噴上都有清涼爽快的舒適感，享受清新的香味。','60mL');
+INSERT INTO Products (name, amount, cid, price, discount, descrip, ingredients) VALUES ('RELAX fresh hand gel','500','20','1500','10',N'不用水卻讓手部清新乾爽的hand gel。在手部感到黏稠的時候或從室外回來的時候簡單使用。･清爽的涼快感讓手部肌膚乾爽同時沒有乾燥感，締造水潤的手部肌膚。','250mL');
 --UPDATE Products 
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 1;
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 2;
@@ -525,122 +525,177 @@ INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-1' , '早診' , '1' , '整形手術' );
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , appt_status , memo )   VALUES  ( '5' , '2016-7-1' , '午診' , '0' , '0' , '休假' );
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-1' , '晚診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-2' , '早診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-2' , '午診' , '3' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-2' , '晚診' , '1' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-4' , '早診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-4' , '午診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-4' , '晚診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-5' , '早診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-5' , '午診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-5' , '晚診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-6' , '早診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-6' , '午診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-6' , '晚診' , '0' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-7' , '早診' , '1' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-7' , '午診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-7' , '晚診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , appt_status , memo )   VALUES  ( '4' , '2016-7-8' , '早診' , '0' , '0' , '休假' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-8' , '午診' , '0' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-8' , '晚診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-9' , '早診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-9' , '午診' , '3' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-9' , '晚診' , '0' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-11' , '早診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-11' , '午診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-11' , '晚診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-12' , '早診' , '0' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-12' , '午診' , '1' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-12' , '晚診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-13' , '早診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-13' , '午診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-13' , '晚診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-14' , '早診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-14' , '午診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-14' , '晚診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-15' , '早診' , '1' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-15' , '午診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-15' , '晚診' , '3' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-16' , '早診' , '0' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-16' , '午診' , '1' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-16' , '晚診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , appt_status , memo )   VALUES  ( '4' , '2016-7-18' , '早診' , '0' , '0' , '休假' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-18' , '午診' , '3' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-18' , '晚診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-19' , '早診' , '1' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-19' , '午診' , '2' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-19' , '晚診' , '3' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-20' , '早診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-20' , '午診' , '1' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-20' , '晚診' , '2' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-21' , '早診' , '3' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-21' , '午診' , '0' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-21' , '晚診' , '1' , '整形手術' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '4' , '2016-7-22' , '早診' , '3' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-7-22' , '午診' , '0' , '雷射光療' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-7-22' , '晚診' , '3' , '雷射光療' );
+
 
 update Schedule set appt_status = 0 where appt_num = 3
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早診','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-2-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-2-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-2-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-2-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-2-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-2-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-2-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-2-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-2-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-2-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-2-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-2-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-3-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-3-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-3-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-3-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-3-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-3-24','早上','整形手術','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-3-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-3-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-3-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-3-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-3-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-3-24','早診','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-1-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-1-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-1-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-1-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-1-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-1-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-4-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-4-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-4-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-4-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-4-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-4-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-4-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-4-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-4-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-4-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-4-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-4-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-5-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-5-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-5-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-5-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-5-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-5-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-5-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-5-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-5-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-5-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-5-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-5-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-6-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-6-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-6-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-6-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-6-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-6-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-7-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-7-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-7-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-7-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-7-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-7-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-7-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-7-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-7-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-7-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-7-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-7-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-8-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-8-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-8-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-8-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-8-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-8-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-8-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-8-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-8-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-8-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-8-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-8-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-9-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-9-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-9-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-9-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-9-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-9-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-9-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-9-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-9-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-9-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-9-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-9-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-10-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-10-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-10-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-10-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-10-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-10-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-10-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-10-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-10-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-10-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-10-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-10-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-11-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-11-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-11-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-11-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-11-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-11-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-11-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-11-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-11-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-11-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-11-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-11-24','早診','整形手術','1','2');
 -------------------------------------------------------------------------------------------
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早診','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早診','整形手術','1','2');
 
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早上','整形手術','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','下午','雷射光療','1','2');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早上','瘦身雕塑','1','3');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早上','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','下午','微整形','1','1');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早上','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早診','整形手術','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','0','2016-12-20','早診','整形手術','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-12-21','午診','雷射光療','1','2');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1002','1','2016-12-22','早診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1003','0','2016-12-23','早診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1004','1','2016-12-23','午診','微整形','1','1');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','0','2016-12-24','早診','整形手術','1','2');
    --90 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('4','1000');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('7','1001');
@@ -800,12 +855,12 @@ INNER JOIN ProcedureType ON Procedures.pType_id = ProcedureType.pType_id
 group by MONTH(apt_date) ,year(apt_date) ,pType_id, name;
 --order by year(apt_date), MONTH(apt_date);
 */
-select sum(OrderItems.quantity) as quantity , Products.name as name, identity(int, 1,1) as id,year(odate) as years
+select sum(OrderItems.quantity) as quantity , Products.name as name, identity(int, 1,1) as id,year(odate) as years,Products.pid as pid
 into SalesToProd
 from OrderItems 
 inner join Products on OrderItems.pid = Products.pid
 inner join Orders on OrderItems.oid = Orders.oid
-group by Products.name , Orders.odate
+group by Products.name , Orders.odate,Products.pid
 ORDER BY quantity DESC
 --------------------------------------------------------------------------------------------------------------------
 select * from SalesToProd

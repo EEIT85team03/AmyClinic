@@ -29,6 +29,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢預約</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <style>
 #allpage {
 	width: 1024px;
@@ -142,56 +143,121 @@ a {
 		</div>
 	</div>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
 	<script>
 	function getContextPath() { //obtains context path. EL doesn't work with separated .js
    	 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
 	 }
 
 	function cancel(id) {
-		if(confirm("確定取消預約？")){
-		var tb = $('#app');
-		var tr2;
-		$.ajax({
-			"type":"get",
-			"url":getContextPath()+"/apps/cancelapp",
-			"dataType":"JSON",
-			"data":{"id" : id},
-			"success" : function (datas) {
-				tb.empty();
-				var th1 = $('<th></th>').append('日期');
-				var th2 = $('<th></th>').append('時段');
-				var th3 = $('<th></th>').append('預約目的');
-				var th4 = $('<th></th>').append('療程項目');
-				var th5 = $('<th></th>').append('需求描述');
-				var th6 = $('<th></th>').append('取消預約');
-				var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
-				tb.append(tr1);
-				$.each(datas,function(i,data){
-					if(data.apt_status == 1) {
-						var td1 = $('<td></td>').append(data.apt_date);
-						var td2 = $('<td></td>').append(data.apt_time);
-						if (data.purpose == 0) {
-							var td3 = $('<td></td>').append('開始新療程');
-							//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
-							var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
+		Lobibox.confirm({
+			title: "請確認",
+			msg: "確定取消預約？",
+			callback: function ($this, type, ev) {
+			    if(type == 'yes') {
+					var tb = $('#app');
+					var tr2;
+					$.ajax({
+						"type":"get",
+						"url":getContextPath()+"/apps/cancelapp",
+						"dataType":"JSON",
+						"data":{"id" : id},
+						"success" : function (datas) {
+							tb.empty();
+							var th1 = $('<th></th>').append('日期');
+							var th2 = $('<th></th>').append('時段');
+							var th3 = $('<th></th>').append('預約目的');
+							var th4 = $('<th></th>').append('療程項目');
+							var th5 = $('<th></th>').append('需求描述');
+							var th6 = $('<th></th>').append('取消預約');
+							var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
+							tb.append(tr1);
+							$.each(datas,function(i,data){
+								if(data.apt_status == 1) {
+									var td1 = $('<td></td>').append(data.apt_date);
+									var td2 = $('<td></td>').append(data.apt_time);
+									if (data.purpose == 0) {
+										var td3 = $('<td></td>').append('開始新療程');
+										//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
+										var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
+									}
+									if (data.purpose == 1) {
+										var td3 = $('<td></td>').append('回診');
+										var td4 = $('<td width="150px"></td>').append();
+									}
+									
+									var td5 = $('<td width="300px"></td>').append(data.descrip);
+									var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
+									tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
+									tb.append(tr2);
+								}
+							})
+						},
+						"error" : function (datas) {
+							Lobibox.notify("error", {
+								size: 'mini',
+								title: '無法取消預約！',
+								delay: 1500,
+								delayIndicator: false,
+								sound: false,
+								position: "center top"
+								});
 						}
-						if (data.purpose == 1) {
-							var td3 = $('<td></td>').append('回診');
-							var td4 = $('<td width="150px"></td>').append();
-						}
-						
-						var td5 = $('<td width="300px"></td>').append(data.descrip);
-						var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
-						tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
-						tb.append(tr2);
-					}
-				})
-			},
-			"error" : function (datas) {
-				alert('無法取消預約！')
+					})
+			    } else {}
 			}
-		})
-	}
+			});
+// 		if(confirm("確定取消預約？")){
+// 		var tb = $('#app');
+// 		var tr2;
+// 		$.ajax({
+// 			"type":"get",
+// 			"url":getContextPath()+"/apps/cancelapp",
+// 			"dataType":"JSON",
+// 			"data":{"id" : id},
+// 			"success" : function (datas) {
+// 				tb.empty();
+// 				var th1 = $('<th></th>').append('日期');
+// 				var th2 = $('<th></th>').append('時段');
+// 				var th3 = $('<th></th>').append('預約目的');
+// 				var th4 = $('<th></th>').append('療程項目');
+// 				var th5 = $('<th></th>').append('需求描述');
+// 				var th6 = $('<th></th>').append('取消預約');
+// 				var tr1 = $('<tr></tr>').append([th1,th2,th3,th4,th5,th6]);
+// 				tb.append(tr1);
+// 				$.each(datas,function(i,data){
+// 					if(data.apt_status == 1) {
+// 						var td1 = $('<td></td>').append(data.apt_date);
+// 						var td2 = $('<td></td>').append(data.apt_time);
+// 						if (data.purpose == 0) {
+// 							var td3 = $('<td></td>').append('開始新療程');
+// 							//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
+// 							var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
+// 						}
+// 						if (data.purpose == 1) {
+// 							var td3 = $('<td></td>').append('回診');
+// 							var td4 = $('<td width="150px"></td>').append();
+// 						}
+						
+// 						var td5 = $('<td width="300px"></td>').append(data.descrip);
+// 						var td6 = $('<td></td>').append('<input type="button" id="cancelApp" value="取消預約" onclick="cancel('+data.aid+')">');
+// 						tr2 = $('<tr></tr>').append([td1,td2,td3,td4,td5,td6])
+// 						tb.append(tr2);
+// 					}
+// 				})
+// 			},
+// 			"error" : function (datas) {
+// 				Lobibox.notify("error", {
+// 					size: 'mini',
+// 					title: '無法取消預約！',
+// 					delay: 1500,
+// 					delayIndicator: false,
+// 					sound: false,
+// 					position: "center top"
+// 					});
+// 			}
+// 		})
+// 	}
 }
 	$(function() {
 		var t1 = $('#t1');

@@ -122,7 +122,7 @@ public class EmpLoginServlet extends HttpServlet {
 				return;
 			}
 		}
-		// =====================發送驗證信======================
+		// =====================發送忘記密碼驗證信======================
 		if ("forgetpw".equals(action)) {
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
@@ -153,6 +153,27 @@ public class EmpLoginServlet extends HttpServlet {
 			}
 
 		}
+		
+		
+		// =====================發送忘記密碼驗證信Ajax======================
+		if ("forgetpwAjx".equals(action)) {
+			PrintWriter out = res.getWriter();
+			System.out.println("call forgetpwAjx");
+			String mail = req.getParameter("restmail");
+			EmployeeService eSvc = new EmployeeService();
+			EmployeeVO empVO = eSvc.findEmpByMail(mail);
+			if(empVO != null){
+				out.print("aaa");
+				System.out.println("帳號存在!!");
+				EmailUtils.sendResetPasswordEmail(empVO);
+				return;
+			}else{
+				out.print("帳號不存在");
+				return;
+			}
+			
+		}
+		
 		// ======================驗證重設信============================
 
 		if ("reset".equals(action)) {

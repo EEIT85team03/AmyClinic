@@ -1,14 +1,28 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Register</title>
+<title>Amy | 會員註冊</title>
+<style>
+.login-form-grids form select {
+	font-size: 14px;
+    display: block;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 20px !important;
+    border: 1px solid #E8AEFF;
+    font-weight: 600;
+    outline: none;
+    letter-spacing: 2px;
+    color: #000;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	width:100%;	
+}
+</style>
 </head>
 <body>
 	<!-- header -->
@@ -22,8 +36,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>Register</h2>
-						<h6>add a short description here</h6>
+						<h2>註冊會員</h2>
+						<h6>Registeration is required to make appointments and purchases!</h6>
 					</div>
 				</div>
 			</div>
@@ -31,30 +45,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- login -->
 			<div class="login">
 				<div class="container">
-					<h3>Register Here</h3>
-						<p class="est">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+					<h3>註冊表格</h3>
+						<p class="est">Thank you for taking the time to register your information with Amy! We promise to never sell or share your personal information with anyone else!</p>
 							<div class="login-form-grids">
-									<h5>profile information</h5>
-								<form>
-									<input type="text" placeholder="First Name..." required=" " >
-									<input type="text" placeholder="Last Name..." required=" " >
-								</form>
-								<div class="register-check-box animated wow slideInUp" data-wow-delay=".5s">
-									<div class="check">
-										<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>Subscribe to Newsletter</label>
-									</div>
-								</div>
-								<h6>Login information</h6>
-								<form>
-									<input type="email" placeholder="Email Address" required=" " >
-									<input type="password" placeholder="Password" required=" " >
-									<input type="password" placeholder="Password Confirmation" required=" " >
-									<div class="register-check-box">
-										<div class="check">
-											<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label>
-										</div>
-									</div>
-									<input type="submit" value="Register">
+									<h5>required information ${message}</h5>
+								<form action="${pageContext.request.contextPath}/logreg/register.action" method="post">
+									<input type="text" name="memberVO.name" placeholder="姓名" required id="username" >								
+									<input type="password" name="memberVO.pwd" placeholder="密碼" required id="password" >																	
+<!-- 									<input type="password" name="" placeholder="確認密碼" required >								 -->
+									<input type="email" name="memberVO.email" placeholder="電子信箱" required id="email" >								
+
+									<h6>optional information</h6>																	
+									
+									<input type="text" name="memberVO.birthday" placeholder="出生日期" value="1996-05-20" id="birthday" readonly>								
+									<select name="memberVO.country" id="country">
+									  <option value="Unspecified">選擇國籍</option>
+									  <option value="Taiwan">台灣</option>
+									  <option value="United States">美國</option>
+									  <option value="Japan">日本</option>
+									  <option value="Korea">韓國</option>
+									</select>								
+									<select name="memberVO.gender" id="country" id="gender">
+									  <option value="?">選擇性別</option>
+									  <option value="M">男</option>
+									  <option value="F">女</option>
+									</select>								
+									<input type="text" name="memberVO.addr" placeholder="用戶地址" id="address" >								
+									<input type="text" name="memberVO.phone" placeholder="電話號碼" id="phone" >								
+									<input type="text" name="memberVO.height" placeholder="身高 (公分)" id="height" >								
+									<input type="text" name="memberVO.mass" placeholder="體重 (公斤)" id="weigt" >								
+									<input type="text" name="fileUpload" placeholder="會員圖片" id="uploader" >								
+									
+<!-- 									<div class="register-check-box"> -->
+<!-- 										<div class="check"> -->
+<!-- 											<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+									<input type="submit" value="建立帳號">
 								</form>
 							</div>
 						</div>
@@ -76,20 +103,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<jsp:include page="fragment/footer.jsp" />
 		<!-- //footer -->
 		<script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
-							$().UItoTop({ easingType: 'easeOutQuart' });
-							
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+			$(document).ready(function() {
+				/*
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+<script>
+	$(document).ready(function() {    
+		var d = new Date();		
+		var dynamicDate = new Date(d.setFullYear(d.getFullYear() - 22));	
+		$('#birthday').datepicker({changeMonth: true, changeYear: true});
+		$("#birthday").datepicker("setDate", dynamicDate);
+	}); 
+</script>
+		
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>

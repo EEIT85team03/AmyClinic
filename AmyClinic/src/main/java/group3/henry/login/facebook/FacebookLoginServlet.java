@@ -89,7 +89,7 @@ public class FacebookLoginServlet extends HttpServlet {
 	            session.removeAttribute("location");
 	            redirect = location;
 	        } else {
-	        	redirect = getServletContext().getContextPath() +"/login/success.jsp";
+	        	redirect = getServletContext().getContextPath() +"/web/index.jsp";
 	        }
 			System.out.println(redirect);
 			

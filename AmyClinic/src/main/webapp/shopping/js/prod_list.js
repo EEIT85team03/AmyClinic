@@ -23,17 +23,40 @@ function addToCart(pid,pname,price,discount){
 		"url":getContextPath()+'/free/jointocart',
 		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : 1},
 		"success":function(data){
-			alert("成功加入購物車！")
+			Lobibox.notify("success", {
+				size: 'mini',
+				title: '成功加入購物車！',
+				delay: 1500,
+				delayIndicator: false,
+				sound: false,
+				position: "center top"
+				});
 		},
 		"error":function(data){
-			alert("加入購物車失敗")
+			Lobibox.notify("error", {
+				size: 'mini',
+				title: '加入購物車失敗！',
+				delay: 1500,
+				delayIndicator: false,
+				sound: false,
+				position: "center top"
+				});
 		},
 	});
 }		
 function callback(datas) {
 	if(datas.length==0) {
-		alert('查無資料');
-		location.reload();						
+		Lobibox.notify("error", {
+			size: 'mini',
+			title: '查無資料',
+			delay: 1500,
+			delayIndicator: false,
+			sound: false,
+			position: "center top"
+			});
+		window.setTimeout(function(){
+			 window.location.reload();
+			 }, 1500);					
 	}
 	var page = 1;
 	for(var i=0;i<datas.length;i+=PAGESIZE) {			

@@ -40,7 +40,7 @@ background-color:#D6D6AD;
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">會員資料維護</font>
 <!-- <form class="navbar-search pull-right"  ACTION="MemberServletTest" method="post"> -->
 <!-- <input type="text" class="search-query" placeholder="請輸入姓名" value="getName_For_Update" /> -->
 
@@ -81,7 +81,8 @@ background-color:#D6D6AD;
 <!-- 		<th>狀態</th> -->
 		<th><a href="addMember.jsp"><input type="submit" value="新增會員" class="btn btn-primary"></a>  </th>
 	</tr>
-	<c:forEach var="MemberVO"  items="${list}"  varStatus='i'>
+	<%@ include file="jsp/page1_10.file" %>
+	<c:forEach var="MemberVO"  items="${list}"  varStatus='i' begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		<tr>
 <%-- 			<td><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td> --%>
 <!-- 			詳細資料 -->
@@ -137,10 +138,14 @@ background-color:#D6D6AD;
 </tr>
 	</c:forEach>
 	</table>  
+	<%@ include file="jsp/page2.file" %>
 <!--         結束 -->
         </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
         <script>
         $('.btn-danger').collapse();
         </script>
+        
+
+        
 </body>
 </html>

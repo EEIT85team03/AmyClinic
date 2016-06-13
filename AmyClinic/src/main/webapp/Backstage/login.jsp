@@ -7,6 +7,7 @@
 <title>Login</title>
 </head>
 <body>
+ <div id="wrapper"><!-- all -->
 <jsp:include page="jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 <c:if test="${not empty errorMsg}">
 	<font color='red'>請修正以下錯誤:	</font>
@@ -56,6 +57,6 @@
 	
 	
 <!--         結束 -->
-
+</div>
 </body>
 </html>
