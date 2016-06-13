@@ -30,7 +30,7 @@
 <head>
 
 
-<title>AddEMP</title>
+<title>新增員工</title>
 
   
 </head>
@@ -74,7 +74,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">e-mail</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="email" type="text" value="${request.empVO.email}" placeholder="xxx@xxx.com" class="form-control input-md">
+  <input id="textinput" name="email" type="text" value="${request.empVO.email}" placeholder="abc@amy.com" class="form-control input-md">
   </div><span style="color:red">${errorMsg.email}</span>
 </div>
 
@@ -82,7 +82,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">教育程度</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="edu" type="text" value="${request.empVO.education}" placeholder="xxx" class="form-control input-md">
+  <input id="textinput" name="edu" type="text" value="${request.empVO.education}" placeholder="" class="form-control input-md">
       </div><span style="color:red">${errorMsg.edu}</span>
 </div>
 
@@ -90,7 +90,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">經歷</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="exp" type="text" value="${request.empVO.experience}"  placeholder="" class="form-control input-md">
+  <textarea name="exp" rows="3"  placeholder="" class="form-control input-md">${request.empVO.experience}</textarea>
   </div><span style="color:red">${errorMsg.exp}</span>
 </div>
 
@@ -98,7 +98,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">專長</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="spec" type="text" value="${empVO.specialty}"  placeholder="" class="form-control input-md">
+  <textarea name="spec" rows="3"  placeholder="" class="form-control input-md">${empVO.specialty}</textarea>
   </div><span style="color:red">${errorMsg.spec}</span>
 </div>
 
