@@ -144,16 +144,14 @@
 									<%-- 															<s:textfield name="memberVO.email" label="E-mail" placeholder="abc@xyz.com" id="recover-email"/>				 --%>
 									<%-- 															<s:submit value="送出" method="recover" id="recover-btn"/> --%>
 									<%-- 														</s:form> --%>
-									<form name="row" action="${pageContext.request.contextPath}/free/recover.action" method="post" class="register">
-										<input type="text" name="memberVO.email" id="Email" placeholder="電子信箱 / Email" required> 
+									<form action="${pageContext.request.contextPath}/free/recoverini.action" method="post" class="register">
+										<input type="text" name="memberVO.email" id="recover-email" placeholder="電子信箱 / Email" required> 
 										<input type="submit" value="送出">
 									</form>
 								</div>
 								<!---start-date-picker---->
-								<link rel="stylesheet"
-									href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
-								<script
-									src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
+								<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
+								<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
 								<script>
 									$(function() {
 										$("#datepicker").datepicker();
