@@ -9,7 +9,7 @@ import javax.crypto.spec.*;
 
 public class AES_Encryption { 
 	
-	private static final String KEY = "AMY";
+	private static final String KEY = "beefgood";
 	@SuppressWarnings("restriction")
 	public   String getencrypt(String p) throws Exception
 	  {
