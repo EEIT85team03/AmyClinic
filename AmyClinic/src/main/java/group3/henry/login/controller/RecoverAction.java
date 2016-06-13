@@ -68,6 +68,7 @@ public class RecoverAction extends ActionSupport implements GlobalConstants{
 		MemberServices service = new MemberServices();
 		System.out.println("RecoverAction recover()");		
 		
+		System.out.println(memberVO.getEmail());
 		MemberVO user = service.emailExists(memberVO.getEmail()); // searches DB for a user with the entered email
 		if (null != user){
 			HttpServletRequest request = ServletActionContext.getRequest();

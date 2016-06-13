@@ -53,7 +53,7 @@
 		<th>經歷</th>
 		<th>專長</th>
 		<th>修改</th>
-		<th>刪除</th>
+<!-- 		<th>刪除</th> -->
 	</tr>
 	<c:forEach var="employeeVO" items="${list}">
 		<tr align="left">
@@ -72,13 +72,13 @@
 			 </form>
 			</td>
 			
-			<td>
-			<form action="emp.do" method="get">
-			<input type="submit" value="刪除" class="btn btn-danger"/>
-			<input type="hidden" name="eid" value="${employeeVO.eid}">
-			<input type="hidden" name="action" value="delete">
-			 </form>
-			</td>
+<!-- 			<td> -->
+<!-- 			<form action="emp.do" method="get"> -->
+<!-- 			<input type="submit" value="刪除" class="btn btn-danger"/> -->
+<%-- 			<input type="hidden" name="eid" value="${employeeVO.eid}"> --%>
+<!-- 			<input type="hidden" name="action" value="delete"> -->
+<!-- 			 </form> -->
+<!-- 			</td> -->
 		</tr>
 	</c:forEach>
 	</table>

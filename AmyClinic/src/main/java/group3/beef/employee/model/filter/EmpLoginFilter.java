@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({"/Backstage/*","/appBack/*","/schedule/*"})
+@WebFilter({"/Backstage/*","/appBack/*","/schedule/*","/emp/*"})
 public class EmpLoginFilter implements Filter {
 	private FilterConfig config;
 

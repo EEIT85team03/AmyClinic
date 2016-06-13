@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 @WebServlet("/empLogin/EmpLoginServlet.do")
 public class EmpLoginServlet extends HttpServlet {
@@ -122,6 +123,17 @@ public class EmpLoginServlet extends HttpServlet {
 				return;
 			}
 		}
+		// =====================員工登出======================
+		if("logout".equals(action)){
+			System.out.println("call logout");
+		HttpSession session=req.getSession();
+		session.removeAttribute("empVO");
+		res.sendRedirect(req.getContextPath()+"/Backstage/login.jsp");
+		return;		
+		}
+		
+		
+		
 		// =====================發送忘記密碼驗證信======================
 		if ("forgetpw".equals(action)) {
 			List<String> errorMsg = new LinkedList<String>();
