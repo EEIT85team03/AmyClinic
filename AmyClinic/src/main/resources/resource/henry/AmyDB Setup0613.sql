@@ -325,12 +325,12 @@ UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p48.jpg', SI
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p49.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 49;
 UPDATE Products SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/p50.jpg', SINGLE_BLOB) AS CategoryImage) WHERE pid = 50;
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張文遠','台灣大學醫學院','123','Pocky@Amy.com','臺北馬偕紀念醫院實習醫師(1989-1990)高雄海軍總醫院小兒科少尉醫官(1990-1991)烏坵海軍檢診所內兒科少尉醫官(1991-1992)','雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('諸葛亮','成功醫學大學','123','Kindle@Amy.com','成功大學醫學院附設醫院小兒科住院醫師(1992-1995)成功大學醫學院附設醫院小兒科住院總醫師(1995-1996)成功大學醫學院附設醫院美容醫學科研究員(1995-1996)','玻尿酸、肉毒桿菌、美白針、植髮');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('夏侯惇','中山醫藥大學','123','Hershes@Amy.com','國立臺灣大學醫學院醫學系（1978-1985）國立臺灣大學醫學院臨床醫學研究所（1991-1994）國立臺灣大學管理學院高階管理碩士專班 (2006-2009)','抽脂、隆乳、雙眼皮手術、眼袋手術、拉皮手術、隆鼻');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張君雅','台灣大學醫學院','123','Pocky1@Amy.com','台灣大學醫學院附設醫院小兒心臟科研究員(1996-1997)成功大學醫學院附設醫院美容醫學科研究員(1997-1999)','微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('史奴比','中國醫藥大學','123','Kindle1@Amy.com','英爵醫美(1995-2013)','美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','123','Hershes1@Amy.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張文遠','台灣大學醫學院','gWkWJXRSRI7zIMWOVWqhqg==','Pocky@Amy.com','臺北馬偕紀念醫院實習醫師(1989-1990)高雄海軍總醫院小兒科少尉醫官(1990-1991)烏坵海軍檢診所內兒科少尉醫官(1991-1992)','雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('諸葛亮','成功醫學大學','gWkWJXRSRI7zIMWOVWqhqg==','Kindle@Amy.com','成功大學醫學院附設醫院小兒科住院醫師(1992-1995)成功大學醫學院附設醫院小兒科住院總醫師(1995-1996)成功大學醫學院附設醫院美容醫學科研究員(1995-1996)','玻尿酸、肉毒桿菌、美白針、植髮');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('夏侯惇','中山醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Hershes@Amy.com','國立臺灣大學醫學院醫學系（1978-1985）國立臺灣大學醫學院臨床醫學研究所（1991-1994）國立臺灣大學管理學院高階管理碩士專班 (2006-2009)','抽脂、隆乳、雙眼皮手術、眼袋手術、拉皮手術、隆鼻');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張君雅','台灣大學醫學院','gWkWJXRSRI7zIMWOVWqhqg==','Pocky1@Amy.com','台灣大學醫學院附設醫院小兒心臟科研究員(1996-1997)成功大學醫學院附設醫院美容醫學科研究員(1997-1999)','微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('史奴比','中國醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Kindle1@Amy.com','英爵醫美(1995-2013)','美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','gWkWJXRSRI7zIMWOVWqhqg==','Hershes1@Amy.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
 
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 1;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 2;
