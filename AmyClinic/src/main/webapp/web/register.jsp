@@ -78,7 +78,26 @@
 									<input type="text" name="memberVO.phone" placeholder="電話號碼" id="phone" >								
 									<input type="text" name="memberVO.height" placeholder="身高 (公分)" id="height" >								
 									<input type="text" name="memberVO.mass" placeholder="體重 (公斤)" id="weigt" >								
-									<input type="text" name="fileUpload" placeholder="會員圖片" id="uploader" >																	
+<!-- 									<input type="file" name="fileUpload" value="會員圖片" id="uploader" >																	 -->
+									<s:file	name="fileUpload" label="會員圖片" size="40" id="uploader" theme="simple" />
+<!-- 									<div class="box"> -->
+<!-- 										<div class="tablelayout"> -->
+<!-- 											<div class="box-left"> -->
+<!-- 												<label id="pic">照片<font color="red">*</font>: -->
+<%-- 												</label> <span class="file-wrapper"> <s:file --%>
+<%-- 														name="fileUpload" label="會員圖片" size="40" id="uploader" --%>
+<%-- 														theme="simple" /> <span class="btn">上傳我的照片</span> --%>
+<%-- 												</span> --%>
+<!-- 											</div> -->
+<!-- 											<div class="box-right"> -->
+<!-- 												<img id="img-uploaded" -->
+<%-- 													src="${pageContext.request.contextPath}/register/img/text.png" --%>
+<!-- 													alt="你的照片" /> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+
+
 <!-- 									<div class="register-check-box"> -->
 <!-- 										<div class="check"> -->
 <!-- 											<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label> -->
@@ -87,7 +106,6 @@
 									<input type="submit" value="建立帳號">
 								</form>
 							</div>
-						</div>
 						</div>
 					</div>
 				<!-- //login -->
@@ -169,6 +187,41 @@ jQuery(function($) {
 		$("input").attr("autocomplete", "off");
 	});
 </script>
+
+<%-- <script type="text/javascript"> --%>
+<!-- // 	var SITE = SITE || {}; -->
+
+<!-- // 	SITE.fileInputs = function() { -->
+<!-- // 		var $this = $(this), $val = $this.val(), valArray = $val -->
+<!-- // 				.split('\\'), newVal = valArray[valArray.length - 1], $button = $this -->
+<!-- // 				.siblings('.btn'), $fakeFile = $this -->
+<!-- // 				.siblings('.file-holder'); -->
+<!-- // 		if (newVal !== '') { -->
+<!-- // 			$button.text('換一張照片'); -->
+<!-- // 		} -->
+<!-- // 	}; -->
+
+<!-- // 	$('.file-wrapper input[type=file]').bind('change focus click', -->
+<!-- // 			SITE.fileInputs); -->
+
+<!-- // 	function readURL(input) { -->
+<!-- // 		if (input.files && input.files[0]) { -->
+<!-- // 			var reader = new FileReader(); -->
+<!-- // 			var tmppath = URL.createObjectURL(event.target.files[0]); -->
+
+<!-- // 			reader.onload = function(e) { -->
+<!-- // 				$('#img-uploaded').attr('src', e.target.result); -->
+<!-- // 			} -->
+
+<!-- // 			reader.readAsDataURL(input.files[0]); -->
+<!-- // 		} -->
+<!-- // 	} -->
+
+<!-- // 	$("#uploader").change(function() { -->
+<!-- // 		readURL(this); -->
+<!-- // 	}); -->
+<%-- </script> --%>
+
 		
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
