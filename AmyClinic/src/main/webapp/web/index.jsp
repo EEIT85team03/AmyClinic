@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -7,6 +8,7 @@
 <body>
 	<!-- header -->
 	<jsp:include page="fragment/header.jsp" />
+	<jsp:include page="fragment/mySpace.jsp" />
 	<!-- //header -->
 	<div class="demo-2">	
 		<jsp:include page="fragment/slogan.jsp" />
@@ -432,6 +434,6 @@
 							
 						});
 					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>
