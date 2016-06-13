@@ -37,8 +37,8 @@ public class HotProdServlet extends HttpServlet {
 		SalesToProdService  salesToProdService=new SalesToProdService();
 		//============顯現一開始Chart.jsp的畫面=========================
 //List產品 全部
-		if("熱門產品".equals(action)){
-			System.out.println("熱門產品");
+		if("HotProd".equals(action)){
+			System.out.println("HotProd_ok");
 			
 			List<SalesToProdVO> ProdVO=salesToProdService.getAll();
 			List ProdList=new LinkedList();
