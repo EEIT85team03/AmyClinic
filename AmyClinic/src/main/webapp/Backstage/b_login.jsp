@@ -111,7 +111,7 @@ a:hover {
                 <div class="form-box">
                 <form >
                 		<label class="control-label col-sm-2" for="maillog">信箱</label>
-                    <input type="text" name="maillog" id="maillog" placeholder="使用者信箱">
+                    <input type="text" name="maillog" id="maillog" placeholder="使用者信箱"><br>
                     	<label class="control-label col-sm-2" for="pwdlog">密碼</label>
                     <input type="password" id="pwdlog"  name="pwdlog" placeholder="密碼">
                     <button class="btn btn-info btn-block login" type="button" id="loginbtn">登入</button>

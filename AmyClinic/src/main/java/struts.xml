@@ -64,9 +64,9 @@
             <result name="success">/register/regsuccess.jsp</result>
             <result name="input">/web/register.jsp</result>
         </action>
-        <action name="reset" class="group3.henry.login.controller.ResetPassAction">
-            <result name="success">/login/verify.jsp</result>
-            <result name="input">/login/resetpw.jsp</result>
+        <action name="reset" class="group3.henry.login.controller.ResetPassAction" method="resetPass">
+            <result name="success">/web/verify.jsp</result>
+            <result name="input">/web/resetpw.jsp</result>
         </action>
     </package>
     <!-- ************************* -->
@@ -262,9 +262,11 @@
             <result>/web/verify.jsp</result>
             <result name="failure">/web/verify.jsp</result>
         </action>
-        <action name="recover" class="group3.henry.login.controller.RecoverAction" method="recover">
+        <action name="recoverini" class="group3.henry.login.controller.RecoverAction" method="recover">
             <result name="success">/web/verify.jsp</result>
-            <result name="resetform">/login/resetpw.jsp</result>
+        </action>
+        <action name="recover" class="group3.henry.login.controller.RecoverAction">
+            <result name="resetform">/web/resetpw.jsp</result>
             <result name="failure">/web/verify.jsp</result>
         </action>
         <action name="queryprodbycata" class="group3.carrie.catagory.controller.CatagoryAction"></action>
