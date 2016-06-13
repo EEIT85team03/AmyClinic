@@ -4,9 +4,9 @@
 <html lang="en">
 <head>
 
-  <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
-  <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/highcharts.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/exporting.js"></script>
   
   
   <script>

@@ -71,12 +71,10 @@ background-color:#FF8000;
 /* background-color:#006030; */
 }
 em{  color:red; }
-
 #wrapper{
 font-family: 'Noto Sans TC'; 
-font-size:20px;
+font-size:18px;
 }
-
 #loading {
     position:absolute;
     width:300px;
@@ -99,7 +97,7 @@ font-size:20px;
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="<%=request.getContextPath()%>/Backstage/0ininder.jsp" ><font color="#fff">☆AMY診所管理系統☆</font></a>
+		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp" ><font color="#fff">☆-Amy醫美前端-☆</font></a>
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
@@ -164,20 +162,24 @@ font-size:20px;
 		<!--                                         通知區over-->
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
-		</i><font color="#fff" id="empname"> ${empVO.name} </font><b class="caret"></b></a>
+
+		</i><font color="#fff" id="empname">  ${session.empVO.name}</font><b class="caret"></b></a>
+
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
 <!-- 				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li> -->
 <!-- 				<li><a href="#"><i class="fa fa-fw fa-gear"></i>喜好設定</a></li> -->
 				<li class="divider"></li>
+
 				<li><a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a></li>
+
 			</ul></li>
 	</ul>
 	<!--  topover--><!--  topover--><!--  topover--><!--  topover--><!--  topover-->
 	<!-- 側邊欄功能表項目-對應導航功能表 -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active"><a href="<%=request.getContextPath()%>/index.jsp"><i 	class="fa fa-fw fa-dashboard"></i>-Amy醫美前端-</a></li>
+			<li class="active"><a href="<%=request.getContextPath()%>/Backstage/b_login.jsp"><i 	class="fa fa-fw fa-dashboard"></i>管理系統</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>

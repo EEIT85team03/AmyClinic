@@ -53,7 +53,7 @@ public class ProductSearchAction extends ActionSupport {
 		ProductVO productVO = prodServ.getOneProduct(pid);
 		Gson gson = createGson();
 		String str = gson.toJson(productVO);
-		System.out.println(str);
+//		System.out.println(str);
 		PrintWriter out;
 		try {
 			out = response.getWriter();
@@ -75,7 +75,7 @@ public class ProductSearchAction extends ActionSupport {
 				.findByName("%" + prodname + "%");
 		Gson gson = createGson();
 		String str = gson.toJson(products);
-		System.out.println(str);
+//		System.out.println(str);
 		PrintWriter out;
 		try {
 			out = response.getWriter();

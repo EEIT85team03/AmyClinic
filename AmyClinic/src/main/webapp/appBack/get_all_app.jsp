@@ -6,7 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css"	href="<%=request.getContextPath()%>/css/datatables.css"/>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/css/datatables.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
 <title>Insert title here</title>
 </head>
@@ -14,8 +15,10 @@
 	<div id="wrapper">
 		<!-- all -->
 		<jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
-		 <script type="text/javascript"	src="<%=request.getContextPath()%>/js/datatables.js"></script>
-       <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
+		<script type="text/javascript"
+			src="<%=request.getContextPath()%>/js/datatables.js"></script>
+		<script type="text/javascript"
+			src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
 
 
 		<div id="page-wrapper" style="background-color: #000000">
@@ -37,18 +40,19 @@
 
 
 		<table border="1" class="table table-hover" id="apptable">
-		<thead>
-			<tr>
-				<th>預約編號</th>
-				<th>會員名稱</th>
-				<th>門診醫師</th>
-				<th>預約日期</th>
-				<th>預約時段</th>
-				<th>療程</th>
-				<th>預約狀態</th>
-				<th>取消預約</th>
+			<thead>
+				<tr>
+					<th>預約編號</th>
+					<th>會員名稱</th>
+					<th>門診醫師</th>
+					<th>預約日期</th>
+					<th>預約時段</th>
+					<th>療程</th>
+					<th>初回診</th>
+					<th>預約狀態</th>
+					<th>取消預約</th>
 
-			</tr>
+				</tr>
 			</thead>
 			<jsp:useBean id="AppSvc" scope="page"
 				class="group3.carrie.app.model.AppService" />
@@ -61,26 +65,35 @@
 					<td>${AppVO.apt_time}</td>
 					<td>${AppVO.descrip}</td>
 					<c:choose>
+						<c:when test="${AppVO.purpose==1}">
+							<td>初診</td>
+						</c:when>
+						<c:otherwise>
+							<td>回診</td>
+						</c:otherwise>
+
+					</c:choose>
+					<c:choose>
 						<c:when test="${AppVO.apt_status==1}">
 							<td>正常</td>
 						</c:when>
 						<c:otherwise>
-							<td style="color:red">取消</td>
+							<td style="color: red">取消</td>
 						</c:otherwise>
 					</c:choose>
 					<td>
-					<form action="app_check" method="get">
-					<input type="submit" value="取消" class="btn btn-success">
-					<input type="hidden" name="action" value="appcancel">
-					<input type="hidden" name="aid" value="${AppVO.aid}">
-					
-					</form>
-					
+						<form action="app_check" method="get">
+							<input type="submit" value="取消" class="btn btn-success">
+							<input type="hidden" name="action" value="appcancel"> <input
+								type="hidden" name="aid" value="${AppVO.aid}">
+
+						</form>
+
 					</td>
-					</tr>
+				</tr>
 			</c:forEach>
-			
-			
+
+
 
 		</table>
 
@@ -89,33 +102,34 @@
 
 
 	</div>
-	
+
 	<script type="text/javascript">
-	$(document).ready(function() {
-		var table = $('#apptable').DataTable({
-			"order": [[ 0, "desc" ]], //預設編號排序
-			"columnDefs": [
-			{"className": "dt-center", "targets": "_all"}
-			
-							             ],
- 		"lengthMenu": [[10, 15, 30, 50, -1], [10, 15, 30, 50, "All"]],
- 		"iDisplayLength": 15,
-//  		dom: 'Bfrtip',
-//  		buttons: [
-// 		            {
-// 		                text: '新增排班',
-// 		                action: function ( e, dt, node, config ) {
-// 		                    alert( 'Button activated' );
-// 		                }
-// 		            }
-// 		        ],
-			
-			
-			
-		})
-	})
-	
- 
+		$(document).ready(
+				function() {
+					var table = $('#apptable').DataTable(
+							{
+								"order" : [ [ 0, "desc" ] ], //預設編號排序
+								"columnDefs" : [ {
+									"className" : "dt-center",
+									"targets" : "_all"
+								}
+
+								],
+								"lengthMenu" : [ [ 10, 15, 30, 50, -1 ],
+										[ 10, 15, 30, 50, "All" ] ],
+								"iDisplayLength" : 15,
+							//  		dom: 'Bfrtip',
+							//  		buttons: [
+							// 		            {
+							// 		                text: '新增排班',
+							// 		                action: function ( e, dt, node, config ) {
+							// 		                    alert( 'Button activated' );
+							// 		                }
+							// 		            }
+							// 		        ],
+
+							})
+				})
 	</script>
 </body>
 </html>
