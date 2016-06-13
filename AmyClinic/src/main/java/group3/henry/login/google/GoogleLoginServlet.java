@@ -57,7 +57,6 @@ public class GoogleLoginServlet extends HttpServlet {
 					memberVO.setLast_visit(today);
 					memberVO = retrievePhoto(memberVO, gbean);
 					service.update(memberVO);
-					System.out.println("gReward_pts3: " + memberVO.getReward_pts());
 					System.out.println("Google Login: " + email + " already in use, User Updated: " + memberVO.getName());
 				} else {
 					System.out.println("Google Login: " + email + " not in use, creating new account");
@@ -82,7 +81,6 @@ public class GoogleLoginServlet extends HttpServlet {
 				}	
 				session.setAttribute("account", memberVO.getName()); //set to logged in
 				session.setAttribute("memberVO", memberVO);
-				System.out.println("gReward_pts2: " + memberVO.getReward_pts());
 																
 				String contextPath = getServletContext().getContextPath();
 				
@@ -96,13 +94,13 @@ public class GoogleLoginServlet extends HttpServlet {
 		        } else {
 		        	redirect = getServletContext().getContextPath() +"/web/index.jsp";
 		        }
-				System.out.println(redirect);
+				System.out.println("Google Login servlet redirect URL: "+redirect);
 								
 				response.setContentType("application/json");
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out = response.getWriter();
 //				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");
-				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/login/success.jsp\"}]");
+				out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+redirect+"\"}]");
 				
 				out.flush();
 				//returns success					
@@ -134,7 +132,6 @@ public class GoogleLoginServlet extends HttpServlet {
 			}
 			original.renameTo(renamed); // rename downloaded file to proper format
 			memberVO.setPhoto(filename);
-			System.out.println("gReward_pts4: " + memberVO.getReward_pts());
 		}
 		return memberVO;
 	}
