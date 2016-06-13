@@ -1,14 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@page import="java.util.List"%>
 <%@page import="group3.carrie.orders.model.*"%>
 <%@page import="group3.carrie.orderitems.model.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>訂單管理</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 </head>
 <body>
 <%
@@ -20,14 +22,30 @@ OrderItemsService order  = new OrderItemsService();
 List<OrderItemsVO> orderItem = order.getAll();
 pageContext.setAttribute("orderItem", orderItem);
 %>
-<b>訂單查詢：</b>
+<div id="wrapper"><!-- all --> 
+<jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->   
+     
+ 
+<div id="page-wrapper" style=background-color:#000000  >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">訂單查詢</font>
+                 
+                 </li></ol>
+                    </div>
+                </div><!-- /.row -->
+            </div> <!-- /.container-fluid -->
+            </div><!--側邊欄功能表項目over --> 
+<!--         開始 -->
+<%@ include file="jsp/page1_5.file" %>
 <form >
 <!-- method="post" -->
 <%--  action='${pageContext.request.contextPath}/Backstage/updateOrder'  --%>
 
-<table  border="1" style="text-align: center;border-collapse: collapse;">
+<table  border="1"  class="table table-hover table-responsive"  style="text-align: center;border-collapse: collapse;">
 			<tr>
-				<th>編號/明細</th>
+				<th>明細/編號</th>
 				<th>日期</th>
 				<th>總價</th>
 				<th>訂單狀態</th>
@@ -35,23 +53,17 @@ pageContext.setAttribute("orderItem", orderItem);
 				<th>配送狀態</th>
 				<th>更新狀態</th>
 			</tr>
-<c:forEach varStatus="status" var="ordersVO" items="${list}">
+			
+<c:forEach varStatus="status" var="ordersVO" items="${list}" begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 			<tr>
-				<td><font name="oid">${ordersVO.oid}</font>
-<!-- 		1 -->
-		<div>
-<!-- 		點選後顯示/隱藏訂單明細  -->
-		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">
-		</div>
-		
-
-		
-<!-- 		2		 -->			
+				<td><!-- 		點選後顯示/隱藏訂單明細  -->
+		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">	
+		${ordersVO.oid}	
 				</td>
 				<td><font name="odate"><fmt:formatDate pattern="yyyy/MM/dd" value="${ordersVO.odate}" /></font></td>
 				<td>$<font name="total"><fmt:formatNumber value="${ordersVO.total}" type="number"/></font></td>
 <td>
-<select size="1"  name="ostatus" class="form-control form-control-sm"  >				
+<select size="1"  name="ostatus"  >				
 				<c:if test="${ordersVO.ostatus == 0}">
 					<option  value='0'  >訂單成立</option>
 				</c:if>
@@ -72,7 +84,7 @@ pageContext.setAttribute("orderItem", orderItem);
 </td>				
 <!-- 				------------------------------------------------------ -->
 <td>
-<select size="1"  name="payment" class="form-control form-control-sm"  >
+<select size="1"  name="payment"  >
 				<c:if test="${ordersVO.payment == 0}">
 					<option value="0">未付款</option>
 				</c:if>
@@ -85,7 +97,7 @@ pageContext.setAttribute("orderItem", orderItem);
 </td>				
 <!-- 				------------------------------------------------------ -->
 <td>
-<select size="1"  name="del_status" class="form-control form-control-sm"  >
+<select size="1"  name="del_status"  >
 				<c:if test="${ordersVO.del_status == 0}">
 					<option value="0">處理中</option>
 				</c:if>
@@ -103,7 +115,7 @@ pageContext.setAttribute("orderItem", orderItem);
 <!-- 				------------------------------------------------------ -->
 				<c:if test="${ordersVO.ostatus == 0}">
 <%-- 					<td><input type="button"  value="更新訂單狀態" onclick="cancel(${ordersVO.oid},${ordersVO.odate},${ordersVO.total},${ordersVO.ostatus},${ordersVO.payment},${ordersVO.del_status})"></td> --%>
-							<td><input type="button"  value="更新訂單狀態" onclick="cancel(${ordersVO.oid})"></td>
+							<td><input type="button"  class="btn btn-success"  value="更新" onclick="cancel(${ordersVO.oid})"></td>
 				</c:if>
 				<c:if test="${ordersVO.ostatus != 0}">
 					<td></td>
@@ -144,7 +156,7 @@ pageContext.setAttribute("orderItem", orderItem);
 	
 		</table>
 </form>	
-
+<%@ include file="jsp/page2.file" %>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>	
 	<script>
@@ -207,7 +219,7 @@ pageContext.setAttribute("orderItem", orderItem);
 // 			}
 		
 		</script>
-		
-	
+
+	 </div><!-- 		all -->
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>☆AMY診所管理系統☆</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
 
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
@@ -158,8 +158,9 @@ font-size:18px;
 <!-- 				<li><a href="#">您的帳號已開通<span class="label label-danger">1</span></a></li> -->
 <!-- 				<li class="divider"></li> -->
 <!-- 				<li><a href="#">查看所有通知</a></li> -->
-<!-- 			</ul></li> -->
+
 		<!--                                         通知區over-->
+		
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
 
@@ -174,22 +175,26 @@ font-size:18px;
 				<li><a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a></li>
 
 			</ul></li>
+			
+		<img class="img-circle" width="35px"src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${session.empVO.eid}" />
+		
 	</ul>
 	<!--  topover--><!--  topover--><!--  topover--><!--  topover--><!--  topover-->
 	<!-- 側邊欄功能表項目-對應導航功能表 -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
-			<li class="active"><a href="<%=request.getContextPath()%>/Backstage/b_login.jsp"><i 	class="fa fa-fw fa-dashboard"></i>管理系統</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/emp/GetAllEMP.jsp"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
+			<li class="active"><a href="<%=request.getContextPath()%>/Backstage/b_login.jsp"><i 	class="fa fa-fw fa-refresh"></i>管理系統</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-shopping-cart"></i>商品管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-plus-square"></i>療程管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-newspaper-o"></i>會員管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/emp/GetAllEMP.jsp"><i class="fa fa-fw fa-users"></i>員工管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/appBack/get_all_app.jsp"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-desktop"></i>留言管理</a></li>
+			<li><a href="#"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-thumbs-o-up"></i>留言管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/orders.jsp"><i class="fa fa-fw fa-credit-card"></i>訂單管理</a></li>
 			<li>
-			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
+			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
 					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品</a>

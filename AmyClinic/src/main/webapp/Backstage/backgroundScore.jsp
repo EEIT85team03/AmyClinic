@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>☆AMY診所☆管理系統☆pro版☆</title>
+
 <style>
 p{
 width:400px;
