@@ -25,7 +25,7 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">新增療程</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">新增療程</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -84,13 +84,14 @@ pageContext.setAttribute("proctype", proctype);
 
   </form>
   <c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
-			<li>${message}</li>
+			<li><font color='red'>${message}</font></li>
 		</c:forEach>
 	</ul>
-	</font>
+</c:if>
+<c:if test="${empty errorMsg}">
+	<script >$(function () { alert("新增療程成功");});</script>
 </c:if>
 </div>
 <!--         結束 -->

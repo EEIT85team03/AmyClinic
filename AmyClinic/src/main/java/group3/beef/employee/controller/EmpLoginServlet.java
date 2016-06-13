@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.jsp.PageContext;
 
 @WebServlet("/empLogin/EmpLoginServlet.do")
 public class EmpLoginServlet extends HttpServlet {
@@ -122,7 +123,18 @@ public class EmpLoginServlet extends HttpServlet {
 				return;
 			}
 		}
-		// =====================發送驗證信======================
+		// =====================員工登出======================
+		if("logout".equals(action)){
+			System.out.println("call logout");
+		HttpSession session=req.getSession();
+		session.removeAttribute("empVO");
+		res.sendRedirect(req.getContextPath()+"/Backstage/login.jsp");
+		return;		
+		}
+		
+		
+		
+		// =====================發送忘記密碼驗證信======================
 		if ("forgetpw".equals(action)) {
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
@@ -153,6 +165,27 @@ public class EmpLoginServlet extends HttpServlet {
 			}
 
 		}
+		
+		
+		// =====================發送忘記密碼驗證信Ajax======================
+		if ("forgetpwAjx".equals(action)) {
+			PrintWriter out = res.getWriter();
+			System.out.println("call forgetpwAjx");
+			String mail = req.getParameter("restmail");
+			EmployeeService eSvc = new EmployeeService();
+			EmployeeVO empVO = eSvc.findEmpByMail(mail);
+			if(empVO != null){
+				out.print("aaa");
+				System.out.println("帳號存在!!");
+				EmailUtils.sendResetPasswordEmail(empVO);
+				return;
+			}else{
+				out.print("帳號不存在");
+				return;
+			}
+			
+		}
+		
 		// ======================驗證重設信============================
 
 		if ("reset".equals(action)) {

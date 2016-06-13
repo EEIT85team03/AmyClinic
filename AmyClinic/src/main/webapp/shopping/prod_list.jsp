@@ -6,7 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>購物專區</title>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
+
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/shopping/css/prod_list.css" />
 </head>
 <body onload="queryProdByName('')">

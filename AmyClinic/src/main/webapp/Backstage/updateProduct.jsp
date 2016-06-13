@@ -24,7 +24,7 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">修改產品</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">修改產品</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -57,11 +57,10 @@ pageContext.setAttribute("catagorys", catagorys);
 <%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%=productVO.getCatagoryVO()%>" /> --%>
   
       <select size="1"  name="cid">
-      <c:forEach var="catagoryVO" items="${catagorys}">
-				<option  value="${catagoryVO.cid}" ${(productVO.pid==catagoryVO.cid)?'selected':'' } >${catagoryVO.name}
+      <c:forEach var="catagorys" items="${catagorys}">
+				<option  value="${catagorys.cid}" ${(productVO.catagoryVO.cid==catagorys.cid)?'selected':'' } >${catagorys.name}
 	  </c:forEach>
       </select>
-      
       </div>
     </div>
       
@@ -76,7 +75,7 @@ pageContext.setAttribute("catagorys", catagorys);
     <div class="form-group">
       <label class="control-label col-sm-2" for="price">商品價格(元)</label>
       <div class="col-sm-10">          
-        <input type="number" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%> 元"   style="width:120px;"/>
+        <input type="text" class="form-control" id="price" placeholder="整數數字" size="45" name="price"  value="<%=productVO.getPrice()%> 元"   style="width:120px;"/>
       </div>
     </div>
     <div class="form-group">

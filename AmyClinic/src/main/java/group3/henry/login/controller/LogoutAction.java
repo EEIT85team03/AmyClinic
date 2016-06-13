@@ -38,6 +38,7 @@ public class LogoutAction extends ActionSupport implements ServletRequestAware, 
 		System.out.println("LogoutAction this.email = " + email);
 		System.out.println("LogoutAction current = " + current.getEmail());
 		String currentEmail = current.getEmail();
+		if (null==email || null==currentEmail) return INPUT;		
 		if (email.equals(currentEmail)){
 			if (session != null) {
 			    session.invalidate();
@@ -46,7 +47,7 @@ public class LogoutAction extends ActionSupport implements ServletRequestAware, 
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out = response.getWriter();
-			out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/index.jsp\"}]");			
+			out.write("[{\"success\":\"true\",\"redirect\":\"true\",\"redirectURL\":\""+contextPath+"/web/index.jsp\"}]");			
 			out.flush();
 			
 			return null;				

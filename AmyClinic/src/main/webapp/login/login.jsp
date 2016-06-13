@@ -44,6 +44,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div id="loginpage">
 			<s:form namespace="/logreg" action="login" id="loginform"
 				theme="simple">

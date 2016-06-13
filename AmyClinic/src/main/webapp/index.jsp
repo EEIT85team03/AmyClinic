@@ -9,8 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
 <title>-AMY-</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="jquery-1.3.2.js"></script> -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/supersized.2.0.js"></script>
 <script type="text/javascript">
@@ -56,11 +58,14 @@ body {
 #supersize .activeslide, #supersize .activeslide img {
 	z-index: 2;
 }
+/* #logo{ */
+/* 	float:left; */
+/* 	width:60px; */
+/* 	height:60px; */
+/* 	border-radius:50%; */
+	
+/* } */
 </style>
-<!-- Google API -->
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<meta name="google-signin-scope" content="profile email">
-	<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 
 <!--[if lt IE 9]>
 		<script src="http://htmL5shim.googlecode.com/svn/trunk/html5.js">	
@@ -95,7 +100,10 @@ body {
 		<!--top image-->
 
 		<article>
-			<c:import url="/General/LoginBox.jsp"></c:import>
+			<div id="headercontainer">
+<%-- 				<img id="logo" src="${pageContext.request.contextPath}/images/logo.jpg"> --%>
+				<c:import url="/General/LoginBox.jsp"></c:import>
+			</div>
 			<h2 class="title"></h2>
 			<!--黒底標題-->
 			<section>

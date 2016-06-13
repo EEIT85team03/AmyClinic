@@ -47,7 +47,7 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">會員資料維護</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">會員資料維護</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -74,13 +74,13 @@
 			    				
 			    				
 			    				<div class="col-xs-4 col-sm-4 col-md-4">
-			    					<div class="form-group">							<label >姓名</label>
+			    					<div class="form-group">							<label >姓名</label><em>(必填)</em>
 			    						<input name="name" id="membername" class="form-control form-control-sm" type="text" value="${memberVO.name}" />
 			    					</div>
 			    				</div>
 			    				
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">							<label >密碼</label>
+			    					<div class="form-group">							<label >密碼</label><em>(必填)</em>
 			    						<input name="pwd" id="memberpwd" class="form-control form-control-sm" type="password" value="${memberVO.pwd}" readonly />
 			    					</div>
 			    				</div>
@@ -164,19 +164,19 @@
 			    			</div><!-- <row> -->
 <div class="row"><!-- <row> -->
 			<div class="col-xs-4 col-sm-4 col-md-4">
-			    	<div class="form-group">								<label >信箱</label>
+			    	<div class="form-group">								<label >信箱</label><em>(必填)</em>
 				<input name="email" id="memberemail" class="form-control form-control-sm" type="text" value="${memberVO.email}"  />
 			    	</div>
 			</div>
 			
 			<div class="col-xs-4 col-sm-4 col-md-4">
-			    	<div class="form-group">								<label >電話</label>
+			    	<div class="form-group">								<label >電話</label><em>(必填)</em>
 				<input name="phone" id="memberphone" class="form-control form-control-sm"  type="text" value="${memberVO.phone}" />
 			    	</div>
 			</div>
 
 			<div class="col-xs-4 col-sm-4 col-md-4">
-			    	<div class="form-group">								<label >總花費</label>
+			    	<div class="form-group">								<label >累積點數</label>
 <input name="total_spent" id="membernum_total_spent" class="form-control form-control-sm"  type="text" value="${memberVO.total_spent}" readonly/>點	
 			    	</div>
 			</div>
@@ -264,7 +264,7 @@
     	</div>
 <%-- 錯誤表列 --%>
    <c:if test="${not empty errorMsg}">
-	<font color='red'>請修正以下錯誤:</font>
+	
 	<ul>
 		<c:forEach var="message" items="${errorMsg}">
 			<li><font color='red'>請修正以下錯誤:${message}</font></li>

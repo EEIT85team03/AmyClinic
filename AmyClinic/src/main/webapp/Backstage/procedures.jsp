@@ -42,7 +42,7 @@ table {
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">療程資料維護</font>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">療程資料維護</font>
                  				
       <FORM METHOD="get" ACTION="ProcServlet" >
        <select size="1" name="pType_id">
@@ -73,8 +73,8 @@ table {
 			     <a href="addProcedures.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
 	</tr>
-
-	<c:forEach var="ProcVO"  items="${list}"  >
+<%@ include file="jsp/page1_10.file" %>
+	<c:forEach var="ProcVO"  items="${list}"  begin="<%=pageIndex%>" end="<%=pageIndex+rowsPerPage-1%>">
 		<tr>
 			<td>${ProcVO.procTypeVO.name}</td>
 			<td>NO.${ProcVO.procedure_id}</td>
@@ -95,7 +95,7 @@ table {
 		</tr>
 	</c:forEach>
 	</table>    
-	    
+	    <%@ include file="jsp/page2.file" %>
 <%-- 	<c:if test="${not empty errorMsg}"> --%>
 <!-- 	<font color='red'>請修正以下錯誤: -->
 <!-- 	<ul> -->
