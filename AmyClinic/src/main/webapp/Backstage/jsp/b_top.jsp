@@ -163,7 +163,7 @@ font-size:18px;
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
 
-		</i><font color="#fff">${session.empVO.name}</font><b class="caret"></b></a>
+		</i><font color="#fff" id="empname">  ${session.empVO.name}</font><b class="caret"></b></a>
 
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
