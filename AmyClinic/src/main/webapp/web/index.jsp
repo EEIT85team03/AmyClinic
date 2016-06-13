@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head> 
-<title>Amy | Home</title>
+<title>Amy | 首頁</title>
 </head>
 <body>
 	<!-- header -->

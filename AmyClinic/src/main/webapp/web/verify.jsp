@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Amy | Message </title>
+<title>Amy | 訊息 </title>
 </head>
 <body>
 	<!-- header -->
