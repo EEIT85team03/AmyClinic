@@ -9,13 +9,9 @@
 	<jsp:include page="fragment/header.jsp" />
 	<!-- //header -->
 	<div class="demo-2">	
-		<header class="logo">
-			<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
-		</header>
+		<jsp:include page="fragment/slogan.jsp" />
             <div id="slider" class="sl-slider-wrapper">
-
-				<div class="sl-slider">
-				
+				<div class="sl-slider">				
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
