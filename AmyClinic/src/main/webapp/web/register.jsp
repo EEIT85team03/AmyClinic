@@ -183,7 +183,7 @@ function PreviewImage(imgFile) {
 			imgFile.select();
 			imgFile.blur();
 			path = document.selection.createRange().text;
-			document.getElementById("imgPreview").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\""+ path + "\")";// �o��
+			document.getElementById("imgPreview").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='crop',src=\""+ path + "\")";// �o��
 		} else { 
 			path = URL.createObjectURL(imgFile.files[0]);
 			document.getElementById("imgPreview").innerHTML = "<img src='"+ path +"'  width='150' height='150'/>";

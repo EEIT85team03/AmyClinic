@@ -429,7 +429,7 @@
 			</div>
 		</div>		
 		<!-- //doctor -->
-		
+			
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />
 		<!-- //book an appointment -->

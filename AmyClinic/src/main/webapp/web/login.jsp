@@ -102,6 +102,7 @@
 									<div class="clearfix"></div>
 									<div class="forgot">
 										<a href="#">忘記密碼?</a>
+										<span id="mybtn" class="button button-orange"><i class="fa"></i>&#10071; <strong>忘記密碼?</strong></span>
 									</div>
 									<input type="submit" value="登 入">
 								</form>
@@ -120,6 +121,21 @@
 				<!-- //login -->
 			<!--- /login ---->
 		</section>
+	<!-- Modal content -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&#10005;</span> 忘記密碼？
+			</div>
+			<div class="modal-body">
+				<p>可以撥打以下電話連絡我們客服人員</p>
+				<p>0800-000-999...</p>
+				<hr />
+				<s:include value="/login/recover.jsp"></s:include>
+			</div>
+		</div>
+	</div>
+	<!-- //Modal content -->
 		<!-- //login-section -->
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />
@@ -153,6 +169,27 @@
 	    FB.login( function() {checkLoginState();}, { scope: 'email,public_profile' } );
 	    
 	}
+	</script>
+	<script>
+		var modal = document.getElementById('myModal');
+
+		var btn = document.getElementById("mybtn");
+
+		var span = document.getElementsByClassName("close")[0];
+
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>

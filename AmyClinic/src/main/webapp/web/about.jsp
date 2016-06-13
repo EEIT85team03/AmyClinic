@@ -20,7 +20,7 @@
 						<h6>add a short description here</h6>
 					</div>
 				</div>
-			</div>
+			</div>		
 			<div class="about-grids">
 				<div class="container">
 					<div class="col-md-4 abt-grid">
