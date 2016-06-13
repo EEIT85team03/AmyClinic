@@ -28,7 +28,7 @@ import com.google.gson.Gson;
 @MultipartConfig(maxFileSize = 16177215)
 // @MultipartConfig(location = "", fileSizeThreshold = 1024 * 1024, maxFileSize
 // = 1024 * 1024 * 500, maxRequestSize = 1024 * 1024 * 500 * 5)
-@WebServlet("/empLogin/emp.do")
+@WebServlet({"/empLogin/emp.do","/emp/emp.do"})
 public class EmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -78,7 +78,7 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/empLogin/select_page.jsp");
+							.getRequestDispatcher("/empLogin/GetAllEMP.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -90,7 +90,7 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/empLogin/select_page.jsp");
+							.getRequestDispatcher("/emp/GetAllEMP.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -107,20 +107,20 @@ public class EmpServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/empLogin/select_page.jsp");
+							.getRequestDispatcher("/emp/GetAllEMP.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 				/*************************** 3.查詢完成,準備轉交(Send the Success view) *************/
 				req.setAttribute("empVO", empVO);
 				RequestDispatcher successView = req
-						.getRequestDispatcher("/empLogin/update_emp_input.jsp");
+						.getRequestDispatcher("/emp/update_emp_input.jsp");
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add("無法取得資料:" + e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/empLogin/select_page.jsp");
+						.getRequestDispatcher("/emp/select_page.jsp");
 				failureView.forward(req, res);
 			}
 		}
@@ -325,7 +325,7 @@ public class EmpServlet extends HttpServlet {
 				if (!errorMsg.isEmpty()) {
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/empLogin/update_emp_input.jsp");
+							.getRequestDispatcher("/emp/update_emp_input.jsp");
 					failureView.forward(req, res);
 					return;
 				}
@@ -339,14 +339,14 @@ public class EmpServlet extends HttpServlet {
 				empVO = empSvc.updateEmp(eid, ename, pwd, email, photo, edu,
 						exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
-				String url = "/empLogin/GetAllEMP.jsp";
+				String url = "/emp/GetAllEMP.jsp";
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 
 			} catch (Exception e) {
 				errorMsg.add(e.getMessage());
 				RequestDispatcher failureView = req
-						.getRequestDispatcher("/empLogin/AddEMP.jsp");
+						.getRequestDispatcher("/emp/update_emp_input.jsp");
 				failureView.forward(req, res);
 			}
 		}
