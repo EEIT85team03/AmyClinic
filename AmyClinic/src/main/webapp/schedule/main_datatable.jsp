@@ -101,7 +101,7 @@ float: right;
                       <div class="form-group">
                     <label for="datepicker">值班日期</label>
                       <input type="text"  name="c_date" class="form-control"
-                          id="datepicker" placeholder="date"  />
+                          id="datepicker" placeholder="date"  required/>
                   </div>
                       
                       <div class="form-group">
@@ -120,12 +120,12 @@ float: right;
                   </div>
                       
                   
-                  
-                  <div class="checkbox">
-                    <label>
-                        <input type="checkbox"/> 休假  </label>
+                  <div class="row">
+                  <div class="checkbox col-md-offset-10">
+                    <label>  <input type="checkbox"/>休假 </label>
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  </div>
+                  <button type="submit" class="btn btn-default col-md-offset-0.5"> 送出 </button>
                   <input type="hidden" name="action" value="addsch">
                 </form>
                 
@@ -135,10 +135,7 @@ float: right;
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary"
-                        data-dismiss="modal">
-                            關閉
-                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"> 關閉  </button>
             </div>
         </div>
     </div>

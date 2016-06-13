@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" rel="stylesheet">
 
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="<%=request.getContextPath()%>/css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
@@ -16,8 +16,10 @@
 <link href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- Custom Fonts -->
 <script src="<%=request.getContextPath()%>/js/jquery.js"></script>
+<!-- fileinput CSS -->
+<link href="<%=request.getContextPath()%>/css/fileinput.css" rel="stylesheet" >
 <!-- jQuery -->
-<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="<%=request.getContextPath()%>/js/plugins/morris/raphael.min.js"></script>
 <script>
@@ -54,13 +56,8 @@ $(window).load(function() {
 	min-height: 100%;
 	width: 100%;
 }
-table {
-	
-	align: center;
-}
-th{
-background-color:#BFB2AB;
-}
+table {align: center;}
+th{background-color:#BFB2AB;}
 /* 側邊 */
 .side-nav{
 /* background-color:#006030; */
@@ -74,17 +71,12 @@ background-color:#FF8000;
 /* background-color:#006030; */
 }
 em{  color:red; }
-/* td{ */
-/* b{ */
+
 #wrapper{
 font-family: 'Noto Sans TC'; 
 font-size:20px;
 }
-/* background-color:#D3FF93; */
-/* } */
-</style>
 
-<style type="text/css">
 #loading {
     position:absolute;
     width:300px;
@@ -94,7 +86,6 @@ font-size:20px;
     text-align:center;
     padding: 10px;
     font:bold 30px Arial, Helvetica, sans-serif;
-  
 }
 </style>
 
@@ -108,7 +99,7 @@ font-size:20px;
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="<%=request.getContextPath()%>/Backstage/login.jsp" ><font color="#fff">☆AMY診所☆終極管理系統☆Pro_3_01☆</font></a>
+		<a class="navbar-brand" href="<%=request.getContextPath()%>/Backstage/0ininder.jsp" ><font color="#fff">☆AMY診所管理系統☆</font></a>
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
@@ -176,8 +167,8 @@ font-size:20px;
 		</i><font color="#fff">涼麵趁熱吃</font><b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-gear"></i>喜好設定</a></li>
+<!-- 				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li> -->
+<!-- 				<li><a href="#"><i class="fa fa-fw fa-gear"></i>喜好設定</a></li> -->
 				<li class="divider"></li>
 				<li><a href="#"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a></li>
 			</ul></li>

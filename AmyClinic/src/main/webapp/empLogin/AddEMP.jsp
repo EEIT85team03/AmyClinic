@@ -24,7 +24,6 @@
 .container{
 	width: 1000px;
 };
-
 </style>
 
 
@@ -59,7 +58,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">密碼</label> 
   <div class="col-xs-4">
-  <input id="textinput" name="pwd" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  <input id="textinput" name="pwd" type="password" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
   </div><span style="color:red">${errorMsg.npwd}</span><span style="color:red">${errorMsg.pwdReg}</span>
 </div>
 
@@ -67,7 +66,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">重新輸入密碼</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="pwd2" type="text" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
+  <input id="textinput" name="pwd2" type="password" placeholder="英文字母、數字 , 且長度必需在4到10之間" class="form-control input-md">
   </div><span style="color:red">${errorMsg.npwd2}</span>
 </div>
 
@@ -99,7 +98,7 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="textinput">專長</label>  
   <div class="col-xs-4">
-  <input id="textinput" name="spec" type="text" value="${request.empVO.specialty}"  placeholder="" class="form-control input-md">
+  <input id="textinput" name="spec" type="text" value="${empVO.specialty}"  placeholder="" class="form-control input-md">
   </div><span style="color:red">${errorMsg.spec}</span>
 </div>
 
@@ -108,10 +107,12 @@
 <div class="form-group">
   <label class="col-xs-4 control-label" for="filebutton">照片</label>
   <div class="col-xs-4">
-    <input id="filebutton" name="photo" class="input-file" type="file">
+    <input id="input-1" name="photo" type="file" class="file" data-show-preview="false">
   </div>
 </div>
 
+
+	
 <!-- Button -->
 <div class="form-group">
   <label class="col-xs-4 control-label" for="singlebutton"></label>
@@ -121,9 +122,15 @@
   </div>
 </div>
 
-</fieldset>
 
+<div class="form-group">
+ <label class="col-xs-4 control-label" for="singlebutton"></label>
+<div class="col-xs-4">
+<a href="${pageContext.request.contextPath}\empLogin\login.jsp"  class="btn btn-default">取消</a>
+</div>
+</div>
  
+</fieldset>
  
 </form>
 

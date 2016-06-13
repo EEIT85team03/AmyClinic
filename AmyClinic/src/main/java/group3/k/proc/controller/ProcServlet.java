@@ -8,6 +8,7 @@ import group3.carrie.product.model.ProductVO;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.sql.Blob;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class ProcServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	//------5/31
     	System.out.println("doGet_ok");
+//    	res.setContentType("text/html; charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
 		// ===================查詢一個商品類別=========================
@@ -148,7 +150,10 @@ public class ProcServlet extends HttpServlet {
 				procVO = procSvc.addProc(name, pType_id, fee);
 				System.out.println("新增2");
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
+//				PrintWriter out = res.getWriter();
+//		          out.println("<script >$(function () { alert('演示一');});</script>");
 				String url = "/Backstage/procedures.jsp";
+			
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("新增3-成功");

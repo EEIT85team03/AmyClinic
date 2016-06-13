@@ -70,7 +70,7 @@
 					</c:choose>
 					<td>
 					<form action="app_check" method="get">
-					<input type="submit" value="取消" >
+					<input type="submit" value="取消" class="btn btn-success">
 					<input type="hidden" name="action" value="appcancel">
 					<input type="hidden" name="aid" value="${AppVO.aid}">
 					

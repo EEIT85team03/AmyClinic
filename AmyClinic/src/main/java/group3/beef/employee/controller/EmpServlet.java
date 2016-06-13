@@ -42,6 +42,7 @@ public class EmpServlet extends HttpServlet {
 
 	}
 
+	@SuppressWarnings("resource")
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
@@ -58,7 +59,7 @@ public class EmpServlet extends HttpServlet {
 			if (empVO != null) {
 				System.out.println("帳號已存在");
 				out.print("notnull");
-			}else{
+			} else {
 				System.out.println("帳號不存在");
 				out.print("null");
 			}
@@ -130,6 +131,7 @@ public class EmpServlet extends HttpServlet {
 			// List<String> errorMsg = new LinkedList<String>();
 			HashMap<String, String> errorMsg = new HashMap<String, String>();
 			req.setAttribute("errorMsg", errorMsg);
+			EmployeeVO empVO = new EmployeeVO();
 			EmployeeService empSvc = new EmployeeService();
 
 			try {
@@ -177,22 +179,22 @@ public class EmpServlet extends HttpServlet {
 				}
 				InputStream is = null;
 				Part filePart = req.getPart("photo");
-				int filesize = (int) filePart.getSize();
-				if (filesize == 0) {
-					// errorMsg.put("photo","照片: 請勿空白");
+
+				if (filePart == null) {
+					System.out.println("file part null!!");
 					is = new FileInputStream("C:\\AmyDB\\e5.jpg"); // 若沒上傳照片，給預設圖片
 
 				} else {
 					is = filePart.getInputStream();
+					int filesize = (int) filePart.getSize();
+					if (filesize > 1024 * 300) {
+						errorMsg.put("photo", "照片: 大小請勿超過300KB");
+					}
 				}
 
-				if (filesize > 1024 * 300) {
-					errorMsg.put("photo", "照片: 大小請勿超過300KB");
-				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);
 
-				EmployeeVO empVO = new EmployeeVO();
 				empVO.setName(ename);
 				empVO.setPwd(npwd);
 				empVO.setEmail(email);
@@ -202,6 +204,7 @@ public class EmpServlet extends HttpServlet {
 				empVO.setPhoto(photo);
 
 				if (!errorMsg.isEmpty()) {
+					System.out.println("errorMsg != null");
 					req.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
 							.getRequestDispatcher("/empLogin/AddEMP.jsp");
@@ -218,17 +221,20 @@ public class EmpServlet extends HttpServlet {
 				empVO = empSvc.addEmp(ename, pwd, email, photo, edu, exp, spec);
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				System.out.println("員工新增成功");
-				// String url = "/empLogin/GetAllEMP.jsp";
-				// RequestDispatcher successView =
-				// req.getRequestDispatcher(url);
-				// successView.forward(req, res);
-				res.sendRedirect("/AmyClinic/empLogin/login.jsp");
+				req.setAttribute("empVO", empVO);
+				RequestDispatcher rd = req
+						.getRequestDispatcher("/empLogin/add_success.jsp");
+				rd.forward(req, res);
+				// res.sendRedirect("/empLogin/add_success.jsp");
 				// PrintWriter out = res.getWriter();
-				out.print("員工新增成功");
+				// out.print("員工新增成功");
 				return;
 
 			} catch (Exception e) {
+				System.out.println("catch errorMsg != null");
+				System.out.println(e);
 				errorMsg.put("otherErr", e.getMessage());
+				req.setAttribute("empVO", empVO);
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/empLogin/AddEMP.jsp");
 				failureView.forward(req, res);
@@ -240,7 +246,7 @@ public class EmpServlet extends HttpServlet {
 			req.setAttribute("errorMsg", errorMsg);
 			Integer eid = new Integer(req.getParameter("eid").trim());
 			try {
-				//String ename = "王牛肉";
+				// String ename = "王牛肉";
 				String ename = req.getParameter("name");
 				System.out.println(ename);
 				if (ename == null || ename.trim().length() == 0) {
@@ -280,21 +286,25 @@ public class EmpServlet extends HttpServlet {
 					errorMsg.add("專長: 請勿空白");
 				}
 				Part filePart = req.getPart("photo");
+				System.out.println(filePart.getSize());
 				// if (filePart.getSize() == 0){
 				// errorMsg.add("照片: 請勿空白");
 				// }
+
 				Blob photo = null;
-				if (filePart.getSize() == 0) { // 如果沒上傳照片，就從資料庫抓舊的
+				if (filePart.getSize()==0) { // 如果沒上傳照片，就從資料庫抓舊的
+					System.out.println("photo null!!");
 					EmployeeService eSvc = new EmployeeService();
 					InputStream is = eSvc.getOneEmployeePic(eid);
 					photo = Hibernate.createBlob(is);
 				} else {
-					InputStream oldis = filePart.getInputStream();
+					System.out.println("photo not null!!");
+					InputStream newis = filePart.getInputStream();
 					int filesize = (int) filePart.getSize();
 					if (filesize > 1024 * 300) {
 						errorMsg.add("照片: 大小請勿超過300KB");
 					}
-					photo = Hibernate.createBlob(oldis);
+					photo = Hibernate.createBlob(newis);
 				}
 
 				// InputStream is = filePart.getInputStream();

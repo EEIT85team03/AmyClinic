@@ -202,9 +202,10 @@ html,body{
                     <input type="text" name="maillog" id="maillog" placeholder="usermail">
                     <input type="password" id="pwdlog" placeholder="password">
                     <button class="btn btn-info btn-block login" type="button" id="loginbtn">Login</button>
-                    <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a>
+<!--                     <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a> -->
+ 						<a href='${pageContext.request.contextPath}\empLogin/AddEMP.jsp'>新增員工</a>
 <!--                        <a href="" class="text-primary" data-toggle="modal" data-target="#addemp">Addemp</a> -->
-                      <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
+<!--                       <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a> -->
 <%--                     <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a> --%>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
@@ -333,10 +334,16 @@ html,body{
 
 <script type="text/javascript">
 
-
-function OpenLink(link) {     
-	  parent.$.colorbox({ href: link, iframe: true, width: "50%", height: "55%" });
+$("#pwdlog").keypress(function(e){
+	code = (e.keyCode ? e.keyCode : e.which);
+	if (code == 13)
+	{
+	     //targetForm是表單的ID
+	 $("#loginbtn").click();
 	}
+	});
+
+
 //====================確認帳號是否存在==================================
 $(function(){
 	$('#regmail').blur(function(){
@@ -365,7 +372,7 @@ $(function(){
 
 // ====================登入Ajax==================================
 $(function() {
-	var textfield = $("input[name=mail]");
+	var textfield = $("input[name=maillog]");
 	//$('button[type="button"]').click(function() {
 		$('#loginbtn').click(function() {
 		//alert("btn click")
