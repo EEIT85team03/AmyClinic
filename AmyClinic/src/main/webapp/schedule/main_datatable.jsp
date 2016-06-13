@@ -122,7 +122,7 @@ float: right;
                   
                   <div class="row">
                   <div class="checkbox col-md-offset-10">
-                    <label>  <input type="checkbox"/>休假 </label>
+                    <label>  <input type="checkbox" name="vac" />休假 </label>
                   </div>
                   </div>
                   <button type="submit" class="btn btn-default col-md-offset-0.5"> 送出 </button>
