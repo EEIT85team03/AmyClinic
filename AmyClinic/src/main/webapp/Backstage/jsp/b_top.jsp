@@ -73,7 +73,7 @@ background-color:#FF8000;
 em{  color:red; }
 #wrapper{
 font-family: 'Noto Sans TC'; 
-font-size:20px;
+font-size:18px;
 }
 #loading {
     position:absolute;
