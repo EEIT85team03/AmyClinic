@@ -164,13 +164,13 @@ font-size:20px;
 		<!--                                         通知區over-->
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
-		</i><font color="#fff">涼麵趁熱吃</font><b class="caret"></b></a>
+		</i><font color="#fff" id="empname"> ${empVO.name} </font><b class="caret"></b></a>
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
 <!-- 				<li><a href="#"><i class="fa fa-fw fa-envelope"></i>訊息管理</a></li> -->
 <!-- 				<li><a href="#"><i class="fa fa-fw fa-gear"></i>喜好設定</a></li> -->
 				<li class="divider"></li>
-				<li><a href="#"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a></li>
+				<li><a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a></li>
 			</ul></li>
 	</ul>
 	<!--  topover--><!--  topover--><!--  topover--><!--  topover--><!--  topover-->
@@ -181,7 +181,7 @@ font-size:20px;
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-desktop"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-bar-chart-o"></i>療程管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-desktop"></i>會員管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/empLogin/GetAllEMP.jsp"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/emp/GetAllEMP.jsp"><i class="fa fa-fw fa-file"></i>員工管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/appBack/get_all_app.jsp"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			<li><a href="#"><i class="fa fa-fw fa-wrench"></i>客服系統</a></li>
@@ -213,10 +213,22 @@ font-size:20px;
 	<div id="loading">
     									讀取中.........<img src="<%=request.getContextPath()%>/images/loader.gif" />
 							</div>
-							<script type="text/javascript">
+<script type="text/javascript">
 										$(window).load(function(){
 										$("#loading").hide();
 										})
-							</script>
+										today = new Date(); 
+// ===================say hello========================
+hours = today.getHours();
+
+if (hours<12) 
+    {$('#empname').prepend("早安") }
+
+else {
+    if ((hours >= 12) && (hours <= 18))
+       {$('#empname').prepend("午安")}
+    else {$('#empname').prepend('晚安')} 
+}
+</script>
 </body>
 </html>
