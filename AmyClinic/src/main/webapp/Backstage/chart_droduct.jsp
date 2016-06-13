@@ -4,15 +4,14 @@
 <html lang="en">
 <head>
 
-  <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
-  <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/exporting.js"></script>
-  <script type="text/javascript" src="http://cdn.hcharts.cn/highcharts/highcharts-3d.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/highcharts.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/exporting.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/js/highcharts-3d.js"></script>
 
-</head>
 <body>
 
-  <div id="container" style="min-width:700px;height:400px"></div>
+  <div id="container" ></div>
   <div id='t'></div><hr>
   <div class ='element'></div>
 <script type="text/javascript">
@@ -21,7 +20,7 @@ function getContextPath() { //obtains context path. EL doesn't work with separat
 }
 //****----------------------------------------------------------------------
 $(function(){
-    $.getJSON("${pageContext.request.contextPath}/Backstage/HotProdServlet",{'action':'熱門產品'},function(data){	
+    $.getJSON("${pageContext.request.contextPath}/Backstage/HotProdServlet",{'action':'HotProd'},function(data){	
     	var row=' ';var t1,t2,t3,t4,t5;
     	var name=[];
     	var counts=[];//個

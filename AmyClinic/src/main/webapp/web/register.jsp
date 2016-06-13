@@ -58,9 +58,7 @@
 		<!-- login-section -->
 		<section class="login-page">
 			<div class="inner-banner demo-2 text-center">
-				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
-				</header>
+				<jsp:include page="fragment/slogan.jsp" />
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
 						<h2>註冊會員</h2>
