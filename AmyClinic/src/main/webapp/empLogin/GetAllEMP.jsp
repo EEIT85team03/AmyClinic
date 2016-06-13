@@ -7,18 +7,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+/* table { */
+/*   background-color: transparent; */
+/*   table-layout: fixed; */
+/* } */
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<div id="wrapper"><!-- all -->  
+<jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->   
+     
+ 
+<div id="page-wrapper" style=background-color:#000000  >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font>
+                 
+                 </li></ol>
+                    </div>
+                </div><!-- /.row -->
+            </div> <!-- /.container-fluid -->
+            </div><!--側邊欄功能表項目over --> 
+<!--         開始 -->
+
+
 	<%
 		EmployeeService eSvc = new EmployeeService();
 		List<EmployeeVO> list = null;
 		list = eSvc.getAll();
 		pageContext.setAttribute("list", list);
 	%>
-	<table border='1'  >
-	<tr>
+	<div class="container-fluid">
+	<table border="1"   class="table table-hover table-responsive" >
+	<tr align="center" valign="middle">
 		<th>員工編號</th>
 		<th>員工照片</th>
 		<th>員工姓名</th>
@@ -30,9 +56,9 @@
 		<th>刪除</th>
 	</tr>
 	<c:forEach var="employeeVO" items="${list}">
-		<tr>
+		<tr align="left">
 			<td>${employeeVO.eid}</td>
-			<td><img width='180' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
+			<td><img width='100' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
 			<td>${employeeVO.name}</td>
 			<td>${employeeVO.email}</td>
 			<td>${employeeVO.education}</td>
@@ -40,15 +66,15 @@
 			<td>${employeeVO.specialty}</td>
 			<td>
 			<form action="emp.do" method="get">
-			<input type="submit" value="修改" />
+			<input type="submit" value="修改" class="btn btn-success"/>
 			<input type="hidden" name="eid" value="${employeeVO.eid}">
-			<input type="hidden" name="action" value="getOne_For_Display">
+			<input type="hidden" name="action" value="getOne_For_Display" >
 			 </form>
 			</td>
 			
 			<td>
 			<form action="emp.do" method="get">
-			<input type="submit" value="刪除" />
+			<input type="submit" value="刪除" class="btn btn-danger"/>
 			<input type="hidden" name="eid" value="${employeeVO.eid}">
 			<input type="hidden" name="action" value="delete">
 			 </form>
@@ -56,7 +82,7 @@
 		</tr>
 	</c:forEach>
 	</table>
-
-
+</div>
+</div>
 </body>
 </html>

@@ -15,24 +15,25 @@
 		var row=' '; var counts=[];//次
 	    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){		
 	    	$.each(data, function(i, a){
-	    		row +=a.id+'名'+a.name+'，賣出:'+a.q+'個'+a.year+'年'+'<hr>';
+	    		
 	    			if($.inArray(a.a, year) === -1) year.push(a.a);
 	     			if($.inArray(a.b, month) === -1) month.push(a.b);
 	     			if($.inArray(a.c, name) === -1) name.push(a.c);
 	     			counts.push(a.d);
 	    	});
-	    	$('#t').html(row);
+	    	
 	    	var newHTML = [];
-	    	newHTML.push(year.length+'個年:'+year+'<br>');
-	    	newHTML.push(month.length+'個月:'+month+'<br>');
-	    	newHTML.push(name.length+'個科:'+name+'<br>');
-	    	newHTML.push(counts.length+'個數:'+counts+'<br>');
+	    	newHTML.push('<table border="1"  class="table table-hover"  ><tr><th>療程/月</th><th>'+month[0]+'月</th><th>'+month[1]+'月</th><th>'+month[2]+'月</th><th>'+month[3]+'月</th><th>'+month[4]+'月</th><th>'+month[5]+'月</th><th>'+month[6]+'月</th><th>'+month[7]+'月</th><th>'+month[8]+'月</th><th>'+month[9]+'月</th><th>'+month[10]+'月</th><th>'+month[11]+'月</th></tr>');
+	    	newHTML.push('<tr><td>'+name[0]+'</td><td>'+counts[0]+'</td><td>'+counts[1]+'</td><td>'+counts[2]+'</td><td>'+counts[3]+'</td><td>'+counts[4]+'</td><td>'+counts[5]+'</td><td>'+counts[6]+'</td><td>'+counts[7]+'</td><td>'+counts[8]+'</td><td>'+counts[9]+'</td><td>'+counts[10]+'</td><td>'+counts[11]+'</td></tr>');
+	    	newHTML.push('<tr><td>'+name[1]+'</td><td>'+counts[23]+'</td><td>'+counts[22]+'</td><td>'+counts[21]+'</td><td>'+counts[20]+'</td><td>'+counts[19]+'</td><td>'+counts[18]+'</td><td>'+counts[17]+'</td><td>'+counts[16]+'</td><td>'+counts[15]+'</td><td>'+counts[14]+'</td><td>'+counts[13]+'</td><td>'+counts[12]+'</td></tr>');
+	    	newHTML.push('<tr><td>'+name[2]+'</td><td>'+counts[24]+'</td><td>'+counts[25]+'</td><td>'+counts[26]+'</td><td>'+counts[27]+'</td><td>'+counts[28]+'</td><td>'+counts[29]+'</td><td>'+counts[30]+'</td><td>'+counts[31]+'</td><td>'+counts[32]+'</td><td>'+counts[33]+'</td><td>'+counts[34]+'</td><td>'+counts[35]+'</td></tr>');
+	    	newHTML.push('<tr><td>'+name[3]+'</td><td>'+counts[47]+'</td><td>'+counts[46]+'</td><td>'+counts[45]+'</td><td>'+counts[44]+'</td><td>'+counts[43]+'</td><td>'+counts[42]+'</td><td>'+counts[41]+'</td><td>'+counts[40]+'</td><td>'+counts[39]+'</td><td>'+counts[38]+'</td><td>'+counts[37]+'</td><td>'+counts[36]+'</td></tr></table>');
 	    	$(".element").html(newHTML.join(""));
 		
-		//---------------------------------------------------------------
+		//-----------來源: 雲端資料庫JSON-------------------------年度熱門療程預約比較圖---------------------------<font color="red" style="text-align: center;">熱銷產品</font>
 	    $('#container').highcharts({
 	        chart: {  type: 'column'  },
-	        title: {  text: year+'年度熱門療程預約比較圖'  },
+	        title: {  text: '熱門療程預約比較圖'  },
 	        subtitle: {  text: '來源: 雲端資料庫JSON'  },
 	        xAxis: {
 	            categories: 

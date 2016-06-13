@@ -58,7 +58,6 @@
 								<div class="tablelayout">
 									<div class="box-left">
 										<label id="pic">照片<!-- <font color="red">*</font> -->:
-<%-- 												name="memberVO.photo" label="會員圖片" size="40" id="uploader" --%>
 										</label> <span class="file-wrapper"> <s:file
 												name="fileUpload" label="會員圖片" size="40" id="uploader"
 												theme="simple" /> <span class="btn">上傳我的照片</span>

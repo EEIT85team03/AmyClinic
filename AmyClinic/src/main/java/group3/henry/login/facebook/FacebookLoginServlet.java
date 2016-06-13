@@ -89,7 +89,7 @@ public class FacebookLoginServlet extends HttpServlet {
 	            session.removeAttribute("location");
 	            redirect = location;
 	        } else {
-	        	redirect = getServletContext().getContextPath() +"/login/success.jsp";
+	        	redirect = getServletContext().getContextPath() +"/web/index.jsp";
 	        }
 			System.out.println(redirect);
 			
@@ -103,7 +103,7 @@ public class FacebookLoginServlet extends HttpServlet {
 		} else {
 			//fail
 			session.setAttribute("message", "Login Failed: Invalid Facebook Login!");
-			RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
+			RequestDispatcher failureView = request.getRequestDispatcher("/web/login.jsp");
 			failureView.forward(request, response);
 		}
 

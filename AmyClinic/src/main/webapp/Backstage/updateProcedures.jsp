@@ -24,7 +24,7 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">修改療程</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">修改療程</font></li></ol>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -55,14 +55,12 @@ pageContext.setAttribute("proctype", proctype);
       <label class="control-label col-sm-2" for="">療程類別</label>
       <div class="col-sm-10">          
 <%--         <input type="text" class="form-control" id="cid" placeholder="10,20,30,40,50" size="45" name="cid" value="<%= %>" /> --%>
-<%--   ${ProcVO.procTypeVO.name} --%>
 
       <select size="1"  name="pType_id">
       <c:forEach var="proctype" items="${proctype}">
 				<option  value="${proctype.pType_id}" ${(procVO.procTypeVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
 	  </c:forEach>
-      </select>
-      
+      </select> 
       </div>
     </div>
       

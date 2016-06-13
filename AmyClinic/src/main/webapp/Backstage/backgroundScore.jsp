@@ -23,7 +23,7 @@ margin-left : 4em;
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">留言維護</font>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">留言維護</font>
 
 <select id="selectEmp" ><option>醫師名稱</option></select>
 </li></ol>
@@ -32,8 +32,8 @@ margin-left : 4em;
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->    
 <!--         開始 -->
-	
-	<table border="1px"  class="table table-hover">	
+		<table border="1px" id="firstTable"  class="table table-hover">
+		<tbody>
 		<tr>
 			<th width="150px" >會員名稱</th>
 			<th width="200px">被評分員工</th>
@@ -43,10 +43,7 @@ margin-left : 4em;
 			<th width="100px">狀態欄</th>
 			<th width="75px">確認修改</th>
 		</tr>
-	</table>
-	
-		<table border="1px" id="firstTable"  class="table table-hover">
-		<tbody></tbody>
+		</tbody>
 		</table>
 	
 <script src="<%=request.getContextPath()%>/Backstage/js/jquery.js"></script>

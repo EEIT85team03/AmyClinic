@@ -58,6 +58,7 @@ private static final String GET_By_HOTPROD_YEAR= "FROM SalesToProdVO  where year
 			System.out.print(salesToProdVO.getName()+",");
 			System.out.print(salesToProdVO.getId()+",");
 			System.out.print(salesToProdVO.getYears()+",");
+			System.out.print(salesToProdVO.getPid());
 			System.out.println(" ");
 		}
 		System.out.println("--------------------------------------- ");
@@ -68,6 +69,7 @@ private static final String GET_By_HOTPROD_YEAR= "FROM SalesToProdVO  where year
 			System.out.print(salesToProdVO.getName()+",");
 			System.out.print(salesToProdVO.getId()+",");
 			System.out.print(salesToProdVO.getYears()+",");
+			System.out.print(salesToProdVO.getPid());
 			System.out.println(" ");
 		}
 		System.out.println("--------------------------------------- ");
@@ -78,6 +80,7 @@ private static final String GET_By_HOTPROD_YEAR= "FROM SalesToProdVO  where year
 					System.out.print(salesToProdVO.getName()+",");
 					System.out.print(salesToProdVO.getId()+",");
 					System.out.print(salesToProdVO.getYears()+",");
+					System.out.print(salesToProdVO.getPid());
 					System.out.println(" ");
 				}
 	}//main

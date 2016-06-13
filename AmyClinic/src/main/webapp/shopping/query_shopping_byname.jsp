@@ -14,6 +14,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢訂單</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 </head>
 <body>
 	<b>訂單查詢：</b><br><br>
@@ -109,7 +110,8 @@
 	</c:forEach>
 	
 	
-	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
+	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>	
 	<script>
 		function getContextPath() { //obtains context path. EL doesn't work with separated .js
 	 		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
@@ -129,16 +131,32 @@
 		}
 		
 		function cancel(oid) {
-			if (confirm("確認取消訂單？")){
-				$.ajax({
-					"type":"post",
-					"url": getContextPath()+'/shoppings/cancelorder',
-					"data":{"oid" : oid},
-					"success":function(data){
-						window.location.href = getContextPath()+'/shoppings/showorder';
-					}
-				})
-			}
+			Lobibox.confirm({
+				title: "請確認",
+				msg: "確認取消訂單？",
+				callback: function ($this, type, ev) {
+				    if(type == 'yes') {
+				    	$.ajax({
+							"type":"post",
+							"url": getContextPath()+'/shoppings/cancelorder',
+							"data":{"oid" : oid},
+							"success":function(data){
+								window.location.href = getContextPath()+'/shoppings/showorder';
+							}
+						})
+				    } else {}
+				}
+				});
+// 			if (confirm("確認取消訂單？")){
+// 				$.ajax({
+// 					"type":"post",
+// 					"url": getContextPath()+'/shoppings/cancelorder',
+// 					"data":{"oid" : oid},
+// 					"success":function(data){
+// 						window.location.href = getContextPath()+'/shoppings/showorder';
+// 					}
+// 				})
+// 			}
 		}
 		
 		$(function(){

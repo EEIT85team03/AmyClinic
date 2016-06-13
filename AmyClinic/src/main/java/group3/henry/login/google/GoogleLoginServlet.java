@@ -94,7 +94,7 @@ public class GoogleLoginServlet extends HttpServlet {
 		            session.removeAttribute("location");
 		            redirect = location;
 		        } else {
-		        	redirect = getServletContext().getContextPath() +"/login/success.jsp";
+		        	redirect = getServletContext().getContextPath() +"/web/index.jsp";
 		        }
 				System.out.println(redirect);
 								
@@ -108,7 +108,7 @@ public class GoogleLoginServlet extends HttpServlet {
 			} else {
 				//fail
 				session.setAttribute("message", "Login Failed: Invalid Google Login!");
-				RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
+				RequestDispatcher failureView = request.getRequestDispatcher("/web/login.jsp");
 				failureView.forward(request, response);
 			}
 			

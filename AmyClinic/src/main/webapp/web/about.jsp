@@ -1,9 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h6>add a short description here</h6>
 					</div>
 				</div>
-			</div>
+			</div>		
 			<div class="about-grids">
 				<div class="container">
 					<div class="col-md-4 abt-grid">

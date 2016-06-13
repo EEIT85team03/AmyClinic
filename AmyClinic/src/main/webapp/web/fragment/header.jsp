@@ -1,4 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
+<!-- favicon -->
+<%-- <link rel="shortcut icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
+<%-- <link rel="icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
+<!-- js -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
+<!-- js -->
+<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
+<link href="${pageContext.request.contextPath}/web/css/jquery-ui.css" rel="stylesheet">
+
 <link href="${pageContext.request.contextPath}/web/css/pignose.layerslider.css" rel="stylesheet" type="text/css" media="all" />
 <link href="${pageContext.request.contextPath}/web/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <link href="${pageContext.request.contextPath}/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -14,9 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
-<!-- js -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
-<!-- js -->
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="${pageContext.request.contextPath}/web/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/web/js/modernizr.custom.js"></script>
@@ -63,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             width: 'auto', //auto or any width like 600px
             fit: true, // 100% fit in a container
             tabidentify: 'hor_1', // The tab groups identifier
-            activate: function(event) { // Callback function if tab is switched
+            activate: function(event) { // Callback function if tab is switched 
                 var $tab = $(this);
                 var $info = $('#nested-tabInfo');
                 var $name = $('span', $info);
@@ -107,69 +115,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- header -->
 	<div class="top-strip">
 		<div class="container-fluid">
-			<div class="social-icons">
-				<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-				<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-				<a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a>
-				<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-				<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-			</div>
+			<div class="social-icons"></div> <!-- Left spacer -->
 			<div class="contact-info">
-				<ul>
-					<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+0123 384 920</li>
-					<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com">contact@yourdomain.com</a></li>
-				</ul>
+				<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+			</div>					
+			<div class="selectpackage">
+				<jsp:include page="loginbox.jsp" />
 			</div>
-			<!-- Large modal -->
-<!-- 			<div class="selectpackage"> -->
-<!-- 				<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Packages</button> -->
-<!-- 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> -->
-<!-- 						<div class="modal-dialog modal-lg"> -->
-<!-- 							<div class="modal-content"> -->
-<!-- 								<div class="modal-header"> -->
-<!-- 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true"> -->
-<!-- 										&times;</button> -->
-<!-- 									<h4 class="modal-title package-title" id="myModalLabel"> -->
-<!-- 										PREVENTIVE HEALTH CHECK UP PACKAGES</h4> -->
-<!-- 								</div> -->
-<!-- 								<div class="modal-body packages"> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>A set of basic tests that can give a broad overview of your health status.</p> -->
-<!-- 											<i class="fa fa-heartbeat"></i> -->
-<!-- 											<h4>MASTER HEALTH CHECK</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>Are you looking for a comprehensive health check that includes even Eye, Dental and ENT checks?</p> -->
-<!-- 											<i class="fa fa-medkit"></i> -->
-<!-- 											<h4>WHOLE BODY CHECKUP</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="col-md-4 text-center modal-align"> -->
-<!-- 										<div class="package"> -->
-<!-- 											<p>Do you wish to check your body out for an entire spectrum of diseases in a luxurious ambience?</p> -->
-<!-- 											<i class="fa fa-user-md"></i> -->
-<!-- 											<h4>HEALTH CHECK 1 AND 2</h4> -->
-<!-- 											<a href="book-a-test.jsp">Book Now</a> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-<!-- 									<div class="clearfix"></div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 				<script> -->
-<!-- 				$('#myModal').modal(''); -->
-<!-- 				</script> -->
-<!-- 			</div> -->
-				
-			<div class="clearfix"></div>			
+			<div class="clearfix"></div>	
 		</div>
-		<jsp:include page="loginbox.jsp" />
 	</div>
 	<nav class="navbar nav_bottom" role="navigation">
 	 <div class="container">
@@ -186,10 +140,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 			<ul class="nav navbar-nav nav_1">
-				<li><a href="${pageContext.request.contextPath}/web/index.jsp">Home</a></li>
-				<li><a href="${pageContext.request.contextPath}/web/about.jsp">About</a></li>
+				<li><a class="current_page" href="${pageContext.request.contextPath}/web/index.jsp">愛美首頁</a></li>
+				<li><a href="${pageContext.request.contextPath}/web/about.jsp">關於愛美</a></li>
 				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lab<span class="caret"></span></a>
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">美麗見證<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/laboratory.jsp">About Lab</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/quality.jsp">Quality</a></li>
@@ -198,21 +152,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  </ul>
 				</li>
 				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Book Test<span class="caret"></span></a>
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">醫美新知<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/book-a-test.jsp">Book a Test</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/test-list.jsp">Test Menu</a></li>
 				  </ul>
 				</li>
 				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opportunity<span class="caret"></span></a>
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">線上購物<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/career.jsp">Careers</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/404.jsp">Franchisee</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown current_page">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務療程<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/news.jsp">News</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/faq.jsp">Faq</a></li>
@@ -223,8 +177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="${pageContext.request.contextPath}/web/privacy_policy.jsp">Privacy Policy</a></li>
 				  </ul>
 				</li>
-				<li><a href="${pageContext.request.contextPath}/web/blog.jsp">Blog</a></li>
-				<li><a href="${pageContext.request.contextPath}/web/contact.jsp">Contact</a></li>
+				<li><a href="${pageContext.request.contextPath}/web/blog.jsp">會員專區</a></li>
+				<li><a href="${pageContext.request.contextPath}/web/contact.jsp">聯絡愛美</a></li>
 			</ul>
 		 </div><!-- /.navbar-collapse -->
 	   </div>
