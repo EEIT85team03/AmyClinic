@@ -50,6 +50,7 @@
 					<th>療程</th>
 					<th>初回診</th>
 					<th>預約狀態</th>
+					<th>查看會員</th>
 					<th>取消預約</th>
 
 				</tr>
@@ -82,6 +83,10 @@
 						</c:otherwise>
 					</c:choose>
 					<td>
+					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#myModal">查看</button>
+					
+					</td>
+					<td>
 						<form action="app_check" method="get">
 							<input type="submit" value="取消" class="btn btn-success">
 							<input type="hidden" name="action" value="appcancel"> <input
@@ -96,7 +101,31 @@
 
 
 		</table>
+<!-- =====================modal=================== -->
 
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -104,6 +133,25 @@
 	</div>
 
 	<script type="text/javascript">
+	
+	 $(document).ready(function() {
+	       $('.memberid').click(function() {
+	      var mid  = $(this).attr("value");
+	      alert(mid);
+	        });
+	   });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		$(document).ready(
 				function() {
 					var table = $('#apptable').DataTable(

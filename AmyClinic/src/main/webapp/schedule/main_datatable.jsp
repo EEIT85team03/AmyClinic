@@ -125,7 +125,7 @@ float: right;
                     <label>  <input type="checkbox" name="vac" />休假 </label>
                   </div>
                   </div>
-                  <button type="submit" class="btn btn-default col-md-offset-0.5"> 送出 </button>
+                  <button type="submit" class="btn btn-default"> 送出 </button>
                   <input type="hidden" name="action" value="addsch">
                 </form>
                 
@@ -145,7 +145,7 @@ float: right;
 
 
 
-	<table id="table_id" class="display" width="90%" align="center">
+	<table id="table_id" class="display" width="90%" align="center" >
 		<thead>
 			<tr>
 				<th>排班編號</th>
@@ -199,6 +199,20 @@ float: right;
 
 </body>
 <script type="text/javascript">
+ 
+ $('#datepicker').change(function(){
+	var date = $(this).val()
+	//	 alert(date);
+ 	if(date.match(/^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/)){
+ 		console.log('match')
+ 	$('#dErr').remove();	
+ 	}else{
+ 			$('#datepicker').before('<span id="dErr" style="float: right;color: red">日期格式錯誤</span>');
+ 			$('form input:submit').attr('disabled', 'disabled');
+ 			console.log('notmatch')}
+ 
+ })
+ 
  
 $(function() {
     $( "#datepicker" ).datepicker({
