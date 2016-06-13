@@ -10,6 +10,7 @@
 <meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 
 <style>
+
 #googleButtonPlaceholder {
 	cursor: pointer;
 	display: inline-block;
@@ -91,51 +92,86 @@
 				<div class="container">
 					<h3>登 入</h3>
 					<p class="est">Welcome back!</p>
-							<div class="login-form-grids">
-								<div style="color: red;">${message}</div>
-								<form action="${pageContext.request.contextPath}/logreg/login.action" method="post">
-									<label class="test-info">會員帳號 <span>*</span></label>
-									<input type="text" name="memberVO.name" placeholder="電子信箱 / Email" required=" " >
-									<div class="clearfix"></div>
-									<label class="test-info">會員密碼 <span>*</span></label>
-									<input type="password"name="memberVO.pwd" placeholder="密碼 / Password" required=" " >
-									<div class="clearfix"></div>
-									<div class="forgot">
-										<a href="#">忘記密碼?</a>
-										<span id="mybtn" class="button button-orange"><i class="fa"></i>&#10071; <strong>忘記密碼?</strong></span>
-									</div>
-									<input type="submit" value="登 入">
-								</form>
-								<div id="customlogin">
-									<div class="loginbtn fb" onclick="fb_login();" >使用 FaceBook 登入</div>
-									<div id="googleButtonPlaceholder">
-										<div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="60"></div>
-										<span class="loginbtn">使用 Google Gmail 登入</span>
-									</div>
-								</div>							
+				<div class="login-form-grids">
+					<div style="color: red;">${message}</div>
+					<form
+						action="${pageContext.request.contextPath}/logreg/login.action"
+						method="post">
+						<label class="test-info">會員帳號 <span>*</span></label> <input
+							type="text" name="memberVO.name" placeholder="電子信箱 / Email"
+							required=" ">
+						<div class="clearfix"></div>
+						<label class="test-info">會員密碼 <span>*</span></label> <input
+							type="password" name="memberVO.pwd" placeholder="密碼 / Password"
+							required=" ">
+						<div class="clearfix"></div>
+						<div class="forgot">
+							<div>
+								<a href="#" class="btn btn-default btn-default_2 pull-left"
+									data-toggle="modal" data-target="#applyModal_1">忘記密碼?</a>
 							</div>
-							<h4>For New People</h4>
+						</div>
+						<input type="submit" value="登 入">
+					</form>
+					<div id="customlogin">
+						<div class="loginbtn fb" onclick="fb_login();">使用 FaceBook
+							登入</div>
+						<div id="googleButtonPlaceholder">
+							<div class="g-signin2" data-onsuccess="onSignIn" data-width="300"
+								data-height="60"></div>
+							<span class="loginbtn">使用 Google Gmail 登入</span>
+						</div>
+					</div>
+					<div class="modal fade" id="applyModal_1" tabindex="-1"
+						role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+						<div class="modal-dialog dialog_3">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">×</span>
+									</button>
+									<h4 class="modal-title" id="myModalLabel">
+										<div class="head_4">
+											<h3>重設您的密碼</h3>
+											<p>請輸入您的電子郵件信箱</p>
+										</div>
+									</h4>
+								</div>
+								<div class="modal-body">
+
+									<%-- 														<s:form namespace="/free" action="recover"> --%>
+									<%-- 															<s:textfield name="memberVO.email" label="E-mail" placeholder="abc@xyz.com" id="recover-email"/>				 --%>
+									<%-- 															<s:submit value="送出" method="recover" id="recover-btn"/> --%>
+									<%-- 														</s:form> --%>
+									<form name="row" action="${pageContext.request.contextPath}/free/recover.action" method="post" class="register">
+										<input type="text" name="memberVO.email" id="Email" placeholder="電子信箱 / Email" required> 
+										<input type="submit" value="送出">
+									</form>
+								</div>
+								<!---start-date-picker---->
+								<link rel="stylesheet"
+									href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
+								<script
+									src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
+								<script>
+									$(function() {
+										$("#datepicker").datepicker();
+									});
+								</script>
+								<!---/End-date-picker---->
+							</div>
+						</div>
+					</div>
+				</div>
+				<h4>For New People</h4>
 							<p><a href="register.jsp">Register Here</a> (or) go to <a href="index.jsp">Home Page<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
 						</div>
 					</div>
 				<!-- //login -->
-			<!--- /login ---->
+			<!--- /login ---->					
 		</section>
-	<!-- Modal content -->
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<span class="close">&#10005;</span> 忘記密碼？
-			</div>
-			<div class="modal-body">
-				<p>可以撥打以下電話連絡我們客服人員</p>
-				<p>0800-000-999...</p>
-				<hr />
-				<s:include value="/login/recover.jsp"></s:include>
-			</div>
-		</div>
-	</div>
-	<!-- //Modal content -->
+
 		<!-- //login-section -->
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />
@@ -169,27 +205,6 @@
 	    FB.login( function() {checkLoginState();}, { scope: 'email,public_profile' } );
 	    
 	}
-	</script>
-	<script>
-		var modal = document.getElementById('myModal');
-
-		var btn = document.getElementById("mybtn");
-
-		var span = document.getElementsByClassName("close")[0];
-
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
