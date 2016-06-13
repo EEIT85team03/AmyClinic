@@ -1,10 +1,11 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <footer>
 	<div class="footer-grids">
 		<div class="container">
 			<div class="col-md-3 footer one">
-				<p>About Company</p>
-				<p>mailto:info@example.com">contact@example.com</p>
+				<p>(02) 2976 1587</p>
+				<p>台北市大安區復興南路一段390號2樓</p>
+<!-- 				<p>愛美整形外科有限責任公司</p>				 -->
 				<!-- <p class="adam"> Patrick Victoria, CEO</p>  -->
 				<div class="clear"></div>
 			</div>

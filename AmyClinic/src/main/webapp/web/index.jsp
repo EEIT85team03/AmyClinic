@@ -368,7 +368,7 @@
 			<div class="container">
 				<div class="col-md-4 timing">
 					<div class="opening-hours">
-						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
+						<h3><i class="fa fa-clock-o"></i>門診時間</h3>
 						<ul>
 							<li>星期一到星期五</li>
 							<li>9:00 AM - 7:00 PM</li>
@@ -386,9 +386,9 @@
 						</ul>
 					</div>
 					<div class="help">
-						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
-						<p>Just Make an Appointment to Get Help From Our Experts</p>
-						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
+						<h3><i class="fa fa-pencil-square-o"></i>需要幫忙？</h3>
+						<p>於我們的專家預約，讓我們來回答您的問題!</p>
+						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">即刻預約</a>
 					</div>
 				</div>
 				<div class="col-md-4 abt-img">

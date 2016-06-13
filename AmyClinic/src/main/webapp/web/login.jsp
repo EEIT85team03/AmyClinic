@@ -142,15 +142,6 @@
 										<input type="submit" value="送出">
 									</form>
 								</div>
-								<!---start-date-picker---->
-								<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
-								<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
-								<script>
-									$(function() {
-										$("#datepicker").datepicker();
-									});
-								</script>
-								<!---/End-date-picker---->
 							</div>
 						</div>
 					</div>

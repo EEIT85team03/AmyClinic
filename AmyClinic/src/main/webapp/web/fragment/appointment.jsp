@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 		<div class="appointment">
 			<div class="container">
 				<div class="col-md-9 appointment-left">
@@ -5,7 +6,7 @@
 					<p>Lorem Ipsum is simply dummy printing and typesetting industry. when an unknown printer took a galley of type and scrambled.</p>
 				</div>
 				<div class="col-md-3 appointment-right">
-					<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">book your appointment</a>
+					<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">即刻預約美麗</a>
 					<div class="modal fade" id="applyModal_1" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
 				  	<div class="modal-dialog dialog_3">
 				    	<div class="modal-content">

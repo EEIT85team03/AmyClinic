@@ -101,7 +101,6 @@
 									<input type="text" name="memberVO.mass" placeholder="體重 (公斤)" id="weigt" >								
 <!-- working code -->
 									<div>
-<%-- 										<label class="btn btn-default btn-default_2 pull-left" for="uploader"><span>上傳我的照片</span></label> --%>
 										<label id="uploadbtn" for="uploader"><span>上傳我的照片</span></label>										
 										<s:file	name="fileUpload" size="40" id="uploader" onchange="PreviewImage(this)" style="visibility:hidden;"  />
 									</div>
@@ -109,24 +108,6 @@
 										<img src='${pageContext.request.contextPath}/web/images/imgplaceholder.jpg'  width='150' height='150'/>
 									</s:div>
 <!-- /working code -->
-
-<!-- 									<div class="box"> -->
-<!-- 										<div class="tablelayout"> -->
-<!-- 											<div class="box-left"> -->
-<!-- 												<label id="pic">照片<font color="red">*</font>:</label>  -->
-<%-- 												<span class="file-wrapper">  --%>
-<%-- 													<s:file name="fileUpload" label="會員圖片" size="40" id="uploader" theme="simple" />  --%>
-<%-- 													<span class="btn">上傳我的照片</span>  --%>
-<%--  												</span>  --%>
-<!-- 											</div> -->
-<!-- 											<div class="box-right"> -->
-<!-- 												<img id="img-uploaded" -->
-<%-- 													src="${pageContext.request.contextPath}/register/img/text.png" --%>
-<!-- 													alt="你的照片" /> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 									</div> -->
-
 
 <!-- 									<div class="register-check-box"> -->
 <!-- 										<div class="check"> -->
@@ -238,41 +219,6 @@ jQuery(function($) {
 		$("input").attr("autocomplete", "off");
 	});
 </script>
-
-<%-- <script type="text/javascript"> --%>
-<!-- //  	var SITE = SITE || {}; -->
-
-<!-- // 	SITE.fileInputs = function() { -->
-<!-- // 		var $this = $(this), $val = $this.val(), valArray = $val -->
-<!-- // 				.split('\\'), newVal = valArray[valArray.length - 1], $button = $this -->
-<!-- // 				.siblings('.btn'), $fakeFile = $this -->
-<!-- // 				.siblings('.file-holder'); -->
-<!-- // 		if (newVal !== '') { -->
-<!-- // 			$button.text('換一張照片'); -->
-<!-- // 		} -->
-<!-- // 	}; -->
-
-<!-- // 	$('.file-wrapper input[type=file]').bind('change focus click', -->
-<!-- // 			SITE.fileInputs); -->
-
-<!-- // 	function readURL(input) { -->
-<!-- // 		if (input.files && input.files[0]) { -->
-<!-- // 			var reader = new FileReader(); -->
-<!-- // 			var tmppath = URL.createObjectURL(event.target.files[0]); -->
-
-<!-- // 			reader.onload = function(e) { -->
-<!-- // 				$('#img-uploaded').attr('src', e.target.result); -->
-<!-- // 			} -->
-
-<!-- // 			reader.readAsDataURL(input.files[0]); -->
-<!-- // 		} -->
-<!-- // 	} -->
-
-<!-- // 	$("#uploader").change(function() { -->
-<!-- // 		readURL(this); -->
-<!-- // 	}); -->
-<%-- </script> --%>
-
 		
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
