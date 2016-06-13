@@ -24,9 +24,7 @@
 		<div class="container">
 			<div class="map">
 				<h4>GET IN TOUCH</h4>
-				<div id="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2482.432383990807!2d0.028213999961443994!3d51.52362882484525!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1423469959819" frameborder="0" style="border:0"></iframe>
-				</div>
+				<jsp:include page="fragment/map.jsp" />
 			</div>
 			<div class="contact-infom">
 				<h4>CONTACT INFO</h4>
