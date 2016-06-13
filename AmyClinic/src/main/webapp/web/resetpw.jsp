@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,28 +17,26 @@
 				</header>
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
-						<h2>你好</h2>
+						<h2>密碼更新</h2>
 						<h6>${account}</h6>
 					</div>
 				</div>
 			</div>
-			<!--- **** ---->
-			<div class="hd-content">
-				<div class="container">
-					<div class="page_404 text-center">
-						<p>${message}</p>
-						<p style="color:red;">在3秒後重導向首頁...</p>
-					</div>
-				</div>
-			</div>
-			<!--- /**** ---->
-		</section>	
-<!-- General purpose message page. Displays a message (from many sources) 
-	 for 3 seconds before redirecting to index.jsp -->
-		<!-- book an appointment -->
-		<jsp:include page="fragment/appointment.jsp" />
-		<!-- //book an appointment -->
-		
+		<div class="login-form-grids">
+			<div style="color: red;">${message}</div>
+			<form action="${pageContext.request.contextPath}/logreg/reset.action"
+				method="post">
+				<label class="test-info">密碼 <span>*</span></label> 
+				<input type="password" name="memberVO.pwd" placeholder="輸入新密碼" required id="password">
+				<div class="clearfix"></div>
+				<label class="test-info">確認密碼 <span>*</span></label> 
+				<input type="password" name="tempPW" placeholder="確認密碼" required id="tempPW">
+				<div class="clearfix"></div>
+				<input type="submit" value="更新密碼">
+			</form>
+		</div>
+</section>	
+
 		<!-- news letter -->
 		<jsp:include page="fragment/newsletter.jsp" />
 		<!-- //news letter -->
@@ -49,11 +48,6 @@
 		$(document).ready(function() {			
 			$().UItoTop({ easingType: 'easeOutQuart' });			
 		});
-	</script>
-	<script>
-	  setTimeout(function() {
-	      document.location = "${pageContext.request.contextPath}/web/index.jsp";
-	  }, 5000); // delay in milliseconds
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
