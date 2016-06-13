@@ -259,8 +259,8 @@
             <result>/public/publicpage.jsp</result>
         </action>
         <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
-            <result>/login/verify.jsp</result>
-            <result name="failure">/login/verify.jsp</result>
+            <result>/web/verify.jsp</result>
+            <result name="failure">/web/verify.jsp</result>
         </action>
         <action name="recover" class="group3.henry.login.controller.RecoverAction">
             <result name="success">/login/verify.jsp</result>

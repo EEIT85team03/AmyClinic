@@ -14,7 +14,7 @@
     display: block;
     padding: 10px 15px 10px 15px;
     margin-bottom: 20px !important;
-    border: 1px solid #E8AEFF;
+    border: 1px solid #BFB3AA;
     font-weight: 600;
     outline: none;
     letter-spacing: 2px;
@@ -25,6 +25,29 @@
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
 	width:100%;	
+}
+
+#uploadbtn {
+    color: #fff;
+    font-size: 14px;
+    background: #BFB3AA;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid #BFB3AA;
+}
+#uploadbtn:hover {
+    color: #263D48;
+    border: 2px solid #BFB3AA;
+    background: #fff;
+}
+#imgPreview{
+	width:150px; 
+	height:150px;
+	overflow:hidden; 
+	border:1px solid black;"
+	display:inline;
 }
 </style>
 </head>
@@ -52,16 +75,16 @@
 					<h3>註冊表格</h3>
 						<p class="est">Thank you for taking the time to register your information with Amy! We promise to never sell or share your personal information with anyone else!</p>
 							<div class="login-form-grids">
-									<h5>required information ${message}</h5>
-								<form action="${pageContext.request.contextPath}/logreg/register.action" method="post">
+									<h5>必要知訊 / required information</h5>
+								<form action="${pageContext.request.contextPath}/logreg/register.action" method="post" enctype="multipart/form-data">
 									<input type="text" name="memberVO.name" placeholder="姓名" required id="username" >								
 									<input type="password" name="memberVO.pwd" placeholder="密碼" required id="password" >																	
 <!-- 									<input type="password" name="" placeholder="確認密碼" required >								 -->
 									<input type="email" name="memberVO.email" placeholder="電子信箱" required id="email" >								
 
-									<h6>optional information</h6>																	
+									<h6>可選知訊 / optional information</h6>																	
 									
-									<input type="text" name="memberVO.birthday" placeholder="出生日期" value="1996-05-20" id="birthday" readonly>								
+									<input type="text" name="memberVO.birthday" placeholder="出生日期" id="birthday" readonly>								
 									<select name="memberVO.country" id="country">
 									  <option value="Unspecified">選擇國籍</option>
 									  <option value="台灣">台灣</option>
@@ -78,16 +101,25 @@
 									<input type="text" name="memberVO.phone" placeholder="電話號碼" id="phone" >								
 									<input type="text" name="memberVO.height" placeholder="身高 (公分)" id="height" >								
 									<input type="text" name="memberVO.mass" placeholder="體重 (公斤)" id="weigt" >								
-<!-- 									<input type="file" name="fileUpload" value="會員圖片" id="uploader" >																	 -->
-									<s:file	name="fileUpload" label="會員圖片" size="40" id="uploader" theme="simple" />
+<!-- working code -->
+									<div>
+<%-- 										<label class="btn btn-default btn-default_2 pull-left" for="uploader"><span>上傳我的照片</span></label> --%>
+										<label id="uploadbtn" for="uploader"><span>上傳我的照片</span></label>										
+										<s:file	name="fileUpload" size="40" id="uploader" onchange="PreviewImage(this)" style="visibility:hidden;"  />
+									</div>
+									<s:div id="imgPreview">
+										<img src='${pageContext.request.contextPath}/web/images/imgplaceholder.jpg'  width='150' height='150'/>
+									</s:div>
+<!-- /working code -->
+
 <!-- 									<div class="box"> -->
 <!-- 										<div class="tablelayout"> -->
 <!-- 											<div class="box-left"> -->
-<!-- 												<label id="pic">照片<font color="red">*</font>: -->
-<%-- 												</label> <span class="file-wrapper"> <s:file --%>
-<%-- 														name="fileUpload" label="會員圖片" size="40" id="uploader" --%>
-<%-- 														theme="simple" /> <span class="btn">上傳我的照片</span> --%>
-<%-- 												</span> --%>
+<!-- 												<label id="pic">照片<font color="red">*</font>:</label>  -->
+<%-- 												<span class="file-wrapper">  --%>
+<%-- 													<s:file name="fileUpload" label="會員圖片" size="40" id="uploader" theme="simple" />  --%>
+<%-- 													<span class="btn">上傳我的照片</span>  --%>
+<%--  												</span>  --%>
 <!-- 											</div> -->
 <!-- 											<div class="box-right"> -->
 <!-- 												<img id="img-uploaded" -->
@@ -137,7 +169,28 @@
 				$().UItoTop({ easingType: 'easeOutQuart' });
 				
 			});
-		</script>		
+		</script>
+<script> /* Image upload preview JS*/
+function PreviewImage(imgFile) {
+
+	var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
+	if (!pattern.test(imgFile.value)) {
+		alert("Invalid Format");
+		imgFile.focus();
+	} else {
+		var path;
+		if (document.all) { 
+			imgFile.select();
+			imgFile.blur();
+			path = document.selection.createRange().text;
+			document.getElementById("imgPreview").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\""+ path + "\")";// �o��
+		} else { 
+			path = URL.createObjectURL(imgFile.files[0]);
+			document.getElementById("imgPreview").innerHTML = "<img src='"+ path +"'  width='150' height='150'/>";
+		}
+	}
+}
+</script>		
 <script> /* Datepicker settings*/
 
 jQuery(function($) {
@@ -189,7 +242,7 @@ jQuery(function($) {
 </script>
 
 <%-- <script type="text/javascript"> --%>
-<!-- // 	var SITE = SITE || {}; -->
+<!-- //  	var SITE = SITE || {}; -->
 
 <!-- // 	SITE.fileInputs = function() { -->
 <!-- // 		var $this = $(this), $val = $this.val(), valArray = $val -->

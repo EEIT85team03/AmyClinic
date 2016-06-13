@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
+<!-- favicon -->
+<%-- <link rel="shortcut icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
+<%-- <link rel="icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
 <!-- js -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
 <!-- js -->
