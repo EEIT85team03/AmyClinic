@@ -117,24 +117,25 @@
 		<div class="vertical-tabs">
 			<div class="container">
 				<h3 class="title text-center">美麗見證</h3>
+				<p class="text-center">Our results speaks for themselves.</p>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
 						  <div class="list-group">
 							<a href="#" class="list-group-item active text-center">
-							    Services 1
+							    雙眼皮
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 2
+							    隆鼻術
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 3
+							    波尿酸
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 4
+							    微針療程
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 5
+							    雷射淨膚
 							</a>
 						  </div>
 						</div>
@@ -328,7 +329,7 @@
 		<!-- environment -->
 		<div class="our-news">
 		<h3 class="title text-center">診所環境</h3>
-		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<p class="text-center">Our state of the art facilities combine the best of modern science and art.</p>
 			<div id="visual">
 				<div class="slide-visual slideanim">
 					<!-- Slide Image Area (1000 x 424) -->
@@ -363,24 +364,24 @@
 		<!-- doctor 醫療團隊-->
 		<div class="banner-bottom">
 			<h3 class="title text-center">醫療團隊</h3>
-			<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			<p class="text-center">We offer the services of world renowned plastic surgeons.</p>
 			<div class="container">
 				<div class="col-md-4 timing">
 					<div class="opening-hours">
 						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
 						<ul>
-							<li>Monday - Friday</li>
-							<li>9.00 AM - 8.00 PM</li>
+							<li>星期一到星期五</li>
+							<li>9:00 AM - 7:00 PM</li>
 							<div class="clearfix"></div>
 						</ul>
 						<ul>
-							<li>Saturday</li>
-							<li>9.00 AM - 8.00 PM</li>
+							<li>星期六</li>
+							<li>9:00 AM - 7:00 PM</li>
 							<div class="clearfix"></div>
 						</ul>
 						<ul>
-							<li>Sunday</li>
-							<li>9.30 AM - 6.00 PM</li>
+							<li>星期日</li>
+							<li>公休</li>
 							<div class="clearfix"></div>
 						</ul>
 					</div>
