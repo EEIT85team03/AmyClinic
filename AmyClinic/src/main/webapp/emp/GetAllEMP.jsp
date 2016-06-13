@@ -44,7 +44,7 @@
 	%>
 	<div class="container-fluid">
 	<table border="1"   class="table table-hover table-responsive" >
-	<tr>
+	<tr align="center" valign="middle">
 		<th>員工編號</th>
 		<th>員工照片</th>
 		<th>員工姓名</th>
@@ -53,10 +53,10 @@
 		<th>經歷</th>
 		<th>專長</th>
 		<th>修改</th>
-		<th>刪除</th>
+<!-- 		<th>刪除</th> -->
 	</tr>
 	<c:forEach var="employeeVO" items="${list}">
-		<tr>
+		<tr align="left">
 			<td>${employeeVO.eid}</td>
 			<td><img width='100' src='${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${employeeVO.eid}' /></td>
 			<td>${employeeVO.name}</td>
@@ -72,13 +72,13 @@
 			 </form>
 			</td>
 			
-			<td>
-			<form action="emp.do" method="get">
-			<input type="submit" value="刪除" class="btn btn-danger"/>
-			<input type="hidden" name="eid" value="${employeeVO.eid}">
-			<input type="hidden" name="action" value="delete">
-			 </form>
-			</td>
+<!-- 			<td> -->
+<!-- 			<form action="emp.do" method="get"> -->
+<!-- 			<input type="submit" value="刪除" class="btn btn-danger"/> -->
+<%-- 			<input type="hidden" name="eid" value="${employeeVO.eid}"> --%>
+<!-- 			<input type="hidden" name="action" value="delete"> -->
+<!-- 			 </form> -->
+<!-- 			</td> -->
 		</tr>
 	</c:forEach>
 	</table>

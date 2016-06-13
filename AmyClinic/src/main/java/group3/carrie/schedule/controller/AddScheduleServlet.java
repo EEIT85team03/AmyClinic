@@ -50,7 +50,6 @@ public class AddScheduleServlet extends HttpServlet {
 				errorMsg.put("date", "日期格式錯誤");
 			}
 
-			// System.out.println(c_date);
 			String c_hours = req.getParameter("c_hours");
 			String vac = req.getParameter("vac");
 
@@ -76,14 +75,16 @@ public class AddScheduleServlet extends HttpServlet {
 				return;
 			}
 
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date parsed = null;
 			try {
 				parsed = sdf.parse(date);
+				System.out.println("parsed"+parsed);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			java.sql.Date c_date = new java.sql.Date(parsed.getTime()); // 將日期轉換成sqlDate
+			System.out.println("c_date"+c_date);
 
 			Integer appt_status = null; // 判斷是否休假
 			System.out.println("vac=" + vac);

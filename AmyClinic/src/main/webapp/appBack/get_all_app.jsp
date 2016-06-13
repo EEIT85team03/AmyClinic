@@ -39,13 +39,13 @@
 		<table border="1" class="table table-hover" id="apptable">
 		<thead>
 			<tr>
-				<th>aid</th>
-				<th>mname</th>
-				<th>ename</th>
-				<th>apt_date</th>
-				<th>apt_time</th>
-				<th>descrip</th>
-				<th>apt_status</th>
+				<th>預約編號</th>
+				<th>會員名稱</th>
+				<th>門診醫師</th>
+				<th>預約日期</th>
+				<th>預約時段</th>
+				<th>療程</th>
+				<th>預約狀態</th>
 				<th>取消預約</th>
 
 			</tr>

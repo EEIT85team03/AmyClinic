@@ -5,7 +5,7 @@
 <struts>
     <!-- Specifies url patterns / servlets to exclude from struts2 -->
     <!-- <constant name="struts.action.excludePattern" value="/YourServlet,/YourOtherServlet"/> -->
-    <constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/Score/ScoreServlet,/Score/GetPic,/Backstage/[a-zA-Z_0-9]*,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*,/FacebookLoginServlet,/GoogleLoginServlet,/app_back/[a-zA-Z_0-9]*,/empLogin/[a-zA-Z_0-9]*,/ShowPicByAjax,/appBack/[a-zA-Z_0-9]*" />
+    <constant name="struts.action.excludePattern" value="/CarrieTest/login/LoginServlet,/chatServer,/Score/ScoreServlet,/Score/GetPic,/Backstage/[a-zA-Z_0-9]*,/shopping/[a-zA-Z_0-9]*,/app/[a-zA-Z_0-9]*,/schedule/[a-zA-Z_0-9]*,/FacebookLoginServlet,/GoogleLoginServlet,/app_back/[a-zA-Z_0-9]*,/empLogin/[a-zA-Z_0-9]*,/ShowPicByAjax,/appBack/[a-zA-Z_0-9]*" />
     <!-- specifies the properties file to use for retrieving resources (I18N) -->
     <constant name="struts.custom.i18n.resources" value="global" />
     
@@ -64,9 +64,9 @@
             <result name="success">/register/regsuccess.jsp</result>
             <result name="input">/web/register.jsp</result>
         </action>
-        <action name="reset" class="group3.henry.login.controller.ResetPassAction">
-            <result name="success">/login/verify.jsp</result>
-            <result name="input">/login/resetpw.jsp</result>
+        <action name="reset" class="group3.henry.login.controller.ResetPassAction" method="resetPass">
+            <result name="success">/web/verify.jsp</result>
+            <result name="input">/web/resetpw.jsp</result>
         </action>
     </package>
     <!-- ************************* -->
@@ -259,13 +259,15 @@
             <result>/public/publicpage.jsp</result>
         </action>
         <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
-            <result>/login/verify.jsp</result>
-            <result name="failure">/login/verify.jsp</result>
+            <result>/web/verify.jsp</result>
+            <result name="failure">/web/verify.jsp</result>
+        </action>
+        <action name="recoverini" class="group3.henry.login.controller.RecoverAction" method="recover">
+            <result name="success">/web/verify.jsp</result>
         </action>
         <action name="recover" class="group3.henry.login.controller.RecoverAction">
-            <result name="success">/login/verify.jsp</result>
-            <result name="resetform">/login/resetpw.jsp</result>
-            <result name="failure">/login/verify.jsp</result>
+            <result name="resetform">/web/resetpw.jsp</result>
+            <result name="failure">/web/verify.jsp</result>
         </action>
         <action name="queryprodbycata" class="group3.carrie.catagory.controller.CatagoryAction"></action>
         <action name="queryprodbyname"

@@ -295,10 +295,10 @@ header.logo {
 .cd-logo {
 	z-index: 99999;
 }
-a.cd-logo {
+a.cd-logo { /* slogan (Prevention) */
     text-decoration: none;
     font-size: 40px;
-    color: #FFDD00;
+    color: black;
 	font-family: 'Poiret One', cursive;
 }
 
@@ -889,8 +889,8 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 	transition: color 0.5s;
 }
 
-.link--takiri:hover {
-	color: #FFFFFF;
+.link--takiri:hover { /* slogan hover color*/
+	color: red;
 }
 
 .link--takiri::before {
@@ -4169,7 +4169,7 @@ ul.sub-child li a {
     display: block;
     padding: 10px 15px 10px 15px;
     margin-bottom: 20px;
-    border: 1px solid #E8AEFF;
+    border: 1px solid #BFB3AA;
     font-weight: 600;
     outline: none;
     letter-spacing: 2px;

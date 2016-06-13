@@ -2,20 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head> 
-<title>Amy | Home</title>
+<title>Amy | 首頁</title>
 </head>
 <body>
 	<!-- header -->
 	<jsp:include page="fragment/header.jsp" />
 	<!-- //header -->
 	<div class="demo-2">	
-		<header class="logo">
-			<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
-		</header>
+		<jsp:include page="fragment/slogan.jsp" />
             <div id="slider" class="sl-slider-wrapper">
-
-				<div class="sl-slider">
-				
+				<div class="sl-slider">				
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
@@ -71,53 +67,33 @@
 		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.slitslider.js"></script>
 		<script type="text/javascript">	
-			$(function() {
-			
+			$(function() {			
 				var Page = (function() {
-
 					var $nav = $( '#nav-dots > span' ),
 						slitslider = $( '#slider' ).slitslider( {
 							onBeforeChange : function( slide, pos ) {
-
 								$nav.removeClass( 'nav-dot-current' );
 								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
 							}
 						} ),
-
 						init = function() {
-
-							initEvents();
-							
+							initEvents();							
 						},
 						initEvents = function() {
-
-							$nav.each( function( i ) {
-							
-								$( this ).on( 'click', function( event ) {
-									
-									var $dot = $( this );
-									
+							$nav.each( function( i ) {							
+								$( this ).on( 'click', function( event ) {									
+									var $dot = $( this );									
 									if( !slitslider.isActive() ) {
-
 										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-									
-									}
-									
+										$dot.addClass( 'nav-dot-current' );									
+									}									
 									slitslider.jump( i + 1 );
-									return false;
-								
-								} );
-								
+									return false;								
+								} );								
 							} );
-
 						};
-
 						return { init : init };
-
 				})();
-
 				Page.init();
 
 				/**
@@ -133,8 +109,7 @@
 				// call the plugin's add method
 				ss.add($items);
 
-				*/
-			
+				*/			
 			});
 		</script>
 
@@ -429,7 +404,7 @@
 			</div>
 		</div>		
 		<!-- //doctor -->
-		
+			
 		<!-- book an appointment -->
 		<jsp:include page="fragment/appointment.jsp" />
 		<!-- //book an appointment -->

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <head>
+<!-- favicon -->
+<%-- <link rel="shortcut icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
+<%-- <link rel="icon" href="${pageContext.request.contextPath}/web/images/favicon.ico" type="image/x-icon"> --%>
 <!-- js -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/web/js/jquery.min.js"></script>
 <!-- js -->
@@ -68,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             width: 'auto', //auto or any width like 600px
             fit: true, // 100% fit in a container
             tabidentify: 'hor_1', // The tab groups identifier
-            activate: function(event) { // Callback function if tab is switched
+            activate: function(event) { // Callback function if tab is switched 
                 var $tab = $(this);
                 var $info = $('#nested-tabInfo');
                 var $name = $('span', $info);
@@ -114,7 +117,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container-fluid">
 			<div class="social-icons"></div> <!-- Left spacer -->
 			<div class="contact-info">
-				<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+				<a class="current_page" href="${pageContext.request.contextPath}/web/index.jsp">
+					<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+				</a>
 			</div>					
 			<div class="selectpackage">
 				<jsp:include page="loginbox.jsp" />
@@ -122,6 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"></div>	
 		</div>
 	</div>
+	
 	<nav class="navbar nav_bottom" role="navigation">
 	 <div class="container">
 	 <!-- Brand and toggle get grouped for better mobile display -->
@@ -137,10 +143,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   <!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 			<ul class="nav navbar-nav nav_1">
-				<li><a class="current_page" href="${pageContext.request.contextPath}/web/index.jsp">愛美首頁</a></li>
-				<li><a href="${pageContext.request.contextPath}/web/about.jsp">關於愛美</a></li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">美麗見證<span class="caret"></span></a>
+				<li><a class="current_page" href="${pageContext.request.contextPath}/web/index.jsp">愛美首頁</a></li>				
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">美麗見證<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/laboratory.jsp">About Lab</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/quality.jsp">Quality</a></li>
@@ -148,22 +152,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="${pageContext.request.contextPath}/web/instruments.jsp">Instruments</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">醫美新知<span class="caret"></span></a>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">醫美新知<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/book-a-test.jsp">Book a Test</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/test-list.jsp">Test Menu</a></li>
 				  </ul>
 				</li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">線上購物<span class="caret"></span></a>
-				  <ul class="dropdown-menu drop_menu" role="menu">
-					<li><a href="${pageContext.request.contextPath}/web/career.jsp">Careers</a></li>
-					<li><a href="${pageContext.request.contextPath}/web/404.jsp">Franchisee</a></li>
-				  </ul>
-				</li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務療程<span class="caret"></span></a>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">服務療程<span class="caret"></span></a>
 				  <ul class="dropdown-menu drop_menu" role="menu">
 					<li><a href="${pageContext.request.contextPath}/web/news.jsp">News</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/faq.jsp">Faq</a></li>
@@ -173,7 +168,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="${pageContext.request.contextPath}/web/shortcodes.jsp">Shortcodes</a></li>
 					<li><a href="${pageContext.request.contextPath}/web/privacy_policy.jsp">Privacy Policy</a></li>
 				  </ul>
+				</li>				
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">線上購物<span class="caret"></span></a>
+				  <ul class="dropdown-menu drop_menu" role="menu">
+					<li><a href="${pageContext.request.contextPath}/web/career.jsp">Careers</a></li>
+					<li><a href="${pageContext.request.contextPath}/web/404.jsp">Franchisee</a></li>
+				  </ul>
 				</li>
+				<li><a href="${pageContext.request.contextPath}/web/about.jsp">關於愛美</a></li>
 				<li><a href="${pageContext.request.contextPath}/web/blog.jsp">會員專區</a></li>
 				<li><a href="${pageContext.request.contextPath}/web/contact.jsp">聯絡愛美</a></li>
 			</ul>
