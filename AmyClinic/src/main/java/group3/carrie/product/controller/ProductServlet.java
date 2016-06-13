@@ -1,17 +1,21 @@
 package group3.carrie.product.controller;
 
+import group3.carrie.catagory.model.CatagoryVO;
 import group3.carrie.product.model.ProductService;
 import group3.carrie.product.model.ProductVO;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.util.LinkedList;
 import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+
 import org.hibernate.Hibernate;
 
 @MultipartConfig(maxFileSize = 16177215)
@@ -233,7 +237,9 @@ public class ProductServlet extends HttpServlet {
 			}
 		}
 		// ===================修改=========================
-		Integer price,discount,amount,cid,pid=0;
+		Integer price,discount,amount,pid = null,cid = null;
+		
+		
 		if ("update".equals(action)) {			
 			System.out.println("接收修改");
 			
@@ -241,7 +247,7 @@ public class ProductServlet extends HttpServlet {
 			req.setAttribute("errorMsg", errorMsg);
 
 			try {
-				String pidStr = req.getParameter("pid");
+				pid =new Integer( req.getParameter("pid"));
 				
 				String name = req.getParameter("name");
 				if (name == null || name.trim().length() == 0) {
@@ -261,8 +267,9 @@ public class ProductServlet extends HttpServlet {
 //					errorMsg.add("折扣: 請勿空白");
 //				}//折扣可空白？
 				String amountStr = req.getParameter("amount");
-				String cidStr = req.getParameter("cid");
-				System.out.println("cidStr="+cidStr);
+				
+				 cid = new Integer(req.getParameter("cid"));
+				System.out.println("cid="+cid);
 			
 				String descrip = req.getParameter("descrip");
 				if (descrip == null || descrip.trim().length() == 0) {
@@ -289,20 +296,26 @@ public class ProductServlet extends HttpServlet {
 				
 				
 				try{
-				pid = Integer.parseInt(pidStr);
+				
 				price = Integer.parseInt(priceStr);
 				discount = Integer.parseInt(discountStr);
 				amount = Integer.parseInt(amountStr);
-				cid = Integer.parseInt(cidStr);
-				System.out.println("cid="+cid);
+				
+				
 				}catch(Exception e){
 					price=0;
-					discount=0;cid=0;	amount=0;
+					discount=0;	amount=0;
 				}
 				ProductVO productVO = new ProductVO();
+				 CatagoryVO  catagoryVO=new CatagoryVO();
+				
 				productVO.setPid(pid);
 				productVO.setName(name);
 				productVO.setPrice(price);
+				
+				catagoryVO.setCid(cid);
+				productVO.setCatagoryVO(catagoryVO);
+				
 				productVO.setDiscount(discount);
 				productVO.setDescrip(descrip);
 				productVO.setIngredients(ingredients);

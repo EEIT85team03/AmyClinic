@@ -86,6 +86,18 @@ public class GoogleLoginServlet extends HttpServlet {
 																
 				String contextPath = getServletContext().getContextPath();
 				
+
+				String location = (String)session.getAttribute("location");
+		 	    String redirect;
+				
+				if (location != null) {
+		            session.removeAttribute("location");
+		            redirect = location;
+		        } else {
+		        	redirect = getServletContext().getContextPath() +"/web/index.jsp";
+		        }
+				System.out.println(redirect);
+								
 				response.setContentType("application/json");
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out = response.getWriter();
