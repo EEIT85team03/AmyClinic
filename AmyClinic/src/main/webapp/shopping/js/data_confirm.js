@@ -125,7 +125,7 @@ $(function(){
 	//取消訂單，把購物車殺掉
 	$("#cancel").click(function(){
 		Lobibox.confirm({
-			title: "請確認",
+			title: "取消訂單",
 			msg: "要取消訂單嗎？",
 			callback: function ($this, type, ev) {
 			    if(type == 'yes') {

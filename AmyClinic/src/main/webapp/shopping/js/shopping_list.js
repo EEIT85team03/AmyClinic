@@ -104,7 +104,7 @@ function upd(key,quantity,index) {
 		//從購物車內把某商品刪掉
 		function del(key) {
 			Lobibox.confirm({
-				title: "請確認",
+				title: "從購物車刪除商品",
 				msg: "要刪除此項商品嗎？",
 				callback: function ($this, type, ev) {
 				    if(type == 'yes') {
@@ -164,8 +164,8 @@ function upd(key,quantity,index) {
 			//確認無誤
 			$('#confirm').click(function(){
 				Lobibox.confirm({
-					title: "請確認",
-					msg: "即將前往結帳頁面",
+					title: "即將前往結帳頁面",
+					msg: "確認無誤？",
 					callback: function ($this, type, ev) {
 					    if(type == 'yes') {
 					    	window.location.href = getContextPath()+'/shoppings/checkfordata';
@@ -177,7 +177,7 @@ function upd(key,quantity,index) {
 			//放棄購物，請Servlet把ShoppingCart物件刪掉
 			$('#abandon').click(function(){
 				Lobibox.confirm({
-					title: "請確認",
+					title: "放棄購物",
 					msg: "要放棄購物嗎？",
 					callback: function ($this, type, ev) {
 					    if(type == 'yes') {

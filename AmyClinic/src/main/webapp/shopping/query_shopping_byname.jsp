@@ -132,7 +132,7 @@
 		
 		function cancel(oid) {
 			Lobibox.confirm({
-				title: "請確認",
+				title: "取消訂單",
 				msg: "確認取消訂單？",
 				callback: function ($this, type, ev) {
 				    if(type == 'yes') {
