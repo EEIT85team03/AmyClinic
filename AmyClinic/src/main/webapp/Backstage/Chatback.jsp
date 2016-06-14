@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                 <div class="page-header" >
-<!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#BFB2AB" direction="right" height="20" scrollamount="5" behavior="alternate"><font >希望透過操作友善且功能完整的資訊系統，提昇顧客滿意度及診所競爭優勢</font></marquee>                                            -->
+ <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#BFB2AB" direction="right" height="20" scrollamount="5" behavior="alternate"><font >全國最大真人線上聊天室上線嚕～</font></marquee>                                           
                 </div>
                  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">線上諮詢</font></li></ol>
                     </div>
