@@ -60,10 +60,10 @@ pageContext.setAttribute("orderItem", orderItem);
 		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">	
 		${ordersVO.oid}	
 				</td>
-				<td><font name="odate"><fmt:formatDate pattern="yyyy/MM/dd" value="${ordersVO.odate}" /></font></td>
-				<td>$<font name="total"><fmt:formatNumber value="${ordersVO.total}" type="number"/></font></td>
+				<td><font id='"odate"+${ordersVO.oid}'><fmt:formatDate pattern="yyyy/MM/dd" value="${ordersVO.odate}" /></font></td>
+				<td>$<font id='"total"+${ordersVO.oid}'><fmt:formatNumber value="${ordersVO.total}" type="number"/></font></td>
 <td>
-<select size="1"  name="ostatus"  >				
+<select size="1"  id='"ostatus" +${ordersVO.oid}' >				
 				<c:if test="${ordersVO.ostatus == 0}">
 					<option  value='0'  >訂單成立</option>
 				</c:if>
@@ -84,7 +84,7 @@ pageContext.setAttribute("orderItem", orderItem);
 </td>				
 <!-- 				------------------------------------------------------ -->
 <td>
-<select size="1"  name="payment"  >
+<select size="1"  id='"payment" +${ordersVO.oid}' >
 				<c:if test="${ordersVO.payment == 0}">
 					<option value="0">未付款</option>
 				</c:if>
@@ -97,7 +97,7 @@ pageContext.setAttribute("orderItem", orderItem);
 </td>				
 <!-- 				------------------------------------------------------ -->
 <td>
-<select size="1"  name="del_status"  >
+<select size="1"  id='"del_status" +${ordersVO.oid}' >
 				<c:if test="${ordersVO.del_status == 0}">
 					<option value="0">處理中</option>
 				</c:if>
@@ -116,6 +116,11 @@ pageContext.setAttribute("orderItem", orderItem);
 				<c:if test="${ordersVO.ostatus == 0}">
 <%-- 					<td><input type="button"  value="更新訂單狀態" onclick="cancel(${ordersVO.oid},${ordersVO.odate},${ordersVO.total},${ordersVO.ostatus},${ordersVO.payment},${ordersVO.del_status})"></td> --%>
 							<td><input type="button"  class="btn btn-success"  value="更新" onclick="cancel(${ordersVO.oid})"></td>
+							<input type='hidden' class='"odate" +${ordersVO.oid}'value='${ordersVO.odate}'>
+							<input type='hidden' class='"total"+${ordersVO.oid}'value='${ordersVO.total}'>
+<%-- 							<input type='hidden' name='ostatus' value='${ordersVO.ostatus}'> --%>
+<%-- 							<input type='hidden' name='payment' value='${ordersVO.payment}'> --%>
+<%-- 							<input type='hidden' name='del_status' value='${ordersVO.del_status}'> --%>
 				</c:if>
 				<c:if test="${ordersVO.ostatus != 0}">
 					<td></td>
@@ -191,6 +196,11 @@ pageContext.setAttribute("orderItem", orderItem);
 		}
 		function cancel(oid){
 // 		function cancel(oid,odate,total,ostatus,payment,del_status){
+	var odate = $('.odate').val();
+	var total=$('.total').val();
+	var ostatus=$('#ostatus option:selected').val();
+	var payment=$('#payment option:selected').val();
+	var del_status=$('#del_status option:selected').val();
 			Lobibox.confirm({
 				title: "請確認",
 				msg: "確認更新訂單？",
@@ -199,9 +209,25 @@ pageContext.setAttribute("orderItem", orderItem);
 				    	$.ajax({
 							"type":"post",
 							"url": getContextPath()+'/Backstage/updateOrder',
-							"data":{"oid" : oid},
-// 							"data":{"oid" : oid,"odate":odate,"total":total,"ostatus":ostatus,"payment":payment,"del_status":del_status},
-							"success":function(data){	location.reload();}
+// 							"data":{"oid" : oid},
+// 								"data":{"oid" : oid,"ostatus":ostatus,"payment":payment,"del_status":del_status},
+							"data":{"oid" : oid,"odate":odate,"total":total,"ostatus":ostatus,"payment":payment,"del_status":del_status},
+							"success":function(data){
+								alert('更新成功');
+							console.log("123");
+// 							location.reload();
+// 								Lobibox.notify( {
+// 									size: 'mini',
+// 									title: '更新完成',
+// 									delay: 1000,
+// 									delayIndicator: false,
+// 									sound: false,
+// 									position: "center top"
+// 									});
+// 								 window.setTimeout(function(){
+// 									 window.location.reload();
+// 									 }, 1500);
+							}
 						});
 				    } else {}
 				}

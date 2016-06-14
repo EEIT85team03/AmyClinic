@@ -190,7 +190,7 @@ font-size:18px;
 			<li><a href="<%=request.getContextPath()%>/emp/GetAllEMP.jsp"><i class="fa fa-fw fa-users"></i>員工管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/appBack/get_all_app.jsp"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
-			<li><a href="#"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/Chatback.jsp"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-thumbs-o-up"></i>留言管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/orders.jsp"><i class="fa fa-fw fa-credit-card"></i>訂單管理</a></li>
 			<li>
