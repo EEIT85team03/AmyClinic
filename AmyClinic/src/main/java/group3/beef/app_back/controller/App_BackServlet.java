@@ -173,19 +173,7 @@ public class App_BackServlet extends HttpServlet {
 	}
 	
 	public static void main(String[] args) {
-		
-		for (int x = 10; x <= 23; x++) {
-			for(int y = 2; y<= 22 ; y++){
-				if(x%y==0){
-					System.out.println("yes"+x);
-					 
-				} else{
-					System.out.println("no:"+x);
-				}
-				
-			}
-		}
-		
+	 
 		
 		
 		
