@@ -303,6 +303,10 @@
         <action name="jointocart" class="group3.carrie.shopping.controller.BuyProdAction">
             <result name="error">/shopping/prod_list.jsp</result>
         </action>
+        <action name="showophr" class="group3.carrie.app.controller.TimeAction">
+            <result name="success">/other/openhrs.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
     </package>
     <!-- ****************************** -->
     <!-- Employee(?) package -->

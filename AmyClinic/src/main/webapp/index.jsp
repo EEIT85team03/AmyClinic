@@ -137,6 +137,7 @@ body {
 
 		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
+		<a href="${pageContext.request.contextPath}/free/showophr" >門診時間表及醫師介紹(不需登入)</a><br>
  
 		<a href="${pageContext.request.contextPath}/empLogin/login.jsp" >員工登入</a><br>
  
