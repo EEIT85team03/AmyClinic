@@ -6,18 +6,19 @@
 	top: 350px;
 	right: 2px;
 	z-index: 9999;
-	width: 144px;
-	height: 144px;
+	width: 45px;
+	height: 150px;
 }
 #logo {
-	border: 1px solid pink;
-	border-radius: 144px;
+	border: 1px solid black;
+	border-radius: 5px;
+	width:45px;
 }
 </style>
-
-<div id="mySpace">
-	<a href="${pageContext.request.contextPath}/login/login.jsp"><img
-		src="${pageContext.request.contextPath}/General/img/logo.jpg" alt=""
+<!-- <div class="easingtext1-1 text1" data-1152-start="margin-left:1680px;" data-1400-start="margin-left:1230px;"> -->
+<div id="mySpace" data-start="display:none" data-200-start="opacity:0;" data-350-start="opacity:1;" data-351-start="display:inline;">
+	<a href="${pageContext.request.contextPath}/web/login.jsp"><img
+		src="${pageContext.request.contextPath}/web/images/vertical.png" alt=""
 		id="logo"></a>
 </div>
 
@@ -26,7 +27,8 @@
 	$my_Space = $("#mySpace");
 
 	$(window).load(function() {
-		thePosition = $('#mySpace').position().top;
+// 		thePosition = $('#mySpace').position().top;
+		thePosition = 350;
 		floats();
 	});
 
@@ -47,4 +49,10 @@
 			});
 		}
 	}
+</script>
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+<script type="text/javascript">
+var s = skrollr.init(
+    smoothScrolling = true
+);
 </script>
