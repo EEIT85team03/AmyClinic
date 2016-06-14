@@ -415,7 +415,7 @@ $(function() {
                     });
                     setTimeout(login, 2000 )
                     function login(){
-                    	window.location = "<%=request.getContextPath()%>/Backstage/product.jsp";
+                    	window.location = "<%=request.getContextPath()%>/Backstage/b_login.jsp";
                     }
                     
                 } else {

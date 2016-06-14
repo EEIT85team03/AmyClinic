@@ -137,6 +137,7 @@ body {
 
 		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
 		
+		<a href="${pageContext.request.contextPath}/free/showophr" >門診時間表及醫師介紹(不需登入)</a><br>
  
 		<a href="${pageContext.request.contextPath}/empLogin/login.jsp" >員工登入</a><br>
  
@@ -150,7 +151,7 @@ body {
 <hr>
 		<footer>
 			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="${pageContext.request.contextPath}/Backstage/0ininder.jsp">後台專區</a><br></p>
+				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="${pageContext.request.contextPath}/Backstage/b_login.jsp">後台專區</a><br></p>
 		</footer>
 	</div>
 </div>

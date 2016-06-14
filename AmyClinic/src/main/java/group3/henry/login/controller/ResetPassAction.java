@@ -39,9 +39,10 @@ public class ResetPassAction extends ActionSupport{
 			this.setMemberVO((MemberVO)session.getAttribute("memberVO")); //sets current session user as active VO
 			memberVO.setPwd(pw1); // sets new password
 			service.update(memberVO); //updates DB with new VO
+			this.setMessage("密碼更新成功!");
 			return SUCCESS;
 		} else {
-			this.setMessage("Passwords must match!");
+			this.setMessage("密碼不相配!");
 			return INPUT;
 		}
 		

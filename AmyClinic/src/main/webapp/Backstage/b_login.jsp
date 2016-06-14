@@ -6,12 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- jQuery -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<title>-AMY-</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
 <style type="text/css">
-img{width: 100%; height: 500px;}
+.img{width: 100%; height: 500px;}
 a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   /* IE 8 */
@@ -43,10 +40,12 @@ a:hover {
 <center>
 
     <div class="page-header">
-<font color=#FF8000>-AMY-內部員工系統</font><br>
-<a href='' data-toggle="modal" data-target="#myModalNorm" >登入</a><br>
-<a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">忘記密碼</a><br>
-<a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'>加入新員工</a><br>
+<img class="img-circle" width="100px"src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${session.empVO.eid}" />
+<font color=#FF8000 class='fa fa-smile-o'>${session.empVO.name}您好!</font><br>
+<a href='' data-toggle="modal" data-target="#myModalNorm" ><i class="fa fa-edit"></i><b>重新登入</b></a>
+<a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a><br>
+<a href="" class="text-primary" data-toggle="modal" data-target="#resetpw"><i class="fa fa-question-circle"></i><b>忘記密碼</b></a><br>
+<a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'><i class="	fa fa-child"></i><b>加入新員工</b></a><br>
     </div>
   
 </center>       
@@ -55,7 +54,7 @@ a:hover {
  
             <div class="item active">            
                 <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" title="" ></a>
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" title=""  class='img'></a>
                 </div>                            
                 <div class="caption row-fluid">
                     <div class="span4"><center><font color=#FF8000 >台灣醫學美容高級品牌</font></center></div>                	               	
@@ -64,7 +63,7 @@ a:hover {
 
             <div class="item">   
                 <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" title="" ></a>
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" title="" class='img'></a>
                 </div>                        
                 <div class="caption row-fluid">
                     <div class="span4"><center><font color=#FF8000>給您貴婦般的奢華體驗 </font></center></div>                	
@@ -73,7 +72,7 @@ a:hover {
 
             <div class="item">            
                 <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" title="" ></a>
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" title="" class='img'></a>
                 </div>                            
                 <div class="caption row-fluid">
                     <div class="span4"><center><font color=#FF8000>充滿設計感的櫃檯</font></center></div>                                                       
@@ -111,7 +110,7 @@ a:hover {
                 <div class="form-box">
                 <form >
                 		<label class="control-label col-sm-2" for="maillog">信箱</label>
-                    <input type="text" name="maillog" id="maillog" placeholder="使用者信箱">
+                    <input type="text" name="maillog" id="maillog" placeholder="使用者信箱"><br>
                     	<label class="control-label col-sm-2" for="pwdlog">密碼</label>
                     <input type="password" id="pwdlog"  name="pwdlog" placeholder="密碼">
                     <button class="btn btn-info btn-block login" type="button" id="loginbtn">登入</button>

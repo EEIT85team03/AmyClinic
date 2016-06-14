@@ -1,21 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head> 
-<title>Amy | Home</title>
+<title>Amy | 首頁</title>
 </head>
 <body>
 	<!-- header -->
-	<jsp:include page="fragment/header.jsp" />
+	<jsp:include page="fragment/header.jsp" />	
 	<!-- //header -->
 	<div class="demo-2">	
-		<header class="logo">
-			<h1><a class="cd-logo link link--takiri" href="${pageContext.request.contextPath}/web/index.jsp">Prevention <span>is better than cure.</span></a></h1>
-		</header>
+		<jsp:include page="fragment/slogan.jsp" />
             <div id="slider" class="sl-slider-wrapper">
-
-				<div class="sl-slider">
-				
+				<div class="sl-slider">				
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
@@ -121,24 +118,25 @@
 		<div class="vertical-tabs">
 			<div class="container">
 				<h3 class="title text-center">美麗見證</h3>
+				<p class="text-center">Our results speaks for themselves.</p>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
 						  <div class="list-group">
 							<a href="#" class="list-group-item active text-center">
-							    Services 1
+							    雙眼皮
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 2
+							    隆鼻術
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 3
+							    波尿酸
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 4
+							    微針療程
 							</a>
 							<a href="#" class="list-group-item text-center">
-							    Services 5
+							    雷射淨膚
 							</a>
 						  </div>
 						</div>
@@ -332,7 +330,7 @@
 		<!-- environment -->
 		<div class="our-news">
 		<h3 class="title text-center">診所環境</h3>
-		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<p class="text-center">Our state of the art facilities combine the best of modern science and art.</p>
 			<div id="visual">
 				<div class="slide-visual slideanim">
 					<!-- Slide Image Area (1000 x 424) -->
@@ -367,31 +365,31 @@
 		<!-- doctor 醫療團隊-->
 		<div class="banner-bottom">
 			<h3 class="title text-center">醫療團隊</h3>
-			<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			<p class="text-center">We offer the services of world renowned plastic surgeons.</p>
 			<div class="container">
 				<div class="col-md-4 timing">
 					<div class="opening-hours">
-						<h3><i class="fa fa-clock-o"></i>Opening Hours</h3>
+						<h3><i class="fa fa-clock-o"></i>門診時間</h3>
 						<ul>
-							<li>Monday - Friday</li>
-							<li>9.00 AM - 8.00 PM</li>
+							<li>星期一到星期五</li>
+							<li>9:00 AM - 7:00 PM</li>
 							<div class="clearfix"></div>
 						</ul>
 						<ul>
-							<li>Saturday</li>
-							<li>9.00 AM - 8.00 PM</li>
+							<li>星期六</li>
+							<li>9:00 AM - 7:00 PM</li>
 							<div class="clearfix"></div>
 						</ul>
 						<ul>
-							<li>Sunday</li>
-							<li>9.30 AM - 6.00 PM</li>
+							<li>星期日</li>
+							<li>公休</li>
 							<div class="clearfix"></div>
 						</ul>
 					</div>
 					<div class="help">
-						<h3><i class="fa fa-pencil-square-o"></i>Need Help?</h3>
-						<p>Just Make an Appointment to Get Help From Our Experts</p>
-						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">Request an Appointment</a>
+						<h3><i class="fa fa-pencil-square-o"></i>需要幫忙？</h3>
+						<p>於我們的專家預約，讓我們來回答您的問題!</p>
+						<a href="#" class="btn btn-default btn-default_2 pull-left" data-toggle="modal" data-target="#applyModal_1">即刻預約</a>
 					</div>
 				</div>
 				<div class="col-md-4 abt-img">
@@ -435,6 +433,6 @@
 							
 						});
 					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>

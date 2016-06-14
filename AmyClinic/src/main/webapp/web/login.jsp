@@ -76,9 +76,7 @@
 		<!-- login-section -->
 		<section class="login-page">
 			<div class="inner-banner demo-2 text-center">
-				<header class="logo">
-					<h1><a class="cd-logo link link--takiri" href="index.jsp">Prevention <span>is better than cure.</span></a></h1>
-				</header>
+				<jsp:include page="fragment/slogan.jsp" />
 				<div id="breadcrumb_wrapper">
 					<div class="container">		
 						<h2>登 入 愛 美</h2>
@@ -139,25 +137,11 @@
 									</h4>
 								</div>
 								<div class="modal-body">
-
-									<%-- 														<s:form namespace="/free" action="recover"> --%>
-									<%-- 															<s:textfield name="memberVO.email" label="E-mail" placeholder="abc@xyz.com" id="recover-email"/>				 --%>
-									<%-- 															<s:submit value="送出" method="recover" id="recover-btn"/> --%>
-									<%-- 														</s:form> --%>
 									<form action="${pageContext.request.contextPath}/free/recoverini.action" method="post" class="register">
 										<input type="text" name="memberVO.email" id="recover-email" placeholder="電子信箱 / Email" required> 
 										<input type="submit" value="送出">
 									</form>
 								</div>
-								<!---start-date-picker---->
-								<link rel="stylesheet" href="${pageContext.request.contextPath}/web/css/jquery-ui.css" />
-								<script src="${pageContext.request.contextPath}/web/js/jquery-ui.js"></script>
-								<script>
-									$(function() {
-										$("#datepicker").datepicker();
-									});
-								</script>
-								<!---/End-date-picker---->
 							</div>
 						</div>
 					</div>

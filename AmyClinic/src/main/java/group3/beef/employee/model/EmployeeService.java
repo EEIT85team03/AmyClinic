@@ -78,6 +78,7 @@ public class EmployeeService {
 					&& (empVO.getPwd().equals(AES.getencrypt(pwd.trim())))) {
 //			 System.out.println(empVO.getEmail());
 //			 System.out.println(empVO.getPwd());
+			 System.out.println(empVO.getName());
 			 return empVO;
 			}
 		}

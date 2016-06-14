@@ -117,7 +117,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container-fluid">
 			<div class="social-icons"></div> <!-- Left spacer -->
 			<div class="contact-info">
-				<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+				<a class="current_page" href="${pageContext.request.contextPath}/web/index.jsp">
+					<img src="${pageContext.request.contextPath}/web/images/icon.png" alt="icon">
+				</a>
 			</div>					
 			<div class="selectpackage">
 				<jsp:include page="loginbox.jsp" />
@@ -125,6 +127,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"></div>	
 		</div>
 	</div>
+	
 	<nav class="navbar nav_bottom" role="navigation">
 	 <div class="container">
 	 <!-- Brand and toggle get grouped for better mobile display -->
@@ -180,3 +183,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
+	<jsp:include page="mySpace.jsp" />

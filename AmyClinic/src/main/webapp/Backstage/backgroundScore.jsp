@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>☆AMY診所☆管理系統☆pro版☆</title>
+
 <style>
 p{
 width:400px;
@@ -88,6 +88,11 @@ margin-left : 4em;
 		$.getJSON('${pageContext.request.contextPath}/Score/ScoreServlet',{'action':'ListAllScores'},
 				function(data){
 			$("#firstTable").empty();
+			
+			var cell0 = $("<tr><th width='150px' >會員名稱</th><th width='200px'>被評分員工</th><th width='100px'>分數</th><th width='400px'>留言</th><th width='200px'>最後新增修改的日期</th><th width='100px'>狀態欄</th><th width='75px'>確認修改</th></tr>");
+			var th=$('<table border="1px"  id="firstTable"  class="table table-hover"></table>').append(cell0);
+			$("#firstTable").append(th);
+			
 			$.each(data,function(i,scoreVO){
 
 				if(scoreVO.Eid==eid){
