@@ -45,7 +45,7 @@
 }
 
 
-body{background: #eee url(${pageContext.request.contextPath}/images/sativa.png);}
+body{background: #eee url(${pageContext.request.contextPath}/images/sativa.jpg);}
 html,body{
     position: relative;
     height: 100%;
