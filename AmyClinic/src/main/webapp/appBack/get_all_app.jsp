@@ -6,6 +6,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+.modal.modal-wide .modal-dialog {
+  width: 80%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+/* irrelevant styling */
+body { text-align: center; }
+body p { 
+  max-width: 400px; 
+  margin: 20px auto; 
+}
+#tallModal .modal-body p { margin-bottom: 900px }
+
+.table th {
+   text-align: center;   
+}
+
+</style>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/datatables.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
@@ -83,7 +104,7 @@
 						</c:otherwise>
 					</c:choose>
 					<td>
-					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#myModal">查看</button>
+					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#tallModal">查看</button>
 					
 					</td>
 					<td>
@@ -101,52 +122,147 @@
 
 
 		</table>
-<!-- =====================modal=================== -->
-
-<!-- Trigger the modal with a button -->
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+ 
+<!--  ================================================== -->
+ <div id="tallModal" class="modal modal-wide fade">
   <div class="modal-dialog">
-
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title">療程記錄</h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+<!--        ===============body start================== -->
+       <div class="container">
+  <table class="table" id="memTable">
+  <thead>
+  <tr>
+        <th>會員編號</th>
+        <th>會員姓名</th>
+        <th>出生日</th>
+        <th>e-mail</th>
+        <th>電話</th>
+        <th>地址</th>
+        <th>消費次數</th>
+        
+        
+      </tr>
+  </thead>
+  <tbody>
+   
+  </tbody>
+  
+  </table>
+  </div>
+       
+       
+       
+       
+       <div class="container">
+  <table class="table" id="appTable">
+    <thead align="center">
+      <tr>
+        <th>療程編號</th>
+        <th>主治醫師</th>
+        <th>日期</th>
+        <th>時段</th>
+        <th>內容</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+       
+<!--        ===============body end================== --> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--         <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
-
+    <!-- /.modal-content -->
   </div>
+  <!-- /.modal-dialog -->
 </div>
-
-
-
-
-	</div>
+<!-- /.modal -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
 
 	<script type="text/javascript">
 	
-	 $(document).ready(function() {
+	// when .modal-wide opened, set content-body height based on browser height; 200 is appx height of modal padding, modal title and button bar
+
+	$(".modal-wide").on("show.bs.modal", function() {
+	  var height = $(window).height() - 200;
+	  $(this).find(".modal-body").css("max-height", height);
+	});
+	
+	 
 	       $('.memberid').click(function() {
 	      var mid  = $(this).attr("value");
-	      alert(mid);
+	      $('#appTable > tbody').empty();
+	      $('#memTable > tbody').empty();
+	      $.ajax({
+				'type':'get',
+				'url':'Mem_detail',
+				'dataType' :'json',
+				"data":{"mid" : mid},
+				'success':function(data){
+					 
+					console.log(data[0].name);
+// 				 $('#mname_lab').append(mname);
+				 
+				 	var mcell0 = $('<td></td>').text(data[0].mid);
+				    var mcell1 = $('<td></td>').text(data[0].name);
+	 				var mcell2 = $('<td></td>').text(data[0].bday);
+	 				var mcell3 = $('<td></td>').text(data[0].email);
+	 				var mcell4 = $('<td></td>').text(data[0].phone);
+// 	 				var mcell5 = $('<td></td>').text(data[0].cuntry);
+	 				var mcell6 = $('<td></td>').text(data[0].addr);
+// 	 				var mcell7 = $('<td></td>').text(data[0].join_date);
+// 	 				var mcell8 = $('<td></td>').text(data[0].last_visit);
+// 	 				var mcell9 = $('<td></td>').text(data[0].num_trans);
+// 	 				var mcell10 = $('<td></td>').text(data[0].num_visits);
+// 	 				var mcell11 = $('<td></td>').text(data[0].num_treatment);
+	 				var mcell12 = $('<td></td>').text(data[0].total_spent);
+// 	 				var mcell13 = $('<td></td>').text(data[0].act_satus);
+// 	 				var mcell14 = $('<td></td>').text(data[0].mass);
+// 	 				var mcell15 = $('<td></td>').text(data[0].height);
+				 var mrow = $('<tr></tr>').append(mcell0).append(mcell1).append(mcell2).append(mcell3).append(mcell4)
+				 .append(mcell6).append(mcell12) 
+				 $('#memTable > tbody' ).append(mrow);
+				 
+				 
+				 
+				 
+				 
+					$.each(data,function(i,item){
+						var aid = item.aid;
+						var apt_dat = item.apt_dat;
+						var apt_time = item.apt_time;
+						var desc = item.desc;
+						var ename = item.ename
+//						console.log(item.name[0]);
+					var cell1 = $('<td></td>').html(aid);
+					var cell2 =	$('<td></td>').html(ename);
+					var cell3 =	$('<td></td>').html(apt_dat);
+					var cell4 = $('<td></td>').html(apt_time);
+					var cell5 = $('<td></td>').html(desc);
+					var row = $('<tr></tr>').append(cell1).append(cell2).append(cell3).append(cell4).append(cell5);
+					
+					$('#appTable > tbody' ).append(row);
+					});
+				}
+	      
 	        });
-	   });
-	
-	
-	
-	
-	
-	
-	
+	       })
 	
 	
 	
@@ -178,6 +294,7 @@
 
 							})
 				})
+				
 	</script>
 </body>
 </html>
