@@ -46,7 +46,7 @@ public class ChatServer {
 		EmployeeVO E=(EmployeeVO)httpSession.getAttribute("empVO");
 		this.userId=E.getName();
 		userlist.add(userId);//將用戶名加入再線列表
-		String mes = getMessage(userId+"進入,很高興為您服務","notice",userlist);
+		String mes = getMessage("客服"+userId+"進入,很高興為您服務","notice",userlist);
 		broadcast(mes);
 		}
 		routetab.put(userId, session);   //將用戶名和session绑定到路由表

@@ -15,13 +15,13 @@ ${empVO.name } 進入者:${memberVO.name }  提示訊息:<span id="chatnotice"><
 	 	<textarea  id="chat" rows="30" cols="150" readonly="readonly"></textarea>
 
 <!-- 列表區 -->
-     <div  style="float:right;">
-         <h3 >再線列表[<span id="onlinenum"></span>]</h3>
-         <ul  id="list"></ul> 
-     </div>	 
+<!--      <div  style="float:right;"> -->
+<!--          <h3 >再線列表[<span id="onlinenum"></span>]</h3> -->
+<!--          <ul  id="list"></ul>  -->
+<!--      </div>	  -->
 
 
-     </div>
+<!--      </div> -->
      
 <!-- 輸入區 -->     
 	 <div>
@@ -34,7 +34,7 @@ ${empVO.name } 進入者:${memberVO.name }  提示訊息:<span id="chatnotice"><
 
 <div>
 
-	 <button type="button" onclick="closeConnection()">断开</button>	
+	 <button type="button" onclick="closeConnection()">斷開</button>	
      <button  type="button" onclick="clearConsole()">刷評</button>
      <button  type="button" onclick="sendMessage()">發送</button>
 </div>     

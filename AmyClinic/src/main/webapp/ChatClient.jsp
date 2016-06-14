@@ -17,7 +17,7 @@
 
 <!-- 列表區 -->
      <div  style="float:right;">
-         <h3 >再線列表[<span id="onlinenum"></span>]</h3>
+         <h3 >在線客服列表[<span id="onlinenum"></span>]</h3>
          <ul  id="list"></ul> 
      </div>	 
 
@@ -35,8 +35,8 @@
 
 <div>
 
-	 <button type="button" onclick="closeConnection()">断开</button>	
-     <button  type="button" onclick="clearConsole()">刷評</button>
+	 <button type="button" onclick="closeConnection()">斷開</button>	
+     <button  type="button" onclick="clearConsole()">刷屏</button>
      <button  type="button" onclick="sendMessage()">發送</button>
 </div>     
 	
@@ -118,7 +118,10 @@
 	     * 發送信息給後台
 	     */
 	    function sendMessage(){
-	        if(ws == null){
+	        if(to == null){
+	        	to=from;
+	        }
+	        if(to == null){
 	            console.log("連接未開啟");
 	            return;
 	        }
@@ -129,9 +132,7 @@
 	            return;
 	        }
 	        
-	        if(to == null){
-	        	to=from;
-	        }
+
 	        ws.send(JSON.stringify({
 	            message : {
 	                content : message,
