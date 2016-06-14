@@ -34,7 +34,7 @@
 					<li><a href='#'><span>國民大會</span></a></li>
 					<li><a href='#'><span>齊頭式平等</span></a></li>
 					<li><a href='#'><span>權能區分</span></a></li>
-					<li><a href='#'><span>主權在民</span></a></li>
+					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表及醫師介紹</span></a></li>
 					<li><a href='#'><span>政府機器論</span></a></li>
 					<li><a href='#'><span>民權初步</span></a></li>
 					<li class='last'><a href='#'><span>革命民權</span></a></li>

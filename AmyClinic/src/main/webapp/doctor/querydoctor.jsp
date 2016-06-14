@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>醫生資料</title>
 </head>
 <body>
-<table>
+<jsp:include page="/General/header.jsp"></jsp:include>
+<br>
+<table align="center">
 	<tr>
 		<td width="50"></td>
 		<td width="300">
@@ -15,23 +18,23 @@
 		</td>
 		<td width="22"></td>
 		<td>
-				<table>
+				<table style="font-size: 20pt;">
 					<tr>
-						<td>${empVO.name}　醫師</td>
+						<td colspan="2" style="font-size: 40pt;"><b>${empVO.name}　醫師</b></td>
 					</tr>
-					<tr>
+					<tr height="20">
 						<td colspan="2"><hr></td>
 					</tr>	
 					<tr>
-						<td>學歷</td>
+						<td width="100" height="60">學歷</td>
 						<td>${empVO.education}</td>
 					</tr>	
 					<tr>
-						<td>經歷</td>
+						<td height="60">經歷</td>
 						<td id="exp"></td>
 					</tr>	
 					<tr>
-						<td>專長</td>
+						<td height="60">專長</td>
 						<td>${empVO.specialty}</td>
 					</tr>	
 				</table>
@@ -39,6 +42,8 @@
 		</td>
 	</tr>
 </table>
+<br>
+<jsp:include page="/General/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script>
 $(function() {
