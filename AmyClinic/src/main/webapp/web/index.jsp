@@ -7,8 +7,7 @@
 </head>
 <body>
 	<!-- header -->
-	<jsp:include page="fragment/header.jsp" />
-	<jsp:include page="fragment/mySpace.jsp" />
+	<jsp:include page="fragment/header.jsp" />	
 	<!-- //header -->
 	<div class="demo-2">	
 		<jsp:include page="fragment/slogan.jsp" />

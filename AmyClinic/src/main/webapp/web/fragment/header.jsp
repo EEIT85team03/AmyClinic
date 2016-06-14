@@ -183,3 +183,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   </div>
 	</nav>
 	<!-- //header -->
+	<jsp:include page="mySpace.jsp" />
