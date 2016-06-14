@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
 <title>醫生資料</title>
 </head>
 <body>
@@ -14,13 +16,13 @@
 	<tr>
 		<td width="50"></td>
 		<td width="300">
-			<img src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}"/>
+			<img class="img-circle" width="300px" src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}"/>
 		</td>
 		<td width="22"></td>
 		<td>
-				<table style="font-size: 20pt;">
+				<table style="font-size: 15pt;">
 					<tr>
-						<td colspan="2" style="font-size: 40pt;"><b>${empVO.name}　醫師</b></td>
+						<td colspan="2" style="font-size: 35pt;"><b>${empVO.name}　醫師</b></td>
 					</tr>
 					<tr height="20">
 						<td colspan="2"><hr></td>
@@ -45,6 +47,8 @@
 <br>
 <jsp:include page="/General/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+<!-- Bootstrap Core JavaScript -->
 <script>
 $(function() {
 	var expstr = $('#expstr').val();
