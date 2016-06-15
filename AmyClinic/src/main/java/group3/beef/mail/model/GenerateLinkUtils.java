@@ -12,8 +12,8 @@ import group3.henry.encryption.interceptor.MD5_EncryptionInterceptor;
 public class GenerateLinkUtils {
 	 private static final String CHECK_CODE = "checkCode";  
 	 
-	 public static String generateResetPwdLink(EmployeeVO empVO) {  
-	        return "http://localhost:8081/AmyClinic/empLogin/EmpLoginServlet.do?action=reset&mail="
+	 public static String generateResetPwdLink(EmployeeVO empVO ,String ctx) {  
+	        return "http://"+ctx+"/empLogin/EmpLoginServlet.do?action=reset&mail="
 	        		+empVO.getEmail()+"&"+ CHECK_CODE + "=" + generateCheckcode(empVO);  
 
 }

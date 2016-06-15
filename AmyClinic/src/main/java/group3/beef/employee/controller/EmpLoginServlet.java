@@ -60,14 +60,6 @@ public class EmpLoginServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		if ("loginAvatar".equals(action)) {
-			System.out.println("call loginAvatar");
-			HttpSession session = req.getSession();
-			EmployeeVO empVO = (EmployeeVO) session.getAttribute("empVO");
-			int eid =empVO.getEid(); 
-			
-			
-		}
 
 		// =====================員工登入======================
 		if ("login".equals(action)) {
@@ -135,38 +127,37 @@ public class EmpLoginServlet extends HttpServlet {
 		
 		
 		// =====================發送忘記密碼驗證信======================
-		if ("forgetpw".equals(action)) {
-			List<String> errorMsg = new LinkedList<String>();
-			req.setAttribute("errorMsg", errorMsg);
-			String mail = req.getParameter("restmail");
-			// System.out.println(action);
-			// System.out.println(mail);
-			if (mail == null || mail.trim().length() == 0) {
-				errorMsg.add("帳號請勿空白");
-			}
-
-			EmployeeService eSvc = new EmployeeService();
-			EmployeeVO empVO = eSvc.findEmpByMail(mail);
-			
-			if (empVO != null) {
-				System.out.println("帳號存在!!");
-				String ctx = req.getContextPath();
-				EmailUtils.sendResetPasswordEmail(empVO);
-				PrintWriter out = res.getWriter();
-				out.println("重設信發送成功");
-				return;
-			} else {
-				errorMsg.add("帳號不存在!!");
-				System.out.println("帳號不存在!!");
-			}
-			if (!errorMsg.isEmpty()) {
-				RequestDispatcher failureView = req
-						.getRequestDispatcher("/Backstage/foget_pw.jsp");
-				failureView.forward(req, res);
-				return;
-			}
-
-		}
+//		if ("forgetpw".equals(action)) {
+//			List<String> errorMsg = new LinkedList<String>();
+//			req.setAttribute("errorMsg", errorMsg);
+//			String mail = req.getParameter("restmail");
+//			// System.out.println(action);
+//			// System.out.println(mail);
+//			if (mail == null || mail.trim().length() == 0) {
+//				errorMsg.add("帳號請勿空白");
+//			}
+//
+//			EmployeeService eSvc = new EmployeeService();
+//			EmployeeVO empVO = eSvc.findEmpByMail(mail);
+//			
+//			if (empVO != null) {
+//				System.out.println("帳號存在!!");
+//				EmailUtils.sendResetPasswordEmail(empVO,ctx);
+//				PrintWriter out = res.getWriter();
+//				out.println("重設信發送成功");
+//				return;
+//			} else {
+//				errorMsg.add("帳號不存在!!");
+//				System.out.println("帳號不存在!!");
+//			}
+//			if (!errorMsg.isEmpty()) {
+//				RequestDispatcher failureView = req
+//						.getRequestDispatcher("/Backstage/foget_pw.jsp");
+//				failureView.forward(req, res);
+//				return;
+//			}
+//
+//		}
 		
 		
 		// =====================發送忘記密碼驗證信Ajax======================
@@ -176,15 +167,15 @@ public class EmpLoginServlet extends HttpServlet {
 			String mail = req.getParameter("restmail");
 			EmployeeService eSvc = new EmployeeService();
 			EmployeeVO empVO = eSvc.findEmpByMail(mail);
-			String ctx = req.getRequestURI();
-			System.out.println("ctx"+ctx);
+			String ctx = req.getServerName()+":"+req.getServerPort()+req.getContextPath();
+			System.out.println("ctx:"+ctx);
 			if(empVO != null){
 				out.print("sent");
 				System.out.println("帳號存在!!");
-				EmailUtils.sendResetPasswordEmail(empVO);
+				EmailUtils.sendResetPasswordEmail(empVO,ctx);
 				return;
 			}else{
-				out.print("帳號不存在");
+				out.print("帳號不存在");  
 				return;
 			}
 			
