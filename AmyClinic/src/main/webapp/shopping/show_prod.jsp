@@ -20,7 +20,7 @@
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
 <a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">回商品列表</a><br>
-<table>
+<table align="center">
 	<tr>
 		<td width="50"></td>
 		<td width="300">
@@ -32,13 +32,13 @@
 				<input type="hidden" name="pname" value="${prodVO.name}">
 				<input type="hidden" name="price" value="${prodVO.price}">
 				<input type="hidden" name="discount" value="${prodVO.discount}">
-				<table>
+				<table style="font-size: 15pt;">
 					<tr>
-						<td>${prodVO.name}</td>
+						<td colspan="2" style="font-size: 35pt;">${prodVO.name}</td>
 					</tr>
-					<tr>
+					<tr height="20">
 						<td colspan="2"><hr></td>
-					</tr>	
+					</tr>
 					<tr>
 						<td>產品編號</td>
 						<td>${prodVO.pid}</td>
@@ -78,6 +78,9 @@
                     			</c:forEach>
 							</select>	 
 							</td>
+					</tr>
+					<tr height="20">
+						<td colspan="2"><hr></td>
 					</tr>
 					<tr>		
 						<td>

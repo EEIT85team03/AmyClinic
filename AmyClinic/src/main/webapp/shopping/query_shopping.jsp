@@ -19,7 +19,9 @@
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
-	<b>訂單查詢：</b><br><br>
+<div style="padding-left: 20%">
+	<br>
+	訂單查詢：<br><br>
 	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30">
 	<input type="button" id="query" value="查詢"><br><br>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
@@ -106,7 +108,7 @@
 		<br>
 	</c:if>
 	</c:forEach>
-	
+	</div>
 	<jsp:include page="/General/footer.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>	

@@ -33,7 +33,7 @@
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <style>
 #allpage {
-	width: 1024px;
+	width: 1200px;
 	margin: 0 auto;
 }
 
@@ -46,12 +46,12 @@
 
 article {
 	float: right;
-	width: 800px;
+	width: 1000px;
 }
 
 aside {
 	float: left;
-	width: 200px;
+	width: 150px;
 }
 
 .c1 {
@@ -95,7 +95,7 @@ a {
 
 			</aside>
 			<article id="a1">
-			<table id="app" width="800px" border="1" style="text-align: center; border-collapse: collapse; word-break: break-all">
+			<table id="app" width="1000px" border="1" style="text-align: center; border-collapse: collapse; word-break: break-all">
 				<tr>
 					<th>日期</th>
 					<th>時段</th>
@@ -291,12 +291,12 @@ a {
 							var td1 = $('<td></td>').append(data.apt_date+'('+ weekdays[new Date(data.apt_date).getDay()]+')');
 							var td2 = $('<td></td>').append(data.apt_time);
 							if (data.purpose == 0) {
-								var td3 = $('<td></td>').append('開始新療程');
+								var td3 = $('<td width="100px"></td>').append('開始新療程');
 								//用Array.join("分隔符號")可在陣列的每個元素中間加分隔符號，預設為逗點
 								var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
 							}
 							if (data.purpose == 1) {
-								var td3 = $('<td></td>').append('回診');
+								var td3 = $('<td width="100px"></td>').append('回診');
 								var td4 = $('<td width="150px"></td>').append();
 							}
 							var td5 = $('<td width="300px"></td>').append(data.descrip);
@@ -344,11 +344,11 @@ a {
 									var td1 = $('<td></td>').append(data.apt_date+'('+ weekdays[new Date(data.apt_date).getDay()]+')');
 									var td2 = $('<td></td>').append(data.apt_time);
 									if (data.purpose == 0) {
-										var td3 = $('<td></td>').append('開始新療程');
+										var td3 = $('<td width="100px"></td>').append('開始新療程');
 										var td4 = $('<td width="150px"></td>').append(data.procName.join("、"));
 									}
 									if (data.purpose == 1) {
-										var td3 = $('<td></td>').append('回診');
+										var td3 = $('<td width="100px"></td>').append('回診');
 										var td4 = $('<td width="150px"></td>').append();
 									}
 									var td5 = $('<td width="300px"></td>').append(data.descrip);
