@@ -16,11 +16,12 @@
   <filter-mapping>
     <filter-name>loginFilter</filter-name>
     <url-pattern>/app/*</url-pattern>
+    <url-pattern>/member/member.jsp</url-pattern>
     <url-pattern>/shopping/data_confirm.jsp</url-pattern>
-    <url-pattern>/shopping/edit_receiver.jsp</url-pattern>
     <url-pattern>/shopping/pay.jsp</url-pattern>
     <url-pattern>/shopping/fin_shopping.jsp</url-pattern>
     <url-pattern>/shopping/query_shopping.jsp</url-pattern>
+    <url-pattern>/shopping/query_shopping_byname.jsp</url-pattern>
   </filter-mapping>
   <servlet>
     <servlet-name>TestServlet</servlet-name>

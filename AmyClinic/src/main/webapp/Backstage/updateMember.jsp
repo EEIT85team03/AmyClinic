@@ -10,8 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
+<%-- <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"> --%>
+<%-- <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet"> --%>
 <style>
 	
  	.ui-datepicker-trigger { 
@@ -33,7 +33,7 @@
 </head>
 <body>
 <%
- 	MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
+  MemberVO memberVO= (MemberVO) request.getAttribute("memberVO");
   MemberServices memberSer = new MemberServices();
   List<MemberVO> list = memberSer.getAll();
   pageContext.setAttribute("list",list);
@@ -274,10 +274,10 @@
 </c:if>
 <%-- 錯誤表列 --%>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-<!-- required for .datepicker() -->
-<script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>  
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+<%-- <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
+<!-- <!-- required for .datepicker() --> 
+<%-- <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>   --%>
 </div>
 
 <script type="text/javascript">
