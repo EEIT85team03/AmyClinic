@@ -94,7 +94,7 @@ background-color:#D6D6AD;
 			if(i=='A'){document.write("中");}
 			</script>
 			<img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;">
-			<button type="button" class="btn btn-primary" data-toggle="collapse" data-target=" .${MemberVO.mid}">
+			<button type="button" class="btn btn-link" data-toggle="collapse" data-target=" .${MemberVO.mid}">
   			${MemberVO.name}
 			</button>
 			</td>
@@ -116,25 +116,27 @@ background-color:#D6D6AD;
 			    </FORM>
 			</td>
 		</tr>
+		
 <!-- 			下拉的-->
 <tr>
 <%-- <td class="${MemberVO.mid} collapse" ><img src="${pageContext.request.contextPath}/user_photo/${MemberVO.photo}"	class="preview" style="max-width: 100px; max-height: 100px;"></td> --%>
-<td  class="${MemberVO.mid} collapse" >		
-						
-					身高:${MemberVO.height}公分		<br>	
+<td  colspan="6" class="${MemberVO.mid} collapse" >
+<table><tr><td  >					
+					身高:${MemberVO.height}公分<br>	
 					體重:${MemberVO.mass}公斤<br>	
-					交易:${MemberVO.num_trans}次		<br>	
-					診療:${MemberVO.num_treatment}次	<br>	
-					來訪:${MemberVO.num_visits}次		<br>	
-					獎勵:${MemberVO.reward_pts}點		<br>		
-					消費:${MemberVO.spent_pts}點		<br>	
-					最後消費日:${MemberVO.last_visit}		<br>	
-					加入日:<script>var d ='${MemberVO.join_date}';	document.write(d.substring(0,10));</script><br>		
+					交易:${MemberVO.num_trans}次	<br>	
+					診療:${MemberVO.num_treatment}次<br>	
+					來訪:${MemberVO.num_visits}次<br>
+					積點:${MemberVO.total_spent}次<br>
+					獎勵:${MemberVO.reward_pts}點<br>		
+					消費:${MemberVO.spent_pts}點<br>	
+					最後消費日:<br>${MemberVO.last_visit}<br>			
+					加入日:<br><script>var d ='${MemberVO.join_date}';	document.write(d.substring(0,10));</script><br>		
 					狀態:<c:if test="${MemberVO.act_status == 0}"><font>封鎖</font></c:if>			 
 							  <c:if test="${MemberVO.act_status == 1}"><font>正常</font></c:if>	 
 							  <c:if test="${MemberVO.act_status == 2}"><font>未開通</font></c:if>
-</td>
-				
+</td></tr></table>
+</td>				
 </tr>
 	</c:forEach>
 	</table>  

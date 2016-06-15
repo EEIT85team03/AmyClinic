@@ -2,19 +2,25 @@ package group3.k.members.controller;
 
 import group3.henry.login.model.MemberServices;
 import group3.henry.login.model.MemberVO;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.collections.map.HashedMap;
+
 import com.google.gson.Gson;
 
 
@@ -117,6 +123,9 @@ public class MemberServlet extends HttpServlet {
 						System.out.println("新增2");
 						/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 						String url = "/Backstage/members.jsp";
+						Map<String,String> msg = new HashMap<String,String>();
+						req.setAttribute("msg", msg);
+						msg.put("msg", "新增成功");
 						RequestDispatcher successView = req.getRequestDispatcher(url);
 						successView.forward(req, res);
 						System.out.println("新增3-成功");
@@ -295,6 +304,9 @@ public class MemberServlet extends HttpServlet {
 						System.out.println("修改2");
 						/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 						String url = "/Backstage/members.jsp";
+						Map<String,String> msg = new HashMap<String,String>();
+						req.setAttribute("msg", msg);
+						msg.put("msg", "修改成功");
 						RequestDispatcher successView = req.getRequestDispatcher(url);
 						successView.forward(req, res);
 						System.out.println("修改3-成功");

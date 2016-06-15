@@ -14,12 +14,7 @@
 <script src='${pageContext.request.contextPath}/js/lobibox.min.js'></script>	
 </head>
 <body>
-<%
-OrdersService orders = new OrdersService();
-List<OrdersVO> list = orders.getAll();
-pageContext.setAttribute("list",list);
 
-%>
 <div id='wrapper'><!-- all --> 
 <jsp:include page='/Backstage/jsp/b_top.jsp' /><!-- top and側邊欄功能表項目	位置 --> 
 <div id='page-wrapper' style=background-color:#000000  >
@@ -33,7 +28,7 @@ pageContext.setAttribute("list",list);
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --> 
 <!--         開始 ------------------------------------------------------------------------------------->
-<%@ include file='jsp/page1_5.file' %>
+
 <!-- method='post' -->
 <%--  action='${pageContext.request.contextPath}/Backstage/updateOrder'  --%>
 <table  border='1'  class='table table-hover table-responsive'  id='tb'  style='text-align: center;border-collapse: collapse;'>
@@ -41,7 +36,7 @@ pageContext.setAttribute("list",list);
 			<tr><th>明細/編號</th><th>日期</th><th>總價</th><th>訂單狀態</th><th>付款狀態</th><th>配送狀態</th><th>更新狀態</th></tr>
 			</tbody>
 </table>
-<%@ include file='jsp/page2.file' %>
+
 
 <script>
 	$(function(){
@@ -63,27 +58,28 @@ var cell4 = $("<td></td>").html("<select id='ostatus"+i+"'><option value='0'>訂
 // }
 var cell5 = $("<td></td>").html("<select id='payment"+i+"'><option value='0'>未付款</option><option value='1'>已付款</option></select>");
 var cell6 = $("<td></td>").html("<select id='del_status"+i+"'><option value='0'>處理中</option><option value='1'>已出貨</option><option value='2'>已送達</option></select>");
-var cell7 = $("<td></td>").html("<form name='f"+i+"' action='${pageContext.request.contextPath}/Backstage/updateOrder'><input type='hidden' name='oid' value='"+ordersVO.oid+"'><input type='hidden' id='ostatus"+i+"' name='ostatus' value='"+ordersVO.ostatus+"'><input type='hidden' id='payment"+i+"' name='payment' value='"+ordersVO.payment+"'><input type='hidden' id='del_status"+i+"' name='del_status' value='"+ordersVO.del_status+"'><input type='hidden' name='action' value='upDate'><input type='submit' value='修改' class='btn btn-success'></form>");
+var cell7 = $("<td></td>").html("<form name='f"+i+"' action='${pageContext.request.contextPath}/Backstage/updateOrder'><input type='hidden' name='oid' value='"+ordersVO.oid+"'><input type='hidden' id='ostatus_"+i+"' name='ostatus' value='"+ordersVO.ostatus+"'><input type='hidden' id='payment_"+i+"' name='payment' value='"+ordersVO.payment+"'><input type='hidden' id='del_status_"+i+"' name='del_status' value='"+ordersVO.del_status+"'><input type='hidden' name='action' value='upDate'><input type='submit' value='修改' class='btn btn-success'></form>");
 // var cell7 = $("<td></td>").html("<input type='button'  class='btn btn-success'  value='更新' onclick='cancel("+ordersVO.oid+")'>")	
 // var cell8 = $("<input type='hidden' class='odate'value=''>").val(ordersVO.odate);
 // var cell81 = $("<input type='hidden' class='total' value=''>").val(ordersVO.total);
 var row = $("<tr></tr>").append([cell1,cell2,cell3,cell4,cell5,cell6,cell7]);
 $("#tb>tbody").append(row);
-$("#ostatus"+i).val(scoreVO.St);
+$("#ostatus"+i).val(ordersVO.ostatus);
 $("#ostatus"+i).change(function(){
 	var x=$("#ostatus"+i).val();
-	$("#stt"+i).val(x);
+	$("#ostatus_"+i).val(x);
 	});
-$("#st"+i).val(scoreVO.St);
-$("#st"+i).change(function(){
-	var x=$("#st"+i).val();
-	$("#stt"+i).val(x);
+$("#payment"+i).val(ordersVO.payment);
+$("#payment"+i).change(function(){
+	var x=$("#payment"+i).val();
+	$("#payment_"+i).val(x);
 	});
-$("#st"+i).val(scoreVO.St);
-$("#st"+i).change(function(){
-	var x=$("#st"+i).val();
-	$("#stt"+i).val(x);
+$("#del_status"+i).val(ordersVO.del_status);
+$("#del_status"+i).change(function(){
+	var x=$("#del_status"+i).val();
+	$("#del_status_"+i).val(x);
 	});
+
 // var cell9 = $("<tr><td colspan='7'>")	
 // var cell10 = $("<div id='item${status.count}' style='display:none;'>")	
 

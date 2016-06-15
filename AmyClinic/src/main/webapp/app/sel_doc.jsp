@@ -24,7 +24,7 @@
 	}
 </style>
 </head>
-<body>
+<body style="background-color: #F1E1FF">
 <c:if test="${day == 2}">
 	<b>您選擇的時段：星期一　${c_hours}</b><br><br>
 	<input type="hidden" id="wday" value="星期一">
@@ -94,10 +94,12 @@
 	</c:forEach>
 
 </table>
+<br>
 <table align="center">
 	<tr>
 <!-- 		<td><a id="b1" href="#">測試</a></td> -->
 		<td><a id="b2" href="${pageContext.request.contextPath}/apps/showtime">重新選擇</a></td>
+		<td width="30"></td>
 		<td><a id="b3" href="#">取消</a></td>
 	</tr>
 

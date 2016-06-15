@@ -15,8 +15,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢訂單</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="/General/header.jsp"></jsp:include>
 	<b>訂單查詢：</b><br><br>
 	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30">
 	<input type="button" id="query" value="查詢"><br><br>
@@ -105,7 +107,7 @@
 	</c:if>
 	</c:forEach>
 	
-	
+	<jsp:include page="/General/footer.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>	
 	<script>
