@@ -1,5 +1,6 @@
 package group3.k.proc.controller;
 
+import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.proc.model.ProcService;
 import group3.carrie.proc.model.ProcVO;
 import group3.carrie.proctype.model.ProcTypeVO;
@@ -16,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Backstage/ProcServlet")
 public class ProcServlet extends HttpServlet {
@@ -161,15 +163,21 @@ public class ProcServlet extends HttpServlet {
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("新增3-成功");
-
+				return;
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 				e.printStackTrace();
 				System.out.println("新增失敗");
-				errorMsg.add("新增失敗"+e.getMessage());
+				errorMsg.add("新增失敗"+e.getMessage());	
+				HttpSession session = req.getSession();
+				EmployeeVO empVo = (EmployeeVO)session.getAttribute("empVO");
+				System.out.println(empVo.getName());
+				System.out.println(empVo.getEid());
+//				res.sendRedirect(req.getContextPath()+"/Backstage/addProcedures.jsp");
 				RequestDispatcher failureView = req
 						.getRequestDispatcher("/Backstage/addProcedures.jsp");
 				failureView.forward(req, res);
+				return;
 			}
 		}
 		// ===================送出修改=========================

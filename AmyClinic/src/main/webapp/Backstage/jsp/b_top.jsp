@@ -174,7 +174,7 @@ font-size:18px;
 		<li class="dropdown">
 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"><i class="fa fa-user">
 
-		</i><font color="#fff" id="empname">  ${session.empVO.name}</font><b class="caret"></b></a>
+		</i><font color="#fff" id="empname">  ${empVO.name}</font><b class="caret"></b></a>
 
 			<ul class="dropdown-menu">
 				<li><a href="#"><i class="fa fa-fw fa-user"></i>我的帳戶</a></li>
@@ -186,7 +186,7 @@ font-size:18px;
 
 			</ul></li>
 			
-		<img class="img-circle" width="35px"src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${session.empVO.eid}" />
+		<img class="img-circle" width="35px"src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}" />
 		
 	</ul>
 	<!--  topover--><!--  topover--><!--  topover--><!--  topover--><!--  topover-->
