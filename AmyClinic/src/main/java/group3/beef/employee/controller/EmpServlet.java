@@ -180,7 +180,7 @@ public class EmpServlet extends HttpServlet {
 				InputStream is = null;
 				Part filePart = req.getPart("photo");
 
-				if (filePart == null) {
+				if (filePart.getSize() == 0) {
 					System.out.println("file part null!!");
 					is = new FileInputStream("C:\\AmyDB\\e5.jpg"); // 若沒上傳照片，給預設圖片
 
