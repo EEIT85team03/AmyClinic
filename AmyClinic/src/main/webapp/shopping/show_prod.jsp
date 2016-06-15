@@ -14,9 +14,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>${prodVO.name}</title>
 </head>
 <body>
+<jsp:include page="/General/header.jsp"></jsp:include>
 <a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">回商品列表</a><br>
 <table>
 	<tr>
@@ -99,6 +101,7 @@
 		</td>
 	</tr>
 </table>
+	<jsp:include page="/General/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
 <script>
