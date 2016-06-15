@@ -45,7 +45,7 @@
 }
 
 
-body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
+body{background: #eee url(${pageContext.request.contextPath}/images/sativa.jpg);}
 html,body{
     position: relative;
     height: 100%;
@@ -191,7 +191,7 @@ html,body{
 <body>
 
 
-
+<!-- <h2 align="center">AAAAAAAAAAA</h2> -->
 
 <div class="container">
 	<div class="login-container">
