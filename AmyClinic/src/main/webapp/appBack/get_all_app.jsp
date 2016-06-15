@@ -30,7 +30,7 @@ body p {
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/datatables.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
-<title>Insert title here</title>
+<title>醫師排班</title>
 </head>
 <body>
 	<div id="wrapper">

@@ -13,7 +13,7 @@ public class GenerateLinkUtils {
 	 private static final String CHECK_CODE = "checkCode";  
 	 
 	 public static String generateResetPwdLink(EmployeeVO empVO) {  
-	        return "http://localhost:8081/AmyClinic/Backstage/EmpLoginServlet.do?action=reset&mail="
+	        return "http://localhost:8081/AmyClinic/empLogin/EmpLoginServlet.do?action=reset&mail="
 	        		+empVO.getEmail()+"&"+ CHECK_CODE + "=" + generateCheckcode(empVO);  
 
 }

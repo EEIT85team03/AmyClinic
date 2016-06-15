@@ -147,8 +147,10 @@ public class EmpLoginServlet extends HttpServlet {
 
 			EmployeeService eSvc = new EmployeeService();
 			EmployeeVO empVO = eSvc.findEmpByMail(mail);
+			
 			if (empVO != null) {
 				System.out.println("帳號存在!!");
+				String ctx = req.getContextPath();
 				EmailUtils.sendResetPasswordEmail(empVO);
 				PrintWriter out = res.getWriter();
 				out.println("重設信發送成功");
@@ -174,8 +176,10 @@ public class EmpLoginServlet extends HttpServlet {
 			String mail = req.getParameter("restmail");
 			EmployeeService eSvc = new EmployeeService();
 			EmployeeVO empVO = eSvc.findEmpByMail(mail);
+			String ctx = req.getRequestURI();
+			System.out.println("ctx"+ctx);
 			if(empVO != null){
-				out.print("aaa");
+				out.print("sent");
 				System.out.println("帳號存在!!");
 				EmailUtils.sendResetPasswordEmail(empVO);
 				return;
@@ -196,15 +200,16 @@ public class EmpLoginServlet extends HttpServlet {
 			try {
 				EmployeeService eSvc = new EmployeeService();
 				EmployeeVO empVO = eSvc.findEmpByMail(mail);
+				String ctx = req.getContextPath();
 				boolean check = GenerateLinkUtils.verifyCheckcode(empVO,
 						checkCode);
 				// System.out.println(check);
 				if (check) {
-					// System.out.println("帳號比對成功");
+					 System.out.println("帳號比對成功");
 					HttpSession session = req.getSession();
 					session.setAttribute("empVO", empVO);
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage/reset_pw.jsp");
+							.getRequestDispatcher("/empLogin/reset_pw.jsp");
 					failureView.forward(req, res);
 					return;
 				} else {
@@ -212,13 +217,13 @@ public class EmpLoginServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/Backstage/reset_pw.jsp");
+							.getRequestDispatcher("/empLogin/reset_pw.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 			} catch (Exception e) {
 				RequestDispatcher rd = req
-						.getRequestDispatcher("/Backstage/reset_pw.jsp");
+						.getRequestDispatcher("/empLogin/reset_pw.jsp");
 				rd.forward(req, res);
 			}
 

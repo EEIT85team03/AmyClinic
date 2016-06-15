@@ -2,33 +2,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-
-<!-- bootstrap -->
-<!-- 最新編譯和最佳化的 CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-
-<!-- 選擇性佈景主題 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
-
-<!-- 最新編譯和最佳化的 JavaScript -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
-<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
-<script src="${pageContext.request.contextPath}/js/jquery.validate.js"></script>
-<script src="${pageContext.request.contextPath}/js/messages_zh_TW.js"></script>
-<script src="${pageContext.request.contextPath}/js/jquery.metadata.js"></script>
-
-
-
-
-
-<%-- <script	src="${pageContext.request.contextPath}/General/js/bootstrap.js"></script> --%>
-<%-- <script	src="${pageContext.request.contextPath}/General/js/bootstrap.min.js"></script> --%>
-
-
-
-
+<link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/bootstrap-theme.min.css" rel="stylesheet" >
+<script src="<%=request.getContextPath()%>/js/jquery.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
 
 
 
@@ -235,10 +212,10 @@ html,body{
         
 <form role="form">
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email" id="maillab">Email</label>
     <input type="email" class="form-control" id="remail">
   </div>
-   <button type="submit" class="btn btn-default" id="rebtn">Submit</button>
+   <button type="submit" class="btn btn-default" id="rebtn" >Submit</button>
 </form>
         </div>
         <div class="modal-footer">
@@ -249,11 +226,7 @@ html,body{
     </div>
   </div>
   
-</div>
- 
-  
-
-
+</div> 
 
 <script type="text/javascript">
 
@@ -269,8 +242,8 @@ $("#pwdlog").keypress(function(e){
 
 //====================確認帳號是否存在==================================
 $(function(){
-	$('#regmail').blur(function(){
-		var regmail = $('#regmail').val();
+	$('#remail').blur(function(){
+		var regmail = $('#remail').val();
 		$.ajax({
 			'type':'post',
 			'url':'emp.do',
@@ -278,10 +251,15 @@ $(function(){
 			"data":{"action" : "checkmail" , "regmail" : regmail},
 			'success':function(data){
 				if(data == "notnull"){
-// 					alert("notnull");
 					$('#mspan').remove();
-					$('#maillab').append("<span class='text-danger' id='mspan'>   帳號已存在!!</span>");
-					
+					$('#maillab').append("<span class='text-success' id='mspan' style='float: right;'>&nbsp &nbsp 帳號存在!!</span>");
+					$('#rebtn').removeAttr('disabled');
+					return;
+				}else{
+					$('#mspan').remove();
+					$('#maillab').append("<span class='text-danger' id='mspan' style='float: right;'>&nbsp &nbsp 帳號不存在!!</span>");
+					$('#rebtn').attr('disabled','disabled');
+					return;
 				}
 				
 			}
@@ -359,13 +337,13 @@ $(function() {
 	$('#rebtn').click(function(){
 		var remail = $('#remail').val();
 		$.ajax({
-		'type':'post',
+		'type':'get',
 		'url' :'EmpLoginServlet.do',
 		'datatype' : 'text',
 		'data':{"action" : "forgetpwAjx" , "restmail" : remail},
 		'success':function(data){
 			// console.log(data);
-			 alert(data);
+			 console.log(data);
 			 return;
 		}
 			
@@ -373,53 +351,10 @@ $(function() {
 		
 	})
 })
-//====================表單驗證==================================
-// $().ready(function() {
-//  $("#addempform").validate({
-// 	// debug:true,   
-// 	 errorClass: "my-error-class",
-// 	 validClass: "my-valid-class",
-	 
-	 
-// 	 rules: {
-//      name: "required",
-//      regmail: {
-//     required: true,
-//     email: true
-//    },
-//    pwd: {
-//     required: true,
-//     minlength: 4
-//    },
-//    pwd2: {
-//     required: true,
-//     minlength: 4,
-//     equalTo: "#pwd1"
-//    },
-   
-//    edu:"required",
-//    exp:"required",
-//    spec:"required"   
-   
-//   },
-// //         messages: {
-// //      name: "請輸入姓名",
-// //      regmail: {
-// //     required: "請輸入Email地址",
-// //     email: "請輸入正確的email地址"
-// //    },
-// //    pwd: {
-// //     required: "請輸入密碼",
-// //    minlength: ("密碼不能小於4個字")
-// //    },
-// //    pwd2: {
-// //     required: "請輸入確認密碼",
-// //     minlength: "確認密碼不能小於4個字符",
-// //     equalTo: "兩次輸入密碼不一致"
-// //   }
-// //   }
-//     });
-// });
+
+
+	
+	
 
 </script>
 </body>
