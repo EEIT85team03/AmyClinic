@@ -32,7 +32,7 @@ public class SpaToSalesServlet extends HttpServlet {
 		doPost(req, res);
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	//@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("doPost_OK");
 		req.setCharacterEncoding("UTF-8");
@@ -46,8 +46,8 @@ public class SpaToSalesServlet extends HttpServlet {
 		//============顯現一開始Chart.jsp的畫面=========================
 //List療程 全部
 		
-		if("熱門預約療程".equals(action)){
-			System.out.println("熱門預約療程_OK");
+		if("hotPorc".equals(action)){
+			System.out.println("hotPorc_OK");
 			//-------療程名稱
 			List<SpaToSalesVO> spaTable=spaToSalesService.getAll();//取得tab全部
 			List spaToSales=new LinkedList();
@@ -55,11 +55,11 @@ public class SpaToSalesServlet extends HttpServlet {
 			//HashMap procAllMap=new HashMap();//for( )裝入map轉
 			for(SpaToSalesVO spa :  spaTable ){//將table拆解 用vo分裝
 				HashedMap procAllMap = new HashedMap();//for( )裝入map轉
-				procAllMap.put("a",spa.getYear());	
-				procAllMap.put("b", spa.getMonth());
-				procAllMap.put("c", spa.getName());
+				procAllMap.put("year",spa.getYear());	
+				procAllMap.put("month", spa.getMonth());
+				procAllMap.put("name", spa.getName());
 				//procAllMap.put("療程id", spa.getpType_id());
-				procAllMap.put("d", spa.getCounts());
+				procAllMap.put("counts", spa.getCounts());
 				spaToSales.add(procAllMap);//療程名稱
 				
 System.out.println( spa.getYear()+"年"+spa.getMonth()+"月"+spa.getName()+"科"+spa.getCounts()+"次;");//test
