@@ -30,6 +30,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>查詢預約</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <style>
 #allpage {
 	width: 1024px;
@@ -70,6 +71,7 @@ a {
 </style>
 </head>
 <body>
+<jsp:include page="/General/header.jsp"></jsp:include>
 	<div id="allpage">
 		<div id="content">
 			<aside>
@@ -142,6 +144,7 @@ a {
 			</article>
 		</div>
 	</div>
+	<jsp:include page="/General/footer.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
 	<script>
@@ -151,7 +154,7 @@ a {
 
 	function cancel(id) {
 		Lobibox.confirm({
-			title: "請確認",
+			title: "取消預約",
 			msg: "確定取消預約？",
 			callback: function ($this, type, ev) {
 			    if(type == 'yes') {

@@ -46,7 +46,7 @@ margin-left : 4em;
 		</tbody>
 		</table>
 	
-<script src="<%=request.getContextPath()%>/Backstage/js/jquery.js"></script>
+
 	<script>
 	$(function(){
 		console.log('1');

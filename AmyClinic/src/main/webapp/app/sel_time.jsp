@@ -21,7 +21,7 @@
 	}
 </style>
 </head>
-<body>
+<body style="background-color: #F1E1FF">
 			<table border="1" width="900px" align="center" style="border-collapse: collapse;text-align: center;">
 				<tr>
 					<th height="125px">時段/星期</th>
@@ -107,6 +107,7 @@
 				</c:forEach>
 				
 </table>
+<br>
 <table align="center">
 	<tr>
 		<td><a id="b3" href="#">取消</a></td>

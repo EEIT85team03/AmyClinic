@@ -16,6 +16,14 @@
 <link href="<%=request.getContextPath()%>/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <!-- Custom Fonts -->
 <script src="<%=request.getContextPath()%>/js/jquery.js"></script>
+<script>
+$(function(){
+	var msg = $("#msg").val();
+	if(msg !='') {
+		alert($("#msg").val());
+	}
+})
+</script>      
 <!-- fileinput CSS -->
 <link href="<%=request.getContextPath()%>/css/fileinput.css" rel="stylesheet" >
 <!-- jQuery -->
@@ -28,7 +36,9 @@ $(window).load(function() {
 	var s2 ={'color':'#4F4F4F','background-color':'#F2EBE4',};
 	$('tr').css(s1).mouseover(function(){$(this).css(s2)}).mouseout(function(){$(this).css(s1)});	
         });
-</script>        
+</script>
+
+  
 <!-- Morris Charts JavaScript -->
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris.min.js"></script> --%>
 <%-- <script src="<%=request.getContextPath()%>/Backstage/js/plugins/morris/morris-data.js"></script> --%>
@@ -89,7 +99,7 @@ font-size:18px;
 
 </head>
 <body>
-	<!--top Navigation 導航-->
+	<!--top Navigation 導航-->				<input type="hidden"  id="msg"  value="${msg.msg}">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
@@ -184,15 +194,19 @@ font-size:18px;
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav side-nav">
 			<li class="active"><a href="<%=request.getContextPath()%>/Backstage/b_login.jsp"><i 	class="fa fa-fw fa-refresh"></i>管理系統</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-shopping-cart"></i>商品管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-plus-square"></i>療程管理</a></li>
-			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-newspaper-o"></i>會員管理</a></li>
+			
 			<li><a href="<%=request.getContextPath()%>/emp/GetAllEMP.jsp"><i class="fa fa-fw fa-users"></i>員工管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/appBack/get_all_app.jsp"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
+			
 			<li><a href="<%=request.getContextPath()%>/Backstage/Chatback.jsp"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-thumbs-o-up"></i>留言管理</a></li>
+			
+			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-shopping-cart"></i>商品管理</a></li>
 			<li><a href="<%=request.getContextPath()%>/Backstage/orders.jsp"><i class="fa fa-fw fa-credit-card"></i>訂單管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/procedures.jsp"><i class="fa fa-fw fa-plus-square"></i>療程管理</a></li>
+			<li><a href="<%=request.getContextPath()%>/Backstage/members.jsp"><i class="fa fa-fw fa-newspaper-o"></i>會員管理</a></li>
+					
 			<li>
 			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">

@@ -7,6 +7,7 @@ import group3.carrie.schedule.model.ScheduleVO;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -172,14 +173,18 @@ public class App_BackServlet extends HttpServlet {
 	}
 	
 	public static void main(String[] args) {
-		AppService AppSvc = new AppService();
-		List<AppVO> list = AppSvc.getAll();
-		for (AppVO a :list){
-			System.out.println(a.getAid());
-			System.out.println(a.getEmployeeVO().getEid());
-			System.out.println(a.getEmployeeVO().getName());
-			
-		}
+	 
+		
+		
+		
+//		AppService AppSvc = new AppService();
+//		List<AppVO> list = AppSvc.getAll();
+//		for (AppVO a :list){
+//			System.out.println(a.getAid());
+//			System.out.println(a.getEmployeeVO().getEid());
+//			System.out.println(a.getEmployeeVO().getName());
+//			
+//		}
 		
 //		
 //		MemberDAO mdao = new MemberDAO();

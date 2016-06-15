@@ -13,6 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>線上預約</title>
 <style>
 	a:link {
@@ -22,25 +23,29 @@
 	a:visited {
 		color:blue
 	}
+	textarea {
+  		resize : none;
+	}
 </style>
 </head>
 <body>
+<jsp:include page="/General/header.jsp"></jsp:include>
 <FORM METHOD="post" ACTION="${pageContext.request.contextPath}/apps/addapp" name="form1">
-<table width="1000px">
+<table width="1000px" align="center" height="600px">
 <tr>
-	<th colspan="2">線上預約</th>
+	<th colspan="2"><h1>線上預約</h1></th>
 </tr>
 <tr>
-	<td width="250px">預約目的</td>
+	<td width="150px">預約目的</td>
 	<td>
 <%-- 		<input type="radio" name="purpose" value="0" checked="checked" ${param.purpose == 0 ? 'checked' : ''}>預約新療程</input> --%>
 <%-- 		<input type="radio" name="purpose" value="1" ${param.purpose == 1 ? 'checked' : ''}>回診</input> --%>
 		<input type="radio" name="purpose" value="0" checked="checked">預約新療程</input>
-		<input type="radio" name="purpose" value="1">回診</input>
+		<input type="radio" name="purpose" value="1" style="margin-left: 30pt">回診</input>
 	</td>	
 </tr>
 <tr>
-	<td width="250px">預約時間</td>
+	<td width="150px">預約時間</td>
 	<td>
 		<a class='iframe' href="${pageContext.request.contextPath}/apps/showtime">選擇</a>
 		<span id="sel_app_time">${param.s_app_time}</span>
@@ -54,13 +59,15 @@
 <jsp:useBean id="procTypeSvc" scope="page" class="group3.carrie.proctype.model.ProcTypeService" />
 <tr id="proc1">
 <%-- 	<c:if test="${param.purpose != 1}"> --%>
-		<td width="250px">療程選擇</td>
+		<td width="150px">療程選擇</td>
 		<td>
+		<br>
 		<c:forEach var="procTypeVO" items="${procTypeSvc.all}">
-			<b>${procTypeVO.name}</b><br>
+			<h2>${procTypeVO.name}</h2><br>
 			<c:forEach var="procTypeVO1" varStatus="i" items="${procTypeVO.procs}">
 				<input type="checkbox" name="proc" value="${procTypeVO1.procedure_id}"/>${procTypeVO1.name}
 			</c:forEach>
+			<br>
 			<br>
 		</c:forEach>
 <%-- 	</c:if>	 --%>
@@ -68,19 +75,21 @@
 	</td>
 </tr>
 <tr>
-	<td width="250px">需求描述</td>
+	<td width="150px">需求描述</td>
 	<td>
-		<input name="descrip" type="textarea" value="${param.descrip}"></input>
+		<textarea rows="4" cols="50" name="descrip" value="${param.descrip}"></textarea>
+<%-- 		<input name="descrip" type="textarea" value="${param.descrip}"></input> --%>
 	</td>
 </tr>
 <tr>
 	<td colspan="2" align="center">
 		<input type="submit" value="確認送出"></input>
-		<input type="button" id="onekey" value="一鍵選擇時間"></input>
+		<input type="button" id="onekey" value="一鍵選擇時間" style="margin-left: 30pt"></input>
 	</td>
 </tr>
 </table>
 </FORM>
+	<jsp:include page="/General/footer.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
 <%-- <script src="${pageContext.request.contextPath}/js/jquery.colorbox-zh-TW.js"></script> --%>

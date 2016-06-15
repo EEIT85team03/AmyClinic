@@ -3,15 +3,12 @@ package group3.k.proc.controller;
 import group3.carrie.proc.model.ProcService;
 import group3.carrie.proc.model.ProcVO;
 import group3.carrie.proctype.model.ProcTypeVO;
-import group3.carrie.product.model.ProductService;
-import group3.carrie.product.model.ProductVO;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.sql.Blob;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,9 +16,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-
-import org.hibernate.Hibernate;
 
 @WebServlet("/Backstage/ProcServlet")
 public class ProcServlet extends HttpServlet {
@@ -33,6 +27,7 @@ public class ProcServlet extends HttpServlet {
     	System.out.println("doGet_ok");
 //    	res.setContentType("text/html; charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
+		res.setContentType("UTF-8");
 		String action = req.getParameter("action");
 		// ===================查詢一個商品類別=========================
 		if ("vPType_id".equals(action)) {
@@ -70,6 +65,8 @@ public class ProcServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("doPost_ok");
 		req.setCharacterEncoding("UTF-8");
+		res.setContentType("UTF-8");
+		res.setHeader("Content-Type", "text/html;charset=UTF-8");
 		String action = req.getParameter("action");
 		// ===================查詢一個療程=========================
 //		if ("getOne_For_Display".equals(action)) {
@@ -150,8 +147,15 @@ public class ProcServlet extends HttpServlet {
 				procVO = procSvc.addProc(name, pType_id, fee);
 				System.out.println("新增2");
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
+				Map<String,String> msg = new HashMap<String,String>();
+				req.setAttribute("msg", msg);
+				msg.put("msg", "新增成功");
 //				PrintWriter out = res.getWriter();
-//		          out.println("<script >$(function () { alert('演示一');});</script>");
+//				out.println("<script type=\"text/javascript\">");
+//			       out.println("alert('演示一');");
+//			       out.println("location='/Backstage/procedures.jsp';");
+//			       out.println("</script>");
+//		          out.println("<script >$(function () { alert('');});</script>");
 				String url = "/Backstage/procedures.jsp";
 
 				RequestDispatcher successView = req.getRequestDispatcher(url);
@@ -217,6 +221,9 @@ public class ProcServlet extends HttpServlet {
 				System.out.println("修改執行");
 				/*************************** 3.新增完成,準備轉交(Send the Success view) ***********/
 				String url = "/Backstage/procedures.jsp";
+				Map<String,String> msg = new HashMap<String,String>();
+				req.setAttribute("msg", msg);
+				msg.put("msg", "修改成功");
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("修改成功");
@@ -239,7 +246,10 @@ public class ProcServlet extends HttpServlet {
 				System.out.println(procedure_id);
 				
 				ProcService procSvc = new ProcService();
-				procSvc.deleteProc(procedure_id);				
+				procSvc.deleteProc(procedure_id);			
+				Map<String,String> msg = new HashMap<String,String>();
+				req.setAttribute("msg", msg);
+				msg.put("msg", "刪除成功");
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("刪除成功");

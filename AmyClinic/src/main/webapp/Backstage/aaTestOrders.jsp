@@ -11,7 +11,7 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 <link rel='stylesheet' href='${pageContext.request.contextPath}/css/lobibox.min.css'>
-
+<script src='${pageContext.request.contextPath}/js/lobibox.min.js'></script>	
 </head>
 <body>
 
@@ -37,86 +37,8 @@
 			</tbody>
 </table>
 
-<script src='${pageContext.request.contextPath}/js/lobibox.min.js'></script>	
+
 <script>
-function getContextPath() { //obtains context path. EL doesn't work with separated .js
-		return window.location.pathname.substring(0, window.location.pathname.indexOf('/',2));
-	}
-
-function showORhide(count) {
-	var item = $('#item'+count);
-	var bt = $('#showbt'+count);
-	console.log(count);
-	console.log(item.css('display'));
-	if(item.css('display')=='none'){
-		item.slideDown();
-		console.log('1111111111');
-		bt.val('-');
-	} else {
-		item.slideUp();
-		console.log('22222222222');
-		bt.val('+');
-	}
-}
-function cancel(oid){
-	console.log("aaa");
-	console.log(oid);
-
-//	function cancel(oid,odate,total,ostatus,payment,del_status){
-var odate = $('.odate').val();
-var total=$('.total').val();
-var ostatus=$('#ostatus option:selected').val();
-var payment=$('#payment option:selected').val();
-var del_status=$('#del_status option:selected').val();
-if(confirm('確認更新訂單？')) {
-	$.ajax({
-		'type':'post',
-		'url': getContextPath()+'/Backstage/updateOrder',
-//			'data':{'oid' : oid},
-//				'data':{'oid' : oid,'ostatus':ostatus,'payment':payment,'del_status':del_status},
-		'data':{'oid' : oid,'odate':odate,'total':total,'ostatus':ostatus,'payment':payment,'del_status':del_status},
-		'success':function(data){
-			alert('更新成功');
-		console.log('123');
-		location.reload();
-
-		}
-	})
-}
-}
-
-// 	Lobibox.confirm({
-// 		title: '請確認',
-// 		msg: '確認更新訂單？',
-// 		callback: function ($this, type, ev) {
-// 		    if(type == 'yes') {
-// 		    	$.ajax({
-// 					'type':'post',
-// 					'url': getContextPath()+'/Backstage/updateOrder',
-// //						'data':{'oid' : oid},
-// //							'data':{'oid' : oid,'ostatus':ostatus,'payment':payment,'del_status':del_status},
-// 					'data':{'oid' : oid,'odate':odate,'total':total,'ostatus':ostatus,'payment':payment,'del_status':del_status},
-// 					'success':function(data){
-// 						alert('更新成功');
-// 					console.log('123');
-// 					location.reload();
-// //							Lobibox.notify( {
-// //								size: 'mini',
-// //								title: '更新完成',
-// //								delay: 1000,
-// //								delayIndicator: false,
-// //								sound: false,
-// //								position: 'center top'
-// //								});
-// //							 window.setTimeout(function(){
-// //								 window.location.reload();
-// //								 }, 1500);
-// 					}
-// 				});
-// 		    } else {}
-// 		}
-// 		});
-
 	$(function(){
 		console.log('1');
 		$.getJSON('${pageContext.request.contextPath}/Backstage/updateOrder',{'action':'getAll'},function(data){
@@ -136,7 +58,7 @@ var cell4 = $("<td></td>").html("<select id='ostatus"+i+"'><option value='0'>訂
 // }
 var cell5 = $("<td></td>").html("<select id='payment"+i+"'><option value='0'>未付款</option><option value='1'>已付款</option></select>");
 var cell6 = $("<td></td>").html("<select id='del_status"+i+"'><option value='0'>處理中</option><option value='1'>已出貨</option><option value='2'>已送達</option></select>");
-var cell7 = $("<td></td>").html("<form name='f"+i+"' action='${pageContext.request.contextPath}/Backstage/updateOrder'><input type='hidden' name='oid' value='"+ordersVO.oid+"'><input type='hidden' id='ostatus_"+i+"' name='ostatus' value='"+ordersVO.ostatus+"'><input type='hidden' id='payment_"+i+"' name='payment' value='"+ordersVO.payment+"'><input type='hidden' id='del_status_"+i+"' name='del_status' value='"+ordersVO.del_status+"'><input type='hidden' name='action' value='upDate'><input type='submit' value='修改' class='btn btn-success' onClick='cancel("+ordersVO.oid+")'></form>");
+var cell7 = $("<td></td>").html("<form name='f"+i+"' action='${pageContext.request.contextPath}/Backstage/updateOrder'><input type='hidden' name='oid' value='"+ordersVO.oid+"'><input type='hidden' id='ostatus_"+i+"' name='ostatus' value='"+ordersVO.ostatus+"'><input type='hidden' id='payment_"+i+"' name='payment' value='"+ordersVO.payment+"'><input type='hidden' id='del_status_"+i+"' name='del_status' value='"+ordersVO.del_status+"'><input type='hidden' name='action' value='upDate'><input type='submit' value='修改' class='btn btn-success'></form>");
 // var cell7 = $("<td></td>").html("<input type='button'  class='btn btn-success'  value='更新' onclick='cancel("+ordersVO.oid+")'>")	
 // var cell8 = $("<input type='hidden' class='odate'value=''>").val(ordersVO.odate);
 // var cell81 = $("<input type='hidden' class='total' value=''>").val(ordersVO.total);
@@ -181,17 +103,77 @@ $("#del_status"+i).change(function(){
 		})
 	})
 	
-// 		$(function(){
-// 			$('#query').click(function(){
-// 				var name = $('#for_name').val();
-// 				window.location.href = getContextPath()+'/shoppings/showorderbyname?name='+name;
-				
-// 			})
-			
-			
-// 		})
-		
 	
+	
+	
+		$(function(){
+			$('#query').click(function(){
+				var name = $('#for_name').val();
+				window.location.href = getContextPath()+'/shoppings/showorderbyname?name='+name;
+				
+			})
+			
+			
+		})
+		
+		function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	 		return window.location.pathname.substring(0, window.location.pathname.indexOf('/',2));
+ 		}
+		
+		function showORhide(count) {
+			var item = $('#item'+count);
+			var bt = $('#showbt'+count);
+			console.log(count);
+			console.log(item.css('display'));
+			if(item.css('display')=='none'){
+				item.slideDown();
+				console.log('1111111111');
+				bt.val('-');
+			} else {
+				item.slideUp();
+				console.log('22222222222');
+				bt.val('+');
+			}
+		}
+		function cancel(oid){
+// 		function cancel(oid,odate,total,ostatus,payment,del_status){
+	var odate = $('.odate').val();
+	var total=$('.total').val();
+	var ostatus=$('#ostatus option:selected').val();
+	var payment=$('#payment option:selected').val();
+	var del_status=$('#del_status option:selected').val();
+			Lobibox.confirm({
+				title: '請確認',
+				msg: '確認更新訂單？',
+				callback: function ($this, type, ev) {
+				    if(type == 'yes') {
+				    	$.ajax({
+							'type':'post',
+							'url': getContextPath()+'/Backstage/updateOrder',
+// 							'data':{'oid' : oid},
+// 								'data':{'oid' : oid,'ostatus':ostatus,'payment':payment,'del_status':del_status},
+							'data':{'oid' : oid,'odate':odate,'total':total,'ostatus':ostatus,'payment':payment,'del_status':del_status},
+							'success':function(data){
+								alert('更新成功');
+							console.log('123');
+// 							location.reload();
+// 								Lobibox.notify( {
+// 									size: 'mini',
+// 									title: '更新完成',
+// 									delay: 1000,
+// 									delayIndicator: false,
+// 									sound: false,
+// 									position: 'center top'
+// 									});
+// 								 window.setTimeout(function(){
+// 									 window.location.reload();
+// 									 }, 1500);
+							}
+						});
+				    } else {}
+				}
+				});
+		}	
 		</script>
 	 </div><!-- 		all -->
 </body>

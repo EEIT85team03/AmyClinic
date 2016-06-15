@@ -45,7 +45,7 @@
 }
 
 
-body{background: #eee url(http://subtlepatterns.com/patterns/sativa.png);}
+body{background: #eee url(${pageContext.request.contextPath}/images/sativa.jpg);}
 html,body{
     position: relative;
     height: 100%;
@@ -191,7 +191,7 @@ html,body{
 <body>
 
 
-
+<!-- <h2 align="center">AAAAAAAAAAA</h2> -->
 
 <div class="container">
 	<div class="login-container">
@@ -205,7 +205,7 @@ html,body{
 <!--                     <a href='' onclick="javascript:OpenLink('http://localhost:8081/AmyClinic/empLogin/AddEMP.jsp'); return false;">新增員工</a> -->
  						<a href='${pageContext.request.contextPath}\empLogin/AddEMP.jsp'>新增員工</a>
 <!--                        <a href="" class="text-primary" data-toggle="modal" data-target="#addemp">Addemp</a> -->
-<!--                       <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a> -->
+                      <a href="#" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
 <%--                     <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a> --%>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
@@ -250,85 +250,8 @@ html,body{
   </div>
   
 </div>
-
-<!-- =========================新增員工dialog============================== -->
  
- <div class="container">
-   <!-- Modal -->
-  <div class="modal fade" id="addemp" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">新增員工</h4>
-        </div>
-        <div class="modal-body">
- 
-  <form action="emp.do" method="post" role="form" id="addempform" enctype="multipart/form-data">
   
-      <div class="form-group">
-      <label class=" " for="name">員工姓名:</label>
-      <input type="text" class= "form-control" name="name" id="name"  placeholder="name">
-    </div>
-    
-    <div class="form-group">
-      <label class=" " for="pwd1">密碼:</label>
-      <input type="password" class="form-control" name="pwd" id="pwd1" placeholder="">
-    </div>
-    
-    <div class="form-group">
-      <label class=" " for="pwd">請重新輸入密碼:</label>
-      <input type="password" class="form-control" name="pwd2" id="pwd2" equalTo="#pwd" placeholder="" >
-    </div>
-    
-     <div class="form-group"  >
-      <label class=" " id="maillab" for="regmail">電子信箱:</label> 
-      <input type="mail" class="form-control" name="regmail" id="regmail" placeholder="" >
-    </div>
-    
-     <div class="form-group">
-      <label class=" " for="edu">教育程度:</label>
-      <input type="text" class="form-control" name="edu" id="edu" placeholder="" > 
-    </div>
-   
-	<div class="form-group">
-      <label class=" " for="exp">經歷:</label>
-      <input type="text" class="form-control" name="exp" id="exp" placeholder="" >
-    </div>
-    
-    <div class="form-group">
-      <label class=" " for="spec">專長:</label>
-      <input type="text" class="form-control" name="spec" id="spec" placeholder="" >
-    </div>
-    
-    <div class="form-group">
-  <label class="" for="photo">照片</label>
-    <input id="filebutton" name="photo" class="input-file" type="file">
-     
-</div>
-    <div class="form-group">
-<button type="submit"  id="addsub" class="btn btn-default">送出</button>
-<input type="hidden" name="action" value="insert">
-   </div>
-  </form>
-    </div>
-        <div class="modal-footer">
-         
-          <button type="button"  class="btn btn-default" data-dismiss="modal">取消</button>
-        </div>
-      </div>
-   
-    </div>
-  </div>
-  
-</div>
- 
- 
- 
- 
-
 
 
 
