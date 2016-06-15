@@ -63,6 +63,7 @@ public class updateOrder extends HttpServlet {
 		String jsonString = JSONValue.toJSONString(l1);
 		out.println(jsonString);
 		out.close();
+		return;
 		}
 //-------upDate-----------------------------------------------------------------------------		
 		if ("upDate".equals(action)){
@@ -80,8 +81,12 @@ public class updateOrder extends HttpServlet {
 		System.out.println("編號 :"+oid+"訂單狀態 :"+ostatus+"付款狀態 :"+payment+"配送狀態 :"+del_status);		
 //		System.out.println("編號 :"+oid+"日期 :"+odate+"總金額 :"+total+"訂單狀態 :"+ostatus+"付款狀態 :"+payment+"配送狀態 :"+del_status);		
 		ordersService.updateOrders(ordersVO);	
+		Map<String,String> msg = new HashMap<String,String>();
+		req.setAttribute("msg", msg);
+		msg.put("msg", "修改成功");
 		System.out.println("修改-成功");
-		res.sendRedirect(req.getContextPath()+"/Backstage/aaTestOrders.jsp");
+		res.sendRedirect(req.getContextPath()+"/Backstage/orders.jsp");
+		return;
 		}
 	}
 }
