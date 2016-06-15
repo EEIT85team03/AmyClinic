@@ -153,7 +153,7 @@ public class ProcServlet extends HttpServlet {
 //				PrintWriter out = res.getWriter();
 //		          out.println("<script >$(function () { alert('演示一');});</script>");
 				String url = "/Backstage/procedures.jsp";
-			
+
 				RequestDispatcher successView = req.getRequestDispatcher(url);
 				successView.forward(req, res);
 				System.out.println("新增3-成功");

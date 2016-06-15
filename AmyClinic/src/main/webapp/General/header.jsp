@@ -19,12 +19,11 @@
 </script>
 <span class="fb-like" data-width="450" data-show-faces="true" data-layout="button"></span>
 <div id="headerbox">
-	<a href="${pageContext.request.contextPath}/index.jsp">
 	<div id="banner">
-		<h1>			
-		</h1>
-		<p></p>
-	</div></a>
+	<a href="${pageContext.request.contextPath}/index.jsp">	
+	<img src="${pageContext.request.contextPath}/General/img/img04.jpg" alt="">
+	</a>
+	</div>
 	<hr />
 	<div id="header">
 	<div id="menu">
@@ -40,7 +39,7 @@
 					<li class='last'><a href='#'><span>革命民權</span></a></li>
 				</ul></li>
 			<li><a href="#">最新消息</a></li>
-			<li class='has-sub'><a href="#">會員專區</a>
+			<li class='has-sub'><a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
 				<ul>
 					<li class='has-sub'><a href='#'><span>民生主義</span></a>
 						<ul>
@@ -69,7 +68,7 @@
 							<li class='last'><a href='#'><span>知難行易</span></a></li>
 						</ul></li>
 				</ul></li>
-			<li class='has-sub'><a href="#">服務項目</a>
+			<li class='has-sub'><a href="${pageContext.request.contextPath}/app/add_app.jsp">服務項目</a>
 				<ul>
 					<li class='has-sub'><a href='#'><span>總統府</span></a>
 						<ul>

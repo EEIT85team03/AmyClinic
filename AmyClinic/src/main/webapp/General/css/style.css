@@ -84,7 +84,7 @@ hr {
 
 #menu a:hover {
 	/* 	text-decoration: underline;  */
-	height: 21px;
+/* 	height: 21px; */
 	/* 	background: #FEC200 url(../img/img02.jpg) repeat-x left top; */
 	background: #FEC200;
 	color: #FFFFFF;
@@ -95,7 +95,8 @@ hr {
 	width: 760px;
 	height: 45px;
 	font-size: 13px;
-	float: left;
+/* 	float: left; */
+	margin: 0 auto;
 }
 
 #menu>ul, #menu>ul li, #menu>ul ul {
@@ -296,7 +297,7 @@ hr {
 	width: 860px;
 	height: 134px;
 	margin: 0 auto;
-	background: url(../img/img04.jpg) no-repeat right top;
+/* 	background: url(../img/img04.jpg) no-repeat right top; */
 }
 
 #banner h1, #banner p {

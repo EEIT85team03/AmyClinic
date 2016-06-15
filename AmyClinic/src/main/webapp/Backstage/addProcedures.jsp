@@ -90,9 +90,9 @@ pageContext.setAttribute("proctype", proctype);
 		</c:forEach>
 	</ul>
 </c:if>
-<c:if test="${empty errorMsg}">
-	<script >$(function () { alert("新增療程成功");});</script>
-</c:if>
+<%-- <c:if test="${empty errorMsg}"> --%>
+<!-- 	<script >$(function () { alert("新增療程成功");});</script> -->
+<%-- </c:if> --%>
 </div>
 <!--         結束 -->
 </div><!-- /#page-wrapper --><!-- ALL over	/#wrapper -->   
