@@ -322,7 +322,7 @@ $(function() {
                 } else {
                     //remove success mesage replaced with error message
                     $("#output").removeClass(' alert alert-success');
-                    $("#output").addClass("alert alert-danger animated fadeInUp").html("sorry enter a username ");
+                    $("#output").addClass("alert alert-danger animated fadeInUp").html("帳號錯誤");
                 }
                 //console.log(textfield.val());
 				

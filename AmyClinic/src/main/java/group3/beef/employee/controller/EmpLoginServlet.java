@@ -193,6 +193,7 @@ public class EmpLoginServlet extends HttpServlet {
 		// ======================驗證重設信============================
 
 		if ("reset".equals(action)) {
+			System.out.println("call reset");
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
 			String mail = req.getParameter("mail");
@@ -200,7 +201,6 @@ public class EmpLoginServlet extends HttpServlet {
 			try {
 				EmployeeService eSvc = new EmployeeService();
 				EmployeeVO empVO = eSvc.findEmpByMail(mail);
-				String ctx = req.getContextPath();
 				boolean check = GenerateLinkUtils.verifyCheckcode(empVO,
 						checkCode);
 				// System.out.println(check);
@@ -217,19 +217,20 @@ public class EmpLoginServlet extends HttpServlet {
 				}
 				if (!errorMsg.isEmpty()) {
 					RequestDispatcher failureView = req
-							.getRequestDispatcher("/empLogin/reset_pw.jsp");
+							.getRequestDispatcher("/empLogin/login.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 			} catch (Exception e) {
 				RequestDispatcher rd = req
-						.getRequestDispatcher("/empLogin/reset_pw.jsp");
+						.getRequestDispatcher("/empLogin/login.jsp");
 				rd.forward(req, res);
 			}
 
 		}
 		// ======================變更密碼============================
 		if ("change_pw".equals(action)) {
+			System.out.println("call change_pw");
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);
 			try {
@@ -252,7 +253,7 @@ public class EmpLoginServlet extends HttpServlet {
 					}
 				} else {
 					PrintWriter out = res.getWriter();
-					out.println("認證信已失效，請重新發送");
+					out.println("fail");
 				}
 				AES_Encryption AES = new AES_Encryption();
 
@@ -287,8 +288,10 @@ public class EmpLoginServlet extends HttpServlet {
 						exp, spec);
 				session.removeAttribute("empVO");
 				PrintWriter out = res.getWriter();
-				out.println("密碼更新成功，請重新登入");
-				out.println("<a href='http://localhost:8081/AmyClinic//Backstage/login.jsp'>返回登入頁</a><br>");
+				System.out.println("密碼更新成功");
+				out.println("success");
+//				out.println("<a href='http://localhost:8081/AmyClinic//Backstage/login.jsp'>返回登入頁</a><br>");
+				//out.println("success");
 				return;
 
 			} catch (Exception e) {
