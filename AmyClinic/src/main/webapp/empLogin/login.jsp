@@ -242,7 +242,7 @@ $("#pwdlog").keypress(function(e){
 
 //====================確認帳號是否存在==================================
 $(function(){
-	$('#remail').blur(function(){
+	$('#remail').keyup(function(){
 		var regmail = $('#remail').val();
 		$.ajax({
 			'type':'post',
