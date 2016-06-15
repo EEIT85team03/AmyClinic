@@ -204,15 +204,18 @@ public class EmpLoginServlet extends HttpServlet {
 					failureView.forward(req, res);
 					return;
 				} else {
+					System.out.println("帳號比對失敗");
 					errorMsg.add("認證碼錯誤");
 				}
 				if (!errorMsg.isEmpty()) {
+					System.out.println("帳號比對失敗");
 					RequestDispatcher failureView = req
 							.getRequestDispatcher("/empLogin/login.jsp");
 					failureView.forward(req, res);
 					return;
 				}
 			} catch (Exception e) {
+				System.out.println("帳號比對失敗");
 				RequestDispatcher rd = req
 						.getRequestDispatcher("/empLogin/login.jsp");
 				rd.forward(req, res);
