@@ -12,8 +12,17 @@
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
-<script src="<%=request.getContextPath()%>/js/bootstrap.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <style type="text/css">
+body{ 
+ background-image: url("images/home07.jpg"); }
+#header{
+background-color: #AE00AE;
+}
+#banner{
+width: 1020px;
+}
+#LoginBoxText p a{color: white;}
 .img{width: 800px; height: 500px;}
 a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
@@ -37,10 +46,24 @@ a:hover {
 }
 font{
 font-family: myfont;
+background-color: #fff;
 }
+#footer {
+	width: 100%;
+	background-color: #AE00AE;
+ 	padding-top: 0px; 
+}
+#footer-bgcontent {
+ 	height: 0px; 
+	background-color: #AE00AE;
+
+}
+.imgmsg{
+font-size: 40px;
+} 
 </style>
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
-<title>首頁</title>
+<title>愛美首頁</title>
 </head>
 <body>
 	<!-- facebook script -->
@@ -50,7 +73,7 @@ font-family: myfont;
 	<s:include value="/General/header.jsp"></s:include>
 	<center>
 <h1 ><font color=#FF8000 class='fa fa-smile-o'  >麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1><br>
-<img src="${pageContext.request.contextPath}/images/logo.jpg" class="img-circle"> 
+<%-- <img src="${pageContext.request.contextPath}/images/logo.jpg" class="img-circle">  --%>
 </center>
 <div class="container-fluid">
 <div class="row-fluid">
@@ -64,7 +87,7 @@ font-family: myfont;
                     <a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" title=""  class='img'></a>
                 </div>                            
                 <div class="caption row-fluid">
-                    <div class="span4"><center><font color=#FF8000 >台灣醫學美容高級品牌</font></center></div>                	               	
+                    <div class="span4"><center><font class='imgmsg' color=#FF8000 >臨行密密縫，意恐遲遲歸</font></center></div>                	               	
                 </div>                                                       
             </div><!-- /Slide1 --> 
 
@@ -73,7 +96,7 @@ font-family: myfont;
                     <a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" title="" class='img'></a>
                 </div>                        
                 <div class="caption row-fluid">
-                    <div class="span4"><center><font color=#FF8000>給您貴婦般的奢華體驗 </font></center></div>                	
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>執手相看淚眼，竟無語凝噎</font></center></div>                	
                 </div>                                                        
             </div><!-- /Slide2 -->             
 
@@ -82,10 +105,37 @@ font-family: myfont;
                     <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" title="" class='img'></a>
                 </div>                            
                 <div class="caption row-fluid">
-                    <div class="span4"><center><font color=#FF8000>充滿設計感的櫃檯</font></center></div>                                                       
-            </div>                    
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>桃花潭水深千尺，不及汪倫送我情</font></center></div>                                                       
+            </div>                         
         </div><!-- /Slide3 -->  
-                              
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home04.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>國際級醫學美容高級品牌</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide4 -->  
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home05.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>給您貴婦般的奢華體驗</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide5 -->  
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home06.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>充滿設計感的櫃檯</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide6 -->  
+                             
     </div><!-- /#myCarousel -->
         
 </div><!-- /.span12 -->          
@@ -94,7 +144,7 @@ font-family: myfont;
 <script type="text/javascript">// Carousel Auto-Cycle
   $(document).ready(function() {
     $('.carousel').carousel({
-      interval: 2000
+      interval: 3000
     })
   });
 </script>
@@ -161,7 +211,9 @@ font-family: myfont;
 	}
 
 	</script>
-	<jsp:include page="/General/footer.jsp" />
-<%-- 	<s:include value="/General/footer.jsp"></s:include> --%>
+	
+<%-- 	<jsp:include page="/General/footer.jsp" /> --%>
+	<s:include value="/General/footer.jsp"></s:include>
+
 </body>
 </html>

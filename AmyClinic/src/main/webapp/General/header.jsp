@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/General/img/logo.ico" />
+<style>
+span{
+font-family: myfont;
+}
+</style>
 <script> 
   window.fbAsyncInit = function() {
     FB.init({
@@ -28,18 +33,20 @@
 	</div>
 	<hr />
 	<div id="header">
+	
 	<div id="menu">
 		<ul>
-			<li class='has-sub'><a href="${pageContext.request.contextPath}/index.jsp">愛美首頁</a></li>
-			<li class='has-sub'><a href="#">關於愛美</a>
+			<li class='has-sub'><a href="${pageContext.request.contextPath}/index.jsp"><span>愛美首頁</span></a></li>
+			<li class='has-sub'><a href="#"><span>關於愛美</span></a>
 				<ul>
-					<li class='last'><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
-					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表及醫師介紹</span></a></li>
+					<li class='last'><a href='${pageContext.request.contextPath}/free/showophr'><span>醫師介紹</span></a></li>
+					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表</span></a></li>
+					
 				</ul>
 			</li>
-			<li><a href="#">美麗訊息</a></li>
+			<li><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
 			
-			<li class='has-sub'><a href="#">美麗項目</a>
+			<li class='has-sub'><a href="#"><span>美麗項目</span></a>
 				<ul>
 					<li class='has-sub'><a href='#'><span>整形手術</span></a>
 						<ul>
@@ -78,11 +85,13 @@
 							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=24'><span>無痕植髮</span></a></li>
 						</ul></li>
 				</ul></li>
-			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp">變美預約</a></li>
-			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">美麗購物</a></li>
+			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp"><span>變美預約</span></a></li>
+			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp"><span>美麗購物</span></a></li>
 <%-- 			<li class='has-sub'><a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a></li> --%>
+
 			
-				<li class='has-sub'><a href="#">美麗會員</a>
+			
+				<li class='has-sub'><a href="#"><span>美麗會員</span></a>
 				<ul>
 					<li class='last'><a href="${pageContext.request.contextPath}/app/query_app.jsp" ><span>查詢預約</span></a></li>
 					<li><a href="${pageContext.request.contextPath}/shoppings/showorder" ><span>查詢訂單</span></a></li>
@@ -90,7 +99,7 @@
 				</ul>
 			</li>
 			
-			<li><a href="${pageContext.request.contextPath}/ChatClient.jsp">美麗諮詢</a></li>
+<%-- 			<li><a href="${pageContext.request.contextPath}/ChatClient.jsp">美麗諮詢</a></li> --%>
 		</ul>
 	</div>
 <!-- 	<div id="search"> -->
@@ -101,5 +110,6 @@
 <!-- 			</fieldset> -->
 <!-- 		</form> -->
 <!-- 	</div> -->
+<jsp:include page="/General/mySpace.jsp" />
 </div>
 </div>

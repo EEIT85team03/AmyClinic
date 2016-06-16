@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <div id="mySpace">
-	<a href="${pageContext.request.contextPath}/login/login.jsp"><img
-		src="${pageContext.request.contextPath}/General/img/logo.jpg" alt=""
-		id="logo"></a>
+
+<%-- 	<a href="${pageContext.request.contextPath}/login/login.jsp"> --%>
+	<a href="${pageContext.request.contextPath}/ChatClient.jsp">
+	<img src="${pageContext.request.contextPath}/General/img/logo.jpg" alt="愛美小天使"   id="logo">
+	<h1 ><font color=#FF8000 class='fa fa-smile-o'  >美麗諮詢</font></h1>
+	</a>
+	
 </div>
 
 <script>
