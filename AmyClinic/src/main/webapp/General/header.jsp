@@ -30,16 +30,16 @@
 	<div id="header">
 	<div id="menu">
 		<ul>
-			<li class='has-sub'><a href="${pageContext.request.contextPath}/index.jsp">首頁</a></li>
-			<li class='has-sub'><a href="#">關於我們</a>
+			<li class='has-sub'><a href="${pageContext.request.contextPath}/index.jsp">愛美首頁</a></li>
+			<li class='has-sub'><a href="#">關於愛美</a>
 				<ul>
 					<li class='last'><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
 					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表及醫師介紹</span></a></li>
 				</ul>
 			</li>
-			<li><a href="#">最新消息</a></li>
+			<li><a href="#">美麗訊息</a></li>
 			
-			<li class='has-sub'><a href="#">服務項目</a>
+			<li class='has-sub'><a href="#">美麗項目</a>
 				<ul>
 					<li class='has-sub'><a href='#'><span>整形手術</span></a>
 						<ul>
@@ -78,11 +78,11 @@
 							<li class='last'><a href='#'><span>無痕植髮</span></a></li>
 						</ul></li>
 				</ul></li>
-			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp">線上預約</a></li>
-			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">線上購物</a></li>
+			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp">變美預約</a></li>
+			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">美麗購物</a></li>
 <%-- 			<li class='has-sub'><a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a></li> --%>
 			
-				<li class='has-sub'><a href="#">會員專區</a>
+				<li class='has-sub'><a href="#">美麗會員</a>
 				<ul>
 					<li class='last'><a href="${pageContext.request.contextPath}/app/query_app.jsp" ><span>查詢預約</span></a></li>
 					<li><a href="${pageContext.request.contextPath}/shoppings/showorder" ><span>查詢訂單</span></a></li>
@@ -90,7 +90,7 @@
 				</ul>
 			</li>
 			
-			<li><a href="${pageContext.request.contextPath}/ChatClient.jsp">專員諮詢</a></li>
+			<li><a href="${pageContext.request.contextPath}/ChatClient.jsp">美麗諮詢</a></li>
 		</ul>
 	</div>
 <!-- 	<div id="search"> -->
