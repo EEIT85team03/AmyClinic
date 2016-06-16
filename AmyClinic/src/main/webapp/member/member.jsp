@@ -38,9 +38,9 @@ response.setDateHeader("Expires", 0);
     <div class="circle bottom right"></div>   
 <section id="section-bar-1">
     <div class="flag">Hello your user majesty!</div>
-    <div class="corner-ribbon corner-ribbon-left-top"><span>NEW</span></div>
-    <div class="corner-ribbon corner-ribbon-right-top"><span>NEW</span></div>
-  <h1 class="Hello-banner">&bull; Keep in Touch &bull;</h1>
+    <div class="corner-ribbon corner-ribbon-left-top"><span>AMY</span></div>
+    <div class="corner-ribbon corner-ribbon-right-top"><span>AMY</span></div>
+  <h1 class="Hello-banner">&bull; ${memberVO.name} &bull;</h1>
   <div class="icon_wrapper"></div>
   <div class="underline"></div>
   <form action="#" method="post" id="contact_form">
@@ -52,7 +52,7 @@ response.setDateHeader("Expires", 0);
     <br>
     <div class="name">
       <label for="name"></label>
-      <input type="text" placeholder="My name is" name="name" id="name_input" required>
+      <input type="text" placeholder="上次訪問：${memberVO.last_visit}" name="name" id="name_input" required readonly>
     </div>
     <div class="email">
       <label for="email"></label>

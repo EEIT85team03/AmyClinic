@@ -58,7 +58,7 @@ p {
 	        	<p>${memberVO.name}!</p>
 				<p>
 					<a href="#" onclick="logout();" id="logoutbutton">Sign out</a> | 
-					<a href="${pageContext.request.contextPath}/member/editprofile.action">Profile</a>
+					<a href="${pageContext.request.contextPath}/member/member.jsp">Profile</a>
 				</p>
 			</div>				 
 		</c:when>

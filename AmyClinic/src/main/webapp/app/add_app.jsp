@@ -132,9 +132,11 @@
 		$('input[name="id"]').val('1123');
 		$('#errortime').empty();
 	})
+
 	$("#onefordes").click(function(){
 		$('#descr').text('覺得自己太胖了，想要抽個脂，鼻子好像也不夠挺...');
 	})
+
     $( 'input[type="submit"]' ).click(function( event ) {
     	if($("#toggle-01").prop("checked"))
     	  $("#purpose").val('0');
