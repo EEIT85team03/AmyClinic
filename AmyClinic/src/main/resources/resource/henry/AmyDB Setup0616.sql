@@ -479,8 +479,8 @@ INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1015');
 --4月k
 
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-5-24' , '早診' , '2' , '整形手術' );
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','2','2016-5-24','早診','整形手術','1','5');
-INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','3','2016-5-24','早診','整形手術','1','5');--1
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1000','1','2016-5-24','早診','整形手術','1','5');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1001','1','2016-5-24','早診','整形手術','1','5');--1
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('21','1016');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1017');
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-5-24' , '午診' , '3' , '整形手術' );
