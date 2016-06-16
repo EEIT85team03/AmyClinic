@@ -9,6 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Account Details</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <style>
@@ -53,6 +54,8 @@ I am editprofile.jsp! <hr>
 		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
 	</c:otherwise>
 </c:choose>	
+<br>
+<a class='iframe' href="${pageContext.request.contextPath}/login/editphoto.jsp">修改照片</a>
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
@@ -189,6 +192,7 @@ I am editprofile.jsp! <hr>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 <!-- required for .datepicker() -->
@@ -205,6 +209,13 @@ I am editprofile.jsp! <hr>
 <script>
 	var gender = $(".membergender").val()=="M" ?"Male":"Female";
 	$(".membergender").text(gender);
+	$(".iframe").colorbox({
+		iframe:true,
+		width:"80%",
+		height:"80%",
+		overlayClose:false,
+		escKey:false
+	});
 </script>
 
 </body>

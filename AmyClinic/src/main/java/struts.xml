@@ -61,12 +61,24 @@
             </interceptor-ref>                                                                <!-- 如以上兩者皆設限制的話，則必需兩者皆允許的才能上傳， 而檔案型態則會優先做錯誤提示 -->
             <interceptor-ref name="EncPw" />                                                 <!-- 指定預設攔截器堆疊 -->
             <param name="saveDirectory">\user_photo</param>                                    <!-- 自訂上傳的目地目錄 -->
-            <result name="success">/register/regsuccess.jsp</result>
+            <result name="success">/login/success.jsp</result>
             <result name="input">/register/register.jsp</result>
         </action>
         <action name="reset" class="group3.henry.login.controller.ResetPassAction" method="resetPass">
             <result name="success">/login/verify.jsp</result>
             <result name="input">/login/resetpw.jsp</result>
+        </action>
+        <action name="updatephotos" class="group3.henry.login.controller.EditProfileAction" method="updatePhoto">
+           <interceptor-ref name="fileUpload">                                                <!-- 設定檔案上傳攔截器 -->
+                <param name="maximumSize">2000000</param>                                      <!-- 限制上傳單個檔案的大小，以byte為單位 -->
+                <param name="allowedTypes">image/gif,image/jpeg,image/png</param>            <!-- 限制上傳檔案的檔案型態，以逗號(,)隔開 -->
+                <param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>                  <!-- 限制上傳檔案的延伸檔名，以逗號(,)隔開 -->
+            </interceptor-ref>    
+            <interceptor-ref name="EncPw" />                                                            <!-- 如以上兩者皆設限制的話，則必需兩者皆允許的才能上傳， 而檔案型態則會優先做錯誤提示 -->
+            <param name="saveDirectory">/user_photo</param>
+            <result>/login/updphosuccess.jsp</result>
+            <result name="updated">/login/verify.jsp</result>
+            <result name="input">/login/editphoto.jsp</result>
         </action>
     </package>
     <!-- ************************* -->
