@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/login/css/recover.css"
 	rel="stylesheet">
-<title>Recover Password</title>
+<title>找回密碼</title>
 </head>
 <body>
 或者使用電子郵件聯絡我們<hr>

@@ -22,7 +22,7 @@
 	padding-right:10px;
 /* 	background-color: grey; */
 	height: auto;
-/* 	width: 200px; */
+/*	width: 200px; */
 
 	color: red;
 /* 	dispaly: inline-block; */
@@ -55,20 +55,20 @@ p {
 				</c:otherwise>
 			</c:choose>
 			<div id="LoginBoxText"> 
-	        	<p>${memberVO.name}!</p>
+	        	<p>${memberVO.name}，您好！</p>
 				<p>
-					<a href="#" onclick="logout();" id="logoutbutton">Sign out</a> | 
-					<a href="${pageContext.request.contextPath}/member/member.jsp">Profile</a>
+					<a href="#" onclick="logout();" id="logoutbutton">登出</a> | 
+					<a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
 				</p>
 			</div>				 
 		</c:when>
 		<c:otherwise>
 			<img id="userphoto" src='${pageContext.request.contextPath}/web/images/anon.jpg' >
 			<div id="LoginBoxText">
-	        	<p>Welcome, Guest!</p>
+	        	<p>訪客，您好！</p>
 				<p>
-					<a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> |
-					<a href="${pageContext.request.contextPath}/register/register.jsp">Sign up!</a>
+					<a href="${pageContext.request.contextPath}/login/login.jsp">登入</a> |
+					<a href="${pageContext.request.contextPath}/register/register.jsp">註冊</a>
 				</p>
 			</div>
 		</c:otherwise>

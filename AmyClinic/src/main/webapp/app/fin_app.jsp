@@ -21,6 +21,7 @@
 <jsp:include page="/General/header.jsp"></jsp:include>
 <div class="clr"></div>
 	<div>
+	<br>
 		<h1>預約完成，系統已發出通知信</h1>
 		<br>
 		<br>

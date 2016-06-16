@@ -4,21 +4,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Reset Password</title>
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
+<style>
+#loginpage form input[type="password"] {
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+	background: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	color: #777;
+	margin: 30px 0 10px;
+	padding: 15px 10px 15px 40px;
+	width: 55%;
+}
+</style>
+<title>修改密碼</title>
 </head>
 <body>
-I am resetpw.jsp!<hr>
+	<s:include value="/General/header.jsp"></s:include>
 	
-	<ul>
-		<li><font color="blue"><b>Welcome, ${sessionScope.memberVO.name}! </b></font> 		
-			<s:form namespace="/logreg" action="reset">
-				<s:password name="memberVO.pwd" label="Password" placeholder="Password" required="true" id="password"/>				
-				<s:password name="tempPW" label="Retype Password" placeholder="Password Again" required="true" id="tempPW" />
-				<s:submit value="Submit" method="resetPass" />
+	<div id="loginpage">
+		<font color="blue"><b>歡迎，${sessionScope.memberVO.name}！ </b></font> 		
+			<s:form namespace="/logreg" action="reset" theme="simple">
+			<div style="color: red;">${message}</div>
+			<div>
+				<span id="label">密碼：</span>
+				<s:password name="memberVO.pwd" placeholder="輸入新密碼" required="true" id="password"/>				
+			</div>
+			<div>	
+				<span id="label">確認密碼：</span>
+				<s:password name="tempPW" placeholder="確認密碼" required="true" id="tempPW" />
+				<s:submit value="送出" method="resetPass" />
+			</div>	
 			</s:form>
-		</li>
-		<li><div style="color:red;">${message}</div></li>
-	</ul>	
-
+		
+	</div>
+	<s:include value="/General/footer.jsp"></s:include>
 </body>
 </html>

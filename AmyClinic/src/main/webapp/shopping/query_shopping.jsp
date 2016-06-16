@@ -59,7 +59,7 @@
 					<td>已付款</td>
 				</c:if>
 				<c:if test="${ordersVO.del_status == 0}">
-					<td>處理中</td>
+					<td>未出貨</td>
 				</c:if>
 				<c:if test="${ordersVO.del_status == 1}">
 					<td>已出貨</td>
@@ -67,10 +67,10 @@
 				<c:if test="${ordersVO.del_status == 2}">
 					<td>已送達</td>
 				</c:if>
-				<c:if test="${ordersVO.ostatus == 0}">
+				<c:if test="${ordersVO.ostatus == 0 && ordersVO.payment == 0}">
 					<td><input type="button" value="取消訂單" onclick="cancel(${ordersVO.oid})"></td>
 				</c:if>
-				<c:if test="${ordersVO.ostatus != 0}">
+				<c:if test="${ordersVO.ostatus != 0 || ordersVO.payment == 1}">
 					<td></td>
 				</c:if>
 			</tr>

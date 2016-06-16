@@ -56,70 +56,70 @@ I am editprofile.jsp! <hr>
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberid">Member ID: </label>
+		<label class="control-label col-sm-2" for="memberid">會員 ID： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.mid" id="memberid" class="form-control disable" type="text" value="${memberVO.mid}" readonly/>			
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membername">Name: </label>
+		<label class="control-label col-sm-2" for="membername">姓名： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.name" id="membername" class="form-control" type="text" value="${memberVO.name}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberpwd">Password: </label>
+		<label class="control-label col-sm-2" for="memberpwd">密碼： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly/>
 		</div>
 		<div class="col-sm-1">
-			<a class="btn btn-default" href="${pageContext.request.contextPath}/member/changepw.action">Change Password</a>		
+			<a class="btn btn-default" href="${pageContext.request.contextPath}/login/resetpw.jsp">修改密碼</a>		
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberemail">Email: </label>
+		<label class="control-label col-sm-2" for="memberemail">Email： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.email" id="memberemail" class="form-control" type="text" value="${memberVO.email}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberbirthday">Birthday: </label>
+		<label class="control-label col-sm-2" for="memberbirthday">生日： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width:80px;"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membercountry">Country: </label>
+		<label class="control-label col-sm-2" for="membercountry">國家： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.country" id="membercountry" class="form-control" type="text" value="${memberVO.country}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membergender">Gender: </label>
+		<label class="control-label col-sm-2" for="membergender">性別： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.gender" id="membergender" class="form-control" type="text" value="${memberVO.gender}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberaddr">Address: </label>
+		<label class="control-label col-sm-2" for="memberaddr">地址： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.addr" id="memberaddr" class="form-control" type="text" value="${memberVO.addr}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberphone">Phone: </label>
+		<label class="control-label col-sm-2" for="memberphone">電話： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.phone" id="memberphone" class="form-control" type="text" value="${memberVO.phone}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberheight">Height: </label>
+		<label class="control-label col-sm-2" for="memberheight">身高： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.height" id="memberheight" class="form-control" type="text" value="${memberVO.height}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membermass">Weight: </label>
+		<label class="control-label col-sm-2" for="membermass">體重： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.mass" id="membermass" class="form-control" type="text" value="${memberVO.mass}"/>
 		</div>
@@ -131,49 +131,49 @@ I am editprofile.jsp! <hr>
 <!-- 		</div> -->
 <!-- 	</div> -->
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberact_status">Status: </label>
+		<label class="control-label col-sm-2" for="memberact_status">狀態： </label>
 		<div class="col-sm-5">			
 			<input name="memberVO.act_status" id="memberact_status" class="form-control disable" type="text" value="${memberVO.act_status}" readonly />				
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_trans">Transactions: </label>
+		<label class="control-label col-sm-2" for="membernum_trans">交易： </label>
 		<div class="col-sm-5">			
-			<input name="memberVO.num_trans" id="membernum_trans" class="form-control disable" type="text" value="${memberVO.num_trans}" readonly />				
+			<input name="memberVO.num_trans" id="membernum_trans" class="form-control disable" type="text" value="${memberVO.num_trans} 次" readonly />				
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_treatment">Treatments: </label>
+		<label class="control-label col-sm-2" for="membernum_treatment">診療： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.num_treatment" id="membernum_treatment" class="form-control disable" type="text" value="${memberVO.num_treatment}" readonly />				
+			<input name="memberVO.num_treatment" id="membernum_treatment" class="form-control disable" type="text" value="${memberVO.num_treatment} 次" readonly />				
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_visits">Visits: </label>
+		<label class="control-label col-sm-2" for="membernum_visits">來訪： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.num_visits" id="membernum_visits" class="form-control disable" type="text" value="${memberVO.num_visits}" readonly />						
+			<input name="memberVO.num_visits" id="membernum_visits" class="form-control disable" type="text" value="${memberVO.num_visits} 次" readonly />						
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberreward_pts">Reward Points: </label>
+		<label class="control-label col-sm-2" for="memberreward_pts">紅利點數： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.reward_pts" id="memberreward_pts" class="form-control disable" type="text" value="${memberVO.reward_pts}" readonly />			
+			<input name="memberVO.reward_pts" id="memberreward_pts" class="form-control disable" type="text" value="${memberVO.reward_pts} 點" readonly />			
 		</div>
 	</div>
 		<div class="form-group">
-		<label class="control-label col-sm-2" for="memberspent_pts">Reward Points Spent: </label>
+		<label class="control-label col-sm-2" for="memberspent_pts">已消費紅利點數： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.spent_pts" id="memberspent_pts" class="form-control disable" type="text" value="${memberVO.spent_pts}" readonly />			
+			<input name="memberVO.spent_pts" id="memberspent_pts" class="form-control disable" type="text" value="${memberVO.spent_pts} 點" readonly />			
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberlast_visit">Last Visit: </label>
+		<label class="control-label col-sm-2" for="memberlast_visit">上次瀏覽日期： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.last_visit" id="memberlast_visit" class="form-control disable" type="text" value="${memberVO.last_visit}" readonly />			
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberjoin_date">Date Joined: </label>
+		<label class="control-label col-sm-2" for="memberjoin_date">加入日期： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.join_date" id="memberjoin_date" class="form-control disable" type="text" value="${memberVO.join_date}" readonly />			
 		</div>
@@ -184,7 +184,7 @@ I am editprofile.jsp! <hr>
 <%--  	<input type="hidden" name="memberVO.photoContentType" value="${memberVO.photoContentType}">  --%>
  	<input type="hidden" name="memberVO.total_spent" value="${memberVO.total_spent}"> 
  	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> 
-	<button type="submit" class="btn btn-default" >Submit</button>							
+	<button type="submit" class="btn btn-default" >修改</button>							
 	<hr>
 </form>
 
