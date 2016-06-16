@@ -31,7 +31,7 @@
 
 <!-- method='post' -->
 <%--  action='${pageContext.request.contextPath}/Backstage/updateOrder'  --%>
-<table  border='1'  class='table table-hover table-responsive'  id='tb'  style='text-align: center;border-collapse: collapse;'>
+<table  border='1'  class='table table-hover'  id='tb'  style='text-align: center;border-collapse: collapse;'>
 			<tbody>
 			<tr><th>姓名</th><th>日期</th><th>總價</th><th>訂單狀態</th><th>付款狀態</th><th>配送狀態</th><th>更新狀態</th></tr>
 			</tbody>
