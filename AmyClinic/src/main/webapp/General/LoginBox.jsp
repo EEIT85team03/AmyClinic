@@ -67,7 +67,7 @@ p {
 			<div id="LoginBoxText">
 	        	<p>Welcome, Guest!</p>
 				<p>
-					<a href="${pageContext.request.contextPath}/web/login.jsp">Login</a> |
+					<a href="${pageContext.request.contextPath}/login/login.jsp">Login</a> |
 					<a href="${pageContext.request.contextPath}/register/register.jsp">Sign up!</a>
 				</p>
 			</div>

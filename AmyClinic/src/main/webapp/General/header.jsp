@@ -110,8 +110,9 @@
 							<li class='last'><a href='#'><span>審計部</span></a></li>
 						</ul></li>
 				</ul></li>
+			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp">線上預約</a></li>
 			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">線上購物</a></li>
-			<li><a href="#">專員諮詢</a></li>
+			<li><a href="${pageContext.request.contextPath}/ChatClient.jsp">專員諮詢</a></li>
 		</ul>
 	</div>
 <!-- 	<div id="search"> -->

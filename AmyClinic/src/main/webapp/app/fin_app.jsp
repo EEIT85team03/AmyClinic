@@ -11,7 +11,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>預約完成</title>
-
+<style>
+	h1 {
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
