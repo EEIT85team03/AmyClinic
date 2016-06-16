@@ -1,10 +1,14 @@
 package group3.k.order.controller;
 
-import group3.beef.employee.model.EmployeeVO;
+
 import group3.carrie.orderitems.model.OrderItemsService;
+import group3.carrie.orderitems.model.OrderItemsVO;
 import group3.carrie.orders.model.OrdersService;
 import group3.carrie.orders.model.OrdersVO;
 import group3.henry.login.model.MemberServices;
+
+
+import group3.henry.login.model.MemberVO;
 import group3.nick.score.model.ScoreVO;
 
 import java.io.IOException;
@@ -14,7 +18,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
+
+
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,17 +54,22 @@ public class updateOrder extends HttpServlet {
 		System.out.println("doPost_ok");
 		
 		if ("getAll".equals(action)){
-			System.out.println("getAll_ok");
+		System.out.println("getAll_ok");
 		List<OrdersVO> ordersVoAll=ordersService.getAll();
 		List l1 = new LinkedList();
 		for(OrdersVO ordersVO :ordersVoAll ){
 			Map m1 = new HashMap();
+			Integer oid=ordersVO.getOid();
 			m1.put("oid", ordersVO.getOid());
 			m1.put("odate",(ordersVO.getOdate()+"").substring(0,10));
 			m1.put("total", ordersVO.getTotal());
 			m1.put("ostatus", ordersVO.getOstatus());
 			m1.put("payment", ordersVO.getPayment());
 			m1.put("del_status", ordersVO.getDel_status());
+			OrdersVO orders=ordersService.getOneOrders(oid);
+			MemberVO member=orders.getMemberVO();
+			m1.put("name", member.getName());
+	
 			l1.add(m1);
 			}
 		String jsonString = JSONValue.toJSONString(l1);
