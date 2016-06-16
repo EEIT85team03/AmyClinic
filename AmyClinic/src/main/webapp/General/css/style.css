@@ -439,19 +439,24 @@ hr {
 }
 
 #footer {
+	width: 100%;
 	width: 800px;
-	height: 49px;
+/* 	height: 49px; */
 	margin: 0 auto;
-	padding-top: 50px;
+/* 	padding-top: 50px; */
+	padding-top: 25px;
+/* 	position: relative; */
 }
 
 #footer-bgcontent {
 	margin: 0px;
 	padding: 0px;
-	height: 99px;
+/* 	height: 99px; */
+	height: 65px;
 	background: #e499ba;
     bottom: 0;
     width: 100%;
+    position: relative;
 }
 
 #footer p {
