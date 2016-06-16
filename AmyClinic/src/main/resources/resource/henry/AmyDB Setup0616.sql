@@ -181,13 +181,13 @@ INSERT INTO Catagory VALUES ('香水/體香劑');
 INSERT INTO Catagory VALUES ('防曬');        
 --會員 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Henry','b15e5db3836bff058b253de60c467e00','Henry@group3.com','1981-06-24','台灣','M','台北市大安區復興南路一段390號2樓','0925377000','178','80','1','21');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Carrie','b15e5db3836bff058b253de60c467e00','Carrie@group3.com','1990-12-12','台灣','F','台北市松山區南京東路3段303巷5號','0925332156','160','42','1','1');
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Beef','b15e5db3836bff058b253de60c467e00','Beef@group3.com','1989-03-09','台灣','F','台北市大安區復興南路一段390號2-1樓','0959487612','170','65','1','3');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Beef','b15e5db3836bff058b253de60c467e00','Carrie@group3.com','1990-12-12','台灣','F','台北市松山區南京東路3段303巷5號','0925332156','160','42','1','1');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Carrie','b15e5db3836bff058b253de60c467e00','Beef@group3.com','1989-03-09','台灣','F','台北市大安區復興南路一段390號2-1樓','0959487612','170','65','1','3');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Nick','b15e5db3836bff058b253de60c467e00','Nick@group3.com','1985-07-30','台灣','M','新北市永和區中山路一段58號','0936598102','169','70','1','3');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('Tca','b15e5db3836bff058b253de60c467e00','Tca@group3.com','2000-02-28','台灣','M','台北市松山區八德路3段27號','0945976183','185','63','1','13');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('K','b15e5db3836bff058b253de60c467e00','k@group3.com','1970-01-01','台灣','M','新北市永和區中山路一段58號','0909865731','200','59','1','24');
 
-INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('劉心悠','b15e5db3836bff058b253de60c467e00','amy7@group3.com','1981-06-24','台灣','F','台北市四維路170巷60號4樓','0925377000','178','50','1','0');
+INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('amy','b15e5db3836bff058b253de60c467e00','amy7@group3.com','1981-06-24','台灣','F','台北市四維路170巷60號4樓','0925377000','178','50','1','0');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('夏語心','b15e5db3836bff058b253de60c467e00','amy8@group3.com','1990-12-12','台灣','F','台北市基隆路二段210號3樓','0925332156','160','42','1','0');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('林嘉綺','b15e5db3836bff058b253de60c467e00','amy9@group3.com','1989-03-09','台灣','F','台北市復興南路二段90巷30號14樓','0959487612','170','55','1','0');
 INSERT INTO Members (name, pwd, email, birthday, country, gender, addr, phone, height, mass, act_status,total_spent) VALUES ('劉致妤','b15e5db3836bff058b253de60c467e00','amy10@group3.com','1985-07-30','台灣','F','台北市敦化南路一段233巷130號10樓','0936598102','169','60','1','0');
@@ -1137,6 +1137,25 @@ INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1257');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1258');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1259');
 INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1260');
+
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-2' , '晚診' , '1' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-9' , '晚診' , '1' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-16' , '晚診' , '1' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-21' , '晚診' , '1' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-26' , '晚診' , '1' , '瘦身雕塑' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '3' , '2016-8-29' , '晚診' , '1' , '瘦身雕塑' );
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-2','晚診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-9','晚診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-16','晚診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-21','晚診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-26','晚診','瘦身雕塑','1','3');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-8-29','晚診','瘦身雕塑','1','3');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1261');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1262');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1263');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1264');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1265');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1266');
 --8月k
 
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-9-22' , '早診' , '1' , '整形手術' );
@@ -1147,10 +1166,10 @@ INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) 
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-9-22','早診','雷射光療','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-9-22','早診','瘦身雕塑','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-9-22','早診','微整形','1','6');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1261');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1262');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1263');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1264');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1267');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1268');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1269');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1270');
 --9月k
 
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-10-22' , '早診' , '1' , '整形手術' );
@@ -1161,10 +1180,10 @@ INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) 
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-10-22','早診','雷射光療','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-10-22','早診','瘦身雕塑','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-10-22','早診','微整形','1','6');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1265');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1266');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1267');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1268');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1271');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1272');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1273');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1274');
 --10月k
 
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-11-22' , '早診' , '1' , '整形手術' );
@@ -1175,10 +1194,10 @@ INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) 
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-11-22','早診','雷射光療','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-11-22','早診','瘦身雕塑','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-11-22','早診','微整形','1','6');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1269');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1270');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1271');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1272');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('1','1275');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('10','1276');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('15','1277');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1278');
 --11月k
 
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-12-22' , '早診' , '1' , '整形手術' );
@@ -1189,10 +1208,10 @@ INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) 
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','雷射光療','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','瘦身雕塑','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','微整形','1','6');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1273');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1274');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1275');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1276');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1279');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1280');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1281');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1282');
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-12-22' , '早診' , '1' , '整形手術' );
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-12-22' , '早診' , '1' , '雷射光療' );
 INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '6' , '2016-12-22' , '早診' , '1' , '瘦身雕塑' );
@@ -1201,10 +1220,23 @@ INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) 
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','雷射光療','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','瘦身雕塑','1','6');
 INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1005','1','2016-12-22','早診','微整形','1','6');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1277');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1278');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1279');
-INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1280');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('6','1283');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('12','1284');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('18','1285');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('23','1286');
+
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-12-2' , '晚診' , '1' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-12-9' , '晚診' , '1' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-12-16' , '晚診' , '1' , '微整形' );
+INSERT   INTO   Schedule   ( eid , c_date , c_hours , appt_num , memo )   VALUES  ( '5' , '2016-12-21' , '晚診' , '1' , '微整形' );
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-12-2','晚診','微整形','1','5');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-12-9','晚診','微整形','1','5');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-12-16','晚診','微整形','1','5');
+INSERT INTO Appointments (mid,purpose,apt_date,apt_time,descrip,apt_status,eid) VALUES ('1006','1','2016-12-21','晚診','微整形','1','5');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1287');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1288');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1289');
+INSERT INTO AppointmentDetail (procedure_id,aid) VALUES ('24','1290');
 --12月k
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 update Schedule set appt_status = 0 where appt_num = 3
