@@ -16,7 +16,7 @@
 </head>
 <body>
 	
-	<s:include value="/General/mySpace.jsp"></s:include>
+	
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
