@@ -129,14 +129,14 @@ body {
 <!-- 購物系統測試 -->
 
 		<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">商品列表(不需登入)</a><br>
-
+		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
+		<a href="${pageContext.request.contextPath}/shoppings/showorder" >查詢訂單(需登入)</a><br>
 		
 <!-- 預約系統測試 -->
 		
 		<a href="${pageContext.request.contextPath}/app/add_app.jsp">線上預約(需登入)</a><br>
 
-		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
-		<a href="${pageContext.request.contextPath}/shoppings/showorder" >查詢訂單(需登入)</a><br>
+		
 		
 		
 		<a href="${pageContext.request.contextPath}/free/showophr" >門診時間表及醫師介紹(不需登入)</a><br>
