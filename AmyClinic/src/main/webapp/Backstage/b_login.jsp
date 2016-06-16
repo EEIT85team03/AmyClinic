@@ -42,10 +42,10 @@ a:hover {
     <div class="page-header">
 <img class="img-circle" width="100px"src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${session.empVO.eid}" />
 <font color=#FF8000 class='fa fa-smile-o'>${session.empVO.name}您好!</font><br>
-<a href='' data-toggle="modal" data-target="#myModalNorm" ><i class="fa fa-edit"></i><b>重新登入</b></a>
-<a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a><br>
-<a href="" class="text-primary" data-toggle="modal" data-target="#resetpw"><i class="fa fa-question-circle"></i><b>忘記密碼</b></a><br>
-<a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'><i class="	fa fa-child"></i><b>加入新員工</b></a><br>
+<!-- <a href='' data-toggle="modal" data-target="#myModalNorm" ><i class="fa fa-edit"></i><b>重新登入</b></a> -->
+<%-- <a href="<%=request.getContextPath()%>/empLogin/EmpLoginServlet.do?action=logout"><i class="fa fa-fw fa-power-off"></i><b>登出!</b></a><br> --%>
+<!-- <a href="" class="text-primary" data-toggle="modal" data-target="#resetpw"><i class="fa fa-question-circle"></i><b>忘記密碼</b></a><br> -->
+<%-- <a href='<%=request.getContextPath()%>/empLogin/AddEMP.jsp'><i class="	fa fa-child"></i><b>加入新員工</b></a><br> --%>
     </div>
   
 </center>       

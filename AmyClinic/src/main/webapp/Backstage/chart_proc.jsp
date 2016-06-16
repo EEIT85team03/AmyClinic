@@ -11,15 +11,15 @@
   
   <script>
   $(function () {
-	  var year=[];var month=[];var name=[];//科
-		var row=' '; var counts=[];//次
-	    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'熱門預約療程'},function(data){		
+	  var year=[];	var month=[];	var name=[];//科
+		var row=' '; 	var counts=[];//次
+	    $.getJSON("${pageContext.request.contextPath}/Backstage/SpaToSalesServlet",{'action':'hotPorc'},function(data){		
 	    	$.each(data, function(i, a){
 	    		
-	    			if($.inArray(a.a, year) === -1) year.push(a.a);
-	     			if($.inArray(a.b, month) === -1) month.push(a.b);
-	     			if($.inArray(a.c, name) === -1) name.push(a.c);
-	     			counts.push(a.d);
+	    			if($.inArray(a.year, year) === -1) year.push(a.year);
+	     			if($.inArray(a.month, month) === -1) month.push(a.month);
+	     			if($.inArray(a.name, name) === -1) name.push(a.name);
+	     			counts.push(a.counts);
 	    	});
 	    	
 	    	var newHTML = [];

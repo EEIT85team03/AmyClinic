@@ -63,14 +63,14 @@ public class Mailer implements GlobalConstants {
 			        }
 	      		});
 	    try {         
-	    	Message message = new  MimeMessage(session); // Create a default MimeMessage object.
+	    	MimeMessage message = new  MimeMessage(session); // Create a default MimeMessage object.
 	        message.setFrom(new InternetAddress(EMAIL_FROM)); // Set From: header field of the header.         
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
-	        message.setSubject(subject); // Set Subject: header field
-	        
+	        message.setSubject(subject,"utf-8"); // Set Subject: header field
+
 	        String outbound = "Hello, "+ name + "!" + NL + NL + text + NL + NL + SIGNATURE;
 	        if (format.equals("TEXT"))
-	        	message.setText(outbound); // Set the actual message
+	        	message.setText(outbound,"utf-8"); // Set the actual message
 	        else if (format.equals("HTML"))
 	        	//為了測試用先把編碼寫死成utf-8
 	        	message.setContent(outbound, "text/html;charset=UTF-8");

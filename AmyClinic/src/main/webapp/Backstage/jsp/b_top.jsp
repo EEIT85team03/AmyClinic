@@ -111,6 +111,7 @@ font-size:18px;
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">
+	<li><a href="<%=request.getContextPath()%>/Backstage/Chatback.jsp" ><i class="fa fa-fw fa-phone-square"></i><font color="#fff">客服系統</font></a></li>
 <!-- 		<li class="dropdown"> -->
 <!-- 		<a href="#" class="dropdown-toggle"	data-toggle="dropdown"> -->
 <!-- 		<i class="fa fa-envelope"></i> -->
@@ -199,7 +200,7 @@ font-size:18px;
 			<li><a href="<%=request.getContextPath()%>/schedule/main_datatable.jsp"><i class="fa fa-fw fa-edit"></i>醫師排班</a></li>
 			<li><a href="<%=request.getContextPath()%>/appBack/get_all_app.jsp"><i class="fa fa-fw fa-table"></i>預約系統</a></li>
 			
-			<li><a href="<%=request.getContextPath()%>/Backstage/Chatback.jsp"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li>
+<%-- 			<li><a href="<%=request.getContextPath()%>/Backstage/Chatback.jsp"><i class="fa fa-fw fa-phone-square"></i>客服系統</a></li> --%>
 			<li><a href="<%=request.getContextPath()%>/Backstage/backgroundScore.jsp"><i class="fa fa-fw fa-thumbs-o-up"></i>留言管理</a></li>
 			
 			<li><a href="<%=request.getContextPath()%>/Backstage/product.jsp"><i class="fa fa-fw fa-shopping-cart"></i>商品管理</a></li>
