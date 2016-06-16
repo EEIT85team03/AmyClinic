@@ -47,7 +47,7 @@ public class EditProfileAction extends ActionSupport {
 		MemberServices service = new MemberServices();
 //		memberVO.setPwd((String)request.getAttribute("encpw")); // sets the encrypted version of the updated password
 		service.update(memberVO);
-		this.setMessage("Thank you, " + memberVO.getName() + ", your profile has been updated!");
+		this.setMessage("謝謝您， " + memberVO.getName() + "， 您的個人資料已更新");
 		return "updated";
 	}
 

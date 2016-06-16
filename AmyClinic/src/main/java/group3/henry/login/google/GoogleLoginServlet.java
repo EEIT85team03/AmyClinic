@@ -106,7 +106,7 @@ public class GoogleLoginServlet extends HttpServlet {
 				//returns success					
 			} else {
 				//fail
-				session.setAttribute("message", "Login Failed: Invalid Google Login!");
+				session.setAttribute("message", "登入失敗： Google 登入錯誤！");
 				RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
 				failureView.forward(request, response);
 			}

@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
 public class RegisterAction extends ActionSupport implements GlobalConstants{
-	private static final String HEADER = "AmyClinic Registration Confirmation";
+	private static final String HEADER = "AmyClinic 註冊驗證信";
 
 	private MemberVO memberVO;	
 	private String message;
@@ -66,7 +66,7 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 	}
 	
 	private String compose(String token, String email){
-		return "Thank you for registering on our site! Please click the link below to validate your email!" 
+		return "感謝您註冊Amy醫美診所網站，請點以下連結驗證您的Email！" 
 				+ NL + NL + "http://" + SERVER + "/AmyClinic/free/verify.action?auth=" + token + "&email=" + email;			
 	}
 	
@@ -78,7 +78,7 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 		TokenGenerator gen = new TokenGenerator();
 		
 		if (register.emailExists(memberVO.getEmail())!=null){ // check if email already exists in DB (Unique field)
-			this.setMessage("This Email " +memberVO.getEmail() + " has already been registered!");
+			this.setMessage("Email地址 " +memberVO.getEmail() + " 已經被註冊");
 			System.out.println("Email in use");
 			return INPUT;
 		} else {
@@ -145,7 +145,7 @@ public class RegisterAction extends ActionSupport implements GlobalConstants{
 			fileType = fileType.substring(0,5);
 			System.out.println(fileType);
 		    if (!fileType.equals("image") ){
-		    	addFieldError("fileUpload","Invalid File Type; must upload an image!");
+		    	addFieldError("fileUpload","檔案類型錯誤；必須上傳一張圖片");
 		    }
 	    }	     
 	}
