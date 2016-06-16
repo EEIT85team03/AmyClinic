@@ -52,7 +52,7 @@
 					<legend></legend>
 					<div style="color: red;">${message}</div>
 					<div>
-						<span id="label">姓名：</span>
+						<span id="label">帳號：</span>
 						<s:textfield name="memberVO.name" placeholder="    您的姓名"
 							id="username" label="waterwww" />
 					</div>

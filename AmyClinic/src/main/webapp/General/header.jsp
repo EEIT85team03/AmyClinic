@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/General/img/logo.ico" />
 <script> 
   window.fbAsyncInit = function() {
@@ -17,6 +18,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+<div id="headercontainer"><c:import url="/General/LoginBox.jsp"></c:import></div>
 <span class="fb-like" data-width="450" data-show-faces="true" data-layout="button"></span>
 <div id="headerbox">
 	<div id="banner">
@@ -30,13 +32,8 @@
 		<ul>
 			<li class='has-sub'><a href="#">關於我們</a>
 				<ul>
-					<li><a href='#'><span>國民大會</span></a></li>
-					<li><a href='#'><span>齊頭式平等</span></a></li>
-					<li><a href='#'><span>權能區分</span></a></li>
 					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表及醫師介紹</span></a></li>
-					<li><a href='#'><span>政府機器論</span></a></li>
-					<li><a href='#'><span>民權初步</span></a></li>
-					<li class='last'><a href='#'><span>革命民權</span></a></li>
+					<li class='last'><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
 				</ul></li>
 			<li><a href="#">最新消息</a></li>
 			<li class='has-sub'><a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>

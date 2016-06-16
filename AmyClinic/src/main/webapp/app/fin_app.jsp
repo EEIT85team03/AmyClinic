@@ -15,6 +15,7 @@
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
+<div class="clr"></div>
 	<div>
 		<h1>預約完成，系統已發出通知信</h1>
 		<br>
@@ -47,6 +48,7 @@
 		醫師：${empVO.name}<br>
 	
 	</div>
+	
 	<jsp:include page="/General/footer.jsp"></jsp:include>
 </body>
 </html>
