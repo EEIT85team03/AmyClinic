@@ -12,9 +12,9 @@
 		<property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>		
 
 <!-- 		Local Machine  -->
-		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433;DatabaseName=AmyDB</property>
-		<property name="hibernate.connection.username">sa</property>
-		<property name="hibernate.connection.password">P@ssw0rd</property>
+<!-- 		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433;DatabaseName=AmyDB</property> -->
+<!-- 		<property name="hibernate.connection.username">sa</property> -->
+<!-- 		<property name="hibernate.connection.password">P@ssw0rd</property> -->
 <!-- 		Local Machine End -->
 
 <!-- 		Azure Web	 -->
@@ -22,9 +22,9 @@
 <!-- 		<property name="hibernate.connection.username">amy@eeit85group3</property> -->
 <!-- 		<property name="hibernate.connection.password">P@ssw0rd</property> -->
 
-<!-- 		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://lcsxvpwqoa.database.windows.net:1433;DatabaseName=AmyDB</property> -->
-<!-- 		<property name="hibernate.connection.username">eeit85group3</property> -->
-<!-- 		<property name="hibernate.connection.password">P@ssw0rd</property> -->
+		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://lcsxvpwqoa.database.windows.net:1433;DatabaseName=AmyDB</property>
+		<property name="hibernate.connection.username">eeit85group3</property>
+		<property name="hibernate.connection.password">P@ssw0rd</property>
 <!-- 		Azure Web End	 -->
 
 		      
