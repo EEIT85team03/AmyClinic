@@ -22,10 +22,10 @@ public class EmailVerifyAction extends ActionSupport {
 		System.out.println("EmailVerifyAction execute method");			
 		
 		if (vs.verify(email, auth)){ // if verify returns true
-			this.message = "Verification success! Redirecting in 3 seconds...";
+			this.message = "驗證成功！三秒後轉向...";
 			return "success"; 
 		} else {
-			this.message = "Unfortunately, verfication failed. Please check your email and try again!";
+			this.message = "驗證失敗，請確認您的email並再試一次";
 			return "failure";
 		}				
 	}

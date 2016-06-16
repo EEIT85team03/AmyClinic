@@ -102,7 +102,7 @@ public class FacebookLoginServlet extends HttpServlet {
 			//returns success
 		} else {
 			//fail
-			session.setAttribute("message", "Login Failed: Invalid Facebook Login!");
+			session.setAttribute("message", "登入失敗： Facebook 登入錯誤！");
 			RequestDispatcher failureView = request.getRequestDispatcher("/login/login.jsp");
 			failureView.forward(request, response);
 		}

@@ -43,39 +43,39 @@
 				<ul>
 					<li class='has-sub'><a href='#'><span>整形手術</span></a>
 						<ul>
-							<li><a href='#'><span>豐胸術</span></a></li>
-							<li><a href='#'><span>隆鼻術</span></a></li>
-							<li><a href='#'><span>脂肪移植</span></a></li>
-							<li><a href='#'><span>拉皮術</span></a></li>
-							<li><a href='#'><span>蘿蔔腿縮小術</span></a></li>
-							<li class='last'><a href='#'><span>雙眼皮</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=1'><span>豐胸術</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=2'><span>隆鼻術</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=3'><span>脂肪移植</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=4'><span>拉皮術</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=5'><span>蘿蔔腿縮小術</span></a></li>
+							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=6'><span>雙眼皮</span></a></li>
 						</ul></li>
 					<li class='has-sub'><a href='#'><span>雷射光療</span></a>
 						<ul>
-							<li><a href='#'><span>雷射除毛</span></a></li>
-							<li><a href='#'><span>雷射淨膚</span></a></li>
-							<li><a href='#'><span>雷射除痣</span></a></li>
-							<li><a href='#'><span>粉餅雷射</span></a></li>
-							<li><a href='#'><span>變頻飛梭</span></a></li>
-							<li class='last'><a href='#'><span>脈衝光</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=7'><span>雷射除毛</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=8'><span>雷射淨膚</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=9'><span>雷射除痣</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=10'><span>粉餅雷射</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=11'><span>變頻飛梭</span></a></li>
+							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=12'><span>脈衝光</span></a></li>
 						</ul></li>
 					<li><a href='#' class='has-sub'><span>瘦身雕塑</span></a>
 						<ul>
-							<li><a href='#'><span>震波減脂</span></a></li>
-							<li><a href='#'><span>冷凍減脂</span></a></li>
-							<li><a href='#'><span>威塑減脂</span></a></li>
-							<li><a href='#'><span>水刀抽脂</span></a></li>
-							<li><a href='#'><span>爆脂衝擊波</span></a></li>
-							<li class='last'><a href='#'><span>黃金脂雕</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=13'><span>震波減脂</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=14'><span>冷凍減脂</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=15'><span>威塑減脂</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=16'><span>水刀抽脂</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=17'><span>爆脂衝擊波</span></a></li>
+							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=18'><span>黃金脂雕</span></a></li>
 						</ul></li>
 					<li class='has-sub'><a href='#'><span>微整形</span></a>
 						<ul>
-							<li><a href='#'><span>波尿酸</span></a></li>
-							<li><a href='#'><span>晶亮瓷</span></a></li>
-							<li><a href='#'><span>水微晶</span></a></li>
-							<li><a href='#'><span>膠原蛋白</span></a></li>
-							<li><a href='#'><span>微針療程</span></a></li>
-							<li class='last'><a href='#'><span>無痕植髮</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=19'><span>波尿酸</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=20'><span>晶亮瓷</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=21'><span>水微晶</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=22'><span>膠原蛋白</span></a></li>
+							<li><a href='${pageContext.request.contextPath}/QueryProc?id=23'><span>微針療程</span></a></li>
+							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=24'><span>無痕植髮</span></a></li>
 						</ul></li>
 				</ul></li>
 			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp">變美預約</a></li>
