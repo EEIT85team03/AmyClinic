@@ -14,7 +14,7 @@
 
 	<ul>
 		<li><font color="blue"><b>請輸入您的電子郵件，我們會藉由該信箱幫助您取回密碼</b></font> 		
-			<s:form namespace="/free" action="recover">
+			<s:form namespace="/free" action="recoverini">
 				<s:textfield name="memberVO.email" label="E-mail" placeholder="abc@xyz.com" id="recover-email"/>				
 				<s:submit value="送出" method="recover" id="recover-btn"/>
 			</s:form>
