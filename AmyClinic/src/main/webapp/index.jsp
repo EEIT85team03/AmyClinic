@@ -19,9 +19,10 @@ body{
 #header{
 background-color: #AE00AE;
 }
-#banner{
-width: 1020px;
-}
+/* #banner a img{ */
+/* width: 100%; */
+/* } */
+#banner a img {visibility:hidden;}
 #LoginBoxText p a{color: white;}
 .img{width: 800px; height: 500px;}
 a:hover {
