@@ -1,61 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html >
     <head>
 		<meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <title>愛美服務團隊</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="3D Gallery with CSS3 and jQuery" />
-        <meta name="keywords" content="3d, gallery, jquery, css3, auto, slideshow, navigate, mouse scroll, perspective" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-<!--         <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+        <meta name="author" content="Codrops" />     
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/doctor/css/style.css" />
+		<script type="text/javascript" src="${pageContext.request.contextPath}/doctor/js/modernizr.custom.53451.js"></script>
+		<style type="text/css">
+		img{
+		height: 100%;
+		}
+		.dg-container span{
+		font-size: 30px;
+ 		background-color:#EBD3E8;  
+		color:#FF359A ;
+		}
+/* 		.dg-container span span{ */
+/*  		background-color: green; */
+/* 		color: black; */
+/* 		} */
+		#footer-discontent {
+		height: 65px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
+.container{
+top:300px;
+
+
+}
+		</style>
+		
     </head>
     <body>
-        <div class="container">
-			<!-- Codrops top bar -->
-            <div class="codrops-top">
-                <a href="http://tympanus.net/Tutorials/CSS3PageTransitions/index.html#home">
-                    <strong>&laquo; Previous Demo: </strong>Page Transitions with CSS3
-                </a>
-                <span class="right">
-					<a href="http://www.thebestdesigns.com" target="_blank">Websites found on The Best Designs</a>
-                    <a href="http://tympanus.net/codrops/2012/02/06/3d-gallery-with-css3-and-jquery/">
-                        <strong>Back to the Codrops Article</strong>
-                    </a>
-                </span>
-                <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
-			<header>
-				<h1>3D Gallery <span>with CSS3 &amp; jQuery</span></h1>
-				<nav class="codrops-demos">
-					<a href="index.html">Navigation</a>
-					<a class="current-demo" href="index2.html">Auto-Slideshow</a>
-					<a href="index3.html">3 Elements</a>
-				</nav>
-			</header>
+    <jsp:include page="/General/header.jsp"></jsp:include>
+
+        <div class="container">	
+        <br><br><br><br><br>
 			<section id="dg-container" class="dg-container">
 				<div class="dg-wrapper">
-					<a href="#"><img src="images/1.jpg" alt="image01"><div>http://www.colazionedamichy.it/</div></a>
-					<a href="#"><img src="images/2.jpg" alt="image02"><div>http://www.percivalclo.com/</div></a>
-					<a href="#"><img src="images/3.jpg" alt="image03"><div>http://www.wanda.net/fr</div></a>
-					<a href="#"><img src="images/4.jpg" alt="image04"><div>http://lifeingreenville.com/</div></a>
-					<a href="#"><img src="images/5.jpg" alt="image05"><div>http://circlemeetups.com/</div></a>
-					<a href="#"><img src="images/6.jpg" alt="image06"><div>http://www.castirondesign.com/</div></a>
-					<a href="#"><img src="images/7.jpg" alt="image07"><div>http://www.foundrycollective.com/</div></a>
-					<a href="#"><img src="images/8.jpg" alt="image08"><div>http://www.mathiassterner.com/</div></a>
-					<a href="#"><img src="images/9.jpg" alt="image09"><div>http://learnlakenona.com/</div></a>
-					<a href="#"><img src="images/10.jpg" alt="image10"><div>http://www.neighborhood-studio.com/</div></a>
-					<a href="#"><img src="images/11.jpg" alt="image11"><div>http://www.beckindesign.com/</div></a>
-					<a href="#"><img src="images/12.jpg" alt="image12"><div>http://kicksend.com/</div></a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e1.jpg" alt="image01">
+					<span>張文遠 醫師</span><br>
+					<span>雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮</span>
+					</a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e2.jpg" alt="image02">
+					<span>諸葛亮 醫師</span>
+					<br><span>玻尿酸、肉毒桿菌、美白針、植髮</span>
+					</a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e3.jpg" alt="image03">
+					<span>夏侯惇 醫師</span>
+					<br><span>抽脂、隆乳、雙眼皮手術、眼袋手術、拉皮手術、隆鼻</span>
+					</a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e4.jpg" alt="image04">
+					<span>張君雅 醫師</span>
+					<br><span>微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容</span>
+					</a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e5.jpg" alt="image05">
+					<span>史奴比 醫師</span>
+					<br><span>美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻</span>
+					</a>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e6.jpg" alt="image06">
+					<span>高飛 醫師</span>
+					<br><span>美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學</span>
+					</a>
+						
 				</div>
-				<!--nav>	
-					<span class="dg-prev">&lt;</span>
-					<span class="dg-next">&gt;</span>
-				</nav-->
+				
 			</section>
+			<br><br><br><br><br>
         </div>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.gallery.js"></script>
@@ -65,6 +86,7 @@
 					autoplay	:	true
 				});
 			});
-		</script/>
+		</script>
+		<jsp:include page="/General/footer.jsp"></jsp:include>
     </body>
 </html>
