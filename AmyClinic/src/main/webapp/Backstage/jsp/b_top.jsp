@@ -107,7 +107,7 @@ font-size:18px;
 			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp" ><font color="#fff">☆-Amy醫美前端-☆</font></a>
+		<a class="navbar-brand" href="<%=request.getContextPath()%>/index.jsp" ><font color="#fff">☆-Amy醫美診所-☆</font></a>
 	</div>
 	<!-- Top Menu Items -->
 	<ul class="nav navbar-right top-nav">

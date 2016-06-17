@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/General/img/logo.ico" />
+
 <style>
-span{
+span {
 font-family: myfont;
 }
 </style>
@@ -23,8 +24,8 @@ font-family: myfont;
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+<jsp:include page="/General/mySpace.jsp" />
 <div id="headercontainer"><c:import url="/General/LoginBox.jsp"></c:import></div>
-<span class="fb-like" data-width="450" data-show-faces="true" data-layout="button"></span>
 <div id="headerbox">
 	<div id="banner">
 	<a href="${pageContext.request.contextPath}/index.jsp">	
@@ -46,7 +47,7 @@ font-family: myfont;
 			</li>
 			<li><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
 			
-			<li class='has-sub'><a href="#"><span>美麗項目</span></a>
+			<li class='has-sub'><a href="#"><span>美麗療程</span></a>
 				<ul>
 					<li class='has-sub'><a href='#'><span>整形手術</span></a>
 						<ul>
@@ -110,6 +111,6 @@ font-family: myfont;
 <!-- 			</fieldset> -->
 <!-- 		</form> -->
 <!-- 	</div> -->
-<jsp:include page="/General/mySpace.jsp" />
 </div>
 </div>
+

@@ -24,8 +24,8 @@
 /*  		background-color: green; */
 /* 		color: black; */
 /* 		} */
-		#footer-discontent {
-		height: 65px;
+		#footer-bgcontent {
+		height: 99px;
 		background: #e499ba;
 		position: absolute;
 		right: 0;

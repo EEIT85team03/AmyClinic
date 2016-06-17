@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <style type="text/css">
 body{ 
@@ -23,12 +26,8 @@ height:60%;
 width: 100%; 
  } 
  */
-#banner a img {
-    visibility:hidden;
-} 
-
-#LoginBoxText p a {
-	color: white;}
+#banner a img {visibility:hidden;} 
+#LoginBoxText p a{color: white;}
 .img{width: 800px; height: 500px;}
 a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
@@ -54,29 +53,18 @@ font{
 font-family: myfont;
 background-color: #fff;
 }
-/* #footer { */
-/* 	width: 100%; */
-/* 	background-color: #AE00AE; */
-/*  	padding-top: 0px;  */
-/* } */
-/* #footer-bgcontent { */
-/*  	height: 0px;  */
-/* 	background-color: #AE00AE; */
-
-/* } */
-.imgmsg{
-	  font-size: 40px;
-} 
-
-#footer-bgcontent {
-	  height: 99px;
-	  background: #e499ba;
-	  position: absolute;
-	  right: 0;
-	  left: 0;
-	  padding: 1rem;
-	  text-align: center;	
+#footer {
+	width: 100%;
+	background-color: #AE00AE;
+ 	padding-top: 0px; 
 }
+#footer-bgcontent {
+ 	height: 0px; 
+	background-color: #AE00AE;
+}
+.imgmsg{
+font-size: 40px;
+} 
 </style>
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
 <title>愛美首頁</title>
@@ -175,7 +163,6 @@ background-color: #fff;
 		function logout() {
 			GoogleSignOut();
 			FacebookSignOut();
-
 			function getContextPath() { //obtains context path. EL doesn't work with separated .js
 				return window.location.pathname.substring(0,
 						window.location.pathname.indexOf("/", 2));
@@ -190,34 +177,38 @@ background-color: #fff;
 					}
 				}
 			})
-
 		}
 	</script>
 
-
+	<script>
+		$(function() {
+			$(":text").attr("autocomplete", "off");
+		});
+	</script>
 	<script>
 		var modal = document.getElementById('myModal');
-
 		var btn = document.getElementById("mybtn");
-
 		var span = document.getElementsByClassName("close")[0];
-
 		btn.onclick = function() {
 			modal.style.display = "block";
 		}
-
 		span.onclick = function() {
 			modal.style.display = "none";
 		}
-
 		window.onclick = function(event) {
 			if (event.target == modal) {
 				modal.style.display = "none";
 			}
 		}
 	</script>
-
-<%-- 	<s:include value="/General/mySpace.jsp"></s:include> --%>
+	<script>
+	function fb_login() {
+	    FB.login( function() {checkLoginState();}, { scope: 'email,public_profile' } );
+	    
+	}
+	</script>
+	
+<%-- 	<jsp:include page="/General/footer.jsp" /> --%>
 	<s:include value="/General/footer.jsp"></s:include>
 
 </body>
