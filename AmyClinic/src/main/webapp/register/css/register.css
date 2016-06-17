@@ -2,7 +2,7 @@
 .ribbon {
 	font-size: 16px !important;
 	/* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-	width: 100%;
+	width: 80%;
 	position: relative;
 	background: #ba89b6;
 	color: #fff;
@@ -63,6 +63,10 @@
 	background: url('../img/user.png') no-repeat left center;
 	background-position: 10px 5px;
 	border-right: 1px solid #f1f1f1;
+}
+input,
+select {
+	margin-left: 50%;
 }
 
 #username:focus {
