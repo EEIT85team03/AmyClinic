@@ -2,7 +2,15 @@ function PreviewImage(imgFile) {
 
 	var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
 	if (!pattern.test(imgFile.value)) {
-		alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
+		Lobibox.notify("error", {
+			size: 'mini',
+			title: '只支援jpg/jpeg/png/gif/bmp之格式檔案',
+			delay: 1500,
+			delayIndicator: false,
+			sound: false,
+			position: "center top"
+			});
+//		alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
 		imgFile.focus();
 	} else {
 		var path;
@@ -24,7 +32,16 @@ function PreviewImage2(imgFile) {
 
 	var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
 	if (!pattern.test(imgFile.value)) {
-		alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
+		Lobibox.notify("error", {
+			size: 'mini',
+			title: '只支援jpg/jpeg/png/gif/bmp之格式檔案',
+			delay: 1500,
+			delayIndicator: false,
+			sound: false,
+			position: "center top"
+			});
+//		return;
+//		alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
 		imgFile.focus();
 	} else {
 		var path;
