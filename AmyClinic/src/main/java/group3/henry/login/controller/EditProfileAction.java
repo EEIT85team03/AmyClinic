@@ -1,13 +1,14 @@
 package group3.henry.login.controller;
 
+import group3.henry.login.model.MemberServices;
+import group3.henry.login.model.MemberVO;
+
 import java.io.File;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
-
-import group3.henry.login.model.MemberServices;
-import group3.henry.login.model.MemberVO;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -85,6 +86,8 @@ public class EditProfileAction extends ActionSupport {
 		MemberServices service = new MemberServices();
 //		memberVO.setPwd((String)request.getAttribute("encpw")); // sets the encrypted version of the updated password
 		service.update(memberVO);
+		HttpSession session = request.getSession();
+		session.setAttribute("memberVO", memberVO);
 		this.setMessage("謝謝您， " + memberVO.getName() + "， 您的個人資料已更新");
 		return "updated";
 	}
