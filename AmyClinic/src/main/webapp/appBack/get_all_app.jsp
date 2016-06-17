@@ -27,8 +27,7 @@ body p {
 }
 
 </style>
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/datatables.css" />
+<link rel="stylesheet" type="text/css"	href="<%=request.getContextPath()%>/css/datatables.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=BIG5">
 <title>醫師排班</title>
 </head>
@@ -41,24 +40,21 @@ body p {
 		<script type="text/javascript"
 			src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
 
-
-		<div id="page-wrapper" style="background-color: #000000">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-dashboard"></i><font
-								color="red" style="text-align: center;">產品資料維護</font></li>
-						</ol>
-					</div>
-				</div>
-				<!-- /.row -->
-			</div>
-			<!-- /.container-fluid -->
-		</div>
+<div id="page-wrapper" style=background-color:#000000  >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: left: ;">員工維護</font>
+                 
+                 </li></ol>
+                    </div>
+                </div><!-- /.row -->
+            </div> <!-- /.container-fluid -->
+            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
+<!--         開始 -->
 		<!--側邊欄功能表項目over -->
 		<!-- 開始 -->
-
+<!--  <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">xxx</font></li></ol> -->
 
 		<table border="1" class="table table-hover" id="apptable">
 			<thead>
@@ -98,12 +94,7 @@ body p {
 					<c:choose>
 						<c:when test="${AppVO.apt_status==1}">
 							<td>正常</td>
-						</c:when>
-						<c:otherwise>
-							<td style="color: red">取消</td>
-						</c:otherwise>
-					</c:choose>
-					<td>
+								<td>
 					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#tallModal">查看</button>
 					
 					</td>
@@ -116,6 +107,25 @@ body p {
 						</form>
 
 					</td>
+						</c:when>
+						<c:otherwise>
+							<td style="color: red">取消</td>
+										<td>
+					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#tallModal">查看</button>
+					
+					</td>
+					<td>
+						<form action="app_check" method="get">
+							<input type="submit" value="取消" class="btn btn-success" disabled="disabled">
+							<input type="hidden" name="action" value="appcancel"> <input
+								type="hidden" name="aid" value="${AppVO.aid}">
+
+						</form>
+
+					</td>
+						</c:otherwise>
+					</c:choose>
+				
 				</tr>
 			</c:forEach>
 
