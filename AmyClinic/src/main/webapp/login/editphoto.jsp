@@ -13,16 +13,18 @@
 <script src="${pageContext.request.contextPath}/login/js/previewImg.js"></script>
 
 <title>Insert title here</title>
+<style>
+
+</style>
 </head>
-<body>
-<input type="hidden" name="mid" value="${memberVO.mid}">
+<body bgcolor="#FFD9EC">
+<b style="font-size: 15pt">會員照片修改</b><br>
+<span style="font-size: 13pt">支援副檔名：.gif、.jpg、.jpeg、.png</span><br><br>
 	<s:actionerror/>
 	<s:form action="updatephotos" namespace="/member" enctype="multipart/form-data"  method="post" theme="simple">
-        <s:file name="fileUpload" label="照片上傳" size="20" onchange="PreviewImage(this)"/> <!-- name="fileUpload" fileUpload與Action中的暫時File物件變數名稱要一致 -->
-		<s:submit value="上傳" />
+        <s:file name="fileUpload" label="照片上傳" size="30" cssStyle="font-size:13pt" onchange="PreviewImage(this)"/> <!-- name="fileUpload" fileUpload與Action中的暫時File物件變數名稱要一致 -->
 		<br>
-		<input type="button" id="cancel" value="取消">
-		<td class="tdLabel">上傳預覽：</td>
+		<td class="tdLabel" style="background-color: #FFD9EC;"></td>
 		<br>
 	    <td>
 	       <table>
@@ -32,7 +34,10 @@
 	          </tr>
 	        </table>
 	    </td>
-	    
+	    <br>
+
+		<s:submit value="上傳" cssStyle="font-size:13pt;margin-right:5%"/>
+		<input type="button" id="cancel" value="取消" style="font-size: 13pt;">
 		
 	</s:form>
 	

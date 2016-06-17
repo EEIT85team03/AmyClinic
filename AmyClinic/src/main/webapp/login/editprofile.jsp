@@ -42,7 +42,6 @@
 </style>
 </head>
 <body>
-I am editprofile.jsp! <hr>
 
 <h3>${memberVO.name}</h3> 
 
@@ -212,7 +211,7 @@ I am editprofile.jsp! <hr>
 	$(".iframe").colorbox({
 		iframe:true,
 		width:"30%",
-		height:"30%",
+		height:"45%",
 		overlayClose:false,
 		escKey:false
 	});

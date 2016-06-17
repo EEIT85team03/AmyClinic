@@ -9,9 +9,9 @@
 <s:head theme="xhtml" />
 </head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
-<body>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
+<body bgcolor="#FFD9EC">
 <br>
-照片更新成功！
 
 <!-- <ul> -->
 <%-- 	<li>Name = ${requestScope.name}  --Obtained via EL </li> --%>
@@ -19,16 +19,29 @@
 <!-- </ul> -->
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
+<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
+
 <script>
 function getContextPath() { //obtains context path. EL doesn't work with separated .js
 	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
 }
 $(function(){
-	window.parent.location.reload();
+	Lobibox.notify("success", {
+		size: 'mini',
+		title: '照片修改成功',
+		delay: 1500,
+		delayIndicator: false,
+		sound: false,
+		position: "center top"
+		});
+	window.setTimeout(function(){
+		window.parent.location.reload();
+		 }, 1500);	
+	
 })
   setTimeout(function() {
 	  top.$.fn.colorbox.close();
-  }, 1500); // delay in milliseconds
+  }, 2000); // delay in milliseconds
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ function PreviewImage(imgFile) {
 	if (!pattern.test(imgFile.value)) {
 		Lobibox.notify("error", {
 			size: 'mini',
-			title: '只支援jpg/jpeg/png/gif/bmp之格式檔案',
+			title: '只支援jpg/jpeg/png/gif之格式檔案',
 			delay: 1500,
 			delayIndicator: false,
 			sound: false,
@@ -34,7 +34,7 @@ function PreviewImage2(imgFile) {
 	if (!pattern.test(imgFile.value)) {
 		Lobibox.notify("error", {
 			size: 'mini',
-			title: '只支援jpg/jpeg/png/gif/bmp之格式檔案',
+			title: '只支援jpg/jpeg/png/gif之格式檔案',
 			delay: 1500,
 			delayIndicator: false,
 			sound: false,
