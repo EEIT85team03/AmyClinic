@@ -20,6 +20,7 @@
 /* 	border:3px double green; */
 	padding-top:5px;
 	padding-right:10px;
+	padding-bottom:0 !important;
 /* 	background-color: grey; */
 	height: auto;
 /*	width: 200px; */
@@ -30,10 +31,13 @@
 /* 	float:right; */
 /* 	clear:both; */
 }
+#LoginBox p {
+height: 19px;
+}
 #LoginBoxText{
 	width:auto;
 	display: inline-block;
-	padding-top:7px;
+	padding-top:0;
 }
 p {
 	margin:0;
