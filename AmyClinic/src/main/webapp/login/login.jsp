@@ -17,9 +17,10 @@
 <body>
 	<!-- facebook script -->
 	<div id="fb-root"></div>
+<s:include value="/General/header.jsp"></s:include>
 	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 	<!-- end facebook script -->
-	<s:include value="/General/header.jsp"></s:include>
+	
 
 	<div id="page">
 		<div class="welcome">

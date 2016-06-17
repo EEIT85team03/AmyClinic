@@ -20,7 +20,7 @@
 //    });
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-    	console.log("Facebook logged in!");
+    	console.log("Facebook logged in! (facebook.login.js)");
     	testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -74,6 +74,7 @@
   
 //  https://developers.facebook.com/docs/facebook-login/permissions
   function testAPI() {
+	  console.log("facebook.login.js testAPI()");
     FB.api('/me', 'get', { fields: 'id,name,gender,email,first_name,locale,picture,timezone' }, function(response) {
       var id = response.id;
 	  var name = response.name;
