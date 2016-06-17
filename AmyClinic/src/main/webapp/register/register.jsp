@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+
 <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>
 <link href="${pageContext.request.contextPath}/register/css/register.css" 	rel="stylesheet" type="text/css" media="screen" />
@@ -15,7 +15,6 @@
 
 </head>
 <body>
-	
 	
 	<s:include value="/General/header.jsp"></s:include>
 
@@ -79,7 +78,6 @@
 			</div>
 		</div>
 
-		<s:include value="/General/sidebar.jsp"></s:include>
 
 	</div>
 
