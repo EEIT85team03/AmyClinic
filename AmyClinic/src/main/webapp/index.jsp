@@ -18,11 +18,15 @@ body{
  background-image: url("images/home07.jpg"); }
 #header{
 background-color: #AE00AE;
+width:100%;
+height:60%;
 }
-/* #banner a img{ */
-/* width: 100%; */
-/* } */
-#banner a img {visibility:hidden;}
+/* 
+ #banner a img{ 
+width: 100%; 
+ } 
+ */
+#banner a img {visibility:hidden;} 
 #LoginBoxText p a{color: white;}
 .img{width: 800px; height: 500px;}
 a:hover {
