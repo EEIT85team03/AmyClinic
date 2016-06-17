@@ -211,8 +211,8 @@ I am editprofile.jsp! <hr>
 	$(".membergender").text(gender);
 	$(".iframe").colorbox({
 		iframe:true,
-		width:"80%",
-		height:"80%",
+		width:"30%",
+		height:"30%",
 		overlayClose:false,
 		escKey:false
 	});
