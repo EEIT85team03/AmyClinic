@@ -15,7 +15,7 @@
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <style type="text/css">
 body{ 
- background-image: url("images/home07.jpg"); }
+ background-image: url("/AmyClinic/images/home07.jpg"); }
 #header{
 background-color: #AE00AE;
 width:100%;
