@@ -85,8 +85,8 @@ font-family: myfont;
 							<li class='last'><a href='${pageContext.request.contextPath}/QueryProc?id=24'><span>無痕植髮</span></a></li>
 						</ul></li>
 				</ul></li>
-			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp"><span>變美預約</span></a></li>
 			<li><a href="${pageContext.request.contextPath}/shopping/prod_list.jsp"><span>美麗購物</span></a></li>
+			<li><a href="${pageContext.request.contextPath}/app/add_app.jsp"><span>變美預約</span></a></li>
 <%-- 			<li class='has-sub'><a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a></li> --%>
 
 			
