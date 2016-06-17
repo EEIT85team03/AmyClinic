@@ -12,14 +12,12 @@
 <link href="${pageContext.request.contextPath}/register/css/register.css" 	rel="stylesheet" type="text/css" media="screen" />
 <title>會員註冊</title>
 <s:head theme="xhtml" />
-
 </head>
 <body>
 	
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
-		<div id="content">
 
 			<div class="post">
 				<h1 class="ribbon">
@@ -76,7 +74,6 @@
 				<div style="color: red;">${message}</div>
 
 			</div>
-		</div>
 
 
 	</div>
