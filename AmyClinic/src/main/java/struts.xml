@@ -61,7 +61,7 @@
             </interceptor-ref>                                                                <!-- 如以上兩者皆設限制的話，則必需兩者皆允許的才能上傳， 而檔案型態則會優先做錯誤提示 -->
             <interceptor-ref name="EncPw" />                                                 <!-- 指定預設攔截器堆疊 -->
             <param name="saveDirectory">\user_photo</param>                                    <!-- 自訂上傳的目地目錄 -->
-            <result name="success">/login/success.jsp</result>
+            <result name="success">/register/regsuccess.jsp</result>
             <result name="input">/register/register.jsp</result>
         </action>
         <action name="reset" class="group3.henry.login.controller.ResetPassAction" method="resetPass">

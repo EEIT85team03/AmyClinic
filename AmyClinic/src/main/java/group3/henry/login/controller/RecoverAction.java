@@ -84,7 +84,7 @@ public class RecoverAction extends ActionSupport implements GlobalConstants{
 			session.setAttribute("memberVO", user); // sets the user as the current active session user
 		}
 		// Universal result message. Prevents fishing for valid email addresses
-		this.setMessage("感謝您使用我們的密碼查詢服務! 如果您輸入的電子郵件已登記在我們的網站，您將收到進一步指示的電子郵件!");		
+		this.setMessage("感謝您使用我們的密碼查詢服務！如果您輸入的電子郵件已登記在我們的網站，您將收到進一步指示的電子郵件！");		
 		return "success";				
 	}
 	

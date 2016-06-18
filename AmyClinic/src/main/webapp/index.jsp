@@ -66,7 +66,7 @@ height: 250px;
 .borderless td, .borderless th, .borderless tr, .borderless tbody{
     border: none;
 }
-li a{color: #FF8000;}
+li a{color: #6D2222;}
 </style>
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
 <title>愛美首頁</title>
@@ -80,16 +80,16 @@ li a{color: #FF8000;}
 	<div class="container">	
 	<table  >
 	<tr >
-		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#FF8000 class='fa fa-smile-o'  style="font-size: 25px; ">Start now For your Beautiful Life<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
+		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
 		<td ></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>
 		<div style="padding-left: 100px;">
-		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="線上諮詢" ></a><br>
-		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="線上預約" ></a><br>
-		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="療程說明" ></a></div>
+		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="線上諮詢"  ></a>
+		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="線上預約"  style="padding-left: 25px;"></a>
+		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="療程說明"  style="padding-left: 25px;"></a></div>
 <%-- 				<div style="padding-left: 100px; float: left;"><img src="${pageContext.request.contextPath}/images/k1.gif" alt="" ><font>美麗見證...............................................................</font></div> --%>
 <%-- <%-- 				 <img src="${pageContext.request.contextPath}/images/k3.jpg" alt=""> --%> 
 <%-- 				 <div style="padding-left: 250px;"><img src="${pageContext.request.contextPath}/images/k2.gif" alt="" ><font>美麗見證</font></div> --%>
@@ -99,14 +99,14 @@ li a{color: #FF8000;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div> 
 <table class='table borderless' >	
 	
 	<tr>
 <td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
-<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗快報</span>		
-			<ul style="max-height: 200px; overflow-y:scroll; ">		
+<img src="${pageContext.request.contextPath}/images/05.gif" alt="" ><span>美麗快報</span>		
+			<ul style="max-height: 250px; overflow-y:scroll; ">		
 			<li><a href="a1.jsp">【極線超音波拉提】找回消失的輪廓線_小草莓</a></li>
 			<li><a href="a2.jsp">【電波拉皮/肉毒瘦臉】★電波拉皮X肉毒瘦還原不敗的娃娃小臉_Cherry</a></li>
 			<li><a href="a3.jsp">【飛梭雷射】飛梭雷射心得♥凹洞快滾(上)_大饅大力</a></li>
@@ -115,11 +115,15 @@ li a{color: #FF8000;}
 			<li><a href="">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
 			</ul>
 </td>
-<td class='col-md-3' ><img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' style="margin:0px;"></td>	
-<td class='col-md-3' >
-<%-- <img src="${pageContext.request.contextPath}/images/h5.jpg" alt=""  class='autoimg' > --%>
+<td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/06.gif" alt="" ><span>美麗見證</span><br>
+<img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' ></td>	
+<td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗推廣</span><br>
+<iframe width="400" height="250" src="https://www.youtube.com/embed/NO7XaxcJZqM" frameborder="0" allowfullscreen></iframe>
 </td>
-<td class="col-md-3">
+<td class="col-md-3" style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/07.gif" alt=""  style="height: 38px;"><span>環境介紹</span>
 	<div class="container-fluid">						
 		<div class="row-fluid">
     		<div class="carousel slide" id="myCarousel">
