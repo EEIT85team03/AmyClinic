@@ -87,9 +87,9 @@ li a{color: #FF8000;}
 	<tr>
 		<td>
 		<div style="padding-left: 100px;">
-		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="線上諮詢" ></a><br>
-		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="線上預約" ></a><br>
-		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="療程說明" ></a></div>
+		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="線上諮詢"  ></a>
+		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="線上預約"  style="padding-left: 25px;"></a>
+		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="療程說明"  style="padding-left: 25px;"></a></div>
 <%-- 				<div style="padding-left: 100px; float: left;"><img src="${pageContext.request.contextPath}/images/k1.gif" alt="" ><font>美麗見證...............................................................</font></div> --%>
 <%-- <%-- 				 <img src="${pageContext.request.contextPath}/images/k3.jpg" alt=""> --%> 
 <%-- 				 <div style="padding-left: 250px;"><img src="${pageContext.request.contextPath}/images/k2.gif" alt="" ><font>美麗見證</font></div> --%>
@@ -99,7 +99,7 @@ li a{color: #FF8000;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div> 
 <table class='table borderless' >	
 	
@@ -115,11 +115,15 @@ li a{color: #FF8000;}
 			<li><a href="">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
 			</ul>
 </td>
-<td class='col-md-3' ><img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' style="margin:0px;"></td>	
-<td class='col-md-3' >
-<%-- <img src="${pageContext.request.contextPath}/images/h5.jpg" alt=""  class='autoimg' > --%>
+<td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗見證</span><br>
+<img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' ></td>	
+<td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗推廣</span><br>
+<iframe width="400" height="250" src="https://www.youtube.com/embed/NO7XaxcJZqM" frameborder="0" allowfullscreen></iframe>
 </td>
-<td class="col-md-3">
+<td class="col-md-3" style="background-color: white;padding-left: 10px;margin-left: 10px;">
+<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>環境介紹</span>
 	<div class="container-fluid">						
 		<div class="row-fluid">
     		<div class="carousel slide" id="myCarousel">
