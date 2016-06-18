@@ -8,6 +8,16 @@
 <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <title>醫生資料</title>
+<style>
+#font{
+font-size: 50px;
+color: orange;
+
+
+
+}
+</style>
+
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
@@ -20,10 +30,10 @@
 		</td>
 		<td width="22"></td>
 		<td>
+	
 				<table style="font-size: 15pt;">
-					<tr id='xxx'>
+					<tr >
 						<td colspan="2" style="font-size: 35pt;"><b>${empVO.name}　醫師</b></td>
-						
 					</tr>
 					<tr height="20">
 						<td colspan="2"><hr></td>
@@ -39,6 +49,10 @@
 					<tr>
 						<td height="60">專長</td>
 						<td>${empVO.specialty}</td>
+					</tr>
+					<tr id='xxx'>
+						<td height="60">評分</td>
+
 					</tr>	
 				</table>
 			<input type="hidden" id="expstr" value="${empVO.experience}" />
@@ -51,17 +65,22 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script>
+function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
 $(function() {
 	var expstr = $('#expstr').val();
 	var expArray = expstr.split(')');
 	for(var i = 0; i < expArray.length - 1; i++) {
 		$('#exp').append(expArray[i] + ')<br>');
 	}
-})
-
-$.getJSON('ScoreServlet',{'action':'getOne_ScoreJSON','eid':'${empVO.id}'},function(data){
-	var cell1 = $("<td></td>").html("<img width='300px' height='auto'src='${pageContext.request.contextPath}/images/"+emp.avgPicture+"'>"+"<span id='font'>"+emp.avgScore+"</span>");
-	$("#xxx").append(cell1);
+	
+	$.getJSON( getContextPath()+'/Score/ScoreServlet',{'action':'getOne_ScoreJSON','eid':'${empVO.eid}'},function(data){
+		$.each(data,function(i,emp){
+		var cell1 = $("<td></td>").html("<a href='http://localhost:8081/AmyClinic/Score/ScoreServlet?action=getOne_Score&eid="+emp.eid+"'><img width='300px' height='auto'src='${pageContext.request.contextPath}/images/"+emp.avgPicture+"'></a>"+"<span id='font'>&nbsp&nbsp&nbsp&nbsp"+emp.avgScore+"</span>");
+		$("#xxx").append(cell1);
+		})
+	})
 })
 
 </script>	

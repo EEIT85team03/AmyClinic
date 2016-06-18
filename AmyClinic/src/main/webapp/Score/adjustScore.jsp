@@ -17,7 +17,7 @@
 	<div id="star"></div>
 
 	<form name="f1" action="ScoreServlet" method="post">
-		<input type="text" style="width: 400PX; height: 300PX" name="comment" value="${comment}"> 
+		<textarea style="width: 400PX; height: 300PX" name="comment"></textarea> 
 		<input	type="submit" value="輸入">
 	    <input type="reset" value="重置">
 	    <input type="hidden" name="score" value="${scores}">

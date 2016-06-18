@@ -91,6 +91,7 @@ public class ScoreServlet extends HttpServlet {
 			Map m1 = new HashMap();
 			double avgScore=AVG(scoreVO);
 			String avgPicture=ChooseStar(avgScore);
+			m1.put("eid",eid);
 			m1.put("avgScore",avgScore );
 			m1.put("avgPicture",avgPicture );
 			l1.add(m1);
