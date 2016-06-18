@@ -180,7 +180,7 @@ legend {
 
 
 #field{
-	background: #E0E0E0;
+	background: #f5f5f5;
 	border:10px double pink;
 }
 
@@ -555,6 +555,8 @@ legend {
 	margin-left: 61%;
 }
 
+input[type="submit"] {
+	outline: none;
+}
 
-        
         

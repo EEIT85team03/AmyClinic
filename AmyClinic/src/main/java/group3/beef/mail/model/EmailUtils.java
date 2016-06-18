@@ -13,6 +13,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
 
 public class EmailUtils {
 	
@@ -34,12 +35,12 @@ public class EmailUtils {
 			   }
 			  });
 		  try{
-				  Message message = new MimeMessage(session);
+				  MimeMessage message = new MimeMessage(session);
 				  String userName = empVO.getName();
 				  String userMail = empVO.getEmail();
 				   message.setFrom(new InternetAddress("eeit85group3@gmail.com"));
 				   message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(userMail));
-				   message.setSubject("©AMY COSMETIC 密碼重置通知信");
+				   message.setSubject("©AMY COSMETIC 密碼重置通知信,","UTF-8");
 				   message.setContent(userName+"您好：<br/>要使用新的密碼, 請使用以下連結更新密碼:<br/><a href='" + GenerateLinkUtils.generateResetPwdLink(empVO,ctx) 
 						   +"'>點擊重新設置密碼</a>","text/html;charset=utf-8");
 

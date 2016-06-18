@@ -31,9 +31,9 @@
 
 <!-- method='post' -->
 <%--  action='${pageContext.request.contextPath}/Backstage/updateOrder'  --%>
-<table  border='1'  class='table table-hover table-responsive'  id='tb'  style='text-align: center;border-collapse: collapse;'>
+<table  border='1'  class='table table-hover'  id='tb'  style='text-align: center;border-collapse: collapse;'>
 			<tbody>
-			<tr><th>明細/編號</th><th>日期</th><th>總價</th><th>訂單狀態</th><th>付款狀態</th><th>配送狀態</th><th>更新狀態</th></tr>
+			<tr><th>姓名</th><th>日期</th><th>總價</th><th>訂單狀態</th><th>付款狀態</th><th>配送狀態</th><th>更新狀態</th></tr>
 			</tbody>
 </table>
 
@@ -123,7 +123,7 @@ if(confirm('確認更新訂單？')) {
 			console.log('1-1');
 			$.each(data,function(i,ordersVO){
 				console.log('2');
-var cell1 = $("<td class='"+i+"'></td>").text(ordersVO.oid);		
+var cell1 = $("<td class='"+i+"'></td>").text(ordersVO.name);		
 var cell2 = $("<td></td>").text(ordersVO.odate);	
 var cell3 = $("<td></td>").text('$'+ordersVO.total);	
 var cell4 = $("<td></td>").html("<select id='ostatus"+i+"'><option value='0'>訂單成立</option><option value='1'>訂單處理中</option><option value='2'>交易完成</option><option value='3'>訂單取消</option></select>");

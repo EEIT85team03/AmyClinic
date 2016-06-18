@@ -92,7 +92,7 @@ hr {
 
 #menu {
 	font-family: 'Lato', sans-serif;
-	width: 760px;
+	width: 1000px;
 	height: 45px;
 	font-size: 13px;
 /* 	float: left; */
@@ -469,7 +469,7 @@ hr {
 
 #mySpace {
 	position: absolute;
-	top: 50px;
+	top: 100px;
 	right: 1.5%;
 	z-index: 9999;
 	width: 144px;
@@ -534,3 +534,9 @@ hr {
 	margin-left: 10px;
 	margin-top: 10px;
 }    
+
+#headercontainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+}

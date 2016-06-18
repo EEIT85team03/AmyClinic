@@ -177,8 +177,8 @@ public class ProductServlet extends HttpServlet {
 				}
 				InputStream is = filePart.getInputStream();
 				int filesize = (int) filePart.getSize();
-				if(filesize > 3070200){
-					errorMsg.add("商品照片: 大小請勿超過3000KB");
+				if(filesize > 1024 * 300){
+					errorMsg.add("商品照片: 大小請勿超過300KB");
 				}
 				@SuppressWarnings("deprecation")
 				Blob photo = Hibernate.createBlob(is);
@@ -280,19 +280,25 @@ public class ProductServlet extends HttpServlet {
 				if (ingredients == null || ingredients.trim().length() == 0) {
 					errorMsg.add("商品成分: 請勿空白");
 				}
-
+				Blob photo = null;
 				Part filePart = req.getPart("photo");
 				if (filePart.getSize() == 0){
-					errorMsg.add("商品照片: 請勿空白");
-				}
+				
+				ProductService pSvc=new ProductService();	
+				ProductVO productVO=pSvc.getOneProduct(pid);
+				photo=productVO.getPhoto();
+//				Blob photo = Hibernate.createBlob(is);
+//				Hibernate.BLOB(p);
+				}else {
+					
 				InputStream is = filePart.getInputStream();
 				int filesize = (int) filePart.getSize();
-				if(filesize > 3070200){
+				if(filesize > 1024 * 300){
 					errorMsg.add("商品照片: 大小請勿超過3000KB");
 				}
-				@SuppressWarnings("deprecation")
-				Blob photo = Hibernate.createBlob(is);
 				
+				photo = Hibernate.createBlob(is);
+			}
 				
 				
 				try{
@@ -307,7 +313,7 @@ public class ProductServlet extends HttpServlet {
 					discount=0;	amount=0;
 				}
 				ProductVO productVO = new ProductVO();
-				 CatagoryVO  catagoryVO=new CatagoryVO();
+				CatagoryVO  catagoryVO=new CatagoryVO();
 				
 				productVO.setPid(pid);
 				productVO.setName(name);

@@ -22,6 +22,8 @@
     <url-pattern>/shopping/fin_shopping.jsp</url-pattern>
     <url-pattern>/shopping/query_shopping.jsp</url-pattern>
     <url-pattern>/shopping/query_shopping_byname.jsp</url-pattern>
+    <url-pattern>/ChatClient.jsp</url-pattern>
+    
   </filter-mapping>
   <servlet>
     <servlet-name>TestServlet</servlet-name>

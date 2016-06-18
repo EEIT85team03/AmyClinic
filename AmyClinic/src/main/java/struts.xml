@@ -50,7 +50,7 @@
         <default-interceptor-ref name="EncPw" />
         <action name="login" class="group3.henry.login.controller.LoginAction" method="login">
             <result name="success">/index.jsp</result>
-            <result name="verifyEmail">/web/verify.jsp</result>
+            <result name="verifyEmail">/login/verify.jsp</result>
             <result name="login">/login/login.jsp</result>
         </action>
         <action name="register" class="group3.henry.register.controller.RegisterAction" method="register">
@@ -62,11 +62,11 @@
             <interceptor-ref name="EncPw" />                                                 <!-- 指定預設攔截器堆疊 -->
             <param name="saveDirectory">\user_photo</param>                                    <!-- 自訂上傳的目地目錄 -->
             <result name="success">/register/regsuccess.jsp</result>
-            <result name="input">register/register.jsp</result>
+            <result name="input">/register/register.jsp</result>
         </action>
         <action name="reset" class="group3.henry.login.controller.ResetPassAction" method="resetPass">
-            <result name="success">/web/verify.jsp</result>
-            <result name="input">/resetpw.jsp</result>
+            <result name="success">/login/verify.jsp</result>
+            <result name="input">/login/resetpw.jsp</result>
         </action>
     </package>
     <!-- ************************* -->
@@ -93,12 +93,12 @@
             <result name="login">/login/login.jsp</result>
         </global-results>
         <action name="editprofile" class="group3.henry.login.controller.EditProfileAction">
-            <result>/login/editprofile.jsp</result>
+            <result>/member/member.jsp</result>
         </action>
         <action name="updateprofile" class="group3.henry.login.controller.EditProfileAction"
             method="update">
             <result>/login/editprofile.jsp</result>
-            <result name="updated">/web/verify.jsp</result>
+            <result name="updated">/login/verify.jsp</result>
             <result name="input">/login/editprofile.jsp</result>
         </action>
 <!--         <action name="changepw" class="group3.henry.login.controller.MemberPageAction2"> -->
@@ -259,15 +259,15 @@
             <result>/public/publicpage.jsp</result>
         </action>
         <action name="verify" class="group3.henry.email.controller.EmailVerifyAction">
-            <result>/web/verify.jsp</result>
-            <result name="failure">/web/verify.jsp</result>
+            <result>/login/verify.jsp</result>
+            <result name="failure">/login/verify.jsp</result>
         </action>
         <action name="recoverini" class="group3.henry.login.controller.RecoverAction" method="recover">
-            <result name="success">/web/verify.jsp</result>
+            <result name="success">/login/verify.jsp</result>
         </action>
         <action name="recover" class="group3.henry.login.controller.RecoverAction">
             <result name="resetform">/login/resetpw.jsp</result>
-            <result name="failure">/web/verify.jsp</result>
+            <result name="failure">/login/verify.jsp</result>
         </action>
         <action name="queryprodbycata" class="group3.carrie.catagory.controller.CatagoryAction"></action>
         <action name="queryprodbyname"

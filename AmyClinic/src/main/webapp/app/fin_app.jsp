@@ -11,11 +11,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>預約完成</title>
-
+<style>
+	h1 {
+		text-align: center;
+	}
+</style>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
+<div class="clr"></div>
 	<div>
+	<br>
 		<h1>預約完成，系統已發出通知信</h1>
 		<br>
 		<br>
@@ -47,6 +53,7 @@
 		醫師：${empVO.name}<br>
 	
 	</div>
+	
 	<jsp:include page="/General/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -7,16 +7,14 @@
 <title>購物專區</title>
 <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
-
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/shopping/css/prod_list.css" />
 </head>
 <body onload="queryProdByName('')">
 <jsp:include page="/General/header.jsp"></jsp:include>
-<a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">%購物車 ;</a> 
-
 <div class="main">
+<a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">我的購物車</a> 
 	<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-list">
 	<h1 style="display:inline;">愛美診所美妝商城</h1>
 	
