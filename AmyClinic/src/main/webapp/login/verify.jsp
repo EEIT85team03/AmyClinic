@@ -13,7 +13,7 @@
 
 I am verify.jsp <hr>
 
-Hello ${memberVO.name}!
+哈囉，${memberVO.name}！
 <div style="color:red;">${message}</div>
 
 <script>

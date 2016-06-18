@@ -73,9 +73,11 @@ h2 {
 				<jsp:include page="/other/services/aside.jsp"></jsp:include>
 			</aside>
 			<article id="a1">
+			<br>
+			<br>
 				<img src="${pageContext.request.contextPath}/other/services/img/1-1.jpg"/><br>
 				<br>
-				<h1>三明治豐胸法</h1>
+				<h1>${proc.name}</h1>
 				
 				<p class="intro">打開報紙、雜誌、電視，許多女星名媛穿著爆乳裝來展現自己的事業線。事實上天生發育良好的波霸佔極少數，所以一些平板妹在尋求外力幫助下，也造就了台灣隆乳手術一片欣欣向榮的市場。</p>
 				<br>
