@@ -8,65 +8,35 @@
 <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<%-- <script src="https://apis.google.com/js/platform.js" async defer></script> --%>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<style>
+        html {  height: 100%;  }   
+        body {
+        background-image: url("/AmyClinic/images/01.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+/*         menu{background-color: white;} */
+        span{color: #FF0080;} 
+</style>
 <style type="text/css">
-body{ 
- background-image: url("/AmyClinic/images/home07.jpg"); }
 #header{
-background-color: #AE00AE;
-width:100%;
-height:60%;
-}
-/* 
- #banner a img{ 
-width: 100%; 
- } 
- */
-#banner a img {
-    visibility:hidden;
-} 
+/* background-color: #AE00AE;  */
+width:100%;height:60%;}
 
-#LoginBoxText p a {
-	color: white;}
-.img{width: 800px; height: 500px;}
-a:hover {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  /* IE 8 */
-  filter: alpha(opacity=50);
-  /* IE7 */
-  opacity: 0.6;
-  text-decoration: none;
-}
-.container-fluid {
-/*   margin: 40px auto 10px; */
-/*   padding: 20px 0px; */
-  max-width: 800px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
 .page-header{margin:0px auto;}
 #page {
 	width: 100%;
 	margin: 0 auto;
 	padding-top: 0px;
 }
-font{
-font-family: myfont;
-background-color: #fff;
-}
-/* #footer { */
-/* 	width: 100%; */
-/* 	background-color: #AE00AE; */
-/*  	padding-top: 0px;  */
-/* } */
-/* #footer-bgcontent { */
-/*  	height: 0px;  */
-/* 	background-color: #AE00AE; */
 
-/* } */
-.imgmsg{
-	  font-size: 40px;
-} 
+font{font-family: myfont;
+/* background-color: #fff; */
+}
 
 #footer-bgcontent {
 	  height: 99px;
@@ -78,6 +48,24 @@ background-color: #fff;
 	  text-align: center;	
 }
 </style>
+<style type="text/css">
+.container-fluid {
+    
+/*     margin: 40px auto 10px; */
+/*     padding: 20px 0px; */
+    max-width: 400px;
+    max-height:250px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.autoimg{
+width: 400px;
+height: 250px;
+}
+.borderless td, .borderless th, .borderless tr, .borderless tbody{
+    border: none;
+}
+li a{color: #FF8000;}
+</style>
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
 <title>愛美首頁</title>
 </head>
@@ -87,82 +75,95 @@ background-color: #fff;
 	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 	<!-- end facebook script -->
 	<s:include value="/General/header.jsp"></s:include>
-	<center>
-<h1 ><font color=#FF8000 class='fa fa-smile-o'  >麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1><br>
-<%-- <img src="${pageContext.request.contextPath}/images/logo.jpg" class="img-circle">  --%>
-</center>
-<div class="container-fluid">
-<div class="row-fluid">
-<div class="span12">
-<%-- <div class="page-header"></div> --%>     
-    <div class="carousel slide" id="myCarousel">
-        <div class="carousel-inner">
+	<table  class='table borderless'>
+	<tr >
+		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#FF8000 class='fa fa-smile-o'  style="font-size: 25px; ">Start now For your Beautiful Life<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
+		<td ></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>
+		<div style="padding-left: 100px;">
+		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="" ></a><br>
+		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="" ></a><br>
+		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="" ></a></div>
+<%-- 				<div style="padding-left: 100px; float: left;"><img src="${pageContext.request.contextPath}/images/k1.gif" alt="" ><font>美麗見證...............................................................</font></div> --%>
+<%-- <%-- 				 <img src="${pageContext.request.contextPath}/images/k3.jpg" alt=""> --%> 
+<%-- 				 <div style="padding-left: 250px;"><img src="${pageContext.request.contextPath}/images/k2.gif" alt="" ><font>美麗見證</font></div> --%>
+<!-- 				 <div style="padding-top: 200px;"></div> -->
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<br><br><br><br><br>
+<table class='table borderless' >	
+	
+	<tr>
+<td class='col-md-4' style="background-color: white;"> 	
+<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗快報</span>		
+			<ul style="max-height: 200px; overflow-y:scroll; ">		
+			<li><a href="a1.jsp">【極線超音波拉提】找回消失的輪廓線_小草莓</a></li>
+			<li><a href="a2.jsp">【電波拉皮/肉毒瘦臉】★電波拉皮X肉毒瘦還原不敗的娃娃小臉_Cherry</a></li>
+			<li><a href="a3.jsp">【飛梭雷射】飛梭雷射心得♥凹洞快滾(上)_大饅大力</a></li>
+			<li><a href="">【極限音波拉提】惱人的垂垂鬆弛臉，交給Ultherapy極線音波拉提_米雪</a></li> 
+			<li><a href="">【歐萃學超音波系統（標靶震波）】媽咪變少女♥產後瘦身超EASY‬(≧∇≦)/_愛愛</a></li> 
+			<li><a href="">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
+			</ul>
+</td>
+<td class='col-md-3' ><img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' style="margin-left: 0px;padding-left: 0px;">		</td>	
+<td class='col-md-3' >
+<%-- <img src="${pageContext.request.contextPath}/images/h5.jpg" alt=""  class='autoimg' > --%>
+</td>
+<td class="col-md-3">
+	<div class="container-fluid">						
+		<div class="row-fluid">
+    		<div class="carousel slide" id="myCarousel">
+        		<div class="carousel-inner">
+        		
+ 					<div class="item active">            
+                		<div class="bannerImage">
+                    		<a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" alt="" class='autoimg'></a>
+                		</div>                                                    
+            		</div><!-- /Slide1 --> 
+
+            	<div class="item">
+                	<div class="bannerImage">
+                    	<a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" alt="" class='autoimg'></a>
+                </div>                                                     
+               </div><!-- /Slide2 -->             
+
+            	<div class="item">        
+                	<div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" alt="" class='autoimg'></a>
+                </div>                                    
+            </div><!-- /Slide3 -->                      
  
-            <div class="item active">            
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" title=""  class='img'></a>
-                </div>                            
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg' color=#FF8000 >臨行密密縫，意恐遲遲歸</font></center></div>                	               	
-                </div>                                                       
-            </div><!-- /Slide1 --> 
+        	</div>
+        
+        <div class="control-box">                            
+            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+        </div><!-- /.control-box -->   
+                              
+    </div><!-- /#myCarousel -->       
+	</div><!-- /.row --> 
+	</div><!-- /.container -->
+		
+</td>
 
-            <div class="item">   
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" title="" class='img'></a>
-                </div>                        
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>執手相看淚眼，竟無語凝噎</font></center></div>                	
-                </div>                                                        
-            </div><!-- /Slide2 -->             
-
-            <div class="item">            
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" title="" class='img'></a>
-                </div>                            
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>桃花潭水深千尺，不及汪倫送我情</font></center></div>                                                       
-            </div>                         
-        </div><!-- /Slide3 -->  
-        
-           <div class="item">            
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home04.jpg" title="" class='img'></a>
-                </div>                            
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>國際級醫學美容高級品牌</font></center></div>                                                       
-            </div>                         
-        </div><!-- /Slide4 -->  
-        
-           <div class="item">            
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home05.jpg" title="" class='img'></a>
-                </div>                            
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>給您貴婦般的奢華體驗</font></center></div>                                                       
-            </div>                         
-        </div><!-- /Slide5 -->  
-        
-           <div class="item">            
-                <div class="bannerImage">
-                    <a href="#"><img src="${pageContext.request.contextPath}/images/home06.jpg" title="" class='img'></a>
-                </div>                            
-                <div class="caption row-fluid">
-                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>充滿設計感的櫃檯</font></center></div>                                                       
-            </div>                         
-        </div><!-- /Slide6 -->  
-                             
-    </div><!-- /#myCarousel -->
-        
-</div><!-- /.span12 -->          
-</div><!-- /.row --> 
-</div><!-- /.container -->                      
+</tr>
+</table>	
+                   
 <script type="text/javascript">// Carousel Auto-Cycle
   $(document).ready(function() {
-    $('.carousel').carousel({
-      interval: 3000
-    })
+    $("#banner").remove();
   });
+  $(document).ready(function() {
+	    $('.carousel').carousel({
+	      interval: 5000
+	    })
+	  });
 </script>
 
 
@@ -193,32 +194,7 @@ background-color: #fff;
 
 		}
 	</script>
-
-
-	<script>
-		var modal = document.getElementById('myModal');
-
-		var btn = document.getElementById("mybtn");
-
-		var span = document.getElementsByClassName("close")[0];
-
-		btn.onclick = function() {
-			modal.style.display = "block";
-		}
-
-		span.onclick = function() {
-			modal.style.display = "none";
-		}
-
-		window.onclick = function(event) {
-			if (event.target == modal) {
-				modal.style.display = "none";
-			}
-		}
-	</script>
-
 <%-- 	<s:include value="/General/mySpace.jsp"></s:include> --%>
 	<s:include value="/General/footer.jsp"></s:include>
-
 </body>
 </html>
