@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
  
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -88,6 +89,30 @@ public class ScheduleServlet extends HttpServlet {
 			return;
 
 		}
+		
+		if("get_one_sch".equals(action)){
+			System.out.println("call get_one_sch");
+			ScheduleService sSvc = new ScheduleService();
+			int schId = Integer.parseInt(req.getParameter("schId"));
+			ScheduleVO schVO = sSvc.findByPrimaryKey(schId);
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("sch_id", schVO.getSch_id().toString());
+			map.put("eid",schVO.getEmployeeVO().getEid().toString());
+			map.put("ename", schVO.getEmployeeVO().getName());
+			map.put("c_date", schVO.getC_date().toString());
+			map.put("c_hour", schVO.getC_hours());
+			map.put("appt_status", schVO.getAppt_status().toString());
+			map.put("memo", schVO.getMemo());
+			
+			String json = gson.toJson(map);
+			out.print(json);
+			
+			
+			
+			
+			
+		}
+		
 		if ("bydate".equals(action)) { // 用日期查詢
 			List<String> errorMsg = new LinkedList<String>();
 			req.setAttribute("errorMsg", errorMsg);

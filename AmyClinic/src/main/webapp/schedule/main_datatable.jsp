@@ -62,7 +62,7 @@ float: right;
             </div> <!-- /.container-fluid -->
             </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->     
 <!--         開始 -->
-<!-- =======================Bootstrap dialog============================== -->
+<!-- =======================新增排班============================== -->
 
 
 
@@ -93,7 +93,7 @@ float: right;
                     <jsp:useBean id="empSvc" scope="page" class="group3.beef.employee.model.EmployeeService" />
                       <select  id="doctor" name="eid" class="form-control" > 
                       <c:forEach var="empVO" items="${empSvc.all}">
-						<option value="${empVO.eid}">${empVO.name}</option>
+						<option  id="eidopt" value="${empVO.eid}">${empVO.name}</option>
                       </c:forEach>
                       </select>
                       </div>
@@ -106,10 +106,10 @@ float: right;
                       
                       <div class="form-group">
                         <label for="exampleInputEmail1">值班時段</label>
-                        <select name="c_hours" class="form-control" id="datepicker"> 
-						<option value="早上">早上</option>
-					  <option value="下午">下午</option>
-  					<option value="晚上">晚上</option>
+                        <select name="c_hours" id="c_hours" class="form-control"  > 
+						<option value="早診">早診</option>
+					  <option value="午診">午診</option>
+  					<option value="晚診">晚診</option>
                       </select>
                       </div>
                       
@@ -122,12 +122,12 @@ float: right;
                   
                   <div class="row">
                   <div class="checkbox col-md-offset-10">
-                    <label>  <input type="checkbox" name="vac" />休假 </label>
+                    <label>  <input type="checkbox" name="vac" id="vac" />休假 </label>
                   </div>
                   </div>
                   <button type="submit" class="btn btn-default"> 送出 </button>
-                  <input type="hidden" name="action" value="addsch">
-                </form>
+                  <input type="hidden" name="action" id="action" value="addsch">
+                  </form>
                 
                   
                 
@@ -141,7 +141,8 @@ float: right;
     </div>
 </div>
 
-<!-- =============================================================================== -->
+<!-- =========================================================================== -->
+ 
 
 
 
@@ -155,6 +156,7 @@ float: right;
 				<th>預約人數</th>
 				<th>門診狀態</th>
 				<th>備註</th>
+				<th>修改</th>
 			</tr>
 		</thead>
 		<jsp:useBean id="schSvc" scope="page"	class="group3.carrie.schedule.model.ScheduleService" />
@@ -178,6 +180,7 @@ float: right;
 
 				</c:choose>
 				<td>${schVO.memo}</td>
+				<td><button class="btn btn-info" data-toggle="modal" name="sch_id" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
 			</tr>
 
 
@@ -186,7 +189,7 @@ float: right;
 
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
+<button class="btn btn-primary btn-lg" data-toggle="modal"  id="addschbtn" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
     新增排班
 </button>
 <!-- Button trigger modal -->
@@ -199,6 +202,42 @@ float: right;
 
 </body>
 <script type="text/javascript">
+
+$(function(){
+	$('#addschbtn').click(function(){
+		$("#action").val("addsch");
+		
+	})
+	
+})
+
+$(function(){
+$('button[name=sch_id]').click(function(){
+	var schId = $(this).val();
+	//alert(schId);
+	$.ajax({
+		'type':'get',
+		'url':'Scheduleservlet',
+		'dataType' :'json',
+		"data":{"action" : "get_one_sch" , "schId" : schId},
+		'success':function(data){
+console.log(data);
+$("#action").val("updatesch")
+	$("#doctor").val(data.eid);
+	$("#datepicker").val(data.c_date);
+	$("#c_hours").val(data.c_hour);
+	$("#memo").val(data.memo);
+	if(data.appt_status==0){
+		$("#vac").attr("checked",true);
+	}
+		}
+		
+	
+})});
+})
+
+ 
+ 
  
  $('#datepicker').change(function(){
 	var date = $(this).val()
