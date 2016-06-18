@@ -88,7 +88,7 @@ public class EditProfileAction extends ActionSupport {
 		service.update(memberVO);
 		HttpSession session = request.getSession();
 		session.setAttribute("memberVO", memberVO);
-		this.setMessage("謝謝您， " + memberVO.getName() + "， 您的個人資料已更新");
+		this.setMessage(memberVO.getName() + "您好，您的個人資料已更新，三秒後跳轉回首頁");
 		return "updated";
 	}
 	

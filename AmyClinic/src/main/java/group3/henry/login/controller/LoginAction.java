@@ -66,7 +66,7 @@ public class LoginAction extends ActionSupport {
 			this.setMessage("帳號或密碼錯誤");
 			return "login";
 		} else if (memberVO.getAct_status() == 2) { // if the account still needs to verify email
-			this.setMessage("請至註冊時填寫的email信箱收取認證信進行帳號驗證");
+			this.setMessage("請至註冊時填寫的email信箱收取認證信進行帳號驗證，三秒後跳轉回首頁");
 			return "verifyEmail";
 		} else if (memberVO.getAct_status() == 0) { // if the account has been banned
 			this.setMessage("您的帳號已被封鎖，請與客服人員聯絡");
