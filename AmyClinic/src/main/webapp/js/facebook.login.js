@@ -2,6 +2,7 @@
 
 	// This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
+	  console.log("我有執行1")
     console.log('statusChangeCallback');
     console.log(response);
     console.log(response.authResponse);
@@ -34,6 +35,7 @@
 
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
+    	console.log("我有執行")
       statusChangeCallback(response);
     });
   }
@@ -47,9 +49,9 @@
     version    : 'v2.5' 
   });
   console.log("FB init");
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
+//  FB.getLoginStatus(function(response) {
+//    statusChangeCallback(response);
+//  });
 
   };
 
