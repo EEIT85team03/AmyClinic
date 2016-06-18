@@ -166,7 +166,7 @@ float: right;
 			<tr>
 				<td>${schVO.sch_id}</td>
 				<td>${schVO.employeeVO.name}</td>
-				<td class="c_date" >${schVO.c_date}</td>
+				<td>${schVO.c_date}</td>
 				<td>${schVO.c_hours}</td>
 				<td>${schVO.appt_num}</td>
 				<c:choose>
@@ -182,17 +182,9 @@ float: right;
 
 				</c:choose>
 				<td>${schVO.memo}</td>
-				
-				
-				
-				
-				
-				
-				
 				<c:choose>
 				<c:when test="${schVO.appt_num ne 0}">
 				<td><button class="btn btn-info " data-toggle="modal" name="sch_id" disabled="disabled" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
-				
 				
 				</c:when>
 				<c:otherwise>
