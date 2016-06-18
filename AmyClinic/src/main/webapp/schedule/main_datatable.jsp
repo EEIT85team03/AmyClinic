@@ -127,6 +127,7 @@ float: right;
                   </div>
                   <button type="submit" class="btn btn-default"> 送出 </button>
                   <input type="hidden" name="action" id="action" value="addsch">
+                  <input type="hidden" name="sch_id" value="">
                   </form>
                 
                   
@@ -159,12 +160,13 @@ float: right;
 				<th>修改</th>
 			</tr>
 		</thead>
+		<c:set var="now" value="<%= new java.util.Date() %>" />
 		<jsp:useBean id="schSvc" scope="page"	class="group3.carrie.schedule.model.ScheduleService" />
 		<c:forEach var="schVO" items="${schSvc.all}">
 			<tr>
 				<td>${schVO.sch_id}</td>
 				<td>${schVO.employeeVO.name}</td>
-				<td>${schVO.c_date}</td>
+				<td class="c_date" >${schVO.c_date}</td>
 				<td>${schVO.c_hours}</td>
 				<td>${schVO.appt_num}</td>
 				<c:choose>
@@ -180,7 +182,34 @@ float: right;
 
 				</c:choose>
 				<td>${schVO.memo}</td>
-				<td><button class="btn btn-info" data-toggle="modal" name="sch_id" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
+				
+				
+				
+				
+				
+				
+				
+				<c:choose>
+				<c:when test="${schVO.appt_num ne 0}">
+				<td><button class="btn btn-info " data-toggle="modal" name="sch_id" disabled="disabled" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
+				
+				
+				</c:when>
+				<c:otherwise>
+				
+				<c:choose>
+				<c:when test="${schVO.c_date < now}">
+				<td><button class="btn btn-info " data-toggle="modal" name="sch_id" disabled="disabled" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
+				</c:when>
+				<c:otherwise>
+				
+				<td><button class="btn btn-info " data-toggle="modal" name="sch_id" data-target="#myModalNorm" value="${schVO.sch_id}" >修改</button></td>
+				
+				</c:otherwise>
+				</c:choose>
+				</c:otherwise>
+				</c:choose>
+				
 			</tr>
 
 
@@ -189,7 +218,7 @@ float: right;
 
 
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal"  id="addschbtn" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
+<button class="btn btn-primary btn-lg" data-toggle="modal" id="addschbtn" data-target="#myModalNorm" style="margin-left: 50px; margin-top: 20px;">
     新增排班
 </button>
 <!-- Button trigger modal -->
@@ -202,6 +231,21 @@ float: right;
 
 </body>
 <script type="text/javascript">
+// // $(document).ready(function(){
+// 	$(function(){
+// 		$('button[name=sch_id]').click(function(){
+// 		var s_date = $(this).closest('td').siblings('.c_date').text();
+// 		var today = new Date();
+// 		var sd = Date.parse(s_date).valueOf();
+// 		var td = Date.parse(today).valueOf();
+// 		if(sd<td){
+// 			alert('修改日期不能晚於今天')
+// 			$('button[name=sch_id]').attr('disabled','disabled');
+// 		}
+// 		})
+// 	})
+// // })
+
 
 $(function(){
 	$('#addschbtn').click(function(){
@@ -221,17 +265,20 @@ $('button[name=sch_id]').click(function(){
 		'dataType' :'json',
 		"data":{"action" : "get_one_sch" , "schId" : schId},
 		'success':function(data){
-console.log(data);
+// console.log(data);
 $("#action").val("updatesch")
 	$("#doctor").val(data.eid);
 	$("#datepicker").val(data.c_date);
 	$("#c_hours").val(data.c_hour);
 	$("#memo").val(data.memo);
 	if(data.appt_status==0){
-		$("#vac").attr("checked",true);
+		$("#vac").prop("checked",true);
+	}else{
+ 		$("#vac").prop("checked",false);
 	}
+	
+	$("input[name=sch_id]").val(data.sch_id);
 		}
-		
 	
 })});
 })
