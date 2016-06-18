@@ -21,8 +21,9 @@
 		<td width="22"></td>
 		<td>
 				<table style="font-size: 15pt;">
-					<tr>
+					<tr id='xxx'>
 						<td colspan="2" style="font-size: 35pt;"><b>${empVO.name}　醫師</b></td>
+						
 					</tr>
 					<tr height="20">
 						<td colspan="2"><hr></td>
@@ -56,6 +57,11 @@ $(function() {
 	for(var i = 0; i < expArray.length - 1; i++) {
 		$('#exp').append(expArray[i] + ')<br>');
 	}
+})
+
+$.getJSON('ScoreServlet',{'action':'getOne_ScoreJSON','eid':'${empVO.id}'},function(data){
+	var cell1 = $("<td></td>").html("<img width='300px' height='auto'src='${pageContext.request.contextPath}/images/"+emp.avgPicture+"'>"+"<span id='font'>"+emp.avgScore+"</span>");
+	$("#xxx").append(cell1);
 })
 
 </script>	
