@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/5-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/5-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">你是否曾經看過街上漂亮的女性穿著一雙高跟鞋，但是小腿後方卻出現下垂的蘿蔔腿？或是天氣熱時，因為自卑自己的小腿有肌肉型贅肉，而不敢穿著短裙見人？擁有蘿蔔腿還可能被別人嘲笑：「有小白兔跟在後面跳」，事實上，女人除了豐滿的胸部最為吸睛之外，另一個焦點目標就是小腿了，如果有一雙蘿蔔腿確實非常惱人，愛美診所推出電波縮小肌肉型蘿蔔腿術療程，術後也不必擔心會留下疤痕或影響重要功能。</p>

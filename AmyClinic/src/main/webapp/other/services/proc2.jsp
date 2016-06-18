@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/2-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/2-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">鼻子是臉部五官最突出的部份，許多人選擇隆鼻美容手術不只是為了讓自己外貌更加吸引人，根據研究指出鼻子與性能力有很大的關係，隆鼻在整型手術項目中男性佔了相當高的比例。女性則希望讓臉部整體感更加立體，鼻型則是影響審美角度的重要關鍵。鼻子在面相學上是所謂聚財之地、鼻孔外漏或鼻毛露出在中國人的觀念上有漏財的可能，東方人隆鼻亦包含有改運的概念！但不論隆鼻動機為何，適度的調整鼻型與高度為自信加分何樂不可呢！最重要的是選擇合格的整型外科醫師，與醫師充分討論適合自己的鼻型與比例，才是首要的前置步驟唷！</p>

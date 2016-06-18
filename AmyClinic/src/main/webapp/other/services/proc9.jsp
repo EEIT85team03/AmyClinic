@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/9-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/9-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">醫學上來說，「痣」其實就是黑色素細胞的聚集，長在身體的各個部位，根據統計，男性身上每人平均有73顆痣，女性則是27顆，而痣的多寡及平均大小，也與將來發展成黑色素瘤的機率有相關，痣越多、越大，越有可能罹患黑色素瘤，一旦發現痣的外觀出現變化，則需經由專業切片檢驗。所以「除痣」並非單純為了美觀，有時候為的是「預防」。</p>
@@ -69,7 +69,7 @@ h2 {
 			<br>
 			<h2>治療流程</h2>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/9-2.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/9-2.jpg"/><br>
 			<br>
 			<h2>術前注意事項</h2>
 			<br>

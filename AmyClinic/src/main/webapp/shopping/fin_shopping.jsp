@@ -10,6 +10,7 @@
 <title>結帳完成</title>
 <link href="${pageContext.request.contextPath}/shopping/css/phase.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 <style>
 	table {
 		margin: 0 auto;

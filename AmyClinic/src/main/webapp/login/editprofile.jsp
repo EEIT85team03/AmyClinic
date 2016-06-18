@@ -47,10 +47,10 @@
 
 <c:choose>
 	<c:when test="${memberVO.photo != null}">
-		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 	</c:when>
 	<c:otherwise>
-		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
 	</c:otherwise>
 </c:choose>	
 <br>
@@ -87,7 +87,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberbirthday">生日： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width:80px;"/>
+			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width: 50%;" />
 		</div>
 	</div>
 	<div class="form-group">

@@ -75,7 +75,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-				<img src="${pageContext.request.contextPath}/other/services/img/1-1.jpg"/><br>
+				<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/1-1.jpg"/><br>
 				<br>
 				<h1>${proc.name}</h1>
 				
@@ -87,7 +87,7 @@ h2 {
 				<br>
 				<h2>適應症</h2><br>
 				<p class="intro">胸部平坦發育不良、胸部大小不對稱、胸型下垂變形、外擴、生產後和哺乳造成的萎縮變形、已有抽脂塑身需求並希望同時胸部豐滿者。</p>
-				<img src="${pageContext.request.contextPath}/other/services/img/1-3.jpg"/><br>
+				<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/1-3.jpg"/><br>
 	<table border="1" cellpadding="2" cellspacing="2" width="750">
 		<tr>
 			<td align="center"  colspan="4" height="49" valign="middle" style="font-size: 14px;border: 1px solid black;color:#FF60AF">三明治豐胸隆乳</td>
@@ -140,7 +140,7 @@ h2 {
 		
 		<h2>三明治豐胸之義乳選擇？果凍矽膠or生理食鹽水袋？</h2><br>
 		<p class="intro">或許妳會好奇，有了自體脂肪做為胸部的觸感與視覺修飾，義乳植入所選用的材質有差別嗎？「若本身的胸部條件不錯，且脂肪量也充裕，並沒有太大的差別，但如果本身患有胸大肌發育不足的波蘭氏症候群，或是本身非常在意觸感，可能會直接推薦選用果凍矽膠，主因是果凍矽膠觸與生理食鹽水袋相比，觸感較真實柔軟且較無皺摺問題，不用擔心胸部組織是否足夠覆蓋，若再搭配自體脂肪注射，注射在胸大肌或乳腺內，就能增強修飾效果，讓乳房兩側的胸型大小、高低趨近一致。」。此外，能在短時間內大方秀出好身材，會建議以內視鏡輔助義乳植入法，減少手術帶來的疼痛感與出血量，縮短隆乳後的恢復期。</p>
-		<img src="${pageContext.request.contextPath}/other/services/img/1-2.jpg"/><br>
+		<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/1-2.jpg"/><br>
 		<br>
 		<h2>專業醫師美胸小叮嚀</h2><br>
 		<p class="intro">以目前的乳房技術來看，通常都會建議使用內視鏡輔助降低手術的後遺症，如出血量多、瘀血腫脹、肌肉拉扯受損、術後胸部左右效果不一等，因此恢復期較傳統盲目式剝離義乳植入法短暫，約莫1個月。而進行完三明治法後，建議生活飲食要正常，不要刻意瘦身，否則注入的自體脂肪會隨著體重下降而流失，效果會大打折扣。此外，三明治法術後一個月內盡量不要搓揉胸部，主因是擔心破壞脂肪的存活機率，且隆乳植入通常都會選用術後可不用按摩的粗糙面義乳（或稱絨毛面），所以不用刻意按摩。但如果可以，建議待自體脂肪穩定存活後仍需請專業按摩師定期定時按摩，胸部的觸感與形狀會越顯自然。</p>		

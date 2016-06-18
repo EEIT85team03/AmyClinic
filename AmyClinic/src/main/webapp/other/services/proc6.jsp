@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img src="${pageContext.request.contextPath}/other/services/img/6-1.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/6-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">眼睛是靈魂之窗，是最容易第一眼關注的美麗焦點，雙眼皮手術一直是追求美麗男女的首選，直接讓眼睛比例放大、眼神顯的朝氣有精神，五官比例也更加精緻，雙眼皮手術雖然普遍，不只是在眼皮上劃一條線那麼簡單，對於眼部黃金比例聖宜有專業整形外科團隊見解，考量到整體比例，施行精緻細膩的雙眼皮外科手術，才能做出對稱、和諧、令人滿意的手術結果。</p>
@@ -74,8 +74,8 @@ h2 {
 			<h2>治療內容</h2>
 			<br>
 			<p class="intro">局部麻醉後，在上眼皮處劃開約1.5~2.5公分的小切口，加上移除眼部多餘的皮膚、脂肪，或是先天性下垂眼瞼的修飾，手術時間約50分鐘~2小時，術後約5~7天可拆線。成功的雙眼皮手術，外形孤度在靜態下看來自然大方、雙眼皮寬窄很適合本人臉形、睫毛輕微上翹，整體顯得溫柔有神；在說話和笑時的動態下眼裂大小不變，向下注視和閉眼時皮膚疤痕不明顯，眼周沒有牽拉、沉重感，摺痕較深較持久。</p>
-			<img src="${pageContext.request.contextPath}/other/services/img/6-2.jpg"/><br>
-			<img src="${pageContext.request.contextPath}/other/services/img/6-3.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/6-2.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/6-3.jpg"/><br>
 
 			</article>
 

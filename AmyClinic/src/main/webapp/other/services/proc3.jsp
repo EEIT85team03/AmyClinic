@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/3-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/3-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">自體脂肪移植手術是藉由細小針管抽取身體脂肪囤積的部位，如：腹部、大腿等脂肪囤積處，以手術的方式將多餘的脂肪抽出後，經過篩選後再以較優質的脂肪組織移植到身體其他部位填補，區域如：太陽穴、額頭、臉頰、顴骨及下巴等特別適合。而術後的脂肪組織會在新的移植地存活，可以改善凹陷變形的外觀，也不會有排斥或是過敏的不良反應，術後有短暫的恢復期約3-5天。另外注射進去脂肪會一部分被自體吸收到剩下一定的比例存活（最終存活率通常約是50~70%），手術後注射進去的脂肪會逐漸消退直到二至三個月後才會達到穩定結果，所以手術時醫師通常會選擇移植比預計量更多的脂肪，或是選擇多次手術以確保手術的效果。</p>
@@ -69,7 +69,7 @@ h2 {
 			<br>
 			<h2>MAFT-GUN 微脂精雕的祕密武器</h2>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/3-2.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/3-2.jpg"/><br>
 			<br>
 			<p class="intro">自體脂肪移植手術成功的要件與脂肪的獲取、注射前脂肪的製造過程與精鍊及脂肪的植入均有相關。脂肪移植時每次輸入體內的脂肪圓球，其圓球半徑最好能小於2 mm，才能有最佳的存活率。許多在脂肪移植手術後，因植入之圓球體積過大，導致鄰近組織無法將營養傳輸至圓球之中央部位，或中央部位之脂肪細胞(或前趨脂肪細胞)代謝產生的廢物無法順利排出外圍，引起所謂之中心性壞死；藉由MAFT-GUN的微脂精雕輸出，上述壞死情形隨著大大地降低，如此一來，脂肪移植的存活率就能夠提昇，因此稱之為微脂精雕脂肪移植術Micro-Autologous Fat Transplantation(MAFT)。MAFT-GUN可控制脂肪量於1/60至 1/240 cc， 降低脂肪壞死情形，不僅能夠提昇存活率，針對一些臉部細緻部位(特別是眼周) ，更可避免術後表面不平整或纖維化凸起的風險。</p>
  			<br>

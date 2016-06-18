@@ -6,6 +6,7 @@
 	<a href="${pageContext.request.contextPath}/ChatClient.jsp">
 	<img src="${pageContext.request.contextPath}/General/img/logo.jpg" alt="愛美小天使"   id="logo">
 	</a>
+	
 	<h3><font color=#FF8000 class='fa fa-smile-o' >美麗諮詢</font></h3>
 </div>
 
