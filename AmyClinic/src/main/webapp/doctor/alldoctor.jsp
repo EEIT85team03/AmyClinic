@@ -12,6 +12,14 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/doctor/css/style.css" />
 		<script type="text/javascript" src="${pageContext.request.contextPath}/doctor/js/modernizr.custom.53451.js"></script>
 		<style type="text/css">
+		.container{
+		background-image: url("/AmyClinic/images/b1.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+		 }
 		img{
 		height: 100%;
 		}
