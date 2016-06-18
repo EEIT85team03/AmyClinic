@@ -37,10 +37,12 @@ width:100%;height:60%;}
 font{font-family: myfont;
 /* background-color: #fff; */
 }
-
+#footer{
+background-color:none;
+}
 #footer-bgcontent {
 	  height: 99px;
-	  background: #e499ba;
+	  background-color:none;
 	  position: absolute;
 	  right: 0;
 	  left: 0;
@@ -49,8 +51,8 @@ font{font-family: myfont;
 }
 </style>
 <style type="text/css">
+
 .container-fluid {
-    
 /*     margin: 40px auto 10px; */
 /*     padding: 20px 0px; */
     max-width: 400px;
@@ -97,12 +99,12 @@ li a{color: #FF8000;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 </div> 
 <table class='table borderless' >	
 	
 	<tr>
-<td class='col-md-4' style="background-color: white;"> 	
+<td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
 <img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗快報</span>		
 			<ul style="max-height: 200px; overflow-y:scroll; ">		
 			<li><a href="a1.jsp">【極線超音波拉提】找回消失的輪廓線_小草莓</a></li>
@@ -113,7 +115,7 @@ li a{color: #FF8000;}
 			<li><a href="">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
 			</ul>
 </td>
-<td class='col-md-3' ><img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' style="margin-left: 0px;padding-left: 0px;">		</td>	
+<td class='col-md-3' ><img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' style="margin:0px;"></td>	
 <td class='col-md-3' >
 <%-- <img src="${pageContext.request.contextPath}/images/h5.jpg" alt=""  class='autoimg' > --%>
 </td>
@@ -198,5 +200,6 @@ li a{color: #FF8000;}
 	</script>
 <%-- 	<s:include value="/General/mySpace.jsp"></s:include> --%>
 	<s:include value="/General/footer.jsp"></s:include>
+
 </body>
 </html>
