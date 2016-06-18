@@ -75,7 +75,8 @@ li a{color: #FF8000;}
 	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 	<!-- end facebook script -->
 	<s:include value="/General/header.jsp"></s:include>
-	<table  class='table borderless'>
+	<div class="container">	
+	<table  >
 	<tr >
 		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#FF8000 class='fa fa-smile-o'  style="font-size: 25px; ">Start now For your Beautiful Life<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
 		<td ></td>
@@ -97,6 +98,7 @@ li a{color: #FF8000;}
 	</tr>
 </table>
 <br><br><br><br><br>
+</div> 
 <table class='table borderless' >	
 	
 	<tr>
@@ -154,7 +156,7 @@ li a{color: #FF8000;}
 
 </tr>
 </table>	
-                   
+                  
 <script type="text/javascript">// Carousel Auto-Cycle
   $(document).ready(function() {
     $("#banner").remove();
