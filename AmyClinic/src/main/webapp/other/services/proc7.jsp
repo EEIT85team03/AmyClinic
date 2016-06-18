@@ -54,12 +54,12 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/7-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/7-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">厭倦每天刮腳毛、除腋毛了嗎？刮完毛髮後的黑頭讓你覺得尷尬嗎？紫翠玉光纖雷射除毛體貼您，只要利用短暫午休時間，就可快速去除困擾的毛髮，讓您盡情展現自己。</p>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/7-2.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/7-2.jpg"/><br>
 			<h2>雷射除毛原理</h2>
 			<br>
 			<p class="intro">紫翠玉雷射會穿透皮膚，被毛囊母細胞中的麥拉寧色素吸收，藉此淡化皮膚色素斑點，達到淡斑美白的作用，並可到達毛髮根部，在不傷害周圍正常組織下，進而破壞毛囊結構達到除毛的目的。</p>
@@ -68,7 +68,7 @@ h2 {
 			<br>
 			<h2>毛髮的生長週期</h2>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/7-3.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/7-3.jpg"/><br>
 			<br>
 			<h2>療程特色</h2>
 			<br>

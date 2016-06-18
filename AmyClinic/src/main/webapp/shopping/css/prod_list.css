@@ -177,14 +177,17 @@ a:hover {
 
 .cbp-vm-view-grid .cbp-vm-title {
 	font-size: 1.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .cbp-vm-view-grid .cbp-vm-details {
-	max-width: 300px;
-	min-height: 70px;
-	margin: 0 auto;
+	width: 300px;
+    height: 70px;
+    display: box;
+    text-align: left;
 } 
-
 .cbp-vm-view-grid .cbp-vm-price {
 	margin: 10px 0;
 	font-size: 1.2em;

@@ -53,10 +53,10 @@ response.setDateHeader("Expires", 0);
 		</c:if>
       <c:choose>
 	<c:when test="${memberVO.photo != null}">
-		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 	</c:when>
 	<c:otherwise>
-		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
 	</c:otherwise>
 </c:choose>	
     </div>
@@ -68,15 +68,15 @@ response.setDateHeader("Expires", 0);
     </div>
     <div class="email">
       <label for="email"></label>
-      <input type="email" placeholder="目前紅利：${memberVO.reward_pts} 點" name="email" id="email_input" required>
+      <input type="email" placeholder="目前紅利：${memberVO.reward_pts} 點" name="email" id="email_input" required  readonly>
     </div>
     <div class="telephone">
       <label for="name"></label>
-      <input type="text" placeholder="診療次數：${memberVO.num_treatment} 次" name="telephone" id="telephone_input" required>
+      <input type="text" placeholder="診療次數：${memberVO.num_treatment} 次" name="telephone" id="telephone_input" required  readonly>
     </div>
     <div class="telephone">
       <label for="name"></label>
-      <input type="text" placeholder="加入日期：${memberVO.join_date}" name="telephone" id="telephone_input" required>
+      <input type="text" placeholder="加入日期：${memberVO.join_date}" name="telephone" id="telephone_input" required  readonly>
     </div>
 <!--     <div class="subject"> -->
 <!--       <label for="subject"></label> -->

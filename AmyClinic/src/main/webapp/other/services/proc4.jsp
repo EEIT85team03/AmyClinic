@@ -54,7 +54,7 @@ h2 {
 			<article id="a1">
 			<br>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/4-1.jpg"/><br>
+			<img style="display:block; margin:auto;" width="750px" src="${pageContext.request.contextPath}/other/services/img/4-1.jpg"/><br>
 			<br>
 			<h1>${proc.name}</h1>
 			<p class="intro">拉皮手術是利用外科手術，將臉部萎縮無力的皮膚皮下組織、囤積的脂肪、鬆弛的肌肉筋膜予以切除及調整，來恢復皮膚的緊繃、彈性及光澤。傳統的上臉部拉皮是 將整個額頭頭皮切開掀起，但因傷口太大，疤痕明顯，近年來已漸漸 由內視鏡手術所取代，內視鏡的前額拉皮手術只需要小小3-4個約3 公分的傷口 (傷口在髮際內)，就可改善額頭的皺紋，魚尾紋及下垂的眉毛。</p>
@@ -63,7 +63,7 @@ h2 {
 			<br>
 			<p class="intro">手術後，雙眉恢復至年輕時眉骨上方的正常位置，原來因眼皮鬆弛導致內雙的雙眼皮也會重見天日，恢復年輕的模樣。除了手術後不留疤痕及美容效果更令人滿意的 優點外，內視鏡拉皮不需住院，恢復期較短，手術後約5至7天就可以化妝重新回到工作崗位，也無傳統手術後頭皮腫脹及麻痛的困擾。內視鏡的上額拉皮手術，是 一種公認持久性最好的拉皮手術，一般效果可持續5-6年甚至10年。</p>
 			<br>
-			<img width="750px" src="${pageContext.request.contextPath}/other/services/img/4-2.jpg"/><br>
+			<img style="display:block; margin:auto;" src="${pageContext.request.contextPath}/other/services/img/4-2.jpg"/><br>
 			<br>
 			<h2>適應症</h2>
 			<br> 
