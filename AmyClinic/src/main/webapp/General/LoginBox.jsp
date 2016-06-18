@@ -107,7 +107,7 @@ p {
 
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			console.log("Facebook logged in! (via LoginBox)");
+// 			console.log("Facebook logged in! (via LoginBox)");
 			testAPI();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
@@ -133,9 +133,9 @@ p {
 			version : 'v2.5'
 		});
 		console.log("FB init");
-		FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-		});
+// 		FB.getLoginStatus(function(response) {
+// 			statusChangeCallback(response);
+// 		});
 
 	};
 

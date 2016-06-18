@@ -17,6 +17,10 @@
 		padding: 1rem;
 		text-align: center;	
 }
+
+h2 {
+	font-size: 23pt;
+}
 </style>	
 </head>
 <body>
@@ -24,7 +28,7 @@
 <!-- General purpose message page. Displays a message (from many sources) 
 	 for 3 seconds before redirecting to index.jsp -->
 <br>
-<div style="color:red;text-align: center;"><h1>${message}</h1></div>
+<div style="color:red;text-align: center;"><h2>${message}</h2></div>
 <jsp:include page="/General/footer.jsp"></jsp:include>
 <script>
   setTimeout(function() {
