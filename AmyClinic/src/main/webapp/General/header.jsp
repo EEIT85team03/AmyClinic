@@ -40,7 +40,8 @@ font-family: myfont;
 			<li class='has-sub'><a href="${pageContext.request.contextPath}/index.jsp"><span>愛美首頁</span></a></li>
 			<li class='has-sub'><a href="#"><span>關於愛美</span></a>
 				<ul>
-					<li class='last'><a href='${pageContext.request.contextPath}/doctor/alldoctor.jsp'><span>醫師介紹</span></a></li>
+					<li class='last'><a href='${pageContext.request.contextPath}/Faker/aboutUs.jsp'><span>關於愛美</span></a></li>
+					<li><a href='${pageContext.request.contextPath}/doctor/alldoctor.jsp'><span>醫師介紹</span></a></li>
 					<li><a href='${pageContext.request.contextPath}/free/showophr'><span>門診時間表</span></a></li>
 					
 				</ul>
