@@ -16,17 +16,30 @@ color: orange;
 
 
 }
+
+#footer-bgcontent {
+		height: 99px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
 </style>
 
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
 <br>
+<br>
+<br>
+
 <table align="center">
 	<tr>
 		<td width="50"></td>
 		<td width="300">
-			<img class="img-circle" width="300px" src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}"/>
+			<img class="img-circle" width="300px" src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}" style="border: 3px solid lightgray;"/>
 		</td>
 		<td width="22"></td>
 		<td>
