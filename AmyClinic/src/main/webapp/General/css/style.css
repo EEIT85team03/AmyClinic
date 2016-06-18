@@ -91,10 +91,12 @@ hr {
 }
 
 #menu {
-	font-family: 'Lato', sans-serif;
-	width: 1000px;
+/* 	font-family: 'Lato', sans-serif; */
+	width: 880px;
+/* 	width:100%; */
 	height: 45px;
 	font-size: 13px;
+/* 	font-size: 20px; */
 /* 	float: left; */
 	margin: 0 auto;
 }
@@ -108,7 +110,7 @@ hr {
 #menu>ul {
 	position: relative;
 	z-index: 597;
-	float: left;
+/* 	float: left; */
 }
 
 #menu>ul li {
@@ -198,6 +200,7 @@ hr {
 
 #menu ul ul {
 	margin: -6px 10px;
+	margin:0px auto;
 	padding: 0 10px;
 	float: none;
 	background: #efefef;
@@ -219,8 +222,9 @@ hr {
 #menu ul>li>ul>li>a {
 	padding: 10px 20px 10px 10px;
 	display: block;
-	font-size: 1.1em;
+	font-size: 2em;
 	line-height: 1.7em;
+	color:#FF359A;
 }
 
 #menu ul>li>ul>li.has-sub>a::before {
@@ -237,7 +241,8 @@ hr {
 }
 
 #menu ul ul ul {
-	width: 200px;
+	width: 250px;
+/* 	width: 200px; */
 	top: 100%;
 	border: 2px solid #1b9bff;
 }
@@ -439,19 +444,24 @@ hr {
 }
 
 #footer {
-	width: 800px;
-	height: 49px;
+	width: 100%;
+/* 	width: 800px; */
+/* 	height: 49px; */
 	margin: 0 auto;
-	padding-top: 50px;
+/* 	padding-top: 50px; */
+	padding-top: 25px;
+/* 	position: relative; */
 }
 
 #footer-bgcontent {
 	margin: 0px;
 	padding: 0px;
-	height: 99px;
+/* 	height: 99px; */
+	height: 65px;
 	background: #e499ba;
     bottom: 0;
     width: 100%;
+    position: relative;
 }
 
 #footer p {
@@ -459,7 +469,8 @@ hr {
 	text-align: center;
 	line-height: normal;
 	text-transform: uppercase;
-	font-size: 10px;
+/* 	font-size: 10px; */
+font-size: 15px;
 	color: #FFFFFF;
 }
 
@@ -470,10 +481,14 @@ hr {
 #mySpace {
 	position: absolute;
 	top: 100px;
-	right: 1.5%;
+	bottom:50px;
+	right: 1%;
 	z-index: 9999;
-	width: 144px;
-	height: 144px;
+}
+
+#mySpace img {
+	width: 128px;
+	height: 128px;
 }
 
 #logo {

@@ -24,7 +24,7 @@ public class AuthenticationInterceptor extends AbstractInterceptor {
 			HttpServletRequest request = ServletActionContext.getRequest();
 			String location = request.getRequestURI();
 			session.put("location", location);
-			ctx.put("message", "You are not logged in!"); 
+			ctx.put("message", "您尚未登入"); 
 			System.out.println(location);
 			return "login";
 		} else {

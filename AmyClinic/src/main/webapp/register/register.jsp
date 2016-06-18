@@ -6,21 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
-<script	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/General/js/jquery-ui.min.js"></script>
 <link href="${pageContext.request.contextPath}/register/css/register.css" 	rel="stylesheet" type="text/css" media="screen" />
 <title>會員註冊</title>
 <s:head theme="xhtml" />
-
 </head>
 <body>
 	
-	<s:include value="/General/mySpace.jsp"></s:include>
 	<s:include value="/General/header.jsp"></s:include>
 
 	<div id="page">
-		<div id="content">
 
 			<div class="post">
 				<h1 class="ribbon">
@@ -77,9 +74,7 @@
 				<div style="color: red;">${message}</div>
 
 			</div>
-		</div>
 
-		<s:include value="/General/sidebar.jsp"></s:include>
 
 	</div>
 
@@ -131,6 +126,8 @@ $(document).ready(function() {
 	$('#birthday').datepicker({buttonImage: "${pageContext.request.contextPath}/register/img/Calendar.png"});
 	$("#birthday").datepicker("setDate", dynamicDate);
 }); 
+
+
 </script>
 </body>
 </html>

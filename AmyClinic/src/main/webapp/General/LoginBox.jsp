@@ -20,6 +20,7 @@
 /* 	border:3px double green; */
 	padding-top:5px;
 	padding-right:10px;
+	padding-bottom:0 !important;
 /* 	background-color: grey; */
 	height: auto;
 /*	width: 200px; */
@@ -30,10 +31,13 @@
 /* 	float:right; */
 /* 	clear:both; */
 }
+#LoginBox p {
+height: 19px;
+}
 #LoginBoxText{
 	width:auto;
 	display: inline-block;
-	padding-top:7px;
+	padding-top:0;
 }
 p {
 	margin:0;
@@ -103,7 +107,7 @@ p {
 
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			console.log("Facebook logged in!");
+			console.log("Facebook logged in! (via LoginBox)");
 			testAPI();
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.

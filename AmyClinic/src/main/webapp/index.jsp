@@ -1,161 +1,224 @@
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
-<!DOCTYPE html>
-<!-- saved from url=(0063)http://www.beide.com.tw/demotype/flash/FLASH-02/JQ-2/index.html -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<% response.setHeader("Cache-Control", "no-store"); response.setHeader("Pragma", "no-cache"); response.setDateHeader("Expires", 0); %>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-<title>-AMY-</title>
-<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-<META HTTP-EQUIV="Expires" CONTENT="-1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!-- <script type="text/javascript" src="jquery-1.3.2.js"></script> -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/supersized.2.0.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$.fn.supersized.options = {
-			startwidth : 1920, //照片長度 
-			startheight : 1080, //照片寬度
-			vertical_center : 1, //垂直居中 1居中 0關閉
-			slideshow : 1, //自動輪播 1開 0關
-			navigation : 0, //播放控制鈕 1開 0關
-			transition : 1, //0-None, 1-Fade, 2-slide top, 3-slide right, 4-slide bottom, 5-slide left //換場效果
-			pause_hover : 0, //滑入停止輪播
-			slide_counter : 0, //顯示圖片筆數 1開,0關
-			slide_captions : 0, //圖片名稱
-			slide_interval : 5000
-		//換圖片時間
-		//淡入圖片轉場時間要開啟supersized.2.0檔案，修改第218行的紅色數字
-		};
-		$('#supersize').supersized();
-	});
-</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <style type="text/css">
-body {
-	margin: 0px;
-	padding: 0px;
+body{ 
+ background-image: url("/AmyClinic/images/home07.jpg"); }
+#header{
+background-color: #AE00AE;
+width:100%;
+height:60%;
 }
+/* 
+ #banner a img{ 
+width: 100%; 
+ } 
+ */
+#banner a img {
+    visibility:hidden;
+} 
 
-#supersize {
-	position: fixed;
+#LoginBoxText p a {
+	color: white;}
+.img{width: 800px; height: 500px;}
+a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE 8 */
+  filter: alpha(opacity=50);
+  /* IE7 */
+  opacity: 0.6;
+  text-decoration: none;
 }
-
-#supersize img, #supersize a {
-	height: 100%;
+.container-fluid {
+/*   margin: 40px auto 10px; */
+/*   padding: 20px 0px; */
+  max-width: 800px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.page-header{margin:0px auto;}
+#page {
 	width: 100%;
-	position: absolute;
-	z-index: 0;
+	margin: 0 auto;
+	padding-top: 0px;
 }
-
-#supersize .prevslide, #supersize .prevslide img {
-	z-index: 1;
+font{
+font-family: myfont;
+background-color: #fff;
 }
-
-#supersize .activeslide, #supersize .activeslide img {
-	z-index: 2;
-}
-/* #logo{ */
-/* 	float:left; */
-/* 	width:60px; */
-/* 	height:60px; */
-/* 	border-radius:50%; */
-	
+/* #footer { */
+/* 	width: 100%; */
+/* 	background-color: #AE00AE; */
+/*  	padding-top: 0px;  */
 /* } */
+/* #footer-bgcontent { */
+/*  	height: 0px;  */
+/* 	background-color: #AE00AE; */
+
+/* } */
+.imgmsg{
+	  font-size: 40px;
+} 
+
+#footer-bgcontent {
+	  height: 99px;
+	  background: #e499ba;
+	  position: absolute;
+	  right: 0;
+	  left: 0;
+	  padding: 1rem;
+	  text-align: center;	
+}
 </style>
-
-<!--[if lt IE 9]>
-		<script src="http://htmL5shim.googlecode.com/svn/trunk/html5.js">	
-		</script>
-		<![endif]-->
-<link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/General/img/logo.ico" />
+<link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
+<title>愛美首頁</title>
 </head>
-
-<body marginwidth="0" marginheight="0">
-	<div id="supersize" 	style="height: 856px; width: 1521.77777777778px; display: none;">
-		<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img src="${pageContext.request.contextPath}/images/home01.jpg" title="" ></a> 
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home02.jpg" title=""></a> 
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home03.jpg" title=""></a> 
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home04.jpg" title=""></a> 
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home05.jpg" title=""></a> 
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home06.jpg" title=""></a>
-			<a	style="height: 856px; width: 1521.77777777778px; left: -121px; top: 0px;">
-			<img	src="${pageContext.request.contextPath}/images/home07.jpg" title=""></a>
-	</div>
-	<!-- 		test -->
-<div style="z-index:9999; position: relative;" align="center" align="center">
-<div id="allpage">
-		<header >
-<!-- 			<marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#FF9D6F" direction="right" height="20" scrollamount="8" behavior="alternate">歡迎光臨-AMY-限時特價藥妝、醫美保養品,☆專業醫美品牌☆</marquee> -->
-		</header>
-		<!--top image-->
-
-		<article>
-			<div id="headercontainer">
-<%-- 				<img id="logo" src="${pageContext.request.contextPath}/images/logo.jpg"> --%>
-				<c:import url="/General/LoginBox.jsp"></c:import>
-			</div>
-			<h2 class="title"></h2>
-			<!--黒底標題-->
-			<section>
-				<a href="http://www.w3schools.com/"></a> 
-				<br> <a href="http://www.w3schools.com/"> 
-				<img src="http://zippy.gfycat.com/MedicalBrownFoxhound.gif" alt="請重新整理"
-					title="動子動" class="litimg" width="300px" /></a>
-
-			</section>
-<!-- Henry's test login --><hr/>
-<div style="bgcolor='#FF9D6F'">
-<%-- 		<a href="${pageContext.request.contextPath}/login/login.jsp">Login page</a><br> --%>
-<%-- 		<a href="${pageContext.request.contextPath}/register/register.jsp">Register a new account</a><br>		 --%>
-
-<!-- <!--           	 namespace/action name.action  target registered in struts.xml --> -->
-<%-- 		<a href="${pageContext.request.contextPath}/member/editprofile.action">Edit Account Information</a><br> --%>
-<!--                    	 namespace/action name                      target registered in struts.xml-->		
-<%-- 		<a href="<s:url action="member/member2"/>">login required page 2  -- member/memberonly2.jsp")</a><br>		 --%>
-<!-- 		<a href="public/publicpage.jsp">login not required page</a><hr> -->
-		<a href="<s:url action="/free/public"/>">一般頁面1(free/HelloWorld.action --   free/HelloWorld.jsp")</a><br>
-<!-- Henry's test login -->
-
-<!-- 購物系統測試 -->
-
-		<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">商品列表(不需登入)</a><br>
-
-		<a href="${pageContext.request.contextPath}/shoppings/showorder" >查詢訂單(需登入)</a><br>
-<!-- 預約系統測試 -->
-		
-		<a href="${pageContext.request.contextPath}/app/add_app.jsp">線上預約(需登入)</a><br>
-
-		<a href="${pageContext.request.contextPath}/app/query_app.jsp" >查詢預約(需登入)</a><br>
-		
-		<a href="${pageContext.request.contextPath}/free/showophr" >門診時間表及醫師介紹(不需登入)</a><br>
+<body>
+	<!-- facebook script -->
+	<div id="fb-root"></div>
+	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
+	<!-- end facebook script -->
+	<s:include value="/General/header.jsp"></s:include>
+	<center>
+<h1 ><font color=#FF8000 class='fa fa-smile-o'  >麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1><br>
+<%-- <img src="${pageContext.request.contextPath}/images/logo.jpg" class="img-circle">  --%>
+</center>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span12">
+<%-- <div class="page-header"></div> --%>     
+    <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
  
-		<a href="${pageContext.request.contextPath}/empLogin/login.jsp" >員工登入</a><br>
- 
-		
-		<input type="button" value="麗質不必天生，美麗可以創造，專業的醫美團隊AMY" src="/register/register.jsp" style="font-style: italic;font-family: fantasy;font-size: xx-large;"/>
-</div>		
-		</article>
-		<aside></aside>
+            <div class="item active">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home01.jpg" title=""  class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg' color=#FF8000 >臨行密密縫，意恐遲遲歸</font></center></div>                	               	
+                </div>                                                       
+            </div><!-- /Slide1 --> 
+
+            <div class="item">   
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home02.jpg" title="" class='img'></a>
+                </div>                        
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>執手相看淚眼，竟無語凝噎</font></center></div>                	
+                </div>                                                        
+            </div><!-- /Slide2 -->             
+
+            <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home03.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>桃花潭水深千尺，不及汪倫送我情</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide3 -->  
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home04.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>國際級醫學美容高級品牌</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide4 -->  
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home05.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>給您貴婦般的奢華體驗</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide5 -->  
+        
+           <div class="item">            
+                <div class="bannerImage">
+                    <a href="#"><img src="${pageContext.request.contextPath}/images/home06.jpg" title="" class='img'></a>
+                </div>                            
+                <div class="caption row-fluid">
+                    <div class="span4"><center><font class='imgmsg'  color=#FF8000>充滿設計感的櫃檯</font></center></div>                                                       
+            </div>                         
+        </div><!-- /Slide6 -->  
+                             
+    </div><!-- /#myCarousel -->
+        
+</div><!-- /.span12 -->          
+</div><!-- /.row --> 
+</div><!-- /.container -->                      
+<script type="text/javascript">// Carousel Auto-Cycle
+  $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 3000
+    })
+  });
+</script>
 
 
-<hr>
-		<footer>
-			<p>E-amil:xxx@gmail.com &nbsp; Tel:0999-999-999 &nbsp;
-				Hello-Word國際碼業集團 &nbsp; &copy; 2016 EEIT85team03<a href="${pageContext.request.contextPath}/Backstage/b_login.jsp">後台專區</a><br></p>
-		</footer>
-	</div>
-</div>
-<!-- 		test-->
+<!-- 1 -->
+	
+	<!-- Google script -->
+	<script src="${pageContext.request.contextPath}/js/google.login.js"></script>
+	<!-- Henry's Custom logout -->
+	<script>
+		function logout() {
+			GoogleSignOut();
+			FacebookSignOut();
+
+			function getContextPath() { //obtains context path. EL doesn't work with separated .js
+				return window.location.pathname.substring(0,
+						window.location.pathname.indexOf("/", 2));
+			}
+			$.ajax({
+				type : "POST",
+				url : (getContextPath() + '/member/logout'),
+				data : 'email=' + "${memberVO.email}",
+				success : function(data) {
+					if (data[0].redirect) {
+						window.location.href = data[0].redirectURL;
+					}
+				}
+			})
+
+		}
+	</script>
+
+
+	<script>
+		var modal = document.getElementById('myModal');
+
+		var btn = document.getElementById("mybtn");
+
+		var span = document.getElementsByClassName("close")[0];
+
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+
+<%-- 	<s:include value="/General/mySpace.jsp"></s:include> --%>
+	<s:include value="/General/footer.jsp"></s:include>
 
 </body>
 </html>

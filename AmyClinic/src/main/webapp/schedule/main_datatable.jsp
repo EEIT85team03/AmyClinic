@@ -54,7 +54,7 @@ float: right;
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">產品資料維護</font>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: center;">醫師排班</font>
                  
                  </li></ol>
                     </div>
@@ -100,7 +100,7 @@ float: right;
                       
                       <div class="form-group">
                     <label for="datepicker">值班日期</label>
-                      <input type="text"  name="c_date" class="form-control"
+                      <input type="text"  name="c_date" class="form-control "
                           id="datepicker" placeholder="date"  required/>
                   </div>
                       
@@ -135,7 +135,7 @@ float: right;
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"> 關閉  </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"> 取消  </button>
             </div>
         </div>
     </div>
@@ -202,14 +202,29 @@ float: right;
  
  $('#datepicker').change(function(){
 	var date = $(this).val()
-	//	 alert(date);
+		// alert(date);
+	var today = new Date();
+var  ts = Date.parse(today).valueOf();	
+ var cs = Date.parse(date).valueOf();
+ 
  	if(date.match(/^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/)){
+ 		$('#dErr').remove();	
  		console.log('match')
- 	$('#dErr').remove();	
+ 		$('button[type=submit]').removeAttr('disabled')
+ 		if(cs<ts){
+ 			$('#dErr').remove();
+ 			$('#datepicker').before('<span id="dErr" style="float: right;color: red">日期不能小於今天!!</span>');
+ 			$('button[type=submit]').attr('disabled', 'disabled');
+ 			//alert('日期小於今天!!')
+ 		}
+ 	
  	}else{
+ 		$('#dErr').remove();
  			$('#datepicker').before('<span id="dErr" style="float: right;color: red">日期格式錯誤</span>');
- 			$('form input:submit').attr('disabled', 'disabled');
+ 			$('button[type=submit]').attr('disabled', 'disabled');
  			console.log('notmatch')}
+ 	
+ 	
  
  })
  
@@ -246,10 +261,7 @@ $(function() {
 		})
 	})
 	
-	$("#addsch").click(function(){
-		window.location = '${pageContext.request.contextPath}/schedule/add_schedule.jsp';
-		
-	});
+	
  
 </script>
 

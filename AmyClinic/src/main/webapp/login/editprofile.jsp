@@ -9,6 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Account Details</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/General/css/jquery-ui.min.css" rel="stylesheet">
 <style>
@@ -41,7 +42,6 @@
 </style>
 </head>
 <body>
-I am editprofile.jsp! <hr>
 
 <h3>${memberVO.name}</h3> 
 
@@ -53,6 +53,8 @@ I am editprofile.jsp! <hr>
 		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
 	</c:otherwise>
 </c:choose>	
+<br>
+<a class='iframe' href="${pageContext.request.contextPath}/login/editphoto.jsp">修改照片</a>
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
@@ -132,38 +134,54 @@ I am editprofile.jsp! <hr>
 <!-- 	</div> -->
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberact_status">狀態： </label>
-		<div class="col-sm-5">			
-			<input name="memberVO.act_status" id="memberact_status" class="form-control disable" type="text" value="${memberVO.act_status}" readonly />				
+		<div class="col-sm-5">
+		<c:if test="${memberVO.act_status == 0}">			
+			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}" />				
+			<input class="form-control disable" type="text" value="封鎖" readonly />				
+		</c:if>
+		<c:if test="${memberVO.act_status == 1}">			
+			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}"/>				
+			<input class="form-control disable" type="text" value="正常" readonly />				
+		</c:if>
+		<c:if test="${memberVO.act_status == 2}">			
+			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}" />				
+			<input class="form-control disable" type="text" value="未驗證Email" readonly />				
+		</c:if>
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_trans">交易： </label>
 		<div class="col-sm-5">			
-			<input name="memberVO.num_trans" id="membernum_trans" class="form-control disable" type="text" value="${memberVO.num_trans} 次" readonly />				
+			<input name="memberVO.num_trans" id="membernum_trans" type="hidden" value="${memberVO.num_trans}" />				
+			<input class="form-control disable" type="text" value="${memberVO.num_trans} 次" readonly />				
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_treatment">診療： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.num_treatment" id="membernum_treatment" class="form-control disable" type="text" value="${memberVO.num_treatment} 次" readonly />				
+			<input name="memberVO.num_treatment" id="membernum_treatment" type="hidden" value="${memberVO.num_treatment}" />				
+			<input class="form-control disable" type="text" value="${memberVO.num_treatment} 次" readonly /> 				
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="membernum_visits">來訪： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.num_visits" id="membernum_visits" class="form-control disable" type="text" value="${memberVO.num_visits} 次" readonly />						
+			<input name="memberVO.num_visits" id="membernum_visits" type="hidden" value="${memberVO.num_visits}"/>			
+			<input class="form-control disable" type="text" value="${memberVO.num_visits} 次" readonly />					
 		</div>
 	</div>
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberreward_pts">紅利點數： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.reward_pts" id="memberreward_pts" class="form-control disable" type="text" value="${memberVO.reward_pts} 點" readonly />			
+			<input name="memberVO.reward_pts" id="memberreward_pts" type="hidden" value="${memberVO.reward_pts}"/>	
+			<input class="form-control disable" type="text" value="${memberVO.reward_pts} 點" readonly /> 
 		</div>
 	</div>
 		<div class="form-group">
 		<label class="control-label col-sm-2" for="memberspent_pts">已消費紅利點數： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.spent_pts" id="memberspent_pts" class="form-control disable" type="text" value="${memberVO.spent_pts} 點" readonly />			
+			<input name="memberVO.spent_pts" id="memberspent_pts" type="hidden" value="${memberVO.spent_pts}" />			
+			<input class="form-control disable" type="text" value="${memberVO.spent_pts} 點" readonly /> 			
 		</div>
 	</div>
 	<div class="form-group">
@@ -189,6 +207,7 @@ I am editprofile.jsp! <hr>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.colorbox.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 
 <!-- required for .datepicker() -->
@@ -205,6 +224,13 @@ I am editprofile.jsp! <hr>
 <script>
 	var gender = $(".membergender").val()=="M" ?"Male":"Female";
 	$(".membergender").text(gender);
+	$(".iframe").colorbox({
+		iframe:true,
+		width:"30%",
+		height:"45%",
+		overlayClose:false,
+		escKey:false
+	});
 </script>
 
 </body>
