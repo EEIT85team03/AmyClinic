@@ -87,9 +87,9 @@ li a{color: #FF8000;}
 	<tr>
 		<td>
 		<div style="padding-left: 100px;">
-		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="" ></a><br>
-		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="" ></a><br>
-		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="" ></a></div>
+		<a href="${pageContext.request.contextPath}/ChatClient.jsp"><img src="${pageContext.request.contextPath}/images/03.gif" alt="線上諮詢" ></a><br>
+		<a href="${pageContext.request.contextPath}/app/add_app.jsp"><img src="${pageContext.request.contextPath}/images/04.gif" alt="線上預約" ></a><br>
+		<a href='${pageContext.request.contextPath}/QueryProc?id=1'><img src="${pageContext.request.contextPath}/images/02.gif" alt="療程說明" ></a></div>
 <%-- 				<div style="padding-left: 100px; float: left;"><img src="${pageContext.request.contextPath}/images/k1.gif" alt="" ><font>美麗見證...............................................................</font></div> --%>
 <%-- <%-- 				 <img src="${pageContext.request.contextPath}/images/k3.jpg" alt=""> --%> 
 <%-- 				 <div style="padding-left: 250px;"><img src="${pageContext.request.contextPath}/images/k2.gif" alt="" ><font>美麗見證</font></div> --%>
