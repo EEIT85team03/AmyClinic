@@ -16,7 +16,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Mailer implements GlobalConstants {	
-	private final String SIGNATURE = "Sent by AmyClinic." + NL + "Visit us on our website!";
+	private final String SIGNATURE = "由 AmyClinic寄出" + NL + "歡迎參觀我們的網站！";
 /*
  create account
  set status to 2 (awaiting verification)
@@ -68,7 +68,7 @@ public class Mailer implements GlobalConstants {
 	        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destination)); // Set To: header field of the header.         
 	        message.setSubject(subject,"utf-8"); // Set Subject: header field
 
-	        String outbound = "Hello, "+ name + "!" + NL + NL + text + NL + NL + SIGNATURE;
+	        String outbound = "哈囉， "+ name + "！" + NL + NL + text + NL + NL + SIGNATURE;
 	        if (format.equals("TEXT"))
 	        	message.setText(outbound,"utf-8"); // Set the actual message
 	        else if (format.equals("HTML"))

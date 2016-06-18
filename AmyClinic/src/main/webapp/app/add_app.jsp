@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/app/css/add_app.css">
+<script src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
 <title>線上預約</title>
 </head>
 <body>

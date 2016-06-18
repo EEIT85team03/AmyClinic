@@ -215,11 +215,11 @@ html,body{
     <label for="email" id="maillab">Email</label>
     <input type="email" class="form-control" id="remail">
   </div>
-   <button type="submit" class="btn btn-default" id="rebtn" >Submit</button>
+   <button type="submit" class="btn btn-default" id="rebtn" >送出</button>
 </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
         </div>
       </div>
       
