@@ -26,7 +26,7 @@
 <%-- ${memberVO.name }  提示訊息:<span id="chatnotice"></span> --%>
 <!-- 聊天區 -->
 	 <div id="chat-view" style="margin-bottom: 20PX;margin-left: 50px;margin-right: 50px;margin-top: 10px;" >
-	 	<textarea  class="form-control"  id="chat" rows="20" readonly="readonly" style="background-color: : yellow" placeholder="${empVO.name }  已登入～很高興為您服務"></textarea>
+	 	<textarea  class="form-control"  id="chat" rows="20" readonly="readonly" style="background-color: : yellow" ></textarea>
 
 <!-- 列表區 -->
 <!--      <div  style="float:right;"> -->
@@ -48,9 +48,9 @@
 
 <div>
 
-	 <button type="button" onclick="closeConnection()"class="btn btn-danger">離線</button>	
-     <button  type="button" onclick="clearConsole()"class="btn btn-info">刷評</button>
-     <button  type="button" onclick="sendMessage()"class="btn btn-success">發送</button>
+	 <button type="button" onclick="closeConnection()"class="btn btn-danger">離開對話</button>	
+     <button  type="button" onclick="clearConsole()"class="btn btn-info">清除對話框</button>
+     <button  type="button" onclick="sendMessage()"class="btn btn-success">發送訊息</button>
 </div>     
 </div>	
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
@@ -99,8 +99,9 @@
 	     */
 	    function showChat(message){
 	        var to = message.to;   //獲取接收人
+// 	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+"發送給:"+to+message.content;
+	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+":"+message.content;
 	        from = message.from;
-	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+"發送給:"+to+message.content;
 			var chatjq = $("#chat");
 			chatjq.scrollTop(chatjq[0].scrollHeight); //讓聊天室往下 
 	    }
@@ -109,7 +110,7 @@
 	     * 展示提示信息
 	     */
 	    function showNotice(notice){
-	    	chatnotice.textContent = notice+"\n";
+	    	chat.textContent = chat.textContent+notice+"\n";
 	    }
 	    
 	    /**
@@ -154,6 +155,8 @@
 	            },
 	            type : "message"
 	        }));
+	        
+	        clearmessage();
 	    }
 	    
 	    /**
@@ -168,6 +171,15 @@
 	        }else{
 	        	 console.log("未開啟連接");
 	        }
+	        
+	        window.location.href = 'http://localhost:8080/AmyClinic/Backstage/b_login.jsp';
+	    }
+	    
+	    /*
+	     * 清掉訊息 
+	     */
+	    function clearmessage(){
+	    	message.value="";
 	    }
 	    
 	    

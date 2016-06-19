@@ -1,79 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-	response.setHeader("Cache-Control", "no-store");
-	response.setHeader("Pragma", "no-cache");
-	response.setDateHeader("Expires", 0);
-%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script
-	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/General/css/style.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/login/css/login.css"
-	rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id"
-	content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
-
-<title>客服諮詢系統</title>
-
+<title>ChatClient</title>
 </head>
 <body>
-	<s:include value="/General/header.jsp"></s:include>
-
-	<article>
-		
-		</div>
 
 
-		<div id ="youdidntchoose">
-			<div >
-				<h3>
-					在線客服列表[<span id="onlinenum"></span>]
-				</h3>
-				<ul id="list"></ul>
-			</div>
-		</div>
-		
-		
-		<div id="whenuchoose">
-			<!-- 輸入區 -->
-			<div>
-				<textarea class="" id="message" name="message" rows="3" cols="150"
-					placeholder="請輸入您想發送的消息"></textarea>
-			</div>
-			<!-- 聊天區 -->
-			<div id="chat-view" style="margin-bottom: 20PX">
-				<textarea id="chat" rows="30" cols="150" readonly="readonly"></textarea>
-			</div>
-			<!-- 按鈕區 -->
-			<div>
-				<button type="button" onclick="closeConnection()">斷開</button>
-				<button type="button" onclick="clearConsole()">刷屏</button>
-				<button type="button" onclick="sendMessage()">發送</button>
-			</div>
-	</article>
+進入者:${memberVO.name }  提示訊息: <span id="chatnotice"></span>
+<!-- 聊天區 -->
+	 <div id="chat-view" style="margin-bottom: 20PX" >
 	
-	<script src="js/jquery-1.9.1.js"></script>
+	 	<textarea  id="chat" rows="30" cols="150" readonly="readonly"></textarea>
+
+<!-- 列表區 -->
+     <div  style="float:right;">
+         <h3 >在線客服列表[<span id="onlinenum"></span>]</h3>
+         <ul  id="list"></ul> 
+     </div>	 
+
+
+     </div>
+     
+<!-- 輸入區 -->     
+	 <div>
+	     <textarea class="" id="message" name="message" rows="3" cols="150" placeholder="請輸入您想發送的消息"></textarea>
+	 </div>
+
+     
+     
+<!-- 按鈕區 -->
+
+<div>
+
+	 <button type="button" onclick="closeConnection()">斷開</button>	
+     <button  type="button" onclick="clearConsole()">刷屏</button>
+     <button  type="button" onclick="sendMessage()">發送</button>
+</div>     
+	
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
 	<script>
-	$(function(){
-		$("#whenuchoose").hide();
-// 		$("#youdidntchoose").hide();
-
-		
-	})
-	
-	
-	</script>
-
-
-		<script>
 		var wsServer = null;
 		var ws = null;
 		var to = null;
@@ -232,11 +201,6 @@
 	    window.addEventListener("beforeunload", goodbye, false);
 	    
 	</script>
-
-
-
-	<s:include value="/General/footer.jsp"></s:include>
-
 
 </body>
 </html>
