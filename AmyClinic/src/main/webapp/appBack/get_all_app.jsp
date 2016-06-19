@@ -44,7 +44,7 @@ body p {
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: left: ;">員工維護</font>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="red" style="text-align: left: ;">預約維護</font>
                  
                  </li></ol>
                     </div>
@@ -314,6 +314,7 @@ body p {
 								"lengthMenu" : [ [ 10, 15, 30, 50, -1 ],
 										[ 10, 15, 30, 50, "All" ] ],
 								"iDisplayLength" : 15,
+								"displayStart": 145,
 							//  		dom: 'Bfrtip',
 							//  		buttons: [
 							// 		            {
