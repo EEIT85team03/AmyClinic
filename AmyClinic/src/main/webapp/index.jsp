@@ -77,10 +77,10 @@ li a{color: #6D2222;}
 	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 	<!-- end facebook script -->
 	<s:include value="/General/header.jsp"></s:include>
-	<div class="container">	
+	<div class="container">	<br>
 	<table  >
 	<tr >
-		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
+		<td class="col-md-7"><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
 		<td ></td>
 		<td></td>
 	</tr>
@@ -107,12 +107,12 @@ li a{color: #6D2222;}
 <td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
 <img src="${pageContext.request.contextPath}/images/05.gif" alt="" ><span>美麗快報</span>		
 			<ul style="max-height: 250px; overflow-y:scroll; ">		
-			<li><a href="a1.jsp">【極線超音波拉提】找回消失的輪廓線_小草莓</a></li>
-			<li><a href="a2.jsp">【電波拉皮/肉毒瘦臉】★電波拉皮X肉毒瘦還原不敗的娃娃小臉_Cherry</a></li>
-			<li><a href="a3.jsp">【飛梭雷射】飛梭雷射心得♥凹洞快滾(上)_大饅大力</a></li>
-			<li><a href="">【極限音波拉提】惱人的垂垂鬆弛臉，交給Ultherapy極線音波拉提_米雪</a></li> 
-			<li><a href="">【歐萃學超音波系統（標靶震波）】媽咪變少女♥產後瘦身超EASY‬(≧∇≦)/_愛愛</a></li> 
-			<li><a href="">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
+			<li><a href="${pageContext.request.contextPath}/about/a1.jsp">【極線超音波拉提】找回消失的輪廓線_小草莓</a></li>
+			<li><a href="${pageContext.request.contextPath}/about/a2.jsp">【電波拉皮/肉毒瘦臉】★電波拉皮X肉毒瘦還原不敗的娃娃小臉_Cherry</a></li>
+			<li><a href="${pageContext.request.contextPath}/about/a3.jsp">【飛梭雷射】飛梭雷射心得♥凹洞快滾(上)_大饅大力</a></li>
+			<li><a href="${pageContext.request.contextPath}/about/a1.jsp">【極限音波拉提】惱人的垂垂鬆弛臉，交給Ultherapy極線音波拉提_米雪</a></li> 
+			<li><a href="${pageContext.request.contextPath}/about/a2.jsp">【歐萃學超音波系統（標靶震波）】媽咪變少女♥產後瘦身超EASY‬(≧∇≦)/_愛愛</a></li> 
+			<li><a href="${pageContext.request.contextPath}/about/a3.jsp">【淨膚雷射】和擾人斑點說掰掰。星和醫美淨膚雷射 & 彩衝光讓妹妹變美了_洋娃娃的夢幻城堡</a></li> 
 			</ul>
 </td>
 <td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">

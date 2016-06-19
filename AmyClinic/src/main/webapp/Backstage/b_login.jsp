@@ -8,7 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script>
 <style type="text/css">
-.img{width: 100%; height: 500px;}
+.img{
+width: 800px; height: 600px; 
+margin-left: 400px;
+}
+.carousel slide{
+width: 800px; height: 600px; 
+}
 a:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   /* IE 8 */
@@ -18,8 +24,8 @@ a:hover {
   text-decoration: none;
 }
 .container-fluid {
-  margin: 40px auto 10px;
-  padding: 20px 0px;
+/*   margin: 40px auto 10px; */
+/*   padding: 20px 0px; */
   max-width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
