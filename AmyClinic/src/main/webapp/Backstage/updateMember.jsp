@@ -222,7 +222,7 @@
 			    	</div>
 			</div>
 
-			<div class="col-xs-2 col-sm-2 col-md-2">
+			<div class="col-xs-2 col-sm-2 col-md-3">
 			    	<div class="form-group">								<label >加入日期</label>
 			<input name="join_date" id="memberjoin_date" class="form-control disable" type="text" value="${memberVO.join_date}" readonly />	
 			    	</div>
