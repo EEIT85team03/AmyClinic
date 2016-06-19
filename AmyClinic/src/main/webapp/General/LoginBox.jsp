@@ -58,8 +58,13 @@ p {
 					<img id="userphoto" src='${pageContext.request.contextPath}/web/images/anon.jpg' >
 				</c:otherwise>
 			</c:choose>
-			<div id="LoginBoxText"> 
+			<div id="LoginBoxText">
+			<c:if test="${not empty memberVO.name}" > 
 	        	<p>${memberVO.name}，您好！</p>
+	        </c:if>
+	        <c:if test="${empty memberVO.name}" >
+	        	<p>訪客，您好！</p>
+	        </c:if>	
 				<p>
 					<a href="#" onclick="logout();" id="logoutbutton">登出</a> | 
 					<a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
