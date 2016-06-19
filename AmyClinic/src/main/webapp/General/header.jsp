@@ -46,7 +46,17 @@ font-family: myfont;
 					
 				</ul>
 			</li>
-			<li><a href='${pageContext.request.contextPath}/Faker/beautiful.jsp'><span>美麗見證</span></a></li>
+			<li class='has-sub'><a href="#"><span>美麗見證</span></a> 
+			<ul>
+			<li class='last'><a href='${pageContext.request.contextPath}/Faker/a1.jsp'><span>超音波拉提</span></a></li>
+			<li class='last'><a href='${pageContext.request.contextPath}/Faker/a2.jsp'><span>電波拉皮</span></a></li>
+			<li class='last'><a href='${pageContext.request.contextPath}/Faker/a3.jsp'><span>飛梭雷射</span></a></li>
+			
+			
+			</ul>
+			
+			
+			</li>
 			
 			<li class='has-sub'><a href="#"><span>美麗療程</span></a>
 				<ul>

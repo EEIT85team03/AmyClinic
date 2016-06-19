@@ -71,7 +71,7 @@ aside {
 	<div id="content">
 
 		<article>
-			<h1 class="title">【極線超音波拉提】找回消失的輪廓線  小草莓</h1>
+			<h2 class="title">【極線超音波拉提】找回消失的輪廓線  小草莓</h2> <br>
 			<figure>
 				<img id="img1" src="../images/a1.jpg" alt="">
 
@@ -115,43 +115,7 @@ aside {
 			
 			<p></p>
 		</article>
-		<aside>
-			<h2 class="title">最新消息</h2>
-			<dl>
-
-				<dd>&nbsp</dd>
-			</dl>
-			<dl>
-
-				<dd>
-					<a href="beautiful.jsp">美麗見證</a>
-				</dd>
-			</dl>
-			<dl>
-
-				<dd>&nbsp</dd>
-			</dl>
-
-			<dl>
-
-				<dd>
-					<a href="knowledge.jsp">醫美小常識</a>
-				</dd>
-			</dl>
-
-			<dl>
-
-				<dd>&nbsp</dd>
-			</dl>
-			<dl>
-
-				<dd>
-					<a href="knowledge.jsp">門診時間</a>
-				</dd>
-			</dl>
-
-		</aside>
-
+		
 	</div>
 
 
