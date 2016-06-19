@@ -71,8 +71,8 @@ color: 	#FF0080;
 }
 
 .font{
-margin-right:170px;
-width: 600px;
+margin-right:50px;
+width: 750px;
 float: right;
 background-color: #E0E0E0;
 padding: 20px;

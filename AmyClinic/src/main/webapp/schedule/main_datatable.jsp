@@ -126,6 +126,7 @@ float: right;
                   </div>
                   </div>
                   <button type="submit" class="btn btn-default"> 送出 </button>
+                  <button type="button" class="btn btn-default" id="one"> 一鍵輸入 </button>
                   <input type="hidden" name="action" id="action" value="addsch">
                   <input type="hidden" name="sch_id" value="">
                   </form>
@@ -223,6 +224,16 @@ float: right;
 
 </body>
 <script type="text/javascript">
+$(function(){
+	$('#one').click(function() {
+		$("#datepicker").val('2016-06-23');
+		$("#memo").val('事假');
+		$("#vac").prop('checked',true);
+	})
+})
+
+
+
 // // $(document).ready(function(){
 // 	$(function(){
 // 		$('button[name=sch_id]').click(function(){
@@ -324,6 +335,7 @@ $(function() {
 							             ],
  		"lengthMenu": [[10, 15, 30, 50, -1], [10, 15, 30, 50, "All"]],
  		"iDisplayLength": 15,
+ 		"displayStart": 105,
 //  		dom: 'Bfrtip',
 //  		buttons: [
 // 		            {

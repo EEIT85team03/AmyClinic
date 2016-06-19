@@ -183,6 +183,7 @@ html,body{
  						<a href='${pageContext.request.contextPath}\empLogin/AddEMP.jsp'>新增員工</a>
 <!--                        <a href="" class="text-primary" data-toggle="modal" data-target="#addemp">Addemp</a> -->
                       <a href="#" class="text-primary" data-toggle="modal" data-target="#resetpw">重設密碼</a>
+                       <a href="#" class="text-primary" id="one">一鍵輸入</a>
 <%--                     <a class="add_fpw" href="<%=request.getContextPath()%>/empLogin/foget_pw.jsp">忘記密碼</a> --%>
 <!--                     <a style="font-size: 5px;">忘記密碼</a> -->
                 </form>
@@ -216,6 +217,7 @@ html,body{
     <input type="email" class="form-control" id="remail">
   </div>
    <button type="submit" class="btn btn-default" id="rebtn" >送出</button>
+    <button type="button" class="btn btn-default" id="one2" >一鍵輸入</button>
 </form>
         </div>
         <div class="modal-footer">
@@ -229,6 +231,22 @@ html,body{
 </div> 
 
 <script type="text/javascript">
+
+$(function(){
+	$('#one').click(function() {
+		$("#maillog").val('qazwsx851827@gmail.com');
+		$("#pwdlog").val('0000');
+	})
+})
+	
+$(function(){
+	$('#one2').click(function() {
+		$("#remail").val('qazwsx851827@gmail.com');
+	})
+})	
+	
+	
+	
 
 $("#pwdlog").keypress(function(e){
 	code = (e.keyCode ? e.keyCode : e.which);
@@ -272,6 +290,9 @@ $(function(){
 
 
 // ====================登入Ajax==================================
+
+	
+	
 $(function() {
 	var textfield = $("input[name=maillog]");
 	//$('button[type="button"]').click(function() {
@@ -314,7 +335,7 @@ $(function() {
                         "background-image": "url('<%=request.getContextPath()%>/ShowPicByAjax')"
                         
                     });
-                    setTimeout(login, 2000 )
+                    setTimeout(login, 1500 )
                     function login(){
                     	window.location = "<%=request.getContextPath()%>/Backstage/b_login.jsp";
                     }
