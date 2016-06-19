@@ -1,85 +1,108 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%
-	response.setHeader("Cache-Control", "no-store");
-	response.setHeader("Pragma", "no-cache");
-	response.setDateHeader("Expires", 0);
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<%-- <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet"> --%>
-<%-- <script src="<%=request.getContextPath()%>/js/bootstrap.js"></script> --%>
+<html >
+    <head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>關於愛美</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="author" content="Codrops" />     
+<link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/doctor/css/style.css" />
+		<script type="text/javascript" src="${pageContext.request.contextPath}/doctor/js/modernizr.custom.53451.js"></script>
+		<style type="text/css">
+		.container{
+/* 		background-image: url("/AmyClinic/images/b1.jpg"); */
+/*         background-repeat: no-repeat; */
+/*         background-attachment: fixed; */
+/*         background-position: center; */
+/*         background-size: cover; */
+/*         width: 100%; */
+/*         top:300px; */
+		 }
+		img{
+		height: 100%;
+		}
+		.dg-container span{
+		font-size: 30px;
+ 		background-color:#EBD3E8;  
+		color:#FF359A ;
+		}
+/* 		.dg-container span span{ */
+/*  		background-color: green; */
+/* 		color: black; */
+/* 		} */
+/* 		#footer-bgcontent { */
+/* 		height: 99px; */
+/* 		background: #e499ba; */
+/* 		position: absolute; */
+/* 		right: 0; */
+/* 		left: 0; */
+/* 		padding: 1rem; */
+/* 		text-align: center;	 */
+/* } */
+/* #allpage { */
+/* 	width: 1200px; */
+/* 	margin: 0 auto; */
+/* } */
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script
-	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
-<link href="${pageContext.request.contextPath}/General/css/style.css"
-	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/login/css/login.css"
-	rel="stylesheet">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id"
-	content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
 
-<title>【極線超音波拉提】找回消失的輪廓線_小草莓</title>
-<style>
-
-
-#content {
-	margin-top:20pX;
-	overflow: auto !important;
-	overflow /**/: hidden;
-	width: 100%;
-	padding-bottom: 20px;
+.img{
+width: 300px;
+}
+.myimg{
+float: right;
+}
+.in{
+width: 1000px;
+margin: 0px auto;
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	font-size: 100%;
+h2{
+font-size: 28px;
+font-family:myfont;
+color: 	#9F0050;
+}
+h3{
+font-size: 20px;
+font-family: 微軟正黑體;
+color: 	#FF0080;
 }
 
-body {
-	font-size: 100%;
-	font-family: Arial, Helvetica, sans-serif;
-	/*line-height:1.4em;*/
-	color: #333333;
+.font{
+margin-right:50px;
+width: 750px;
+float: right;
+background-color: #E0E0E0;
+padding: 20px;
+border-radius:10px;
+line-height: 25px;
 }
 
-article {
-	float: right;
-	margin-right: 200px;
-	width: 1000px;
+.title{
+float: left;
+margin-left:30px;
 }
 
-aside {
-	margin-left: 200px; float : left;
-	width: 200px;
-	float: left;
-}
-</style>
+		</style>
+		
+    </head>
+    <body>
+    <jsp:include page="/General/header.jsp"></jsp:include>
+    <div id="allpage">
 
-</head>
-<body>
-	<s:include value="/General/header.jsp"></s:include>
-
-
-
-	<div id="content">
-<aside> 
-				<jsp:include page="/other/services/aside.jsp"></jsp:include>
-			</aside>
-		<article>
-			<h2 class="title">【極線超音波拉提】找回消失的輪廓線  小草莓</h2> <br>
-			<figure>
-				<img id="img1" src="../images/a1.jpg" alt="">
-
-			</figure>
-			<div align="left" style="width: 670px;background-color:	#E0E0E0;padding: 15px; border-radius:10px; line-height: 25px"  >
-所以說Ultherapy極線超音波拉提效果到底如何呢...<br>
+        <div class="container">	
+        <div class='in'><br>
+         <jsp:include page="/General/sidebar.jsp"></jsp:include>
+        <div class="myimg"><br><br><br><br>
+        </div>
+        <div class="title">
+        <h2 class="title">【極線超音波拉提】找回消失的輪廓線  小草莓</h2> <br>
+        </div>
+        <div class="font">
+        	<img id="img1" src="../images/a1.jpg" alt="">
+      <div>所以說Ultherapy極線超音波拉提效果到底如何呢...<br>
 老實說從8月打完了音波拉提後真的覺得還好而已!! 並沒有說厲害到覺得自己煥然一新的地步<br>
 所以也不是非常想拿出來聊((只能說小草莓小姐對效果這種事要求有點嚴格)))<br>
 直到這幾天跟很有沒見的vanessa一起吃午餐，一碰面她就發現我最近臉更加緊實這件事<br>
@@ -113,18 +136,13 @@ aside {
 然後這篇呢， 雖然是星和診所的Ultherapy極線超音波拉提的體驗文<br>
 不過也是小草莓小姐真的需要也想做的療程，畢竟我也不是那種沒事就會到醫美診所打卡的人<br>
 因為就算是體驗如果不是真的需要我也c會覺得浪費時間(((笑)))<br>
+<br>
+       </div>
 </div>
-			
-			<p></p>
-		</article>
-		
-	</div>
-
-
-
-
-	<s:include value="/General/footer.jsp"></s:include>
-
-
-</body>
+        
+        </div>
+		</div>
+		</div>
+		<jsp:include page="/General/footer.jsp"></jsp:include>
+    </body>
 </html>

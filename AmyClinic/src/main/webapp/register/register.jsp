@@ -28,7 +28,7 @@
 					<li id="sform"><b id="readme"><font color="red">
 								星號(*)代表必要資訊</font></b> <s:form namespace="/logreg" action="register"
 							enctype="multipart/form-data" method="post">
-							<s:textfield name="memberVO.name" label="真實姓名"
+							<s:textfield name="memberVO.name" label="會員帳號"
 								placeholder="User ID" required="true" id="username" />
 							<s:password name="memberVO.pwd" label="會員密碼"
 								placeholder="Password" required="true" id="password" />

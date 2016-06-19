@@ -23,9 +23,9 @@ color: orange;
 	<table border="1px" id="ta" >
 		<tr>
 			<th width="150px" height="200pX">照片</th>
-			<th width="200px">名子</th>
+			<th width="200px">名字</th>
 			<th width="400px">評分</th>
-			<th width="100px">參予留言</th>
+			<th width="100px">參與留言</th>
 			
 		</tr>
 	

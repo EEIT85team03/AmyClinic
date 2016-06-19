@@ -24,10 +24,9 @@ response.setDateHeader("Expires", 0);
 		<ul>
 			<li><a href="#section-bar-1">歡迎頁面</a></li>
 			<li><a href="#section-bar-2">編輯資料</a></li>
-			<li><a href="#section-bar-3">我的購物車</a></li>
-			<li><a href="#section-bar-4">我的訂單</a></li>
-			<li><a href="#section-bar-6">我的預約紀錄</a></li>
-			<li><a href="#section-bar-8">線上客服</a></li>
+			<li><a href="#section-bar-3">我的預約紀錄</a></li>
+			<li><a href="${pageContext.request.contextPath}/shoppings/showorder">我的訂單</a></li>
+			<li><a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">我的購物車</a> </li>
 		</ul>
 	</nav>
 	</div>
@@ -64,42 +63,27 @@ response.setDateHeader("Expires", 0);
     <br>
     <div class="name">
       <label for="name"></label>
-      <input type="text" placeholder="上次訪問：${memberVO.last_visit}" name="name" id="name_input" required readonly>
+      <input type="text" value="上次訪問：${memberVO.last_visit}" name="name" id="name_input" required readonly>
     </div>
     <div class="email">
       <label for="email"></label>
-      <input type="email" placeholder="目前紅利：${memberVO.reward_pts} 點" name="email" id="email_input" required  readonly>
+      <input type="email" value="目前紅利：${memberVO.reward_pts} 點" name="email" id="email_input" required  readonly>
     </div>
     <div class="telephone">
       <label for="name"></label>
-      <input type="text" placeholder="診療次數：${memberVO.num_treatment} 次" name="telephone" id="telephone_input" required  readonly>
+      <input type="text" value="診療次數：${memberVO.num_treatment} 次" name="telephone" id="telephone_input" required  readonly>
     </div>
     <div class="telephone">
       <label for="name"></label>
-      <input type="text" placeholder="加入日期：${memberVO.join_date}" name="telephone" id="telephone_input" required  readonly>
-    </div>
-<!--     <div class="subject"> -->
-<!--       <label for="subject"></label> -->
-<!--       <select name="subject" id="subject_input" required> -->
-<!--         <option disabled selected>Subject line</option> -->
-<!--         <option>I'd like to start a project</option> -->
-<!--         <option>I'd like to ask a question</option> -->
-<!--         <option>I'd like to make a proposal</option> -->
-<!--       </select> -->
-<!--     </div> -->
-    <div class="message">
-      <label for="message"></label>
+      <input type="text" value="加入日期：${memberVO.join_date}" name="telephone" id="telephone_input" required  readonly>
     </div>
   </form><!-- // End form -->
     <div class="flag">歡迎回來愛美</div>
  </section>
 <section id="section-bar-2"><p><jsp:include page="/login/editprofile.jsp"></jsp:include></p></section>
-<section id="section-bar-3"><p>3</p></section>
+<section id="section-bar-3"><p><jsp:include page="/app/query_app.jsp"></jsp:include></p></section>
 <section id="section-bar-4"><p>4</p></section>
 <section id="section-bar-5"><p>5</p></section>
-<section id="section-bar-5"><p>6</p></section>
-<section id="section-bar-5"><p>7</p></section>
-<section id="section-bar-5"><p>8</p></section>
  </div>
  </div>
 <jsp:include page="/General/footer.jsp"></jsp:include>
