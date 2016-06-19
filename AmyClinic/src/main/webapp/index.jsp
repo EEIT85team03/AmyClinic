@@ -120,7 +120,8 @@ li a{color: #6D2222;}
 <img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' ></td>	
 <td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
 <img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗推廣</span><br>
-<iframe width="400" height="250" src="https://www.youtube.com/embed/NO7XaxcJZqM" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="400" height="250" src="https://www.youtube.com/watch?v=4V5qqL7b5FM?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
+<iframe width="400" height="250" src="https://www.youtube.com/embed/4V5qqL7b5FM?autoplay=1" frameborder="0" allowfullscreen></iframe>
 </td>
 <td class="col-md-3" style="background-color: white;padding-left: 10px;margin-left: 10px;">
 <img src="${pageContext.request.contextPath}/images/07.gif" alt=""  style="height: 38px;"><span>環境介紹</span>
