@@ -4,42 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<title>ChatClient</title>
 </head>
 <body>
-<div id="wrapper"><!-- all -->
-<jsp:include page="/Backstage/jsp/b_top.jsp" /><!-- top and側邊欄功能表項目	位置 -->
 
-<div id="page-wrapper" style=background-color:#BFB2AB  >
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                <div class="page-header" >
- <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#BFB2AB" direction="right" height="20" scrollamount="5" behavior="alternate"><font >全國最大真人線上聊天室上線嚕～</font></marquee>                                           
-                </div>
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">線上諮詢</font></li></ol>
-                    </div>
-                </div><!-- /.row -->
-            </div> <!-- /.container-fluid -->
-            </div><!--側邊欄功能表項目over --><!--側邊欄功能表項目over --><!--側邊欄功能表項目over -->
-<!--         開始 -->
-<%-- ${memberVO.name }  提示訊息:<span id="chatnotice"></span> --%>
+
+進入者:${memberVO.name }  提示訊息: <span id="chatnotice"></span>
 <!-- 聊天區 -->
-	 <div id="chat-view" style="margin-bottom: 20PX;margin-left: 50px;margin-right: 50px;margin-top: 10px;" >
-	 	<textarea  class="form-control"  id="chat" rows="20" readonly="readonly" style="background-color: : yellow" ></textarea>
+	 <div id="chat-view" style="margin-bottom: 20PX" >
+	
+	 	<textarea  id="chat" rows="30" cols="150" readonly="readonly"></textarea>
 
 <!-- 列表區 -->
-<!--      <div  style="float:right;"> -->
-<!--          <h3 >再線列表[<span id="onlinenum"></span>]</h3> -->
-<!--          <ul  id="list"></ul>  -->
-<!--      </div>	  -->
+     <div  style="float:right;">
+         <h3 >在線客服列表[<span id="onlinenum"></span>]</h3>
+         <ul  id="list"></ul> 
+     </div>	 
 
 
-<!--      </div> -->
+     </div>
      
 <!-- 輸入區 -->     
-	 <div style="margin-top: 10px;">
-	     <textarea class="form-control" id="message" name="message" rows="1" style="width: 600px;" placeholder="請輸入您想發送的消息"></textarea>
+	 <div>
+	     <textarea class="" id="message" name="message" rows="3" cols="150" placeholder="請輸入您想發送的消息"></textarea>
 	 </div>
 
      
@@ -48,11 +35,11 @@
 
 <div>
 
-	 <button type="button" onclick="closeConnection()"class="btn btn-danger">離開對話</button>	
-     <button  type="button" onclick="clearConsole()"class="btn btn-info">清除對話框</button>
-     <button  type="button" onclick="sendMessage()"class="btn btn-success">發送訊息</button>
+	 <button type="button" onclick="closeConnection()">斷開</button>	
+     <button  type="button" onclick="clearConsole()">刷屏</button>
+     <button  type="button" onclick="sendMessage()">發送</button>
 </div>     
-</div>	
+	
 	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 
 	<script>
@@ -99,9 +86,8 @@
 	     */
 	    function showChat(message){
 	        var to = message.to;   //獲取接收人
-// 	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+"發送給:"+to+message.content;
-	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+":"+message.content;
 	        from = message.from;
+	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+"發送給:"+to+message.content;
 			var chatjq = $("#chat");
 			chatjq.scrollTop(chatjq[0].scrollHeight); //讓聊天室往下 
 	    }
@@ -110,7 +96,7 @@
 	     * 展示提示信息
 	     */
 	    function showNotice(notice){
-	    	chat.textContent = chat.textContent+notice+"\n";
+	    	chatnotice.textContent = notice+"\n";
 	    }
 	    
 	    /**
@@ -132,7 +118,10 @@
 	     * 發送信息給後台
 	     */
 	    function sendMessage(){
-	        if(ws == null){
+	        if(to == null){
+	        	to=from;
+	        }
+	        if(to == null){
 	            console.log("連接未開啟");
 	            return;
 	        }
@@ -143,20 +132,16 @@
 	            return;
 	        }
 	        
-	        if(to == null){
-	        	to=from;
-	        }
+
 	        ws.send(JSON.stringify({
 	            message : {
 	                content : message,
-	                from : '${empVO.name}',
+	                from : '${memberVO.name}',
 	                to : to,      //接收人 無接收人為空
 	                time : getDateFull()
 	            },
 	            type : "message"
 	        }));
-	        
-	        clearmessage();
 	    }
 	    
 	    /**
@@ -171,15 +156,6 @@
 	        }else{
 	        	 console.log("未開啟連接");
 	        }
-	        
-	        window.location.href = 'http://localhost:8080/AmyClinic/Backstage/b_login.jsp';
-	    }
-	    
-	    /*
-	     * 清掉訊息 
-	     */
-	    function clearmessage(){
-	    	message.value="";
 	    }
 	    
 	    
@@ -225,6 +201,6 @@
 	    window.addEventListener("beforeunload", goodbye, false);
 	    
 	</script>
- 
+
 </body>
 </html>

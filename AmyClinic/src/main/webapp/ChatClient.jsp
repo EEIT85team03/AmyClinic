@@ -1,48 +1,92 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ChatClient</title>
+<script
+	src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
+<link href="${pageContext.request.contextPath}/General/css/style.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/login/css/login.css"
+	rel="stylesheet">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id"
+	content="187388699466-pqf6of44on8fl4fvfdhe5rqu8or4r3ba.apps.googleusercontent.com">
+
+<title>客服諮詢系統</title>
+<style>
+*{
+font-family: 微軟正黑體;	
+
+}
+</style>
 </head>
 <body>
+	<s:include value="/General/header.jsp"></s:include>
+
+	<article>
+		
+		</div>
 
 
-進入者:${memberVO.name }  提示訊息: <span id="chatnotice"></span>
-<!-- 聊天區 -->
-	 <div id="chat-view" style="margin-bottom: 20PX" >
+		<div id ="youdidntchoose">
+		<br>
+		<p align="center" style="font-size:40PX;font-family:微軟正黑體;color:#8F4586">請選擇想聯絡的醫生</p>
+		
+			<div  style="border-radius:10pX;border:3pX pink double;width: 600PX;height: 600PX;margin: 0 auto;">
+				<br>
+				<p style="font-size:20PX">
+					在線醫生列表[<span id="onlinenum"></span>]
+				</p>
+				</br>
+				<ul id="list"></ul>
+			</div>
+		</div>
+		
+		
+		<div id="whenuchoose" style="margin: 0 auto;width:1200PX">
+		<br>
+		<br>
+		
+			<!-- 聊天區 -->
+			<div id="chat-view" style="margin-bottom: 20PX">
+				<textarea id="chat" rows="30" cols="150" readonly="readonly"></textarea>
+			</div>
+			<!-- 輸入區 -->
+			<div>
+				<textarea class="" id="message" name="message" rows="3" cols="140"
+					placeholder="請輸入您想發送的消息"></textarea> <button type="button" style="font-size:1pt; width:50px;height:50px;color:#000000 ;float:right;margin-right: 140PX"  onclick="sendMessage()">發送訊息</button>
+			</div>
+			<!-- 按鈕區 -->
+			<div>
+				<button type="button" onclick="closeConnection()">離開對話</button>
+				<button type="button" onclick="clearConsole()">清除對話框</button>
+			
+			</div>
+	</article>
 	
-	 	<textarea  id="chat" rows="30" cols="150" readonly="readonly"></textarea>
-
-<!-- 列表區 -->
-     <div  style="float:right;">
-         <h3 >在線客服列表[<span id="onlinenum"></span>]</h3>
-         <ul  id="list"></ul> 
-     </div>	 
-
-
-     </div>
-     
-<!-- 輸入區 -->     
-	 <div>
-	     <textarea class="" id="message" name="message" rows="3" cols="150" placeholder="請輸入您想發送的消息"></textarea>
-	 </div>
-
-     
-     
-<!-- 按鈕區 -->
-
-<div>
-
-	 <button type="button" onclick="closeConnection()">斷開</button>	
-     <button  type="button" onclick="clearConsole()">刷屏</button>
-     <button  type="button" onclick="sendMessage()">發送</button>
-</div>     
-	
-	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-
+	<script src="js/jquery-1.9.1.js"></script>
 	<script>
+	$(function(){
+		$("#whenuchoose").hide();
+// 		$("#youdidntchoose").hide();
+
+		
+	})
+	
+	
+	</script>
+
+
+		<script>
 		var wsServer = null;
 		var ws = null;
 		var to = null;
@@ -87,7 +131,7 @@
 	    function showChat(message){
 	        var to = message.to;   //獲取接收人
 	        from = message.from;
-	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+"發送給:"+to+message.content;
+	        chat.textContent = chat.textContent+"\n"+message.from+"發表於"+message.time+":"+message.content;
 			var chatjq = $("#chat");
 			chatjq.scrollTop(chatjq[0].scrollHeight); //讓聊天室往下 
 	    }
@@ -96,7 +140,7 @@
 	     * 展示提示信息
 	     */
 	    function showNotice(notice){
-	    	chatnotice.textContent = notice+"\n";
+	    	chat.textContent = chat.textContent+notice+"\n";
 	    }
 	    
 	    /**
@@ -131,7 +175,8 @@
 	            console.log('請打字');
 	            return;
 	        }
-	        
+	     	
+	        clearmessage();
 
 	        ws.send(JSON.stringify({
 	            message : {
@@ -142,6 +187,8 @@
 	            },
 	            type : "message"
 	        }));
+	       
+	       
 	    }
 	    
 	    /**
@@ -155,7 +202,11 @@
 	            console.log("關閉連接");
 	        }else{
 	        	 console.log("未開啟連接");
+
 	        }
+	        
+	        window.location.href = 'http://localhost:8080/AmyClinic/index.jsp';
+	       
 	    }
 	    
 	    
@@ -165,9 +216,19 @@
 	    function addChat(user){
 	        
 	    	to = user;
+	 		$("#youdidntchoose").fadeOut(1500);
+			$("#whenuchoose").fadeIn(3000);
+
 
 	    }
 	    
+	    
+	    /*
+	     * 清掉訊息 
+	     */
+	    function clearmessage(){
+	    	message.value="";
+	    }
 
 	    function appendZero(s){return ("00"+ s).substr((s+"").length);}  //補0函數
 	    
@@ -193,6 +254,7 @@
 	     */
 	    function clearConsole(){
 	        chat.textContent="";
+	        
 	    }
 	 	
 	  	/**
@@ -201,6 +263,11 @@
 	    window.addEventListener("beforeunload", goodbye, false);
 	    
 	</script>
+
+
+
+	<s:include value="/General/footer.jsp"></s:include>
+
 
 </body>
 </html>
