@@ -69,7 +69,9 @@ aside {
 
 
 	<div id="content">
-
+<aside> 
+				<jsp:include page="/other/services/aside.jsp"></jsp:include>
+			</aside>
 		<article>
 			<h2 class="title">【極線超音波拉提】找回消失的輪廓線  小草莓</h2> <br>
 			<figure>

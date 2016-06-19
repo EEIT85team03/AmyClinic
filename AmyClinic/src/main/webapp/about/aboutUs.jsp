@@ -33,23 +33,29 @@
 /*  		background-color: green; */
 /* 		color: black; */
 /* 		} */
-		#footer-bgcontent {
-		height: 99px;
-		background: #e499ba;
-		position: absolute;
-		right: 0;
-		left: 0;
-		padding: 1rem;
-		text-align: center;	
-}
+/* 		#footer-bgcontent { */
+/* 		height: 99px; */
+/* 		background: #e499ba; */
+/* 		position: absolute; */
+/* 		right: 0; */
+/* 		left: 0; */
+/* 		padding: 1rem; */
+/* 		text-align: center;	 */
+/* } */
+/* #allpage { */
+/* 	width: 1200px; */
+/* 	margin: 0 auto; */
+/* } */
+
+
 .img{
-width: 300px;
+width: 210px;
 }
 .myimg{
 float: right;
 }
 .in{
-width: 860px;
+width: 1000px;
 margin: 0px auto;
 }
 
@@ -63,20 +69,33 @@ font-size: 20px;
 font-family: 微軟正黑體;
 color: 	#FF0080;
 }
+
+.font{
+margin-left:10px;
+width: 600px;
+float: left;
+/* background-color: #E0E0E0; */
+/* padding: 20px; */
+/* border-radius:10px; */
+line-height: 0px;
+}
+
 		</style>
 		
     </head>
     <body>
     <jsp:include page="/General/header.jsp"></jsp:include>
+    <div id="allpage">
 
         <div class="container">	
         <div class='in'><br>
-        <div class="myimg"><br><br><br><br>
+         <jsp:include page="/General/sidebar.jsp"></jsp:include>
+        <div  class="myimg"><br><br><br><br>
         <img src="${pageContext.request.contextPath}/images/home07.jpg" alt="愛美診所" class="img"><br>
         <img src="${pageContext.request.contextPath}/images/amy.jpg" alt="愛美櫃台" class="img">
         </div>
         <div class="font">
-      
+      <div>
 <h2 >愛美是人的天性，由內而外打造幸福人生</h2>
 <h3>傾聽客戶的需求、量身打造獨一無二”愛美”</h3>
 <h3>療程是我們堅持的理念。</h3>
@@ -92,9 +111,11 @@ color: 	#FF0080;
 <h3 >台灣自體脂肪移植醫學會等進行教學講座，</h3>
 <h3 >期待Amy愛美將小小的幸福火炬透過傳授技術及臨床經驗燃起台灣醫美界的榮光！</h3>
 <br><br><br>
+       </div>
 </div>
         
         </div>
+		</div>
 		</div>
 		<jsp:include page="/General/footer.jsp"></jsp:include>
     </body>
