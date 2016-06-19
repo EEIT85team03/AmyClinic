@@ -4,11 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>評點成功</title>
+<link href="${pageContext.request.contextPath}/General/css/style.css"
+	rel="stylesheet">
+<style>
+#footer-bgcontent {
+		height:65px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
+
+h1 {
+	text-align: center;
+}
+</style>
 </head>
 <body>
-	成功    頁面轉交中。。。。。
-	
+<jsp:include page="/General/header.jsp"></jsp:include>
+	<br>
+	<br>
+	<br>
+	<h1>評點成功，頁面轉交中</h1>
+<jsp:include page="/General/footer.jsp"></jsp:include>	
 <script>
   setTimeout(function() { document.location = "${pageContext.request.contextPath}/Score/ScoreServlet?action=getOne_Score&eid=${ScoreEid}"}, 3000);
  

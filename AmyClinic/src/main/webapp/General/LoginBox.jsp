@@ -67,7 +67,7 @@ p {
 	        </c:if>	
 				<p>
 					<a href="#" onclick="logout();" id="logoutbutton">登出</a> | 
-					<a href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
+					<a style="text-decoration: none" href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
 				</p>
 			</div>				 
 		</c:when>
