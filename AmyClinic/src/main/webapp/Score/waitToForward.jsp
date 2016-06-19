@@ -17,10 +17,16 @@
 		padding: 1rem;
 		text-align: center;	
 }
+
+h1 {
+	text-align: center;
+}
 </style>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
+	<br>
+	<br>
 	<br>
 	<h1>評點成功，頁面轉交中</h1>
 <jsp:include page="/General/footer.jsp"></jsp:include>	
