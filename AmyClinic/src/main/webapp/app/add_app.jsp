@@ -44,12 +44,12 @@
             <div class="group">
                 <div style="width: 48%; float: left;">
                     <span class="wpcf7-form-control-wrap text-680">
-                        <label>姓名:</label>
+                        <label>帳號：</label>
                         <input type="text" name="text-680" value="" size="45" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="${memberVO.name}" readonly>
                     </span>
                     <br>
                     <span class="wpcf7-form-control-wrap email-680">
-                        <label>電子郵件:</label>
+                        <label>電子郵件：</label>
                         <input type="email" name="email-680" value="" size="45" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="${memberVO.email}" readonly>
                     </span>
                     <br>
@@ -59,7 +59,7 @@
                     </span>
                     <br>
                     <span class="wpcf7-form-control-wrap textarea-398">
-                        <label>需求描述:</label>
+                        <label>需求描述：</label>
                         <textarea id="descr" name="descrip" placeholder="${param.descrip}" class="wpcf7-form-control wpcf7-textarea"></textarea>
                     </span>
                     <span class="wpcf7-form-control-wrap select-date">
