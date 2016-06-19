@@ -36,6 +36,12 @@ height: 19px;
 font-size: 13pt;
 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+#LoginBox a:visited {
+    color: #0C95C9;
+}
+#LoginBox a:hover {
+    color: #0C95C9;
+}
 #LoginBoxText{
 	width:auto;
 	display: inline-block;
