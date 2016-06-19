@@ -127,7 +127,7 @@ background-color:#D6D6AD;
 					交易:${MemberVO.num_trans}次	<br>	
 					診療:${MemberVO.num_treatment}次<br>	
 					來訪:${MemberVO.num_visits}次<br>
-					積點:${MemberVO.total_spent}點<br>
+<%-- 					積點:${MemberVO.total_spent}點<br> --%>
 					獎勵:${MemberVO.reward_pts}點<br>		
 					消費:${MemberVO.spent_pts}點<br>	
 					最後消費日:<br>${MemberVO.last_visit}<br>			
