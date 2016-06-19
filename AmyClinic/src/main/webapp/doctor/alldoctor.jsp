@@ -12,13 +12,21 @@
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/doctor/css/style.css" />
 		<script type="text/javascript" src="${pageContext.request.contextPath}/doctor/js/modernizr.custom.53451.js"></script>
 		<style type="text/css">
+		.container{
+/* 		background-image: url("/AmyClinic/images/b1.jpg"); */
+/*         background-repeat: no-repeat; */
+/*         background-attachment: fixed; */
+/*         background-position: center; */
+/*         background-size: cover; */
+/*         width: 100%; */
+		 }
 		img{
 		height: 100%;
 		}
 		.dg-container span{
 		font-size: 30px;
- 		background-color:#EBD3E8;  
-		color:#FF359A ;
+ 		background-color:#fff;  
+		color:#EF8181 ;
 		}
 /* 		.dg-container span span{ */
 /*  		background-color: green; */
@@ -35,8 +43,9 @@
 }
 .container{
 top:300px;
-
-
+}
+.docimg{
+margin-left: 150px;
 }
 		</style>
 		
@@ -48,35 +57,35 @@ top:300px;
         <br><br><br><br><br>
 			<section id="dg-container" class="dg-container">
 				<div class="dg-wrapper">
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e1.jpg" alt="image01">
-					<span>張文遠 醫師</span><br>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e1.jpg" alt="image01" class="docimg">
+					<span style="color:#6D2222;">張文遠 醫師</span><br>
 					<span>雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮</span>
 					</a>
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e2.jpg" alt="image02">
-					<span>諸葛亮 醫師</span>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e2.jpg" alt="image02" class="docimg">
+					<span style="color: #6D2222;">諸葛亮 醫師</span>
 					<br><span>玻尿酸、肉毒桿菌、美白針、植髮</span>
 					</a>
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e3.jpg" alt="image03">
-					<span>夏侯惇 醫師</span>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e3.jpg" alt="image03" class="docimg">
+					<span style="color: #6D2222;">夏侯惇 醫師</span>
 					<br><span>抽脂、隆乳、雙眼皮手術、眼袋手術、拉皮手術、隆鼻</span>
 					</a>
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e4.jpg" alt="image04">
-					<span>張君雅 醫師</span>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e4.jpg" alt="image04" class="docimg">
+					<span style="color: #6D2222;">張君雅 醫師</span>
 					<br><span>微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容</span>
 					</a>
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e5.jpg" alt="image05">
-					<span>史奴比 醫師</span>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e5.jpg" alt="image05" class="docimg">
+					<span style="color: #6D2222;">史奴比 醫師</span>
 					<br><span>美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻</span>
 					</a>
-					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e6.jpg" alt="image06">
-					<span>高飛 醫師</span>
+					<a href="#"><img src="${pageContext.request.contextPath}/doctor/images/e6.jpg" alt="image06" class="docimg">
+					<span style="color: #6D2222;">高飛 醫師</span>
 					<br><span>美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學</span>
 					</a>
 						
 				</div>
 				
 			</section>
-			<br><br><br><br><br>
+			<br><br><br><br><br><br><br><br>
         </div>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.gallery.js"></script>

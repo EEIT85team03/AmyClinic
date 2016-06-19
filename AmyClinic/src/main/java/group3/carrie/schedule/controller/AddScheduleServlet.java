@@ -1,8 +1,11 @@
 package group3.carrie.schedule.controller;
 
+import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.schedule.model.ScheduleService;
+import group3.carrie.schedule.model.ScheduleVO;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -58,7 +61,6 @@ public class AddScheduleServlet extends HttpServlet {
 			if (memo == null || memo.trim().length() == 0) {
 				errorMsg.put("memo", "memo請勿空白");
 			}
-			
 
 			if (!errorMsg.isEmpty()) {
 				HashMap<String, String> retunData = new HashMap<String, String>();
@@ -79,12 +81,12 @@ public class AddScheduleServlet extends HttpServlet {
 			Date parsed = null;
 			try {
 				parsed = sdf.parse(date);
-				System.out.println("parsed"+parsed);
+				System.out.println("parsed" + parsed);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			java.sql.Date c_date = new java.sql.Date(parsed.getTime()); // 將日期轉換成sqlDate
-			System.out.println("c_date"+c_date);
+			System.out.println("c_date" + c_date);
 
 			Integer appt_status = null; // 判斷是否休假
 			System.out.println("vac=" + vac);
@@ -105,6 +107,53 @@ public class AddScheduleServlet extends HttpServlet {
 			RequestDispatcher rd = req
 					.getRequestDispatcher("/schedule/main_datatable.jsp");
 			rd.forward(req, res);
+
+		}
+
+		if (action.equals("updatesch")) {
+			System.out.println("call updatesch");
+			int sch_id = Integer.parseInt(req.getParameter("sch_id"));
+			int eid = Integer.parseInt(req.getParameter("eid"));
+			String date = req.getParameter("c_date");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+			Date parsed = null;
+			try {
+				parsed = sdf.parse(date);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			java.sql.Date c_date = new java.sql.Date(parsed.getTime());
+
+			String c_hours = req.getParameter("c_hours");
+			String vac = req.getParameter("vac");
+			int appt_status = 0;
+			if (vac == null) {
+				appt_status = 1;
+			} else {
+				appt_status = 0;
+			}
+			String memo = req.getParameter("memo");
+
+			ScheduleVO schVO = new ScheduleVO();
+			EmployeeVO empVO = new EmployeeVO();
+
+			schVO.setSch_id(sch_id);
+			schVO.setC_date(c_date);
+			schVO.setC_hours(c_hours);
+			schVO.setAppt_num(0);
+			schVO.setAppt_status(appt_status);
+			schVO.setMemo(memo);
+			empVO.setEid(eid);
+			schVO.setEmployeeVO(empVO);
+
+			ScheduleService sSvc = new ScheduleService();
+			sSvc.updateSchedule(schVO);
+			System.out.println("更新成功");
+			RequestDispatcher rd = req
+					.getRequestDispatcher("/schedule/main_datatable.jsp");
+			rd.forward(req, res);
+			
 
 		}
 

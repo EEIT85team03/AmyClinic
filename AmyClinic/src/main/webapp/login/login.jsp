@@ -92,7 +92,7 @@
 			</div>
 			<div class="modal-body">
 				<p>可以撥打以下電話連絡我們客服人員</p>
-				<p>0800-000-999...</p>
+				<p>0800-000-999</p>
 				<hr />
 				<s:include value="/login/recover.jsp"></s:include>
 			</div>

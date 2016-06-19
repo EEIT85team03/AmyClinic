@@ -59,7 +59,7 @@ input[type="radio"] + label::after {
   transition: .2s;
 }
 label:active::before {
-  background: #bfbfbf;
+/*   background: #bfbfbf; */
 }
 
 

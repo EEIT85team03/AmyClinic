@@ -8,20 +8,44 @@
 <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <title>醫生資料</title>
+<style>
+#font{
+font-size: 50px;
+color: orange;
+
+
+
+}
+
+#footer-bgcontent {
+		height: 99px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
+</style>
+
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
 <br>
+<br>
+<br>
+
 <table align="center">
 	<tr>
 		<td width="50"></td>
 		<td width="300">
-			<img class="img-circle" width="300px" src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}"/>
+			<img class="img-circle" width="300px" src="${pageContext.request.contextPath}/ShowEmpPic.servlet?num=${empVO.eid}" style="border: 3px solid lightgray;"/>
 		</td>
 		<td width="22"></td>
 		<td>
+	
 				<table style="font-size: 15pt;">
-					<tr>
+					<tr >
 						<td colspan="2" style="font-size: 35pt;"><b>${empVO.name}　醫師</b></td>
 					</tr>
 					<tr height="20">
@@ -38,6 +62,10 @@
 					<tr>
 						<td height="60">專長</td>
 						<td>${empVO.specialty}</td>
+					</tr>
+					<tr id='xxx'>
+						<td height="60">評分</td>
+
 					</tr>	
 				</table>
 			<input type="hidden" id="expstr" value="${empVO.experience}" />
@@ -50,12 +78,22 @@
 <script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script>
+function getContextPath() { //obtains context path. EL doesn't work with separated .js
+	return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
 $(function() {
 	var expstr = $('#expstr').val();
 	var expArray = expstr.split(')');
 	for(var i = 0; i < expArray.length - 1; i++) {
 		$('#exp').append(expArray[i] + ')<br>');
 	}
+	
+	$.getJSON( getContextPath()+'/Score/ScoreServlet',{'action':'getOne_ScoreJSON','eid':'${empVO.eid}'},function(data){
+		$.each(data,function(i,emp){
+		var cell1 = $("<td></td>").html("<a href='http://localhost:8081/AmyClinic/Score/ScoreServlet?action=getOne_Score&eid="+emp.eid+"'><img width='300px' height='auto'src='${pageContext.request.contextPath}/images/"+emp.avgPicture+"'></a>"+"<span id='font'>&nbsp&nbsp&nbsp&nbsp"+emp.avgScore+"</span>");
+		$("#xxx").append(cell1);
+		})
+	})
 })
 
 </script>	

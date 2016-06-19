@@ -7,10 +7,11 @@
 <title>${employeeVO.name }的評分紀錄</title>
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/Score/css/ListOneScore.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
-<span class="scoreh1">${employeeVO.name}醫師的評分紀錄</span>
+<span class="scoreh1">${employeeVO.name}醫師的評分紀錄  ${avgScore }</span>
 <table class="body">
 	<c:forEach var="ScoreVO" items="${scoreVO}">
 		<c:if test="${ScoreVO.mb.mid == memberVO.mid }">
@@ -19,8 +20,6 @@
 			<tr class="comment member">
 			<td>
 				<div class="user-profile">
-				<c:forEach var="ScoreVO" items="${scoreVO}">
-				</c:forEach>
 				<div class="star-rating">
   <div class="current-rating current-rating--${ScoreVO.scores}"><i class="star-rating__star">AAA</i></div>
 </div>

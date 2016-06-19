@@ -81,6 +81,26 @@ public class ScoreServlet extends HttpServlet {
 			}
 		
 		
+		
+		// getOneScore  JSON版   回傳資料
+		if ("getOne_ScoreJSON".equals(action)){
+			List l1 = new LinkedList();
+			String seid=req.getParameter("eid");
+			int eid=Integer.parseInt(seid);
+			List<ScoreVO> scoreVO =daoScore.getEmpScore(eid);
+			Map m1 = new HashMap();
+			double avgScore=AVG(scoreVO);
+			String avgPicture=ChooseStar(avgScore);
+			m1.put("eid",eid);
+			m1.put("avgScore",avgScore );
+			m1.put("avgPicture",avgPicture );
+			l1.add(m1);
+			String jsonString = JSONValue.toJSONString(l1);
+			out.println(jsonString);
+
+			}
+		
+		
 //查詢單一位員工的所有流言及評分		
 		if ("getOne_Score".equals(action)){
 			String sEid=req.getParameter("eid");

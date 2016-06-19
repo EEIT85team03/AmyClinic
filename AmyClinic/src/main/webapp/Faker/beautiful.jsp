@@ -56,6 +56,16 @@ aside {
 	width: 200px;
 	float: left;
 }
+
+#footer-bgcontent {
+		height:65px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
 </style>
 
 </head>

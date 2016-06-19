@@ -23,7 +23,18 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">新增產品</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;" id="add">新增產品</font></li></ol>
+                 <script>
+                 $( '#add' ).click(function( event ) {
+                	 $("#cid").val('1');
+                	 $("#name").val('展示品美容組合包特賣');
+                	 $("#price").val('999');
+                	 $("#discount").val('10');
+                	 $("#descrip").val('畢業特別活動跳樓大拍賣');
+                	 $("#ingredients").val('1組');
+                	 $("#amount").val('10');   	 
+                 });
+                 </script>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->

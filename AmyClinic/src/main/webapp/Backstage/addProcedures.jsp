@@ -25,7 +25,14 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">新增療程</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;" id="add">新增療程</font></li></ol>
+                    <script>
+                 $( '#add' ).click(function( event ) {
+                	 $("#pType_id").val('3');
+                	 $("#name").val('展示-竹竿瘦療程-畢業特賣');
+                	 $("#fee").val('9999');    	  	 
+                 });
+                 </script>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -50,7 +57,7 @@ pageContext.setAttribute("proctype", proctype);
       <label class="control-label col-sm-2" for="pType_id">療程類別</label>
       <div class="col-sm-10">          
 
-      <select size="1"  name="pType_id" class="form-control form-control-sm"  style="width: 150px">
+      <select size="1"  id='pType_id'name="pType_id" class="form-control form-control-sm"  style="width: 150px">
       <c:forEach var="proctype" items="${proctype}">
 				<option  value="${proctype.pType_id}" ${(procVO.pType_id==proctype.pType_id)?'selected':'' } >${proctype.name}
 	  </c:forEach>

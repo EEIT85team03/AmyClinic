@@ -134,7 +134,7 @@ public class MemberServlet extends HttpServlet {
 						System.out.println(e.getMessage());
 						e.printStackTrace();
 						System.out.println("新增失敗");
-						errorMsg.add("新增失敗，請輸入正確格式"+e.getMessage());
+						errorMsg.add("新增失敗，請輸入正確格式");
 						RequestDispatcher failureView = req
 								.getRequestDispatcher("/Backstage/addMember.jsp");
 						failureView.forward(req, res);

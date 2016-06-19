@@ -11,10 +11,24 @@
 	h1 {
 		text-align: center;
 	}
+	#footer-bgcontent {
+		height: 99px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
 </style>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <h1>註冊成功，系統已寄出驗證信，請點選驗證信中的連結開通帳號</h1>
 <jsp:include page="/General/footer.jsp"></jsp:include>

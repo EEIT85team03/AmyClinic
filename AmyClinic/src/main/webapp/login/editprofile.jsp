@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,10 +48,10 @@
 
 <c:choose>
 	<c:when test="${memberVO.photo != null}">
-		<img id="userphoto" src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/user_photo/${memberVO.photo}' height="150" width="150">
 	</c:when>
 	<c:otherwise>
-		<img id="userphoto" src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
+		<img src='${pageContext.request.contextPath}/images/logo.jpg' height="150" width="150">
 	</c:otherwise>
 </c:choose>	
 <br>
@@ -87,7 +88,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberbirthday">生日： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width:80px;"/>
+			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width: 50%;" />
 		</div>
 	</div>
 	<div class="form-group">
@@ -150,21 +151,21 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_trans">交易： </label>
+		<label class="control-label col-sm-2" for="membernum_trans">消費次數： </label>
 		<div class="col-sm-5">			
 			<input name="memberVO.num_trans" id="membernum_trans" type="hidden" value="${memberVO.num_trans}" />				
 			<input class="form-control disable" type="text" value="${memberVO.num_trans} 次" readonly />				
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_treatment">診療： </label>
+		<label class="control-label col-sm-2" for="membernum_treatment">看診次數： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.num_treatment" id="membernum_treatment" type="hidden" value="${memberVO.num_treatment}" />				
 			<input class="form-control disable" type="text" value="${memberVO.num_treatment} 次" readonly /> 				
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membernum_visits">來訪： </label>
+		<label class="control-label col-sm-2" for="membernum_visits">來訪次數： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.num_visits" id="membernum_visits" type="hidden" value="${memberVO.num_visits}"/>			
 			<input class="form-control disable" type="text" value="${memberVO.num_visits} 次" readonly />					

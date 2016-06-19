@@ -10,7 +10,7 @@
 <title>找回密碼</title>
 </head>
 <body>
-或者使用電子郵件聯絡我們<hr>
+<p>或者使用電子郵件聯絡我們</p><hr>
 
 	<ul>
 		<li><font color="blue"><b>請輸入您的電子郵件，藉由該信箱幫助您取回密碼</b></font> 		

@@ -66,6 +66,11 @@ function callback(datas) {
 	$.each(datas, function(i, data) {
 		
 		var tt = Math.round(data.price * (1 - (data.discount/100.0)));
+		var maxPos = 30;
+		if (data.descrip.length > maxPos)
+		{
+			data.descrip = data.descrip.substring(0, maxPos).concat('...');
+		}
 		var li = $('<li></li>');
 			li.append('<a class="cbp-vm-image"><img src="'+getContextPath()+'/free/getprodpic?num='+data.pid+'"/></a>') 
 		      .append('<h3 class="cbp-vm-title"><a href="'+getContextPath()+'/free/showprod?pid=' + data.pid + '">' + data.name + '</a></h3>')
@@ -92,6 +97,11 @@ function paginated() {
 	for(var i=index, max=ResultSet.length; i<max && i<index+PAGESIZE ;i++){
 		var tt = Math.round(ResultSet[i].price * (1 - (ResultSet[i].discount/100.0)));
 		var li = $('<li></li>');
+		var maxPos = 30;
+		if (ResultSet[i].descrip.length > maxPos)
+		{
+			ResultSet[i].descrip = ResultSet[i].descrip.substring(0, maxPos).concat('...');
+		}
 		li.append('<a class="cbp-vm-image"><img src="'+getContextPath()+'/free/getprodpic?num='+ResultSet[i].pid+'"/></a>') 
 		  .append('<h3 class="cbp-vm-title"><a href="'+getContextPath()+'/free/showprod?pid=' + ResultSet[i].pid + '">' + ResultSet[i].name + '</a></h3>')
 	      .append('<div class="cbp-vm-details">'+ResultSet[i].descrip+'</div>')

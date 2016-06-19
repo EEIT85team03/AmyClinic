@@ -15,6 +15,15 @@
 	a:visited {
 		color:blue
 	}
+	#footer-bgcontent {
+		height: 99px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
 </style>
 </head>
 <body>

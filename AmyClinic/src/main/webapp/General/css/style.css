@@ -481,7 +481,6 @@ font-size: 15px;
 #mySpace {
 	position: absolute;
 	top: 100px;
-	bottom:50px;
 	right: 1%;
 	z-index: 9999;
 }

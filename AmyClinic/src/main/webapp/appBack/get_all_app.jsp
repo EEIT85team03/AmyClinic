@@ -72,8 +72,8 @@ body p {
 
 				</tr>
 			</thead>
-			<jsp:useBean id="AppSvc" scope="page"
-				class="group3.carrie.app.model.AppService" />
+			<c:set var="now" value="<%= new java.util.Date() %>" />
+			<jsp:useBean id="AppSvc" scope="page" class="group3.carrie.app.model.AppService" />
 			<c:forEach var="AppVO" items="${AppSvc.all}">
 				<tr>
 					<td>${AppVO.aid}</td>
@@ -91,22 +91,44 @@ body p {
 						</c:otherwise>
 
 					</c:choose>
+					
+					
 					<c:choose>
 						<c:when test="${AppVO.apt_status==1}">
 							<td>正常</td>
 								<td>
 					<button type="button" value="${AppVO.memberVO.mid}" class="btn btn-info memberid" data-toggle="modal" data-target="#tallModal">查看</button>
-					
 					</td>
+					<c:choose>
+					<c:when test="${AppVO.apt_date < now }">
+					
 					<td>
 						<form action="app_check" method="get">
-							<input type="submit" value="取消" class="btn btn-success">
+							<input type="submit" value="取消"  disabled="disabled" class="btn btn-success">
 							<input type="hidden" name="action" value="appcancel"> <input
 								type="hidden" name="aid" value="${AppVO.aid}">
 
 						</form>
 
 					</td>
+					</c:when>
+					
+					<c:otherwise>
+					
+					<td>
+						<form action="app_check" method="get">
+							<input type="submit" value="取消"  class="btn btn-success">
+							<input type="hidden" name="action" value="appcancel"> <input
+								type="hidden" name="aid" value="${AppVO.aid}">
+
+						</form>
+
+					</td>
+					
+					
+					</c:otherwise>
+					
+					</c:choose>
 						</c:when>
 						<c:otherwise>
 							<td style="color: red">取消</td>

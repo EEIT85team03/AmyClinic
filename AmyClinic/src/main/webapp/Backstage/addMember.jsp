@@ -40,7 +40,21 @@
 <!--                 <div class="page-header" > -->
 <!--  <marquee  onMouseOver="this.stop()" onMouseOut="this.start()" bgcolor="#ADADAD" direction="right" height="20" scrollamount="8" behavior="alternate">本月目標<font color="red">30億</font></marquee>                                            -->
 <!--                 </div> -->
-                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;">新增會員</font></li></ol>
+                 <ol class="breadcrumb"><li class="active"><i class="fa fa-dashboard"></i><font color="#BFB2AB" style="text-align: center;" id="add">新增會員</font></li></ol>
+                    <script>
+                 $( '#add' ).click(function( event ) {
+                	 $("#membername").val('畢業的會員');
+                	 $("#memberpwd").val('1234');
+                	 $("#memberemail").val('k3345678@yahoo.com');
+                	 $("#memberbirthday").val('1996-12-12');
+                	 $("#country").val('台灣');
+                	 $("#membergender").val('男人');
+                	 $("#memberaddr").val('台北市大安區復興南路一段390號');
+                	 $("#memberphone").val('0983345678');
+                	 $("#memberheight").val('180');
+                	 $("#membermass").val('50');
+                 });
+                 </script>
                     </div>
                 </div><!-- /.row -->
             </div> <!-- /.container-fluid -->
@@ -74,7 +88,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberemail">信箱: </label>
 		<div class="col-sm-5">
-			<input name="email" id="memberemail" class="form-control" type="email" placeholder="aaa@bbb.ccc"	style="width:180px;"	/><em>(必填)</em>
+			<input name="email" id="memberemail" class="form-control" type="email" placeholder="信箱不得重複"	style="width:180px;"	/><em>(必填)</em>
 		</div>
 	</div>
 	
@@ -96,7 +110,7 @@
 		<label class="control-label col-sm-2" for="membercountry">國家: </label>
 		<div class="col-sm-5">
 <!-- 			<input name="memberVO.country" id="membercountry" class="form-control" type="text" 	placeholder="庫存量"		style="width:80px;"/> -->
-		<select name='country'  data-style="btn-success" class="form-control form-control-sm"  style="width: 150px">
+		<select name='country'  data-style="btn-success" class="form-control form-control-sm"  style="width: 150px" id="country">
   			<option value="台灣">台灣</option>
   			<option value="美國">美國</option>
   			<option value="日本">日本</option>
@@ -127,7 +141,7 @@
 	<div class="form-group">
 		<label class="control-label col-sm-2" for="memberphone">電話: </label>
 		<div class="col-sm-5">
-			<input name="phone" id="memberphone" class="form-control" type="number" placeholder="0988123456"	style="width:180px;"/><em>(必填)</em>
+			<input name="phone" id="memberphone" class="form-control" type="text" placeholder="0988123456"	style="width:180px;"/><em>(必填)</em>
 		</div>
 	</div>
 	

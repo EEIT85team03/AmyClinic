@@ -16,6 +16,7 @@
 <link href="${pageContext.request.contextPath}/shopping/css/phase.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/shopping/css/pay.css" rel="stylesheet">
+	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
@@ -79,7 +80,7 @@
             
 	<jsp:include page="/General/footer.jsp"></jsp:include>
 
-	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>	
+
 	<script src="${pageContext.request.contextPath}/js/jquery.card.js"></script>
 	<script src="${pageContext.request.contextPath}/shopping/js/pay.js"></script>
 	<script src="${pageContext.request.contextPath}/shopping/js/script.js"></script>

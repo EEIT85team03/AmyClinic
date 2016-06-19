@@ -4,18 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Verify Email</title>
+<title>跳轉中</title>
+<link href="${pageContext.request.contextPath}/General/css/style.css"
+	rel="stylesheet">
+<style>
+#footer-bgcontent {
+		height:65px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
+
+h2 {
+	font-size: 23pt;
+}
+</style>	
 </head>
 <body>
-
+<jsp:include page="/General/header.jsp"></jsp:include>
 <!-- General purpose message page. Displays a message (from many sources) 
 	 for 3 seconds before redirecting to index.jsp -->
-
-I am verify.jsp <hr>
-
-哈囉，${memberVO.name}！
-<div style="color:red;">${message}</div>
-
+<br>
+<div style="color:red;text-align: center;"><h2>${message}</h2></div>
+<jsp:include page="/General/footer.jsp"></jsp:include>
 <script>
   setTimeout(function() {
       document.location = "${pageContext.request.contextPath}/index.jsp";
