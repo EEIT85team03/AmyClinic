@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
 <%
 response.setHeader("Cache-Control", "no-store");
 response.setHeader("Pragma", "no-cache");
@@ -75,7 +76,7 @@ response.setDateHeader("Expires", 0);
     </div>
     <div class="telephone">
       <label for="name"></label>
-      <input type="text" value="加入日期：${memberVO.join_date}" name="telephone" id="telephone_input" required  readonly>
+      <input type='text' value='加入日期：<fmt:formatDate pattern="yyyy-MM-dd" type="date" value="${memberVO.join_date}"/>' name='telephone' id='telephone_input' required  readonly>
     </div>
   </form><!-- // End form -->
     <div class="flag">歡迎回來愛美</div>
