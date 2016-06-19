@@ -37,33 +37,33 @@
 		</field-validator>
 	</field>
 
-<!-- 	<field name="memberVO.birthday"> -->
-<!-- 		<field-validator type="date"> -->
-<!-- 			<param name="min">1900-01-01</param> -->
-<!-- 			<param name="max">2004-01-01</param> -->
-<!-- 			<message key="birthday.invalid" /> -->
-<!-- 		</field-validator> -->
-<!-- 	</field> -->
+	<field name="memberVO.birthday">
+		<field-validator type="date">
+			<param name="min">1900-01-01</param>
+			<param name="max">2004-01-01</param>
+			<message key="birthday.invalid" />
+		</field-validator>
+	</field>
 
-<!-- 	<field name="memberVO.gender"> -->
-<!-- 		<field-validator type="required"> -->
-<!-- 			<message key="gender.required" /> -->
-<!-- 		</field-validator> -->
+	<field name="memberVO.gender">
+		<field-validator type="required">
+			<message key="gender.required" />
+		</field-validator>
 
-<!-- 	</field> -->
+	</field>
 
-<!-- 	<field name="memberVO.addr"> -->
-<!-- 		<field-validator type="requiredstring"> -->
-<!-- 			<param name="trim">true</param> -->
-<!-- 			<message key="address.required" /> -->
-<!-- 		</field-validator> -->
-<!-- 	</field> -->
+	<field name="memberVO.addr">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="address.required" />
+		</field-validator>
+	</field>
 
 	<field name="memberVO.phone">
-<!-- 		<field-validator type="required"> -->
-<!-- 			<param name="trim">true</param> -->
-<!-- 			<message key="phone.required" /> -->
-<!-- 		</field-validator> -->
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="phone.required" />
+		</field-validator>
 		
 		<field-validator type="regex">		
 			<param name="expression"> <![CDATA[([0-9]{10,})]]> </param>

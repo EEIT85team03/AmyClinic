@@ -92,7 +92,7 @@ hr {
 
 #menu {
 /* 	font-family: 'Lato', sans-serif; */
-	width: 880px;
+	width: 750px;
 /* 	width:100%; */
 	height: 45px;
 	font-size: 13px;
@@ -478,16 +478,27 @@ font-size: 15px;
 	color: #E5FFC4;
 }
 
+
 #mySpace {
 	position: absolute;
 	top: 100px;
 	right: 1%;
 	z-index: 9999;
+	box-sizing: content-box !important;
 }
+#mySpace h3 {
+	margin-top: 0 !important;
+}
+
+#mySpace a {
+   box-sizing: content-box !important;
+}
+
 
 #mySpace img {
 	width: 128px;
 	height: 128px;
+	box-sizing: content-box !important;
 }
 
 #logo {
@@ -511,6 +522,7 @@ font-size: 15px;
 }
 
 .wwFormTable td {
+	width: 242px;
 	text-align: center;
 }
 
@@ -526,7 +538,7 @@ font-size: 15px;
 }
 
 .errorMessage {
-	margin-left: 50px;
+	margin-left: 50%;
 	font-weight: bold;
 	color: red;
 }

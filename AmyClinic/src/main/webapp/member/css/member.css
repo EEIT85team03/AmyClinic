@@ -112,10 +112,10 @@ textarea {
 }
 
 
-form {
-  padding: 37.5px;
-  margin: 50px 0;
-}
+/* form { */
+/*   padding: 37.5px; */
+/*   margin: 50px 0; */
+/* } */
 
 h1.Hello-banner {
   margin-top: 10px;
@@ -145,12 +145,12 @@ input[type='text'], [type='email'], select, textarea {
 	background: none;
     border: none;
 	border-bottom: solid 2px #474544;
-	color: #474544;
-	font-size: 1.000em;
+	color: black;
+	font-size: 1.2em;
     font-weight: 400;
     letter-spacing: 1px;
 	margin: 0em 0 1.875em 0;
-	padding: 0 0 0.875em 0;
+	padding: 0 0 0.875em 0.875em;
     text-transform: uppercase;
 	width: 100%;
 	-webkit-box-sizing: border-box;
@@ -179,20 +179,6 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
 	width: 45%;
 }
 
-select {
-	outline: none;
-    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-
-select::-ms-expand {
-    display: none;
-}
-
-.subject {
-    width: 100%;
-}
 
 .telephone {
     width: 100%;
@@ -203,24 +189,6 @@ textarea {
 	height: 150px;
 	resize: none;
     width: 100%;
-}
-
-::-webkit-input-placeholder {
-	color: #474544;
-}
-
-:-moz-placeholder { 
-	color: #474544;
-	opacity: 1;
-}
-
-::-moz-placeholder {
-	color: #474544;
-	opacity: 1;
-}
-
-:-ms-input-placeholder {
-	color: #474544;
 }
 
 .form_button {
@@ -321,9 +289,9 @@ textarea {
   top: 0;
   border-width: 5px;
   border-style: solid;
-  border-left-color: transparent;
+  border-left-color: #962d22;
   border-right-color: #962d22;
-  border-top-color: transparent;
+  border-top-color: #962d22;
   border-bottom-color: #962d22;
 }
 
@@ -332,9 +300,9 @@ textarea {
   bottom: 0;
   border-width: 5px;
   border-style: solid;
-  border-left-color: transparent;
+  border-left-color: #962d22;
   border-right-color: #962d22;
-  border-top-color: transparent;
+  border-top-color: #962d22;
   border-bottom-color: #962d22;
 }
 .corner-ribbon-left-top span {
@@ -362,9 +330,9 @@ textarea {
   top: 0;
   border-width: 5px;
   border-style: solid;
-  border-right-color: transparent;
+  border-right-color: #962d22;
   border-left-color: #962d22;
-  border-top-color: transparent;
+  border-top-color: #962d22;
   border-bottom-color: #962d22;
 }
 
@@ -373,9 +341,9 @@ textarea {
   bottom: 0;
   border-width: 5px;
   border-style: solid;
-  border-right-color: transparent;
+  border-right-color: #962d22;
   border-left-color: #962d22;
-  border-top-color: transparent;
+  border-top-color: #962d22;
   border-bottom-color: #962d22;
 }
 
@@ -392,7 +360,7 @@ textarea {
 
 .content-wrap {
 	border: 5px solid #7E8272; 
-	max-width: 768px;
+	max-width: 900px;
     width: 100%;
     display:inline-block;
     position: relative; 
@@ -412,3 +380,69 @@ textarea {
 .tab-current{
 	text-decoration: underline;	
 }
+
+
+aside {
+    float: left;
+    width: 150px;
+}
+
+
+.class1 {
+    background-color: #DDDDDD
+}
+
+#td1, 
+#td2  {
+    padding: 6px; 
+    font-size: 24px;
+}
+
+#a1,
+#a2 {
+    text-decoration: none;
+    color: black;
+}
+
+
+#app tbody {
+    border: 1px solid black; 
+    border-collapse: collapse; 
+}
+
+#app td {
+    border: 1px solid black; 
+    padding: 3px;
+}
+
+#app th{
+    border: 1px solid #FF8E55 !important;
+    background-color: #FFFFE3;
+    text-align: center;
+    height: 40px;
+}
+
+.app-rq {
+    background-color: hsla(120,100%,75%,0.3);
+}
+
+#app {
+	margin: 0 auto;
+    width: 860px; 
+    text-align: center;
+    word-break: break-all;
+}
+
+tr {
+    background-color: white;
+}
+
+#t1t2-wrapper {
+	height: 40px;
+	width: auto;
+}
+
+.app-rq td:nth-child(2) {
+}
+
+	

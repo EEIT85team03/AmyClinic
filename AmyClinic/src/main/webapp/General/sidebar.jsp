@@ -11,10 +11,10 @@
 		<li>
 			<h2>兩三點雨山前</h2>
 			<ul>
-				<li><a href="#">去年今日此門中</a></li>
-				<li><a href="#">人面桃花相印紅</a></li>
-				<li><a href="#">只緣感君一回顧</a></li>
-				<li><a href="#">使我思君朝與暮</a></li>
+				<li><a href="${pageContext.request.contextPath}/about/aboutUs.jsp">去年今日此門中</a></li>
+				<li><a href="${pageContext.request.contextPath}/doctor/alldoctor.jsp">人面桃花相印紅</a></li>
+				<li><a href="${pageContext.request.contextPath}/free/showophr">只緣感君一回顧</a></li>
+				<li><a href="${pageContext.request.contextPath}/about/beautiful.jsp">使我思君朝與暮</a></li>
 				<li><a href="#">最是人間留不住</a></li>
 				<li><a href="#">朱顏辭鏡花辭樹</a></li>
 				<li><a href="#">人面不知何處去</a></li>

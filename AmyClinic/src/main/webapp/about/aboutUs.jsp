@@ -71,6 +71,7 @@ color: 	#FF0080;
 
         <div class="container">	
         <div class='in'><br>
+         <jsp:include page="/General/sidebar.jsp"></jsp:include>
         <div class="myimg"><br><br><br><br>
         <img src="${pageContext.request.contextPath}/images/home07.jpg" alt="愛美診所" class="img"><br>
         <img src="${pageContext.request.contextPath}/images/amy.jpg" alt="愛美櫃台" class="img">
@@ -92,6 +93,7 @@ color: 	#FF0080;
 <h3 >台灣自體脂肪移植醫學會等進行教學講座，</h3>
 <h3 >期待Amy愛美將小小的幸福火炬透過傳授技術及臨床經驗燃起台灣醫美界的榮光！</h3>
 <br><br><br>
+       
 </div>
         
         </div>

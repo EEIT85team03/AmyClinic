@@ -25,7 +25,7 @@
 	height: auto;
 /*	width: 200px; */
 
-	color: red;
+	color: black;
 /* 	dispaly: inline-block; */
  	text-align: right; 	
 /* 	float:right; */
