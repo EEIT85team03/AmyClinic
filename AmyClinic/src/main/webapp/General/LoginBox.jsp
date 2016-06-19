@@ -33,6 +33,8 @@
 }
 #LoginBox p {
 height: 19px;
+font-size: 13pt;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #LoginBoxText{
 	width:auto;
@@ -43,6 +45,10 @@ p {
 	margin:0;
 	padding:0;
 	text-align: center;
+}
+
+a {
+	text-decoration: none;
 }
 </style>
 <div id="fb-root"></div>
@@ -61,14 +67,18 @@ p {
 			<div id="LoginBoxText">
 			<c:if test="${not empty memberVO.name}" > 
 	        	<p>${memberVO.name}，您好！</p>
+	        	<p>
+					<a href="#" onclick="logout();" id="logoutbutton">登出</a> |
+						<a style="text-decoration: none" href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
+				</p> 
 	        </c:if>
 	        <c:if test="${empty memberVO.name}" >
 	        	<p>訪客，您好！</p>
+	        	<p>
+					<a href="${pageContext.request.contextPath}/login/login.jsp">登入</a> |
+					<a href="${pageContext.request.contextPath}/register/register.jsp">註冊</a>
+				</p>	
 	        </c:if>	
-				<p>
-					<a href="#" onclick="logout();" id="logoutbutton">登出</a> | 
-					<a style="text-decoration: none" href="${pageContext.request.contextPath}/member/member.jsp">會員專區</a>
-				</p>
 			</div>				 
 		</c:when>
 		<c:otherwise>
