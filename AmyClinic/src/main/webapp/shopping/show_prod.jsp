@@ -16,10 +16,26 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
 <title>${prodVO.name}</title>
+<style>
+#footer-bgcontent {
+		height:65px;
+		background: #e499ba;
+		position: absolute;
+		right: 0;
+		left: 0;
+		padding: 1rem;
+		text-align: center;	
+}
+
+a {
+ text-decoration: none;
+}
+</style>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
-<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp">回商品列表</a><br>
+<br>
+<a href="${pageContext.request.contextPath}/shopping/prod_list.jsp" style="margin-left: 30%">回商品列表</a><br>
 <table align="center">
 	<tr>
 		<td width="50"></td>
@@ -32,7 +48,7 @@
 				<input type="hidden" name="pname" value="${prodVO.name}">
 				<input type="hidden" name="price" value="${prodVO.price}">
 				<input type="hidden" name="discount" value="${prodVO.discount}">
-				<table style="font-size: 15pt;">
+				<table style="font-size: 15pt;" height="600px">
 					<tr>
 						<td colspan="2" style="font-size: 35pt;">${prodVO.name}</td>
 					</tr>
