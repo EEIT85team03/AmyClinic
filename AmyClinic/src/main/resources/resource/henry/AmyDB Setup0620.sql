@@ -330,7 +330,7 @@ INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUE
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('夏侯惇','中山醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Hershes@Amy.com','國立臺灣大學醫學院醫學系(1978-1985)國立臺灣大學醫學院臨床醫學研究所(1991-1994)國立臺灣大學管理學院高階管理碩士專班 (2006-2009)','抽脂、隆乳、雙眼皮手術、眼袋手術、拉皮手術、隆鼻');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張君雅','台灣大學醫學院','gWkWJXRSRI7zIMWOVWqhqg==','Pocky1@Amy.com','台灣大學醫學院附設醫院小兒心臟科研究員(1996-1997)成功大學醫學院附設醫院美容醫學科研究員(1997-1999)','微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('史奴比','中國醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Kindle1@Amy.com','英爵醫美(1995-2013)','美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻');
-INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','gWkWJXRSRI7zIMWOVWqhqg==','Hershes1@Amy.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','gWkWJXRSRI7zIMWOVWqhqg==','qazwsx851827@gmail.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
 
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 1;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 2;
