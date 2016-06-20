@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>${proc.name}</title>
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <link href="${pageContext.request.contextPath}/General/css/style.css"
 	rel="stylesheet">
 <link
@@ -95,7 +96,7 @@ h2 {
 		</div>
 	</div>
 	<jsp:include page="/General/footer.jsp"></jsp:include>
-	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+
 	<script
 		src="${pageContext.request.contextPath}/other/services/js/index.js"></script>
 
