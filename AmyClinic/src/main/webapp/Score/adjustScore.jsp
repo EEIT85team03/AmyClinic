@@ -24,7 +24,7 @@
 	<form name="f1" action="ScoreServlet" method="post" style="text-align:center;">
 	<div class="paper">
         <div class="paper-content">
-		    <textarea name="comment" placeholder="在這裡撰寫評論，您的評論將會在網路上公開"></textarea> 
+		    <textarea name="comment">${comment}</textarea> 
 		</div>
     </div>
         <br>

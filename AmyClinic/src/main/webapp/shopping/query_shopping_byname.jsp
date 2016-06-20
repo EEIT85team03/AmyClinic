@@ -1,44 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>      
 <!DOCTYPE html>
 <html>
-<!-- 
-根據mid及商品名稱來查詢Order及OrderItem(QueryOrdersByPNameAction 如果訂單的mid=session物件中的mid才顯示出來)
-每筆訂單底下的按鈕按下去可以查詢OrderItem，再按一次就隱藏起來
-如果訂單狀態為0or1，可以取消
-如果訂單狀態為0，可以前往付款
-如果訂單狀態為3，則不在前台顯示
- -->
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <title>查詢訂單</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/shopping/css/query_shopping.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
-	<div style="padding-left: 20%">
+<div class="tabs member-wrapper">
+<div id="member-bar">
+    <h1 class="ribbon">Hello &nbsp;${memberVO.name}&nbsp;!</h1>
+    <nav>
+        <ul>
+            <li><a href="${pageContext.request.contextPath}/member/member.jsp">歡迎頁面</a></li>
+            <li><a href="${pageContext.request.contextPath}/member/member.jsp">編輯資料</a></li>
+            <li><a href="${pageContext.request.contextPath}/member/member.jsp">我的預約紀錄</a></li>
+            <li><a href="${pageContext.request.contextPath}/shoppings/showorder" style="text-decoration: underline; ">我的訂單</a></li>
+            <li><a href="${pageContext.request.contextPath}/shopping/shopping_list.jsp">我的購物車</a> </li>
+        </ul>
+    </nav>
+    </div>
+    <div class="content-wrap">
+    <div class="circle top left"></div>
+    <div class="circle top right"></div>
+    <div class="circle bottom left"></div>
+    <div class="circle bottom right"></div> 
 	<br>
-	訂單查詢：<br><br>
+	<label>訂單查詢：</label>
 	<input type="text" id="for_name" placeholder="輸入商品名稱" maxlength="30" value="${param.name}">
 	<input type="button" id="query" value="查詢">
-		<input type="button" id="query_all" value="查全部"><br><br>
+	<input type="button" id="query_all" value="查全部"><br><br>
 	<c:if test="${empty list}">
 		<b>查無資料！</b>
 	</c:if>
 	<c:forEach varStatus="status" var="ordersVO" items="${list}">
 	<c:if test="${ordersVO.ostatus != 3}">	
-		<table width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
+		<table>
 			<tr>
 				<th>訂單編號</th>
-				<th>日期</th>
-				<th>總價</th>
-				<th>訂單狀態</th>
-				<th>付款</th>
-				<th>配送狀態</th>
-				<th>取消訂單</th>
+	            <th>訂單日期</th>
+	            <th>訂單總價</th>
+	            <th>訂單狀態</th>
+	            <th>付款狀態</th>
+	            <th>配送狀態</th>
+	            <th>取消訂單</th>
+	            <th>檢視明細</th>
 			</tr>
 			<tr>
 				<td>${ordersVO.oid}</td>
@@ -72,19 +85,18 @@
 					<td>已送達</td>
 				</c:if>
 				<c:if test="${ordersVO.ostatus == 0 && ordersVO.payment == 0}">
-					<td><input type="button" value="取消訂單" onclick="cancel(${ordersVO.oid})"></td>
+					<td><input type="button" class="btn-cancel" value="取消訂單" onclick="cancel(${ordersVO.oid})"></td>
 				</c:if>
 				<c:if test="${ordersVO.ostatus != 0 || ordersVO.payment == 1}">
 					<td></td>
 				</c:if>
+				<td>
+                    <input class="btn-details" type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">
+                </td>
 			</tr>
 		</table>
-		<div>
-		<!-- 點選後顯示/隱藏訂單明細 -->
-		<input type="button" id="showbt${status.count}" value="+" onclick="showORhide(${status.count})">
-		</div>
 		<div id="item${status.count}" style="display:none;">
-			<table  width="1000px" border="1" style="text-align: center;border-collapse: collapse;">
+			<table id="orders-table-details">
 				<c:forEach varStatus="varSta" var="orderItems" items="${ordersVO.orderItems}">
 					<tr>
 						<td>
@@ -108,17 +120,16 @@
 				</tr>
 			</table>
 		</div>
-		<hr>
 		<br>
 	</c:if>
 	</c:forEach>
 	</div>
+	</div>
 	<jsp:include page="/General/footer.jsp"></jsp:include>
-	<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 	<script src="${pageContext.request.contextPath}/js/lobibox.min.js"></script>
 		
 	<script>
-		function getContextPath() { //obtains context path. EL doesn't work with separated .js
+		function getContextPath() { 
 	 		return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
  		}
 		
@@ -149,34 +160,20 @@
 								window.location.href = getContextPath()+'/shoppings/showorder';
 							}
 						})
-				    } else {}
+				    }
 				}
-				});
-// 			if (confirm("確認取消訂單？")){
-// 				$.ajax({
-// 					"type":"post",
-// 					"url": getContextPath()+'/shoppings/cancelorder',
-// 					"data":{"oid" : oid},
-// 					"success":function(data){
-// 						window.location.href = getContextPath()+'/shoppings/showorder';
-// 					}
-// 				})
-// 			}
-		}
+			});
+		 }
 		
 		$(function(){
 			$('#query').click(function(){
 				var name = $('#for_name').val();
 				window.location.href = getContextPath()+'/shoppings/showorderbyname?name='+name;
 			})
-			
-				$('#query_all').click(function(){
+			$('#query_all').click(function(){
 					window.location.href = getContextPath()+'/shoppings/showorder';	
-					
-				})
-			
+			})			
 		})
-			
 	</script>
 </body>
 </html>
