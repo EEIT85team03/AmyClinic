@@ -15,21 +15,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/lobibox.min.css">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/shopping/css/show_prod.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <title>${prodVO.name}</title>
 <style>
+
+
 #footer-bgcontent {
 		height:65px;
 		background: #e499ba;
 		position: absolute;
 		right: 0;
 		left: 0;
-		padding: 1rem;
+		padding-bottom: 1rem;
 		text-align: center;	
 }
 
 a {
  text-decoration: none;
 }
+
 </style>
 </head>
 <body>
@@ -100,7 +105,8 @@ a {
 					</tr>
 					<tr>		
 						<td>
-							<input type="button" value="加入購物車" onclick="addToCart()">
+						    <span class="cbp-vm-icon cbp-vm-add" onclick="addToCart()">加入購物車</span>
+<!-- 							<input class="cbp-vm-icon cbp-vm-add" type="button" value="加入購物車" onclick="addToCart()"> -->
 						</td>
 					</tr>	
 						</c:if>
