@@ -1,4 +1,4 @@
-USE AmyDB
+﻿USE AmyDB
 GO
 
 DROP TABLE AppointmentDetail;
@@ -331,13 +331,14 @@ INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUE
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張君雅','台灣大學醫學院','gWkWJXRSRI7zIMWOVWqhqg==','Pocky1@Amy.com','台灣大學醫學院附設醫院小兒心臟科研究員(1996-1997)成功大學醫學院附設醫院美容醫學科研究員(1997-1999)','微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('史奴比','中國醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Kindle1@Amy.com','英爵醫美(1995-2013)','美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','gWkWJXRSRI7zIMWOVWqhqg==','qazwsx851827@gmail.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
-
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('許小姐','大安高工','gWkWJXRSRI7zIMWOVWqhqg==','qqq@qqq.com','資策會','行政');
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 1;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 2;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e3.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 3;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e4.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 4;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e5.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 5;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e6.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 6;
+UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e7.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 7;
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ProcedureType (name) VALUES ('整形手術');
 INSERT INTO ProcedureType (name) VALUES ('雷射光療');

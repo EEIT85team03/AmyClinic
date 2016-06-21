@@ -55,75 +55,75 @@
 </c:choose>	
 <br>
 <br>
-<a class='iframe' href="${pageContext.request.contextPath}/login/editphoto.jsp">�ק��Ӥ�</a>
+<a class='iframe' href="${pageContext.request.contextPath}/login/editphoto.jsp">修改照片</a>
 
 <form role="form" class="form-horizontal" method="post" action="${pageContext.request.contextPath}/member/updateprofile.action">
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberid">�|�� ID�G </label>
+		<label class="control-label col-sm-2" for="memberid">會員 ID： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.mid" id="memberid" class="form-control disable" type="text" value="${memberVO.mid}" readonly/>			
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membername">�m�W�G </label>
+		<label class="control-label col-sm-2" for="membername">姓名： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.name" id="membername" class="form-control" type="text" value="${memberVO.name}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberpwd">�K�X�G </label>
+		<label class="control-label col-sm-2" for="memberpwd">密碼： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.pwd" id="memberpwd" class="form-control disable" type="password" value="${memberVO.pwd}" readonly/>
 		</div>
 		<div class="col-sm-1">
-			<a class="btn btn-default" href="${pageContext.request.contextPath}/login/resetpw.jsp">�ק��K�X</a>		
+			<a class="btn btn-default" href="${pageContext.request.contextPath}/login/resetpw.jsp">修改密碼</a>		
 		</div>
 	</div>
 	<br>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberemail">Email�G </label>
+		<label class="control-label col-sm-2" for="memberemail">Email： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.email" id="memberemail" class="form-control" type="text" value="${memberVO.email}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberbirthday">�ͤ��G </label>
+		<label class="control-label col-sm-2" for="memberbirthday">生日： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.birthday" id="memberbirthday" type="text" value="${memberVO.birthday}" readonly style="width: 50%;" />
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membercountry">���a�G </label>
+		<label class="control-label col-sm-2" for="membercountry">國家： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.country" id="membercountry" class="form-control" type="text" value="${memberVO.country}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membergender">�ʧO�G </label>
+		<label class="control-label col-sm-2" for="membergender">性別： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.gender" id="membergender" class="form-control" type="text" value="${memberVO.gender}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberaddr">�a�}�G </label>
+		<label class="control-label col-sm-2" for="memberaddr">地址： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.addr" id="memberaddr" class="form-control" type="text" value="${memberVO.addr}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberphone">�q�ܡG </label>
+		<label class="control-label col-sm-2" for="memberphone">電話： </label>
 		<div class="col-sm-5">
-			<input name="memberVO.phone" id="memberphone" class="form-control" type="text" maxlength="10" value="${memberVO.phone}"/>
+			<input name="memberVO.phone" id="memberphone" class="form-control" type="text" value="${memberVO.phone}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="memberheight">�����G </label>
+		<label class="control-label col-sm-2" for="memberheight">身高： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.height" id="memberheight" class="form-control" type="text" value="${memberVO.height}"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-2" for="membermass">�魫�G </label>
+		<label class="control-label col-sm-2" for="membermass">體重： </label>
 		<div class="col-sm-5">
 			<input name="memberVO.mass" id="membermass" class="form-control" type="text" value="${memberVO.mass}"/>
 		</div>
@@ -131,70 +131,70 @@
 <!-- 	<div class="form-group"> -->
 <!-- 		<label class="control-label col-sm-2" for="memberphoto">Photo: </label> -->
 <!-- 		<div class="col-sm-5"> -->
-<%-- 			<input name="memberVO.photo" id="memberphoto" class="form-control" type="hidden" value="${memberVO.photo}"/> --%>
+<%-- 			<input name="memberVO.photo" id="memberphoto" class="form-control" type="text" value="${memberVO.photo}"/> --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberact_status">���A�G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="memberact_status">狀態： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 <%-- 		<c:if test="${memberVO.act_status == 0}">			 --%>
 			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}" />				
-<!-- 			<input class="form-control disable" type="text" value="����" readonly />				 -->
+<!-- 			<input class="form-control disable" type="text" value="封鎖" readonly />				 -->
 <%-- 		</c:if> --%>
 <%-- 		<c:if test="${memberVO.act_status == 1}">			 --%>
 <%-- 			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}"/>				 --%>
-<!-- 			<input class="form-control disable" type="text" value="���`" readonly />				 -->
+<!-- 			<input class="form-control disable" type="text" value="正常" readonly />				 -->
 <%-- 		</c:if> --%>
 <%-- 		<c:if test="${memberVO.act_status == 2}">			 --%>
 <%-- 			<input name="memberVO.act_status" id="memberact_status" type="hidden" value="${memberVO.act_status}" />				 --%>
-<!-- 			<input class="form-control disable" type="text" value="������Email" readonly />				 -->
+<!-- 			<input class="form-control disable" type="text" value="未驗證Email" readonly />				 -->
 <%-- 		</c:if> --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_trans">�����G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="membernum_trans">交易： </label> -->
 <!-- 		<div class="col-sm-5">			 -->
 			<input name="memberVO.num_trans" id="membernum_trans" type="hidden" value="${memberVO.num_trans}" />				
-<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_trans} ��" readonly />				 --%>
+<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_trans} 次" readonly />				 --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_treatment">�E���G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="membernum_treatment">診療： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 			<input name="memberVO.num_treatment" id="membernum_treatment" type="hidden" value="${memberVO.num_treatment}" />				
-<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_treatment} ��" readonly /> 				 --%>
+<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_treatment} 次" readonly /> 				 --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="membernum_visits">�ӳX�G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="membernum_visits">來訪： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 			<input name="memberVO.num_visits" id="membernum_visits" type="hidden" value="${memberVO.num_visits}"/>			
-<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_visits} ��" readonly />					 --%>
+<%-- 			<input class="form-control disable" type="text" value="${memberVO.num_visits} 次" readonly />					 --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberreward_pts">���Q�I�ơG </label> -->
+<!-- 		<label class="control-label col-sm-2" for="memberreward_pts">紅利點數： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 			<input name="memberVO.reward_pts" id="memberreward_pts" type="hidden" value="${memberVO.reward_pts}"/>	
-<%-- 			<input class="form-control disable" type="text" value="${memberVO.reward_pts} �I" readonly />  --%>
+<%-- 			<input class="form-control disable" type="text" value="${memberVO.reward_pts} 點" readonly />  --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 		<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberspent_pts">�w���O���Q�I�ơG </label> -->
+<!-- 		<label class="control-label col-sm-2" for="memberspent_pts">已消費紅利點數： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 			<input name="memberVO.spent_pts" id="memberspent_pts" type="hidden" value="${memberVO.spent_pts}" />			
-<%-- 			<input class="form-control disable" type="text" value="${memberVO.spent_pts} �I" readonly /> 			 --%>
+<%-- 			<input class="form-control disable" type="text" value="${memberVO.spent_pts} 點" readonly /> 			 --%>
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberlast_visit">�W���s�������G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="memberlast_visit">上次瀏覽日期： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 <%-- 			<input name="memberVO.last_visit" id="memberlast_visit" class="form-control disable" type="text" value="${memberVO.last_visit}" readonly />			 --%>
 			<input name="memberVO.last_visit" id="memberlast_visit" type="hidden" value="${memberVO.last_visit}" />			
 <!-- 		</div> -->
 <!-- 	</div> -->
 <!-- 	<div class="form-group"> -->
-<!-- 		<label class="control-label col-sm-2" for="memberjoin_date">�[�J�����G </label> -->
+<!-- 		<label class="control-label col-sm-2" for="memberjoin_date">加入日期： </label> -->
 <!-- 		<div class="col-sm-5"> -->
 <%-- 			<input name="memberVO.join_date" id="memberjoin_date" class="form-control disable" type="text" value="${memberVO.join_date}" readonly />			 --%>
 			<input name="memberVO.join_date" id="memberjoin_date" type="hidden" value="${memberVO.join_date}"/>			
@@ -206,7 +206,7 @@
 <%--  	<input type="hidden" name="memberVO.photoContentType" value="${memberVO.photoContentType}">  --%>
  	<input type="hidden" name="memberVO.total_spent" value="${memberVO.total_spent}"> 
  	<input type="hidden" name="memberVO.memo" value="${memberVO.memo}"> 
-	<button type="submit" class="btn btn-default" >�ק�</button>							
+	<button type="submit" class="btn btn-default" >修改</button>							
 	<hr>
 </form>
 

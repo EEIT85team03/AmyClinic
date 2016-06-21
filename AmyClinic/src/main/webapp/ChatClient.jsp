@@ -63,7 +63,7 @@ font-family: 微軟正黑體;
 			<!-- 輸入區 -->
 			<div>
 				<textarea class="" id="message" name="message" rows="3" cols="140"
-					placeholder="請輸入您想發送的消息"></textarea> <button type="button" style="font-size:1pt; width:50px;height:50px;color:#000000 ;float:right;margin-right: 140PX"  onclick="sendMessage()">發送訊息</button>
+					placeholder="請輸入您想發送的消息"></textarea> <button type="button" style="font-size:1pt; width:50px;height:px;color:#000000 ;float:right;margin-right: 10px"  onclick="sendMessage()">發送訊息</button>
 			</div>
 			<!-- 按鈕區 -->
 			<div>
@@ -77,7 +77,7 @@ font-family: 微軟正黑體;
 	<script>
 	$(function(){
 		$("#whenuchoose").hide();
-// 		$("#youdidntchoose").hide();
+		$("#youdidntchooseC").hide();
 
 		
 	})
