@@ -331,6 +331,7 @@ INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUE
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('張君雅','台灣大學醫學院','gWkWJXRSRI7zIMWOVWqhqg==','Pocky1@Amy.com','台灣大學醫學院附設醫院小兒心臟科研究員(1996-1997)成功大學醫學院附設醫院美容醫學科研究員(1997-1999)','微整形、醫美市場發展趨勢與醫療環境、超音波醫學、回春類醫學美容');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('史奴比','中國醫藥大學','gWkWJXRSRI7zIMWOVWqhqg==','Kindle1@Amy.com','英爵醫美(1995-2013)','美容護膚、微整型注射治療 (玻尿酸、微晶瓷)、韓式隆鼻');
 INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('高飛','M.D. UCSB','gWkWJXRSRI7zIMWOVWqhqg==','qazwsx851827@gmail.com','首爾醫美(1990-2010)','美容醫學手術、美容醫學針劑注射、超音波醫學、基因體醫學');
+INSERT INTO Employees (name, education, pwd, email, experience, specialty) VALUES ('許小姐','龍華科大','gWkWJXRSRI7zIMWOVWqhqg==','qqq@qqq.com','科大實習生','行銷管理');
 
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e1.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 1;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e2.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 2;
@@ -369,19 +370,19 @@ INSERT INTO Procedures (name,pType_id,fee) VALUES ('膠原蛋白','4','4000');
 INSERT INTO Procedures (name,pType_id,fee) VALUES ('微針療程','4','4000');
 INSERT INTO Procedures (name,pType_id,fee) VALUES ('無痕植髮','4','4000');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','1','1','阿不就好棒棒');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','2','1','好棒棒');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','3','1','第一次做醫美，覺得這家給我的體驗還不錯，診所呈現乾淨又漂亮的專業感，小姐們也親切，最重要的是我皮膚真的有變好 :D');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','1','1','好');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','2','1','醫生好漂亮');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','3','1','無效退費');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','1','1','無效退費');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','2','3','一級棒');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','3','5','第一次做醫美，覺得這家給我的體驗還不錯，診所呈現乾淨又漂亮的專業感，小姐們也親切，最重要的是我皮膚真的有變好 :D');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','1','3','好');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','2','5','醫生好漂亮');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','3','1','好棒棒');
 
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','4','3','診所整個環境漂亮又乾淨，小姐們親切又專業，醫師都是名醫技術真的沒話說，真的是物超所値，值得推薦！讚！');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','4','1','這裡真是人間仙境，美景佳人一切是那麼的完美有如都市裡的森林，覺得整個人都活絡起來了！！！');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','4','5','音樂好聽、環境舒適漂亮，療程做完感覺蠻有效的，可惜我錢不多窮窮的，不然應該會常來啦～');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','5','5','大家都很親切也都不會有推銷的感覺值得去的醫美診所');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','6','1','價格優惠，服務親切，醫生細心又專業，診所環境更是一級棒啦~');
-INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','6','5','出手大方');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1000','4','5','診所整個環境漂亮又乾淨，小姐們親切又專業，醫師都是名醫技術真的沒話說，真的是物超所値，值得推薦！讚！');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1005','4','5','這裡真是人間仙境，美景佳人一切是那麼的完美有如都市裡的森林，覺得整個人都活絡起來了！！！');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1003','4','3','音樂好聽、環境舒適漂亮，療程做完感覺蠻有效的，可惜我錢不多窮窮的，不然應該會常來啦～');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1001','5','4','大家都很親切也都不會有推銷的感覺值得去的醫美診所');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1002','6','3','價格優惠，服務親切，醫生細心又專業，診所環境更是一級棒啦~');
+INSERT INTO Score (mid,eid,scores,comment) VALUES ('1004','6','1','技術真的沒話說');
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO Chat (eid,mid,record) VALUES ('1','1001','30');
 INSERT INTO Chat (eid,mid,record) VALUES ('2','1002','15');

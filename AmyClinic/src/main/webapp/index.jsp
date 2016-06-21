@@ -88,9 +88,9 @@ li a{color: #6D2222;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 </div>
- 
+ <div class="">
 <table class='table' >	
 <tr>
 <td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
@@ -152,7 +152,7 @@ li a{color: #6D2222;}
 
 </tr>
 </table>	
-                  
+</div>                  
 <script type="text/javascript">// Carousel Auto-Cycle
   $(document).ready(function() {
     $("#banner").remove();
