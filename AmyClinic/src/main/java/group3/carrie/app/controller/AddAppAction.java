@@ -221,7 +221,7 @@ public class AddAppAction extends ActionSupport {
 			msgBuffer.append("預約描述：" + appVO.getDescrip() + "<br>");
 		}
 		msgBuffer.append("預約時間：" + s_app_time + "<br>");
-		msgBuffer.append("醫師：" + empVO.getName() + "<br>");
+		msgBuffer.append("醫師：" + empVO.getName() + "<br><br><br>");
 		
 		msg = msgBuffer.toString();
 		return msg;

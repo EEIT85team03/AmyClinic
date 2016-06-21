@@ -27,7 +27,8 @@
  
 #final-adjust {
 /* 	border: 1px solid black; */
-	text-align: center;
+/* 	text-align: center; */
+	padding-left: 34%;
 	font-size: 18px;
 	line-height: 1.428571429;
 }
