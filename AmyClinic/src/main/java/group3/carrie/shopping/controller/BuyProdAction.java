@@ -3,7 +3,9 @@ package group3.carrie.shopping.controller;
 import group3.carrie.orderitems.model.OrderItemsVO;
 import group3.carrie.shopping.model.ShoppingCart;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -56,6 +58,7 @@ public class BuyProdAction extends ActionSupport {
 	
 	public String execute() {
 		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpServletResponse response = ServletActionContext.getResponse();
 		HttpSession session = request.getSession();
 		
 		//從session中取出ShoppingCart物件
@@ -76,8 +79,7 @@ public class BuyProdAction extends ActionSupport {
 		try {
 			cart.addToCart(pid, oi);
 		} catch (Exception e) {
-			e.printStackTrace();
-			return ERROR;
+			response.setStatus(503);
 		}
 		System.out.println("加入購物車囉~");
 		return null;

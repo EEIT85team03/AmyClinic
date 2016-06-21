@@ -144,6 +144,7 @@ function addToCart(){
 		"url":getContextPath()+'/free/jointocart',
 		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : qty},
 		"success":function(data){
+			console.log("hihi1")
 			Lobibox.notify("success", {
 				size: 'mini',
 				title: '成功加入購物車！',
@@ -154,6 +155,7 @@ function addToCart(){
 				});
 		},
 		"error":function(data){
+			console.log("hihi")
 			Lobibox.notify("error", {
 				size: 'mini',
 				title: '加入購物車失敗！',
@@ -162,7 +164,7 @@ function addToCart(){
 				sound: false,
 				position: "center top"
 				});
-		},
+		}
 	});
 }
 </script>

@@ -80,7 +80,12 @@ public class FinPayAction extends ActionSupport {
 		//寄通知信給使用者
 		Mailer m = new Mailer();
 		String msg = msgForEmail(mb, ordersVO, date);
-		m.send(ordersVO.getRecipient(), ordersVO.getEmail(), HEADER, msg, "html");
+		try {
+			m.send(ordersVO.getRecipient(), ordersVO.getEmail(), HEADER, msg, "html");
+		} catch(Exception e) {
+			request.setAttribute("ordersVO", ordersVO);
+			return ERROR;
+		}	
 		
 		
 		//將訂單放入request物件中，準備轉交

@@ -152,11 +152,18 @@ public class AddAppAction extends ActionSupport {
 		// 如果有別人先讓預約數滿了，就回到預約頁面
 		if (appt_num >= 3) {
 			request.setAttribute("descrip", descrip);
-			request.setAttribute("id", id);
 			setMessage_time("預約人數已滿");
 			return "appfail";
 		}
 		scheVO.setAppt_num(scheVO.getAppt_num() + 1);
+		
+		AppService appServ = new AppService();
+		// 避免會員重複預約同時段
+		if (appServ.findByMid_Date_Time(mb.getMid(), date, time).size() != 0) {
+			request.setAttribute("descrip", descrip);
+			setMessage_time("重複預約");
+			return "appfail";
+		}
 		
 		// 如果預約人數滿了，就將預約狀態改為不可預約
 		if (scheVO.getAppt_num() >= 3) {
@@ -168,14 +175,17 @@ public class AddAppAction extends ActionSupport {
 		EmployeeVO empVO = empServ.getOneEmployee(ename);
 
 		// 全部塞進AppVO內
-		AppService appServ = new AppService();
 		AppVO appVO = appServ.addApp(mb, purpose, date, time, descrip, empVO, set);
 		
 		// 寄出通知信給使用者
 		Mailer m = new Mailer();
 		String msg = msgForEmail(mb, empVO, s_app_time, appVO);
-		m.send(mb.getName(), mb.getEmail(), HEADER, msg, "HTML");
-		
+		try {
+			m.send(mb.getName(), mb.getEmail(), HEADER, msg, "HTML");
+		} catch(Exception e) {
+			request.setAttribute("empVO", empVO);
+			return ERROR;
+		}
 		// 準備轉交
 		request.setAttribute("s_app_time", s_app_time);
 		request.setAttribute("appVO", appVO);
@@ -224,6 +234,7 @@ public class AddAppAction extends ActionSupport {
 			setMessage_time("請選擇預約時間");
 			super.addFieldError("s_app_time", "請選擇預約時間");
 		}
+		
 		if (purpose == 0) {
 			System.out.println(proc);
 			if (proc == null || proc.length == 0) {
