@@ -314,7 +314,7 @@ body p {
 								"lengthMenu" : [ [ 10, 15, 30, 50, -1 ],
 										[ 10, 15, 30, 50, "All" ] ],
 								"iDisplayLength" : 15,
-								"displayStart": 153,
+								"displayStart": 145,
 							//  		dom: 'Bfrtip',
 							//  		buttons: [
 							// 		            {
