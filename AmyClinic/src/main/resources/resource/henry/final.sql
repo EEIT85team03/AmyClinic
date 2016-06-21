@@ -339,6 +339,7 @@ UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e3.jpg', SI
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e4.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 4;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e5.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 5;
 UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e6.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 6;
+UPDATE Employees SET photo=(SELECT * FROM OPENROWSET(BULK N'C:/AmyDB/e7.jpg', SINGLE_BLOB) AS CategoryImage) WHERE eid = 7;
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ProcedureType (name) VALUES ('整形手術');
 INSERT INTO ProcedureType (name) VALUES ('雷射光療');
