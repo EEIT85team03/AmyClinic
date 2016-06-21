@@ -90,7 +90,7 @@ a {
 						選擇數量：
 						</td>
 						<td>
-							<select id="qty${prodVO.pid}">
+							<select id="qty${prodVO.pid}" style="width: 50px">
 								<c:forEach begin="1" end="10" var="theqty">
 								<!-- 如果庫存量減掉theqty大於等於0才顯示選項 -->
 									<c:if test="${prodVO.amount - theqty >= 0}">
