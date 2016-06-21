@@ -58,7 +58,7 @@
 
 <span id="emp">${empVO.name}</span>　醫師　<a target="_new" href="${pageContext.request.contextPath}/free/showdoctor?id=${empVO.eid}">查看醫師資料</a><br><br>
 
-<table border="1" width="900px" height="500px" align="center" style="border-collapse: collapse;text-align: center;">
+<table border="1" width="900px" height="200px" align="center" style="border-collapse: collapse;text-align: center;">
 	<tr>
 		<th>預約</th>
 		<th>日期</th>

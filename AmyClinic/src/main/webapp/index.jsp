@@ -40,15 +40,15 @@ font{font-family: myfont;
 #footer{
 background-color:none;
 }
-#footer-bgcontent {
-	  height: 99px;
-	  background-color:none;
-	  position: absolute;
-	  right: 0;
-	  left: 0;
-	  padding: 1rem;
-	  text-align: center;	
-}
+/* #footer-bgcontent { */
+/* 	  height: 99px; */
+/* 	  background-color:none; */
+/* 	  position: absolute; */
+/* 	  right: 0; */
+/* 	  left: 0; */
+/* 	  padding: 1rem; */
+/* 	  text-align: center;	 */
+/* } */
 </style>
 <style type="text/css">
 
@@ -80,7 +80,7 @@ li a{color: #6D2222;}
 	<div class="container">	<br>
 	<table  >
 	<tr >
-		<td class="col-md-7"><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
+		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
 		<td ></td>
 		<td></td>
 	</tr>
@@ -99,7 +99,7 @@ li a{color: #6D2222;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br> --><br><br>
 </div> 
 <table class='table borderless' >	
 	

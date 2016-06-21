@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="${pageContext.request.contextPath}/General/css/style.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
 <title>門診時間表及醫師介紹</title>
 <style>
 	a:link {
@@ -15,15 +16,15 @@
 	a:visited {
 		color:blue
 	}
-	#footer-bgcontent {
-		height: 99px;
-		background: #e499ba;
-		position: absolute;
-		right: 0;
-		left: 0;
-		padding: 1rem;
-		text-align: center;	
-}
+/* 	#footer-bgcontent { */
+/* 		height: 99px; */
+/* 		background: #e499ba; */
+/* 		position: absolute; */
+/* 		right: 0; */
+/* 		left: 0; */
+/* 		padding: 1rem; */
+/* 		text-align: center;	 */
+/* } */
 </style>
 </head>
 <body>

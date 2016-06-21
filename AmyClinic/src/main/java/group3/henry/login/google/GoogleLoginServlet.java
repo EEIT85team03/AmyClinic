@@ -74,6 +74,7 @@ public class GoogleLoginServlet extends HttpServlet {
 					memberVO.setHeight(0);
 					memberVO.setMass(0);
 					memberVO.setAct_status(1);
+					memberVO.setReward_pts(0);
 					memberVO = retrievePhoto(memberVO, gbean);
 					service.addMember(memberVO);
 					memberVO = service.emailExists(memberVO.getEmail());

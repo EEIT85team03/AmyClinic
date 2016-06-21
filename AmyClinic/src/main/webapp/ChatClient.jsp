@@ -205,7 +205,7 @@ font-family: 微軟正黑體;
 
 	        }
 	        
-	        window.location.href = 'http://localhost:8080/AmyClinic/index.jsp';
+	        window.location.href = 'http://localhost:8081/AmyClinic/index.jsp';
 	       
 	    }
 	    

@@ -172,7 +172,7 @@
 	        	 console.log("未開啟連接");
 	        }
 	        
-	        window.location.href = 'http://localhost:8080/AmyClinic/Backstage/b_login.jsp';
+	        window.location.href = 'http://localhost:8081/AmyClinic/Backstage/b_login.jsp';
 	    }
 	    
 	    /*
