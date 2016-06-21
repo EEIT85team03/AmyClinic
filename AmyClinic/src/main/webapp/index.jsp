@@ -10,48 +10,39 @@
 <link href="${pageContext.request.contextPath}/login/css/login.css" rel="stylesheet">
 <%-- <script src="https://apis.google.com/js/platform.js" async defer></script> --%>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
-<style>
-        html {  height: 100%;  }   
-        body {
-        background-image: url("/AmyClinic/images/01.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-        }
-/*         menu{background-color: white;} */
-        span{color: #FF0080;} 
-</style>
-<style type="text/css">
-#header{
-/* background-color: #AE00AE;  */
-width:100%;height:60%;}
-
+<style type="text/css">     
 .page-header{margin:0px auto;}
 #page {
 	width: 100%;
 	margin: 0 auto;
 	padding-top: 0px;
 }
+body {
+        background-image: url("/AmyClinic/images/01.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        }   
+span{color: #FF0080;} 
+/* font{font-family: myfont;} */
+#header{
+/* width:100%;height:60%; */
+}
 
-font{font-family: myfont;
-/* background-color: #fff; */
-}
-#footer{
-background-color:none;
-}
-/* #footer-bgcontent { */
-/* 	  height: 99px; */
+
+ #headerbox{height:4.7%;} 
+ .container{height:55%;}
+ .table{height:33%;}
+ #footer-bgcontent { 
+ 	  height: 75px; 
 /* 	  background-color:none; */
 /* 	  position: absolute; */
 /* 	  right: 0; */
 /* 	  left: 0; */
 /* 	  padding: 1rem; */
 /* 	  text-align: center;	 */
-/* } */
-</style>
-<style type="text/css">
-
+ } 
 .container-fluid {
 /*     margin: 40px auto 10px; */
 /*     padding: 20px 0px; */
@@ -63,9 +54,7 @@ background-color:none;
 width: 400px;
 height: 250px;
 }
-.borderless td, .borderless th, .borderless tr, .borderless tbody{
-    border: none;
-}
+
 li a{color: #6D2222;}
 </style>
 <link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
@@ -77,10 +66,10 @@ li a{color: #6D2222;}
 	<script src="${pageContext.request.contextPath}/js/facebook.login.js"></script>
 	<!-- end facebook script -->
 	<s:include value="/General/header.jsp"></s:include>
-	<div class="container">	<br>
+	<div class="container">	<br><br><br>
 	<table  >
 	<tr >
-		<td class="col-md-7"><br><br><br><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
+		<td class="col-md-7"><h1 style="padding-left: 100px;"><font color=#EF8181 class='fa fa-smile-o'  style="font-size: 25px; ">開啟您的美麗人生<br></font><font color=#FF8000 class='fa fa-smile-o'  style="color: #FF0080;">麗質不必天生，美麗可以創造，專業的醫美團隊AMY</font></h1></td>
 		<td ></td>
 		<td></td>
 	</tr>
@@ -99,11 +88,11 @@ li a{color: #6D2222;}
 		<td></td>
 	</tr>
 </table>
-<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br> --><br><br>
-</div> 
-<table class='table borderless' >	
-	
-	<tr>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+ 
+<table class='table' >	
+<tr>
 <td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
 <img src="${pageContext.request.contextPath}/images/05.gif" alt="" ><span>美麗快報</span>		
 			<ul style="max-height: 250px; overflow-y:scroll; ">		
@@ -116,15 +105,15 @@ li a{color: #6D2222;}
 			</ul>
 </td>
 <td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
-<img src="${pageContext.request.contextPath}/images/06.gif" alt="" ><span>美麗見證</span><br>
-<img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='autoimg' ></td>	
+<img src="${pageContext.request.contextPath}/images/06.gif" alt=""  class="img-rounded"><span>美麗見證</span><br>
+<img src="${pageContext.request.contextPath}/images/a1.jpg" alt="" class='img-rounded autoimg' ></td>	
 <td class='col-md-3' style="background-color: white;padding-left: 10px;margin-left: 10px;">
-<img src="${pageContext.request.contextPath}/images/08.gif" alt="" ><span>美麗推廣</span><br>
+<img src="${pageContext.request.contextPath}/images/08.gif" alt=""  class="img-rounded"><span>美麗推廣</span><br>
 <!-- <iframe width="400" height="250" src="https://www.youtube.com/watch?v=4V5qqL7b5FM?autoplay=1" frameborder="0" allowfullscreen></iframe> -->
 <iframe width="400" height="250" src="https://www.youtube.com/embed/4V5qqL7b5FM?autoplay=1" frameborder="0" allowfullscreen></iframe>
 </td>
 <td class="col-md-3" style="background-color: white;padding-left: 10px;margin-left: 10px;">
-<img src="${pageContext.request.contextPath}/images/07.gif" alt=""  style="height: 38px;"><span>環境介紹</span>
+<img src="${pageContext.request.contextPath}/images/07.gif" alt=""  style="height: 38px;" class="img-rounded"><span>環境介紹</span>
 	<div class="container-fluid">						
 		<div class="row-fluid">
     		<div class="carousel slide" id="myCarousel">
