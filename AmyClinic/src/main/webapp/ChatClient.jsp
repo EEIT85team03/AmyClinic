@@ -39,12 +39,12 @@ font-family: 微軟正黑體;
 
 		<div id ="youdidntchoose">
 		<br>
-		<p align="center" style="font-size:40PX;font-family:微軟正黑體;color:#8F4586">請選擇想聯絡的醫生</p>
+		<p align="center" style="font-size:40PX;font-family:微軟正黑體;color:#8F4586">選擇客服</p>
 		
 			<div  style="border-radius:10pX;border:3pX pink double;width: 600PX;height: 600PX;margin: 0 auto;">
 				<br>
 				<p style="font-size:20PX">
-					在線醫生列表[<span id="onlinenum"></span>]
+					在線客服列表[<span id="onlinenum"></span>]
 				</p>
 				</br>
 				<ul id="list"></ul>
@@ -63,7 +63,7 @@ font-family: 微軟正黑體;
 			<!-- 輸入區 -->
 			<div>
 				<textarea class="" id="message" name="message" rows="3" cols="140"
-					placeholder="請輸入您想發送的消息"></textarea> <button type="button" style="font-size:1pt; width:50px;height:50px;color:#000000 ;float:right;margin-right: 140PX"  onclick="sendMessage()">發送訊息</button>
+					placeholder="請輸入您想發送的消息"></textarea> <button type="button" style="font-size:1pt; width:50px;height:px;color:#000000 ;float:right;margin-right: 10px"  onclick="sendMessage()">發送訊息</button>
 			</div>
 			<!-- 按鈕區 -->
 			<div>
@@ -77,7 +77,7 @@ font-family: 微軟正黑體;
 	<script>
 	$(function(){
 		$("#whenuchoose").hide();
-// 		$("#youdidntchoose").hide();
+		$("#youdidntchooseC").hide();
 
 		
 	})
@@ -151,7 +151,7 @@ font-family: 微軟正黑體;
 	        $.each(list, function(index, item){     //添加私聊按钮
 	            var li = "<li>"+item+"</li>";
 	            if('${memberVO.name}' != item){    //排除自己
-	                li = "<li>"+item+" <button type=\"button\" onclick=\"addChat('"+item+"');\">私聊</button></li>";
+	                li = "<li>客服"+item+" <button type=\"button\" onclick=\"addChat('"+item+"');\">進行諮詢</button></li>";
 	            }
 	            $("#list").append(li);
 	        });
@@ -205,7 +205,7 @@ font-family: 微軟正黑體;
 
 	        }
 	        
-	        window.location.href = 'http://localhost:8080/AmyClinic/index.jsp';
+	        window.location.href = 'http://localhost:8081/AmyClinic/index.jsp';
 	       
 	    }
 	    

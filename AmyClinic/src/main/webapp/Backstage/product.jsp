@@ -73,9 +73,9 @@
 		<th>折扣</th>
 		<th>商品描述</th>
 		<th>規格</th>
-<!-- 		<th>				   -->
-<!-- 			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>    -->
-<!-- 		</th> -->
+		<th>				  
+			     <a href="product.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
+		</th>
 		<th>			  
 			     <a href="addProduct.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
@@ -98,12 +98,12 @@
 			     <input type="hidden" name="pid" value="${ProductVO.pid}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
-<!-- 			<td> -->
-<!-- 			  <FORM METHOD="post" ACTION="ProductServlet"> -->
-<!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
-<%-- 			    <input type="hidden" name="pid" value="${ProductVO.pid}"> --%>
-<!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
-<!-- 			</td> -->
+			<td>
+			  <FORM METHOD="post" ACTION="ProductServlet">
+			    <input type="submit" value="下架" class="btn btn-danger">
+			    <input type="hidden" name="pid" value="${ProductVO.pid}">
+			    <input type="hidden" name="action"value="delete"></FORM>
+			</td>
 		</tr>
 	</c:forEach>
 	</table>  

@@ -10,7 +10,7 @@
 <style type="text/css">
 .img{
 width: 800px; height: 600px; 
-margin-left: 400px;
+margin-left: 25%;
 }
 .carousel slide{
 width: 800px; height: 600px; 

@@ -30,17 +30,18 @@ span{color: #FF0080;}
 /* width:100%;height:60%; */
 }
 
+
  #headerbox{height:4.7%;} 
  .container{height:55%;}
  .table{height:33%;}
  #footer-bgcontent { 
  	  height: 75px; 
-/* 	  background-color:none; */
-/* 	  position: absolute; */
-/* 	  right: 0; */
-/* 	  left: 0; */
-/* 	  padding: 1rem; */
-/* 	  text-align: center;	 */
+ 	  background-color:none; 
+ 	  position: absolute; 
+ 	  right: 0; 
+	  left: 0; 
+	  padding: 1rem; 
+	  text-align: center;	 
  } 
 .container-fluid {
 /*     margin: 40px auto 10px; */
@@ -87,9 +88,9 @@ li a{color: #6D2222;}
 		<td></td>
 	</tr>
 </table>
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 </div>
- 
+ <div class="">
 <table class='table' >	
 <tr>
 <td class='col-md-4' style="background-color: white;padding-left: 10px;margin-left: 10px;"> 	
@@ -151,7 +152,7 @@ li a{color: #6D2222;}
 
 </tr>
 </table>	
-                  
+</div>                  
 <script type="text/javascript">// Carousel Auto-Cycle
   $(document).ready(function() {
     $("#banner").remove();

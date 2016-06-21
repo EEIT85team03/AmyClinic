@@ -68,9 +68,9 @@ table {
 		<th>療程編號</th>
 		<th>療程名稱</th>
 		<th>療程價格</th>
-<!-- 		<th>				   -->
-<!-- 			     <a href="procedures.jsp"><input type="submit" value="全部" class="btn btn-info"></a>    -->
-<!-- 		</th> -->
+		<th>				  
+			     <a href="procedures.jsp"><input type="submit" value="全部" class="btn btn-info"></a>   
+		</th>
 		<th>			  
 			     <a href="addProcedures.jsp"><input type="submit" value="新增" class="btn btn-primary"></a>    
 		</th>
@@ -88,12 +88,12 @@ table {
 			     <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
 			     <input type="hidden" name="action"	value="getOne_For_Update"></FORM>
 			</td>
-<!-- 			<td> -->
-<!-- 			  <FORM METHOD="post" ACTION="ProcServlet"> -->
-<!-- 			    <input type="submit" value="刪除" class="btn btn-danger"> -->
-<%-- 			    <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}"> --%>
-<!-- 			    <input type="hidden" name="action"value="delete"></FORM> -->
-<!-- 			</td> -->
+			<td>
+			  <FORM METHOD="post" ACTION="ProcServlet">
+			    <input type="submit" value="下架" class="btn btn-danger">
+			    <input type="hidden" name="procedure_id" value="${ProcVO.procedure_id}">
+			    <input type="hidden" name="action"value="delete"></FORM>
+			</td>
 		</tr>
 	</c:forEach>
 	</table>    

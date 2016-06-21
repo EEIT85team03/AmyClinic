@@ -54,13 +54,13 @@
             <result name="login">/login/login.jsp</result>
         </action>
         <action name="register" class="group3.henry.register.controller.RegisterAction" method="register">
-            <interceptor-ref name="fileUpload">                                                <!-- ï¿½]ï¿½wï¿½É®×¤Wï¿½ï¿½ï¿½dï¿½Iï¿½ï¿½ -->
-                <param name="maximumSize">2000000</param>                                      <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ç³ï¿½ï¿½ï¿½ï¿½É®×ªï¿½ï¿½jï¿½pï¿½Aï¿½Hbyteï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
-                <param name="allowedTypes">image/gif,image/jpeg,image/png</param>            <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½É®×ªï¿½ï¿½É®×«ï¿½ï¿½Aï¿½Aï¿½Hï¿½rï¿½ï¿½(,)ï¿½jï¿½} -->
-                <param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>                  <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½É®×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¦Wï¿½Aï¿½Hï¿½rï¿½ï¿½(,)ï¿½jï¿½} -->
-            </interceptor-ref>                                                                <!-- ï¿½pï¿½Hï¿½Wï¿½ï¿½ï¿½Ì¬Ò³]ï¿½ï¿½ï¿½îªºï¿½Ü¡Aï¿½hï¿½ï¿½ï¿½Ý¨ï¿½ï¿½Ì¬Ò¤ï¿½ï¿½\ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Wï¿½Ç¡A ï¿½ï¿½ï¿½É®×«ï¿½ï¿½Aï¿½hï¿½|ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ -->
-            <interceptor-ref name="EncPw" />                                                 <!-- ï¿½ï¿½ï¿½wï¿½wï¿½]ï¿½dï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½| -->
-            <param name="saveDirectory">\user_photo</param>                                    <!-- ï¿½Û­qï¿½Wï¿½Çªï¿½ï¿½Ø¦aï¿½Ø¿ï¿½ -->
+            <interceptor-ref name="fileUpload">                                                <!-- ³]©wÀÉ®×¤W¶ÇÄdºI¾¹ -->
+                <param name="maximumSize">2000000</param>                                      <!-- ­­¨î¤W¶Ç³æ­ÓÀÉ®×ªº¤j¤p¡A¥Hbyte¬°³æ¦ì -->
+                <param name="allowedTypes">image/gif,image/jpeg,image/png</param>            <!-- ­­¨î¤W¶ÇÀÉ®×ªºÀÉ®×«¬ºA¡A¥H³r¸¹(,)¹j¶} -->
+                <param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>                  <!-- ­­¨î¤W¶ÇÀÉ®×ªº©µ¦ùÀÉ¦W¡A¥H³r¸¹(,)¹j¶} -->
+            </interceptor-ref>                                                                <!-- ¦p¥H¤W¨âªÌ¬Ò³]­­¨îªº¸Ü¡A«h¥²»Ý¨âªÌ¬Ò¤¹³\ªº¤~¯à¤W¶Ç¡A ¦ÓÀÉ®×«¬ºA«h·|Àu¥ý°µ¿ù»~´£¥Ü -->
+            <interceptor-ref name="EncPw" />                                                 <!-- «ü©w¹w³]ÄdºI¾¹°ïÅ| -->
+            <param name="saveDirectory">\user_photo</param>                                    <!-- ¦Û­q¤W¶Çªº¥Ø¦a¥Ø¿ý -->
             <result name="success">/register/regsuccess.jsp</result>
             <result name="input">/register/register.jsp</result>
         </action>
@@ -102,12 +102,12 @@
             <result name="input">/member/member.jsp</result>
         </action>
                <action name="updatephotos" class="group3.henry.login.controller.EditProfileAction" method="updatePhoto">
-           <interceptor-ref name="fileUpload">                                                <!-- ï¿½]ï¿½wï¿½É®×¤Wï¿½ï¿½ï¿½dï¿½Iï¿½ï¿½ -->
-                <param name="maximumSize">2000000</param>                                      <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ç³ï¿½ï¿½ï¿½ï¿½É®×ªï¿½ï¿½jï¿½pï¿½Aï¿½Hbyteï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
-                <param name="allowedTypes">image/gif,image/jpeg,image/png</param>            <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½É®×ªï¿½ï¿½É®×«ï¿½ï¿½Aï¿½Aï¿½Hï¿½rï¿½ï¿½(,)ï¿½jï¿½} -->
-                <param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>                  <!-- ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½É®×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¦Wï¿½Aï¿½Hï¿½rï¿½ï¿½(,)ï¿½jï¿½} -->
+           <interceptor-ref name="fileUpload">                                                <!-- ³]©wÀÉ®×¤W¶ÇÄdºI¾¹ -->
+                <param name="maximumSize">2000000</param>                                      <!-- ­­¨î¤W¶Ç³æ­ÓÀÉ®×ªº¤j¤p¡A¥Hbyte¬°³æ¦ì -->
+                <param name="allowedTypes">image/gif,image/jpeg,image/png</param>            <!-- ­­¨î¤W¶ÇÀÉ®×ªºÀÉ®×«¬ºA¡A¥H³r¸¹(,)¹j¶} -->
+                <param name="allowedExtensions">.gif,.jpg,.jpeg,.png</param>                  <!-- ­­¨î¤W¶ÇÀÉ®×ªº©µ¦ùÀÉ¦W¡A¥H³r¸¹(,)¹j¶} -->
             </interceptor-ref>    
-            <interceptor-ref name="defaultStack" />                                                           <!-- ï¿½pï¿½Hï¿½Wï¿½ï¿½ï¿½Ì¬Ò³]ï¿½ï¿½ï¿½îªºï¿½Ü¡Aï¿½hï¿½ï¿½ï¿½Ý¨ï¿½ï¿½Ì¬Ò¤ï¿½ï¿½\ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Wï¿½Ç¡A ï¿½ï¿½ï¿½É®×«ï¿½ï¿½Aï¿½hï¿½|ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ -->
+            <interceptor-ref name="defaultStack" />                                                           <!-- ¦p¥H¤W¨âªÌ¬Ò³]­­¨îªº¸Ü¡A«h¥²»Ý¨âªÌ¬Ò¤¹³\ªº¤~¯à¤W¶Ç¡A ¦ÓÀÉ®×«¬ºA«h·|Àu¥ý°µ¿ù»~´£¥Ü -->
             <param name="saveDirectory">/user_photo</param>
             <result>/login/updphosuccess.jsp</result>
             <result name="input">/login/editphoto.jsp</result>
@@ -125,7 +125,7 @@
         </action>
     </package>
     <!-- ************************* -->
-    <!-- ï¿½wï¿½ï¿½ï¿½tï¿½ï¿½ -->
+    <!-- ¹w¬ù¨t²Î -->
     <!-- ************************* -->
     <package name="appPackage" namespace="/apps" extends="struts-default">
         <interceptors>
@@ -160,7 +160,6 @@
             <result name="input">/app/add_app.jsp</result>
             <result name="appfail">/app/add_app.jsp</result>
             <result name="failure">/login/login.jsp</result>
-            <result name="error">/app/error_fin_app.jsp</result>
         </action>
         <action name="querybefore" class="group3.carrie.app.controller.QueryAppAction"
             method="before"></action>
@@ -170,7 +169,7 @@
             method="cancel"></action>
     </package>
     <!-- ************************* -->
-    <!-- ï¿½Êªï¿½ï¿½tï¿½ï¿½ -->
+    <!-- ÁÊª«¨t²Î -->
     <!-- ************************* -->
     <package name="shoppingPackage" namespace="/shoppings" extends="struts-default">
         <interceptors>
@@ -233,7 +232,6 @@
             <result name="success">/shopping/fin_shopping.jsp</result>
             <result name="nomb">/login/login.jsp</result>
             <result name="failure">/index.jsp</result>
-            <result name="error">/shopping/error_fin_shopping.jsp</result>
         </action>
     </package>
     

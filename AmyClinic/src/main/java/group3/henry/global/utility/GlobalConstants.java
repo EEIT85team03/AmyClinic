@@ -6,7 +6,7 @@ public interface GlobalConstants {
 	public static final String NL = System.getProperty("line.separator");
 	
 	//Local Machine ----------------------
-	public static final String SERVER = "localhost:8080"; //local machine testing
+	public static final String SERVER = "localhost:8081"; //local machine testing
 	public static final String EMAIL_FROM = "eeit85group3@gmail.com"; //sender
 	public static final String EMAIL_USER = "eeit85group3@gmail.com"; //account
 	public static final String EMAIL_PASSWORD = "thisismygroupthreepassword"; //password
