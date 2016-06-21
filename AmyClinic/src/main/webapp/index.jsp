@@ -36,12 +36,12 @@ span{color: #FF0080;}
  .table{height:33%;}
  #footer-bgcontent { 
  	  height: 75px; 
-/* 	  background-color:none; */
-/* 	  position: absolute; */
-/* 	  right: 0; */
-/* 	  left: 0; */
-/* 	  padding: 1rem; */
-/* 	  text-align: center;	 */
+ 	  background-color:none; 
+ 	  position: absolute; 
+ 	  right: 0; 
+	  left: 0; 
+	  padding: 1rem; 
+	  text-align: center;	 
  } 
 .container-fluid {
 /*     margin: 40px auto 10px; */
