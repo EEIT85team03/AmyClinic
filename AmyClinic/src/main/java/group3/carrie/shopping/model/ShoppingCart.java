@@ -8,6 +8,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.ServletException;
+
 public class ShoppingCart {
 	private Map<Integer, OrderItemsVO> cart = new LinkedHashMap<>();
 	
@@ -28,6 +30,7 @@ public class ShoppingCart {
 		
 		//在Server端沒有該物品的資料，就加進cart裡
 		if (cart.get(pid) == null) {
+			System.out.println("h4");
 			cart.put(pid, oi);
 		} else {
 		//在Server端已有該物品的資料，則更新數量
@@ -35,10 +38,13 @@ public class ShoppingCart {
 			//新的數量+原有的數量
 			ProductService prodServ = new ProductService();
 			ProductVO prodVO = prodServ.getOneProduct(pid);
+			System.out.println("h1");
 			//如果新的數量+原有的數量沒超過庫存量才過關
 			if (prodVO.getAmount() - (oi.getQuantity() + oib.getQuantity()) >= 0) {
+				System.out.println("h2");
 				oib.setQuantity(oi.getQuantity() + oib.getQuantity());
 			} else {
+				System.out.println("h3");
 				throw new Exception();
 			}
 		}

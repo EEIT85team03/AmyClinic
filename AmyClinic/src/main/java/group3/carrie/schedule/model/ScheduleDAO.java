@@ -90,7 +90,6 @@ public class ScheduleDAO implements ScheduleDAO_interface {
 	@Override
 	public List<ScheduleVO> findByDateAndHour(Date date, String c_hours) {
 		List<ScheduleVO> list = null;
-		ScheduleVO scheduleVO = null;
 		
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {

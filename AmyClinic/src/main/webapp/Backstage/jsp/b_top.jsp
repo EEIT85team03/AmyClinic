@@ -212,7 +212,7 @@ font-size:18px;
 			<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-bar-chart-o"></i>熱銷項目<i class="fa fa-fw fa-caret-down"></i></a>
 				<ul id="demo" class="collapse">
 					<li>
-					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷產品</a>
+					<a href="<%=request.getContextPath()%>/Backstage/hotProduct.jsp" >熱銷商品</a>
 					</li>
 					<li>
 					<a href="<%=request.getContextPath()%>/Backstage/hotProc.jsp">熱銷療程</a>

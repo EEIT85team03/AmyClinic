@@ -118,6 +118,8 @@
 			<div class="col-xs-2 col-xs-offset-2" >
 		<input type="hidden" name="action" value="update"><br>
 		<input type="submit" value="送出修改" class="btn btn-info btn-block login">
+		<br>
+		<input type="button" value="一鍵修改"  id ="one" class="btn btn-default btn-sm">
 		</div>
 		</div>
 		 
@@ -126,5 +128,17 @@
 	</FORM>
 </div>
 </div>
+
 </body>
+<script type="text/javascript">
+$(function(){
+	$('#one').click(function() {
+		$("#spec").text('雷射去斑/痣、雷射磨皮、脈衝光除痘、脈衝光回春、電波拉皮、美白針、玻尿酸、肉毒桿菌');
+	})
+})
+
+
+</script>
+
+
 </html>

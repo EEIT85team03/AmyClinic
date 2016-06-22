@@ -8,7 +8,7 @@
 <head>
 <style type="text/css">
 .modal.modal-wide .modal-dialog {
-  width: 80%;
+  width: 90%;
 }
 .modal-wide .modal-body {
   overflow-y: auto;
@@ -64,7 +64,7 @@ body p {
 					<th>門診醫師</th>
 					<th>預約日期</th>
 					<th>預約時段</th>
-					<th>療程</th>
+					<th style="width: 150px;" >療程</th>
 					<th>初回診</th>
 					<th>預約狀態</th>
 					<th>查看會員</th>

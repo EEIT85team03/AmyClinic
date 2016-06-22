@@ -31,6 +31,7 @@ public class GoogleLoginServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("hihi");
 		this.doPost(request, response);
 	}
 
@@ -74,6 +75,7 @@ public class GoogleLoginServlet extends HttpServlet {
 					memberVO.setHeight(0);
 					memberVO.setMass(0);
 					memberVO.setAct_status(1);
+					memberVO.setReward_pts(0);
 					memberVO = retrievePhoto(memberVO, gbean);
 					service.addMember(memberVO);
 					memberVO = service.emailExists(memberVO.getEmail());

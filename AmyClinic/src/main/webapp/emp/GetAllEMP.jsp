@@ -45,14 +45,22 @@
 	<div class="container-fluid">
 	<table border="1"   class="table table-hover table-responsive" >
 	<tr align="center" valign="middle">
-		<th width="100px;">員工編號</th>
+<!-- 		<th width="100px;">員工編號</th> -->
+<!-- 		<th width="120px;">員工照片</th> -->
+<!-- 		<th width="100px;">員工姓名</th> -->
+<!-- 		<th width="250px;">email</th> -->
+<!-- 		<th width="180px;">教育程度</th> -->
+<!-- 		<th width="350px;">經歷</th> -->
+<!-- 		<th width="180px;">專長</th> -->
+<!-- 		<th>修改</th> -->
+		<th width="70px;">員工編號</th>
 		<th width="120px;">員工照片</th>
 		<th width="100px;">員工姓名</th>
-		<th width="250px;">email</th>
-		<th width="180px;">教育程度</th>
-		<th width="350px;">經歷</th>
-		<th width="180px;">專長</th>
-		<th>修改</th>
+		<th>email</th>
+		<th>教育程度</th>
+		<th>經歷</th>
+		<th>專長</th>
+		<th width="70px;">修改</th>
 <!-- 		<th>刪除</th> -->
 	</tr>
 	<c:forEach var="employeeVO" items="${list}">

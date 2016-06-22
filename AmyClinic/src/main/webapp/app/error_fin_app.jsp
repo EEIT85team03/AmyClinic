@@ -29,6 +29,7 @@
 /* 	border: 1px solid black; */
 /* 	text-align: center; */
 	padding-left: 34%;
+	text-align: center;
 	font-size: 18px;
 	line-height: 1.428571429;
 }
@@ -39,7 +40,7 @@
 <div class="clr"></div>
 	<div>
 	<br>
-		<h1>預約完成，系統已發出通知信</h1>
+		<h1>預約完成</h1>
 		<br>
 		<br>
 		<div id="final-adjust">

@@ -21,15 +21,15 @@
 <style>
 
 
-#footer-bgcontent {
-		height:65px;
-		background: #e499ba;
-		position: absolute;
-		right: 0;
-		left: 0;
-		padding-bottom: 1rem;
-		text-align: center;	
-}
+/* #footer-bgcontent { */
+/* 		height:65px; */
+/* 		background: #e499ba; */
+/* 		position: absolute; */
+/* 		right: 0; */
+/* 		left: 0; */
+/* 		padding-bottom: 1rem; */
+/* 		text-align: center;	 */
+/* } */
 
 a {
  text-decoration: none;
@@ -90,7 +90,7 @@ a {
 						選擇數量：
 						</td>
 						<td>
-							<select id="qty${prodVO.pid}">
+							<select id="qty${prodVO.pid}" style="width: 50px">
 								<c:forEach begin="1" end="10" var="theqty">
 								<!-- 如果庫存量減掉theqty大於等於0才顯示選項 -->
 									<c:if test="${prodVO.amount - theqty >= 0}">
@@ -144,6 +144,7 @@ function addToCart(){
 		"url":getContextPath()+'/free/jointocart',
 		"data":{"pid" : pid, "pname" : pname, "price" : price, "discount" : discount, "qty" : qty},
 		"success":function(data){
+			console.log("hihi1")
 			Lobibox.notify("success", {
 				size: 'mini',
 				title: '成功加入購物車！',
@@ -154,6 +155,7 @@ function addToCart(){
 				});
 		},
 		"error":function(data){
+			console.log("hihi")
 			Lobibox.notify("error", {
 				size: 'mini',
 				title: '加入購物車失敗！',
@@ -162,7 +164,7 @@ function addToCart(){
 				sound: false,
 				position: "center top"
 				});
-		},
+		}
 	});
 }
 </script>

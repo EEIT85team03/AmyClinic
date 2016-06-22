@@ -6,6 +6,7 @@ import group3.carrie.proc.model.ProcVO;
 import group3.henry.login.model.MemberVO;
 import hibernate.util.HibernateUtil;
 
+import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.HashSet;
@@ -19,6 +20,7 @@ import org.hibernate.Session;
 public class AppDAO implements AppDAO_interface {
 	private static final String GET_ALL_STMT = 
 			"FROM AppVO order by aid";
+	private static final String GET_BY_MANY = "FROM AppVO where mid = ? and apt_date = ? and apt_time = ?";
 	private static final String GET_BYMID_BF_STMT = 
 			"select * from Appointments where mid = ? and apt_date < Convert(date,getdate()) order by apt_date";
 	private static final String GET_BYMID_AF_STMT = 
@@ -160,6 +162,27 @@ public class AppDAO implements AppDAO_interface {
 			throw ex;
 		}		
 		return list;
+	}
+
+	
+	
+	@Override
+	public List<AppVO> findByMid_Date_Time(Integer mid, Date apt_date, String apt_time) {
+		List<AppVO> list = null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery(GET_BY_MANY);
+			query.setParameter(0, mid);
+			query.setParameter(1, apt_date);
+			query.setParameter(2, apt_time);
+			list = query.list();
+			session.getTransaction().commit();
+		} catch (RuntimeException ex) {
+			session.getTransaction().rollback();
+			throw ex;
+		}
+		return list	;
 	}
 
 	@Override

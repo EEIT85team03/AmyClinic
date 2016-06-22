@@ -4,6 +4,7 @@ import group3.beef.employee.model.EmployeeVO;
 import group3.carrie.appdetail.model.AppDetailVO;
 import group3.henry.login.model.MemberVO;
 
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -119,6 +120,11 @@ public class AppService {
 	//查預約明細
 	public Set<AppDetailVO> getAppDetailByAid(Integer aid){
 		return dao.getAppDetailByAid(aid);
+	}
+	
+	//查會員有沒有預約過該時段
+	public List<AppVO> findByMid_Date_Time(Integer mid, Date apt_date, String apt_time) {
+		return dao.findByMid_Date_Time(mid, apt_date, apt_time);
 	}
 
 }

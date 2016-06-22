@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/app/css/add_app.css">
 <script src="${pageContext.request.contextPath}/General/js/jquery.min.js"></script>
 <title>線上預約</title>
+
 </head>
 <body>
 <jsp:include page="/General/header.jsp"></jsp:include>
@@ -65,7 +66,7 @@
                     <span class="wpcf7-form-control-wrap select-date">
                         <a class='iframe' href="${pageContext.request.contextPath}/apps/showtime">選擇日期</a>
                         <label id="sel_app_time">${param.s_app_time}</label>
-                        <span id="errortime"><font color="red">${message_time}</font></span>
+                       <br><br> <span id="errortime"><font color="red">${message_time}</font></span>
                         <input type="hidden" name="s_app_time" value="${param.s_app_time}">
                         <input type="hidden" name="ename" value="${param.ename}">
                         <input type="hidden" name="id" value="${param.id}">

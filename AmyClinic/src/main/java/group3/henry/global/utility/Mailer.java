@@ -89,7 +89,7 @@ public class Mailer implements GlobalConstants {
 	        
 	        System.out.println("Sent message successfully....");
 
-	    } catch (MessagingException e) {
+	    } catch (Exception e) {
 	    	throw new RuntimeException(e);
 	    }
 	}
