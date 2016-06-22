@@ -22,7 +22,7 @@ public class AppDAO implements AppDAO_interface {
 			"FROM AppVO order by aid";
 	private static final String GET_BY_MANY = "FROM AppVO where mid = ? and apt_date = ? and apt_time = ?";
 	private static final String GET_BYMID_BF_STMT = 
-			"select * from Appointments where mid = ? and apt_date < Convert(date,getdate()) order by apt_date";
+			"select * from Appointments where mid = ? and apt_date < Convert(date,getdate()) order by apt_date desc";
 	private static final String GET_BYMID_AF_STMT = 
 			"select * from Appointments where mid = ? and apt_date >= Convert(date,getdate()) and apt_date <= Convert(date,getdate()+31) order by apt_date";
 //	private static final String GET_APPDT_BYAid_STMT = 
